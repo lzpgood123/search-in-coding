@@ -27,8 +27,16 @@ const UI = {
 function t(key){ return (UI[lang] && UI[lang][key]) || UI.zh[key] || key; }
 function textOf(item, field){ return item?.i18n?.[lang]?.[field] || item?.i18n?.zh?.[field] || item?.i18n?.en?.[field] || item?.[field] || ''; }
 function score(p){ return p.total_score || Object.values(p.score || {}).reduce((a,b)=>a+(+b||0),0); }
-function pills(xs){ return (xs||[]).map(x=>`<span class="pill">${x}</span>`).join(''); }
 function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
+function safeUrl(raw){
+  try {
+    const u = new URL(String(raw || ''), window.location.href);
+    if (['http:', 'https:'].includes(u.protocol)) return u.href;
+  } catch (_) {}
+  return '#';
+}
+function safeToken(s){ return String(s||'').replace(/[^a-zA-Z0-9_-]/g, ''); }
+function pills(xs){ return (xs||[]).map(x=>`<span class="pill">${escapeHtml(x)}</span>`).join(''); }
 
 function applyLanguage(){
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
@@ -45,13 +53,13 @@ function renderMetrics(){
 
 function renderOfficial(){
   const off = projects.filter(p => p.ranking_scope === 'official');
-  $('official').innerHTML = off.map(p => `<div class="card"><b>${escapeHtml(textOf(p,'name'))}</b><br>${pills(p.category)}<br><a href="${p.url}" target="_blank" rel="noopener">${t('open')}</a></div>`).join('');
+  $('official').innerHTML = off.map(p => `<div class="card"><b>${escapeHtml(textOf(p,'name'))}</b><br>${pills(p.category)}<br><a href="${safeUrl(p.url)}" target="_blank" rel="noopener noreferrer">${t('open')}</a></div>`).join('');
 }
 
 function renderFiltersOnce(){
   const currentTool = $('tool').value, currentCat = $('cat').value, currentSource = $('source').value;
   $('tool').innerHTML = `<option value="">${t('allTools')}</option>`;
-  tools.forEach(tool => $('tool').insertAdjacentHTML('beforeend', `<option value="${tool.id}">${escapeHtml(textOf(tool,'name') || tool.name)}</option>`));
+  tools.forEach(tool => $('tool').insertAdjacentHTML('beforeend', `<option value="${escapeHtml(tool.id)}">${escapeHtml(textOf(tool,'name') || tool.name)}</option>`));
   $('cat').innerHTML = `<option value="">${t('allCategories')}</option>`;
   [...new Set(projects.flatMap(p=>p.category||[]))].sort().forEach(c => $('cat').insertAdjacentHTML('beforeend', `<option>${escapeHtml(c)}</option>`));
   $('source').innerHTML = `<option value="">${t('allSources')}</option>`;
@@ -68,7 +76,7 @@ function render(){
     .filter(p => p.ranking_scope === 'ecosystem' || p.ranking_scope === 'learning-resource')
     .filter(p => (!q || JSON.stringify(p).toLowerCase().includes(q)) && (!tool || (p.target_tools||[]).includes(tool)) && (!cat || (p.category||[]).includes(cat)) && (!source || p.source_type === source) && (!review || p.review_state === review) && (!curatedOnly || cids.has(p.id)))
     .sort((a,b)=>(cids.has(b.id)-cids.has(a.id)) || score(b)-score(a));
-  $('rows').innerHTML = rows.map(p => `<tr><td><b>${escapeHtml(textOf(p,'name'))}</b><br><span class="muted">${escapeHtml(textOf(p,'summary'))}</span></td><td>${escapeHtml(p.source_type)}</td><td><span class="pill quality-${p.source_quality||'unverified'}">${escapeHtml(p.source_quality||'unverified')}</span>${cids.has(p.id)?`<span class="pill">${t('curated')}</span>`:''}</td><td>${pills(p.category)}</td><td>${(p.target_tools||[]).join(', ')}</td><td>${score(p)}</td><td><a href="${p.url}" target="_blank" rel="noopener">${t('open')}</a></td></tr>`).join('');
+  $('rows').innerHTML = rows.map(p => `<tr><td><b>${escapeHtml(textOf(p,'name'))}</b><br><span class="muted">${escapeHtml(textOf(p,'summary'))}</span></td><td>${escapeHtml(p.source_type)}</td><td><span class="pill quality-${safeToken(p.source_quality||'unverified')}">${escapeHtml(p.source_quality||'unverified')}</span>${cids.has(p.id)?`<span class="pill">${t('curated')}</span>`:''}</td><td>${pills(p.category)}</td><td>${escapeHtml((p.target_tools||[]).join(', '))}</td><td>${score(p)}</td><td><a href="${safeUrl(p.url)}" target="_blank" rel="noopener noreferrer">${t('open')}</a></td></tr>`).join('');
 }
 
 async function main(){
