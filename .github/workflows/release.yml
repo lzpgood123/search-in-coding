@@ -1,0 +1,52 @@
+name: Create Release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version override (default: read from VERSION file)'
+        required: false
+  push:
+    branches: [main]
+    paths: ['VERSION']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Extract release info
+        id: extract
+        run: python3 scripts/release_notes.py | tee -a "$GITHUB_OUTPUT"
+      - name: Check if tag exists
+        id: check_tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "${{ steps.extract.outputs.tag }}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Release ${{ steps.extract.outputs.tag }} already exists"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Create Release
+        if: steps.check_tag.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ steps.extract.outputs.tag }}" \
+            --title "Search in Coding ${{ steps.extract.outputs.version }}" \
+            --notes "${{ steps.extract.outputs.notes }}" \
+            --target "${{ github.sha }}"
+      - name: Upload site artifact
+        if: steps.check_tag.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -d site ]; then
+            tar czf /tmp/search-in-coding-site.tar.gz site/
+            gh release upload "${{ steps.extract.outputs.tag }}" /tmp/search-in-coding-site.tar.gz
+          fi
