@@ -46,7 +46,14 @@
           <option value="auto-curated">auto-curated</option>
           <option value="auto-rejected">auto-rejected</option>
         </select>
+        <select id="sort">
+          <option value="score" data-i18n="sortScore">按分数</option>
+          <option value="name" data-i18n="sortName">按名称</option>
+          <option value="source" data-i18n="sortSource">按来源</option>
+          <option value="recent" data-i18n="sortRecent">按最近发现</option>
+        </select>
         <label><input id="curatedOnly" type="checkbox"> <span data-i18n="curatedOnly">只看自动推荐</span></label>
+        <label><input id="recentOnly" type="checkbox"> <span data-i18n="recentOnly">只看最近新增</span></label>
       </div>
       <table>
         <thead>

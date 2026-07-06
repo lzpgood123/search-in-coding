@@ -583,3 +583,23 @@ production deploy: PASS
 3. 对 Top curated 做真实中英摘要增强。
 4. 增加 pytest 测试集。
 5. 设计 raw 数据归档策略。
+---
+
+## 10. 剩余优化完成结果 — 2026-07-06
+
+本轮已继续完成优化清单剩余主要项目：
+
+- P1-3：新增 `scripts/snapshot_and_diff.py`，生成 `data/snapshots/` 与 `docs/reports/weekly/` 变化报告。
+- P1-4 / P2-5：站点增加详情展开、排序、URL 筛选状态、复制链接、最近新增筛选。
+- P1-5：新增 `scripts/enrich_translations.py`，对 Top curated 生成规则化中英摘要并标记 `translation_state=rule-generated`。
+- P2-1：新增 `scripts/archive_raw.py` 与 `docs/raw-data-retention.md`，提供 raw 归档策略。
+- P2-2：GitHub topics 已设置。
+- P2-4：新增 pytest 测试集并接入 GitHub Actions。
+- P3-2：新增 `docs/data-api.md`，说明静态 JSON 数据 API。
+- P3-3：新增 `docs/ecosystem-tracker-template.md`，说明模板化复用方式。
+
+仍属未来增强的方向：
+
+- 使用真实 LLM/人工校订翻译替代规则化摘要。
+- 使用 embedding 做更强语义去重。
+- 将大型 raw archive 移到 GitHub Release assets。

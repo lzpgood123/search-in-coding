@@ -197,3 +197,9 @@ GitHub Actions 也可以手动触发 `Update Data` workflow。
 4. **来源透明**：Exa、GitHub、fallback-web 必须清楚标注。
 5. **日期版本迭代**：重要更新使用 `YYYY.MM.DD` 版本号。
 6. **可复用**：替换 `seed-tools` 和 `queries` 后可迁移到其他技术生态追踪。
+
+## Additional operation docs
+
+- [`docs/data-api.md`](docs/data-api.md) | Public JSON data API |
+- [`docs/raw-data-retention.md`](docs/raw-data-retention.md) | Raw evidence retention/archive policy |
+- [`docs/ecosystem-tracker-template.md`](docs/ecosystem-tracker-template.md) | Reuse this project as an ecosystem tracker template |
