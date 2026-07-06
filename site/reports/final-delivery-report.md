@@ -90,4 +90,4 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 
 ## Exa status
 
-See `docs/reports/exa-status-and-fallback.md`. Current Exa availability: blocked / not configured.
+See `docs/reports/exa-status-and-fallback.md`. Current Exa availability: available.

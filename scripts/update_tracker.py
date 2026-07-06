@@ -35,6 +35,7 @@ def main() -> None:
     ap.add_argument("--github-queries", type=int, default=0, help="0 means all configured queries")
     ap.add_argument("--exa-queries", type=int, default=0, help="0 means all configured queries")
     ap.add_argument("--skip-collect", action="store_true", help="Only rebuild derived data/reports/site")
+    ap.add_argument("--skip-deploy", action="store_true", help="Do not sync site/ to the production Nginx webroot")
     args = ap.parse_args()
 
     steps: list[dict] = []
@@ -61,6 +62,9 @@ def main() -> None:
         ["python3", "-m", "py_compile", *[str(p.relative_to(ROOT)) for p in sorted((ROOT / "scripts").glob("*.py"))]],
     ]:
         steps.append(run(cmd, timeout=900))
+
+    if not args.skip_deploy:
+        steps.append(run(["python3", "scripts/deploy_site.py"], timeout=300))
 
     failures = [s for s in steps if s["returncode"] != 0]
     print(json.dumps({"status": "PASS", "steps": len(steps), "non_blocking_failures": len(failures)}, ensure_ascii=False))

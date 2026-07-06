@@ -1,5 +1,9 @@
 # Search in Coding
 
+**正式站点：<https://coding.lzpgood.online/>**
+
+Current version: `2026.07.06`
+
 Search in Coding is a publishable, reusable AI Coding Agent ecosystem tracker focused on terminal/agentic coding tools and adjacent AI IDE ecosystems.
 
 ## Target tools
