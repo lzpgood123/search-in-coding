@@ -43,8 +43,9 @@ python3 scripts/quality_gate.py
 
 Review `data/curated-projects.yaml`, `data/rejected-projects.yaml`, and `docs/reports/source-quality-audit.md`.
 
-## Hermes cron setup
+## Production scheduler setup
 
-Use the prompt files in `.hermes/cron-prompts/` when creating cron jobs. Do not schedule them recursively from inside cron runs.
+A production scheduler should run from this repository, pull latest `main`, execute `scripts/update_tracker.py`, commit meaningful changes, and push back to GitHub. GitHub Actions also runs daily as a second automation layer.
 
-Server-side Hermes cron should run from this repository, pull latest `main`, execute `scripts/update_tracker.py`, commit meaningful changes, and push back to GitHub. GitHub Actions also runs daily as a second automation layer.
+
+Production deployment uses `SEARCH_IN_CODING_WEBROOT` or `scripts/deploy_site.py --dest <webroot>`; concrete server paths should stay outside public docs.

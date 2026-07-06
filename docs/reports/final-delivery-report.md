@@ -1,4 +1,4 @@
-# Final Delivery Report — 2026-07-06
+# Final Delivery Report — 2026-07-07
 
 ## Status
 
@@ -6,24 +6,24 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 
 ## Metrics
 
-- Normalized records: 628
+- Normalized records: 626
 - Curated records: 60
 - Rejected/noisy records: 25
 - GitHub records: 265
 - Fallback web records: 147
 - Official seed records: 10
-- Exa records: 206
+- Exa records: 204
 
 ## Source counts
 
-- exa: 206
+- exa: 204
 - fallback-web: 147
 - github: 265
 - official-seed: 10
 
 ## Record kinds
 
-- article: 206
+- article: 204
 - ecosystem-project: 265
 - fallback-result: 106
 - official-tool: 10
@@ -33,7 +33,7 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 
 - ecosystem: 265
 - excluded: 25
-- learning-resource: 328
+- learning-resource: 326
 - official: 10
 
 ## Tool coverage
@@ -44,7 +44,7 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 - cursor: 76
 - general-ai-coding: 65
 - goose: 47
-- hermes-agent: 58
+- hermes-agent: 56
 - opencode: 60
 - qoder: 56
 - trae: 25
@@ -60,10 +60,10 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 - official-tool: 10
 - persistent-agent: 1
 - rules-instructions: 143
-- skills-prompts: 207
+- skills-prompts: 206
 - terminal-agent: 28
 - testing-review-ci: 44
-- tutorial-case-study: 157
+- tutorial-case-study: 156
 
 ## Top ecosystem projects (official tools excluded)
 

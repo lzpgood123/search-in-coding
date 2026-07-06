@@ -8,7 +8,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_DEST = Path('/var/www/coding.lzpgood.online')
+DEFAULT_DEST = os.environ.get('SEARCH_IN_CODING_WEBROOT')
 
 def copytree(src: Path, dst: Path, dry_run: bool = False) -> dict:
     files = [p for p in src.rglob('*') if p.is_file()]
@@ -27,13 +27,15 @@ def copytree(src: Path, dst: Path, dry_run: bool = False) -> dict:
 
 def main():
     ap = argparse.ArgumentParser(description='Deploy site/ to production webroot')
-    ap.add_argument('--dest', default=str(DEFAULT_DEST))
+    ap.add_argument('--dest', default=DEFAULT_DEST)
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--no-chown', action='store_true')
     args = ap.parse_args()
     src = ROOT / 'site'
     if not (src / 'index.html').exists():
         raise SystemExit('site/index.html missing; run scripts/build_site.py first')
+    if not args.dest:
+        raise SystemExit('deployment destination missing; set SEARCH_IN_CODING_WEBROOT or pass --dest')
     result = copytree(src, Path(args.dest), args.dry_run)
     if not args.dry_run and not args.no_chown and os.geteuid() == 0:
         subprocess.run(['chown', '-R', 'www-data:www-data', args.dest], check=False)

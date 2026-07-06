@@ -4,7 +4,7 @@
 
 取消人工审核环节，项目长期依靠 AI/规则评分维持索引库。
 
-用户不需要每周看 curated、选择、提交。Hermes 负责：
+维护者不需要逐条审核 curated、选择、提交；自动维护流程负责：
 
 - 每天收集 GitHub + Exa 信息；
 - 每天分析、归一化、评分；
@@ -14,7 +14,7 @@
 - 自动把 raw 数据、归一化数据、报告、站点数据和版本记录提交到 GitHub 总仓库；
 - 导入阶段即持久化 `i18n.zh/en` 展示结构，站点构建阶段防御性补齐，正式站点支持中英切换；
 - 每周发布一次正式更新；
-- 用户也可以随时要求立即更新。
+- 维护者也可以随时手动触发立即更新。
 
 ## 维护模式
 
@@ -52,16 +52,15 @@ python3 scripts/update_tracker.py --github-limit 50 --exa-limit 5 --deploy
 
 ### Manual trigger：人为要求立即更新
 
-用户只需要说：
+手动触发时可执行：
 
 ```text
 立即更新 Search in Coding
 ```
 
-Hermes 执行：
+执行：
 
 ```bash
-cd "/root/workspace/search in coding"
 git pull --ff-only origin main
 python3 scripts/update_tracker.py --github-limit 50 --exa-limit 5 --deploy
 git status --short
@@ -88,9 +87,9 @@ git status --short
 4. 重复或低可信；
 5. official tool 以外但 ranking_scope 不清晰的记录。
 
-## 用户后续只做方向调整
+## 后续只做方向调整
 
-用户不再做逐条审核，只在需要时提出方向变化，例如：
+维护者不再做逐条审核，只在需要时调整方向，例如：
 
 - 新增追踪工具；
 - 调整分类体系；

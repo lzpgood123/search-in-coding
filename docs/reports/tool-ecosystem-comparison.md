@@ -1,4 +1,4 @@
-# Tool Ecosystem Comparison — 2026-07-06
+# Tool Ecosystem Comparison — 2026-07-07
 
 
 ## Claude Code
@@ -17,7 +17,7 @@
 ## OpenAI Codex CLI
 
 - Total records: 62
-- Curated records: 8
+- Curated records: 9
 - Extension points: skills, slash-commands, execution-policy, hooks, github-pr
 - Main categories: skills-prompts(30), rules-instructions(17), tutorial-case-study(17), mcp-acp-a2a(12), ai-ide(8), context-engineering(7)
 - Recommended records:
@@ -105,13 +105,12 @@
 
 ## Hermes Agent
 
-- Total records: 58
-- Curated records: 5
+- Total records: 56
+- Curated records: 4
 - Extension points: skills, cron, memory, delegation, tools, mcp
-- Main categories: skills-prompts(34), tutorial-case-study(13), rules-instructions(12), testing-review-ci(11), agent-harness(11), context-engineering(10)
+- Main categories: skills-prompts(33), rules-instructions(12), tutorial-case-study(12), testing-review-ci(11), agent-harness(11), context-engineering(10)
 - Recommended records:
   - [cosmicstack-labs/mercury-agent-skills](https://github.com/cosmicstack-labs/mercury-agent-skills) — try-now — score 16
   - [DavidBB-L/cinema-manager](https://github.com/DavidBB-L/cinema-manager) — try-now — score 16
   - [Forlives/21-day-self-interview](https://github.com/Forlives/21-day-self-interview) — try-now — score 16
   - [Hermes Agent tutorial workflow agentic coding case study](https://www.agentupdate.ai/tutorial/hermes-agent-tutorial/lesson-14/) — reference — score 13
-  - [Hermes Agent tutorial workflow agentic coding case study](http://localhost:8000/todos/`) — reference — score 13

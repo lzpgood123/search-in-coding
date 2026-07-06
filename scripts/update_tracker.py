@@ -21,7 +21,7 @@ def main():
         steps.append(run(['python3','scripts/collect_exa.py','--limit',str(a.exa_limit),'--queries',str(a.exa_queries)],required=False,timeout=900))
         steps.append(run(['python3','scripts/normalize.py','--source','all'],timeout=600))
     for cmd in [
-        ['python3','scripts/enrich_i18n.py'], ['python3','scripts/validate_data.py'], ['python3','scripts/score.py'],
+        ['python3','scripts/sanitize_public_data.py'], ['python3','scripts/enrich_i18n.py'], ['python3','scripts/validate_data.py'], ['python3','scripts/score.py'],
         ['python3','scripts/finalize_data.py'], ['python3','scripts/enrich_i18n.py'], ['python3','scripts/enrich_translations.py'], ['python3','scripts/generate_reports.py'],
         ['python3','scripts/snapshot_and_diff.py'], ['python3','scripts/build_site.py'], ['python3','scripts/quality_gate.py'],
         ['python3','-m','py_compile',*[str(p.relative_to(ROOT)) for p in sorted((ROOT/'scripts').glob('*.py'))]]]:

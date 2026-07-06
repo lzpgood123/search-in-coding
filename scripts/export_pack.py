@@ -2,7 +2,7 @@
 import argparse, json, zipfile
 from pathlib import Path
 from common import ROOT
-INCLUDE=['README.md','pyproject.toml','.env.example','data/seed-tools.yaml','data/queries.yaml','data/sources.yaml','data/concepts.yaml','schemas','docs','prompts','scripts','site','.github','.hermes/cron-prompts']
+INCLUDE=['README.md','pyproject.toml','.env.example','data/seed-tools.yaml','data/queries.yaml','data/sources.yaml','data/concepts.yaml','schemas','docs','scripts','site','.github']
 
 def collect():
     files=[]

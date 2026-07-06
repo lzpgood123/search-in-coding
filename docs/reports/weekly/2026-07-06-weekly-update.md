@@ -4,18 +4,16 @@ Previous snapshot: none
 
 ## Summary
 
-- Projects: 628
+- Projects: 626
 - Curated: 60
 - Rejected: 25
-- New records: 628
+- New records: 626
 - Removed records: 0
 - Newly curated: 60
 - Exited curated: 0
 
 ## New records
 
-- `exa-http-127-0-0-1-9119` — Hermes Agent tutorial workflow agentic coding case study
-- `exa-http-localhost-8000-todos` — Hermes Agent tutorial workflow agentic coding case study
 - `exa-https-adurrr-github-io-en-p-opencode-agent-orchestration-and-subagent-driven-development-a-compl` — OpenCode tutorial workflow agentic coding case study
 - `exa-https-amux-io-guides-context-engineering` — AI coding agent context engineering best practices
 - `exa-https-amux-io-guides-spec-driven-development` — spec driven development AI coding agents
@@ -64,10 +62,11 @@ Previous snapshot: none
 - `exa-https-docs-qoder-com-user-guide-indexing` — Qoder / QoderWork context engineering codebase indexing rules prompts
 - `exa-https-docs-qoder-com-user-guide-quest-agent-mode` — Qoder / QoderWork tutorial workflow agentic coding case study
 - `exa-https-docs-qoder-com-user-guide-rules` — Qoder / QoderWork context engineering codebase indexing rules prompts
+- `exa-https-docs-trae-ai-ide-skills` — Trae / Trae Work ecosystem extensions plugins MCP skills rules best practices
+- `exa-https-geminicli-com-extensions-name-joonghyun-lee-frierenoh-my-antigravity` — Antigravity CLI / Gemini CLI GitHub projects open source extensions
 
 ## Newly curated
 
-- `exa-http-localhost-8000-todos` — Hermes Agent tutorial workflow agentic coding case study
 - `exa-https-dev-opencode-ai-docs-mcp-servers` — OpenCode ecosystem extensions plugins MCP skills rules best practices
 - `exa-https-developers-openai-com-codex-learn-best-practices` — OpenAI Codex CLI context engineering codebase indexing rules prompts
 - `exa-https-developers-openai-com-codex-plugins` — OpenAI Codex CLI ecosystem extensions plugins MCP skills rules best practices
@@ -75,6 +74,7 @@ Previous snapshot: none
 - `exa-https-docs-qoder-com-user-guide-rules` — Qoder / QoderWork context engineering codebase indexing rules prompts
 - `exa-https-github-com-block-goose-blob-58f3cc9e-documentation-docs-tutorials-rpi-md` — Goose tutorial workflow agentic coding case study
 - `exa-https-github-com-joonghyun-lee-frieren-oh-my-gemini-cli` — Antigravity CLI / Gemini CLI GitHub projects open source extensions
+- `exa-https-github-com-openai-codex` — OpenAI Codex CLI GitHub projects open source extensions
 - `exa-https-github-com-virgoshuyu-task-time-estimator` — Qoder / QoderWork GitHub projects open source extensions
 - `exa-https-opencode-ai-docs-ecosystem` — OpenCode ecosystem extensions plugins MCP skills rules best practices
 - `exa-https-raw-githubusercontent-com-block-goose-refs-heads-main-documentation-src-pages-recipes-data` — Goose tutorial workflow agentic coding case study

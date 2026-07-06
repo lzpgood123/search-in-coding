@@ -2,7 +2,7 @@
 
 ## 摘要
 
-本轮完成 Search in Coding 初始采集与归一化。由于当前 `mcporter list` 显示没有 MCP servers configured，Exa 调用 `mcporter call 'exa.web_search_exa(...)'` 全部失败；项目已保存 Exa 失败 raw 记录，并使用 Bing RSS fallback 补充非 GitHub 互联网来源，所有 fallback 记录均标记为 `fallback-web`，不会伪装成 Exa 结果。
+Search in Coding 初始采集与归一化已完成。由于当前 `mcporter list` 显示没有 MCP servers configured，Exa 调用 `mcporter call 'exa.web_search_exa(...)'` 全部失败；项目已保存 Exa 失败 raw 记录，并使用 Bing RSS fallback 补充非 GitHub 互联网来源，所有 fallback 记录均标记为 `fallback-web`，不会伪装成 Exa 结果。
 
 ## 统计
 

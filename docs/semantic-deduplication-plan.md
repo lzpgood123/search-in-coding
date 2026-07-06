@@ -61,8 +61,8 @@ sentence-transformers/all-MiniLM-L6-v2
 
 - 本地运行；
 - 成本低；
-- 适合 GitHub Actions 或服务器 cron；
-- 数据可完全留在仓库/服务器；
+- 适合 GitHub Actions 或 production scheduler；
+- 数据可完全留在仓库或生产运行环境；
 - 不需要长期运行向量数据库。
 
 推荐索引格式：

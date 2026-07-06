@@ -1,4 +1,4 @@
-# Curated Top Projects — 2026-07-06
+# Curated Top Projects — 2026-07-07
 
 Official tools are excluded.
 
@@ -55,12 +55,12 @@ Official tools are excluded.
 | 49 | Goose tutorial workflow agentic coding case study | exa | reference | 13 | context-engineering | https://www.kdnuggets.com/free-agentic-coding-with-goose |
 | 50 | Goose tutorial workflow agentic coding case study | exa | reference | 13 | context-engineering | https://terminalskills.io/use-cases/build-extensible-ai-agent-with-goose |
 | 51 | Hermes Agent tutorial workflow agentic coding case study | exa | reference | 13 | skills-prompts | https://www.agentupdate.ai/tutorial/hermes-agent-tutorial/lesson-14/ |
-| 52 | Hermes Agent tutorial workflow agentic coding case study | exa | reference | 13 | skills-prompts | http://localhost:8000/todos/` |
-| 53 | Qoder / QoderWork context engineering codebase indexing rules prompts | exa | reference | 13 | skills-prompts, rules-instructions, context-engineering, ai-ide | https://docs.qoder.com/user-guide/rules |
-| 54 | Qoder / QoderWork context engineering codebase indexing rules prompts | exa | reference | 13 | skills-prompts, rules-instructions, context-engineering, ai-ide | https://docs.qoder.com/user-guide/indexing |
-| 55 | Antigravity CLI / Gemini CLI GitHub projects open source extensions | exa | reference | 13 | context-engineering, testing-review-ci, agent-harness, terminal-agent | https://github.com/Joonghyun-Lee-Frieren/oh-my-gemini-cli |
-| 56 | OpenAI Codex CLI tutorial workflow agentic coding case study | exa | reference | 13 | mcp-acp-a2a, benchmark-evaluation, agent-harness | https://raw.githubusercontent.com/openai/openai-cookbook/main/examples/codex/code_modernization.md |
-| 57 | OpenAI Codex CLI context engineering codebase indexing rules prompts | exa | reference | 13 | mcp-acp-a2a, skills-prompts, rules-instructions, context-engineering | https://developers.openai.com/codex/learn/best-practices |
-| 58 | OpenAI Codex CLI ecosystem extensions plugins MCP skills rules best practices | exa | reference | 13 | mcp-acp-a2a, skills-prompts, rules-instructions | https://developers.openai.com/codex/plugins |
-| 59 | OpenCode ecosystem extensions plugins MCP skills rules best practices | exa | reference | 13 | mcp-acp-a2a, skills-prompts, rules-instructions, testing-review-ci | https://opencode.ai/docs/ecosystem/ |
-| 60 | OpenCode ecosystem extensions plugins MCP skills rules best practices | exa | reference | 13 | mcp-acp-a2a, skills-prompts, rules-instructions | https://dev.opencode.ai/docs/mcp-servers/ |
+| 52 | Qoder / QoderWork context engineering codebase indexing rules prompts | exa | reference | 13 | skills-prompts, rules-instructions, context-engineering, ai-ide | https://docs.qoder.com/user-guide/rules |
+| 53 | Qoder / QoderWork context engineering codebase indexing rules prompts | exa | reference | 13 | skills-prompts, rules-instructions, context-engineering, ai-ide | https://docs.qoder.com/user-guide/indexing |
+| 54 | Antigravity CLI / Gemini CLI GitHub projects open source extensions | exa | reference | 13 | context-engineering, testing-review-ci, agent-harness, terminal-agent | https://github.com/Joonghyun-Lee-Frieren/oh-my-gemini-cli |
+| 55 | OpenAI Codex CLI tutorial workflow agentic coding case study | exa | reference | 13 | mcp-acp-a2a, benchmark-evaluation, agent-harness | https://raw.githubusercontent.com/openai/openai-cookbook/main/examples/codex/code_modernization.md |
+| 56 | OpenAI Codex CLI context engineering codebase indexing rules prompts | exa | reference | 13 | mcp-acp-a2a, skills-prompts, rules-instructions, context-engineering | https://developers.openai.com/codex/learn/best-practices |
+| 57 | OpenAI Codex CLI ecosystem extensions plugins MCP skills rules best practices | exa | reference | 13 | mcp-acp-a2a, skills-prompts, rules-instructions | https://developers.openai.com/codex/plugins |
+| 58 | OpenCode ecosystem extensions plugins MCP skills rules best practices | exa | reference | 13 | mcp-acp-a2a, skills-prompts, rules-instructions, testing-review-ci | https://opencode.ai/docs/ecosystem/ |
+| 59 | OpenCode ecosystem extensions plugins MCP skills rules best practices | exa | reference | 13 | mcp-acp-a2a, skills-prompts, rules-instructions | https://dev.opencode.ai/docs/mcp-servers/ |
+| 60 | OpenAI Codex CLI GitHub projects open source extensions | exa | reference | 13 | mcp-acp-a2a, skills-prompts | https://github.com/openai/codex |

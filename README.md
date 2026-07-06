@@ -109,7 +109,6 @@ Search in Coding 不是普通 awesome list，而是一个**持续自动更新的
 | `site/` | 静态站点源码与站点数据 |
 | `scripts/` | 采集、归一化、评分、报告、构建、部署脚本 |
 | `.github/workflows/` | GitHub Actions 自动更新与 Pages 预览 |
-| `.hermes/cron-prompts/` | Hermes 长期运行任务提示词 |
 | `VERSION` / `CHANGELOG.md` | 日期版本号与变更记录 |
 
 ---
@@ -135,14 +134,14 @@ flowchart TD
   Site --> GitHub
 ```
 
-### 服务器 Hermes cron
+### Production scheduler
 
 - 每日 03:00：自动收集与分析，部署正式站点，并推送 GitHub。
 - 每周一 09:00：较大范围更新并生成周报。
 
 ### GitHub Actions
 
-- `Update Data`：在 GitHub 环境中收集/分析/提交数据，默认不部署服务器；服务器 cron 显式使用 `--deploy`。
+- `Update Data`：在 GitHub 环境中收集/分析/提交数据，默认不部署production runner；production scheduler 显式使用 `--deploy`。
 - `Publish Site`：发布 GitHub Pages 预览。
 
 ---
@@ -166,10 +165,9 @@ flowchart TD
 
 ## 如何立即更新
 
-在服务器工作区执行：
+在production runner工作区执行：
 
 ```bash
-cd "/root/workspace/search in coding"
 git pull --ff-only origin main
 python3 scripts/update_tracker.py --github-limit 50 --exa-limit 5 --deploy
 git status --short
@@ -205,3 +203,8 @@ GitHub Actions 也可以手动触发 `Update Data` workflow。
 - [`docs/ecosystem-tracker-template.md`](docs/ecosystem-tracker-template.md) | Reuse this project as an ecosystem tracker template |
 
 - [`docs/semantic-deduplication-plan.md`](docs/semantic-deduplication-plan.md) | Embedding / vector-library semantic deduplication plan |
+
+- [`docs/publication-policy.md`](docs/publication-policy.md) | Public repository publication and privacy policy |
+
+
+Production deployment uses `SEARCH_IN_CODING_WEBROOT` or `scripts/deploy_site.py --dest <webroot>`; concrete server paths should stay outside public docs.
