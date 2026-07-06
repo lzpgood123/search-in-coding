@@ -45,6 +45,16 @@ The YAML files are JSON-compatible for stdlib parsing.
 
 Final reports live under `docs/reports/`.
 
+## Manual review
+
+Human curation guide:
+
+```text
+docs/manual-review-guide.md
+```
+
+Use it to review curated projects, move noisy records to rejected, update recommendation levels, run quality gates, and deploy the formal site.
+
 ## Site
 
 Open `site/index.html` after running `python3 scripts/build_site.py`.

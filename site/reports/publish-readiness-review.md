@@ -2,12 +2,13 @@
 
 ## 结论
 
-Search in Coding 已达到公开发布与长期运行的基本条件：GitHub 仓库公开、Pages 已启用、Publish Site 与 Update Data workflow 均成功、Hermes daily/weekly/monthly cron 已配置为 local 投递，Exa 通过 mcporter 实测可用。
+Search in Coding 已达到公开发布与长期运行的正式版条件：GitHub 仓库公开，正式 HTTPS 域名 `https://coding.lzpgood.online/` 已上线，Nginx 静态部署可用，Publish Site 与 Update Data workflow 均成功，Hermes daily/weekly/monthly cron 已配置为 local 投递，Exa 通过 mcporter 实测可用。
 
 ## 仓库
 
 - GitHub: https://github.com/lzpgood123/search-in-coding
-- Pages: http://giodio.me/search-in-coding/
+- 正式站点: https://coding.lzpgood.online/
+- GitHub Pages 预览: http://giodio.me/search-in-coding/
 - Visibility: public
 
 ## 数据规模

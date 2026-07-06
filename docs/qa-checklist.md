@@ -1,5 +1,7 @@
 # QA Checklist
 
+人工审核操作指南：`docs/manual-review-guide.md`
+
 - [ ] `python3 scripts/validate_data.py` passes.
 - [ ] `python3 scripts/quality_gate.py` passes.
 - [ ] Official seed tools are not ranked as ecosystem projects.
