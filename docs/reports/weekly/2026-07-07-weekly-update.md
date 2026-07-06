@@ -4,17 +4,18 @@ Previous snapshot: `data/snapshots/2026-07-06/projects.json`
 
 ## Summary
 
-- Projects: 626
+- Projects: 628
 - Curated: 60
 - Rejected: 25
-- New records: 0
+- New records: 2
 - Removed records: 0
 - Newly curated: 0
 - Exited curated: 0
 
 ## New records
 
-- None
+- `github-ayushkh420-ai-pr-review-agent` — ayushkh420/AI-PR-Review-Agent
+- `github-yassir-elkobi-ai-price-review-agent` — yassir-elkobi/ai-price-review-agent
 
 ## Newly curated
 
@@ -22,4 +23,4 @@ Previous snapshot: `data/snapshots/2026-07-06/projects.json`
 
 ## Score changes
 
-- None
+- `official-antigravity-cli` — Antigravity CLI / Gemini CLI: -1

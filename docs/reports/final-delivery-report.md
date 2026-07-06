@@ -6,10 +6,10 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 
 ## Metrics
 
-- Normalized records: 626
+- Normalized records: 628
 - Curated records: 60
 - Rejected/noisy records: 25
-- GitHub records: 265
+- GitHub records: 267
 - Fallback web records: 147
 - Official seed records: 10
 - Exa records: 204
@@ -18,20 +18,20 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 
 - exa: 204
 - fallback-web: 147
-- github: 265
+- github: 267
 - official-seed: 10
 
 ## Record kinds
 
 - article: 204
-- ecosystem-project: 265
+- ecosystem-project: 267
 - fallback-result: 106
 - official-tool: 10
 - tutorial: 41
 
 ## Ranking scopes
 
-- ecosystem: 265
+- ecosystem: 267
 - excluded: 25
 - learning-resource: 326
 - official: 10
@@ -42,7 +42,7 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 - claude-code: 114
 - codex-cli: 62
 - cursor: 76
-- general-ai-coding: 65
+- general-ai-coding: 67
 - goose: 47
 - hermes-agent: 56
 - opencode: 60
@@ -62,8 +62,8 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 - rules-instructions: 143
 - skills-prompts: 206
 - terminal-agent: 28
-- testing-review-ci: 44
-- tutorial-case-study: 156
+- testing-review-ci: 45
+- tutorial-case-study: 157
 
 ## Top ecosystem projects (official tools excluded)
 

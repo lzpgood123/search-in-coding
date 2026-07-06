@@ -4,8 +4,8 @@
 
 ```text
 mcporter 0.9.0 — Listing 2 server(s) (per-server timeout: 30s)
-- xiaohongshu (13 tools, 0.2s)
-- exa (2 tools, 1.6s)
+- xiaohongshu (13 tools, 0.1s)
+- exa (2 tools, 1.5s)
 ✔ Listed 2 servers (2 healthy).
 ```
 
