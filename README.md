@@ -47,13 +47,23 @@ Final reports live under `docs/reports/`.
 
 ## Manual review
 
-Human curation guide:
+最简单的人工审核方式：只看清单并回复编号选择。
+
+```text
+docs/review/review-queue.md
+```
+
+极简流程：
+
+```text
+docs/simple-review-flow.md
+```
+
+完整手册：
 
 ```text
 docs/manual-review-guide.md
 ```
-
-Use it to review curated projects, move noisy records to rejected, update recommendation levels, run quality gates, and deploy the formal site.
 
 ## Site
 
