@@ -11,6 +11,7 @@
 - 自动维护 curated / rejected；
 - 自动生成报告与站点；
 - 自动部署到 `https://coding.lzpgood.online/`；
+- 自动把 raw 数据、归一化数据、报告、站点数据和版本记录提交到 GitHub 总仓库；
 - 每周发布一次正式更新；
 - 用户也可以随时要求立即更新。
 

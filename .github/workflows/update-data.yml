@@ -28,7 +28,8 @@ jobs:
         run: |
           python3 scripts/update_tracker.py \
             --github-limit "${{ inputs.github_limit || '20' }}" \
-            --exa-limit "${{ inputs.exa_limit || '3' }}"
+            --exa-limit "${{ inputs.exa_limit || '3' }}" \
+            --skip-deploy
       - name: Commit changes
         run: |
           if git diff --quiet; then
@@ -37,6 +38,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data docs/reports site
+          git add data docs site VERSION CHANGELOG.md
           git commit -m "chore(data): update tracker snapshot"
           git push

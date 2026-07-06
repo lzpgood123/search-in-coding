@@ -53,7 +53,13 @@ Final reports live under `docs/reports/`.
 docs/auto-maintenance-plan.md
 ```
 
-Hermes 每天收集 GitHub + Exa 信息并自动评分维护索引库；每周生成正式更新。用户只需要在需要时提出方向调整或要求立即更新。
+GitHub 是总仓库 / source of truth：
+
+```text
+docs/github-source-of-truth.md
+```
+
+Hermes 每天收集 GitHub + Exa 信息并自动评分维护索引库；每周生成正式更新。所有原始数据、归一化数据、报告、站点数据和版本记录都会同步到 GitHub。用户只需要在需要时提出方向调整或要求立即更新。
 
 ## Site
 
