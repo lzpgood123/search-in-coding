@@ -6,7 +6,7 @@
 - Total records: 114
 - Curated records: 24
 - Extension points: skills, hooks, slash-commands, mcp, subagents
-- Main categories: skills-prompts(41), tutorial-case-study(39), mcp-acp-a2a(34), rules-instructions(21), ai-ide(8), context-engineering(8)
+- Main categories: skills-prompts(41), tutorial-case-study(40), mcp-acp-a2a(33), rules-instructions(21), ai-ide(8), context-engineering(8)
 - Recommended records:
   - [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) — try-now — score 18
   - [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) — try-now — score 18
@@ -17,9 +17,9 @@
 ## OpenAI Codex CLI
 
 - Total records: 62
-- Curated records: 10
+- Curated records: 8
 - Extension points: skills, slash-commands, execution-policy, hooks, github-pr
-- Main categories: skills-prompts(30), rules-instructions(17), mcp-acp-a2a(15), tutorial-case-study(14), ai-ide(8), context-engineering(7)
+- Main categories: skills-prompts(30), rules-instructions(17), tutorial-case-study(17), mcp-acp-a2a(12), ai-ide(8), context-engineering(7)
 - Recommended records:
   - [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) — try-now — score 18
   - [taishi-i/awesome-ChatGPT-repositories](https://github.com/taishi-i/awesome-ChatGPT-repositories) — try-now — score 17
@@ -42,21 +42,22 @@
 ## OpenCode
 
 - Total records: 61
-- Curated records: 1
+- Curated records: 2
 - Extension points: commands, agents, mcp, lsp, sourcegraph
 - Main categories: mcp-acp-a2a(24), tutorial-case-study(18), skills-prompts(14), testing-review-ci(8), rules-instructions(8), agent-harness(4)
 - Recommended records:
-  - [hxrshxz/fluid-cloudnative-custom-agent-workflows](https://github.com/hxrshxz/fluid-cloudnative-custom-agent-workflows) — try-now — score 15
+  - [OpenCode ecosystem extensions plugins MCP skills rules best practices](https://opencode.ai/docs/ecosystem/) — reference — score 13
+  - [OpenCode ecosystem extensions plugins MCP skills rules best practices](https://dev.opencode.ai/docs/mcp-servers/) — reference — score 13
 
 ## Goose
 
-- Total records: 46
+- Total records: 47
 - Curated records: 4
 - Extension points: mcp extensions, recipes, subagents, acp, local models
-- Main categories: tutorial-case-study(25), skills-prompts(16), rules-instructions(16), context-engineering(12), mcp-acp-a2a(8), official-tool(1)
+- Main categories: tutorial-case-study(26), skills-prompts(16), rules-instructions(16), context-engineering(12), mcp-acp-a2a(8), official-tool(1)
 - Recommended records:
   - [Goose tutorial workflow agentic coding case study](https://github.com/block/goose/blob/58f3cc9e/documentation/docs/tutorials/rpi.md) — reference — score 13
-  - [Goose tutorial workflow agentic coding case study](https://raw.githubusercontent.com/block/goose/refs/heads/main/documentation/src/pages/recipes/data/recipes/rpi-iterate.yaml) — reference — score 13
+  - [Goose tutorial workflow agentic coding case study](https://raw.githubusercontent.com/block/goose/refs/heads/main/documentation/src/pages/recipes/data/recipes/rpi-implement.yaml) — reference — score 13
   - [Goose tutorial workflow agentic coding case study](https://www.kdnuggets.com/free-agentic-coding-with-goose) — reference — score 13
   - [Goose tutorial workflow agentic coding case study](https://terminalskills.io/use-cases/build-extensible-ai-agent-with-goose) — reference — score 13
 
@@ -92,7 +93,7 @@
 ## Cursor
 
 - Total records: 76
-- Curated records: 15
+- Curated records: 16
 - Extension points: rules, skills, mcp, hooks, cloud-agents, bugbot
 - Main categories: ai-ide(69), rules-instructions(43), mcp-acp-a2a(31), skills-prompts(27), agent-harness(10), testing-review-ci(7)
 - Recommended records:

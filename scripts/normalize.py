@@ -3,9 +3,9 @@ import argparse, json, re
 from pathlib import Path
 from common import ROOT, load_jsonish, save_jsonish, slug, score_from_stars
 CATEGORY_RULES={
- 'mcp-acp-a2a':['mcp server','model context protocol','a2a','agent communication protocol','acp','mcp'],
+ 'mcp-acp-a2a':['mcp server','model context protocol','agent communication protocol','\\bmcp\\b','\\bacp\\b','\\ba2a\\b'],
  'skills-prompts':['claude skill','agent skill','skills','prompt pack','slash command','custom command','prompts'],
- 'rules-instructions':['agents.md','claude.md','cursor rules','.cursorrules','instruction file','rules'],
+ 'rules-instructions':['agents.md','claude.md','cursor rules','.cursorrules','instruction file','\\brules\\b'],
  'context-engineering':['context engineering','codebase index','repo map','repository map','semantic search','codebase indexing'],
  'agent-harness':['agent harness','multi-agent','agent orchestration','subagent','agent framework','agentic framework'],
  'testing-review-ci':['pull request review','pr review','code review','test generation','ci automation','github action','review agent'],
@@ -30,7 +30,13 @@ def target_tools_for(text, tools):
 
 def has_any(text, phrases):
     low=text.lower()
-    return any(p.lower() in low for p in phrases)
+    for phrase in phrases:
+        pat=phrase.lower()
+        if pat.startswith('\\b') or pat.endswith('\\b'):
+            if re.search(pat, low): return True
+        elif pat in low:
+            return True
+    return False
 
 def categories_for(text):
     cats=[]; low=text.lower()

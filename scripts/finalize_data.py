@@ -28,6 +28,15 @@ def auto_level(p, ranking):
     if score>=ranking['watch_min_score']: return 'watch'
     if source=='exa': return 'reference'
     return 'watch'
+
+def is_weak_record(p, ranking):
+    return (
+        project_score(p) <= ranking['reject_max_score'] or
+        p.get('source_type') == 'fallback-web' or
+        p.get('target_tools') == ['general-ai-coding'] or
+        p.get('source_quality') in ('fallback','unverified')
+    )
+
 def auto_note(p): return f"Auto-selected by scoring rules: source={p.get('source_type')}, score={project_score(p)}, categories={', '.join(p.get('category') or [])}."
 
 def main():
@@ -42,7 +51,8 @@ def main():
         if p.get('record_kind')=='official-tool': p['review_state']='auto-curated'; p['ranking_scope']='official'
         elif p.get('review_state') in ('reviewed','auto-reviewed','unreviewed'): p['review_state']='auto-indexed'
         elif p.get('review_state')=='rejected': p['review_state']='auto-rejected'
-    candidates=sorted([p for p in projects if p.get('record_kind')!='official-tool' and p.get('ranking_scope') in ('ecosystem','learning-resource')], key=project_score, reverse=True)
+    all_candidates=[p for p in projects if p.get('record_kind')!='official-tool' and p.get('ranking_scope') in ('ecosystem','learning-resource')]
+    candidates=sorted([p for p in all_candidates if not is_weak_record(p, ranking)], key=project_score, reverse=True)
     curated=[]; seen=set()
     def add_curated(p):
         if p.get('id') in seen: return
@@ -63,8 +73,7 @@ def main():
     for p in sorted(projects, key=project_score):
         if len(rejected)>=ranking['rejected_min']: break
         if p.get('record_kind')=='official-tool' or p.get('id') in curated_ids: continue
-        weak=(project_score(p)<=ranking['reject_max_score'] or p.get('source_type')=='fallback-web' or p.get('target_tools')==['general-ai-coding'] or p.get('source_quality') in ('fallback','unverified'))
-        if weak:
+        if is_weak_record(p, ranking):
             q=dict(p); q['review_state']='auto-rejected'; q['ranking_scope']='excluded'; q['rejection_reason']='Auto-rejected by scoring/source-quality rules: low confidence, fallback/noisy, generic, duplicate, or weak direct relevance.'; rejected.append(q)
     rejected_ids={p['id'] for p in rejected}
     for p in projects:

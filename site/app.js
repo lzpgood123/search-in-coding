@@ -26,7 +26,8 @@ const UI = {
 
 function t(key){ return (UI[lang] && UI[lang][key]) || UI.zh[key] || key; }
 function textOf(item, field){ return item?.i18n?.[lang]?.[field] || item?.i18n?.zh?.[field] || item?.i18n?.en?.[field] || item?.[field] || ''; }
-function score(p){ return p.total_score || Object.values(p.score || {}).reduce((a,b)=>a+(+b||0),0); }
+function score(p){ const n = Number(p.total_score); if (Number.isFinite(n)) return n; return Object.values(p.score || {}).reduce((a,b)=>a+(Number(b)||0),0); }
+function safeNumber(v){ const n = Number(v); return Number.isFinite(n) ? String(n) : '0'; }
 function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
 function safeUrl(raw){
   try {
@@ -48,7 +49,7 @@ function applyLanguage(){
 
 function renderMetrics(){
   const keys = ['projects','curated','rejected','official_tools','ecosystem_projects'];
-  $('metrics').innerHTML = keys.map(k => `<div class="stat"><b>${metrics[k] ?? 0}</b><br><span class="muted">${t('metrics')[k]}</span></div>`).join('');
+  $('metrics').innerHTML = keys.map(k => `<div class="stat"><b>${safeNumber(metrics[k] ?? 0)}</b><br><span class="muted">${t('metrics')[k]}</span></div>`).join('');
 }
 
 function renderOfficial(){
@@ -76,7 +77,7 @@ function render(){
     .filter(p => p.ranking_scope === 'ecosystem' || p.ranking_scope === 'learning-resource')
     .filter(p => (!q || JSON.stringify(p).toLowerCase().includes(q)) && (!tool || (p.target_tools||[]).includes(tool)) && (!cat || (p.category||[]).includes(cat)) && (!source || p.source_type === source) && (!review || p.review_state === review) && (!curatedOnly || cids.has(p.id)))
     .sort((a,b)=>(cids.has(b.id)-cids.has(a.id)) || score(b)-score(a));
-  $('rows').innerHTML = rows.map(p => `<tr><td><b>${escapeHtml(textOf(p,'name'))}</b><br><span class="muted">${escapeHtml(textOf(p,'summary'))}</span></td><td>${escapeHtml(p.source_type)}</td><td><span class="pill quality-${safeToken(p.source_quality||'unverified')}">${escapeHtml(p.source_quality||'unverified')}</span>${cids.has(p.id)?`<span class="pill">${t('curated')}</span>`:''}</td><td>${pills(p.category)}</td><td>${escapeHtml((p.target_tools||[]).join(', '))}</td><td>${score(p)}</td><td><a href="${safeUrl(p.url)}" target="_blank" rel="noopener noreferrer">${t('open')}</a></td></tr>`).join('');
+  $('rows').innerHTML = rows.map(p => `<tr><td><b>${escapeHtml(textOf(p,'name'))}</b><br><span class="muted">${escapeHtml(textOf(p,'summary'))}</span></td><td>${escapeHtml(p.source_type)}</td><td><span class="pill quality-${safeToken(p.source_quality||'unverified')}">${escapeHtml(p.source_quality||'unverified')}</span>${cids.has(p.id)?`<span class="pill">${t('curated')}</span>`:''}</td><td>${pills(p.category)}</td><td>${escapeHtml((p.target_tools||[]).join(', '))}</td><td>${safeNumber(score(p))}</td><td><a href="${safeUrl(p.url)}" target="_blank" rel="noopener noreferrer">${t('open')}</a></td></tr>`).join('');
 }
 
 async function main(){

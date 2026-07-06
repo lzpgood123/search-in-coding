@@ -42,8 +42,8 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 - claude-code: 114
 - codex-cli: 62
 - cursor: 76
-- general-ai-coding: 66
-- goose: 46
+- general-ai-coding: 65
+- goose: 47
 - hermes-agent: 58
 - opencode: 61
 - qoder: 57
@@ -56,14 +56,14 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 - ai-ide: 199
 - benchmark-evaluation: 9
 - context-engineering: 66
-- mcp-acp-a2a: 166
+- mcp-acp-a2a: 161
 - official-tool: 10
 - persistent-agent: 1
 - rules-instructions: 143
 - skills-prompts: 207
 - terminal-agent: 28
 - testing-review-ci: 44
-- tutorial-case-study: 153
+- tutorial-case-study: 158
 
 ## Top ecosystem projects (official tools excluded)
 
