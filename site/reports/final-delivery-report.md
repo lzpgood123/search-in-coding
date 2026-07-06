@@ -55,15 +55,15 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 - agent-harness: 61
 - ai-ide: 197
 - benchmark-evaluation: 9
-- context-engineering: 59
-- mcp-acp-a2a: 165
+- context-engineering: 65
+- mcp-acp-a2a: 161
 - official-tool: 10
 - persistent-agent: 1
-- rules-instructions: 136
-- skills-prompts: 211
+- rules-instructions: 143
+- skills-prompts: 207
 - terminal-agent: 28
-- testing-review-ci: 45
-- tutorial-case-study: 162
+- testing-review-ci: 44
+- tutorial-case-study: 157
 
 ## Top ecosystem projects (official tools excluded)
 

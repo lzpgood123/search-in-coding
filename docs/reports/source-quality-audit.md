@@ -9,8 +9,6 @@ Fallback records are discovery leads, not Exa results. They are marked `fallback
 
 ## Rejected sample
 
-- [千问 - 阿里Qwen大模型打造的AI对话助手](https://qianwen.aigc.cn/) — Auto-rejected by scoring/source-quality rules: low confidence, fallback/noisy, generic, duplicate, or weak direct relevance.
-- [AI工具集官网 | 1000+ AI工具集合，国内外AI工具集导航大全](https://ai-bot.cn/) — Auto-rejected by scoring/source-quality rules: low confidence, fallback/noisy, generic, duplicate, or weak direct relevance.
 - [AI工具箱官网 | 3000 + 免费 AI 工具集合 | AI软件一站式导航网站](https://ai-kit.cn/) — Auto-rejected by scoring/source-quality rules: low confidence, fallback/noisy, generic, duplicate, or weak direct relevance.
 - [Baidu - 文心一言](https://yiyan.baidu.com/) — Auto-rejected by scoring/source-quality rules: low confidence, fallback/noisy, generic, duplicate, or weak direct relevance.
 - [AI网站汇总（免费chatgpt）（70个持续增加中） - 知乎](https://zhuanlan.zhihu.com/p/622871383) — Auto-rejected by scoring/source-quality rules: low confidence, fallback/noisy, generic, duplicate, or weak direct relevance.
@@ -29,3 +27,5 @@ Fallback records are discovery leads, not Exa results. They are marked `fallback
 - [GOOGLEFINANCE - Google Docs Editors Help](https://support.google.com/docs/answer/3093281?hl=en) — Auto-rejected by scoring/source-quality rules: low confidence, fallback/noisy, generic, duplicate, or weak direct relevance.
 - [Google Sheets function list - Google Docs Editors Help](https://support.google.com/docs/table/25273?hl=en) — Auto-rejected by scoring/source-quality rules: low confidence, fallback/noisy, generic, duplicate, or weak direct relevance.
 - [Set default search engine and site search shortcuts](https://support.google.com/chrome/answer/95426?hl=en&co=GENIE.Platform%3DDesktop) — Auto-rejected by scoring/source-quality rules: low confidence, fallback/noisy, generic, duplicate, or weak direct relevance.
+- [hermes-agent/README.zh-CN.md at main - GitHub](https://github.com/NousResearch/hermes-agent/blob/main/README.zh-CN.md) — Auto-rejected by scoring/source-quality rules: low confidence, fallback/noisy, generic, duplicate, or weak direct relevance.
+- [Hermes Agent 完整指南：从安装到进阶玩法，一篇搞定](https://zhuanlan.zhihu.com/p/2027128115831260939) — Auto-rejected by scoring/source-quality rules: low confidence, fallback/noisy, generic, duplicate, or weak direct relevance.

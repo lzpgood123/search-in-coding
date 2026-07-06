@@ -1,6 +1,6 @@
 {
   "query": "OpenAI Codex CLI tutorial workflow agentic coding case study",
-  "returncode": 127,
+  "returncode": 1,
   "stdout": "",
-  "stderr": "bash: line 1: mcporter: command not found\n"
+  "stderr": "[mcporter] exa.web_search_exa responded with HTTP 429 (Streamable HTTP error: Error POSTing to endpoint: {\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32000,\"message\":\"You've hit Exa's…).\n[mcporter] exa.web_search_exa responded with HTTP 429 (Streamable HTTP error: Error POSTing to endpoint: {\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32000,\"message\":\"You've hit Exa's…).\n[mcporter] Streamable HTTP error: Error POSTing to endpoint: {\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32000,\"message\":\"You've hit Exa's free MCP rate limit. To continue using without limits, create your own Exa API key.\\n\\nFix: Create API key at https://dashboard.exa.ai/api-keys , then either:\\n- Set the header: Authorization: Bearer YOUR_EXA_API_KEY\\n- Or use the URL: https://mcp.exa.ai/mcp?exaApiKey=YOUR_EXA_API_KEY\"},\"id\":null}\nStreamableHTTPError: Streamable HTTP error: Error POSTing to endpoint: {\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32000,\"message\":\"You've hit Exa's free MCP rate limit. To continue using without limits, create your own Exa API key.\\n\\nFix: Create API key at https://dashboard.exa.ai/api-keys , then either:\\n- Set the header: Authorization: Bearer YOUR_EXA_API_KEY\\n- Or use the URL: https://mcp.exa.ai/mcp?exaApiKey=YOUR_EXA_API_KEY\"},\"id\":null}\n    at StreamableHTTPClientTransport.send (file:///usr/lib/node_modules/mcporter/node_modules/@modelcontextprotocol/sdk/dist/esm/client/streamableHttp.js:364:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {\n  code: 429\n}\n"
 }
