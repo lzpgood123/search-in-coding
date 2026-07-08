@@ -1,4 +1,4 @@
-# Tool Ecosystem Comparison — 2026-07-07
+# Tool Ecosystem Comparison — 2026-07-08
 
 
 ## Claude Code
@@ -41,10 +41,10 @@
 
 ## OpenCode
 
-- Total records: 60
+- Total records: 61
 - Curated records: 2
 - Extension points: commands, agents, mcp, lsp, sourcegraph
-- Main categories: mcp-acp-a2a(29), skills-prompts(19), tutorial-case-study(14), rules-instructions(13), testing-review-ci(8), agent-harness(4)
+- Main categories: mcp-acp-a2a(29), skills-prompts(20), tutorial-case-study(14), rules-instructions(13), testing-review-ci(8), agent-harness(4)
 - Recommended records:
   - [OpenCode ecosystem extensions plugins MCP skills rules best practices](https://opencode.ai/docs/ecosystem/) — reference — score 13
   - [OpenCode ecosystem extensions plugins MCP skills rules best practices](https://dev.opencode.ai/docs/mcp-servers/) — reference — score 13
