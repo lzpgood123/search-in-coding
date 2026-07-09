@@ -47,20 +47,20 @@ Official tools are excluded.
 | 41 | brookslybrand/react-router-cursor-rules | github | try-now | 16 | rules-instructions, ai-ide | https://github.com/brookslybrand/react-router-cursor-rules |
 | 42 | BlueBirdBack/godot-cursorrules | github | try-now | 16 | rules-instructions, ai-ide | https://github.com/BlueBirdBack/godot-cursorrules |
 | 43 | skindhu/harmony-cursor-rules | github | try-now | 16 | rules-instructions, ai-ide | https://github.com/skindhu/harmony-cursor-rules |
-| 44 | waynesutton/promptstack | github | try-now | 15 | skills-prompts, rules-instructions, ai-ide | https://github.com/waynesutton/promptstack |
+| 44 | hxrshxz/fluid-cloudnative-custom-agent-workflows | github | try-now | 15 | skills-prompts | https://github.com/hxrshxz/fluid-cloudnative-custom-agent-workflows |
 | 45 | yinqd3/workbuddy-skills | github | try-now | 15 | skills-prompts, ai-ide | https://github.com/yinqd3/workbuddy-skills |
-| 46 | Qoder / QoderWork GitHub projects open source extensions | exa | reference | 13 | skills-prompts, testing-review-ci, agent-harness | https://github.com/VirgoShuyu/task-time-estimator |
-| 47 | Goose tutorial workflow agentic coding case study | exa | reference | 13 | context-engineering | https://github.com/block/goose/blob/58f3cc9e/documentation/docs/tutorials/rpi.md |
-| 48 | Goose tutorial workflow agentic coding case study | exa | reference | 13 | context-engineering | https://raw.githubusercontent.com/block/goose/refs/heads/main/documentation/src/pages/recipes/data/recipes/rpi-implement.yaml |
-| 49 | Goose tutorial workflow agentic coding case study | exa | reference | 13 | context-engineering | https://www.kdnuggets.com/free-agentic-coding-with-goose |
-| 50 | Goose tutorial workflow agentic coding case study | exa | reference | 13 | context-engineering | https://terminalskills.io/use-cases/build-extensible-ai-agent-with-goose |
-| 51 | Hermes Agent tutorial workflow agentic coding case study | exa | reference | 13 | skills-prompts | https://www.agentupdate.ai/tutorial/hermes-agent-tutorial/lesson-14/ |
-| 52 | Qoder / QoderWork context engineering codebase indexing rules prompts | exa | reference | 13 | skills-prompts, rules-instructions, context-engineering, ai-ide | https://docs.qoder.com/user-guide/rules |
-| 53 | Qoder / QoderWork context engineering codebase indexing rules prompts | exa | reference | 13 | skills-prompts, rules-instructions, context-engineering, ai-ide | https://docs.qoder.com/user-guide/indexing |
-| 54 | Antigravity CLI / Gemini CLI GitHub projects open source extensions | exa | reference | 13 | context-engineering, testing-review-ci, agent-harness, terminal-agent | https://github.com/Joonghyun-Lee-Frieren/oh-my-gemini-cli |
-| 55 | OpenAI Codex CLI tutorial workflow agentic coding case study | exa | reference | 13 | mcp-acp-a2a, benchmark-evaluation, agent-harness | https://raw.githubusercontent.com/openai/openai-cookbook/main/examples/codex/code_modernization.md |
-| 56 | OpenAI Codex CLI context engineering codebase indexing rules prompts | exa | reference | 13 | mcp-acp-a2a, skills-prompts, rules-instructions, context-engineering | https://developers.openai.com/codex/learn/best-practices |
-| 57 | OpenAI Codex CLI ecosystem extensions plugins MCP skills rules best practices | exa | reference | 13 | mcp-acp-a2a, skills-prompts, rules-instructions | https://developers.openai.com/codex/plugins |
-| 58 | OpenCode ecosystem extensions plugins MCP skills rules best practices | exa | reference | 13 | mcp-acp-a2a, skills-prompts, rules-instructions, testing-review-ci | https://opencode.ai/docs/ecosystem/ |
-| 59 | OpenCode ecosystem extensions plugins MCP skills rules best practices | exa | reference | 13 | mcp-acp-a2a, skills-prompts, rules-instructions | https://dev.opencode.ai/docs/mcp-servers/ |
-| 60 | OpenAI Codex CLI GitHub projects open source extensions | exa | reference | 13 | mcp-acp-a2a, skills-prompts | https://github.com/openai/codex |
+| 46 | Trae / Trae Work ecosystem extensions plugins MCP skills rules best practices | exa | reference | 13 | mcp-acp-a2a, skills-prompts, rules-instructions, ai-ide | https://www.trae.ai/ |
+| 47 | Hermes Agent tutorial workflow agentic coding case study | exa | reference | 13 | skills-prompts | https://hermes-agent.nousresearch.com/docs/ |
+| 48 | Goose tutorial workflow agentic coding case study | exa | reference | 13 | context-engineering | https://github.com/block/goose/blob/58f3cc9e/documentation/docs/tutorials/rpi.md |
+| 49 | Goose tutorial workflow agentic coding case study | exa | reference | 13 | context-engineering | https://raw.githubusercontent.com/block/goose/refs/heads/main/documentation/src/pages/recipes/data/recipes/rpi-research.yaml |
+| 50 | Goose tutorial workflow agentic coding case study | exa | reference | 13 | context-engineering | https://www.kdnuggets.com/free-agentic-coding-with-goose |
+| 51 | Goose tutorial workflow agentic coding case study | exa | reference | 13 | context-engineering | https://terminalskills.io/use-cases/build-extensible-ai-agent-with-goose |
+| 52 | Hermes Agent tutorial workflow agentic coding case study | exa | reference | 13 | skills-prompts | https://www.agentupdate.ai/tutorial/hermes-agent-tutorial/lesson-14/ |
+| 53 | Qoder / QoderWork context engineering codebase indexing rules prompts | exa | reference | 13 | skills-prompts, rules-instructions, context-engineering, ai-ide | https://docs.qoder.com/user-guide/rules |
+| 54 | Qoder / QoderWork context engineering codebase indexing rules prompts | exa | reference | 13 | skills-prompts, rules-instructions, context-engineering, ai-ide | https://docs.qoder.com/user-guide/indexing |
+| 55 | Antigravity CLI / Gemini CLI GitHub projects open source extensions | exa | reference | 13 | skills-prompts, agent-harness | https://github.com/Joonghyun-Lee-Frieren/oh-my-antigravity |
+| 56 | Antigravity CLI / Gemini CLI GitHub projects open source extensions | exa | reference | 13 | skills-prompts, agent-harness | https://img.shields.io/badge/Gemini-Extension-0d8a83 |
+| 57 | Antigravity CLI / Gemini CLI GitHub projects open source extensions | exa | reference | 13 | skills-prompts, agent-harness | https://geminicli.com/extensions/?name=Joonghyun-Lee-Frierenoh-my-antigravity |
+| 58 | Antigravity CLI / Gemini CLI GitHub projects open source extensions | exa | reference | 13 | skills-prompts, agent-harness | https://github.com/google-gemini/gemini-cli |
+| 59 | Antigravity CLI / Gemini CLI GitHub projects open source extensions | exa | reference | 13 | skills-prompts, agent-harness | https://github.com/Yeachan-Heo/oh-my-codex |
+| 60 | Antigravity CLI / Gemini CLI GitHub projects open source extensions | exa | reference | 13 | skills-prompts, agent-harness | https://github.com/Yeachan-Heo/oh-my-claudecode |

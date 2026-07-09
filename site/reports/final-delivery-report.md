@@ -6,24 +6,24 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 
 ## Metrics
 
-- Normalized records: 634
+- Normalized records: 663
 - Curated records: 60
 - Rejected/noisy records: 25
 - GitHub records: 273
 - Fallback web records: 147
 - Official seed records: 10
-- Exa records: 204
+- Exa records: 233
 
 ## Source counts
 
-- exa: 204
+- exa: 233
 - fallback-web: 147
 - github: 273
 - official-seed: 10
 
 ## Record kinds
 
-- article: 204
+- article: 233
 - ecosystem-project: 273
 - fallback-result: 106
 - official-tool: 10
@@ -33,37 +33,37 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 
 - ecosystem: 273
 - excluded: 25
-- learning-resource: 326
+- learning-resource: 355
 - official: 10
 
 ## Tool coverage
 
-- antigravity-cli: 68
-- claude-code: 115
+- antigravity-cli: 70
+- claude-code: 114
 - codex-cli: 62
-- cursor: 76
-- general-ai-coding: 70
-- goose: 47
-- hermes-agent: 56
-- opencode: 61
-- qoder: 56
-- trae: 25
-- workbuddy-codebuddy: 56
+- cursor: 77
+- general-ai-coding: 74
+- goose: 48
+- hermes-agent: 57
+- opencode: 64
+- qoder: 63
+- trae: 32
+- workbuddy-codebuddy: 57
 
 ## Category coverage
 
-- agent-harness: 59
-- ai-ide: 198
-- benchmark-evaluation: 9
-- context-engineering: 58
-- mcp-acp-a2a: 165
+- agent-harness: 63
+- ai-ide: 216
+- benchmark-evaluation: 11
+- context-engineering: 72
+- mcp-acp-a2a: 178
 - official-tool: 10
 - persistent-agent: 1
-- rules-instructions: 136
-- skills-prompts: 213
-- terminal-agent: 28
-- testing-review-ci: 46
-- tutorial-case-study: 164
+- rules-instructions: 157
+- skills-prompts: 234
+- terminal-agent: 26
+- testing-review-ci: 41
+- tutorial-case-study: 159
 
 ## Top ecosystem projects (official tools excluded)
 
@@ -90,4 +90,4 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 
 ## Exa status
 
-See `docs/reports/exa-status-and-fallback.md`. Current Exa availability: blocked / not configured.
+See `docs/reports/exa-status-and-fallback.md`. Current Exa availability: available.
