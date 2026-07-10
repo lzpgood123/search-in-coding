@@ -1,4 +1,4 @@
-# Final Delivery Report — 2026-07-09
+# Final Delivery Report — 2026-07-10
 
 ## Status
 
@@ -42,28 +42,28 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 - claude-code: 114
 - codex-cli: 62
 - cursor: 77
-- general-ai-coding: 74
+- general-ai-coding: 73
 - goose: 48
 - hermes-agent: 57
 - opencode: 64
 - qoder: 63
-- trae: 32
+- trae: 33
 - workbuddy-codebuddy: 57
 
 ## Category coverage
 
 - agent-harness: 63
-- ai-ide: 216
+- ai-ide: 217
 - benchmark-evaluation: 11
-- context-engineering: 72
-- mcp-acp-a2a: 178
+- context-engineering: 65
+- mcp-acp-a2a: 180
 - official-tool: 10
 - persistent-agent: 1
-- rules-instructions: 157
-- skills-prompts: 234
+- rules-instructions: 149
+- skills-prompts: 237
 - terminal-agent: 26
 - testing-review-ci: 41
-- tutorial-case-study: 159
+- tutorial-case-study: 164
 
 ## Top ecosystem projects (official tools excluded)
 
@@ -90,4 +90,4 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 
 ## Exa status
 
-See `docs/reports/exa-status-and-fallback.md`. Current Exa availability: available.
+See `docs/reports/exa-status-and-fallback.md`. Current Exa availability: blocked / not configured.
