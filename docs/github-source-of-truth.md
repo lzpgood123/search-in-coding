@@ -30,18 +30,19 @@ https://coding.lzpgood.online/
 - `site/reports/`：站点可访问报告副本；
 - `scripts/`：采集、分析、评分、构建、部署脚本；
 - `.github/workflows/`：GitHub 侧自动验证/采集工作流；
+- `.hermes/cron-prompts/`：Hermes 长期追踪提示词；
 - `VERSION`、`CHANGELOG.md`、`docs/releases/`：日期版本记录。
 
 ## 职责分工
 
-### Production scheduler
+### 服务器 Hermes cron
 
-Production runner 负责：
+服务器是正式生产运行环境，负责：
 
 1. 每日/每周自动采集 GitHub + Exa；
 2. 自动评分维护 curated/rejected；
 3. 生成报告和站点；
-4. 部署正式站点；
+4. 部署到 `/var/www/coding.lzpgood.online`；
 5. 将所有数据、报告、站点数据、版本记录提交并推送到 GitHub。
 
 ### GitHub Actions
@@ -51,9 +52,9 @@ GitHub Actions 是仓库侧自动化，负责：
 1. 在 GitHub 环境中运行数据更新或验证；
 2. 提交数据和报告到仓库；
 3. 发布 GitHub Pages 预览；
-4. 不部署到生产文件系统。
+4. 不部署到服务器 `/var/www`。
 
-因此 GitHub Actions 调用 `scripts/update_tracker.py` 时不需要部署参数；部署默认关闭。production scheduler 显式使用：
+因此 GitHub Actions 调用 `scripts/update_tracker.py` 时不需要部署参数；部署默认关闭。服务器 Hermes cron 显式使用：
 
 ```bash
 --deploy
@@ -61,9 +62,10 @@ GitHub Actions 是仓库侧自动化，负责：
 
 ## 手动立即更新
 
-如果需要立即更新，应执行：
+如果用户要求立即更新，应执行：
 
 ```bash
+cd "/root/workspace/search in coding"
 git pull --ff-only origin main
 python3 scripts/update_tracker.py --github-limit 50 --exa-limit 5 --deploy
 git status --short
@@ -84,5 +86,3 @@ git push origin main
 > GitHub 保存完整历史和完整数据；正式站点只展示当前构建结果。
 
 任何自动更新只要产生有意义变化，都必须推送到 GitHub。
-
-Production deployment uses `SEARCH_IN_CODING_WEBROOT` or `scripts/deploy_site.py --dest <webroot>`; concrete server paths should stay outside public docs.

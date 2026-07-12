@@ -1,4 +1,4 @@
-# Final Delivery Report — 2026-07-11
+# Final Delivery Report — 2026-07-06
 
 ## Status
 
@@ -6,64 +6,64 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 
 ## Metrics
 
-- Normalized records: 667
+- Normalized records: 618
 - Curated records: 60
 - Rejected/noisy records: 25
-- GitHub records: 277
+- GitHub records: 264
 - Fallback web records: 147
 - Official seed records: 10
-- Exa records: 233
+- Exa records: 197
 
 ## Source counts
 
-- exa: 233
+- exa: 197
 - fallback-web: 147
-- github: 277
+- github: 264
 - official-seed: 10
 
 ## Record kinds
 
-- article: 233
-- ecosystem-project: 277
+- article: 197
+- ecosystem-project: 264
 - fallback-result: 106
 - official-tool: 10
 - tutorial: 41
 
 ## Ranking scopes
 
-- ecosystem: 277
+- ecosystem: 264
 - excluded: 25
-- learning-resource: 355
+- learning-resource: 319
 - official: 10
 
 ## Tool coverage
 
 - antigravity-cli: 70
-- claude-code: 116
-- codex-cli: 63
-- cursor: 78
-- general-ai-coding: 76
-- goose: 48
-- hermes-agent: 57
-- opencode: 64
-- qoder: 63
-- trae: 32
-- workbuddy-codebuddy: 57
+- claude-code: 108
+- codex-cli: 61
+- cursor: 72
+- general-ai-coding: 65
+- goose: 46
+- hermes-agent: 53
+- opencode: 59
+- qoder: 57
+- trae: 25
+- workbuddy-codebuddy: 55
 
 ## Category coverage
 
-- agent-harness: 63
-- ai-ide: 217
-- benchmark-evaluation: 11
-- context-engineering: 65
-- mcp-acp-a2a: 183
+- agent-harness: 62
+- ai-ide: 195
+- benchmark-evaluation: 10
+- context-engineering: 67
+- mcp-acp-a2a: 161
 - official-tool: 10
 - persistent-agent: 1
-- rules-instructions: 149
-- skills-prompts: 237
-- terminal-agent: 26
-- testing-review-ci: 42
-- tutorial-case-study: 165
+- rules-instructions: 135
+- skills-prompts: 201
+- terminal-agent: 37
+- testing-review-ci: 56
+- tutorial-case-study: 136
 
 ## Top ecosystem projects (official tools excluded)
 
@@ -90,4 +90,4 @@ Search in Coding final-delivery package is built with quality gates, curated dat
 
 ## Exa status
 
-See `docs/reports/exa-status-and-fallback.md`. Current Exa availability: blocked / not configured.
+See `docs/reports/exa-status-and-fallback.md`. Current Exa availability: available.

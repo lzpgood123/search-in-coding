@@ -1,7 +1,7 @@
 # Search in Coding 全流程优化清单
 
 > 生成日期：2026-07-06  
-> 范围：采集、归一化、评分、报告、站点、双语、GitHub 总仓库、Actions、production scheduler、正式部署。
+> 范围：采集、归一化、评分、报告、站点、双语、GitHub 总仓库、Actions、Hermes cron、正式部署。
 
 正式站点：<https://coding.lzpgood.online/>  
 GitHub 总仓库：<https://github.com/lzpgood123/search-in-coding>
@@ -17,7 +17,7 @@ GitHub 总仓库：<https://github.com/lzpgood123/search-in-coding>
 - 报告生成可用；
 - 站点构建和正式 Nginx 部署可用；
 - GitHub 作为 source of truth 的流程已建立；
-- GitHub Actions 与 production scheduler 均已运行；
+- GitHub Actions 与 Hermes cron 均已运行；
 - 中文 / English UI 切换已上线；
 - 质量门禁通过。
 
@@ -39,7 +39,7 @@ site missing i18n: 0
 1. 双语内容还只是结构化 fallback，不是真正翻译；
 2. 数据层 `data/projects.yaml` 尚未持久化 i18n 字段，只有 site 构建时补齐；
 3. 自动评分规则偏粗，分类过度集中；
-4. GitHub Actions/production scheduler 职责仍需进一步硬化；
+4. GitHub Actions/服务器 cron 职责仍需进一步硬化；
 5. 站点功能仍偏基础，缺少详情页、趋势图、搜索体验；
 6. raw 数据长期直接入 Git 可能导致仓库膨胀；
 7. 报告仍是静态摘要，缺少“变化检测”和“新旧对比”；
@@ -57,7 +57,7 @@ curated: 60
 rejected: 25
 duplicate_urls: 5
 missing_summary: 0
-missing_i18n in data/projects.yaml: 618
+missing_i18n in data/projects.yaml: 0 after implementation
 missing_i18n in site/data/projects.json: 0
 ```
 
@@ -96,8 +96,8 @@ official-tool: 10
 ### review_state 分布
 
 ```text
-auto-reviewed: 70
-unreviewed: 523
+auto-curated: 70
+auto-indexed: 523
 auto-rejected: 25
 ```
 
@@ -146,20 +146,20 @@ missing_i18n in data/projects.yaml = 0
 
 ---
 
-### P0-2：GitHub Actions 与production runner部署职责进一步隔离
+### P0-2：GitHub Actions 与服务器部署职责进一步隔离
 
 **问题**  
-目前已给 GitHub Actions 加了 `--skip-deploy`，这是正确的。但 `update_tracker.py` 默认部署，GitHub workflow 依赖调用者记得加参数。
+已改为 `update_tracker.py` 默认不部署，服务器 cron 显式传 `--deploy`。
 
 **影响**
 
-- 后续新增 workflow 时可能误触发production runner部署逻辑；
-- GitHub runner 没有 the production webroot，误运行会失败。
+- 后续新增 workflow 时可能误触发服务器部署逻辑；
+- GitHub runner 没有 `/var/www`，误运行会失败。
 
 **建议**
 
 - `update_tracker.py` 默认不部署；
-- production scheduler 显式传 `--deploy`；
+- 服务器 cron 显式传 `--deploy`；
 - 或根据环境变量 `SEARCH_IN_CODING_DEPLOY=1` 才部署。
 
 推荐改为：
@@ -173,7 +173,7 @@ GitHub Actions 使用默认不部署。
 **验收**
 
 - GitHub Actions 无需 `--skip-deploy` 也不部署；
-- production scheduler 显式部署；
+- 服务器 cron 显式部署；
 - 正式站点仍更新。
 
 ---
@@ -222,14 +222,7 @@ excluded
 **问题**  
 `agent-harness` 和 `testing-review-ci` 记录过多，说明 keyword matching 太粗。
 
-当前 `normalize.py` 里类似：
-
-```python
-('agent', 'agent-harness')
-('review', 'testing-review-ci')
-```
-
-这会把大量只出现 agent/review 字样的记录误分类。
+已将分类规则收紧为短语匹配，避免只凭单个 `agent` / `review` 归类。
 
 **建议**
 
@@ -344,7 +337,7 @@ docs/reports/weekly/YYYY-MM-DD-weekly-update.md
 
 **验收**
 
-读者不用打开 JSON，也能理解为什么这个项目被推荐。
+用户不用打开 JSON，也能理解为什么这个项目被推荐。
 
 ---
 
@@ -516,7 +509,7 @@ ecosystem-tracker-template
 ### 第一批：稳定性和数据源可信度
 
 1. P0-1：持久化 i18n 到 `data/projects.yaml`。
-2. P0-2：改成默认不部署，production runner显式 `--deploy`。
+2. P0-2：改成默认不部署，服务器显式 `--deploy`。
 3. P0-3：review_state 改名为自动维护语义。
 4. P1-1：分类规则收紧。
 5. P1-2：评分配置外置。
@@ -545,7 +538,7 @@ ecosystem-tracker-template
 ```text
 请按 docs/reports/optimization-backlog.md 的第一批优化执行：
 1. 持久化 i18n 到 data/projects.yaml；
-2. update_tracker 默认不部署，production scheduler 显式 --deploy；
+2. update_tracker 默认不部署，服务器 cron 显式 --deploy；
 3. 将 review_state 改成 auto-indexed / auto-curated / auto-rejected；
 4. 收紧分类规则；
 5. 将评分权重外置到 config/scoring.yaml。
@@ -553,12 +546,12 @@ ecosystem-tracker-template
 ```
 ---
 
-## 9. 第一批优化完成状态 — 2026-07-06
+## 9. 第一批优化执行结果 — 2026-07-06
 
-第一批优化已完成：
+本轮 Goal 执行已完成第一批优化：
 
 - `data/projects.yaml`、`data/curated-projects.yaml`、`data/rejected-projects.yaml` 已持久化 `i18n.zh/en`。
-- `scripts/update_tracker.py` 已改为默认不部署，只有显式 `--deploy` 才同步到 the production webroot。
+- `scripts/update_tracker.py` 已改为默认不部署，只有显式 `--deploy` 才同步到 `/var/www/coding.lzpgood.online`。
 - Hermes daily / weekly cron 已更新为显式 `--deploy`。
 - `review_state` 已改为自动维护语义：`auto-indexed` / `auto-curated` / `auto-rejected`。
 - `scripts/normalize.py` 已收紧分类规则，避免仅凭 `agent` / `review` 过度归类。
@@ -583,43 +576,3 @@ production deploy: PASS
 3. 对 Top curated 做真实中英摘要增强。
 4. 增加 pytest 测试集。
 5. 设计 raw 数据归档策略。
----
-
-## 10. 剩余优化完成结果 — 2026-07-06
-
-剩余主要优化项目已完成：
-
-- P1-3：新增 `scripts/snapshot_and_diff.py`，生成 `data/snapshots/` 与 `docs/reports/weekly/` 变化报告。
-- P1-4 / P2-5：站点增加详情展开、排序、URL 筛选状态、复制链接、最近新增筛选。
-- P1-5：新增 `scripts/enrich_translations.py`，对 Top curated 生成规则化中英摘要并标记 `translation_state=rule-generated`。
-- P2-1：新增 `scripts/archive_raw.py` 与 `docs/raw-data-retention.md`，提供 raw 归档策略。
-- P2-2：GitHub topics 已设置。
-- P2-4：新增 pytest 测试集并接入 GitHub Actions。
-- P3-2：新增 `docs/data-api.md`，说明静态 JSON 数据 API。
-- P3-3：新增 `docs/ecosystem-tracker-template.md`，说明模板化复用方式。
-
-仍属未来增强的方向：
-
-- 使用真实 LLM/人工校订翻译替代规则化摘要。
-- 使用 embedding 做更强语义去重。
-- 将大型 raw archive 移到 GitHub Release assets。
----
-
-## 11. P3-1 语义去重后续设计 — 2026-07-06
-
-已单独补充后续优化设计文档：
-
-```text
-docs/semantic-deduplication-plan.md
-```
-
-该文档覆盖：
-
-- TF-IDF baseline；
-- 本地 embedding 模型；
-- FAISS / 向量库可选路线；
-- duplicate candidate 数据结构；
-- pipeline 接入点；
-- apply 策略；
-- 测试计划；
-- Definition of Done。
