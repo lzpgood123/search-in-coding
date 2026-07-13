@@ -12,8 +12,7 @@
   i18n:
     zh:
       name: JuliusBrussee/caveman
-      summary: 🪨 why use many token when few token do trick — Claude Code skill that
-        cuts 65% of tokens by talking like caveman
+      summary: 🪨 何必用那么多词，几个词就够了——Claude Code 技能通过像穴居人一样说话，减少了65%的令牌消耗
     en:
       name: JuliusBrussee/caveman
       summary: 🪨 why use many token when few token do trick — Claude Code skill that
@@ -39,7 +38,13 @@
   - prompt-engineering
   - skill
   - tokens
-  readme_preview: ''
+  readme_preview: "why use many token when few do trick\n\n  Make your AI coding agent\
+    \ talk like a caveman.\n  Same answers, 65% fewer output tokens. Brain still big.\
+    \ Mouth small.\n\n  \n  \n  \n  \n\n  See it ·\n  Install ·\n  Levels ·\n  What\
+    \ you get ·\n  Benchmarks ·\n  Ecosystem ·\n  Caveman 2\n\n---\n\nCaveman is a\
+    \ skill/plugin for [Claude Code](https://docs.anthropic.com/en/docs/claude-code),\
+    \ Codex, Gemini, Cursor, Windsurf, Cline, Copilot, and 30+ other agents. Install\
+    \ once. Agent drops the filler and answers in tight caveman-"
   tags: []
   review_state: auto-curated
   quantifiable_score: 49
@@ -69,12 +74,12 @@
   i18n:
     zh:
       name: cline/cline
-      summary: Autonomous coding agent as an SDK, IDE extension, or CLI assistant.
+      summary: Autonomous coding agent 作为 SDK、IDE 扩展或 CLI 助手。
     en:
       name: cline/cline
       summary: Autonomous coding agent as an SDK, IDE extension, or CLI assistant.
   status: unknown
-  license: null
+  license: apache-2.0
   stars: 64610
   forks: 6901
   last_updated: '2026-07-13T13:32:20Z'
@@ -93,19 +98,19 @@
     ><strong>Discord</strong></a>\n</td>\n<td align=\"center\">\n<a href=\"https://"
   tags: []
   review_state: auto-curated
-  quantifiable_score: 47
+  quantifiable_score: 49
   quality_score: 0
-  total_score: 47
+  total_score: 49
   score_detail:
     stars: 20
     activity: 15
     adoption: 10
-    maturity: 2
+    maturity: 4
   tracking_priority: track
   last_analyzed: null
   benchmark_ref: null
   recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=47, resource_types=extension,
+  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=extension,
     cli-tool.'
 - id: github-aaif-goose-goose
   name: aaif-goose/goose
@@ -113,7 +118,7 @@
   repo: aaif-goose/goose
   source_type: github
   resource_type:
-  - tutorial
+  - cli-tool
   target_tools:
   - goose
   summary: an open source, extensible AI agent that goes beyond code suggestions -
@@ -121,14 +126,13 @@
   i18n:
     zh:
       name: aaif-goose/goose
-      summary: an open source, extensible AI agent that goes beyond code suggestions
-        - install, execute, edit, and test with any LLM
+      summary: 一个开源、可扩展的AI代理，不仅提供代码建议，还能与任何LLM配合进行安装、执行、编辑和测试
     en:
       name: aaif-goose/goose
       summary: an open source, extensible AI agent that goes beyond code suggestions
         - install, execute, edit, and test with any LLM
   status: unknown
-  license: null
+  license: apache-2.0
   stars: 51152
   forks: 5684
   last_updated: '2026-07-13T13:40:40Z'
@@ -150,19 +154,19 @@
     \ alt=\"Discord\"></a>\n  <a href=\"https:"
   tags: []
   review_state: auto-curated
-  quantifiable_score: 47
+  quantifiable_score: 49
   quality_score: 0
-  total_score: 47
+  total_score: 49
   score_detail:
     stars: 20
     activity: 15
     adoption: 10
-    maturity: 2
+    maturity: 4
   tracking_priority: track
   last_analyzed: null
   benchmark_ref: null
   recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=47, resource_types=tutorial.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=cli-tool.'
 - id: github-alirezarezvani-claude-skills
   name: alirezarezvani/claude-skills
   url: https://github.com/alirezarezvani/claude-skills
@@ -183,10 +187,8 @@
   i18n:
     zh:
       name: alirezarezvani/claude-skills
-      summary: 337 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom
-        commands, 330+ skills, customizable references, scripts)for Claude Code, Codex,
-        Gemini CLI, Cursor, and 8 more coding agents — engineering, marketing, product,
-        complian
+      summary: 337个Claude Code技能与代理技能及插件（30+代理，70+自定义命令，330+技能，可自定义的参考、脚本）适用于Claude
+        Code、Codex、Gemini CLI、Cursor及其他8个编码代理——工程、营销、产品、合规
     en:
       name: alirezarezvani/claude-skills
       summary: 337 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom
@@ -224,7 +226,19 @@
   - openclaw
   - openclaw-skills
   - openclaw-plugins
-  readme_preview: ''
+  readme_preview: '# Claude Code Skills & Plugins — Agent Skills for Every Coding
+    Tool
+
+
+    **355 production-ready Claude Code skills, plugins, and agent skills for 13 AI
+    coding tools.**
+
+
+    The most comprehensive open-source library of Claude Code skills and agent plugins
+    — also works with OpenAI Codex, Gemini CLI, Cursor, and 9 more coding agents.
+    Reusable expertise packages covering engineering, DevOps, marketing (incl. AEO
+    — Answer Engine Optimization for LLM citation), security (PreToolUse hooks), compliance,
+    C-leve'
   tags: []
   review_state: auto-curated
   quantifiable_score: 45
@@ -241,68 +255,26 @@
   recommendation_level: try-now
   curation_note: 'Auto-selected by scoring rules: source=github, score=45, resource_types=skills,
     extension.'
-- id: github-blader-humanizer
-  name: blader/humanizer
-  url: https://github.com/blader/humanizer
-  repo: blader/humanizer
-  source_type: github
-  resource_type:
-  - skills
-  target_tools:
-  - claude-code
-  summary: Claude Code skill that removes signs of AI-generated writing from text
-  i18n:
-    zh:
-      name: blader/humanizer
-      summary: Claude Code skill that removes signs of AI-generated writing from text
-    en:
-      name: blader/humanizer
-      summary: Claude Code skill that removes signs of AI-generated writing from text
-  status: unknown
-  license: mit
-  stars: 27726
-  forks: 2570
-  last_updated: '2026-07-06T15:06:02Z'
-  first_seen: '2026-07-13'
-  last_seen: '2026-07-13'
-  maturity: unknown
-  languages: []
-  topics: []
-  readme_preview: ''
-  tags: []
-  review_state: auto-curated
-  quantifiable_score: 43
-  quality_score: 0
-  total_score: 43
-  score_detail:
-    stars: 16
-    activity: 15
-    adoption: 10
-    maturity: 2
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: null
-  recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=43, resource_types=skills.'
 - id: github-continuedev-continue
   name: continuedev/continue
   url: https://github.com/continuedev/continue
   repo: continuedev/continue
   source_type: github
   resource_type:
-  - tutorial
+  - cli-tool
+  - agent-framework
   target_tools:
   - general-ai-coding
   summary: open-source coding agent
   i18n:
     zh:
       name: continuedev/continue
-      summary: open-source coding agent
+      summary: 开源编程代理
     en:
       name: continuedev/continue
       summary: open-source coding agent
   status: unknown
-  license: null
+  license: apache-2.0
   stars: 34846
   forks: 5034
   last_updated: '2026-07-13T12:42:54Z'
@@ -342,19 +314,20 @@
     '
   tags: []
   review_state: auto-curated
-  quantifiable_score: 43
+  quantifiable_score: 45
   quality_score: 0
-  total_score: 43
+  total_score: 45
   score_detail:
     stars: 16
     activity: 15
     adoption: 10
-    maturity: 2
+    maturity: 4
   tracking_priority: track
   last_analyzed: null
   benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=43, resource_types=tutorial.'
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=45, resource_types=cli-tool,
+    agent-framework.'
 - id: github-aider-ai-aider
   name: Aider-AI/aider
   url: https://github.com/Aider-AI/aider
@@ -368,12 +341,12 @@
   i18n:
     zh:
       name: Aider-AI/aider
-      summary: aider is AI pair programming in your terminal
+      summary: aider 是在你的终端中进行 AI 结对编程
     en:
       name: Aider-AI/aider
       summary: aider is AI pair programming in your terminal
   status: unknown
-  license: null
+  license: apache-2.0
   stars: 47338
   forks: 4727
   last_updated: '2026-07-13T13:36:30Z'
@@ -406,6 +379,88 @@
     \ import "
   tags: []
   review_state: auto-curated
+  quantifiable_score: 45
+  quality_score: 0
+  total_score: 45
+  score_detail:
+    stars: 16
+    activity: 15
+    adoption: 10
+    maturity: 4
+  tracking_priority: track
+  last_analyzed: null
+  benchmark_ref: null
+  recommendation_level: watch
+  curation_note: 'Auto-selected by scoring rules: source=github, score=45, resource_types=cli-tool.'
+- id: github-blader-humanizer
+  name: blader/humanizer
+  url: https://github.com/blader/humanizer
+  repo: blader/humanizer
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - claude-code
+  summary: Claude Code skill that removes signs of AI-generated writing from text
+  i18n:
+    zh:
+      name: blader/humanizer
+      summary: Claude Code 技能，用于从文本中移除AI生成的写作痕迹
+    en:
+      name: blader/humanizer
+      summary: Claude Code skill that removes signs of AI-generated writing from text
+  status: unknown
+  license: mit
+  stars: 27726
+  forks: 2570
+  last_updated: '2026-07-06T15:06:02Z'
+  first_seen: '2026-07-13'
+  last_seen: '2026-07-13'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: '# Humanizer
+
+
+    A portable agent skill that removes signs of AI-generated writing from text, making
+    it sound more natural and human. It is plain Markdown, so it can run in any harness
+    that supports skill-style instructions.
+
+
+    ## Installation
+
+
+    ### Skills CLI
+
+
+    Install with the cross-agent skills CLI:
+
+
+    ```bash
+
+    npx skills add blader/humanizer
+
+    ```
+
+
+    Update an existing install:
+
+
+    ```bash
+
+    npx skills update humanizer
+
+    ```
+
+
+    To install into every supported agent harness:
+
+
+    ```bash
+
+    npx skills add blader/humanizer '
+  tags: []
+  review_state: auto-curated
   quantifiable_score: 43
   quality_score: 0
   total_score: 43
@@ -414,25 +469,25 @@
     activity: 15
     adoption: 10
     maturity: 2
-  tracking_priority: track
+  tracking_priority: pending
   last_analyzed: null
   benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=43, resource_types=cli-tool.'
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=43, resource_types=skills.'
 - id: github-cursor-cursor
   name: cursor/cursor
   url: https://github.com/cursor/cursor
   repo: cursor/cursor
   source_type: github
   resource_type:
-  - tutorial
+  - cli-tool
   target_tools:
   - cursor
   summary: cursor/cursor
   i18n:
     zh:
       name: cursor/cursor
-      summary: cursor/cursor
+      summary: 光标/光标
     en:
       name: cursor/cursor
       summary: cursor/cursor
@@ -493,7 +548,7 @@
   last_analyzed: null
   benchmark_ref: null
   recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=41, resource_types=tutorial.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=41, resource_types=cli-tool.'
 - id: github-op7418-humanizer-zh
   name: op7418/Humanizer-zh
   url: https://github.com/op7418/Humanizer-zh
@@ -521,7 +576,44 @@
   maturity: unknown
   languages: []
   topics: []
-  readme_preview: ''
+  readme_preview: '# Humanizer-zh: AI 写作去痕工具（中文版）
+
+
+    > **声明：**
+
+    > - 本项目的核心文件翻译自 [blader/humanizer](https://github.com/blader/humanizer/tree/main)
+
+    > - 实用工具部分（核心规则、快速检查清单、质量评分）参考了 [hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop)
+
+    > - 原项目基于维基百科的 [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)
+    指南
+
+
+    ---
+
+
+    ## 项目简介
+
+
+    Humanizer-zh 是一个用于去除文本中 AI 生成痕迹的工具，帮助你将 AI 生成的内容改写得更自然、更像人类书写的文本。
+
+
+    本项目适用于：
+
+    - 编辑和审阅 AI 生成的内容
+
+    - 提升文章的人性化程度
+
+    - 学习识别 AI 写作的常见模式
+
+
+    ## 安装
+
+
+    ### 方法一：通过 npx 一键安装（推荐）
+
+
+    ```b'
   tags: []
   review_state: auto-curated
   quantifiable_score: 40
@@ -551,8 +643,7 @@
   i18n:
     zh:
       name: virgiliojr94/book-to-skill
-      summary: Turn any technical book PDF into a Claude Code skill — ready to study,
-        reference, and use while you work.
+      summary: 将任何技术书籍PDF转化为Claude Code技能——随时学习、查阅和使用，就在你工作时。
     en:
       name: virgiliojr94/book-to-skill
       summary: Turn any technical book PDF into a Claude Code skill — ready to study,
@@ -568,7 +659,13 @@
   languages:
   - Python
   topics: []
-  readme_preview: ''
+  readme_preview: "book-to-skill\n\n  Turn any technical book, document folder, or\
+    \ collection of sources into a unified agent skill — ready to study, reference,\
+    \ and use while you work in GitHub Copilot CLI, Amp, or Claude Code.\n\n  \n \
+    \ \n  \n  \n  \n\n  \U0001F3C6 #10 Python Repository of the Day and #25 Repository\
+    \ of the Day on Trendshift (May 23, 2026)\n\n  Why ·\n  What it generates ·\n\
+    \  Beyond books ·\n  Usage ·\n  Requirements ·\n  How it works ·\n  Discovery\
+    \ Loop Tax ·\n  FAQ ·\n  Install ·\n  Changelog ·\n  Performance ·\n  Architecture\n"
   tags: []
   review_state: auto-curated
   quantifiable_score: 38
@@ -597,7 +694,7 @@
   i18n:
     zh:
       name: SimoneAvogadro/android-reverse-engineering-skill
-      summary: Claude Code skill to support Android app's reverse engineering
+      summary: 支持Android应用逆向工程的Claude Code技能
     en:
       name: SimoneAvogadro/android-reverse-engineering-skill
       summary: Claude Code skill to support Android app's reverse engineering
@@ -612,7 +709,12 @@
   languages:
   - Shell
   topics: []
-  readme_preview: ''
+  readme_preview: '# Android Reverse Engineering & API Extraction — Claude Code skill
+
+
+    [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+    [![GitHub stars](https://img.shields.io/github/stars/SimoneAvogadro/android-reverse-engineering-skill?style=social)](https://github.com/SimoneAvogadro/android-reverse-engineering-skill/stargazers)
+    [![GitHub last commit](https://img.shields.io/github/last-commit/SimoneAvogadro/android-reverse-engineering'
   tags: []
   review_state: auto-curated
   quantifiable_score: 38
@@ -642,8 +744,7 @@
   i18n:
     zh:
       name: trailofbits/skills
-      summary: Trail of Bits Claude Code skills for security research, vulnerability
-        detection, and audit workflows
+      summary: Trail of Bits 的 Claude Code 技能用于安全研究、漏洞检测和审计工作流
     en:
       name: trailofbits/skills
       summary: Trail of Bits Claude Code skills for security research, vulnerability
@@ -660,7 +761,17 @@
   - Python
   topics:
   - agent-skills
-  readme_preview: ''
+  readme_preview: '# Trail of Bits Skills Marketplace
+
+
+    A Claude Code plugin marketplace from Trail of Bits providing skills to enhance
+    AI-assisted security analysis, testing, and development workflows. Codex can load
+    this marketplace through its Claude marketplace compatibility.
+
+
+    > Also see: [claude-code-config](https://github.com/trailofbits/claude-code-config)
+    · [skills-curated](https://github.com/trailofbits/skills-curated) · [claude-code-devcontainer](https://github.com/trailofbits/claude-code-devcontainer)
+    · '
   tags: []
   review_state: auto-curated
   quantifiable_score: 38
@@ -690,8 +801,7 @@
   i18n:
     zh:
       name: zarazhangrui/codebase-to-course
-      summary: A Claude Code skill that turns any codebase into a beautiful, interactive
-        single-page HTML course for non-technical vibe coders.
+      summary: 一个Claude Code技能，能将任何代码库转化为美观、交互式的单页HTML课程，供非技术型的氛围编码者使用。
     en:
       name: zarazhangrui/codebase-to-course
       summary: A Claude Code skill that turns any codebase into a beautiful, interactive
@@ -707,7 +817,23 @@
   languages:
   - CSS
   topics: []
-  readme_preview: ''
+  readme_preview: '# Codebase to Course
+
+
+    A Claude Code skill that turns any codebase into a beautiful, interactive single-page
+    HTML course.
+
+
+    Point it at a repo. Get back a stunning, self-contained course that teaches how
+    the code works — with scroll-based navigation, animated visualizations, embedded
+    quizzes, and code-with-plain-English side-by-side translations.
+
+
+    ## Who is this for?
+
+
+    **"Vibe coders"** — people who build software by instructing AI coding tools in
+    natural language, without a traditional CS educatio'
   tags: []
   review_state: auto-curated
   quantifiable_score: 36
@@ -739,9 +865,7 @@
   i18n:
     zh:
       name: OpenCoworkAI/open-cowork
-      summary: Open-source AI agent desktop app for Windows & macOS. One-click install
-        Claude Code, MCP tools, and Skills — with sandbox isolation, multi-model support,
-        and Feishu/Slack integration.
+      summary: 开源AI智能体桌面应用，适用于Windows和macOS。一键安装Claude Code、MCP工具和Skills——支持沙箱隔离、多模型，以及Feishu/Slack集成。
     en:
       name: OpenCoworkAI/open-cowork
       summary: Open-source AI agent desktop app for Windows & macOS. One-click install
@@ -772,7 +896,13 @@
   - multi-model
   - sandbox
   - skills
-  readme_preview: ''
+  readme_preview: "\U0001F680 Open Cowork: Your Personal AI Agent Desktop App\n\n\
+    \  • Open Source Claude Cowork • One-Click Install \n\n  中文文档 •\n  Features •\n\
+    \  Demo •\n  Downloads •\n  Quick Start •\n  Skills Library\n\n  \n  \n  \n  \n\
+    \  \n\n---\n\nOpen Cowork is a free, open-source AI agent desktop application\
+    \ for Windows and macOS. It wraps Claude Code, OpenAI, Gemini, DeepSeek, and other\
+    \ AI models into a user-friendly GUI with one-click installation — no coding required.\
+    \ Key capabilities include VM-level sandbox isolation (WSL2 on Window"
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -802,7 +932,7 @@
   i18n:
     zh:
       name: steipete/claude-code-mcp
-      summary: Claude Code as one-shot MCP server to have an agent in your agent.
+      summary: 将 Claude Code 作为一次性 MCP 服务器，让您的代理中再拥有一个代理。
     en:
       name: steipete/claude-code-mcp
       summary: Claude Code as one-shot MCP server to have an agent in your agent.
@@ -820,7 +950,20 @@
   - agent
   - claude
   - mcp
-  readme_preview: ''
+  readme_preview: '# Claude Code MCP Server
+
+
+    [![npm package](https://img.shields.io/npm/v/@steipete/claude-code-mcp)](https://www.npmjs.com/package/@steipete/claude-code-mcp)
+
+    [![View changelog](https://img.shields.io/badge/Explore%20Changelog-brightgreen)](/CHANGELOG.md)
+
+
+    An MCP (Model Context Protocol) server that allows running Claude Code in one-shot
+    mode, with bypassed permissions by default and optional native Claude Code permission
+    modes.
+
+
+    Did you notice that Cursor sometimes struggles with complex, multi-st'
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -843,14 +986,13 @@
   source_type: github
   resource_type:
   - rules
-  - tutorial
   target_tools:
   - cursor
   summary: Curated list of awesome Cursor Rules .mdc files
   i18n:
     zh:
       name: sanjeed5/awesome-cursor-rules-mdc
-      summary: Curated list of awesome Cursor Rules .mdc files
+      summary: 精选的Cursor Rules .mdc文件列表
     en:
       name: sanjeed5/awesome-cursor-rules-mdc
       summary: Curated list of awesome Cursor Rules .mdc files
@@ -865,7 +1007,19 @@
   languages:
   - Python
   topics: []
-  readme_preview: ''
+  readme_preview: '# MDC Rules Generator
+
+
+    > **Disclaimer:** This project is not officially associated with or endorsed by
+    Cursor. It is a community-driven initiative to enhance the Cursor experience.
+
+
+    This project generates Cursor MDC (Markdown Cursor) rule files from a structured
+    JSON file containing library information. It uses Exa for semantic search and
+    LLM (Gemini) for content generation.
+
+
+    [![Star History Chart](https://api.star-history.com/svg?repos=sanjeed5/awesome-cursor-rules-mdc&type=Date)](https://www.s'
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -880,8 +1034,7 @@
   last_analyzed: null
   benchmark_ref: null
   recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=34, resource_types=rules,
-    tutorial.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=34, resource_types=rules.'
 - id: github-sceneview-sceneview
   name: sceneview/sceneview
   url: https://github.com/sceneview/sceneview
@@ -898,9 +1051,8 @@
   i18n:
     zh:
       name: sceneview/sceneview
-      summary: '3D & AR SDK for Android (Jetpack Compose + Filament), iOS (SwiftUI
-        + RealityKit), and Web. AI-first: llms.txt, MCP server, Copilot/Cursor rules.
-        The only Compose-native 3D library.'
+      summary: 适用于Android（Jetpack Compose + Filament）、iOS（SwiftUI + RealityKit）和Web的3D和AR
+        SDK。AI优先：llms.txt、MCP服务器、Copilot/Cursor规则。唯一的Compose原生3D库。
     en:
       name: sceneview/sceneview
       summary: '3D & AR SDK for Android (Jetpack Compose + Filament), iOS (SwiftUI
@@ -937,7 +1089,21 @@
   - web
   - augmented-reality
   - visionos
-  readme_preview: ''
+  readme_preview: '# SceneView
+
+
+    > **3D & AR for every platform.**
+
+
+    Build 3D and AR experiences with the UI frameworks you already know.
+
+    Same concepts, same simplicity — Android, iOS, Web, Desktop, TV, Flutter, React
+    Native.
+
+
+    [![Android 3D](https://img.shields.io/maven-central/v/io.github.sceneview/sceneview?label=Android%203D&logo=android&color=34a853)](https://central.sonatype.com/artifact/io.github.sceneview/sceneview)
+
+    [![Android AR](https://img.shields.io/maven-central/v/io.github.sceneview/arsceneview?label=An'
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -967,7 +1133,7 @@
   i18n:
     zh:
       name: instructa/ai-prompts
-      summary: Curated AI Prompts for Cursor Rules, Cline, Windsurf and Github Copilot
+      summary: 为Cursor Rules、Cline、Windsurf和Github Copilot精选的AI提示词
     en:
       name: instructa/ai-prompts
       summary: Curated AI Prompts for Cursor Rules, Cline, Windsurf and Github Copilot
@@ -993,7 +1159,13 @@
   - prompting
   - prompts
   - windsurf
-  readme_preview: ''
+  readme_preview: "[![Instructa AI Prompts Banner](/public/image.png)](https://www.instructa.ai/ai-prompts)\n\
+    \n# AI Prompts & Rules\n\n  \n  \n  \n  \n\n**Instructa AI Prompts** is an open-source\
+    \ repository dedicated to collecting and sharing AI prompts, best practices, and\
+    \ curated rules for developers. From project scaffolding to coding standards,\
+    \ our goal is to help you quickly set up and refine your workflow with ready-to-use\
+    \ prompts. \n\nTry it out [here](https://www.instructa.ai/ai-prompts) or use these\
+    \ prompts directly"
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -1022,7 +1194,7 @@
   i18n:
     zh:
       name: glitternetwork/pinme
-      summary: Deploy Your Frontend in a Single Command. Claude Code Skills supported.
+      summary: 只需一条命令即可部署你的前端。支持 Claude Code Skills。
     en:
       name: glitternetwork/pinme
       summary: Deploy Your Frontend in a Single Command. Claude Code Skills supported.
@@ -1052,7 +1224,13 @@
   - claude-skills
   - claude-code-skill
   - skills
-  readme_preview: ''
+  readme_preview: "PinMe\n  \n\n  Create and deploy your web in one command.\n\n#\
+    \ PinMe\n\n[PinMe](https://pinme.eth.limo/) is a zero-config deployment CLI focused\
+    \ on one-command creation and deployment for full-stack projects.\n\nIt lets you\
+    \ quickly set up and launch a complete project with an integrated frontend, Worker\
+    \ backend, and database, without tedious configuration. PinMe is built to make\
+    \ full-stack delivery much simpler and significantly improve development efficiency.\n\
+    \nWebsite: [https://pinme.eth.limo/](https://"
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -1075,7 +1253,6 @@
   source_type: github
   resource_type:
   - skills
-  - tutorial
   target_tools:
   - claude-code
   - codex-cli
@@ -1084,8 +1261,7 @@
   i18n:
     zh:
       name: taishi-i/awesome-ChatGPT-repositories
-      summary: A curated list of open source GitHub repositories related to ChatGPT,
-        the OpenAI API, and Codex. Searchable via Claude Code skills.
+      summary: 与ChatGPT、OpenAI API和Codex相关的开源GitHub仓库精选列表。可通过Claude Code技能进行搜索。
     en:
       name: taishi-i/awesome-ChatGPT-repositories
       summary: A curated list of open source GitHub repositories related to ChatGPT,
@@ -1112,7 +1288,16 @@
   - codex
   - agent-skills
   - skills
-  readme_preview: ''
+  readme_preview: '# awesome-ChatGPT-repositories
+
+
+    [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+
+    [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/taishi-i/awesome-ChatGPT-repositories-search)
+
+    [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
+
+    [![CC0'
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -1127,8 +1312,7 @@
   last_analyzed: null
   benchmark_ref: null
   recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=34, resource_types=skills,
-    tutorial.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=34, resource_types=skills.'
 - id: github-nowork-studio-notfair
   name: nowork-studio/NotFair
   url: https://github.com/nowork-studio/NotFair
@@ -1142,7 +1326,7 @@
   i18n:
     zh:
       name: nowork-studio/NotFair
-      summary: Open-source Claude Code skills for SEO, GEO, Google Ads, Meta Ads
+      summary: 面向SEO、GEO、Google Ads和Meta Ads的开源Claude Code技能
     en:
       name: nowork-studio/NotFair
       summary: Open-source Claude Code skills for SEO, GEO, Google Ads, Meta Ads
@@ -1165,7 +1349,19 @@
   - metaads
   - seo
   - googleadsmcp
-  readme_preview: ''
+  readme_preview: '# NotFair (formerly Toprank)
+
+
+    [![Discord](https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?logo=discord&logoColor=white)](https://discord.gg/gVJCRczpps)
+
+
+    **The official Google & Meta Ads + SEO plugin from [NotFair](https://notfair.co).
+    Data-driven decisions, not dashboards.**
+
+
+    NotFair gives your AI agent direct access to Google Search Console, Google Ads,
+    and Meta Ads (Facebook + Instagram). It analyzes your traffic, surfaces what''s
+    hurting your rankings, finds wasted ad spend,'
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -1196,10 +1392,7 @@
   i18n:
     zh:
       name: elementalsouls/Claude-BugHunter
-      summary: A Claude Code skill bundle for bug hunting and external red-team work
-        — 71 skills, 15 slash commands, 681 disclosed-report patterns curated across
-        24 core vulnerability classes, plus enterprise identity + infrastructure attack
-        matrices.
+      summary: 一个用于漏洞狩猎和外部红队工作的Claude Code技能包——包含71项技能、15个斜杠命令、681个精选的已公开报告模式，涵盖24个核心漏洞类别，外加企业身份与基础设施攻击矩阵。
     en:
       name: elementalsouls/Claude-BugHunter
       summary: A Claude Code skill bundle for bug hunting and external red-team work
@@ -1233,7 +1426,18 @@
   - red-team
   - security-tools
   - web-security
-  readme_preview: ''
+  readme_preview: '![claude-bughunter banner](assets/banner-v2.svg)
+
+
+    # claude-bughunter
+
+
+    > A self-contained Claude skill bundle for bug hunting and external red-team work
+    · **71 skills** · 15 slash commands · **681 disclosed-report patterns** across
+    24 core vulnerability classes · enterprise identity + infrastructure attack matrices
+    · engagement-folder scaffolding · Burp MCP integration · battle-tested across
+    authorized red-team and bug-hunting engagements, plus public training platforms
+    (DVWA, OWASP Juice Shop, H'
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -1263,9 +1467,7 @@
   i18n:
     zh:
       name: lackeyjb/playwright-skill
-      summary: Claude Code Skill for browser automation with Playwright. Model-invoked
-        - Claude autonomously writes and executes custom automation for testing and
-        validation.
+      summary: 用于Playwright浏览器自动化的Claude Code Skill。由模型调用 - Claude自主编写并执行自定义的自动化脚本以进行测试与验证。
     en:
       name: lackeyjb/playwright-skill
       summary: Claude Code Skill for browser automation with Playwright. Model-invoked
@@ -1295,7 +1497,20 @@
   - web-testing
   - claude-plugin
   - model-invoked
-  readme_preview: ''
+  readme_preview: '# Playwright Skill for Claude Code
+
+
+    **General-purpose browser automation as a Claude Skill**
+
+
+    A [Claude Skill](https://www.anthropic.com/blog/skills) that enables Claude to
+    write and execute any Playwright automation on-the-fly - from simple page tests
+    to complex multi-step flows. Packaged as a [Claude Code Plugin](https://docs.claude.com/en/docs/claude-code/plugins)
+    for easy installation and distribution.
+
+
+    Claude autonomously decides when to use this skill based on your browser automation
+    needs'
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -1339,7 +1554,55 @@
   languages:
   - HTML
   topics: []
-  readme_preview: ''
+  readme_preview: '# chengfeng-videocut-skills
+
+
+    > 给 Codex / Claude Code 用的口播视频剪辑 Skills 包。
+
+
+    这个项目把我的口播视频剪辑流程做成了一组可安装的 Skills：准备口播素材、拆分镜、看预览、导出竖屏成片。
+
+
+    它不是一个通用剪辑软件，也不是一键生成所有类型视频的工具。它聚焦一类很具体的内容：口播教程、产品演示、知识讲解、结果展示。
+
+
+    核心思路是：把视频剪辑从“人在时间线上操作”，变成“Agent 可以读写的工作流”。人只需要看页面、提修改意见、确认结果。
+
+
+    ## 官方来源
+
+
+    本项目由 **chengfeng / AI产品自由** 原创并维护。
+
+
+    ```text
+
+    GitHub: Agentchengfeng
+
+    X: chengfeng240928
+
+    小红书: AI产品自由
+
+    公众号: AI产品自由
+
+    B站: AI产品自由
+
+    抖音 / 视频号: AI产品自由
+
+    ```
+
+
+    原始仓库：
+
+
+    ```text
+
+    https://github.com/Agentchengfeng/chengfeng-videocut-skills
+
+    ```
+
+
+    如果你使用、转载、翻译、二'
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -1369,8 +1632,7 @@
   i18n:
     zh:
       name: tradermonty/claude-trading-skills
-      summary: Claude Code skills for equity investors and traders — market analysis,
-        technical charting, economic calendars, screeners, and trading strategy development.
+      summary: Claude Code技能适用于股票投资者和交易者——市场分析、技术图表、经济日历、筛选器以及交易策略开发。
     en:
       name: tradermonty/claude-trading-skills
       summary: Claude Code skills for equity investors and traders — market analysis,
@@ -1386,7 +1648,23 @@
   languages:
   - Python
   topics: []
-  readme_preview: ''
+  readme_preview: '# Claude Trading Skills
+
+
+    Claude Trading Skills started as a personal project to use AI to improve my own
+    trading process.
+
+
+    Claude Trading Skills is a Claude Skills-based trading workflow toolkit for time-constrained
+    individual investors.
+
+
+    It is designed for investors who use long-term investing, ETFs, and dividend stocks
+    as their core, while using disciplined swing trading as a satellite strategy when
+    market conditions are favorable.
+
+
+    The goal is not to outsource buy/sell decisions to AI. The go'
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -1417,9 +1695,7 @@
   i18n:
     zh:
       name: yctimlin/mcp_excalidraw
-      summary: MCP server and Claude Code skill for Excalidraw — programmatic canvas
-        toolkit to create, edit, and export diagrams via AI agents with real-time
-        canvas sync.
+      summary: 用于Excalidraw的MCP服务器和Claude Code技能——一款可编程画布工具包，可通过AI代理创建、编辑和导出图表，并实现实时画布同步。
     en:
       name: yctimlin/mcp_excalidraw
       summary: MCP server and Claude Code skill for Excalidraw — programmatic canvas
@@ -1436,7 +1712,14 @@
   languages:
   - TypeScript
   topics: []
-  readme_preview: ''
+  readme_preview: '# Excalidraw MCP Server, CLI & Agent Skill
+
+
+    [![CI](https://github.com/yctimlin/mcp_excalidraw/actions/workflows/ci.yml/badge.svg)](https://github.com/yctimlin/mcp_excalidraw/actions/workflows/ci.yml)
+
+    [![Docker Build & Push](https://github.com/yctimlin/mcp_excalidraw/actions/workflows/docker.yml/badge.svg)](https://github.com/yctimlin/mcp_excalidraw/actions/workflows/docker.yml)
+
+    [![NPM Version](https://img.shields.io/npm/v/mcp-excalidraw-server)](https://www.npmjs.com/package/mcp-excalidraw-serve'
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -1467,8 +1750,7 @@
   i18n:
     zh:
       name: daymade/claude-code-skills
-      summary: Professional Claude Code skills marketplace featuring production-ready
-        skills for enhanced development workflows.
+      summary: 专业的Claude Code技能市场，提供生产就绪的技能，以增强开发工作流程。
     en:
       name: daymade/claude-code-skills
       summary: Professional Claude Code skills marketplace featuring production-ready
@@ -1484,7 +1766,19 @@
   languages:
   - Python
   topics: []
-  readme_preview: ''
+  readme_preview: '# Claude Code Skills Marketplace
+
+
+    [![English](https://img.shields.io/badge/Language-English-blue)](./README.md)
+
+    [![简体中文](https://img.shields.io/badge/语言-简体中文-red)](./README.zh-CN.md)
+
+
+    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+    [![Version](https://img.shields.io/badge/version-1.84.0-green.svg)](https://github.com/daymade/claude-code-skills)
+
+    [![Claude Code](https://img.shields.io/badge/Claude%20Code-2.0.13+-purple.svg)](https://claud'
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
@@ -1515,8 +1809,7 @@
   i18n:
     zh:
       name: gemini-cli-extensions/conductor
-      summary: Conductor is a Gemini CLI extension that allows you to specify, plan,
-        and implement software features.
+      summary: Conductor 是一个 Gemini CLI 扩展，允许你指定、规划和实现软件功能。
     en:
       name: gemini-cli-extensions/conductor
       summary: Conductor is a Gemini CLI extension that allows you to specify, plan,
@@ -1536,7 +1829,22 @@
   - gemini-cli-extension
   - google
   - context-driven-development
-  readme_preview: ''
+  readme_preview: '# Conductor Extension for Gemini CLI
+
+
+    **Measure twice, code once.**
+
+
+    Conductor is a Gemini CLI extension that enables **Context-Driven Development**.
+    It turns the Gemini CLI into a proactive project manager that follows a strict
+    protocol to specify, plan, and implement software features and bug fixes.
+
+
+    Instead of just writing code, Conductor ensures a consistent, high-quality lifecycle
+    for every task: **Context -> Spec & Plan -> Implement**.
+
+
+    The philosophy behind Conductor is simple: control yo'
   tags: []
   review_state: auto-curated
   quantifiable_score: 32
@@ -1567,8 +1875,7 @@
   i18n:
     zh:
       name: dominikmartn/nothing-design-skill
-      summary: A Claude Code skill for generating UI in the Nothing design language.
-        Monochrome, typographic, industrial.
+      summary: 一项Claude Code技能，用于在Nothing设计语言中生成UI。单色、排版、工业风格。
     en:
       name: dominikmartn/nothing-design-skill
       summary: A Claude Code skill for generating UI in the Nothing design language.
@@ -1583,7 +1890,29 @@
   maturity: unknown
   languages: []
   topics: []
-  readme_preview: ''
+  readme_preview: '# Nothing Design Skill
+
+
+    A design system skill for [Claude Code](https://claude.ai/code) inspired by Nothing''s
+    visual language. Monochrome, typographic, industrial.
+
+
+    I kept describing the same design rules to Claude over and over — Swiss typography,
+    OLED blacks, segmented progress bars, dot-matrix motifs. So I packaged it into
+    a reusable skill.
+
+
+    ![Preview](preview.gif)
+
+
+    ## What you get
+
+
+    Tell Claude `/nothing-design` or say "Nothing style" and it generates UI following
+    these principles:
+
+
+    - Three-l'
   tags: []
   review_state: auto-curated
   quantifiable_score: 32
@@ -1613,7 +1942,7 @@
   i18n:
     zh:
       name: skills-directory/skill-codex
-      summary: A claude code skill to delegate prompts to codex
+      summary: 一种将提示委托给Codex的Claude代码技能
     en:
       name: skills-directory/skill-codex
       summary: A claude code skill to delegate prompts to codex
@@ -1630,7 +1959,26 @@
   - claude
   - claude-code
   - codex
-  readme_preview: ''
+  readme_preview: 'Note: If you want a more autonomous setup for agentic workflows,
+    check out [klaudworks/ralph-meets-rex](https://github.com/klaudworks/ralph-meets-rex).
+
+
+    # Codex Integration for Claude Code
+
+
+    ## Purpose
+
+    Enable Claude Code to invoke the Codex CLI (`codex exec` and session resumes)
+    for automated code analysis, refactoring, and editing workflows.
+
+
+    ## Prerequisites
+
+    - `codex` CLI installed and available on `PATH`.
+
+    - Codex configured with valid credentials and settings.
+
+    - Confirm the installation by run'
   tags: []
   review_state: auto-curated
   quantifiable_score: 32
@@ -1662,9 +2010,8 @@
   i18n:
     zh:
       name: AlaeddineMessadi/opencode-mcp
-      summary: MCP server for OpenCode AI — 70 tools, 10 resources, 5 prompts. Use
-        npx opencode-mcp with Claude Desktop, Claude Code, Cursor, Windsurf, or any
-        MCP client.
+      summary: OpenCode AI 的 MCP 服务器 — 70 个工具、10 个资源、5 个提示。可将 npx opencode-mcp 与 Claude
+        Desktop、Claude Code、Cursor、Windsurf 或任何 MCP 客户端配合使用。
     en:
       name: AlaeddineMessadi/opencode-mcp
       summary: MCP server for OpenCode AI — 70 tools, 10 resources, 5 prompts. Use
@@ -1701,7 +2048,19 @@
   - opencode-ai
   - typescript
   - windsurf
-  readme_preview: ''
+  readme_preview: '# opencode-mcp
+
+
+    [![npm version](https://img.shields.io/npm/v/opencode-mcp)](https://www.npmjs.com/package/opencode-mcp)
+
+    [![license](https://img.shields.io/github/license/AlaeddineMessadi/opencode-mcp)](https://github.com/AlaeddineMessadi/opencode-mcp/blob/main/LICENSE)
+
+    [![node](https://img.shields.io/node/v/opencode-mcp)](https://nodejs.org/)
+
+    [![npm downloads](https://img.shields.io/npm/dm/opencode-mcp)](https://www.npmjs.com/package/opencode-mcp)
+
+
+    **Give any MCP client the power of [OpenCode](h'
   tags: []
   review_state: auto-curated
   quantifiable_score: 25
@@ -1737,30 +2096,59 @@
   status: unknown
   license: null
   stars: 553
-  forks: null
+  forks: 113
   last_updated: '2026-07-05T16:44:49Z'
   first_seen: '2026-07-13'
   last_seen: '2026-07-13'
   maturity: unknown
   languages:
   - Java
-  topics: []
-  readme_preview: ''
+  topics:
+  - dag
+  - dfs
+  - fastjson2
+  - kahn
+  - minio
+  - spring-boot
+  - sse
+  - springai
+  - springai-alibaba
+  - langgraph4j
+  - ski
+  - skills
+  readme_preview: '# PaiAgent
+
+
+    **企业级 AI 工作流可视化编排平台**
+
+
+    通过拖拽式界面快速构建、编排和执行 AI 工作流，让 AI 能力组合更简单
+
+
+    [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+    [![Java](https://img.shields.io/badge/Java-21+-orange.svg)](https://www.oracle.com/java/)
+
+    [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.1-brightgreen.svg)](https://spring.io/projects/spring-boot)
+
+    [![Spring AI](https://img.shields.io/badge/Spring%20AI-1.0.0--M5-green.svg)](https://spring.io/projects/spring-ai)
+
+    [![Spring AI Alibaba](htt'
   tags: []
   review_state: auto-curated
-  quantifiable_score: 21
+  quantifiable_score: 28
   quality_score: 0
-  total_score: 21
+  total_score: 28
   score_detail:
     stars: 4
     activity: 15
-    adoption: 0
+    adoption: 7
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
   benchmark_ref: null
   recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=21, resource_types=tutorial.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=28, resource_types=tutorial.'
 - id: github-waynesutton-promptstack
   name: waynesutton/promptstack
   url: https://github.com/waynesutton/promptstack
@@ -1776,8 +2164,7 @@
   i18n:
     zh:
       name: waynesutton/promptstack
-      summary: A searchable collection of AI prompts and code gen cursor rules, for
-        bolt.new, loveable, windsurf, trae, to enhance your workflow for developers.
+      summary: 一个可搜索的AI提示词和代码生成光标规则集合，适用于bolt.new、loveable、windsurf、trae，以增强开发者的工作流。
     en:
       name: waynesutton/promptstack
       summary: A searchable collection of AI prompts and code gen cursor rules, for
@@ -1796,7 +2183,15 @@
   - ai
   - prompt-engineering
   - prompts
-  readme_preview: ''
+  readme_preview: '# PromptStack - The CRM for Prompts, Vibe Coding, and Custom Rules.
+
+
+    **[PromptStack](https://promptstack.dev)** is a **open-source** real-time prompt
+    management platform built with React, [Convex.dev](https://convex.link/promptstackgithub),
+    and Clerk authentication. It enables users to create, organize, and share AI prompts
+    with features like custom categories, privacy controls, and community engagement
+    through likes and comments. The platform features a sleek, responsive design with
+    both grid a'
   tags: []
   review_state: auto-curated
   quantifiable_score: 25
@@ -1825,14 +2220,14 @@
   i18n:
     zh:
       name: BLUEasddaaaaaaa/workbuddy-pet
-      summary: A pixel desktop pet that reacts to CodeBuddy AI coding assistant
+      summary: 一个对CodeBuddy AI编程助手作出反应的像素桌面宠物
     en:
       name: BLUEasddaaaaaaa/workbuddy-pet
       summary: A pixel desktop pet that reacts to CodeBuddy AI coding assistant
   status: unknown
   license: mit
   stars: 3
-  forks: 0
+  forks: 1
   last_updated: '2026-06-29T01:52:57Z'
   first_seen: '2026-07-13'
   last_seen: '2026-07-13'
@@ -1840,22 +2235,44 @@
   languages:
   - JavaScript
   topics: []
-  readme_preview: ''
+  readme_preview: '# WorkBuddy Pet 🐾
+
+
+    A pixel-art desktop pet that reacts to your CodeBuddy AI coding assistant in real-time
+    — thinking when you send a prompt, working when tools are called, and celebrating
+    with a happy dance when tasks complete!
+
+
+    [English](#english) | [中文](#中文)
+
+
+    ---
+
+
+    ## ✨ Features
+
+
+    - **Real-time CodeBuddy integration** — Pet reacts to every AI event: thinking,
+    working, task complete
+
+    - **Eye tracking** — Pet''s eyes follow your mouse cursor (idle state)
+
+    - **Natural blinking** — Random 4-9s blink cy'
   tags: []
   review_state: auto-curated
-  quantifiable_score: 21
+  quantifiable_score: 23
   quality_score: 0
-  total_score: 21
+  total_score: 23
   score_detail:
     stars: 2
     activity: 15
-    adoption: 0
+    adoption: 2
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
   benchmark_ref: null
   recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=21, resource_types=tutorial.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=23, resource_types=tutorial.'
 - id: github-cosmicstack-labs-mercury-agent-skills
   name: cosmicstack-labs/mercury-agent-skills
   url: https://github.com/cosmicstack-labs/mercury-agent-skills
@@ -1871,9 +2288,7 @@
   i18n:
     zh:
       name: cosmicstack-labs/mercury-agent-skills
-      summary: A curated registry of reusable Mercury Agent, Open Claw or Hermes Agent
-        skills designed for real developer workflows, persistent memory, and token-efficient
-        execution.
+      summary: 一个精选的可复用 Mercury Agent、Open Claw 或 Hermes Agent 技能的注册表，专为真实开发者工作流、持久化记忆和令牌高效执行而设计。
     en:
       name: cosmicstack-labs/mercury-agent-skills
       summary: A curated registry of reusable Mercury Agent, Open Claw or Hermes Agent
@@ -1894,7 +2309,13 @@
   - ai-agents
   - aiskills
   - skills
-  readme_preview: ''
+  readme_preview: "# Mercury Skills\n\n  \n\n  Browse the registry •\n  Mercury Agent\
+    \ •\n  Catalog •\n  Contribute\n\n**An open-source library of `SKILL.md` playbooks\
+    \ for AI agents.** Browse and install on [skills.mercuryagent.sh](https://skills.mercuryagent.sh),\
+    \ or pull them directly from the [Mercury Agent](https://mercuryagent.sh) CLI.\n\
+    \n**132 skills across 23 categories** — hand-curated, production-ready, and compatible\
+    \ with every major agent: Mercury, Claude Code, Codex CLI, OpenClaw, Hermes, Cursor,\
+    \ and Gemini CLI.\n\n-"
   tags: []
   review_state: auto-curated
   quantifiable_score: 27
@@ -1916,19 +2337,20 @@
   repo: RooCodeInc/Roo-Code
   source_type: github
   resource_type:
-  - tutorial
+  - cli-tool
+  - agent-framework
   target_tools:
   - general-ai-coding
   summary: Roo Code gives you a whole dev team of AI agents in your code editor.
   i18n:
     zh:
       name: RooCodeInc/Roo-Code
-      summary: Roo Code gives you a whole dev team of AI agents in your code editor.
+      summary: Roo Code 在您的代码编辑器中为您提供了一整支由AI代理组成的开发团队。
     en:
       name: RooCodeInc/Roo-Code
       summary: Roo Code gives you a whole dev team of AI agents in your code editor.
   status: archived
-  license: null
+  license: apache-2.0
   stars: 24329
   forks: 3363
   last_updated: '2026-07-13T11:24:36Z'
@@ -1946,19 +2368,20 @@
     - [Deutsch](locales/de/README.md)\n- [Español](locales/es/README"
   tags: []
   review_state: auto-curated
-  quantifiable_score: 46
+  quantifiable_score: 48
   quality_score: 0
-  total_score: 46
+  total_score: 48
   score_detail:
     stars: 16
     activity: 15
     adoption: 10
-    maturity: 5
+    maturity: 7
   tracking_priority: track
   last_analyzed: null
   benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=46, resource_types=tutorial.'
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=48, resource_types=cli-tool,
+    agent-framework.'
 - id: github-onvoyage-ai-gtm-engineer-skills
   name: onvoyage-ai/gtm-engineer-skills
   url: https://github.com/onvoyage-ai/gtm-engineer-skills
@@ -1974,9 +2397,8 @@
   i18n:
     zh:
       name: onvoyage-ai/gtm-engineer-skills
-      summary: Claude Code skill for improving website AEO (AI Engine Optimization)
-        and GEO (Generative Engine Optimization) scores — 16 foundational checks,
-        6 intelligence dimensions, framework-specific fixes
+      summary: Claude Code 技能：提升网站 AEO（AI Engine Optimization）和 GEO（Generative Engine
+        Optimization）分数 — 16 项基础检查、6 个智能维度、框架特定的修复
     en:
       name: onvoyage-ai/gtm-engineer-skills
       summary: Claude Code skill for improving website AEO (AI Engine Optimization)
@@ -2000,7 +2422,17 @@
   - llms-txt
   - seo
   - structured-data
-  readme_preview: ''
+  readme_preview: '# GTM Engineer Skills
+
+
+    Search is shifting from blue links to AI answers — and the GTM playbook that won
+    on Google does not win on ChatGPT, Claude, or Perplexity. Most AI agents still
+    respond with generic marketing copy that no one will rank, cite, or publish.
+
+
+    This repo is a different kind of toolkit. Each skill is a focused agent workflow
+    that ships a concrete GTM artifact — a brand DNA doc, a keyword or GEO prompt
+    cluster, a content architecture, AI-citable charts, an AEO audit, a backlink pla'
   tags: []
   review_state: auto-curated
   quantifiable_score: 31
@@ -2043,7 +2475,11 @@
   maturity: unknown
   languages: []
   topics: []
-  readme_preview: ''
+  readme_preview: "# AI 提示词工程与工作流集合\n\n[![GitHub stars](https://img.shields.io/github/stars/NeekChaw/RIPER-5.svg)](https://github.com/NeekChaw/RIPER-5/stargazers)\n\
+    [![GitHub forks](https://img.shields.io/github/forks/NeekChaw/RIPER-5.svg)](https://github.com/NeekChaw/RIPER-5/network)\n\
+    [![GitHub issues](https://img.shields.io/github/issues/NeekChaw/RIPER-5.svg)](https://github.com/NeekChaw/RIPER-5/issues)\n\
+    \n  \n  扫码关注我的公众号，获取更多 AI 前沿资讯与实践\n\n欢迎来到 AI 提示词工程与工作流集合仓库！本项目旨在收录和展示一系列高质量、结构化的\
+    \ AI 提示词（Prompts）和工作流（Workflows），专注于提升 A"
   tags: []
   review_state: auto-curated
   quantifiable_score: 30
@@ -2065,7 +2501,7 @@
   repo: flyeric0212/cursor-rules
   source_type: github
   resource_type:
-  - tutorial
+  - rules
   target_tools:
   - cursor
   summary: 整理和收集来自不同项目的Cursor规则文件，提供多种编程语言和框架的规则支持。
@@ -2088,7 +2524,27 @@
   topics:
   - cursor-rules
   - cursor
-  readme_preview: ''
+  readme_preview: '# Cursor Rules 规则汇总
+
+
+    本项目用于收集、整理和标准化 Cursor Rules 规则文件，提供多种编程语言和框架的规则支持，使开发者能够更有效地利用 Cursor 进行开发工作。
+
+
+    ## Cursor Rules 最佳实践
+
+
+    文章教程：
+
+
+    - [Cursor Rules 最佳实践总结](https://mp.weixin.qq.com/s/-J_LwfwH9rmFy4dzEy0RXg)
+
+    - [Cursor Rules 进阶指南：打造企业级多语言开发规范](https://mp.weixin.qq.com/s/rfanrMtMMuyUTwsDYmlxSg)
+
+    - [Cursor 0.49.x 自动化生成 Project Rules 实用指南](https://mp.weixin.qq.com/s/1yTkzYzOFjty1D0gtYHuHA)
+
+    - [Cursor Rules 的一次全面总结，希望能够帮助到你！](https://mp.weixin.qq.com/s/l8r2lJlEv5fKWJRSsSd1kQ)
+
+    - [Cursor Rules 四大原则：让AI代码生成更稳'
   tags: []
   review_state: auto-curated
   quantifiable_score: 30
@@ -2102,8 +2558,8 @@
   tracking_priority: pending
   last_analyzed: null
   benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=30, resource_types=tutorial.'
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=30, resource_types=rules.'
 - id: github-p4nda0s-reverse-skills
   name: P4nda0s/reverse-skills
   url: https://github.com/P4nda0s/reverse-skills
@@ -2133,7 +2589,37 @@
   maturity: unknown
   languages: []
   topics: []
-  readme_preview: ''
+  readme_preview: '[English](README_EN.md) | 中文
+
+
+    # 逆向工程技能集 (Reverse Engineering Skills)
+
+
+    逆向工程分析技能，支持 40+ 种 AI 编程工具。
+
+
+    **专为 [IDA-NO-MCP](https://github.com/P4nda0s/IDA-NO-MCP) 设计** - 从 IDA 导出反编译结果，然后使用
+    AI 编程工具进行分析。
+
+
+    ## 包含的技能
+
+
+    | 技能 | 描述 |
+
+    |------|------|
+
+    | `rev-symbol` | 从导出表/导入表或反编译代码分析函数符号 |
+
+    | `rev-struct` | 从反编译函数重建数据结构 |
+
+    | `rev-frida` | 使用现代 Frida API 生成动态插桩脚本 |
+
+    | `rev-unicorn-debug` | 使用 Unicorn 引擎模拟执行和调试指定代码片段 |
+
+    | `rev-dex-dumper` | 从运行中的 Android 应用内存中 dump DEX 文件，用于整体加固脱壳 |
+
+    | `rev-u3d-dump` | 从 Unity IL2CPP 构建'
   tags: []
   review_state: auto-curated
   quantifiable_score: 30

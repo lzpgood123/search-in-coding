@@ -1,9 +1,9 @@
-# 生态周报 - 2026-07-13
+# 生态周报 - 2026-07-14
 
 ## 数据概况
 
-- 总记录数: 274
-- 生态项目: 257
+- 总记录数: 294
+- 生态项目: 276
 - 推荐项目: 40
 - 官方工具: 10
 
@@ -11,30 +11,30 @@
 
 | # | 名称 | 类型 | 工具 | 分数 | Stars | URL |
 |---|------|------|------|------|-------|-----|
-| 1 | JuliusBrussee/caveman | tutorial | claude-code | 37 | 85399 | https://github.com/JuliusBrussee/caveman |
-| 2 | blader/humanizer | tutorial | claude-code | 33 | 27699 | https://github.com/blader/humanizer |
-| 3 | alirezarezvani/claude-skills | skills, cli-tool | claude-code, codex-cli, antigravity-cli, cursor | 33 | 20908 | https://github.com/alirezarezvani/claude-skills |
-| 4 | op7418/Humanizer-zh | skills | claude-code | 33 | 12494 | https://github.com/op7418/Humanizer-zh |
-| 5 | virgiliojr94/book-to-skill | tutorial | claude-code | 29 | 7960 | https://github.com/virgiliojr94/book-to-skill |
-| 6 | SimoneAvogadro/android-reverse-engineering-skill | tutorial | claude-code | 29 | 6332 | https://github.com/SimoneAvogadro/android-reverse-engineering-skill |
-| 7 | trailofbits/skills | skills | claude-code | 29 | 6006 | https://github.com/trailofbits/skills |
-| 8 | zarazhangrui/codebase-to-course | tutorial | claude-code | 29 | 5147 | https://github.com/zarazhangrui/codebase-to-course |
-| 9 | OpenCoworkAI/open-cowork | mcp-server, skills | claude-code | 25 | 1772 | https://github.com/OpenCoworkAI/open-cowork |
-| 10 | steipete/claude-code-mcp | mcp-server | claude-code | 25 | 1309 | https://github.com/steipete/claude-code-mcp |
+| 1 | JuliusBrussee/caveman | skills | claude-code | 49 | 85516 | https://github.com/JuliusBrussee/caveman |
+| 2 | cline/cline | extension, cli-tool | general-ai-coding | 49 | 64610 | https://github.com/cline/cline |
+| 3 | aaif-goose/goose | cli-tool | goose | 49 | 51152 | https://github.com/aaif-goose/goose |
+| 4 | RooCodeInc/Roo-Code | cli-tool, agent-framework | general-ai-coding | 48 | 24329 | https://github.com/RooCodeInc/Roo-Code |
+| 5 | alirezarezvani/claude-skills | skills, extension | claude-code, codex-cli, antigravity-cli, cursor | 45 | 20986 | https://github.com/alirezarezvani/claude-skills |
+| 6 | continuedev/continue | cli-tool, agent-framework | general-ai-coding | 45 | 34846 | https://github.com/continuedev/continue |
+| 7 | Aider-AI/aider | cli-tool | general-ai-coding | 45 | 47338 | https://github.com/Aider-AI/aider |
+| 8 | blader/humanizer | skills | claude-code | 43 | 27726 | https://github.com/blader/humanizer |
+| 9 | cursor/cursor | cli-tool | cursor | 41 | 33028 | https://github.com/cursor/cursor |
+| 10 | op7418/Humanizer-zh | skills | claude-code | 40 | 12508 | https://github.com/op7418/Humanizer-zh |
 
 ## 分数分布
 
 | 分数段 | 项目数 |
 |--------|--------|
-| 0-20 | 199 |
-| 21-40 | 58 |
-| 41-60 | 0 |
+| 0-20 | 96 |
+| 21-40 | 171 |
+| 41-60 | 9 |
 | 61-80 | 0 |
 | 81-100 | 0 |
 
 ## 追踪状态
 
-- 追踪中 (track): 10
+- 追踪中 (track): 16
 - 索引中 (index): 0
-- 待分析 (pending): 257
-- 已拒绝 (reject): 7
+- 待分析 (pending): 270
+- 已拒绝 (reject): 8
