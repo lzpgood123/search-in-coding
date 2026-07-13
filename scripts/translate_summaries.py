@@ -36,7 +36,10 @@ MAX_WORKERS = 3  # concurrent translation requests
 TRANSLATION_SYSTEM = (
     "You are a professional translator specializing in software and AI technology. "
     "Translate the given English text into natural, fluent Chinese (Simplified). "
-    "Keep technical terms, project names, and proper nouns in English. "
+    "Keep technical terms, project names, and proper nouns in English when appropriate, "
+    "but the overall output MUST be Chinese and must NOT be a pure English copy of the input. "
+    "If the input is only a repo path, product name, or title, write a short Chinese description "
+    "that keeps the original name (e.g. 'foo/bar 项目' or 'Cursor MCP 相关资源'). "
     "Respond with JSON only: {\"translated\": \"translated text\"}"
 )
 
@@ -158,8 +161,13 @@ def needs_translation(project):
 
 def build_translation_prompt(summary):
     """Build the LLM prompt for translating a summary."""
-    return f"""Translate the following English text to Chinese (Simplified):
+    return f"""Translate the following English text to Chinese (Simplified).
+Requirements:
+- Output must contain Chinese characters.
+- Do not return the original English text unchanged.
+- If the text is only a project/repo/product name, add a brief Chinese description while keeping the name.
 
+Text:
 {summary[:500]}
 
 Respond with JSON: {{"translated": "translated text here"}}"""
@@ -263,6 +271,21 @@ def parse_translation(text):
     return None
 
 
+def is_usable_translation(zh, summary):
+    """Reject empty or pure English copy translations."""
+    if not zh:
+        return False
+    zh = zh.strip()
+    if not zh:
+        return False
+    # Must contain Chinese characters for a real bilingual entry.
+    if not re.search(r'[\u4e00-\u9fff]', zh):
+        return False
+    if zh == summary.strip():
+        return False
+    return True
+
+
 def translate_one(project, rotator):
     """Translate a single project's summary.
 
@@ -271,9 +294,9 @@ def translate_one(project, rotator):
     url = project.get('url', '')
     summary = project.get('summary', '')
 
-    # Check cache first
+    # Check cache first (only accept usable Chinese translations)
     cached = get_cached(url)
-    if cached and cached.get('zh'):
+    if cached and is_usable_translation(cached.get('zh'), summary):
         return project.get('id'), cached['zh']
 
     # Call LLM
@@ -283,7 +306,7 @@ def translate_one(project, rotator):
         return project.get('id'), None
 
     zh = parse_translation(raw)
-    if not zh:
+    if not is_usable_translation(zh, summary):
         return project.get('id'), None
 
     # Cache result
