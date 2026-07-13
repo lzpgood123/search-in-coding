@@ -1,95 +1,204 @@
 // site/js/app.js
-// Entry point: event binding, debounce, init
-const $ = id => document.getElementById(id);
+// Entry point, event delegation, debounce, skeleton screen
+// Bug fixes: 3 (tool card sync), 8 (favorites input box), event delegation (no inline onclick)
+var $ = function(id) { return document.getElementById(id); };
 
 function debounce(fn, ms) {
-  let t;
-  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
+  var t;
+  return function() {
+    var args = arguments;
+    var self = this;
+    clearTimeout(t);
+    t = setTimeout(function() { fn.apply(self, args); }, ms);
+  };
 }
 
-async function main() {
-  // Show skeleton immediately
-  SIC_render.showSkeleton();
-
-  // Load data progressively
-  const ok = await SIC_data.loadAll(label => {
-    // Could update skeleton with progress indicator
-  });
-
-  if (!ok) {
-    SIC_render.showError();
-    return;
+// Render tag buttons
+function renderTagButtons() {
+  var toolContainer = $('toolTags');
+  if (toolContainer) {
+    toolContainer.innerHTML = SIC_data.tools
+      .filter(function(t) { return t.id !== 'general-ai-coding'; })
+      .map(function(t) {
+        var active = SIC_filters.selectedTools.has(t.id) ? ' active' : '';
+        var name = SIC_i18n.textOf(t, 'name') || t.name;
+        return '<button class="tag-btn' + active + '" data-action="tool-tag" data-tool="' + SIC_render.esc(t.id) + '">' + SIC_render.esc(name) + '</button>';
+      }).join('');
   }
+  var typeContainer = $('typeTags');
+  if (typeContainer) {
+    var allTypes = [];
+    SIC_data.projects.forEach(function(p) {
+      (p.resource_type || []).forEach(function(rt) {
+        if (allTypes.indexOf(rt) === -1) allTypes.push(rt);
+      });
+    });
+    allTypes.sort();
+    typeContainer.innerHTML = allTypes.map(function(type) {
+      var active = SIC_filters.selectedTypes.has(type) ? ' active' : '';
+      var label = (SIC_i18n.t('resourceTypes')[type]) || type;
+      return '<button class="tag-btn' + active + '" data-action="type-tag" data-type="' + SIC_render.esc(type) + '">' + SIC_render.esc(label) + '</button>';
+    }).join('');
+  }
+}
 
-  // Read URL state
-  SIC_filters.readState();
+// Sync UI controls from filter state
+function syncUI() {
+  var qEl = $('q'); if (qEl) qEl.value = SIC_filters.searchQuery;
+  var sortEl = $('sort'); if (sortEl) sortEl.value = SIC_filters.sortBy;
+  var curEl = $('curatedOnly'); if (curEl) curEl.checked = SIC_filters.curatedOnly;
+  var recEl = $('recentOnly'); if (recEl) recEl.checked = SIC_filters.recentOnly;
+  var modeBtns = $('modeToggle') ? $('modeToggle').querySelectorAll('button') : null;
+  if (modeBtns && modeBtns.length >= 2) {
+    modeBtns[0].classList.toggle('active', SIC_filters.matchMode === 'or');
+    modeBtns[1].classList.toggle('active', SIC_filters.matchMode === 'and');
+  }
+  renderTagButtons();
+}
 
-  // Initial render
-  SIC_render.renderAll();
+// Event delegation handler - all clicks go through here
+function handleGlobalClick(e) {
+  var btn = e.target.closest('[data-action]');
+  if (!btn) return;
+  var action = btn.dataset.action;
+  var id = btn.dataset.id;
 
-  // Sync UI controls with restored state
-  syncUIFromFilters();
+  switch (action) {
+    case 'detail':
+      e.preventDefault();
+      SIC_render.openDetail(id);
+      break;
+    case 'fav':
+      SIC_render.toggleFav(id);
+      btn.classList.toggle('active');
+      break;
+    case 'close-detail':
+      SIC_render.closeDetail();
+      break;
+    case 'tool-tag':
+      SIC_filters.toggleTool(btn.dataset.tool);
+      btn.classList.toggle('active');
+      SIC_render.renderSearchZone();
+      SIC_filters.writeState();
+      break;
+    case 'type-tag':
+      SIC_filters.toggleType(btn.dataset.type);
+      btn.classList.toggle('active');
+      SIC_render.renderSearchZone();
+      SIC_filters.writeState();
+      break;
+    case 'tool-filter':
+      // Bug 3 fix: sync tag button active state
+      SIC_filters.setTool(btn.dataset.tool);
+      SIC_render.renderSearchZone();
+      SIC_filters.writeState();
+      renderTagButtons();
+      var sz = $('searchZone');
+      if (sz) sz.scrollIntoView({ behavior: 'smooth' });
+      break;
+    case 'reload':
+      location.reload();
+      break;
+  }
+}
 
-  // Event bindings
+function bindEvents() {
+  // Global click delegation
+  document.addEventListener('click', handleGlobalClick);
+
   // Search input with debounce
-  $('q').addEventListener('input', debounce(e => {
+  $('q').addEventListener('input', debounce(function(e) {
     SIC_filters.searchQuery = e.target.value;
     SIC_render.renderSearchZone();
     SIC_filters.writeState();
   }, 300));
 
-  // Sort selector
-  $('sort').addEventListener('change', e => {
+  // Sort
+  $('sort').addEventListener('change', function(e) {
     SIC_filters.sortBy = e.target.value;
     SIC_render.renderSearchZone();
     SIC_filters.writeState();
   });
 
   // OR/AND toggle
-  $('modeToggle').addEventListener('click', () => {
+  $('modeToggle').addEventListener('click', function(e) {
+    if (e.target.tagName !== 'BUTTON') return;
     SIC_filters.toggleMode();
+    var btns = $('modeToggle').querySelectorAll('button');
+    btns.forEach(function(b) { b.classList.toggle('active'); });
     SIC_render.renderSearchZone();
     SIC_filters.writeState();
-    $('modeToggle').querySelectorAll('button').forEach(b => b.classList.toggle('active'));
   });
 
-  // Curated only checkbox
-  $('curatedOnly').addEventListener('change', e => {
+  // Checkboxes
+  $('curatedOnly').addEventListener('change', function(e) {
     SIC_filters.curatedOnly = e.target.checked;
     SIC_render.renderSearchZone();
     SIC_filters.writeState();
   });
+  $('recentOnly').addEventListener('change', function(e) {
+    SIC_filters.recentOnly = e.target.checked;
+    SIC_render.renderSearchZone();
+    SIC_filters.writeState();
+  });
 
-  // Language toggle
-  $('langZh').addEventListener('click', () => { SIC_i18n.setLang('zh'); SIC_render.renderAll(); });
-  $('langEn').addEventListener('click', () => { SIC_i18n.setLang('en'); SIC_render.renderAll(); });
+  // Language
+  $('langZh').addEventListener('click', function() {
+    SIC_i18n.setLang('zh');
+    SIC_render.renderAll();
+    syncUI();
+  });
+  $('langEn').addEventListener('click', function() {
+    SIC_i18n.setLang('en');
+    SIC_render.renderAll();
+    syncUI();
+  });
 
-  // Detail panel close on overlay click
-  $('detailOverlay').addEventListener('click', e => {
+  // Detail overlay close (click on overlay background)
+  $('detailOverlay').addEventListener('click', function(e) {
     if (e.target.id === 'detailOverlay') SIC_render.closeDetail();
   });
 
-  // Keyboard: ESC to close detail
-  document.addEventListener('keydown', e => {
+  // ESC
+  document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') SIC_render.closeDetail();
   });
 
-  // Export favorites button
-  $('exportFav')?.addEventListener('click', () => {
-    const url = SIC_data.exportFavoritesUrl();
-    navigator.clipboard?.writeText(url).catch(() => {});
-    alert(url);
-  });
+  // Export favorites - Bug 8 fix: input box instead of alert
+  var exportBtn = $('exportFav');
+  if (exportBtn) {
+    exportBtn.addEventListener('click', function() {
+      var url = SIC_data.exportFavoritesUrl();
+      var input = $('favExportUrl');
+      if (input) {
+        input.value = url;
+        input.style.display = 'block';
+        input.select();
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(url).then(function() {
+            input.dataset.copied = '1';
+          }).catch(function() {});
+        }
+      }
+    });
+  }
 
-  // Nav links: load reports in-site
-  document.querySelectorAll('[data-report]').forEach(el => {
-    el.addEventListener('click', async e => {
+  // Report links
+  document.querySelectorAll('[data-report]').forEach(function(el) {
+    el.addEventListener('click', async function(e) {
       e.preventDefault();
-      const reportFile = el.dataset.report;
+      var reportFile = el.dataset.report;
       try {
-        const r = await fetch(`reports/${reportFile}`);
-        const md = await r.text();
-        $('detailOverlay').innerHTML = `<button class="detail-close" onclick="SIC_render.closeDetail()">&times;</button>${SIC_render.renderReport(md)}`;
+        var r = await fetch('reports/' + reportFile);
+        if (!r.ok) {
+          $('detailOverlay').innerHTML = '<button class="detail-close" data-action="close-detail">&times;</button>' +
+            '<div class="report-content"><p>Report not found: ' + SIC_render.esc(reportFile) + '</p></div>';
+          $('detailOverlay').classList.add('open');
+          return;
+        }
+        var md = await r.text();
+        $('detailOverlay').innerHTML = '<button class="detail-close" data-action="close-detail">&times;</button>' +
+          SIC_render.renderReport(md);
         $('detailOverlay').classList.add('open');
       } catch (err) {
         console.error('Report load error:', err);
@@ -98,69 +207,14 @@ async function main() {
   });
 }
 
-// Sync UI controls with filter state after readState()
-function syncUIFromFilters() {
-  // Restore search input
-  const qEl = $('q');
-  if (qEl) qEl.value = SIC_filters.searchQuery;
-
-  // Restore sort
-  const sortEl = $('sort');
-  if (sortEl) sortEl.value = SIC_filters.sortBy;
-
-  // Restore curatedOnly
-  const curEl = $('curatedOnly');
-  if (curEl) curEl.checked = SIC_filters.curatedOnly;
-
-  // Restore mode toggle buttons
-  const modeBtns = $('modeToggle')?.querySelectorAll('button');
-  if (modeBtns) {
-    modeBtns[0].classList.toggle('active', SIC_filters.matchMode === 'or');
-    modeBtns[1].classList.toggle('active', SIC_filters.matchMode === 'and');
-  }
-
-  // Render tag buttons and sync active state
-  renderTagButtons();
-}
-
-// Render tool and type tag buttons
-function renderTagButtons() {
-  const toolContainer = $('toolTags');
-  if (toolContainer) {
-    toolContainer.innerHTML = SIC_data.tools
-      .filter(t => t.id !== 'general-ai-coding')
-      .map(t => {
-        const active = SIC_filters.selectedTools.has(t.id) ? ' active' : '';
-        const name = SIC_i18n.textOf(t, 'name') || t.name;
-        return `<button class="tag-btn${active}" onclick="toggleToolTag('${t.id}', this)">${SIC_render.esc(name)}</button>`;
-      }).join('');
-  }
-
-  const typeContainer = $('typeTags');
-  if (typeContainer) {
-    const allTypes = [...new Set(SIC_data.projects.flatMap(p => p.resource_type || []))].sort();
-    typeContainer.innerHTML = allTypes.map(type => {
-      const active = SIC_filters.selectedTypes.has(type) ? ' active' : '';
-      const label = SIC_i18n.t('resourceTypes')[type] || type;
-      return `<button class="tag-btn${active}" onclick="toggleTypeTag('${type}', this)">${SIC_render.esc(label)}</button>`;
-    }).join('');
-  }
-}
-
-// Toggle tool tag button
-function toggleToolTag(id, btn) {
-  SIC_filters.toggleTool(id);
-  btn.classList.toggle('active');
-  SIC_render.renderSearchZone();
-  SIC_filters.writeState();
-}
-
-// Toggle type tag button
-function toggleTypeTag(type, btn) {
-  SIC_filters.toggleType(type);
-  btn.classList.toggle('active');
-  SIC_render.renderSearchZone();
-  SIC_filters.writeState();
+async function main() {
+  SIC_render.showSkeleton();
+  var ok = await SIC_data.loadAll();
+  if (!ok) { SIC_render.showError(); return; }
+  SIC_filters.readState();
+  SIC_render.renderAll();
+  syncUI();
+  bindEvents();
 }
 
 main();
