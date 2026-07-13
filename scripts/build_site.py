@@ -4,18 +4,13 @@ from common import ROOT, load_jsonish
 
 ZH_HINTS = re.compile(r'[\u4e00-\u9fff]')
 
-CATEGORY_LABELS = {
-    'mcp-acp-a2a': {'zh': 'MCP / ACP / A2A 工具连接', 'en': 'MCP / ACP / A2A tool integrations'},
-    'skills-prompts': {'zh': 'Skills / Prompts / 命令', 'en': 'Skills / prompts / commands'},
-    'rules-instructions': {'zh': '规则 / 指令模板', 'en': 'Rules / instruction templates'},
-    'context-engineering': {'zh': '上下文工程', 'en': 'Context engineering'},
-    'agent-harness': {'zh': 'Agent 框架 / 编排', 'en': 'Agent harness / orchestration'},
-    'testing-review-ci': {'zh': '测试 / Review / CI', 'en': 'Testing / review / CI'},
-    'tutorial-case-study': {'zh': '教程 / 案例', 'en': 'Tutorials / case studies'},
-    'benchmark-evaluation': {'zh': '评测 / Benchmark', 'en': 'Benchmarks / evaluation'},
-    'terminal-agent': {'zh': '终端 Agent', 'en': 'Terminal agents'},
-    'ai-ide': {'zh': 'AI IDE', 'en': 'AI IDE'},
-    'official-tool': {'zh': '官方目标工具', 'en': 'Official target tool'},
+RESOURCE_TYPE_LABELS = {
+    'mcp-server': {'zh': 'MCP 服务器', 'en': 'MCP Server'},
+    'skills': {'zh': 'Skills / Prompts', 'en': 'Skills / Prompts'},
+    'rules': {'zh': '规则 / 指令', 'en': 'Rules / Instructions'},
+    'agent-framework': {'zh': 'Agent 框架', 'en': 'Agent Framework'},
+    'cli-tool': {'zh': 'CLI 工具', 'en': 'CLI Tool'},
+    'tutorial': {'zh': '教程 / 案例', 'en': 'Tutorial / Case Study'},
 }
 
 def write_json(name, data):
@@ -33,9 +28,6 @@ def copy_reports():
         shutil.copy2(report, dst / report.name)
 
 def bilingual_text(name, summary=''):
-    # This is a display fallback, not machine translation. English records keep
-    # original English in both fields until a translation pipeline is added;
-    # Chinese records keep Chinese in zh and original in en for searchability.
     name = name or ''
     summary = summary or ''
     has_zh = bool(ZH_HINTS.search(name + summary))
@@ -45,9 +37,33 @@ def bilingual_text(name, summary=''):
     }
 
 def enrich_project(p):
-    q = dict(p)
-    q['i18n'] = q.get('i18n') or bilingual_text(q.get('name'), q.get('summary'))
-    return q
+    return {
+        'id': p.get('id'),
+        'name': p.get('name'),
+        'url': p.get('url'),
+        'repo': p.get('repo'),
+        'source_type': p.get('source_type'),
+        'resource_type': p.get('resource_type', []),
+        'target_tools': p.get('target_tools', []),
+        'summary': p.get('summary', ''),
+        'i18n': p.get('i18n') or bilingual_text(p.get('name'), p.get('summary')),
+        'stars': p.get('stars'),
+        'forks': p.get('forks'),
+        'last_updated': p.get('last_updated'),
+        'first_seen': p.get('first_seen'),
+        'last_seen': p.get('last_seen'),
+        'languages': p.get('languages', []),
+        'license': p.get('license'),
+        'tags': p.get('tags', []),
+        'review_state': p.get('review_state'),
+        'tracking_priority': p.get('tracking_priority', 'pending'),
+        'total_score': p.get('total_score', 0),
+        'quantifiable_score': p.get('quantifiable_score', 0),
+        'quality_score': p.get('quality_score', 0),
+        'score_detail': p.get('score_detail', {}),
+        'llm_summary': p.get('llm_summary'),
+        'last_analyzed': p.get('last_analyzed'),
+    }
 
 def enrich_tool(t):
     q = dict(t)
@@ -56,14 +72,14 @@ def enrich_tool(t):
 
 def main():
     ap = argparse.ArgumentParser(description='Build bilingual static site data from project datasets')
-    ap.parse_args()
+    ap.parse_known_args()
     projects = [enrich_project(p) for p in load_jsonish('data/projects.yaml')]
     curated = [enrich_project(p) for p in load_jsonish('data/curated-projects.yaml')]
     rejected = [enrich_project(p) for p in load_jsonish('data/rejected-projects.yaml')]
     tools = [enrich_tool(t) for t in load_jsonish('data/seed-tools.yaml')]
     concepts = load_jsonish('data/concepts.yaml')
-    official = [p for p in projects if p.get('ranking_scope') == 'official']
-    ecosystem = [p for p in projects if p.get('ranking_scope') == 'ecosystem' and p.get('review_state') not in ('rejected','auto-rejected')]
+    official = [p for p in projects if p.get('source_type') == 'official-seed']
+    ecosystem = [p for p in projects if p.get('tracking_priority') != 'reject' and p.get('source_type') != 'official-seed']
     metrics = {
         'projects': len(projects),
         'curated': len(curated),
@@ -71,13 +87,12 @@ def main():
         'official_tools': len(official),
         'ecosystem_projects': len(ecosystem),
         'sources': dict(collections.Counter(p.get('source_type') for p in projects)),
-        'record_kinds': dict(collections.Counter(p.get('record_kind') for p in projects)),
-        'ranking_scopes': dict(collections.Counter(p.get('ranking_scope') for p in projects)),
+        'tracking_priorities': dict(collections.Counter(p.get('tracking_priority') for p in projects)),
         'tool_coverage': dict(collections.Counter(t for p in projects for t in p.get('target_tools', []))),
-        'category_coverage': dict(collections.Counter(c for p in projects for c in p.get('category', []))),
+        'resource_type_coverage': dict(collections.Counter(c for p in projects for c in p.get('resource_type', []))),
         'languages': ['zh', 'en'],
     }
-    i18n = {'languages': ['zh', 'en'], 'default': 'zh', 'categories': CATEGORY_LABELS}
+    i18n = {'languages': ['zh', 'en'], 'default': 'zh', 'resource_types': RESOURCE_TYPE_LABELS}
     write_json('projects.json', projects)
     write_json('curated-projects.json', curated)
     write_json('rejected-projects.json', rejected)
