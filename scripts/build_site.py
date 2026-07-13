@@ -172,6 +172,13 @@ def main():
     sitemap_path = ROOT / 'site' / 'sitemap.xml'
     sitemap_path.write_text(generate_sitemap(projects), encoding='utf-8')
 
+    # Generate robots.txt (dogfood #27)
+    robots_path = ROOT / 'site' / 'robots.txt'
+    robots_path.write_text(
+        'User-agent: *\nAllow: /\nSitemap: https://coding.lzpgood.online/sitemap.xml\n',
+        encoding='utf-8'
+    )
+
     # Hash JS/CSS filenames and update index.html references
     site_dir = ROOT / 'site'
     js_dir = site_dir / 'js'
