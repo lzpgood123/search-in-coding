@@ -1,11 +1,12 @@
 // site/js/filters.js
-// Multi-select tag button filters, OR/AND toggle, 6 sort modes, URL state
+// Multi-select tag filtering, OR/AND toggle, 6 sort modes, URL state, recentOnly
+// Pure logic - no DOM references
 const SIC_filters = {
-  selectedTools: new Set(),   // selected tool IDs
-  selectedTypes: new Set(),   // selected resource_type values
+  selectedTools: new Set(),
+  selectedTypes: new Set(),
   searchQuery: '',
   sortBy: 'score',
-  matchMode: 'or',            // 'or' or 'and'
+  matchMode: 'or',
   curatedOnly: false,
   recentOnly: false,
 
@@ -20,21 +21,35 @@ const SIC_filters = {
   toggleMode() {
     this.matchMode = this.matchMode === 'or' ? 'and' : 'or';
   },
+  clearTools() {
+    this.selectedTools.clear();
+  },
+  setTool(id) {
+    this.selectedTools.clear();
+    this.selectedTools.add(id);
+  },
+
+  // Bug 5 fix: recentOnly - compute cutoff date from last 50 projects by first_seen
+  _recentCutoff(projects) {
+    const dates = projects
+      .map(p => p.first_seen || p.last_seen || '')
+      .filter(Boolean)
+      .sort();
+    return dates[Math.max(0, dates.length - 50)] || '';
+  },
 
   apply(projects, curatedIds) {
+    const cutoff = this.recentOnly ? this._recentCutoff(projects) : '';
     let rows = projects.filter(p => {
-      // Exclude rejected and official-seed from search results
       if (p.source_type === 'official-seed') return false;
       if (p.tracking_priority === 'reject') return false;
 
-      // Search query
       if (this.searchQuery) {
         const q = this.searchQuery.toLowerCase();
         const text = JSON.stringify(p).toLowerCase();
         if (!text.includes(q)) return false;
       }
 
-      // Tool filter
       if (this.selectedTools.size > 0) {
         const pTools = p.target_tools || [];
         if (this.matchMode === 'and') {
@@ -44,7 +59,6 @@ const SIC_filters = {
         }
       }
 
-      // Resource type filter
       if (this.selectedTypes.size > 0) {
         const pTypes = p.resource_type || [];
         if (this.matchMode === 'and') {
@@ -54,13 +68,14 @@ const SIC_filters = {
         }
       }
 
-      // Curated only
       if (this.curatedOnly && !curatedIds.has(p.id)) return false;
-
+      if (this.recentOnly) {
+        const pDate = p.first_seen || p.last_seen || '';
+        if (pDate < cutoff) return false;
+      }
       return true;
     });
 
-    // Sort
     rows.sort((a, b) => {
       switch (this.sortBy) {
         case 'name': return SIC_i18n.textOf(a, 'name').localeCompare(SIC_i18n.textOf(b, 'name'));
@@ -68,16 +83,14 @@ const SIC_filters = {
         case 'updated': return String(b.last_updated || '').localeCompare(String(a.last_updated || ''));
         case 'recent': return String(b.first_seen || b.last_seen || '').localeCompare(String(a.first_seen || a.last_seen || ''));
         case 'match': {
-          // Tag match count descending, then score
           const aMatch = this._matchCount(a);
           const bMatch = this._matchCount(b);
           if (bMatch !== aMatch) return bMatch - aMatch;
           return (b.total_score || 0) - (a.total_score || 0);
         }
-        default: return (b.total_score || 0) - (a.total_score || 0); // 'score'
+        default: return (b.total_score || 0) - (a.total_score || 0);
       }
     });
-
     return rows;
   },
 
@@ -90,7 +103,6 @@ const SIC_filters = {
     return count;
   },
 
-  // URL state
   readState() {
     const qs = new URLSearchParams(location.search);
     if (qs.get('q')) this.searchQuery = qs.get('q');
@@ -100,7 +112,6 @@ const SIC_filters = {
     if (qs.get('mode')) this.matchMode = qs.get('mode');
     if (qs.get('curated') === '1') this.curatedOnly = true;
     if (qs.get('recent') === '1') this.recentOnly = true;
-    // Favorites from hash
     if (location.hash.startsWith('#favorites=')) {
       const ids = location.hash.slice(12).split(',').filter(Boolean);
       ids.forEach(id => SIC_data.favorites.add(id));

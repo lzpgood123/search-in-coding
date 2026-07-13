@@ -7,7 +7,7 @@ const SIC_i18n = {
     zh: {
       subtitle: 'AI Coding Agent 生态追踪器：终端 Agent、AI IDE、MCP、Skills、Rules、Context Engineering',
       navWeekly: '生态周报', navCompare: '工具对比', navTop: '推荐榜',
-      discoveryTitle: '本周新发现', discoveryHint: '最近 7 天新增的高质量项目',
+      discoveryTitle: '最新发现', discoveryHint: '按发现时间排序的高质量项目 Top 12',
       toolOverviewTitle: '工具生态概览', toolOverviewHint: '点击工具卡片查看该工具的生态资源',
       searchTitle: '生态项目搜索', searchHint: '多选标签筛选，支持 OR/AND 切换',
       searchPlaceholder: '搜索项目名称或描述...',
@@ -17,6 +17,7 @@ const SIC_i18n = {
       details: '详情', copy: '复制链接', copied: '已复制', open: '打开',
       favorite: '收藏', favorited: '已收藏', exportFav: '导出收藏',
       curated: '推荐', tracking: '追踪中', indexed: '索引中',
+      curatedOnly: '只看推荐', recentOnly: '只看最近新增',
       thName: '名称', thType: '类型', thTools: '工具', thScore: '分数', thStars: 'Stars', thLink: '链接',
       loading: '加载中...', loadError: '数据加载失败', retry: '重试',
       noResults: '没有符合条件的项目', adjustFilter: '试试调整筛选条件',
@@ -28,7 +29,7 @@ const SIC_i18n = {
     en: {
       subtitle: 'AI Coding Agent ecosystem tracker: terminal agents, AI IDEs, MCP, skills, rules, and context engineering',
       navWeekly: 'Weekly Report', navCompare: 'Tool Comparison', navTop: 'Top Picks',
-      discoveryTitle: 'New This Week', discoveryHint: 'High-quality projects added in the last 7 days',
+      discoveryTitle: 'Latest Discoveries', discoveryHint: 'Top 12 high-quality projects by discovery date',
       toolOverviewTitle: 'Tool Ecosystem Overview', toolOverviewHint: 'Click a tool card to browse its ecosystem resources',
       searchTitle: 'Ecosystem Search', searchHint: 'Multi-select tag filtering with OR/AND toggle',
       searchPlaceholder: 'Search project name or description...',
@@ -38,6 +39,7 @@ const SIC_i18n = {
       details: 'Details', copy: 'Copy link', copied: 'Copied', open: 'Open',
       favorite: 'Favorite', favorited: 'Favorited', exportFav: 'Export Favorites',
       curated: 'Curated', tracking: 'Tracking', indexed: 'Indexed',
+      curatedOnly: 'Curated only', recentOnly: 'Recent only',
       thName: 'Name', thType: 'Type', thTools: 'Tools', thScore: 'Score', thStars: 'Stars', thLink: 'Link',
       loading: 'Loading...', loadError: 'Failed to load data', retry: 'Retry',
       noResults: 'No projects match your filters', adjustFilter: 'Try adjusting your filters',

@@ -204,6 +204,7 @@ input:focus, select:focus { outline: 2px solid var(--color-accent); }
 }
 
 /* === Table === */
+.table-wrapper { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; background: var(--color-surface); }
 th, td {
   padding: 10px;
@@ -290,13 +291,35 @@ th { font-size: 13px; color: var(--color-text-muted); text-transform: uppercase;
 .report-content { line-height: 1.8; }
 .report-content h1 { font-size: 24px; }
 .report-content h2 { font-size: 20px; }
+.report-content h3 { font-size: 17px; }
+.report-content h4 { font-size: 15px; }
 .report-content table { margin: 12px 0; }
+.report-content th, .report-content td { padding: 6px 10px; }
+.report-content ul { padding-left: 20px; }
+.report-content pre { background: var(--color-card); padding: 12px; border-radius: var(--radius-sm); overflow-x: auto; }
 .report-content code { background: var(--color-card); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+
+/* === Chart Container === */
+.chart-container { margin-bottom: var(--spacing); overflow-x: auto; }
+.chart-container svg { max-width: 100%; }
+
+/* === Favorites Export Input (Bug 8 fix) === */
+.fav-export-input {
+  margin-left: 8px;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+  background: var(--color-input);
+  color: var(--color-text);
+  font-size: 12px;
+  max-width: 300px;
+}
 
 /* === Responsive === */
 @media (max-width: 760px) {
   main { padding: 14px; }
   table { font-size: 13px; }
+  .table-wrapper table { min-width: 600px; }
   .topbar { display: block; }
   .lang-switch { margin-top: 16px; }
   .detail-overlay { width: 100%; }
