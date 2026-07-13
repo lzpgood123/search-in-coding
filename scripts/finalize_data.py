@@ -1,26 +1,24 @@
 #!/usr/bin/env python3
-"""Auto-finalize Search in Coding data from scoring config."""
+"""Auto-finalize Search in Coding data with new 100-point schema."""
 import argparse
 import datetime
 import json
-from common import load_jsonish, save_jsonish, normalize_project_fields, total_score
+from common import load_jsonish, save_jsonish
 
 DEFAULT_RANKING = {
-    'curated_min': 60,
-    'rejected_min': 25,
-    'github_min': 40,
-    'non_github_min': 15,
-    'try_now_min_score': 17,
+    'curated_min': 40,
+    'rejected_min': 10,
+    'github_min': 30,
+    'try_now_min_score': 25,
     'watch_min_score': 15,
-    'reject_max_score': 9,
+    'reject_max_score': 10,
 }
-HIGH_VALUE_CATEGORIES = {
-    'mcp-acp-a2a', 'skills-prompts', 'rules-instructions',
-    'context-engineering', 'agent-harness', 'testing-review-ci',
+HIGH_VALUE_TYPES = {
+    'mcp-server', 'skills', 'rules', 'agent-framework',
 }
 
 def load_ranking():
-    cfg = load_jsonish('config/scoring.yaml')
+    cfg = load_jsonish('config/scoring-v2.yaml')
     ranking = dict(DEFAULT_RANKING)
     if isinstance(cfg, dict):
         ranking.update(cfg.get('ranking', {}))
@@ -40,12 +38,10 @@ def ensure_official_seed(projects, tools):
                 'url': t.get('website') or t.get('docs') or (f"https://github.com/{t['repo']}" if t.get('repo') else ''),
                 'repo': t.get('repo'),
                 'source_type': 'official-seed',
-                'category': ['official-tool', t.get('primary_type', 'official-tool')],
+                'resource_type': ['cli-tool'],
                 'target_tools': [t['id']],
-                'concepts': t.get('related_concepts', []),
                 'summary': summary,
                 'i18n': {'zh': {'name': name, 'summary': summary}, 'en': {'name': name, 'summary': summary}},
-                'why_it_matters': 'Primary target tool for the Search in Coding tracker.',
                 'status': 'active',
                 'license': None,
                 'stars': None,
@@ -54,54 +50,50 @@ def ensure_official_seed(projects, tools):
                 'first_seen': now,
                 'last_seen': now,
                 'maturity': 'unknown',
-                'integration_surfaces': t.get('extension_points', []),
                 'languages': [],
                 'tags': ['target-tool', 'official-seed'],
-                'score': {'ecosystem_value': 5, 'activity': 3, 'adoption': 3, 'practicality': 5, 'novelty': 3, 'confidence': 5},
-                'notes': '',
                 'review_state': 'auto-curated',
-                'record_kind': 'official-tool',
-                'source_quality': 'verified',
-                'ranking_scope': 'official',
+                'quantifiable_score': 0,
+                'quality_score': 0,
+                'total_score': 0,
+                'score_detail': {},
+                'tracking_priority': 'track',
+                'last_analyzed': None,
+                'benchmark_ref': None,
             }
     return list(by_id.values())
 
 def project_score(p):
-    return p.get('total_score', total_score(p))
+    return p.get('total_score', 0)
 
 def auto_level(p, ranking):
     score = project_score(p)
-    source = p.get('source_type')
-    cats = set(p.get('category') or [])
-    if p.get('ranking_scope') == 'learning-resource':
-        return 'reference'
-    if source == 'github' and score >= ranking['try_now_min_score'] and cats & HIGH_VALUE_CATEGORIES:
+    rtypes = set(p.get('resource_type') or [])
+    if score >= ranking['try_now_min_score'] and rtypes & HIGH_VALUE_TYPES:
         return 'try-now'
     if score >= ranking['watch_min_score']:
         return 'watch'
-    if source == 'exa':
-        return 'reference'
-    return 'watch'
+    return 'reference'
 
 def is_weak_record(p, ranking):
     return (
         project_score(p) <= ranking['reject_max_score'] or
-        p.get('source_type') == 'fallback-web' or
-        p.get('target_tools') == ['general-ai-coding'] or
-        p.get('source_quality') in ('fallback', 'unverified')
+        p.get('tracking_priority') == 'reject' or
+        p.get('status') == 'archived'
     )
 
 def auto_note(p):
     score = project_score(p)
     source = p.get('source_type')
-    cats = ', '.join(p.get('category') or [])
-    return f'Auto-selected by scoring rules: source={source}, score={score}, categories={cats}.'
+    rtypes = ', '.join(p.get('resource_type') or [])
+    return f'Auto-selected by scoring rules: source={source}, score={score}, resource_types={rtypes}.'
 
 def main():
     ap = argparse.ArgumentParser(description='Auto-generate curated/rejected datasets from scoring rules')
     ap.add_argument('--curated-min', type=int, default=None)
     ap.add_argument('--rejected-min', type=int, default=None)
-    args = ap.parse_args()
+    ap.parse_known_args()
+    args, _ = ap.parse_known_args()
 
     ranking = load_ranking()
     if args.curated_min is not None:
@@ -110,18 +102,20 @@ def main():
         ranking['rejected_min'] = args.rejected_min
 
     projects = ensure_official_seed(load_jsonish('data/projects.yaml'), load_jsonish('data/seed-tools.yaml'))
+
+    # Normalize review states
     for p in projects:
-        normalize_project_fields(p)
-        if p.get('record_kind') == 'official-tool':
+        if p.get('source_type') == 'official-seed':
             p['review_state'] = 'auto-curated'
-            p['ranking_scope'] = 'official'
+            p['tracking_priority'] = p.get('tracking_priority') or 'track'
         elif p.get('review_state') in ('reviewed', 'auto-reviewed', 'unreviewed'):
             p['review_state'] = 'auto-indexed'
         elif p.get('review_state') == 'rejected':
             p['review_state'] = 'auto-rejected'
 
-    all_candidates = [p for p in projects if p.get('record_kind') != 'official-tool' and p.get('ranking_scope') in ('ecosystem', 'learning-resource')]
-    candidates = sorted(all_candidates, key=lambda p: p.get('total_score', total_score(p)), reverse=True)
+    # Candidates: non-official, non-reject
+    all_candidates = [p for p in projects if p.get('source_type') != 'official-seed' and p.get('tracking_priority') != 'reject']
+    candidates = sorted(all_candidates, key=lambda p: project_score(p), reverse=True)
     non_weak = [p for p in candidates if not is_weak_record(p, ranking)]
 
     curated = []
@@ -136,14 +130,12 @@ def main():
         curated.append(q)
         seen.add(q.get('id'))
 
+    # Phase 1: GitHub high-score
     for p in non_weak:
-        if p.get('source_type') == 'github' and p.get('ranking_scope') == 'ecosystem' and len([x for x in curated if x.get('source_type') == 'github']) < ranking['github_min']:
+        if p.get('source_type') == 'github' and len([x for x in curated if x.get('source_type') == 'github']) < ranking['github_min']:
             add_curated(p)
 
-    for p in non_weak:
-        if p.get('source_type') != 'github' and len([x for x in curated if x.get('source_type') != 'github']) < ranking['non_github_min']:
-            add_curated(p)
-
+    # Phase 2: Ensure each tool has at least 1 curated
     tools = [t['id'] for t in load_jsonish('data/seed-tools.yaml')]
     for tid in tools:
         if any(tid in (p.get('target_tools') or []) for p in curated):
@@ -153,23 +145,25 @@ def main():
                 add_curated(p)
                 break
 
+    # Phase 3: Fill to curated_min
     for p in candidates:
         if len(curated) >= ranking['curated_min']:
             break
         add_curated(p)
 
+    # Rejected: lowest scoring non-official, non-curated
     curated_ids = {p['id'] for p in curated}
     rejected = []
-    for p in sorted(projects, key=lambda p: p.get('total_score', total_score(p))):
+    for p in sorted(projects, key=lambda p: project_score(p)):
         if len(rejected) >= ranking['rejected_min']:
             break
-        if p.get('record_kind') == 'official-tool' or p.get('id') in curated_ids:
+        if p.get('source_type') == 'official-seed' or p.get('id') in curated_ids:
             continue
         if is_weak_record(p, ranking):
             q = dict(p)
             q['review_state'] = 'auto-rejected'
-            q['ranking_scope'] = 'excluded'
-            q['rejection_reason'] = 'Auto-rejected by scoring/source-quality rules: low confidence, fallback/noisy, generic, duplicate, or weak direct relevance.'
+            q['tracking_priority'] = 'reject'
+            q['rejection_reason'] = f'Auto-rejected: low score ({project_score(p)}), archived, or weak relevance.'
             rejected.append(q)
 
     rejected_ids = {p['id'] for p in rejected}
@@ -178,8 +172,8 @@ def main():
             p['review_state'] = 'auto-curated'
         elif p['id'] in rejected_ids:
             p['review_state'] = 'auto-rejected'
-            p['ranking_scope'] = 'excluded'
-        elif p.get('record_kind') != 'official-tool':
+            p['tracking_priority'] = 'reject'
+        elif p.get('source_type') != 'official-seed':
             p['review_state'] = 'auto-indexed'
 
     save_jsonish('data/projects.yaml', projects)
@@ -191,7 +185,6 @@ def main():
         'curated': len(curated),
         'rejected': len(rejected),
         'curated_github': sum(1 for p in curated if p.get('source_type') == 'github'),
-        'curated_non_github': sum(1 for p in curated if p.get('source_type') != 'github'),
     }, ensure_ascii=False))
 
 if __name__ == '__main__':

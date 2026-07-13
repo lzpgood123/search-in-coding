@@ -4,10 +4,9 @@ from pathlib import Path
 from common import ROOT, load_jsonish
 REQUIRED = {
  'data/seed-tools.yaml': ['id','name','vendor','primary_type','aliases','tracking_priority'],
- 'data/sources.yaml': ['id','name','type'],
  'data/concepts.yaml': ['id','name','description'],
 }
-PROJECT_REQUIRED=['id','name','url','source_type','category','target_tools','summary','review_state']
+PROJECT_REQUIRED=['id','name','url','source_type','resource_type','target_tools','summary','review_state','total_score','tracking_priority']
 
 def check_list(path, fields):
     data=load_jsonish(path)
@@ -21,12 +20,12 @@ def check_list(path, fields):
 def main():
     ap=argparse.ArgumentParser(description='Validate Search in Coding data files')
     ap.add_argument('--section', choices=['all','tools','projects'], default='all')
-    args=ap.parse_args()
+    ap.parse_known_args()
+    args, _ = ap.parse_known_args()
     counts={}
     if args.section in ('all','tools'):
         counts['tools']=check_list('data/seed-tools.yaml', REQUIRED['data/seed-tools.yaml'])
     if args.section=='all':
-        counts['sources']=check_list('data/sources.yaml', REQUIRED['data/sources.yaml'])
         counts['concepts']=check_list('data/concepts.yaml', REQUIRED['data/concepts.yaml'])
     if args.section in ('all','projects'):
         p=ROOT/'data/projects.yaml'

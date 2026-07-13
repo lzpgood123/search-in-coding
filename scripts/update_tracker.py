@@ -28,13 +28,12 @@ def run(cmd: list[str], *, required: bool = True, timeout: int = 600) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser(description='Collect, normalize, score, report, and build the tracker')
     ap.add_argument('--github-limit', type=int, default=20)
-    ap.add_argument('--exa-limit', type=int, default=3)
     ap.add_argument('--github-queries', type=int, default=0, help='0 means all configured queries')
-    ap.add_argument('--exa-queries', type=int, default=0, help='0 means all configured queries')
     ap.add_argument('--skip-collect', action='store_true', help='Only rebuild derived data/reports/site')
     ap.add_argument('--deploy', action='store_true', help='Sync site/ to the production Nginx webroot')
     ap.add_argument('--skip-deploy', action='store_true', help='Deprecated no-op; deployment is opt-in via --deploy')
-    args = ap.parse_args()
+    ap.parse_known_args()
+    args, _ = ap.parse_known_args()
 
     steps: list[dict] = []
     if not args.skip_collect:
@@ -43,19 +42,12 @@ def main() -> None:
             '--limit', str(args.github_limit),
             '--queries', str(args.github_queries),
         ], required=False, timeout=900))
-        steps.append(run([
-            'python3', 'scripts/collect_exa.py',
-            '--limit', str(args.exa_limit),
-            '--queries', str(args.exa_queries),
-        ], required=False, timeout=900))
-        steps.append(run(['python3', 'scripts/normalize.py', '--source', 'all'], timeout=600))
+        steps.append(run(['python3', 'scripts/normalize.py', '--source', 'github'], timeout=600))
 
     for cmd in [
-        ['python3', 'scripts/enrich_i18n.py'],
         ['python3', 'scripts/validate_data.py'],
         ['python3', 'scripts/score.py'],
         ['python3', 'scripts/finalize_data.py'],
-        ['python3', 'scripts/enrich_i18n.py'],
         ['python3', 'scripts/generate_reports.py'],
         ['python3', 'scripts/build_site.py'],
         ['python3', 'scripts/quality_gate.py'],
