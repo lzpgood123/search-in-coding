@@ -1,5 +1,6 @@
 // site/js/filters.js
 // Multi-select tag filtering, OR/AND toggle, 6 sort modes, URL state, recentOnly
+// Batch B fixes: #5 favoritesOnly, #6 hash preservation, #7 hasActiveFilters/clearAll, #8 radiogroup, #15 deep link
 // Pure logic - no DOM references
 const SIC_filters = {
   selectedTools: new Set(),
@@ -9,6 +10,8 @@ const SIC_filters = {
   matchMode: 'or',
   curatedOnly: false,
   recentOnly: false,
+  favoritesOnly: false,
+  _pendingProject: null,
 
   toggleTool(id) {
     if (this.selectedTools.has(id)) this.selectedTools.delete(id);
@@ -27,6 +30,24 @@ const SIC_filters = {
   setTool(id) {
     this.selectedTools.clear();
     this.selectedTools.add(id);
+  },
+
+  // #7: check if any filters are active
+  hasActiveFilters() {
+    return this.searchQuery || this.selectedTools.size > 0 || this.selectedTypes.size > 0 ||
+      this.curatedOnly || this.recentOnly || this.favoritesOnly;
+  },
+
+  // #7: clear all filters
+  clearAll() {
+    this.searchQuery = '';
+    this.selectedTools.clear();
+    this.selectedTypes.clear();
+    this.curatedOnly = false;
+    this.recentOnly = false;
+    this.favoritesOnly = false;
+    this.sortBy = 'score';
+    this.matchMode = 'or';
   },
 
   // Bug 5 fix: recentOnly - compute cutoff date from last 50 projects by first_seen
@@ -112,6 +133,9 @@ const SIC_filters = {
     if (qs.get('mode')) this.matchMode = qs.get('mode');
     if (qs.get('curated') === '1') this.curatedOnly = true;
     if (qs.get('recent') === '1') this.recentOnly = true;
+    if (qs.get('fav') === '1') this.favoritesOnly = true;
+    // #15: project deep link
+    if (qs.get('project')) this._pendingProject = qs.get('project');
     if (location.hash.startsWith('#favorites=')) {
       const ids = location.hash.slice(12).split(',').filter(Boolean);
       ids.forEach(id => SIC_data.favorites.add(id));
@@ -119,6 +143,7 @@ const SIC_filters = {
     }
   },
 
+  // #6: preserve hash in writeState
   writeState() {
     const qs = new URLSearchParams();
     if (this.searchQuery) qs.set('q', this.searchQuery);
@@ -128,6 +153,8 @@ const SIC_filters = {
     if (this.matchMode === 'and') qs.set('mode', 'and');
     if (this.curatedOnly) qs.set('curated', '1');
     if (this.recentOnly) qs.set('recent', '1');
-    history.replaceState(null, '', `${location.pathname}${qs.toString() ? '?' + qs : ''}`);
+    if (this.favoritesOnly) qs.set('fav', '1');
+    const hash = location.hash; // #6: preserve hash
+    history.replaceState(null, '', `${location.pathname}${qs.toString() ? '?' + qs : ''}${hash}`);
   },
 };

@@ -1,5 +1,6 @@
 // site/js/i18n.js
 // Bilingual configuration and language switching
+// Batch B: added keys for favoritesOnly, showing, clearFilters, scoreBreakdown, qualityPending, footer
 const SIC_i18n = {
   lang: localStorage.getItem('sic_lang') || ((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en'),
 
@@ -17,12 +18,15 @@ const SIC_i18n = {
       details: '详情', copy: '复制链接', copied: '已复制', open: '打开',
       favorite: '收藏', favorited: '已收藏', exportFav: '导出收藏',
       curated: '推荐', tracking: '追踪中', indexed: '索引中',
-      curatedOnly: '只看推荐', recentOnly: '只看最近新增',
+      curatedOnly: '只看推荐', recentOnly: '只看最近新增', favoritesOnly: '只看收藏',
       thName: '名称', thType: '类型', thTools: '工具', thScore: '分数', thStars: 'Stars', thLink: '链接',
       loading: '加载中...', loadError: '数据加载失败', retry: '重试',
       noResults: '没有符合条件的项目', adjustFilter: '试试调整筛选条件',
       scoreDetail: '评分明细', quantifiable: '可量化分', quality: '质量分',
+      scoreBreakdown: '评分分项', qualityPending: '质量分待 LLM 分析',
       benchmarkRef: '参照项目', relatedProjects: '关联项目', readme: 'README 预览',
+      showing: '显示', clearFilters: '清空筛选',
+      footerUpdated: '数据更新于', footerDesc: 'AI Coding Agent 生态追踪器',
       metrics: { projects: '总记录', curated: '推荐', rejected: '噪声', official_tools: '官方工具', ecosystem_projects: '生态项目' },
       resourceTypes: { 'mcp-server': 'MCP Server', 'skills': 'Skills', 'rules': 'Rules', 'agent-framework': 'Agent 框架', 'cli-tool': 'CLI 工具', 'tutorial': '教程' },
     },
@@ -39,12 +43,15 @@ const SIC_i18n = {
       details: 'Details', copy: 'Copy link', copied: 'Copied', open: 'Open',
       favorite: 'Favorite', favorited: 'Favorited', exportFav: 'Export Favorites',
       curated: 'Curated', tracking: 'Tracking', indexed: 'Indexed',
-      curatedOnly: 'Curated only', recentOnly: 'Recent only',
+      curatedOnly: 'Curated only', recentOnly: 'Recent only', favoritesOnly: 'Favorites only',
       thName: 'Name', thType: 'Type', thTools: 'Tools', thScore: 'Score', thStars: 'Stars', thLink: 'Link',
       loading: 'Loading...', loadError: 'Failed to load data', retry: 'Retry',
       noResults: 'No projects match your filters', adjustFilter: 'Try adjusting your filters',
       scoreDetail: 'Score Details', quantifiable: 'Quantifiable', quality: 'Quality',
+      scoreBreakdown: 'Score Breakdown', qualityPending: 'Quality score pending LLM analysis',
       benchmarkRef: 'Benchmark Reference', relatedProjects: 'Related Projects', readme: 'README Preview',
+      showing: 'Showing', clearFilters: 'Clear filters',
+      footerUpdated: 'Data updated', footerDesc: 'AI Coding Agent Ecosystem Tracker',
       metrics: { projects: 'Records', curated: 'Curated', rejected: 'Rejected', official_tools: 'Official', ecosystem_projects: 'Ecosystem' },
       resourceTypes: { 'mcp-server': 'MCP Server', 'skills': 'Skills', 'rules': 'Rules', 'agent-framework': 'Agent Framework', 'cli-tool': 'CLI Tool', 'tutorial': 'Tutorial' },
     }
@@ -67,7 +74,15 @@ const SIC_i18n = {
     document.documentElement.lang = this.lang === 'zh' ? 'zh-CN' : 'en';
     document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = this.t(el.dataset.i18n); });
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { el.placeholder = this.t(el.dataset.i18nPlaceholder); });
-    document.getElementById('langZh')?.classList.toggle('active', this.lang === 'zh');
-    document.getElementById('langEn')?.classList.toggle('active', this.lang === 'en');
+    var langZhBtn = document.getElementById('langZh');
+    var langEnBtn = document.getElementById('langEn');
+    if (langZhBtn) {
+      langZhBtn.classList.toggle('active', this.lang === 'zh');
+      langZhBtn.setAttribute('aria-pressed', this.lang === 'zh');
+    }
+    if (langEnBtn) {
+      langEnBtn.classList.toggle('active', this.lang === 'en');
+      langEnBtn.setAttribute('aria-pressed', this.lang === 'en');
+    }
   }
 };
