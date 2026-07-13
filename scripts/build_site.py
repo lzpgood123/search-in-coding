@@ -176,19 +176,34 @@ def main():
     site_dir = ROOT / 'site'
     js_dir = site_dir / 'js'
 
-    # Read index.html and update references
+    # Step 1: Restore index.html to reference original (non-hashed) filenames
+    # This handles the case where build_site.py is run multiple times
     index_path = site_dir / 'index.html'
     index_html = index_path.read_text(encoding='utf-8')
+    # Replace any hashed JS references back to original names (handles single or double hash)
+    index_html = re.sub(r'js/([a-z0-9_-]+)(\.[a-f0-9]{6})+\.js', r'js/\1.js', index_html)
+    # Replace any hashed CSS references back to original name
+    index_html = re.sub(r'styles(\.[a-f0-9]{6})+\.css', r'styles.css', index_html)
 
-    # Hash and copy JS files
-    for js_file in sorted(js_dir.glob('*.js')):
+    # Step 2: Clean up old hash files (pattern: name.hash.ext)
+    for old_hashed in js_dir.glob('*.*.js'):
+        old_hashed.unlink()
+    for old_css in site_dir.glob('styles.*.css'):
+        if old_css.name != 'styles.css':
+            old_css.unlink()
+
+    # Step 3: Only process original source files (not hash files)
+    source_js_files = [f for f in sorted(js_dir.glob('*.js')) if not re.match(r'^[a-z]+\.[a-f0-9]{6}\.js$', f.name)]
+
+    # Step 4: Hash and copy JS files, update index.html references
+    for js_file in source_js_files:
         content = js_file.read_text(encoding='utf-8')
         hashed = hash_filename(js_file.name, content)
         hashed_path = js_dir / hashed
         hashed_path.write_text(content, encoding='utf-8')
         index_html = index_html.replace(f'js/{js_file.name}', f'js/{hashed}')
 
-    # Hash and copy CSS
+    # Step 5: Hash and copy CSS
     css_content = (site_dir / 'styles.css').read_text(encoding='utf-8')
     css_hashed = hash_filename('styles.css', css_content)
     (site_dir / css_hashed).write_text(css_content, encoding='utf-8')
