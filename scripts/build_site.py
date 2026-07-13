@@ -25,6 +25,7 @@ SLIM_FIELDS = [
 DETAIL_FIELDS = SLIM_FIELDS + [
     'score_detail', 'llm_summary', 'benchmark_ref', 'last_analyzed',
     'repo', 'tags', 'maturity', 'status',
+    'readme_preview', 'topics',
 ]
 
 SITE_URL = 'https://coding.lzpgood.online/'
@@ -86,6 +87,8 @@ def enrich_project(p):
         'benchmark_ref': p.get('benchmark_ref'),
         'maturity': p.get('maturity'),
         'status': p.get('status'),
+        'readme_preview': p.get('readme_preview'),
+        'topics': p.get('topics', []),
     }
 
 
