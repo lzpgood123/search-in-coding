@@ -1,6 +1,7 @@
 // site/js/render.js
-// Three-zone rendering, virtual scroll (fixed), detail panel, report rendering
-// Bug fixes: 1 (discovery), 3 (tool card sync), 4 (virtual scroll), 6 (charts call), 7 (LLM summary), 9 (markdown)
+// Three-zone rendering, virtual scroll, detail panel, report rendering
+// Batch B fixes: #1 score/60, #9 loading state, #10 score_detail, #11 human labels,
+//   #12 hide empty fields, #20 clickable names, #7 result count + filter chips, #5 favoritesOnly
 const SIC_render = {
   PAGE_SIZE: 50,
   renderedCount: 0,
@@ -23,10 +24,23 @@ const SIC_render = {
     return '#';
   },
 
+  // #11: pills with i18n labels + color-coded classes
   pills: function(xs) {
     var self = SIC_render;
     return (xs || []).map(function(x) {
-      return '<span class="pill">' + self.esc(x) + '</span>';
+      var label = (SIC_i18n.t('resourceTypes')[x]) || x;
+      var cls = 'pill-type-' + (x || 'default');
+      return '<span class="pill ' + cls + '">' + self.esc(label) + '</span>';
+    }).join('');
+  },
+
+  // #11: tool names as human-readable labels
+  toolLabels: function(toolIds) {
+    var self = SIC_render;
+    return (toolIds || []).map(function(tid) {
+      var tool = SIC_data.tools.find(function(t) { return t.id === tid; });
+      var label = tool ? (SIC_i18n.textOf(tool, 'name') || tool.name) : tid;
+      return '<span class="pill">' + self.esc(label) + '</span>';
     }).join('');
   },
 
@@ -45,17 +59,17 @@ const SIC_render = {
     SIC_filters.writeState();
   },
 
+  // #24: metrics now in hero area
   renderMetrics: function() {
     var m = SIC_data.metrics;
-    var keys = ['projects', 'curated', 'rejected', 'official_tools', 'ecosystem_projects'];
+    var keys = ['projects', 'curated', 'official_tools', 'ecosystem_projects'];
     var self = this;
     this.$('metrics').innerHTML = keys.map(function(k) {
-      return '<div class="stat"><b>' + self.safeNum(m[k] || 0) + '</b><br><span class="muted">' +
+      return '<div class="hero-stat"><b>' + self.safeNum(m[k] || 0) + '</b><span class="muted">' +
         (SIC_i18n.t('metrics')[k] || k) + '</span></div>';
     }).join('');
   },
 
-  // Bug 1 fix: "最新发现" instead of "本周新发现" - no 7-day cutoff
   renderDiscovery: function() {
     var self = this;
     var recent = SIC_data.projects
@@ -84,7 +98,6 @@ const SIC_render = {
     }).join('');
   },
 
-  // Bug 6 fix: charts.js is called
   renderToolOverview: function() {
     var self = this;
     var tools = SIC_data.tools.filter(function(t) { return t.id !== 'general-ai-coding'; });
@@ -116,7 +129,6 @@ const SIC_render = {
     if (chartEl) chartEl.innerHTML = SIC_charts.barChart(chartData, maxVal);
   },
 
-  // Bug 6 fix: score distribution histogram
   renderScoreChart: function() {
     var scores = SIC_data.projects
       .filter(function(p) {
@@ -129,9 +141,17 @@ const SIC_render = {
     }
   },
 
+  // #5 favoritesOnly + #7 result count + filter chips
   renderSearchZone: function() {
     var curatedIds = SIC_data.curatedIds();
-    this.currentFiltered = SIC_filters.apply(SIC_data.projects, curatedIds);
+    var pool = SIC_data.projects;
+
+    // #5: filter by favorites
+    if (SIC_filters.favoritesOnly) {
+      pool = pool.filter(function(p) { return SIC_data.isFav(p.id); });
+    }
+
+    this.currentFiltered = SIC_filters.apply(pool, curatedIds);
     this.renderedCount = 0;
 
     // Bug 4 fix: disconnect old observer before clearing
@@ -139,6 +159,22 @@ const SIC_render = {
       this._observer.disconnect();
     }
     this.$('rows').innerHTML = '';
+
+    // #7: result count "显示 X / Y"
+    var totalProjects = SIC_data.projects.filter(function(p) {
+      return p.source_type !== 'official-seed' && p.tracking_priority !== 'reject';
+    }).length;
+    var countEl = this.$('resultCount');
+    if (countEl) {
+      countEl.textContent = SIC_i18n.t('showing') + ' ' + this.currentFiltered.length + ' / ' + totalProjects;
+    }
+
+    // #7: active filter chips
+    this.renderActiveFilters();
+
+    // #7: clear button visibility
+    var clearBtn = this.$('clearFilters');
+    if (clearBtn) clearBtn.style.display = SIC_filters.hasActiveFilters() ? '' : 'none';
 
     if (this.currentFiltered.length === 0) {
       this.$('rows').innerHTML = '<tr><td colspan="6" class="empty-box">' +
@@ -148,6 +184,29 @@ const SIC_render = {
     }
 
     this.renderMore();
+  },
+
+  // #7: render active filter chips
+  renderActiveFilters: function() {
+    var self = this;
+    var container = this.$('activeFilters');
+    if (!container) return;
+    var chips = [];
+    if (SIC_filters.searchQuery) {
+      chips.push({label: '"' + SIC_filters.searchQuery + '"', type: 'q'});
+    }
+    SIC_filters.selectedTools.forEach(function(t) {
+      var tool = SIC_data.tools.find(function(x) { return x.id === t; });
+      chips.push({label: SIC_i18n.textOf(tool, 'name') || t, type: 'tool', value: t});
+    });
+    SIC_filters.selectedTypes.forEach(function(t) {
+      chips.push({label: (SIC_i18n.t('resourceTypes')[t]) || t, type: 'type', value: t});
+    });
+    container.innerHTML = chips.map(function(c) {
+      return '<span class="filter-chip">' + self.esc(c.label) +
+        '<button data-action="remove-filter" data-filter-type="' + c.type +
+        '" data-filter-value="' + self.esc(c.value || '') + '">&times;</button></span>';
+    }).join('');
   },
 
   // Bug 4 fix: re-observe new last row after each load
@@ -160,17 +219,18 @@ const SIC_render = {
     var html = this.currentFiltered.slice(start, end).map(function(p) {
       var isFav = SIC_data.isFav(p.id);
       var isCurated = curatedIds.has(p.id);
+      // #1: score badge with /60 + #20: clickable project name + #11: human labels
       return '<tr>' +
-        '<td><b>' + self.esc(SIC_i18n.textOf(p, 'name')) + '</b><br>' +
+        '<td><b class="project-name" data-action="detail" data-id="' + self.esc(p.id) + '">' + self.esc(SIC_i18n.textOf(p, 'name')) + '</b><br>' +
         '<span class="muted">' + self.esc((SIC_i18n.textOf(p, 'summary') || '').slice(0, 100)) + '</span></td>' +
         '<td>' + self.pills(p.resource_type) + '</td>' +
-        '<td>' + self.esc((p.target_tools || []).join(', ')) + '</td>' +
-        '<td><b>' + self.safeNum(p.total_score) + '</b></td>' +
-        '<td>' + self.safeNum(p.stars) + '</td>' +
+        '<td>' + self.toolLabels(p.target_tools) + '</td>' +
+        '<td><span class="score-badge">' + self.safeNum(p.total_score) + '</span><span class="muted" style="font-size:11px;">/60</span></td>' +
+        '<td>★ ' + self.safeNum(p.stars) + '</td>' +
         '<td>' +
           '<a href="' + self.safeUrl(p.url) + '" target="_blank" rel="noopener noreferrer">' + SIC_i18n.t('open') + '</a> ' +
           '<button class="fav-btn ' + (isFav ? 'active' : '') + '" data-action="fav" data-id="' + self.esc(p.id) + '">★</button> ' +
-          (isCurated ? '<span class="pill">' + SIC_i18n.t('curated') + '</span> ' : '') +
+          (isCurated ? '<span class="pill pill-curated">' + SIC_i18n.t('curated') + '</span> ' : '') +
           '<button data-action="detail" data-id="' + self.esc(p.id) + '">' + SIC_i18n.t('details') + '</button>' +
         '</td>' +
       '</tr>';
@@ -193,18 +253,25 @@ const SIC_render = {
     }
   },
 
-  // Bug 7 fix: llm_summary as {zh, en} object, not i18n structure
+  // #9: loading state + #10: score_detail + #12: hide empty fields + #1: score /60
   openDetail: async function(projectId) {
-    var p = SIC_data.projects.find(function(x) { return x.id === projectId; });
-    if (!p) return;
-    var detail = await SIC_data.loadDetail(projectId);
     var self = this;
     var overlay = this.$('detailOverlay');
+
+    // #9: show loading immediately
+    overlay.innerHTML = '<div class="detail-loading">' + SIC_i18n.t('loading') + '</div>';
+    overlay.classList.add('open');
+
+    var p = SIC_data.projects.find(function(x) { return x.id === projectId; });
+    if (!p) { overlay.innerHTML = '<p>Not found</p>'; return; }
+
+    var detail = await SIC_data.loadDetail(projectId);
     var curatedIds = SIC_data.curatedIds();
     var isFav = SIC_data.isFav(p.id);
     var qScore = p.quantifiable_score || 0;
     var qualityScore = p.quality_score || 0;
     var total = p.total_score || 0;
+    var sd = (detail && detail.score_detail) || p.score_detail || {};
 
     // Bug 7 fix: llm_summary is {zh, en}, not i18n structure
     var llmSummary = detail ? detail.llm_summary : null;
@@ -215,6 +282,27 @@ const SIC_render = {
       summaryText = llmSummary;
     }
 
+    // #12: hide empty fields
+    var forksLine = p.forks ? '<p class="muted">Forks: ' + this.safeNum(p.forks) + '</p>' : '';
+    var licenseLine = p.license ? '<p class="muted">License: ' + this.esc(p.license) + '</p>' : '';
+    var langLine = (p.languages && p.languages.filter(Boolean).length > 0)
+      ? '<p class="muted">Languages: ' + this.esc(p.languages.filter(Boolean).join(', ')) + '</p>' : '';
+
+    // #1: score display as /60
+    // #10: score_detail breakdown
+    var scoreDetailHtml = '';
+    if (sd && Object.keys(sd).length > 0) {
+      scoreDetailHtml = '<div class="detail-section">' +
+        '<h3>' + SIC_i18n.t('scoreBreakdown') + '</h3>' +
+        '<div class="score-detail-grid">' +
+          '<div class="score-detail-item"><div class="label">Stars</div><div class="value">' + this.safeNum(sd.stars) + '/20</div></div>' +
+          '<div class="score-detail-item"><div class="label">Activity</div><div class="value">' + this.safeNum(sd.activity) + '/15</div></div>' +
+          '<div class="score-detail-item"><div class="label">Adoption</div><div class="value">' + this.safeNum(sd.adoption) + '/10</div></div>' +
+          '<div class="score-detail-item"><div class="label">Maturity</div><div class="value">' + this.safeNum(sd.maturity) + '/15</div></div>' +
+        '</div>' +
+      '</div>';
+    }
+
     overlay.innerHTML =
       '<button class="detail-close" data-action="close-detail">&times;</button>' +
       '<h2>' + this.esc(SIC_i18n.textOf(p, 'name')) + '</h2>' +
@@ -223,25 +311,26 @@ const SIC_render = {
       '<div class="detail-section">' +
         '<h3>' + SIC_i18n.t('scoreDetail') + '</h3>' +
         '<div style="display:flex;gap:12px;align-items:center;margin-bottom:8px;">' +
-          '<span class="score-badge" style="font-size:20px;padding:4px 12px;">' + this.safeNum(total) + '</span>' +
-          '<span class="muted">/ 100</span>' +
+          '<span class="score-badge score-badge-large">' + this.safeNum(total) + '</span>' +
+          '<span class="muted">/ 60 ' + SIC_i18n.t('quantifiable') + '</span>' +
         '</div>' +
-        '<div style="margin-bottom:6px;">' + SIC_i18n.t('quantifiable') + ': ' + this.safeNum(qScore) + '/60' +
-          '<div class="score-bar"><div class="score-bar-fill" style="width:' + (qScore / 60 * 100) + '%"></div></div>' +
-        '</div>' +
-        '<div>' + SIC_i18n.t('quality') + ': ' + this.safeNum(qualityScore) + '/40' +
-          '<div class="score-bar"><div class="score-bar-fill" style="width:' + (qualityScore / 40 * 100) + '%"></div></div>' +
-        '</div>' +
+        '<div class="score-bar"><div class="score-bar-fill" style="width:' + (total / 60 * 100) + '%"></div></div>' +
+        (qualityScore > 0
+          ? '<p class="muted" style="margin-top:8px;">' + SIC_i18n.t('quality') + ': ' + this.safeNum(qualityScore) + '/40</p>'
+          : '<p class="muted" style="margin-top:8px;">' + SIC_i18n.t('qualityPending') + '</p>') +
       '</div>' +
+
+      scoreDetailHtml +
 
       '<div class="detail-section">' +
         '<h3>' + SIC_i18n.t('details') + '</h3>' +
         '<p>' + this.pills(p.resource_type) + '</p>' +
-        '<p>' + this.esc((p.target_tools || []).join(', ')) + '</p>' +
-        '<p class="muted">Stars: ' + this.safeNum(p.stars) + ' · Forks: ' + this.safeNum(p.forks) + '</p>' +
-        '<p class="muted">License: ' + this.esc(p.license || 'N/A') + '</p>' +
-        '<p class="muted">Languages: ' + this.esc((p.languages || []).join(', ')) + '</p>' +
-        '<p class="muted">First seen: ' + this.esc(p.first_seen) + ' · Last seen: ' + this.esc(p.last_seen) + '</p>' +
+        '<p>' + this.toolLabels(p.target_tools) + '</p>' +
+        '<p class="muted">Stars: ★ ' + this.safeNum(p.stars) + '</p>' +
+        forksLine +
+        licenseLine +
+        langLine +
+        '<p class="muted">First seen: ' + this.esc(p.first_seen) + '</p>' +
         '<p class="muted">Tracking: ' + this.esc(p.tracking_priority) + '</p>' +
       '</div>' +
 
@@ -255,12 +344,10 @@ const SIC_render = {
       '</div>' +
 
       '<div class="detail-section">' +
-        '<a href="' + this.safeUrl(p.url) + '" target="_blank" rel="noopener noreferrer">' + SIC_i18n.t('open') + ' →</a> ' +
+        '<a href="' + this.safeUrl(p.url) + '" target="_blank" rel="noopener noreferrer">' + SIC_i18n.t('open') + ' -></a> ' +
         '<button class="fav-btn ' + (isFav ? 'active' : '') + '" data-action="fav" data-id="' + this.esc(p.id) + '">' +
           (isFav ? SIC_i18n.t('favorited') : SIC_i18n.t('favorite')) + '</button>' +
       '</div>';
-
-    overlay.classList.add('open');
 
     // Related projects
     var related = SIC_data.projects
@@ -290,7 +377,6 @@ const SIC_render = {
     SIC_data.toggleFav(id);
   },
 
-  // Bug 9 fix: rewritten markdown renderer - supports headers, lists, tables, code, links
   renderReport: function(md) {
     if (!md) return '<p class="muted">Report unavailable.</p>';
     // Escape HTML first
@@ -311,19 +397,26 @@ const SIC_render = {
     var result = [];
     var inTable = false;
     var tableRows = [];
+    var isFirstRow = true;
     for (var i = 0; i < lines.length; i++) {
       var line = lines[i];
       if (line.trim().startsWith('|') && line.trim().endsWith('|')) {
         var cells = line.split('|').filter(function(c) { return c.trim(); });
         // Skip separator rows (e.g., |---|---|)
         if (cells.every(function(c) { return /^[\s-]+$/.test(c); })) continue;
-        tableRows.push('<tr>' + cells.map(function(c) { return '<td>' + c.trim() + '</td>'; }).join('') + '</tr>');
+        if (isFirstRow) {
+          tableRows.push('<tr>' + cells.map(function(c) { return '<th>' + c.trim() + '</th>'; }).join('') + '</tr>');
+          isFirstRow = false;
+        } else {
+          tableRows.push('<tr>' + cells.map(function(c) { return '<td>' + c.trim() + '</td>'; }).join('') + '</tr>');
+        }
         inTable = true;
       } else {
         if (inTable) {
           result.push('<table>' + tableRows.join('') + '</table>');
           tableRows = [];
           inTable = false;
+          isFirstRow = true;
         }
         result.push(line);
       }
@@ -343,8 +436,8 @@ const SIC_render = {
   },
 
   showSkeleton: function() {
-    this.$('metrics').innerHTML = [1, 2, 3, 4, 5].map(function() {
-      return '<div class="stat skeleton" style="width:100px;height:60px;"></div>';
+    this.$('metrics').innerHTML = [1, 2, 3, 4].map(function() {
+      return '<div class="hero-stat skeleton" style="width:120px;height:70px;"></div>';
     }).join('');
     this.$('discovery').innerHTML = [1, 2, 3].map(function() {
       return '<div class="discovery-card skeleton" style="height:100px;"></div>';
