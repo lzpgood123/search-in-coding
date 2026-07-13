@@ -2,7 +2,7 @@
 
 > 前端开发者深入文档。读完能独立修改前端代码。
 >
-> **第 2 批重写后的版本**（2026-07-13）。
+> **第 3 批前端重写 v2**（2026-07-13）。修复第 2 批的 10 个 bug，引入事件委托架构。
 
 ## 架构概览
 
@@ -10,11 +10,29 @@
 
 **脚本加载顺序：** i18n.js -> data.js -> filters.js -> charts.js -> render.js -> app.js
 
+### 事件委托架构（v2 新增）
+
+第 3 批重写引入事件委托替代 inline onclick。所有动态生成的元素通过 `data-action` 属性标识点击类型，在 `document` 上统一监听 click 事件。
+
+**支持的 data-action 值：**
+
+| data-action | 触发场景 | 处理逻辑 |
+|-------------|---------|---------|
+| `detail` | 点击项目卡片/详情按钮 | 调用 `SIC_render.openDetail(id)` |
+| `fav` | 点击收藏按钮 | 调用 `SIC_render.toggleFav(id)` + 切换 active 类 |
+| `close-detail` | 点击关闭按钮 | 调用 `SIC_render.closeDetail()` |
+| `tool-tag` | 点击工具标签按钮 | `SIC_filters.toggleTool()` + 重新渲染表格 |
+| `type-tag` | 点击类型标签按钮 | `SIC_filters.toggleType()` + 重新渲染表格 |
+| `tool-filter` | 点击工具概览卡片 | `SIC_filters.setTool()` + 同步标签按钮 + 滚动到搜索区 |
+| `reload` | 点击重试按钮 | `location.reload()` |
+
+**关键：** 工具卡片点击后调用 `renderTagButtons()` 重新渲染标签按钮组，使 tag button 的 active 状态与 selectedTools 同步（Bug 3 修复）。
+
 ## 三区布局
 
 | 区域 | HTML section id | 渲染函数 | 用途 |
 |------|----------------|---------|------|
-| 发现区 | #discoverySection | renderDiscovery() | 本周新发现高质量项目（7天内，top 12） |
+| 发现区 | #discoverySection | renderDiscovery() | 最新发现高质量项目（按 first_seen + 分数排序取 Top 12，无时间 cutoff） |
 | 工具概览区 | #toolOverviewSection | renderToolOverview() | 10 个工具的生态规模卡片，点击跳转搜索区筛选 |
 | 搜索区 | #searchZone | renderSearchZone() | 多选标签筛选 + 6 种排序 + 虚拟滚动表格 |
 
@@ -101,22 +119,23 @@
 
 | 方法 | 签名 | 用途 |
 |------|------|------|
-| renderAll() | () => void | 渲染全部三区 + writeState() |
+| renderAll() | () => void | 渲染全部三区 + scoreChart + writeState() |
 | renderMetrics() | () => void | 渲染统计卡片 |
-| renderDiscovery() | () => void | 渲染发现区（7天内 top 12） |
-| renderToolOverview() | () => void | 渲染工具概览卡片 |
-| renderSearchZone() | () => void | 筛选 + 渲染表格 |
-| renderMore() | () => void | 分页加载（PAGE_SIZE=50）+ IntersectionObserver |
-| openDetail(projectId) | (string) => void | 打开详情面板，懒加载详情数据 |
+| renderDiscovery() | () => void | 渲染发现区（按 first_seen 降序 + 分数降序取 Top 12，无 7 天 cutoff） |
+| renderToolOverview() | () => void | 渲染工具概览卡片 + 调用 SIC_charts.barChart() 画柱状图 |
+| renderScoreChart() | () => void | 渲染分数分布直方图（调用 SIC_charts.histogram()） |
+| renderSearchZone() | () => void | 筛选 + 渲染表格，disconnect 旧 observer |
+| renderMore() | () => void | 分页加载（PAGE_SIZE=50）+ IntersectionObserver 重新 observe 新最后一行 |
+| openDetail(projectId) | (string) => void | 打开详情面板，懒加载详情数据，llm_summary 按 {zh,en} 对象取值 |
 | closeDetail() | () => void | 关闭详情面板 |
-| toggleFav(id, btn) | (string, Element) => void | 切换收藏状态 |
-| renderReport(md) | (string) => string | 简易 Markdown -> HTML 渲染 |
+| toggleFav(id) | (string) => void | 切换收藏状态 |
+| renderReport(md) | (string) => string | Markdown -> HTML 渲染（支持标题/段落/无序列表/表格/代码/链接） |
 | showSkeleton() | () => void | 骨架屏 |
-| showError() | () => void | 错误状态 + 重试按钮 |
+| showError() | () => void | 错误状态 + 重试按钮（data-action="reload"） |
 
-**虚拟滚动：** IntersectionObserver 观察最后一行，进入视口时加载下一页（50 条）。
+**虚拟滚动修复（Bug 4）：** IntersectionObserver 在 renderMore 每次加载后对新最后一行重新 observe；renderSearchZone 开始时 disconnect 旧 observer。Observer 只创建一次，通过 unobserve + observe 切换观察目标。
 
-**详情面板：** 右侧滑出（max-width 500px），含评分明细（进度条）、LLM 摘要、参照项目、关联项目推荐（同 resource_type 或 shared target_tools，top 5）。
+**LLM Summary 修复（Bug 7）：** detail 面板中 llm_summary 字段是 `{zh, en}` 对象（不是 i18n 结构），通过 `llmSummary[SIC_i18n.lang] || llmSummary.en || llmSummary.zh` 取值。
 
 ### charts.js - SIC_charts
 
@@ -185,13 +204,13 @@ build_site.py 生成：
 4. 排序下拉框（#sort）- 6 种排序
 5. 只看推荐复选框（#curatedOnly）
 
-**工具概览区交互：** 点击工具卡片 -> 清空工具筛选 -> 选中该工具 -> 跳转到搜索区
+**工具概览区交互：** 点击工具卡片 -> setTool()（清空工具筛选 + 选中该工具）-> renderTagButtons() 同步标签按钮 active 状态 -> 跳转到搜索区
 
-**详情面板：** 点击项目"详情"按钮 -> 右侧滑出面板 -> 懒加载详情数据 -> 显示评分明细、LLM 摘要、关联项目
+**详情面板：** 点击项目"详情"按钮 -> 右侧滑出面板 -> 懒加载详情数据 -> 显示评分明细、LLM 摘要（按 {zh,en} 对象取值）、关联项目
 
-**报告渲染：** 点击导航链接 -> fetch .md 文件 -> 简易 Markdown 渲染 -> 在详情面板中展示
+**报告渲染：** 点击导航链接 -> fetch .md 文件 -> Markdown 渲染器（支持标题/列表/表格/代码/链接）-> 在详情面板中展示
 
-**收藏：** 点击 ★ 按钮 -> localStorage 存储 -> 可通过"导出收藏"按钮复制 URL
+**收藏：** 点击 ★ 按钮 -> localStorage 存储 -> 可通过"导出收藏"按钮显示 URL 输入框（非 alert），可复制
 
 **双语切换：** 点击 中文/English 按钮 -> setLang() + localStorage -> renderAll()
 
