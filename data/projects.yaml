@@ -3511,7 +3511,6 @@
   source_type: github
   resource_type:
   - rules
-  - tutorial
   target_tools:
   - cursor
   summary: Curated list of awesome Cursor Rules .mdc files
@@ -3594,7 +3593,7 @@
   repo: flyeric0212/cursor-rules
   source_type: github
   resource_type:
-  - tutorial
+  - rules
   target_tools:
   - cursor
   summary: 整理和收集来自不同项目的Cursor规则文件，提供多种编程语言和框架的规则支持。
@@ -5205,7 +5204,7 @@
   - goose
   review_state: auto-curated
   license: null
-  resource_type:
+  resource_type: &id001
   - cli-tool
   quantifiable_score: 18
   quality_score: 0
@@ -5290,7 +5289,7 @@
   - cursor
   review_state: auto-curated
   license: null
-  resource_type:
+  resource_type: &id002
   - cli-tool
   quantifiable_score: 18
   quality_score: 0
@@ -6536,7 +6535,6 @@
   source_type: github
   resource_type:
   - skills
-  - tutorial
   target_tools:
   - claude-code
   - codex-cli
@@ -12693,7 +12691,8 @@
   repo: continuedev/continue
   source_type: github
   resource_type:
-  - tutorial
+  - cli-tool
+  - agent-framework
   target_tools:
   - general-ai-coding
   summary: open-source coding agent
@@ -12873,7 +12872,8 @@
   repo: RooCodeInc/Roo-Code
   source_type: github
   resource_type:
-  - tutorial
+  - cli-tool
+  - agent-framework
   target_tools:
   - general-ai-coding
   summary: Roo Code gives you a whole dev team of AI agents in your code editor.
@@ -12919,8 +12919,7 @@
   url: https://github.com/aaif-goose/goose
   repo: aaif-goose/goose
   source_type: github
-  resource_type:
-  - tutorial
+  resource_type: *id001
   target_tools:
   - goose
   summary: an open source, extensible AI agent that goes beyond code suggestions -
@@ -12972,8 +12971,7 @@
   url: https://github.com/cursor/cursor
   repo: cursor/cursor
   source_type: github
-  resource_type:
-  - tutorial
+  resource_type: *id002
   target_tools:
   - cursor
   summary: cursor/cursor
@@ -13666,4 +13664,3 @@
   tracking_priority: pending
   last_analyzed: null
   benchmark_ref: null
-
