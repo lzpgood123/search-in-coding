@@ -3,15 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Search in Coding</title>
+  <title>Search in Coding - AI Coding Agent 生态追踪器</title>
+  <meta name="description" content="持续自动更新的 AI Coding Agent 生态追踪索引库，追踪 10 个主流 AI 编码工具的插件、MCP、Skills、Rules、Context Engineering 资源。">
   <link rel="stylesheet" href="styles.css">
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Search in Coding",
+    "description": "AI Coding Agent ecosystem tracker",
+    "url": "https://coding.lzpgood.online/"
+  }
+  </script>
 </head>
 <body>
   <header>
     <div class="topbar">
       <div>
         <h1>Search in Coding</h1>
-        <p data-i18n="subtitle">AI Coding Agent 生态追踪器：终端 Agent、AI IDE、MCP、Skills、Rules、Context Engineering</p>
+        <p data-i18n="subtitle">AI Coding Agent 生态追踪器</p>
       </div>
       <div class="lang-switch" aria-label="Language switcher">
         <button id="langZh" type="button">中文</button>
@@ -19,44 +30,74 @@
       </div>
     </div>
     <nav>
-      <a href="reports/final-delivery-report.md" data-i18n="navFinal">最终报告</a>
-      <a href="reports/curated-top-projects.md" data-i18n="navCurated">推荐榜</a>
-      <a href="reports/source-quality-audit.md" data-i18n="navAudit">来源审计</a>
+      <a href="#" data-report="weekly-report.md" data-i18n="navWeekly">生态周报</a>
+      <a href="#" data-report="tool-comparison.md" data-i18n="navCompare">工具对比</a>
+      <a href="#" data-report="curated-top.md" data-i18n="navTop">推荐榜</a>
+      <button id="exportFav" class="fav-btn" data-i18n="exportFav">导出收藏</button>
     </nav>
   </header>
-  <main>
-    <section id="metrics" class="metrics"></section>
 
-    <section>
-      <h2 data-i18n="officialTitle">官方目标工具</h2>
-      <div id="official" class="cards"></div>
+  <main>
+    <!-- Zone 1: Discovery -->
+    <section id="discoverySection">
+      <h2 data-i18n="discoveryTitle">本周新发现</h2>
+      <p class="hint" data-i18n="discoveryHint">最近 7 天新增的高质量项目</p>
+      <div id="discovery" class="discovery-grid"></div>
     </section>
 
-    <section>
-      <h2 data-i18n="rankingTitle">生态项目榜</h2>
-      <p class="hint" data-i18n="rankingHint">默认排除 official seed tools；优先展示高评分项目。</p>
+    <!-- Zone 2: Tool Overview -->
+    <section id="toolOverviewSection">
+      <h2 data-i18n="toolOverviewTitle">工具生态概览</h2>
+      <p class="hint" data-i18n="toolOverviewHint">点击工具卡片查看该工具的生态资源</p>
+      <div id="toolOverview" class="tool-grid"></div>
+    </section>
+
+    <!-- Zone 3: Search -->
+    <section id="searchZone">
+      <h2 data-i18n="searchTitle">生态项目搜索</h2>
+      <p class="hint" data-i18n="searchHint">多选标签筛选</p>
+
+      <!-- Metrics -->
+      <section id="metrics" class="metrics" aria-label="Statistics"></section>
+
+      <!-- Controls -->
       <div class="controls">
-        <input id="q" data-i18n-placeholder="searchPlaceholder" placeholder="搜索项目、工具、类型">
-        <select id="tool"><option value="" data-i18n="allTools">全部工具</option></select>
-        <select id="cat"><option value="" data-i18n="allTypes">全部类型</option></select>
-        <select id="source"><option value="" data-i18n="allSources">全部来源</option></select>
-        <select id="review">
-          <option value="" data-i18n="allStates">全部状态</option>
-          <option value="auto-indexed">auto-indexed</option>
-          <option value="auto-curated">auto-curated</option>
-          <option value="auto-rejected">auto-rejected</option>
+        <input id="q" data-i18n-placeholder="searchPlaceholder" placeholder="搜索..." aria-label="Search">
+
+        <!-- Tool tag buttons -->
+        <div id="toolTags" class="tag-group" role="group" aria-label="Tool filter"></div>
+
+        <!-- Resource type tag buttons -->
+        <div id="typeTags" class="tag-group" role="group" aria-label="Type filter"></div>
+
+        <!-- OR/AND toggle -->
+        <div id="modeToggle" class="mode-toggle" role="radiogroup" aria-label="Match mode">
+          <button class="active" data-i18n="modeOR">任一匹配</button>
+          <button data-i18n="modeAND">全部匹配</button>
+        </div>
+
+        <!-- Sort -->
+        <select id="sort" aria-label="Sort">
+          <option value="score" data-i18n="sortScore">分数</option>
+          <option value="stars" data-i18n="sortStars">Stars</option>
+          <option value="updated" data-i18n="sortUpdated">最近更新</option>
+          <option value="match" data-i18n="sortMatch">标签匹配</option>
+          <option value="recent" data-i18n="sortRecent">最近发现</option>
+          <option value="name" data-i18n="sortName">名称</option>
         </select>
-        <label><input id="curatedOnly" type="checkbox"> <span data-i18n="curatedOnly">只看自动推荐</span></label>
+
+        <label><input id="curatedOnly" type="checkbox"> <span data-i18n="curatedOnly">只看推荐</span></label>
       </div>
-      <table>
+
+      <!-- Results table -->
+      <table role="table">
         <thead>
           <tr>
             <th data-i18n="thName">名称</th>
-            <th data-i18n="thSource">来源</th>
-            <th data-i18n="thTracking">追踪</th>
             <th data-i18n="thType">类型</th>
             <th data-i18n="thTools">工具</th>
             <th data-i18n="thScore">分数</th>
+            <th data-i18n="thStars">Stars</th>
             <th data-i18n="thLink">链接</th>
           </tr>
         </thead>
@@ -64,6 +105,16 @@
       </table>
     </section>
   </main>
-  <script src="app.js"></script>
+
+  <!-- Detail panel overlay -->
+  <aside id="detailOverlay" class="detail-overlay" role="dialog" aria-modal="true" aria-label="Project details"></aside>
+
+  <!-- Scripts: load order matters -->
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
