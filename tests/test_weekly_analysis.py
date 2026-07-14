@@ -72,6 +72,8 @@ class TestMergeResults:
         assert result['target_tools'] == ['claude-code']
         assert result['tracking_priority'] == 'track'
         assert result['llm_summary'] == {'zh': '好的项目', 'en': 'Good project'}
+        assert result['quality_detail'] == {'relevance': 9, 'practicality': 8, 'novelty': 7, 'ecosystem_value': 8}
+        assert result.get('score_detail') is None or 'relevance' not in (result.get('score_detail') or {})
         assert result['last_analyzed'] is not None  # should be set to today
 
     def test_preserves_quantifiable_score(self):
@@ -99,6 +101,26 @@ class TestMergeResults:
         result = merge_analysis_result(project, None)
         assert result['id'] == 't'
         assert result['total_score'] == 20  # unchanged
+
+    def test_official_seed_always_track(self):
+        from weekly_analysis import merge_analysis_result
+        project = {
+            'id': 'official-cursor',
+            'source_type': 'official-seed',
+            'quantifiable_score': 44,
+            'quality_score': 0,
+            'total_score': 44,
+            'tracking_priority': 'track',
+        }
+        analysis = {
+            'quality_score': 16,
+            'tracking_priority': 'index',
+            'quality_detail': {'relevance': 5, 'practicality': 4, 'novelty': 3, 'ecosystem_value': 4},
+        }
+        result = merge_analysis_result(project, analysis)
+        assert result['tracking_priority'] == 'track'
+        assert result['quality_detail']['relevance'] == 5
+        assert 'stars' not in (result.get('score_detail') or {})
 
 
 class TestGetProjectsToAnalyze:

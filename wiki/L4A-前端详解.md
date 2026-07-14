@@ -92,7 +92,7 @@
 
 **数据字段（精简版 projects.json）：** id, name, url, source_type, resource_type, target_tools, summary, i18n, stars, forks, total_score, quantifiable_score, quality_score, tracking_priority, last_updated, first_seen, last_seen, license, languages, review_state
 
-**详情版（projects-detail.json）额外字段：** score_detail, llm_summary, benchmark_ref, last_analyzed, repo, tags, maturity, status
+**详情版（projects-detail.json）额外字段：** score_detail, quality_detail, llm_summary, benchmark_ref, last_analyzed, repo, tags, maturity, status
 
 ### filters.js - SIC_filters
 
@@ -242,7 +242,10 @@ build_site.py 生成：
 - 点击项目名/卡片/详情按钮 -> 右侧滑出面板
 - **立即显示 loading 状态**（dogfood #9），数据到达后替换
 - 展示评分分项 score_detail（stars/20, activity/15, adoption/10, maturity/15）**[dogfood #10]**
-- 分数显示为"X / 60"而非"/ 100"（dogfood #1），质量分标注"待 LLM 分析"
+- 展示质量分项 quality_detail（relevance/practicality/novelty/ecosystem_value）**[batch3 fix]**
+- 已分析项目总分展示 `/100`，未分析展示 `/60`；进度条按 maxScore 计算 **[batch3 fix]**
+- benchmark_ref 通过 project id 查找项目名展示，而非裸 id **[batch3 fix]**
+- 未分析时质量分标注"待 LLM 分析"
 - 空字段隐藏（forks/license/languages 为空时不展示）**[dogfood #12]**
 - 项目深链：`?project=id` 打开时自动展开详情 **[dogfood #15]**
 - 懒加载详情数据，llm_summary 按 {zh,en} 对象取值

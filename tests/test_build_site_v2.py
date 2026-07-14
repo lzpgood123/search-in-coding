@@ -51,6 +51,7 @@ class TestBuildSiteV2:
         p = {
             'id': 'test', 'name': 'Test',
             'score_detail': {'stars': 4},
+            'quality_detail': {'relevance': 9, 'practicality': 8, 'novelty': 7, 'ecosystem_value': 8},
             'llm_summary': {'zh': '好的', 'en': 'Good'},
             'benchmark_ref': 'ref-1',
             'last_analyzed': '2025-07-10',
@@ -62,6 +63,7 @@ class TestBuildSiteV2:
         detail = detail_project(p)
         assert detail['id'] == 'test'
         assert 'score_detail' in detail
+        assert 'quality_detail' in detail
         assert 'llm_summary' in detail
         assert 'benchmark_ref' in detail
 

@@ -87,12 +87,17 @@ def merge_analysis_result(project, analysis):
     if 'quality_score' in analysis:
         p['quality_score'] = analysis['quality_score']
     if 'quality_detail' in analysis:
-        p['score_detail'] = analysis['quality_detail']
+        # Keep quantifiable score_detail intact; store LLM breakdown separately.
+        p['quality_detail'] = analysis['quality_detail']
     if 'llm_summary' in analysis:
         p['llm_summary'] = analysis['llm_summary']
 
     # Recalculate total score
     p['total_score'] = p.get('quantifiable_score', 0) + p.get('quality_score', 0)
+
+    # Official seed tools are always tracked, regardless of LLM priority.
+    if p.get('source_type') == 'official-seed':
+        p['tracking_priority'] = 'track'
 
     # Mark as analyzed
     p['last_analyzed'] = today()
@@ -124,6 +129,18 @@ def run_analysis(projects, max_projects=None, batch_size=3):
 
     # Process in batches of batch_size
     all_results = {}  # project_id -> analysis result
+    updated_projects = list(projects)
+
+    def merge_into_projects(source_projects, results_map):
+        merged = []
+        for p in source_projects:
+            pid = p.get('id')
+            if pid in results_map:
+                merged.append(merge_analysis_result(p, results_map[pid]))
+            else:
+                merged.append(p)
+        return merged
+
     for i in range(0, len(to_analyze), batch_size):
         batch = to_analyze[i:i + batch_size]
         batch_num = i // batch_size + 1
@@ -143,14 +160,11 @@ def run_analysis(projects, max_projects=None, batch_size=3):
                 status = 'OK' if result else 'FAILED'
                 print(f'  {batch[idx].get("name", "?")}: {status}')
 
-    # Merge results back into the full project list
-    updated_projects = []
-    for p in projects:
-        pid = p.get('id')
-        if pid in all_results:
-            updated_projects.append(merge_analysis_result(p, all_results[pid]))
-        else:
-            updated_projects.append(p)
+        # Incremental checkpoint after each batch (not per project) so timeouts
+        # do not lose the whole run.
+        updated_projects = merge_into_projects(projects, all_results)
+        save_jsonish('data/projects.yaml', updated_projects)
+        print(f'  Checkpoint saved ({len(all_results)} analyzed so far)')
 
     success_count = sum(1 for r in all_results.values() if r is not None)
     fail_count = sum(1 for r in all_results.values() if r is None)

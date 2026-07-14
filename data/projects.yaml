@@ -36,10 +36,10 @@
   quality_score: 40
   total_score: 92
   score_detail:
-    relevance: 10
-    practicality: 10
-    novelty: 10
-    ecosystem_value: 10
+    stars: 20
+    activity: 15
+    adoption: 10
+    maturity: 7
   tracking_priority: track
   last_analyzed: '2026-07-14'
   benchmark_ref: official-hermes-agent
@@ -71,6 +71,11 @@
     zh: Hermes Agent 是一个由 Nous Research 开发的自改进 AI 代理，具有内置学习循环。
     en: Hermes Agent is a self-improving AI agent with a built-in learning loop, developed
       by Nous Research.
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 10
+    ecosystem_value: 10
 - id: official-opencode
   name: OpenCode
   url: https://opencode.ai
@@ -107,10 +112,10 @@
   quality_score: 37
   total_score: 89
   score_detail:
-    relevance: 10
-    practicality: 10
-    novelty: 7
-    ecosystem_value: 10
+    stars: 20
+    activity: 15
+    adoption: 10
+    maturity: 7
   tracking_priority: track
   last_analyzed: '2026-07-14'
   benchmark_ref: official-hermes-agent
@@ -126,6 +131,11 @@
     zh: OpenCode是一个广受欢迎的开源AI编码助手，拥有高社区参与度，作为AI编码代理生态系统的核心项目。
     en: OpenCode is a popular open-source AI coding agent with high community engagement,
       serving as a core project in the AI coding agent ecosystem.
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 7
+    ecosystem_value: 10
 - id: official-claude-code
   name: Claude Code
   url: https://code.claude.com
@@ -162,10 +172,10 @@
   quality_score: 37
   total_score: 87
   score_detail:
-    relevance: 10
-    practicality: 10
-    novelty: 7
-    ecosystem_value: 10
+    stars: 20
+    activity: 15
+    adoption: 10
+    maturity: 5
   tracking_priority: track
   last_analyzed: '2026-07-14'
   benchmark_ref: official-hermes-agent
@@ -188,6 +198,11 @@
     zh: Claude Code 是 Anthropic 官方推出的终端智能编码代理工具，已在生产环境中广泛使用。
     en: Claude Code is Anthropic's official terminal-based AI coding agent tool, widely
       used in production.
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 7
+    ecosystem_value: 10
 - id: official-antigravity-cli
   name: Antigravity CLI / Gemini CLI
   url: https://antigravity.google/
@@ -213,23 +228,24 @@
   tags:
   - target-tool
   - official-seed
-  target_tools:
-  - antigravity-cli
+  target_tools: []
   review_state: auto-curated
   license: apache-2.0
   resource_type:
   - cli-tool
+  - mcp-server
+  - mcp-client
   quantifiable_score: 52
-  quality_score: 0
-  total_score: 52
+  quality_score: 37
+  total_score: 89
   score_detail:
     stars: 20
     activity: 15
     adoption: 10
     maturity: 7
   tracking_priority: track
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
   topics:
   - gemini
   - gemini-api
@@ -248,6 +264,15 @@
     [![Version](https://img.shields.io/npm/v/@google/gemini-cli)](https://www.npmjs.com/package/@google/gemini-cli)
 
     [![Lice'
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 7
+    ecosystem_value: 10
+  llm_summary:
+    zh: 谷歌官方发布的Gemini CLI工具，支持MCP，是AI编码代理生态中的重要组件。
+    en: Official Google CLI for Gemini with MCP support, a key component in the AI
+      coding agent ecosystem.
 - id: official-codex-cli
   name: OpenAI Codex CLI
   url: https://chatgpt.com/codex
@@ -282,17 +307,18 @@
   license: apache-2.0
   resource_type:
   - cli-tool
+  - agent-framework
   quantifiable_score: 52
-  quality_score: 0
-  total_score: 52
+  quality_score: 38
+  total_score: 90
   score_detail:
     stars: 20
     activity: 15
     adoption: 10
     maturity: 7
   tracking_priority: track
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
   readme_preview: "Codex CLI is a coding agent from OpenAI that runs locally on your\
     \ computer.\n\n  \n\nIf you want Codex in your code editor (VS Code, Cursor, Windsurf),\
     \ install in your IDE.\nIf you want the desktop app experience, run codex app\
@@ -301,6 +327,15 @@
     \ and running Codex CLI\n\nRun the following on Mac or Linux to install Codex\
     \ CLI:\n\n```shell\ncurl -fsSL https://chatgpt.co"
   topics: []
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 8
+    ecosystem_value: 10
+  llm_summary:
+    zh: OpenAI官方发布的本地AI编码代理命令行工具，生态核心之一。
+    en: OpenAI's official local AI coding agent CLI tool, a foundational ecosystem
+      component.
 - id: github-juliusbrussee-caveman
   name: JuliusBrussee/caveman
   url: https://github.com/JuliusBrussee/caveman
@@ -310,6 +345,8 @@
   - skills
   target_tools:
   - claude-code
+  - codex-cli
+  - cursor
   summary: 🪨 why use many token when few token do trick — Claude Code skill that cuts
     65% of tokens by talking like caveman
   i18n:
@@ -351,26 +388,35 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 49
-  quality_score: 0
-  total_score: 49
+  quality_score: 36
+  total_score: 85
   score_detail:
     stars: 20
     activity: 15
     adoption: 10
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
+  quality_detail:
+    relevance: 10
+    practicality: 9
+    novelty: 8
+    ecosystem_value: 9
+  llm_summary:
+    zh: 通过让AI说‘穴居人语’大幅节省token的幽默技能，适用于主流AI编程代理。
+    en: A humorous skill that drastically reduces token usage by making AI talk like
+      a caveman, applicable to mainstream AI coding agents.
 - id: github-cline-cline
   name: cline/cline
   url: https://github.com/cline/cline
   repo: cline/cline
   source_type: github
   resource_type:
-  - extension
+  - agent-framework
   - cli-tool
-  target_tools:
-  - general-ai-coding
+  - extension
+  target_tools: []
   summary: Autonomous coding agent as an SDK, IDE extension, or CLI assistant.
   i18n:
     zh:
@@ -400,16 +446,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 49
-  quality_score: 0
-  total_score: 49
+  quality_score: 36
+  total_score: 85
   score_detail:
     stars: 20
     activity: 15
     adoption: 10
     maturity: 4
   tracking_priority: track
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 7
+    ecosystem_value: 9
+  llm_summary:
+    zh: Cline 是一个强大的开源自主编程代理，可作为 SDK、IDE 扩展或命令行工具使用。
+    en: Cline is a powerful open-source autonomous coding agent that can be used as
+      an SDK, IDE extension, or CLI assistant.
 - id: official-goose
   name: Goose
   url: https://goose-docs.ai/
@@ -439,19 +494,20 @@
   - goose
   review_state: auto-curated
   license: apache-2.0
-  resource_type: &id001
+  resource_type:
+  - agent-framework
   - cli-tool
   quantifiable_score: 52
-  quality_score: 0
-  total_score: 52
+  quality_score: 34
+  total_score: 86
   score_detail:
     stars: 20
     activity: 15
     adoption: 10
     maturity: 7
   tracking_priority: track
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
   topics:
   - mcp
   - acp
@@ -464,12 +520,23 @@
     \ you need to get done.\n\nA native desktop app for macOS, Linux, and Windows.\
     \ A full CLI for terminal workflows. An API to embed it anywhere. Built in Rust\
     \ for performance and portability.\n\ngoose works with 15+ pr"
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 6
+    ecosystem_value: 8
+  llm_summary:
+    zh: Goose 是一个用 Rust 构建的原生开源 AI 代理，支持代码编写和通用任务，提供 CLI、桌面应用和 API。
+    en: Goose is a native open-source AI agent for code and general tasks, built in
+      Rust with CLI, desktop, and API support.
 - id: github-aaif-goose-goose
   name: aaif-goose/goose
   url: https://github.com/aaif-goose/goose
   repo: aaif-goose/goose
   source_type: github
-  resource_type: *id001
+  resource_type:
+  - agent-framework
+  - cli-tool
   target_tools:
   - goose
   summary: an open source, extensible AI agent that goes beyond code suggestions -
@@ -506,16 +573,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 49
-  quality_score: 0
-  total_score: 49
+  quality_score: 37
+  total_score: 86
   score_detail:
     stars: 20
     activity: 15
     adoption: 10
     maturity: 4
   tracking_priority: track
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 7
+    ecosystem_value: 10
+  llm_summary:
+    zh: Goose 是一个流行的开源 AI 代理，支持桌面、CLI 和 API 接口，可使用任何 LLM 进行代码生成、执行和测试。
+    en: Goose is a popular open-source AI agent that offers desktop, CLI, and API
+      interfaces for code generation, execution, and testing with any LLM.
 - id: github-aider-ai-aider
   name: Aider-AI/aider
   url: https://github.com/Aider-AI/aider
@@ -523,8 +599,7 @@
   source_type: github
   resource_type:
   - cli-tool
-  target_tools:
-  - general-ai-coding
+  target_tools: []
   summary: aider is AI pair programming in your terminal
   i18n:
     zh:
@@ -568,26 +643,34 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 45
-  quality_score: 0
-  total_score: 45
+  quality_score: 37
+  total_score: 82
   score_detail:
     stars: 16
     activity: 15
     adoption: 10
     maturity: 4
   tracking_priority: track
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 7
+    ecosystem_value: 10
+  llm_summary:
+    zh: Aider是一个在终端中进行AI结对编程的工具，支持多种LLM，拥有大量用户和活跃社区。
+    en: Aider is a terminal-based AI pair programming tool supporting multiple LLMs,
+      with a large user base and active community.
 - id: github-continuedev-continue
   name: continuedev/continue
   url: https://github.com/continuedev/continue
   repo: continuedev/continue
   source_type: github
   resource_type:
+  - extension
   - cli-tool
-  - agent-framework
-  target_tools:
-  - general-ai-coding
+  target_tools: []
   summary: open-source coding agent
   i18n:
     zh:
@@ -638,16 +721,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 45
-  quality_score: 0
-  total_score: 45
+  quality_score: 35
+  total_score: 80
   score_detail:
     stars: 16
     activity: 15
     adoption: 10
     maturity: 4
   tracking_priority: track
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 6
+    ecosystem_value: 9
+  llm_summary:
+    zh: 继续代码代理是领先的开源编码代理，提供IDE扩展和CLI工具，支持多种AI模型，拥有庞大的社区和丰富的文档。
+    en: Continue is a leading open-source coding agent offering IDE extensions and
+      CLI tools, with strong community adoption and comprehensive documentation.
 - id: official-cursor
   name: Cursor
   url: https://cursor.com
@@ -676,19 +768,19 @@
   - cursor
   review_state: auto-curated
   license: null
-  resource_type: &id002
-  - cli-tool
+  resource_type:
+  - tutorial
   quantifiable_score: 44
-  quality_score: 0
-  total_score: 44
+  quality_score: 16
+  total_score: 60
   score_detail:
     stars: 16
     activity: 15
     adoption: 10
     maturity: 3
   tracking_priority: track
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
   readme_preview: '# Cursor
 
 
@@ -723,12 +815,22 @@
 
     Please do not report security vulnerabilities through p'
   topics: []
+  quality_detail:
+    relevance: 8
+    practicality: 2
+    novelty: 1
+    ecosystem_value: 5
+  llm_summary:
+    zh: Cursor AI代码编辑器的官方GitHub种子仓库，提供网站和社区论坛的链接。
+    en: Official GitHub seed repository for the Cursor AI code editor, providing pointers
+      to the website and community forum.
 - id: github-cursor-cursor
   name: cursor/cursor
   url: https://github.com/cursor/cursor
   repo: cursor/cursor
   source_type: github
-  resource_type: *id002
+  resource_type:
+  - agent-framework
   target_tools:
   - cursor
   summary: cursor/cursor
@@ -785,16 +887,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 41
-  quality_score: 0
-  total_score: 41
+  quality_score: 14
+  total_score: 55
   score_detail:
     stars: 16
     activity: 15
     adoption: 10
     maturity: 0
-  tracking_priority: track
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: index
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-cursor
+  quality_detail:
+    relevance: 10
+    practicality: 0
+    novelty: 1
+    ecosystem_value: 3
+  llm_summary:
+    zh: Cursor 官方仓库，主要用于问题追踪，不含源代码或详细文档。
+    en: Official Cursor repository, primarily used for issue tracking, with no source
+      code or detailed documentation.
 - id: github-blader-humanizer
   name: blader/humanizer
   url: https://github.com/blader/humanizer
@@ -865,16 +976,26 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 43
-  quality_score: 0
-  total_score: 43
+  quality_score: 35
+  total_score: 78
   score_detail:
     stars: 16
     activity: 15
     adoption: 10
     maturity: 2
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
+  quality_detail:
+    relevance: 10
+    practicality: 9
+    novelty: 7
+    ecosystem_value: 9
+  llm_summary:
+    zh: 一个便携式代理技能，用于去除文本中的AI生成痕迹，使Claude Code等AI编码助手的输出更加自然和人性化。
+    en: A portable agent skill for removing signs of AI-generated writing from text,
+      making outputs from AI coding agents like Claude Code sound more natural and
+      human.
 - id: github-alirezarezvani-claude-skills
   name: alirezarezvani/claude-skills
   url: https://github.com/alirezarezvani/claude-skills
@@ -882,7 +1003,6 @@
   source_type: github
   resource_type:
   - skills
-  - extension
   target_tools:
   - claude-code
   - codex-cli
@@ -950,16 +1070,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 45
-  quality_score: 0
-  total_score: 45
+  quality_score: 38
+  total_score: 83
   score_detail:
     stars: 16
     activity: 15
     adoption: 10
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 8
+    ecosystem_value: 10
+  llm_summary:
+    zh: 这是一个为多个AI编程代理（如Claude Code、Codex、Cursor等）提供超过350个生产就绪技能和插件的开源库，极具实用价值。
+    en: A comprehensive open-source library of over 350 production-ready skills and
+      plugins for multiple AI coding agents, highly practical and valuable.
 - id: github-op7418-humanizer-zh
   name: op7418/Humanizer-zh
   url: https://github.com/op7418/Humanizer-zh
@@ -967,6 +1096,7 @@
   source_type: github
   resource_type:
   - skills
+  - rules
   target_tools:
   - claude-code
   summary: Humanizer 的汉化版本，Claude Code Skills，旨在消除文本中 AI 生成的痕迹。
@@ -1028,16 +1158,26 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 40
-  quality_score: 0
-  total_score: 40
+  quality_score: 25
+  total_score: 65
   score_detail:
     stars: 16
     activity: 15
     adoption: 7
     maturity: 2
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
+  quality_detail:
+    relevance: 6
+    practicality: 8
+    novelty: 4
+    ecosystem_value: 7
+  llm_summary:
+    zh: Humanizer-zh 是一个用于去除 AI 生成文本痕迹的汉化工具包，提供规则和技能，适用于 Claude Code 以改善输出自然度。
+    en: Humanizer-zh is a Chinese localization of the Humanizer project, providing
+      rules and skills to remove AI writing traces, particularly useful with Claude
+      Code.
 - id: official-trae
   name: Trae / Trae Work
   url: https://www.trae.ai
@@ -1068,18 +1208,18 @@
   review_state: auto-curated
   license: mit
   resource_type:
-  - cli-tool
+  - agent-framework
   quantifiable_score: 48
-  quality_score: 0
-  total_score: 48
+  quality_score: 33
+  total_score: 81
   score_detail:
     stars: 16
     activity: 15
     adoption: 10
     maturity: 7
   tracking_priority: track
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
   topics:
   - agent
   - llm
@@ -1093,12 +1233,22 @@
     [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
     [![Pre-commit](https://github.com/bytedance/trae-agent/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/bytedance/trae-agent/actions/wo'
+  quality_detail:
+    relevance: 10
+    practicality: 9
+    novelty: 6
+    ecosystem_value: 8
+  llm_summary:
+    zh: 字节跳动Trae Agent官方仓库，一款具备高社区影响力的AI软件工程智能体。
+    en: Official Trae Agent repository from ByteDance, providing an AI-powered software
+      engineering agent with significant community traction.
 - id: github-virgiliojr94-book-to-skill
   name: virgiliojr94/book-to-skill
   url: https://github.com/virgiliojr94/book-to-skill
   repo: virgiliojr94/book-to-skill
   source_type: github
   resource_type:
+  - cli-tool
   - skills
   target_tools:
   - claude-code
@@ -1133,16 +1283,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 38
-  quality_score: 0
-  total_score: 38
+  quality_score: 39
+  total_score: 77
   score_detail:
     stars: 12
     activity: 15
     adoption: 7
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 9
+    ecosystem_value: 10
+  llm_summary:
+    zh: 将技术书籍转化为AI编码助手技能的实用工具，支持Claude Code、Copilot CLI等。
+    en: A tool that converts technical books into skills for AI coding agents like
+      Claude Code, Copilot CLI, and Amp.
 - id: github-simoneavogadro-android-reverse-engineering-skill
   name: SimoneAvogadro/android-reverse-engineering-skill
   url: https://github.com/SimoneAvogadro/android-reverse-engineering-skill
@@ -1180,16 +1339,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 38
-  quality_score: 0
-  total_score: 38
+  quality_score: 33
+  total_score: 71
   score_detail:
     stars: 12
     activity: 15
     adoption: 7
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
+  quality_detail:
+    relevance: 9
+    practicality: 9
+    novelty: 7
+    ecosystem_value: 8
+  llm_summary:
+    zh: 为Claude Code定制的Android逆向工程技能，实用且受欢迎。
+    en: A well-received Claude Code skill for Android reverse engineering and API
+      extraction.
 - id: github-trailofbits-skills
   name: trailofbits/skills
   url: https://github.com/trailofbits/skills
@@ -1235,16 +1403,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 38
-  quality_score: 0
-  total_score: 38
+  quality_score: 35
+  total_score: 73
   score_detail:
     stars: 12
     activity: 15
     adoption: 7
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
+  quality_detail:
+    relevance: 10
+    practicality: 9
+    novelty: 7
+    ecosystem_value: 9
+  llm_summary:
+    zh: Trail of Bits 提供的 Claude Code 安全技能市场，增强 AI 代码助手的安全分析能力。
+    en: A marketplace of security analysis skills for Claude Code by Trail of Bits,
+      enhancing AI-assisted security workflows.
 - id: github-zarazhangrui-codebase-to-course
   name: zarazhangrui/codebase-to-course
   url: https://github.com/zarazhangrui/codebase-to-course
@@ -1295,22 +1472,32 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 36
-  quality_score: 0
-  total_score: 36
+  quality_score: 37
+  total_score: 73
   score_detail:
     stars: 12
     activity: 15
     adoption: 7
     maturity: 2
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-hermes-agent
+  quality_detail:
+    relevance: 10
+    practicality: 9
+    novelty: 9
+    ecosystem_value: 9
+  llm_summary:
+    zh: 一个将代码库转化为交互式HTML课程的Claude Code技能，特别针对非技术背景的‘氛围编码者’用户。
+    en: A Claude Code skill that transforms any codebase into an interactive single-page
+      HTML course, targeting non-technical 'vibe coders'.
 - id: github-glitternetwork-pinme
   name: glitternetwork/pinme
   url: https://github.com/glitternetwork/pinme
   repo: glitternetwork/pinme
   source_type: github
   resource_type:
+  - cli-tool
   - skills
   target_tools:
   - claude-code
@@ -1358,16 +1545,26 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
-  quality_score: 0
-  total_score: 34
+  quality_score: 37
+  total_score: 71
   score_detail:
     stars: 8
     activity: 15
     adoption: 7
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 7
+    ecosystem_value: 10
+  llm_summary:
+    zh: PinMe 是一个零配置部署 CLI，支持一键创建和部署全栈项目，并原生集成 Claude Code Skills，极大简化了 AI 编码代理的部署流程。
+    en: PinMe is a zero-config deployment CLI that enables one-command creation and
+      deployment of full-stack projects, with native Claude Code Skills support, significantly
+      streamlining deployment for AI coding agents.
 - id: github-gemini-cli-extensions-conductor
   name: gemini-cli-extensions/conductor
   url: https://github.com/gemini-cli-extensions/conductor
@@ -1376,8 +1573,7 @@
   resource_type:
   - extension
   - cli-tool
-  target_tools:
-  - antigravity-cli
+  target_tools: []
   summary: Conductor is a Gemini CLI extension that allows you to specify, plan, and
     implement software features.
   i18n:
@@ -1422,16 +1618,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 32
-  quality_score: 0
-  total_score: 32
+  quality_score: 33
+  total_score: 65
   score_detail:
     stars: 8
     activity: 15
     adoption: 7
     maturity: 2
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
+  quality_detail:
+    relevance: 9
+    practicality: 9
+    novelty: 7
+    ecosystem_value: 8
+  llm_summary:
+    zh: Conductor 是一个 Gemini CLI 扩展，通过上下文驱动开发流程实现功能规范、规划和实现。
+    en: Conductor is a Gemini CLI extension that enables a structured, context-driven
+      development lifecycle for specifying, planning, and implementing features.
 - id: github-sanjeed5-awesome-cursor-rules-mdc
   name: sanjeed5/awesome-cursor-rules-mdc
   url: https://github.com/sanjeed5/awesome-cursor-rules-mdc
@@ -1476,23 +1681,31 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
-  quality_score: 0
-  total_score: 34
+  quality_score: 33
+  total_score: 67
   score_detail:
     stars: 8
     activity: 15
     adoption: 7
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
+  quality_detail:
+    relevance: 10
+    practicality: 8
+    novelty: 6
+    ecosystem_value: 9
+  llm_summary:
+    zh: 一个用于Cursor的优质规则(.mdc)集合及生成工具。
+    en: A curated collection and generator for Cursor rules (.mdc files).
 - id: github-taishi-i-awesome-chatgpt-repositories
   name: taishi-i/awesome-ChatGPT-repositories
   url: https://github.com/taishi-i/awesome-ChatGPT-repositories
   repo: taishi-i/awesome-ChatGPT-repositories
   source_type: github
   resource_type:
-  - skills
+  - tutorial
   target_tools:
   - claude-code
   - codex-cli
@@ -1541,22 +1754,32 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
-  quality_score: 0
-  total_score: 34
+  quality_score: 25
+  total_score: 59
   score_detail:
     stars: 8
     activity: 15
     adoption: 7
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: official-cursor
+  quality_detail:
+    relevance: 8
+    practicality: 6
+    novelty: 3
+    ecosystem_value: 8
+  llm_summary:
+    zh: 一个精心整理的ChatGPT相关开源仓库列表，对AI编码代理生态有重要参考价值。
+    en: A curated list of open-source ChatGPT-related repositories, valuable for discovering
+      AI coding agent tools.
 - id: github-nowork-studio-notfair
   name: nowork-studio/NotFair
   url: https://github.com/nowork-studio/NotFair
   repo: nowork-studio/NotFair
   source_type: github
   resource_type:
+  - mcp-server
   - skills
   target_tools:
   - claude-code
@@ -1603,16 +1826,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
-  quality_score: 0
-  total_score: 34
+  quality_score: 37
+  total_score: 71
   score_detail:
     stars: 8
     activity: 15
     adoption: 7
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 8
+    ecosystem_value: 9
+  llm_summary:
+    zh: 高质量开源Claude Code技能集，提供谷歌广告、Meta广告和SEO数据接入，生态价值高，实用性强。
+    en: High-quality open-source Claude Code skills for Google Ads, Meta Ads, and
+      SEO data, with strong ecosystem value and practicality.
 - id: github-elementalsouls-claude-bughunter
   name: elementalsouls/Claude-BugHunter
   url: https://github.com/elementalsouls/Claude-BugHunter
@@ -1677,16 +1909,26 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
-  quality_score: 0
-  total_score: 34
+  quality_score: 36
+  total_score: 70
   score_detail:
     stars: 8
     activity: 15
     adoption: 7
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
+  quality_detail:
+    relevance: 10
+    practicality: 9
+    novelty: 8
+    ecosystem_value: 9
+  llm_summary:
+    zh: 一个为Claude Code量身定制的安全测试技能包，包含大量漏洞模式和攻击矩阵，实用性强且社区活跃。
+    en: A comprehensive Claude Code skill bundle for bug hunting and red-teaming,
+      featuring 71 skills, 15 slash commands, and 681 report patterns across 24 vulnerability
+      classes.
 - id: github-lackeyjb-playwright-skill
   name: lackeyjb/playwright-skill
   url: https://github.com/lackeyjb/playwright-skill
@@ -1748,16 +1990,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
-  quality_score: 0
-  total_score: 34
+  quality_score: 35
+  total_score: 69
   score_detail:
     stars: 8
     activity: 15
     adoption: 7
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
+  quality_detail:
+    relevance: 10
+    practicality: 9
+    novelty: 7
+    ecosystem_value: 9
+  llm_summary:
+    zh: 一个Claude Code技能，利用Playwright实现自主浏览器自动化测试与验证。
+    en: A Claude Code skill that enables autonomous browser automation using Playwright
+      for testing and validation.
 - id: github-neekchaw-riper-5
   name: NeekChaw/RIPER-5
   url: https://github.com/NeekChaw/RIPER-5
@@ -1765,6 +2016,7 @@
   source_type: github
   resource_type:
   - rules
+  - tutorial
   target_tools:
   - cursor
   summary: 神级Cursor Rule
@@ -1793,16 +2045,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 30
-  quality_score: 0
-  total_score: 30
+  quality_score: 32
+  total_score: 62
   score_detail:
     stars: 8
     activity: 15
     adoption: 7
     maturity: 0
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
+  quality_detail:
+    relevance: 10
+    practicality: 8
+    novelty: 6
+    ecosystem_value: 8
+  llm_summary:
+    zh: 一个整理高质量Cursor规则和提示词工作流的热门仓库，拥有超过2600颗星。
+    en: A popular repository curating high-quality Cursor rules and prompt engineering
+      workflows with over 2600 stars.
 - id: github-dominikmartn-nothing-design-skill
   name: dominikmartn/nothing-design-skill
   url: https://github.com/dominikmartn/nothing-design-skill
@@ -1858,16 +2119,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 32
-  quality_score: 0
-  total_score: 32
+  quality_score: 33
+  total_score: 65
   score_detail:
     stars: 8
     activity: 15
     adoption: 7
     maturity: 2
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
+  quality_detail:
+    relevance: 9
+    practicality: 9
+    novelty: 8
+    ecosystem_value: 7
+  llm_summary:
+    zh: 一个为Claude Code设计的Nothing设计语言UI生成技能，高星好评。
+    en: A Claude Code skill for generating UI in the Nothing design language, highly
+      popular.
 - id: github-agentchengfeng-chengfeng-videocut-skills
   name: Agentchengfeng/chengfeng-videocut-skills
   url: https://github.com/Agentchengfeng/chengfeng-videocut-skills
@@ -1877,6 +2147,7 @@
   - skills
   target_tools:
   - claude-code
+  - codex-cli
   summary: 用 Claude Code Skills 做的视频剪辑 Agent
   i18n:
     zh:
@@ -1948,16 +2219,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
-  quality_score: 0
-  total_score: 34
+  quality_score: 37
+  total_score: 71
   score_detail:
     stars: 8
     activity: 15
     adoption: 7
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
+  quality_detail:
+    relevance: 10
+    practicality: 10
+    novelty: 8
+    ecosystem_value: 9
+  llm_summary:
+    zh: 将口播视频剪辑工作流封装为 Claude Code Skills，实现 Agent 驱动的视频编辑自动化。
+    en: Packages talking-head video editing workflow as Claude Code Skills, enabling
+      agent-driven video editing automation.
 - id: github-tradermonty-claude-trading-skills
   name: tradermonty/claude-trading-skills
   url: https://github.com/tradermonty/claude-trading-skills
@@ -2008,16 +2288,25 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
-  quality_score: 0
-  total_score: 34
+  quality_score: 33
+  total_score: 67
   score_detail:
     stars: 8
     activity: 15
     adoption: 7
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
+  quality_detail:
+    relevance: 9
+    practicality: 8
+    novelty: 7
+    ecosystem_value: 9
+  llm_summary:
+    zh: 为股票投资者和交易者量身定制的Claude Code技能集合，提供市场分析、图表绘制和策略开发。
+    en: A collection of Claude Code skills tailored for equity investors and traders,
+      providing market analysis, charting, and strategy development.
 - id: github-yctimlin-mcp-excalidraw
   name: yctimlin/mcp_excalidraw
   url: https://github.com/yctimlin/mcp_excalidraw
@@ -2026,6 +2315,7 @@
   resource_type:
   - mcp-server
   - skills
+  - cli-tool
   target_tools:
   - claude-code
   summary: MCP server and Claude Code skill for Excalidraw — programmatic canvas toolkit
@@ -2061,16 +2351,26 @@
   tags: []
   review_state: auto-curated
   quantifiable_score: 34
-  quality_score: 0
-  total_score: 34
+  quality_score: 34
+  total_score: 68
   score_detail:
     stars: 8
     activity: 15
     adoption: 7
     maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  tracking_priority: track
+  last_analyzed: '2026-07-14'
+  benchmark_ref: github-continuedev-continue
+  quality_detail:
+    relevance: 9
+    practicality: 9
+    novelty: 7
+    ecosystem_value: 9
+  llm_summary:
+    zh: 一个用于 Excalidraw 的 MCP 服务器和 Claude Code 技能，允许 AI 代理以编程方式创建、编辑和导出图表，并支持实时画布同步。
+    en: An MCP server and Claude Code skill for Excalidraw that enables AI agents
+      to programmatically create, edit, and export diagrams with real-time canvas
+      sync.
 - id: github-flyeric0212-cursor-rules
   name: flyeric0212/cursor-rules
   url: https://github.com/flyeric0212/cursor-rules
@@ -2133,7 +2433,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-opencoworkai-open-cowork
   name: OpenCoworkAI/open-cowork
   url: https://github.com/OpenCoworkAI/open-cowork
@@ -2200,7 +2500,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-p4nda0s-reverse-skills
   name: P4nda0s/reverse-skills
   url: https://github.com/P4nda0s/reverse-skills
@@ -2273,7 +2573,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-skills-directory-skill-codex
   name: skills-directory/skill-codex
   url: https://github.com/skills-directory/skill-codex
@@ -2337,7 +2637,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-steipete-claude-code-mcp
   name: steipete/claude-code-mcp
   url: https://github.com/steipete/claude-code-mcp
@@ -2395,7 +2695,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-daymade-claude-code-skills
   name: daymade/claude-code-skills
   url: https://github.com/daymade/claude-code-skills
@@ -2451,7 +2751,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-sceneview-sceneview
   name: sceneview/sceneview
   url: https://github.com/sceneview/sceneview
@@ -2533,7 +2833,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-onvoyage-ai-gtm-engineer-skills
   name: onvoyage-ai/gtm-engineer-skills
   url: https://github.com/onvoyage-ai/gtm-engineer-skills
@@ -2597,7 +2897,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-instructa-ai-prompts
   name: instructa/ai-prompts
   url: https://github.com/instructa/ai-prompts
@@ -2656,7 +2956,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: official-antigravity-cli
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-rayfernando1337-llm-cursor-rules
   name: RayFernando1337/llm-cursor-rules
   url: https://github.com/RayFernando1337/llm-cursor-rules
@@ -2708,7 +3008,7 @@
 
     1. Swift and SwiftUI Development Rules'
   tags: []
-  review_state: auto-indexed
+  review_state: auto-curated
   quantifiable_score: 28
   quality_score: 0
   total_score: 28
@@ -2719,7 +3019,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-itwanger-paiagent
   name: itwanger/PaiAgent
   url: https://github.com/itwanger/PaiAgent
@@ -2790,7 +3090,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-harish-garg-gemini-cli-prompt-library
   name: harish-garg/gemini-cli-prompt-library
   url: https://github.com/harish-garg/gemini-cli-prompt-library
@@ -2852,7 +3152,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-gemini-cli-extensions-jules
   name: gemini-cli-extensions/jules
   url: https://github.com/gemini-cli-extensions/jules
@@ -2924,7 +3224,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-idea-to-business-raphael-starterkit-v1
   name: Idea-To-Business/raphael-starterkit-v1
   url: https://github.com/Idea-To-Business/raphael-starterkit-v1
@@ -2976,7 +3276,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-cosmicstack-labs-mercury-agent-skills
   name: cosmicstack-labs/mercury-agent-skills
   url: https://github.com/cosmicstack-labs/mercury-agent-skills
@@ -3032,7 +3332,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-gemini-cli-extensions-ralph
   name: gemini-cli-extensions/ralph
   url: https://github.com/gemini-cli-extensions/ralph
@@ -3101,7 +3401,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-iansinnott-obsidian-claude-code-mcp
   name: iansinnott/obsidian-claude-code-mcp
   url: https://github.com/iansinnott/obsidian-claude-code-mcp
@@ -3163,7 +3463,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-thehimel-cursor-rules-and-prompts
   name: thehimel/cursor-rules-and-prompts
   url: https://github.com/thehimel/cursor-rules-and-prompts
@@ -3239,7 +3539,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-undeadpickle-claude-code-mcpinstall
   name: undeadpickle/claude-code-mcpinstall
   url: https://github.com/undeadpickle/claude-code-mcpinstall
@@ -3294,7 +3594,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-davidbb-l-cinema-manager
   name: DavidBB-L/cinema-manager
   url: https://github.com/DavidBB-L/cinema-manager
@@ -3354,7 +3654,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-awattar-claude-code-best-practices
   name: awattar/claude-code-best-practices
   url: https://github.com/awattar/claude-code-best-practices
@@ -3415,7 +3715,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-jduncan-rva-skill-porter
   name: jduncan-rva/skill-porter
   url: https://github.com/jduncan-rva/skill-porter
@@ -3484,7 +3784,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-auchenberg-claude-code-mcp
   name: auchenberg/claude-code-mcp
   url: https://github.com/auchenberg/claude-code-mcp
@@ -3538,7 +3838,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-mindrally-skills
   name: Mindrally/skills
   url: https://github.com/Mindrally/skills
@@ -3599,7 +3899,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-anklebreaker-studio-unity-mcp-plugin
   name: AnkleBreaker-Studio/unity-mcp-plugin
   url: https://github.com/AnkleBreaker-Studio/unity-mcp-plugin
@@ -3679,7 +3979,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-sven-li-sankyuu-presentation-skills
   name: Sven-LI-sankyuu/presentation-skills
   url: https://github.com/Sven-LI-sankyuu/presentation-skills
@@ -3750,7 +4050,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-forlives-21-day-self-interview
   name: Forlives/21-day-self-interview
   url: https://github.com/Forlives/21-day-self-interview
@@ -3830,7 +4130,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-philschmid-gemini-cli-extension
   name: philschmid/gemini-cli-extension
   url: https://github.com/philschmid/gemini-cli-extension
@@ -3878,7 +4178,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-alchaincyf-cursor-rules-huasheng
   name: alchaincyf/cursor-rules-huasheng
   url: https://github.com/alchaincyf/cursor-rules-huasheng
@@ -3926,7 +4226,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-asyncfuncai-ralph-wiggum-extension
   name: AsyncFuncAI/ralph-wiggum-extension
   url: https://github.com/AsyncFuncAI/ralph-wiggum-extension
@@ -3988,7 +4288,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-mverab-egeoagents
   name: mverab/eGEOagents
   url: https://github.com/mverab/eGEOagents
@@ -4062,7 +4362,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-aaronontheweb-dotnet-cursor-rules
   name: Aaronontheweb/dotnet-cursor-rules
   url: https://github.com/Aaronontheweb/dotnet-cursor-rules
@@ -4130,7 +4430,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-jmerta-codex-skills
   name: jMerta/codex-skills
   url: https://github.com/jMerta/codex-skills
@@ -4189,7 +4489,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-grahama1970-claude-code-mcp-enhanced
   name: grahama1970/claude-code-mcp-enhanced
   url: https://github.com/grahama1970/claude-code-mcp-enhanced
@@ -4247,7 +4547,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-madebyaris-advance-minimax-m3-cursor-rules
   name: madebyaris/advance-minimax-m3-cursor-rules
   url: https://github.com/madebyaris/advance-minimax-m3-cursor-rules
@@ -4316,7 +4616,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-figma-figma-gemini-cli-extension
   name: figma/figma-gemini-cli-extension
   url: https://github.com/figma/figma-gemini-cli-extension
@@ -4383,7 +4683,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-willccbb-claude-code-mcp
   name: willccbb/claude-code-mcp
   url: https://github.com/willccbb/claude-code-mcp
@@ -4443,7 +4743,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-brookslybrand-react-router-cursor-rules
   name: brookslybrand/react-router-cursor-rules
   url: https://github.com/brookslybrand/react-router-cursor-rules
@@ -4489,7 +4789,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-bluebirdback-godot-cursorrules
   name: BlueBirdBack/godot-cursorrules
   url: https://github.com/BlueBirdBack/godot-cursorrules
@@ -4557,7 +4857,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-skindhu-harmony-cursor-rules
   name: skindhu/harmony-cursor-rules
   url: https://github.com/skindhu/harmony-cursor-rules
@@ -4624,7 +4924,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-thoreinstein-gemini-obsidian
   name: thoreinstein/gemini-obsidian
   url: https://github.com/thoreinstein/gemini-obsidian
@@ -4689,7 +4989,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-hmbown-wizards-of-the-ghosts
   name: Hmbown/Wizards-of-the-Ghosts
   url: https://github.com/Hmbown/Wizards-of-the-Ghosts
@@ -4744,7 +5044,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-intellectronica-gemini-cli-skillz
   name: intellectronica/gemini-cli-skillz
   url: https://github.com/intellectronica/gemini-cli-skillz
@@ -4795,7 +5095,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-automateyournetwork-geminicli-computeruse-extension
   name: automateyournetwork/GeminiCLI_ComputerUse_Extension
   url: https://github.com/automateyournetwork/GeminiCLI_ComputerUse_Extension
@@ -4862,7 +5162,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-ivangrynenko-cursorrules
   name: ivangrynenko/cursorrules
   url: https://github.com/ivangrynenko/cursorrules
@@ -4925,7 +5225,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-gemini-cli-extensions-web-accessibility
   name: gemini-cli-extensions/web-accessibility
   url: https://github.com/gemini-cli-extensions/web-accessibility
@@ -4986,7 +5286,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-alaeddinemessadi-opencode-mcp
   name: AlaeddineMessadi/opencode-mcp
   url: https://github.com/AlaeddineMessadi/opencode-mcp
@@ -5066,7 +5366,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-blefnk-awesome-cursor-rules
   name: blefnk/awesome-cursor-rules
   url: https://github.com/blefnk/awesome-cursor-rules
@@ -5136,7 +5436,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-melvynx-cursor-rules
   name: Melvynx/cursor.rules
   url: https://github.com/Melvynx/cursor.rules
@@ -5177,7 +5477,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-waynesutton-promptstack
   name: waynesutton/promptstack
   url: https://github.com/waynesutton/promptstack
@@ -5233,7 +5533,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-matthewdcage-cursor-mcp-installer
   name: matthewdcage/cursor-mcp-installer
   url: https://github.com/matthewdcage/cursor-mcp-installer
@@ -5281,7 +5581,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-brunogama-ios-cursor-rules
   name: brunogama/ios-cursor-rules
   url: https://github.com/brunogama/ios-cursor-rules
@@ -5335,7 +5635,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-codesstar-hermes-skill-atlas
   name: codesstar/hermes-skill-atlas
   url: https://github.com/codesstar/hermes-skill-atlas
@@ -5411,7 +5711,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-eyalbenba-claude-code-mcp-init
   name: Eyalbenba/claude-code-mcp-init
   url: https://github.com/Eyalbenba/claude-code-mcp-init
@@ -5469,7 +5769,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-chucksrq-awesome-hermes-skills
   name: ChuckSRQ/awesome-hermes-skills
   url: https://github.com/ChuckSRQ/awesome-hermes-skills
@@ -5522,7 +5822,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-johnneerdael-multiplatform-cursor-mcp
   name: johnneerdael/multiplatform-cursor-mcp
   url: https://github.com/johnneerdael/multiplatform-cursor-mcp
@@ -5582,7 +5882,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-griffinhilly-claude-code-synthesis
   name: griffinhilly/claude-code-synthesis
   url: https://github.com/griffinhilly/claude-code-synthesis
@@ -5642,7 +5942,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-gplasky-gemini-cli-blueprint-extension
   name: gplasky/gemini-cli-blueprint-extension
   url: https://github.com/gplasky/gemini-cli-blueprint-extension
@@ -5705,7 +6005,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-gemini-cli-extensions-gcloud
   name: gemini-cli-extensions/gcloud
   url: https://github.com/gemini-cli-extensions/gcloud
@@ -5753,7 +6053,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-kelvinqiu802-cursor-mcp-demo
   name: KelvinQiu802/cursor-mcp-demo
   url: https://github.com/KelvinQiu802/cursor-mcp-demo
@@ -5829,7 +6129,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-piebald-ai-awesome-gemini-cli-extensions
   name: Piebald-AI/awesome-gemini-cli-extensions
   url: https://github.com/Piebald-AI/awesome-gemini-cli-extensions
@@ -5887,7 +6187,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-muhammadusmangm-claude-code-best-practices
   name: MuhammadUsmanGM/claude-code-best-practices
   url: https://github.com/MuhammadUsmanGM/claude-code-best-practices
@@ -5959,7 +6259,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-lorenliu13-claude-code-for-hydrology
   name: lorenliu13/claude-code-for-hydrology
   url: https://github.com/lorenliu13/claude-code-for-hydrology
@@ -6014,7 +6314,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-automationsmanufaktur-labs-open-invoice-germany
   name: automationsmanufaktur-labs/open-invoice-germany
   url: https://github.com/automationsmanufaktur-labs/open-invoice-germany
@@ -6094,7 +6394,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-thestack-ai-zclean
   name: TheStack-ai/zclean
   url: https://github.com/TheStack-ai/zclean
@@ -6177,7 +6477,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-war851-ai-governance-architecture
   name: war851/AI-Governance-Architecture
   url: https://github.com/war851/AI-Governance-Architecture
@@ -6246,7 +6546,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-femtopremiertag-r15-shanraisshan-claude-code-best-practice-security
   name: femtopremiertag/r15-shanraisshan-claude-code-best-practice-security
   url: https://github.com/femtopremiertag/r15-shanraisshan-claude-code-best-practice-security
@@ -6301,7 +6601,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-pondhelpplain-r15-shanraisshan-claude-code-best-practice-ecommerce
   name: pondhelpplain/r15-shanraisshan-claude-code-best-practice-ecommerce
   url: https://github.com/pondhelpplain/r15-shanraisshan-claude-code-best-practice-ecommerce
@@ -6356,7 +6656,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-markmcd-gemini-docs-ext
   name: markmcd/gemini-docs-ext
   url: https://github.com/markmcd/gemini-docs-ext
@@ -6416,7 +6716,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-simonliu-ai-product-adk-agent-extension
   name: simonliu-ai-product/adk-agent-extension
   url: https://github.com/simonliu-ai-product/adk-agent-extension
@@ -6482,7 +6782,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-ultimatedenpruner-r15-shanraisshan-claude-code-best-practice-datascience
   name: Ultimatedenpruner/r15-shanraisshan-claude-code-best-practice-datascience
   url: https://github.com/Ultimatedenpruner/r15-shanraisshan-claude-code-best-practice-datascience
@@ -6537,7 +6837,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-jnorthrup-conductor2
   name: jnorthrup/conductor2
   url: https://github.com/jnorthrup/conductor2
@@ -6603,7 +6903,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-gberaudo-opencode-mcp-figma
   name: gberaudo/opencode-mcp-figma
   url: https://github.com/gberaudo/opencode-mcp-figma
@@ -6683,7 +6983,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-cobibean-soul-grader-skill
   name: cobibean/soul-grader-skill
   url: https://github.com/cobibean/soul-grader-skill
@@ -6741,7 +7041,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-chipspiderwarm-r15-shanraisshan-claude-code-best-practice-devops
   name: ChipSpiderWarm/r15-shanraisshan-claude-code-best-practice-devops
   url: https://github.com/ChipSpiderWarm/r15-shanraisshan-claude-code-best-practice-devops
@@ -6793,7 +7093,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-liangdabiao-bright-data-mcp-claude-skill-deep-research
   name: liangdabiao/Bright-Data-MCP-Claude-Skill-deep-research
   url: https://github.com/liangdabiao/Bright-Data-MCP-Claude-Skill-deep-research
@@ -6871,7 +7171,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-qoderai-qoder-action
   name: QoderAI/qoder-action
   url: https://github.com/QoderAI/qoder-action
@@ -6929,7 +7229,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-foxy1402-qoder-proxy
   name: foxy1402/qoder-proxy
   url: https://github.com/foxy1402/qoder-proxy
@@ -6985,7 +7285,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-magicstarfishboost-r15-shanraisshan-claude-code-best-practice-seo
   name: MagicStarfishBoost/r15-shanraisshan-claude-code-best-practice-seo
   url: https://github.com/MagicStarfishBoost/r15-shanraisshan-claude-code-best-practice-seo
@@ -7037,7 +7337,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-ericzakariasson-cursor-mcp-server
   name: ericzakariasson/cursor-mcp-server
   url: https://github.com/ericzakariasson/cursor-mcp-server
@@ -7085,7 +7385,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-ricky-theseus-daisywriter
   name: ricky-theseus/DaisyWriter
   url: https://github.com/ricky-theseus/DaisyWriter
@@ -7146,7 +7446,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-buga-luga-cursor-mcp
   name: Buga-luga/cursor-mcp
   url: https://github.com/Buga-luga/cursor-mcp
@@ -7206,7 +7506,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-scottweiss-claude-codex-mcp-starter
   name: scottweiss/claude-codex-mcp-starter
   url: https://github.com/scottweiss/claude-codex-mcp-starter
@@ -7254,7 +7554,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-nvh92-claude-code-best-practices-tips
   name: nvh92/claude-code-best-practices-tips
   url: https://github.com/nvh92/claude-code-best-practices-tips
@@ -7300,7 +7600,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-shadow-shinigami-lyric-video-director
   name: ShadoW-Shinigami/lyric-video-director
   url: https://github.com/ShadoW-Shinigami/lyric-video-director
@@ -7365,7 +7665,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-kunihiros-claude-code-mcp
   name: KunihiroS/claude-code-mcp
   url: https://github.com/KunihiroS/claude-code-mcp
@@ -7420,7 +7720,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-trayders-trayd-mcp
   name: trayders/trayd-mcp
   url: https://github.com/trayders/trayd-mcp
@@ -7500,7 +7800,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-dlkakbs-hermes-startup-architect
   name: dlkakbs/hermes-startup-architect
   url: https://github.com/dlkakbs/hermes-startup-architect
@@ -7571,7 +7871,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-ankitdotgg-making-gemini-useful-with-claude
   name: ankitdotgg/making-gemini-useful-with-claude
   url: https://github.com/ankitdotgg/making-gemini-useful-with-claude
@@ -7625,7 +7925,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-danielrosehill-claude-code-mcp-list
   name: danielrosehill/Claude-Code-MCP-List
   url: https://github.com/danielrosehill/Claude-Code-MCP-List
@@ -7676,7 +7976,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-griffithsbs-envmcp
   name: griffithsbs/envmcp
   url: https://github.com/griffithsbs/envmcp
@@ -7746,7 +8046,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-foreveryh-claude-code-best-practices
   name: foreveryh/claude-code-best-practices
   url: https://github.com/foreveryh/claude-code-best-practices
@@ -7802,7 +8102,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-opencmc-mcp-gemini-cli-extension
   name: OpenCMC/mcp-gemini-cli-extension
   url: https://github.com/OpenCMC/mcp-gemini-cli-extension
@@ -7871,7 +8171,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-gemini-cli-extensions-observability
   name: gemini-cli-extensions/observability
   url: https://github.com/gemini-cli-extensions/observability
@@ -7919,7 +8219,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-adnw-vinc-hermes-nextcloud
   name: adnw-vinc/hermes-nextcloud
   url: https://github.com/adnw-vinc/hermes-nextcloud
@@ -7969,7 +8269,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-zebbern-claude-code-mcp
   name: zebbern/claude-code-mcp
   url: https://github.com/zebbern/claude-code-mcp
@@ -8040,7 +8340,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-igloo302-interest-radar
   name: Igloo302/interest-radar
   url: https://github.com/Igloo302/interest-radar
@@ -8109,7 +8409,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-qdhenry-claude-code-mcp-manager
   name: qdhenry/Claude-Code-MCP-Manager
   url: https://github.com/qdhenry/Claude-Code-MCP-Manager
@@ -8180,7 +8480,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-krumjahn-threads-growth-skill
   name: krumjahn/threads-growth-skill
   url: https://github.com/krumjahn/threads-growth-skill
@@ -8240,7 +8540,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-helpfreedom-slojka
   name: HelpFreedom/slojka
   url: https://github.com/HelpFreedom/slojka
@@ -8299,7 +8599,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-daxueren666-exam-review-helper
   name: daxueren666/exam-review-helper
   url: https://github.com/daxueren666/exam-review-helper
@@ -8373,7 +8673,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-albert-ying-agentic-cortex
   name: albert-ying/agentic-cortex
   url: https://github.com/albert-ying/agentic-cortex
@@ -8423,7 +8723,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-hoyt-harness-davinci-mcp-professional
   name: hoyt-harness/davinci-mcp-professional
   url: https://github.com/hoyt-harness/davinci-mcp-professional
@@ -8502,7 +8802,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-itgoyo-hermes-skills
   name: itgoyo/hermes-skills
   url: https://github.com/itgoyo/hermes-skills
@@ -8564,7 +8864,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-vishal2612200-agentpack
   name: vishal2612200/agentpack
   url: https://github.com/vishal2612200/agentpack
@@ -8637,7 +8937,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-raincherb-context-diamond
   name: RainCherb/context-diamond
   url: https://github.com/RainCherb/context-diamond
@@ -8707,7 +9007,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-amirshayegh-codex-claude-bridge
   name: AmirShayegh/codex-claude-bridge
   url: https://github.com/AmirShayegh/codex-claude-bridge
@@ -8775,7 +9075,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-dhruvalgolakiya-taskdex
   name: dhruvalgolakiya/taskdex
   url: https://github.com/dhruvalgolakiya/taskdex
@@ -8831,7 +9131,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-cooneycw-claude-power-pack
   name: cooneycw/claude-power-pack
   url: https://github.com/cooneycw/claude-power-pack
@@ -8888,7 +9188,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-fefergrgrgrg-create-mcp
   name: fefergrgrgrg/create-mcp
   url: https://github.com/fefergrgrgrg/create-mcp
@@ -8956,7 +9256,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-hxsteric-mercury
   name: hxsteric/mercury
   url: https://github.com/hxsteric/mercury
@@ -9017,7 +9317,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-felixzhang-glitch-codexclaw
   name: felixzhang-glitch/CodexClaw
   url: https://github.com/felixzhang-glitch/CodexClaw
@@ -9090,7 +9390,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-gokeshenzhen-gen-tb-skill
   name: gokeshenzhen/gen-tb-skill
   url: https://github.com/gokeshenzhen/gen-tb-skill
@@ -9161,7 +9461,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-agentskillexchange-skills
   name: agentskillexchange/skills
   url: https://github.com/agentskillexchange/skills
@@ -9242,7 +9542,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-yanjunz-mcp-search-images
   name: yanjunz/mcp_search_images
   url: https://github.com/yanjunz/mcp_search_images
@@ -9316,7 +9616,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-petercha90-link-bookmark
   name: PeterCha90/link-bookmark
   url: https://github.com/PeterCha90/link-bookmark
@@ -9370,7 +9670,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-nosolosoft-opencode-mcp
   name: nosolosoft/opencode-mcp
   url: https://github.com/nosolosoft/opencode-mcp
@@ -9427,7 +9727,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-alexandrbasis-claudops
   name: alexandrbasis/claudops
   url: https://github.com/alexandrbasis/claudops
@@ -9474,7 +9774,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-whyashthakker-agent-skills-marketing
   name: whyashthakker/agent-skills-marketing
   url: https://github.com/whyashthakker/agent-skills-marketing
@@ -9548,7 +9848,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-willibrandon-cursormcpmonitor
   name: willibrandon/CursorMCPMonitor
   url: https://github.com/willibrandon/CursorMCPMonitor
@@ -9619,7 +9919,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-stumason-get-mcp-keys
   name: StuMason/get-mcp-keys
   url: https://github.com/StuMason/get-mcp-keys
@@ -9684,7 +9984,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-ikrasnodymov-repowiki
   name: IKrasnodymov/repowiki
   url: https://github.com/IKrasnodymov/repowiki
@@ -9748,7 +10048,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-treylom-thiscodex
   name: treylom/ThisCodex
   url: https://github.com/treylom/ThisCodex
@@ -9806,7 +10106,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-xiansenwu954-ieee-suite-skills
   name: XiansenWu954/IEEE-suite-skills
   url: https://github.com/XiansenWu954/IEEE-suite-skills
@@ -9866,7 +10166,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-gilby125-opencode-mcp-tool
   name: gilby125/opencode-mcp-tool
   url: https://github.com/gilby125/opencode-mcp-tool
@@ -9921,7 +10221,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-norbinsh-cursor-mcp-trivy
   name: norbinsh/cursor-mcp-trivy
   url: https://github.com/norbinsh/cursor-mcp-trivy
@@ -9981,7 +10281,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-wolulabs-hermes-founder-os
   name: wolulabs/hermes-founder-os
   url: https://github.com/wolulabs/hermes-founder-os
@@ -10040,7 +10340,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-vincent-crypto-coder-tech-debt-management-skill
   name: Vincent-crypto-coder/tech-debt-management-skill
   url: https://github.com/Vincent-crypto-coder/tech-debt-management-skill
@@ -10114,7 +10414,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-lmoncany-hermes-wordpress-skill
   name: lmoncany/hermes-wordpress-skill
   url: https://github.com/lmoncany/hermes-wordpress-skill
@@ -10188,7 +10488,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-aldegad-skill-hook-authoring
   name: aldegad/skill-hook-authoring
   url: https://github.com/aldegad/skill-hook-authoring
@@ -10251,7 +10551,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-franksde-agy-hud
   name: franksde/agy-hud
   url: https://github.com/franksde/agy-hud
@@ -10334,7 +10634,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-clempat-ai-tools-flake
   name: clempat/ai-tools-flake
   url: https://github.com/clempat/ai-tools-flake
@@ -10399,7 +10699,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-likhithsai2580-qoder-repo-wiki-export
   name: Likhithsai2580/qoder-repo-wiki-export
   url: https://github.com/Likhithsai2580/qoder-repo-wiki-export
@@ -10508,7 +10808,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-renaxxyz-hermes-skills
   name: renaxxyz/hermes-skills
   url: https://github.com/renaxxyz/hermes-skills
@@ -10575,7 +10875,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-patrickdass93-android-phone-control-skill
   name: patrickdass93/android-phone-control-skill
   url: https://github.com/patrickdass93/android-phone-control-skill
@@ -10651,7 +10951,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-laofudev-laofu-qmt-skill
   name: laofudev/laofu-qmt-skill
   url: https://github.com/laofudev/laofu-qmt-skill
@@ -10734,7 +11034,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-niutrans-mcp-texttranslation
   name: NiuTrans/MCP-TextTranslation
   url: https://github.com/NiuTrans/MCP-TextTranslation
@@ -10821,7 +11121,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-easternguy-podcast-from-research
   name: Easternguy/podcast-from-research
   url: https://github.com/Easternguy/podcast-from-research
@@ -10877,7 +11177,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-ai-safeter-antigravity-cli-plugin
   name: AI-Safeter/antigravity-cli-plugin
   url: https://github.com/AI-Safeter/antigravity-cli-plugin
@@ -10927,7 +11227,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-nectr-ai-nectr-ai-pr-review-agent
   name: Nectr-AI/nectr-ai-pr-review-agent
   url: https://github.com/Nectr-AI/nectr-ai-pr-review-agent
@@ -10980,7 +11280,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-juanmaperals-claude-code-best-practice
   name: JuanMaPerals/claude-code-best-practice
   url: https://github.com/JuanMaPerals/claude-code-best-practice
@@ -11027,7 +11327,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-carterlasalle-system-information-mcp
   name: carterlasalle/system_information_mcp
   url: https://github.com/carterlasalle/system_information_mcp
@@ -11087,7 +11387,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-sirvenis-cursor-mcp-extension
   name: Sirvenis/cursor-mcp-extension
   url: https://github.com/Sirvenis/cursor-mcp-extension
@@ -11163,7 +11463,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-chen9916-godot-opencode-mcp
   name: chen9916/godot-opencode-mcp
   url: https://github.com/chen9916/godot-opencode-mcp
@@ -11229,7 +11529,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-nitingupta220-crito
   name: nitingupta220/crito
   url: https://github.com/nitingupta220/crito
@@ -11279,7 +11579,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-lininn-qorder-proxy
   name: lininn/qorder-proxy
   url: https://github.com/lininn/qorder-proxy
@@ -11367,7 +11667,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-zhuligu-cc-practice
   name: zhuligu/CC-Practice
   url: https://github.com/zhuligu/CC-Practice
@@ -11435,7 +11735,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-alexandervtr-cursor-mcp-file-organizer
   name: AlexanderVTr/cursor-mcp-file-organizer
   url: https://github.com/AlexanderVTr/cursor-mcp-file-organizer
@@ -11482,7 +11782,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-simplifaisoul-opencode-mcp-tools
   name: simplifaisoul/opencode-mcp-tools
   url: https://github.com/simplifaisoul/opencode-mcp-tools
@@ -11549,7 +11849,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-rainbowbreeze-ai-press-review-agent
   name: rainbowbreeze/ai_press_review_agent
   url: https://github.com/rainbowbreeze/ai_press_review_agent
@@ -11668,7 +11968,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-vignesh2027-claude-best-practice
   name: vignesh2027/claude-best-practice
   url: https://github.com/vignesh2027/claude-best-practice
@@ -11732,7 +12032,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-paralov-roblox-studio-opencode-mcp
   name: paralov/roblox-studio-opencode-mcp
   url: https://github.com/paralov/roblox-studio-opencode-mcp
@@ -11785,7 +12085,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-lovesky514514-cmd-universal-scientific-comsol-agent
   name: lovesky514514-cmd/universal-scientific-comsol-agent
   url: https://github.com/lovesky514514-cmd/universal-scientific-comsol-agent
@@ -11894,7 +12194,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-zxcrf-oh-my-qoder
   name: zxcrf/oh-my-qoder
   url: https://github.com/zxcrf/oh-my-qoder
@@ -11969,7 +12269,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-vinodborole-claude-code-best-practices
   name: vinodborole/Claude-Code-Best-Practices
   url: https://github.com/vinodborole/Claude-Code-Best-Practices
@@ -12042,7 +12342,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-yujxzjcn-teaching-skills-codex
   name: YujxZJCN/teaching-skills-codex
   url: https://github.com/YujxZJCN/teaching-skills-codex
@@ -12099,7 +12399,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-traves-theberge-opencode-mcp
   name: Traves-Theberge/opencode-mcp
   url: https://github.com/Traves-Theberge/opencode-mcp
@@ -12161,7 +12461,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-francisco-m001-opencode-mcp-tool-search
   name: francisco-m001/opencode-mcp-tool-search
   url: https://github.com/francisco-m001/opencode-mcp-tool-search
@@ -12227,7 +12527,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-hacimertgokhan-openmcp
   name: hacimertgokhan/openmcp
   url: https://github.com/hacimertgokhan/openmcp
@@ -12295,7 +12595,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-jackkelly-opencode-config
   name: JackKelly/opencode_config
   url: https://github.com/JackKelly/opencode_config
@@ -12347,7 +12647,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-hxrshxz-fluid-cloudnative-custom-agent-workflows
   name: hxrshxz/fluid-cloudnative-custom-agent-workflows
   url: https://github.com/hxrshxz/fluid-cloudnative-custom-agent-workflows
@@ -12410,7 +12710,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-blueasddaaaaaaa-workbuddy-pet
   name: BLUEasddaaaaaaa/workbuddy-pet
   url: https://github.com/BLUEasddaaaaaaa/workbuddy-pet
@@ -12474,7 +12774,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-harlandzzc-cuhk-slides-template-html
   name: HarlandZZC/cuhk-slides-template-html
   url: https://github.com/HarlandZZC/cuhk-slides-template-html
@@ -12545,7 +12845,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-pacoaldev-opencode-mcp
   name: Pacoaldev/opencode-mcp
   url: https://github.com/Pacoaldev/opencode-mcp
@@ -12615,7 +12915,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-gtheys-setup-honcho
   name: gtheys/setup-honcho
   url: https://github.com/gtheys/setup-honcho
@@ -12670,7 +12970,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-joegoldin-antigravity-cli-nix
   name: joegoldin/antigravity-cli-nix
   url: https://github.com/joegoldin/antigravity-cli-nix
@@ -12722,7 +13022,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-w4k4s-claude-code-boris-workflow
   name: W4k4s/claude-code-boris-workflow
   url: https://github.com/W4k4s/claude-code-boris-workflow
@@ -12774,7 +13074,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-april-xu-sanshui
   name: April-Xu/sanshui
   url: https://github.com/April-Xu/sanshui
@@ -12816,7 +13116,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-yinqd3-workbuddy-skills
   name: yinqd3/workbuddy-skills
   url: https://github.com/yinqd3/workbuddy-skills
@@ -12885,7 +13185,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-jiukai-statistical-analysis-skills-with-workbuddy
   name: jiukai/Statistical-Analysis-Skills-with-WorkBuddy
   url: https://github.com/jiukai/Statistical-Analysis-Skills-with-WorkBuddy
@@ -12936,7 +13236,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-onehub-work-qoder-cli-api
   name: onehub-work/qoder-cli-api
   url: https://github.com/onehub-work/qoder-cli-api
@@ -13003,7 +13303,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-hyophyop-mapreduce-skill
   name: hyophyop/mapreduce-skill
   url: https://github.com/hyophyop/mapreduce-skill
@@ -13064,7 +13364,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-cloudedquartz-opencode-mcp-adapter
   name: CloudedQuartz/opencode-mcp-adapter
   url: https://github.com/CloudedQuartz/opencode-mcp-adapter
@@ -13131,7 +13431,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-k3vinb5-opencode-mcp-installer
   name: K3vinb5/opencode-mcp-installer
   url: https://github.com/K3vinb5/opencode-mcp-installer
@@ -13187,7 +13487,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-jdbernardo16-opencode-mcp-figma-remote
   name: jdbernardo16/opencode-mcp-figma-remote
   url: https://github.com/jdbernardo16/opencode-mcp-figma-remote
@@ -13250,7 +13550,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-contrapuntal-antigravity-cli-plugin-cc
   name: contrapuntal/antigravity-cli-plugin-cc
   url: https://github.com/contrapuntal/antigravity-cli-plugin-cc
@@ -13321,7 +13621,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-sajjadgg-rehearsal
   name: sajjadGG/Rehearsal
   url: https://github.com/sajjadGG/Rehearsal
@@ -13366,7 +13666,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
   topics:
   - agent-testing
   - ai-agents
@@ -13467,7 +13767,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-rendersman-export-repo-wiki-to-pdf
   name: rendersman/export-repo-wiki-to-pdf
   url: https://github.com/rendersman/export-repo-wiki-to-pdf
@@ -13527,7 +13827,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-chasexu168340-rgb-codex-skills
   name: chasexu168340-rgb/codex-skills
   url: https://github.com/chasexu168340-rgb/codex-skills
@@ -13570,7 +13870,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-leahchen2025-flashcard-generator
   name: leahchen2025/flashcard-generator
   url: https://github.com/leahchen2025/flashcard-generator
@@ -13620,7 +13920,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-lfeng-qoder-cli-skill
   name: lfeng/qoder-cli-skill
   url: https://github.com/lfeng/qoder-cli-skill
@@ -13683,7 +13983,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-cyj316457-qoder-api-bridge
   name: CYJ316457/qoder-api-bridge
   url: https://github.com/CYJ316457/qoder-api-bridge
@@ -13732,7 +14032,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-nichengfuben-qoder-patchs
   name: nichengfuben/qoder-patchs
   url: https://github.com/nichengfuben/qoder-patchs
@@ -13780,7 +14080,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-tuchuanbin-feedback-auto-processor-based-on-qodercli
   name: tuchuanbin/feedback-auto-processor-based-on-qodercli
   url: https://github.com/tuchuanbin/feedback-auto-processor-based-on-qodercli
@@ -13833,7 +14133,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-swampland2553-crowbar93
   name: Swampland2553/Crowbar93
   url: https://github.com/Swampland2553/Crowbar93
@@ -13874,7 +14174,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-yuxiaoyang2007-prog-claude-code-skill
   name: yuxiaoyang2007-prog/claude-code-skill
   url: https://github.com/yuxiaoyang2007-prog/claude-code-skill
@@ -13931,7 +14231,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-gitjburns-export-session
   name: gitjburns/export-session
   url: https://github.com/gitjburns/export-session
@@ -14010,7 +14310,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-jseook11-codex-pdf-ocr-to-markdown-skill
   name: jseook11/codex-pdf-ocr-to-markdown-skill
   url: https://github.com/jseook11/codex-pdf-ocr-to-markdown-skill
@@ -14076,7 +14376,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-streetjammer-seedance-forge
   name: StreetJammer/seedance-forge
   url: https://github.com/StreetJammer/seedance-forge
@@ -14140,7 +14440,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-asd880921-gitnexus-wiki
   name: asd880921/gitnexus-wiki
   url: https://github.com/asd880921/gitnexus-wiki
@@ -14202,7 +14502,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-newturn2017-readme-writer
   name: NewTurn2017/readme-writer
   url: https://github.com/NewTurn2017/readme-writer
@@ -14275,7 +14575,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-withakay-opencode-mcp-tool
   name: withakay/opencode-mcp-tool
   url: https://github.com/withakay/opencode-mcp-tool
@@ -14327,7 +14627,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-jinto-ag-opencode-mcp
   name: jinto-ag/opencode-mcp
   url: https://github.com/jinto-ag/opencode-mcp
@@ -14378,7 +14678,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-sajjadgg-ghostlab
   name: sajjadGG/Ghostlab
   url: https://github.com/sajjadGG/Ghostlab
@@ -14454,7 +14754,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-274326424-video-content-extractor
   name: 274326424/video-content-extractor
   url: https://github.com/274326424/video-content-extractor
@@ -14535,7 +14835,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-op7418-humanizer-zh
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-smnji-agentic-data-science-research-template
   name: smnji/agentic-data-science-research-template
   url: https://github.com/smnji/agentic-data-science-research-template
@@ -14591,7 +14891,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-crazyrussman-codex-working-kit
   name: crazyrussman/codex-working-kit
   url: https://github.com/crazyrussman/codex-working-kit
@@ -14654,7 +14954,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-andrianinalydiano-codex-web
   name: AndrianinaLydiano/codex-web
   url: https://github.com/AndrianinaLydiano/codex-web
@@ -14831,7 +15131,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-zemloai-ctrl-elecz-antigravity
   name: zemloai-ctrl/elecz-antigravity
   url: https://github.com/zemloai-ctrl/elecz-antigravity
@@ -14913,7 +15213,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-c1ph3r404-antigravitycli-plugin
   name: C1ph3r404/AntigravityCli-Plugin
   url: https://github.com/C1ph3r404/AntigravityCli-Plugin
@@ -14957,7 +15257,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-cyberbobjr-opencode-config
   name: cyberbobjr/opencode-config
   url: https://github.com/cyberbobjr/opencode-config
@@ -15020,7 +15320,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-chadleeshaw-dot-opencode
   name: chadleeshaw/dot-opencode
   url: https://github.com/chadleeshaw/dot-opencode
@@ -15101,7 +15401,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-howlerops-opencode-agentic-commands
   name: howlerops/opencode-agentic-commands
   url: https://github.com/howlerops/opencode-agentic-commands
@@ -15162,7 +15462,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-choumoone-opencode-markitdown-qwen
   name: choumoone/opencode-markitdown-qwen
   url: https://github.com/choumoone/opencode-markitdown-qwen
@@ -15234,7 +15534,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-hxrshxz-opencode-toolkit
   name: hxrshxz/opencode-toolkit
   url: https://github.com/hxrshxz/opencode-toolkit
@@ -15277,7 +15577,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-adhiman1995-codebuddy
   name: adhiman1995/Codebuddy
   url: https://github.com/adhiman1995/Codebuddy
@@ -15318,7 +15618,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-gipsydanger-dev-codebuddy-ai-coding-mentor
   name: GipsyDanger-dev/codebuddy-ai-coding-mentor
   url: https://github.com/GipsyDanger-dev/codebuddy-ai-coding-mentor
@@ -15377,7 +15677,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-kang1298749923-skills
   name: kang1298749923/skills
   url: https://github.com/kang1298749923/skills
@@ -15428,7 +15728,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-maidoudoujiushiwo-workbuddy-skills
   name: maidoudoujiushiwo/workbuddy-skills
   url: https://github.com/maidoudoujiushiwo/workbuddy-skills
@@ -15521,7 +15821,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-shubhambhardwaj001-ai-pr-review-agent
   name: ShubhamBhardwaj001/ai-pr-review-agent
   url: https://github.com/ShubhamBhardwaj001/ai-pr-review-agent
@@ -15565,7 +15865,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-parinacharyagit-secureagent
   name: ParinAcharyaGit/SecureAgent
   url: https://github.com/ParinAcharyaGit/SecureAgent
@@ -15773,7 +16073,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: official-workbuddy-codebuddy
   name: WorkBuddy / CodeBuddy
   url: https://www.workbuddy.ai
@@ -15817,7 +16117,7 @@
     maturity: 3
   tracking_priority: track
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-ttbingo-k12-math-tutor
   name: TTbingo/k12-math-tutor
   url: https://github.com/TTbingo/k12-math-tutor
@@ -15881,7 +16181,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-bettermen-pc-repair
   name: bettermen/pc-repair
   url: https://github.com/bettermen/pc-repair
@@ -15975,7 +16275,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-flyliyiyun-startup-operations
   name: flyliyiyun/startup-operations
   url: https://github.com/flyliyiyun/startup-operations
@@ -16018,7 +16318,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-flyliyiyun-startup-product
   name: flyliyiyun/startup-product
   url: https://github.com/flyliyiyun/startup-product
@@ -16061,7 +16361,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-flyliyiyun-startup-fundraising
   name: flyliyiyun/startup-fundraising
   url: https://github.com/flyliyiyun/startup-fundraising
@@ -16132,7 +16432,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-flyliyiyun-startup-growth
   name: flyliyiyun/startup-growth
   url: https://github.com/flyliyiyun/startup-growth
@@ -16175,7 +16475,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-denceee-microsoft-style-chinese-skill
   name: denceee/microsoft-style-chinese-skill
   url: https://github.com/denceee/microsoft-style-chinese-skill
@@ -16256,7 +16556,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-victorpaulee-smb-path-wintomac-tools
   name: victorpaulee/smb-path-wintomac-tools
   url: https://github.com/victorpaulee/smb-path-wintomac-tools
@@ -16330,7 +16630,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-vaughnxmedia-alt-kora-engineering-agent
   name: vaughnxmedia-alt/kora-engineering-agent
   url: https://github.com/vaughnxmedia-alt/kora-engineering-agent
@@ -16384,7 +16684,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-dongho5136-claude-skills
   name: dongho5136/claude-skills
   url: https://github.com/dongho5136/claude-skills
@@ -16459,7 +16759,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-kimseungzzang-zzang-codex-skills
   name: Kimseungzzang/zzang-codex-skills
   url: https://github.com/Kimseungzzang/zzang-codex-skills
@@ -16533,7 +16833,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-hyophyop-artifacts-skill
   name: hyophyop/artifacts-skill
   url: https://github.com/hyophyop/artifacts-skill
@@ -16660,7 +16960,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-zanzythebar-grok-opencode-bridge
   name: ZanzyTHEbar/grok-opencode-bridge
   url: https://github.com/ZanzyTHEbar/grok-opencode-bridge
@@ -16734,7 +17034,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-jy110-ai-pr-review-agent
   name: JY110/AI-PR-Review-agent
   url: https://github.com/JY110/AI-PR-Review-agent
@@ -16803,7 +17103,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-jacobjerryarackal-ai-pr-review-agent
   name: jacobjerryarackal/ai-pr-review-agent
   url: https://github.com/jacobjerryarackal/ai-pr-review-agent
@@ -16864,7 +17164,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-shri-aakash-ai-pr-reviewagent
   name: Shri-Aakash/AI-PR-ReviewAgent
   url: https://github.com/Shri-Aakash/AI-PR-ReviewAgent
@@ -16929,7 +17229,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-azmatjaved-ai-pr-review-agent
   name: AzmatJaved/AI-PR-Review-Agent
   url: https://github.com/AzmatJaved/AI-PR-Review-Agent
@@ -16988,7 +17288,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-fineeeeeee-ai-pr-review-agent
   name: Fineeeeeee/ai-pr-review-agent
   url: https://github.com/Fineeeeeee/ai-pr-review-agent
@@ -17053,7 +17353,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-vivekjne-ai-pr-review-agent
   name: vivekjne/ai-pr-review-agent
   url: https://github.com/vivekjne/ai-pr-review-agent
@@ -17118,7 +17418,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-jahnavichaurasia67-sys-ai-pr-review-agent
   name: jahnavichaurasia67-sys/ai-pr-review-agent
   url: https://github.com/jahnavichaurasia67-sys/ai-pr-review-agent
@@ -17199,7 +17499,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-tanmay-awal-ai-pr-reviewer-agent
   name: Tanmay-Awal/ai-pr-reviewer-agent
   url: https://github.com/Tanmay-Awal/ai-pr-reviewer-agent
@@ -17258,7 +17558,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-tdsnxtaskin-tugay-ai-pr-review-agent
   name: tdsnxtaskin-tugay/ai-pr-review-agent
   url: https://github.com/tdsnxtaskin-tugay/ai-pr-review-agent
@@ -17317,7 +17617,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-pradeep873511-sudo-ai-pr-review-agent
   name: pradeep873511-sudo/ai-pr-review-agent
   url: https://github.com/pradeep873511-sudo/ai-pr-review-agent
@@ -17359,7 +17659,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-sujwalnaik-ai-pr-review-agent
   name: Sujwalnaik/ai-pr-review-agent
   url: https://github.com/Sujwalnaik/ai-pr-review-agent
@@ -17442,7 +17742,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-moonkirito-ai-pr-review-agent
   name: MoonKirito/AI-PR-Review-Agent
   url: https://github.com/MoonKirito/AI-PR-Review-Agent
@@ -17505,7 +17805,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-sunilchitikina-cpu-ai-pr-review-agent
   name: sunilchitikina-cpu/ai_pr_review_agent
   url: https://github.com/sunilchitikina-cpu/ai_pr_review_agent
@@ -17573,7 +17873,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-sumi451-ai-pr-review-agent
   name: Sumi451/ai_pr_review_agent
   url: https://github.com/Sumi451/ai_pr_review_agent
@@ -17711,7 +18011,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: official-qoder
   name: Qoder / QoderWork
   url: https://qoder.com
@@ -17752,7 +18052,7 @@
     maturity: 3
   tracking_priority: track
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-ayushkh420-ai-pr-review-agent
   name: ayushkh420/AI-PR-Review-Agent
   url: https://github.com/ayushkh420/AI-PR-Review-Agent
@@ -17879,7 +18179,7 @@
     maturity: 4
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-zhangdada802-art-ai-pr-review-agent
   name: zhangdada802-art/ai-pr-review-agent
   url: https://github.com/zhangdada802-art/ai-pr-review-agent
@@ -17927,7 +18227,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-chadleeshaw-dot-agents
   name: chadleeshaw/dot-agents
   url: https://github.com/chadleeshaw/dot-agents
@@ -18008,7 +18308,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-just2036-ai-pr-review-agent
   name: JUST2036/ai-pr-review-agent
   url: https://github.com/JUST2036/ai-pr-review-agent
@@ -18049,7 +18349,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-bettermen-piano-teacher
   name: bettermen/piano-teacher
   url: https://github.com/bettermen/piano-teacher
@@ -18092,7 +18392,7 @@
     maturity: 0
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-tharun1045-ai-privacy-review-agent
   name: Tharun1045/ai-privacy-review-agent
   url: https://github.com/Tharun1045/ai-privacy-review-agent
@@ -18145,7 +18445,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-ayush488-glitch-ai-pr-review-agent
   name: ayush488-glitch/ai-pr-review-agent
   url: https://github.com/ayush488-glitch/ai-pr-review-agent
@@ -18198,7 +18498,7 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 - id: github-maskedtitan08-ai-pr-review-agent
   name: maskedtitan08/AI-PR_review-Agent
   url: https://github.com/maskedtitan08/AI-PR_review-Agent
@@ -18240,5 +18540,5 @@
     maturity: 2
   tracking_priority: pending
   last_analyzed: null
-  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  benchmark_ref: github-opencoworkai-open-cowork
 

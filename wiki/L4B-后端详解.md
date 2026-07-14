@@ -204,8 +204,11 @@ weekly_analysis.py (入口，每周一 03:30 via Hermes cron)
 - **计划:** 每周一 03:30（`30 3 * * 1`）
 - **模式:** no_agent=True（直接运行脚本，不经过 LLM 编排）
 - **脚本:** `~/.hermes/scripts/search-in-coding-weekly.sh`
-- **超时:** 无限制（LLM 分析可能需要 30-60 分钟）
+- **超时:** `cron.script_timeout_seconds=3600`（全量 LLM 分析约 16–48 分钟，默认 120s 会杀进程）
 - **部署:** 脚本内自动调用 deploy_site.py
+- **增量落盘:** `run_analysis()` 每批（3 个项目）后 `save_jsonish('data/projects.yaml')`
+- **字段拆分:** LLM `quality_detail` 写独立字段，不覆盖可量化 `score_detail`
+- **官方 seed 保护:** `source_type=official-seed` 强制 `tracking_priority=track`
 
 ### 配置文件
 

@@ -23,7 +23,7 @@ SLIM_FIELDS = [
 
 # Fields for detail JSON (lazy-loaded)
 DETAIL_FIELDS = SLIM_FIELDS + [
-    'score_detail', 'llm_summary', 'benchmark_ref', 'last_analyzed',
+    'score_detail', 'quality_detail', 'llm_summary', 'benchmark_ref', 'last_analyzed',
     'repo', 'tags', 'maturity', 'status',
     'readme_preview', 'topics',
 ]
@@ -82,6 +82,7 @@ def enrich_project(p):
         'quantifiable_score': p.get('quantifiable_score', 0),
         'quality_score': p.get('quality_score', 0),
         'score_detail': p.get('score_detail', {}),
+        'quality_detail': p.get('quality_detail', {}),
         'llm_summary': p.get('llm_summary'),
         'last_analyzed': p.get('last_analyzed'),
         'benchmark_ref': p.get('benchmark_ref'),

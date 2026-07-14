@@ -219,13 +219,14 @@ const SIC_render = {
     var html = this.currentFiltered.slice(start, end).map(function(p) {
       var isFav = SIC_data.isFav(p.id);
       var isCurated = curatedIds.has(p.id);
-      // #1: score badge with /60 + #20: clickable project name + #11: human labels
+      var maxScore = (p.quality_score > 0) ? 100 : 60;
+      // #1: score badge with /60 or /100 + #20: clickable project name + #11: human labels
       return '<tr>' +
         '<td><b class="project-name" data-action="detail" data-id="' + self.esc(p.id) + '">' + self.esc(SIC_i18n.textOf(p, 'name')) + '</b><br>' +
         '<span class="muted">' + self.esc((SIC_i18n.textOf(p, 'summary') || '').slice(0, 100)) + '</span></td>' +
         '<td>' + self.pills(p.resource_type) + '</td>' +
         '<td>' + self.toolLabels(p.target_tools) + '</td>' +
-        '<td><span class="score-badge">' + self.safeNum(p.total_score) + '</span><span class="muted" style="font-size:11px;">/60</span></td>' +
+        '<td><span class="score-badge">' + self.safeNum(p.total_score) + '</span><span class="muted" style="font-size:11px;">/' + maxScore + '</span></td>' +
         '<td>★ ' + self.safeNum(p.stars) + '</td>' +
         '<td>' +
           '<a href="' + self.safeUrl(p.url) + '" target="_blank" rel="noopener noreferrer">' + SIC_i18n.t('open') + '</a> ' +
@@ -288,10 +289,12 @@ const SIC_render = {
     var langLine = (p.languages && p.languages.filter(Boolean).length > 0)
       ? '<p class="muted">Languages: ' + this.esc(p.languages.filter(Boolean).join(', ')) + '</p>' : '';
 
-    // #1: score display as /60
-    // #10: score_detail breakdown
+    // #1: score display as /60 or /100
+    // #10: score_detail (quantifiable) + quality_detail (LLM)
+    var maxScore = (qualityScore > 0) ? 100 : 60;
+    var qd = (detail && detail.quality_detail) || p.quality_detail || {};
     var scoreDetailHtml = '';
-    if (sd && Object.keys(sd).length > 0) {
+    if (sd && Object.keys(sd).length > 0 && ('stars' in sd || 'activity' in sd || 'adoption' in sd || 'maturity' in sd)) {
       scoreDetailHtml = '<div class="detail-section">' +
         '<h3>' + SIC_i18n.t('scoreBreakdown') + '</h3>' +
         '<div class="score-detail-grid">' +
@@ -303,6 +306,26 @@ const SIC_render = {
       '</div>';
     }
 
+    var qualityDetailHtml = '';
+    if (qd && Object.keys(qd).length > 0) {
+      qualityDetailHtml = '<div class="detail-section">' +
+        '<h3>' + (SIC_i18n.t('qualityBreakdown') || '质量分项') + '</h3>' +
+        '<div class="score-detail-grid">' +
+          '<div class="score-detail-item"><div class="label">Relevance</div><div class="value">' + this.safeNum(qd.relevance) + '/10</div></div>' +
+          '<div class="score-detail-item"><div class="label">Practicality</div><div class="value">' + this.safeNum(qd.practicality) + '/10</div></div>' +
+          '<div class="score-detail-item"><div class="label">Novelty</div><div class="value">' + this.safeNum(qd.novelty) + '/10</div></div>' +
+          '<div class="score-detail-item"><div class="label">Ecosystem</div><div class="value">' + this.safeNum(qd.ecosystem_value) + '/10</div></div>' +
+        '</div>' +
+      '</div>';
+    }
+
+    var benchmarkRefHtml = '';
+    if (detail && detail.benchmark_ref) {
+      var refProject = SIC_data.projects.find(function(x) { return x.id === detail.benchmark_ref; });
+      var refName = refProject ? SIC_i18n.textOf(refProject, 'name') : detail.benchmark_ref;
+      benchmarkRefHtml = '<div class="detail-section"><h3>' + SIC_i18n.t('benchmarkRef') + '</h3><p class="muted">' + this.esc(refName) + '</p></div>';
+    }
+
     overlay.innerHTML =
       '<button class="detail-close" data-action="close-detail">&times;</button>' +
       '<h2>' + this.esc(SIC_i18n.textOf(p, 'name')) + '</h2>' +
@@ -312,15 +335,16 @@ const SIC_render = {
         '<h3>' + SIC_i18n.t('scoreDetail') + '</h3>' +
         '<div style="display:flex;gap:12px;align-items:center;margin-bottom:8px;">' +
           '<span class="score-badge score-badge-large">' + this.safeNum(total) + '</span>' +
-          '<span class="muted">/ 60 ' + SIC_i18n.t('quantifiable') + '</span>' +
+          '<span class="muted">/ ' + maxScore + '</span>' +
         '</div>' +
-        '<div class="score-bar"><div class="score-bar-fill" style="width:' + (total / 60 * 100) + '%"></div></div>' +
+        '<div class="score-bar"><div class="score-bar-fill" style="width:' + Math.min(100, total / maxScore * 100) + '%"></div></div>' +
         (qualityScore > 0
           ? '<p class="muted" style="margin-top:8px;">' + SIC_i18n.t('quality') + ': ' + this.safeNum(qualityScore) + '/40</p>'
           : '<p class="muted" style="margin-top:8px;">' + SIC_i18n.t('qualityPending') + '</p>') +
       '</div>' +
 
       scoreDetailHtml +
+      qualityDetailHtml +
 
       '<div class="detail-section">' +
         '<h3>' + SIC_i18n.t('details') + '</h3>' +
@@ -336,7 +360,7 @@ const SIC_render = {
 
       (summaryText ? '<div class="detail-section"><h3>LLM Summary</h3><p>' + this.esc(summaryText) + '</p></div>' : '') +
 
-      (detail && detail.benchmark_ref ? '<div class="detail-section"><h3>' + SIC_i18n.t('benchmarkRef') + '</h3><p class="muted">' + this.esc(detail.benchmark_ref) + '</p></div>' : '') +
+      benchmarkRefHtml +
 
       '<div class="detail-section">' +
         '<h3>' + SIC_i18n.t('relatedProjects') + '</h3>' +

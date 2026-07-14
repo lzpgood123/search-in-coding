@@ -39,6 +39,12 @@
     ],
     "review_state": "auto-curated",
     "score_detail": {
+      "stars": 20,
+      "activity": 15,
+      "adoption": 10,
+      "maturity": 7
+    },
+    "quality_detail": {
       "relevance": 10,
       "practicality": 10,
       "novelty": 10,
@@ -115,6 +121,12 @@
     ],
     "review_state": "auto-curated",
     "score_detail": {
+      "stars": 20,
+      "activity": 15,
+      "adoption": 10,
+      "maturity": 7
+    },
+    "quality_detail": {
       "relevance": 10,
       "practicality": 10,
       "novelty": 7,
@@ -173,6 +185,12 @@
     ],
     "review_state": "auto-curated",
     "score_detail": {
+      "stars": 20,
+      "activity": 15,
+      "adoption": 10,
+      "maturity": 5
+    },
+    "quality_detail": {
       "relevance": 10,
       "practicality": 10,
       "novelty": 7,
@@ -200,11 +218,11 @@
     "url": "https://antigravity.google/",
     "source_type": "official-seed",
     "resource_type": [
-      "cli-tool"
+      "cli-tool",
+      "mcp-server",
+      "mcp-client"
     ],
-    "target_tools": [
-      "antigravity-cli"
-    ],
+    "target_tools": [],
     "summary": "Official seed profile for Antigravity CLI / Gemini CLI",
     "i18n": {
       "zh": {
@@ -218,9 +236,9 @@
     },
     "stars": 105959,
     "forks": 14250,
-    "total_score": 52,
+    "total_score": 89,
     "quantifiable_score": 52,
-    "quality_score": 0,
+    "quality_score": 37,
     "tracking_priority": "track",
     "last_updated": "2026-07-06",
     "first_seen": "2026-07-06",
@@ -236,9 +254,18 @@
       "adoption": 10,
       "maturity": 7
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 7,
+      "ecosystem_value": 10
+    },
+    "llm_summary": {
+      "zh": "谷歌官方发布的Gemini CLI工具，支持MCP，是AI编码代理生态中的重要组件。",
+      "en": "Official Google CLI for Gemini with MCP support, a key component in the AI coding agent ecosystem."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "google-gemini/gemini-cli",
     "tags": [
       "target-tool",
@@ -263,7 +290,8 @@
     "url": "https://chatgpt.com/codex",
     "source_type": "official-seed",
     "resource_type": [
-      "cli-tool"
+      "cli-tool",
+      "agent-framework"
     ],
     "target_tools": [
       "codex-cli"
@@ -281,9 +309,9 @@
     },
     "stars": 97660,
     "forks": 14544,
-    "total_score": 52,
+    "total_score": 90,
     "quantifiable_score": 52,
-    "quality_score": 0,
+    "quality_score": 38,
     "tracking_priority": "track",
     "last_updated": "2026-07-06",
     "first_seen": "2026-07-06",
@@ -299,9 +327,18 @@
       "adoption": 10,
       "maturity": 7
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 8,
+      "ecosystem_value": 10
+    },
+    "llm_summary": {
+      "zh": "OpenAI官方发布的本地AI编码代理命令行工具，生态核心之一。",
+      "en": "OpenAI's official local AI coding agent CLI tool, a foundational ecosystem component."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "openai/codex",
     "tags": [
       "target-tool",
@@ -321,7 +358,9 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "codex-cli",
+      "cursor"
     ],
     "summary": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
     "i18n": {
@@ -336,10 +375,10 @@
     },
     "stars": 85516,
     "forks": 4758,
-    "total_score": 49,
+    "total_score": 85,
     "quantifiable_score": 49,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 36,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T15:07:41Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -354,9 +393,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "通过让AI说‘穴居人语’大幅节省token的幽默技能，适用于主流AI编程代理。",
+      "en": "A humorous skill that drastically reduces token usage by making AI talk like a caveman, applicable to mainstream AI coding agents."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "JuliusBrussee/caveman",
     "tags": [],
     "maturity": "unknown",
@@ -381,12 +429,11 @@
     "url": "https://github.com/cline/cline",
     "source_type": "github",
     "resource_type": [
-      "extension",
-      "cli-tool"
+      "agent-framework",
+      "cli-tool",
+      "extension"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
     "i18n": {
       "zh": {
@@ -400,9 +447,9 @@
     },
     "stars": 64610,
     "forks": 6901,
-    "total_score": 49,
+    "total_score": 85,
     "quantifiable_score": 49,
-    "quality_score": 0,
+    "quality_score": 36,
     "tracking_priority": "track",
     "last_updated": "2026-07-13T13:32:20Z",
     "first_seen": "2026-07-13",
@@ -418,9 +465,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "Cline 是一个强大的开源自主编程代理，可作为 SDK、IDE 扩展或命令行工具使用。",
+      "en": "Cline is a powerful open-source autonomous coding agent that can be used as an SDK, IDE extension, or CLI assistant."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "cline/cline",
     "tags": [],
     "maturity": "unknown",
@@ -434,6 +490,7 @@
     "url": "https://goose-docs.ai/",
     "source_type": "official-seed",
     "resource_type": [
+      "agent-framework",
       "cli-tool"
     ],
     "target_tools": [
@@ -452,9 +509,9 @@
     },
     "stars": 51159,
     "forks": 5684,
-    "total_score": 52,
+    "total_score": 86,
     "quantifiable_score": 52,
-    "quality_score": 0,
+    "quality_score": 34,
     "tracking_priority": "track",
     "last_updated": "2026-07-06",
     "first_seen": "2026-07-06",
@@ -470,9 +527,18 @@
       "adoption": 10,
       "maturity": 7
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "Goose 是一个用 Rust 构建的原生开源 AI 代理，支持代码编写和通用任务，提供 CLI、桌面应用和 API。",
+      "en": "Goose is a native open-source AI agent for code and general tasks, built in Rust with CLI, desktop, and API support."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "aaif-goose/goose",
     "tags": [
       "target-tool",
@@ -494,6 +560,7 @@
     "url": "https://github.com/aaif-goose/goose",
     "source_type": "github",
     "resource_type": [
+      "agent-framework",
       "cli-tool"
     ],
     "target_tools": [
@@ -512,9 +579,9 @@
     },
     "stars": 51152,
     "forks": 5684,
-    "total_score": 49,
+    "total_score": 86,
     "quantifiable_score": 49,
-    "quality_score": 0,
+    "quality_score": 37,
     "tracking_priority": "track",
     "last_updated": "2026-07-13T13:40:40Z",
     "first_seen": "2026-07-13",
@@ -530,9 +597,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 7,
+      "ecosystem_value": 10
+    },
+    "llm_summary": {
+      "zh": "Goose 是一个流行的开源 AI 代理，支持桌面、CLI 和 API 接口，可使用任何 LLM 进行代码生成、执行和测试。",
+      "en": "Goose is a popular open-source AI agent that offers desktop, CLI, and API interfaces for code generation, execution, and testing with any LLM."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "aaif-goose/goose",
     "tags": [],
     "maturity": "unknown",
@@ -553,9 +629,7 @@
     "resource_type": [
       "cli-tool"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "aider is AI pair programming in your terminal",
     "i18n": {
       "zh": {
@@ -569,9 +643,9 @@
     },
     "stars": 47338,
     "forks": 4727,
-    "total_score": 45,
+    "total_score": 82,
     "quantifiable_score": 45,
-    "quality_score": 0,
+    "quality_score": 37,
     "tracking_priority": "track",
     "last_updated": "2026-07-13T13:36:30Z",
     "first_seen": "2026-07-13",
@@ -587,9 +661,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 7,
+      "ecosystem_value": 10
+    },
+    "llm_summary": {
+      "zh": "Aider是一个在终端中进行AI结对编程的工具，支持多种LLM，拥有大量用户和活跃社区。",
+      "en": "Aider is a terminal-based AI pair programming tool supporting multiple LLMs, with a large user base and active community."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "Aider-AI/aider",
     "tags": [],
     "maturity": "unknown",
@@ -617,12 +700,10 @@
     "url": "https://github.com/continuedev/continue",
     "source_type": "github",
     "resource_type": [
-      "cli-tool",
-      "agent-framework"
+      "extension",
+      "cli-tool"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "open-source coding agent",
     "i18n": {
       "zh": {
@@ -636,9 +717,9 @@
     },
     "stars": 34846,
     "forks": 5034,
-    "total_score": 45,
+    "total_score": 80,
     "quantifiable_score": 45,
-    "quality_score": 0,
+    "quality_score": 35,
     "tracking_priority": "track",
     "last_updated": "2026-07-13T12:42:54Z",
     "first_seen": "2026-07-13",
@@ -654,9 +735,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 6,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "继续代码代理是领先的开源编码代理，提供IDE扩展和CLI工具，支持多种AI模型，拥有庞大的社区和丰富的文档。",
+      "en": "Continue is a leading open-source coding agent offering IDE extensions and CLI tools, with strong community adoption and comprehensive documentation."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "continuedev/continue",
     "tags": [],
     "maturity": "unknown",
@@ -676,7 +766,7 @@
     "url": "https://cursor.com",
     "source_type": "official-seed",
     "resource_type": [
-      "cli-tool"
+      "tutorial"
     ],
     "target_tools": [
       "cursor"
@@ -694,9 +784,9 @@
     },
     "stars": 33030,
     "forks": 2268,
-    "total_score": 44,
+    "total_score": 60,
     "quantifiable_score": 44,
-    "quality_score": 0,
+    "quality_score": 16,
     "tracking_priority": "track",
     "last_updated": "2026-07-06",
     "first_seen": "2026-07-06",
@@ -710,9 +800,18 @@
       "adoption": 10,
       "maturity": 3
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 2,
+      "novelty": 1,
+      "ecosystem_value": 5
+    },
+    "llm_summary": {
+      "zh": "Cursor AI代码编辑器的官方GitHub种子仓库，提供网站和社区论坛的链接。",
+      "en": "Official GitHub seed repository for the Cursor AI code editor, providing pointers to the website and community forum."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "cursor/cursor",
     "tags": [
       "target-tool",
@@ -729,7 +828,7 @@
     "url": "https://github.com/cursor/cursor",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "agent-framework"
     ],
     "target_tools": [
       "cursor"
@@ -747,10 +846,10 @@
     },
     "stars": 33028,
     "forks": 2268,
-    "total_score": 41,
+    "total_score": 55,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "track",
+    "quality_score": 14,
+    "tracking_priority": "index",
     "last_updated": "2026-07-13T11:25:30Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -763,9 +862,18 @@
       "adoption": 10,
       "maturity": 0
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 0,
+      "novelty": 1,
+      "ecosystem_value": 3
+    },
+    "llm_summary": {
+      "zh": "Cursor 官方仓库，主要用于问题追踪，不含源代码或详细文档。",
+      "en": "Official Cursor repository, primarily used for issue tracking, with no source code or detailed documentation."
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-14",
     "repo": "cursor/cursor",
     "tags": [],
     "maturity": "unknown",
@@ -797,10 +905,10 @@
     },
     "stars": 27726,
     "forks": 2570,
-    "total_score": 43,
+    "total_score": 78,
     "quantifiable_score": 43,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T15:06:02Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -813,9 +921,18 @@
       "adoption": 10,
       "maturity": 2
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个便携式代理技能，用于去除文本中的AI生成痕迹，使Claude Code等AI编码助手的输出更加自然和人性化。",
+      "en": "A portable agent skill for removing signs of AI-generated writing from text, making outputs from AI coding agents like Claude Code sound more natural and human."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "blader/humanizer",
     "tags": [],
     "maturity": "unknown",
@@ -829,8 +946,7 @@
     "url": "https://github.com/alirezarezvani/claude-skills",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "extension"
+      "skills"
     ],
     "target_tools": [
       "claude-code",
@@ -851,10 +967,10 @@
     },
     "stars": 20986,
     "forks": 2823,
-    "total_score": 45,
+    "total_score": 83,
     "quantifiable_score": 45,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 38,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T15:08:06Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -869,9 +985,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 8,
+      "ecosystem_value": 10
+    },
+    "llm_summary": {
+      "zh": "这是一个为多个AI编程代理（如Claude Code、Codex、Cursor等）提供超过350个生产就绪技能和插件的开源库，极具实用价值。",
+      "en": "A comprehensive open-source library of over 350 production-ready skills and plugins for multiple AI coding agents, highly practical and valuable."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "alirezarezvani/claude-skills",
     "tags": [],
     "maturity": "unknown",
@@ -906,7 +1031,8 @@
     "url": "https://github.com/op7418/Humanizer-zh",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "rules"
     ],
     "target_tools": [
       "claude-code"
@@ -924,10 +1050,10 @@
     },
     "stars": 12508,
     "forks": 890,
-    "total_score": 40,
+    "total_score": 65,
     "quantifiable_score": 40,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 25,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T14:57:22Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -940,9 +1066,18 @@
       "adoption": 7,
       "maturity": 2
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 8,
+      "novelty": 4,
+      "ecosystem_value": 7
+    },
+    "llm_summary": {
+      "zh": "Humanizer-zh 是一个用于去除 AI 生成文本痕迹的汉化工具包，提供规则和技能，适用于 Claude Code 以改善输出自然度。",
+      "en": "Humanizer-zh is a Chinese localization of the Humanizer project, providing rules and skills to remove AI writing traces, particularly useful with Claude Code."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "op7418/Humanizer-zh",
     "tags": [],
     "maturity": "unknown",
@@ -956,7 +1091,7 @@
     "url": "https://www.trae.ai",
     "source_type": "official-seed",
     "resource_type": [
-      "cli-tool"
+      "agent-framework"
     ],
     "target_tools": [
       "trae"
@@ -974,9 +1109,9 @@
     },
     "stars": 11836,
     "forks": 1303,
-    "total_score": 48,
+    "total_score": 81,
     "quantifiable_score": 48,
-    "quality_score": 0,
+    "quality_score": 33,
     "tracking_priority": "track",
     "last_updated": "2026-07-06",
     "first_seen": "2026-07-06",
@@ -992,9 +1127,18 @@
       "adoption": 10,
       "maturity": 7
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "字节跳动Trae Agent官方仓库，一款具备高社区影响力的AI软件工程智能体。",
+      "en": "Official Trae Agent repository from ByteDance, providing an AI-powered software engineering agent with significant community traction."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "bytedance/trae-agent",
     "tags": [
       "target-tool",
@@ -1015,6 +1159,7 @@
     "url": "https://github.com/virgiliojr94/book-to-skill",
     "source_type": "github",
     "resource_type": [
+      "cli-tool",
       "skills"
     ],
     "target_tools": [
@@ -1033,10 +1178,10 @@
     },
     "stars": 7968,
     "forks": 982,
-    "total_score": 38,
+    "total_score": 77,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 39,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T15:04:23Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1051,9 +1196,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 9,
+      "ecosystem_value": 10
+    },
+    "llm_summary": {
+      "zh": "将技术书籍转化为AI编码助手技能的实用工具，支持Claude Code、Copilot CLI等。",
+      "en": "A tool that converts technical books into skills for AI coding agents like Claude Code, Copilot CLI, and Amp."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "virgiliojr94/book-to-skill",
     "tags": [],
     "maturity": "unknown",
@@ -1085,10 +1239,10 @@
     },
     "stars": 6332,
     "forks": 706,
-    "total_score": 38,
+    "total_score": 71,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T11:56:37Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1103,9 +1257,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "为Claude Code定制的Android逆向工程技能，实用且受欢迎。",
+      "en": "A well-received Claude Code skill for Android reverse engineering and API extraction."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "SimoneAvogadro/android-reverse-engineering-skill",
     "tags": [],
     "maturity": "unknown",
@@ -1137,10 +1300,10 @@
     },
     "stars": 6009,
     "forks": 528,
-    "total_score": 38,
+    "total_score": 73,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T13:28:01Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1155,9 +1318,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "Trail of Bits 提供的 Claude Code 安全技能市场，增强 AI 代码助手的安全分析能力。",
+      "en": "A marketplace of security analysis skills for Claude Code by Trail of Bits, enhancing AI-assisted security workflows."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "trailofbits/skills",
     "tags": [],
     "maturity": "unknown",
@@ -1191,10 +1363,10 @@
     },
     "stars": 5150,
     "forks": 525,
-    "total_score": 36,
+    "total_score": 73,
     "quantifiable_score": 36,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 37,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T14:41:47Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1209,9 +1381,18 @@
       "adoption": 7,
       "maturity": 2
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 9,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个将代码库转化为交互式HTML课程的Claude Code技能，特别针对非技术背景的‘氛围编码者’用户。",
+      "en": "A Claude Code skill that transforms any codebase into an interactive single-page HTML course, targeting non-technical 'vibe coders'."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-14",
     "repo": "zarazhangrui/codebase-to-course",
     "tags": [],
     "maturity": "unknown",
@@ -1225,6 +1406,7 @@
     "url": "https://github.com/glitternetwork/pinme",
     "source_type": "github",
     "resource_type": [
+      "cli-tool",
       "skills"
     ],
     "target_tools": [
@@ -1243,10 +1425,10 @@
     },
     "stars": 3701,
     "forks": 272,
-    "total_score": 34,
+    "total_score": 71,
     "quantifiable_score": 34,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 37,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T14:58:03Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1261,9 +1443,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 7,
+      "ecosystem_value": 10
+    },
+    "llm_summary": {
+      "zh": "PinMe 是一个零配置部署 CLI，支持一键创建和部署全栈项目，并原生集成 Claude Code Skills，极大简化了 AI 编码代理的部署流程。",
+      "en": "PinMe is a zero-config deployment CLI that enables one-command creation and deployment of full-stack projects, with native Claude Code Skills support, significantly streamlining deployment for AI coding agents."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "glitternetwork/pinme",
     "tags": [],
     "maturity": "unknown",
@@ -1296,9 +1487,7 @@
       "extension",
       "cli-tool"
     ],
-    "target_tools": [
-      "antigravity-cli"
-    ],
+    "target_tools": [],
     "summary": "Conductor is a Gemini CLI extension that allows you to specify, plan, and implement software features.",
     "i18n": {
       "zh": {
@@ -1312,10 +1501,10 @@
     },
     "stars": 3590,
     "forks": 281,
-    "total_score": 32,
+    "total_score": 65,
     "quantifiable_score": 32,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T14:14:22Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1328,9 +1517,18 @@
       "adoption": 7,
       "maturity": 2
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "Conductor 是一个 Gemini CLI 扩展，通过上下文驱动开发流程实现功能规范、规划和实现。",
+      "en": "Conductor is a Gemini CLI extension that enables a structured, context-driven development lifecycle for specifying, planning, and implementing features."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "gemini-cli-extensions/conductor",
     "tags": [],
     "maturity": "unknown",
@@ -1368,10 +1566,10 @@
     },
     "stars": 3553,
     "forks": 443,
-    "total_score": 34,
+    "total_score": 67,
     "quantifiable_score": 34,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-05T10:29:51Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1386,9 +1584,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个用于Cursor的优质规则(.mdc)集合及生成工具。",
+      "en": "A curated collection and generator for Cursor rules (.mdc files)."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "sanjeed5/awesome-cursor-rules-mdc",
     "tags": [],
     "maturity": "unknown",
@@ -1402,7 +1609,7 @@
     "url": "https://github.com/taishi-i/awesome-ChatGPT-repositories",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "tutorial"
     ],
     "target_tools": [
       "claude-code",
@@ -1421,10 +1628,10 @@
     },
     "stars": 3123,
     "forks": 415,
-    "total_score": 34,
+    "total_score": 59,
     "quantifiable_score": 34,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 25,
+    "tracking_priority": "track",
     "last_updated": "2026-07-05T13:45:00Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1439,9 +1646,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 6,
+      "novelty": 3,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个精心整理的ChatGPT相关开源仓库列表，对AI编码代理生态有重要参考价值。",
+      "en": "A curated list of open-source ChatGPT-related repositories, valuable for discovering AI coding agent tools."
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-14",
     "repo": "taishi-i/awesome-ChatGPT-repositories",
     "tags": [],
     "maturity": "unknown",
@@ -1467,6 +1683,7 @@
     "url": "https://github.com/nowork-studio/NotFair",
     "source_type": "github",
     "resource_type": [
+      "mcp-server",
       "skills"
     ],
     "target_tools": [
@@ -1485,10 +1702,10 @@
     },
     "stars": 3062,
     "forks": 374,
-    "total_score": 34,
+    "total_score": 71,
     "quantifiable_score": 34,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 37,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T13:45:56Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1503,9 +1720,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "高质量开源Claude Code技能集，提供谷歌广告、Meta广告和SEO数据接入，生态价值高，实用性强。",
+      "en": "High-quality open-source Claude Code skills for Google Ads, Meta Ads, and SEO data, with strong ecosystem value and practicality."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "nowork-studio/NotFair",
     "tags": [],
     "maturity": "unknown",
@@ -1546,10 +1772,10 @@
     },
     "stars": 2893,
     "forks": 443,
-    "total_score": 34,
+    "total_score": 70,
     "quantifiable_score": 34,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 36,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T12:21:22Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1564,9 +1790,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个为Claude Code量身定制的安全测试技能包，包含大量漏洞模式和攻击矩阵，实用性强且社区活跃。",
+      "en": "A comprehensive Claude Code skill bundle for bug hunting and red-teaming, featuring 71 skills, 15 slash commands, and 681 report patterns across 24 vulnerability classes."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "elementalsouls/Claude-BugHunter",
     "tags": [],
     "maturity": "unknown",
@@ -1615,10 +1850,10 @@
     },
     "stars": 2873,
     "forks": 208,
-    "total_score": 34,
+    "total_score": 69,
     "quantifiable_score": 34,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T10:52:30Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1633,9 +1868,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个Claude Code技能，利用Playwright实现自主浏览器自动化测试与验证。",
+      "en": "A Claude Code skill that enables autonomous browser automation using Playwright for testing and validation."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "lackeyjb/playwright-skill",
     "tags": [],
     "maturity": "unknown",
@@ -1663,7 +1907,8 @@
     "url": "https://github.com/NeekChaw/RIPER-5",
     "source_type": "github",
     "resource_type": [
-      "rules"
+      "rules",
+      "tutorial"
     ],
     "target_tools": [
       "cursor"
@@ -1681,10 +1926,10 @@
     },
     "stars": 2632,
     "forks": 360,
-    "total_score": 30,
+    "total_score": 62,
     "quantifiable_score": 30,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 32,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T07:52:21Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1697,9 +1942,18 @@
       "adoption": 7,
       "maturity": 0
     },
-    "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个整理高质量Cursor规则和提示词工作流的热门仓库，拥有超过2600颗星。",
+      "en": "A popular repository curating high-quality Cursor rules and prompt engineering workflows with over 2600 stars."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "NeekChaw/RIPER-5",
     "tags": [],
     "maturity": "unknown",
@@ -1731,10 +1985,10 @@
     },
     "stars": 2580,
     "forks": 156,
-    "total_score": 32,
+    "total_score": 65,
     "quantifiable_score": 32,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T11:56:24Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1747,9 +2001,18 @@
       "adoption": 7,
       "maturity": 2
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 7
+    },
+    "llm_summary": {
+      "zh": "一个为Claude Code设计的Nothing设计语言UI生成技能，高星好评。",
+      "en": "A Claude Code skill for generating UI in the Nothing design language, highly popular."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "dominikmartn/nothing-design-skill",
     "tags": [],
     "maturity": "unknown",
@@ -1766,7 +2029,8 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "codex-cli"
     ],
     "summary": "用 Claude Code Skills 做的视频剪辑 Agent",
     "i18n": {
@@ -1781,10 +2045,10 @@
     },
     "stars": 2526,
     "forks": 352,
-    "total_score": 34,
+    "total_score": 71,
     "quantifiable_score": 34,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 37,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T13:36:58Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1799,9 +2063,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "将口播视频剪辑工作流封装为 Claude Code Skills，实现 Agent 驱动的视频编辑自动化。",
+      "en": "Packages talking-head video editing workflow as Claude Code Skills, enabling agent-driven video editing automation."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "Agentchengfeng/chengfeng-videocut-skills",
     "tags": [],
     "maturity": "unknown",
@@ -1833,10 +2106,10 @@
     },
     "stars": 2278,
     "forks": 536,
-    "total_score": 34,
+    "total_score": 67,
     "quantifiable_score": 34,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T15:04:41Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1851,9 +2124,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "为股票投资者和交易者量身定制的Claude Code技能集合，提供市场分析、图表绘制和策略开发。",
+      "en": "A collection of Claude Code skills tailored for equity investors and traders, providing market analysis, charting, and strategy development."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "tradermonty/claude-trading-skills",
     "tags": [],
     "maturity": "unknown",
@@ -1868,7 +2150,8 @@
     "source_type": "github",
     "resource_type": [
       "mcp-server",
-      "skills"
+      "skills",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code"
@@ -1886,10 +2169,10 @@
     },
     "stars": 2130,
     "forks": 229,
-    "total_score": 34,
+    "total_score": 68,
     "quantifiable_score": 34,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 34,
+    "tracking_priority": "track",
     "last_updated": "2026-07-06T14:25:50Z",
     "first_seen": "2026-07-13",
     "last_seen": "2026-07-13",
@@ -1904,9 +2187,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个用于 Excalidraw 的 MCP 服务器和 Claude Code 技能，允许 AI 代理以编程方式创建、编辑和导出图表，并支持实时画布同步。",
+      "en": "An MCP server and Claude Code skill for Excalidraw that enables AI agents to programmatically create, edit, and export diagrams with real-time canvas sync."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-14",
     "repo": "yctimlin/mcp_excalidraw",
     "tags": [],
     "maturity": "unknown",
@@ -1954,8 +2246,9 @@
       "adoption": 7,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "flyeric0212/cursor-rules",
     "tags": [],
@@ -2010,8 +2303,9 @@
       "adoption": 7,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "OpenCoworkAI/open-cowork",
     "tags": [],
@@ -2075,8 +2369,9 @@
       "adoption": 7,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "P4nda0s/reverse-skills",
     "tags": [],
@@ -2126,8 +2421,9 @@
       "adoption": 7,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "skills-directory/skill-codex",
     "tags": [],
@@ -2182,8 +2478,9 @@
       "adoption": 7,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "steipete/claude-code-mcp",
     "tags": [],
@@ -2238,8 +2535,9 @@
       "adoption": 7,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "daymade/claude-code-skills",
     "tags": [],
@@ -2291,8 +2589,9 @@
       "adoption": 7,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "sceneview/sceneview",
     "tags": [],
@@ -2364,8 +2663,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "onvoyage-ai/gtm-engineer-skills",
     "tags": [],
@@ -2424,8 +2724,9 @@
       "adoption": 7,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "official-antigravity-cli",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "instructa/ai-prompts",
     "tags": [],
@@ -2479,15 +2780,16 @@
     "last_seen": "2026-07-13",
     "license": "mit",
     "languages": [],
-    "review_state": "auto-indexed",
+    "review_state": "auto-curated",
     "score_detail": {
       "stars": 4,
       "activity": 15,
       "adoption": 7,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "RayFernando1337/llm-cursor-rules",
     "tags": [],
@@ -2538,8 +2840,9 @@
       "adoption": 7,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "itwanger/PaiAgent",
     "tags": [],
@@ -2602,8 +2905,9 @@
       "adoption": 7,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "harish-garg/gemini-cli-prompt-library",
     "tags": [],
@@ -2655,8 +2959,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "gemini-cli-extensions/jules",
     "tags": [],
@@ -2713,8 +3018,9 @@
       "adoption": 7,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Idea-To-Business/raphael-starterkit-v1",
     "tags": [],
@@ -2765,8 +3071,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "cosmicstack-labs/mercury-agent-skills",
     "tags": [],
@@ -2823,8 +3130,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "gemini-cli-extensions/ralph",
     "tags": [],
@@ -2882,8 +3190,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "iansinnott/obsidian-claude-code-mcp",
     "tags": [],
@@ -2934,8 +3243,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "thehimel/cursor-rules-and-prompts",
     "tags": [],
@@ -3002,8 +3312,9 @@
       "adoption": 4,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "undeadpickle/claude-code-mcpinstall",
     "tags": [],
@@ -3054,8 +3365,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "DavidBB-L/cinema-manager",
     "tags": [],
@@ -3105,8 +3417,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "awattar/claude-code-best-practices",
     "tags": [],
@@ -3162,8 +3475,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "jduncan-rva/skill-porter",
     "tags": [],
@@ -3214,8 +3528,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "auchenberg/claude-code-mcp",
     "tags": [],
@@ -3266,8 +3581,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Mindrally/skills",
     "tags": [],
@@ -3319,8 +3635,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "AnkleBreaker-Studio/unity-mcp-plugin",
     "tags": [],
@@ -3393,8 +3710,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Sven-LI-sankyuu/presentation-skills",
     "tags": [],
@@ -3454,8 +3772,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Forlives/21-day-self-interview",
     "tags": [],
@@ -3517,8 +3836,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "philschmid/gemini-cli-extension",
     "tags": [],
@@ -3569,8 +3889,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "alchaincyf/cursor-rules-huasheng",
     "tags": [],
@@ -3622,8 +3943,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "AsyncFuncAI/ralph-wiggum-extension",
     "tags": [],
@@ -3674,8 +3996,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "mverab/eGEOagents",
     "tags": [],
@@ -3745,8 +4068,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Aaronontheweb/dotnet-cursor-rules",
     "tags": [],
@@ -3802,8 +4126,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "jMerta/codex-skills",
     "tags": [],
@@ -3854,8 +4179,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "grahama1970/claude-code-mcp-enhanced",
     "tags": [],
@@ -3906,8 +4232,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "madebyaris/advance-minimax-m3-cursor-rules",
     "tags": [],
@@ -3969,8 +4296,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "figma/figma-gemini-cli-extension",
     "tags": [],
@@ -4021,8 +4349,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "willccbb/claude-code-mcp",
     "tags": [],
@@ -4071,8 +4400,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "brookslybrand/react-router-cursor-rules",
     "tags": [],
@@ -4121,8 +4451,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "BlueBirdBack/godot-cursorrules",
     "tags": [],
@@ -4187,8 +4518,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "skindhu/harmony-cursor-rules",
     "tags": [],
@@ -4240,8 +4572,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "thoreinstein/gemini-obsidian",
     "tags": [],
@@ -4297,8 +4630,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Hmbown/Wizards-of-the-Ghosts",
     "tags": [],
@@ -4357,8 +4691,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "intellectronica/gemini-cli-skillz",
     "tags": [],
@@ -4410,8 +4745,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "automateyournetwork/GeminiCLI_ComputerUse_Extension",
     "tags": [],
@@ -4462,8 +4798,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "ivangrynenko/cursorrules",
     "tags": [],
@@ -4524,8 +4861,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "gemini-cli-extensions/web-accessibility",
     "tags": [],
@@ -4584,8 +4922,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "AlaeddineMessadi/opencode-mcp",
     "tags": [],
@@ -4655,8 +4994,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "blefnk/awesome-cursor-rules",
     "tags": [],
@@ -4722,8 +5062,9 @@
       "adoption": 4,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Melvynx/cursor.rules",
     "tags": [],
@@ -4775,8 +5116,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "waynesutton/promptstack",
     "tags": [],
@@ -4831,8 +5173,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "matthewdcage/cursor-mcp-installer",
     "tags": [],
@@ -4883,8 +5226,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "brunogama/ios-cursor-rules",
     "tags": [],
@@ -4943,8 +5287,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "codesstar/hermes-skill-atlas",
     "tags": [],
@@ -5005,8 +5350,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Eyalbenba/claude-code-mcp-init",
     "tags": [],
@@ -5057,8 +5403,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "ChuckSRQ/awesome-hermes-skills",
     "tags": [],
@@ -5109,8 +5456,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "johnneerdael/multiplatform-cursor-mcp",
     "tags": [],
@@ -5161,8 +5509,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "griffinhilly/claude-code-synthesis",
     "tags": [],
@@ -5212,8 +5561,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "gplasky/gemini-cli-blueprint-extension",
     "tags": [],
@@ -5263,8 +5613,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "gemini-cli-extensions/gcloud",
     "tags": [],
@@ -5315,8 +5666,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "KelvinQiu802/cursor-mcp-demo",
     "tags": [],
@@ -5367,8 +5719,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Piebald-AI/awesome-gemini-cli-extensions",
     "tags": [],
@@ -5420,8 +5773,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "MuhammadUsmanGM/claude-code-best-practices",
     "tags": [],
@@ -5484,8 +5838,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "lorenliu13/claude-code-for-hydrology",
     "tags": [],
@@ -5536,8 +5891,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "automationsmanufaktur-labs/open-invoice-germany",
     "tags": [],
@@ -5609,8 +5965,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "TheStack-ai/zclean",
     "tags": [],
@@ -5680,8 +6037,9 @@
       "adoption": 4,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "war851/AI-Governance-Architecture",
     "tags": [],
@@ -5745,8 +6103,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "femtopremiertag/r15-shanraisshan-claude-code-best-practice-security",
     "tags": [],
@@ -5795,8 +6154,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "pondhelpplain/r15-shanraisshan-claude-code-best-practice-ecommerce",
     "tags": [],
@@ -5847,8 +6207,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "markmcd/gemini-docs-ext",
     "tags": [],
@@ -5900,8 +6261,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "simonliu-ai-product/adk-agent-extension",
     "tags": [],
@@ -5950,8 +6312,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Ultimatedenpruner/r15-shanraisshan-claude-code-best-practice-datascience",
     "tags": [],
@@ -6003,8 +6366,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "jnorthrup/conductor2",
     "tags": [],
@@ -6055,8 +6419,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "gberaudo/opencode-mcp-figma",
     "tags": [],
@@ -6107,8 +6472,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "cobibean/soul-grader-skill",
     "tags": [],
@@ -6166,8 +6532,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "ChipSpiderWarm/r15-shanraisshan-claude-code-best-practice-devops",
     "tags": [],
@@ -6217,8 +6584,9 @@
       "adoption": 4,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "liangdabiao/Bright-Data-MCP-Claude-Skill-deep-research",
     "tags": [],
@@ -6272,8 +6640,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "QoderAI/qoder-action",
     "tags": [],
@@ -6326,8 +6695,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "foxy1402/qoder-proxy",
     "tags": [],
@@ -6380,8 +6750,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "MagicStarfishBoost/r15-shanraisshan-claude-code-best-practice-seo",
     "tags": [],
@@ -6432,8 +6803,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "ericzakariasson/cursor-mcp-server",
     "tags": [],
@@ -6487,8 +6859,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "ricky-theseus/DaisyWriter",
     "tags": [],
@@ -6548,8 +6921,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Buga-luga/cursor-mcp",
     "tags": [],
@@ -6599,8 +6973,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "scottweiss/claude-codex-mcp-starter",
     "tags": [],
@@ -6649,8 +7024,9 @@
       "adoption": 2,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "nvh92/claude-code-best-practices-tips",
     "tags": [],
@@ -6701,8 +7077,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "ShadoW-Shinigami/lyric-video-director",
     "tags": [],
@@ -6759,8 +7136,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "KunihiroS/claude-code-mcp",
     "tags": [],
@@ -6817,8 +7195,9 @@
       "adoption": 2,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "trayders/trayd-mcp",
     "tags": [],
@@ -6876,8 +7255,9 @@
       "adoption": 2,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "dlkakbs/hermes-startup-architect",
     "tags": [],
@@ -6930,8 +7310,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "ankitdotgg/making-gemini-useful-with-claude",
     "tags": [],
@@ -6980,8 +7361,9 @@
       "adoption": 2,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "danielrosehill/Claude-Code-MCP-List",
     "tags": [],
@@ -7032,8 +7414,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "griffithsbs/envmcp",
     "tags": [],
@@ -7097,8 +7480,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "foreveryh/claude-code-best-practices",
     "tags": [],
@@ -7150,8 +7534,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "OpenCMC/mcp-gemini-cli-extension",
     "tags": [],
@@ -7205,8 +7590,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "gemini-cli-extensions/observability",
     "tags": [],
@@ -7257,8 +7643,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "adnw-vinc/hermes-nextcloud",
     "tags": [],
@@ -7307,8 +7694,9 @@
       "adoption": 2,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "zebbern/claude-code-mcp",
     "tags": [],
@@ -7378,8 +7766,9 @@
       "adoption": 2,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Igloo302/interest-radar",
     "tags": [],
@@ -7430,8 +7819,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "qdhenry/Claude-Code-MCP-Manager",
     "tags": [],
@@ -7492,8 +7882,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "krumjahn/threads-growth-skill",
     "tags": [],
@@ -7544,8 +7935,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "HelpFreedom/slojka",
     "tags": [],
@@ -7597,8 +7989,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "daxueren666/exam-review-helper",
     "tags": [],
@@ -7657,8 +8050,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "albert-ying/agentic-cortex",
     "tags": [],
@@ -7710,8 +8104,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "hoyt-harness/davinci-mcp-professional",
     "tags": [],
@@ -7771,8 +8166,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "itgoyo/hermes-skills",
     "tags": [],
@@ -7825,8 +8221,9 @@
       "adoption": 4,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "vishal2612200/agentpack",
     "tags": [],
@@ -7896,8 +8293,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "RainCherb/context-diamond",
     "tags": [],
@@ -7963,8 +8361,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "AmirShayegh/codex-claude-bridge",
     "tags": [],
@@ -8026,8 +8425,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "dhruvalgolakiya/taskdex",
     "tags": [],
@@ -8086,8 +8486,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "cooneycw/claude-power-pack",
     "tags": [],
@@ -8139,8 +8540,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "fefergrgrgrg/create-mcp",
     "tags": [],
@@ -8197,8 +8599,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "hxsteric/mercury",
     "tags": [],
@@ -8250,8 +8653,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "felixzhang-glitch/CodexClaw",
     "tags": [],
@@ -8304,8 +8708,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "gokeshenzhen/gen-tb-skill",
     "tags": [],
@@ -8359,8 +8764,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "agentskillexchange/skills",
     "tags": [],
@@ -8432,8 +8838,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "yanjunz/mcp_search_images",
     "tags": [],
@@ -8484,8 +8891,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "PeterCha90/link-bookmark",
     "tags": [],
@@ -8543,8 +8951,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "nosolosoft/opencode-mcp",
     "tags": [],
@@ -8595,8 +9004,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "alexandrbasis/claudops",
     "tags": [],
@@ -8649,8 +9059,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "whyashthakker/agent-skills-marketing",
     "tags": [],
@@ -8709,8 +9120,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "willibrandon/CursorMCPMonitor",
     "tags": [],
@@ -8769,8 +9181,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "StuMason/get-mcp-keys",
     "tags": [],
@@ -8833,8 +9246,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "IKrasnodymov/repowiki",
     "tags": [],
@@ -8886,8 +9300,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "treylom/ThisCodex",
     "tags": [],
@@ -8939,8 +9354,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "XiansenWu954/IEEE-suite-skills",
     "tags": [],
@@ -8991,8 +9407,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "gilby125/opencode-mcp-tool",
     "tags": [],
@@ -9043,8 +9460,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "norbinsh/cursor-mcp-trivy",
     "tags": [],
@@ -9093,8 +9511,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "wolulabs/hermes-founder-os",
     "tags": [],
@@ -9145,8 +9564,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Vincent-crypto-coder/tech-debt-management-skill",
     "tags": [],
@@ -9205,8 +9625,9 @@
       "adoption": 2,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "lmoncany/hermes-wordpress-skill",
     "tags": [],
@@ -9259,8 +9680,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "aldegad/skill-hook-authoring",
     "tags": [],
@@ -9312,8 +9734,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "franksde/agy-hud",
     "tags": [],
@@ -9379,8 +9802,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "clempat/ai-tools-flake",
     "tags": [],
@@ -9429,6 +9853,7 @@
       "adoption": 2,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
     "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
     "last_analyzed": null,
@@ -9481,8 +9906,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "ao92265/claude-code-playbook",
     "tags": [],
@@ -9533,8 +9959,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "renaxxyz/hermes-skills",
     "tags": [],
@@ -9583,8 +10010,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "patrickdass93/android-phone-control-skill",
     "tags": [],
@@ -9641,8 +10069,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "laofudev/laofu-qmt-skill",
     "tags": [],
@@ -9694,8 +10123,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "NiuTrans/MCP-TextTranslation",
     "tags": [],
@@ -9744,8 +10174,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Easternguy/podcast-from-research",
     "tags": [],
@@ -9798,8 +10229,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "AI-Safeter/antigravity-cli-plugin",
     "tags": [],
@@ -9850,8 +10282,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Nectr-AI/nectr-ai-pr-review-agent",
     "tags": [],
@@ -9902,8 +10335,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "JuanMaPerals/claude-code-best-practice",
     "tags": [],
@@ -9954,8 +10388,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "carterlasalle/system_information_mcp",
     "tags": [],
@@ -10016,8 +10451,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Sirvenis/cursor-mcp-extension",
     "tags": [],
@@ -10068,8 +10504,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "chen9916/godot-opencode-mcp",
     "tags": [],
@@ -10120,8 +10557,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "nitingupta220/crito",
     "tags": [],
@@ -10172,8 +10610,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "lininn/qorder-proxy",
     "tags": [],
@@ -10224,8 +10663,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "zhuligu/CC-Practice",
     "tags": [],
@@ -10276,8 +10716,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "AlexanderVTr/cursor-mcp-file-organizer",
     "tags": [],
@@ -10326,8 +10767,9 @@
       "adoption": 2,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "simplifaisoul/opencode-mcp-tools",
     "tags": [],
@@ -10378,6 +10820,7 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
     "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
     "last_analyzed": null,
@@ -10430,8 +10873,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "DocJlm/claude-code-best-practices",
     "tags": [],
@@ -10482,8 +10926,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "vignesh2027/claude-best-practice",
     "tags": [],
@@ -10542,8 +10987,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "paralov/roblox-studio-opencode-mcp",
     "tags": [],
@@ -10596,8 +11042,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "lovesky514514-cmd/universal-scientific-comsol-agent",
     "tags": [],
@@ -10650,8 +11097,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "zxcrf/oh-my-qoder",
     "tags": [],
@@ -10700,8 +11148,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "vinodborole/Claude-Code-Best-Practices",
     "tags": [],
@@ -10752,8 +11201,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "YujxZJCN/teaching-skills-codex",
     "tags": [],
@@ -10812,8 +11262,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Traves-Theberge/opencode-mcp",
     "tags": [],
@@ -10864,8 +11315,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "francisco-m001/opencode-mcp-tool-search",
     "tags": [],
@@ -10917,8 +11369,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "hacimertgokhan/openmcp",
     "tags": [],
@@ -10973,8 +11426,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "JackKelly/opencode_config",
     "tags": [],
@@ -11025,8 +11479,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "hxrshxz/fluid-cloudnative-custom-agent-workflows",
     "tags": [],
@@ -11077,8 +11532,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "BLUEasddaaaaaaa/workbuddy-pet",
     "tags": [],
@@ -11130,8 +11586,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "HarlandZZC/cuhk-slides-template-html",
     "tags": [],
@@ -11183,8 +11640,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Pacoaldev/opencode-mcp",
     "tags": [],
@@ -11244,8 +11702,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "gtheys/setup-honcho",
     "tags": [],
@@ -11298,8 +11757,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "joegoldin/antigravity-cli-nix",
     "tags": [],
@@ -11352,8 +11812,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "W4k4s/claude-code-boris-workflow",
     "tags": [],
@@ -11404,8 +11865,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "April-Xu/sanshui",
     "tags": [],
@@ -11456,8 +11918,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "yinqd3/workbuddy-skills",
     "tags": [],
@@ -11516,8 +11979,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "jiukai/Statistical-Analysis-Skills-with-WorkBuddy",
     "tags": [],
@@ -11568,8 +12032,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "onehub-work/qoder-cli-api",
     "tags": [],
@@ -11620,8 +12085,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "hyophyop/mapreduce-skill",
     "tags": [],
@@ -11672,8 +12138,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "CloudedQuartz/opencode-mcp-adapter",
     "tags": [],
@@ -11725,8 +12192,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "K3vinb5/opencode-mcp-installer",
     "tags": [],
@@ -11783,8 +12251,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "jdbernardo16/opencode-mcp-figma-remote",
     "tags": [],
@@ -11838,8 +12307,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "contrapuntal/antigravity-cli-plugin-cc",
     "tags": [],
@@ -11901,8 +12371,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "sajjadGG/Rehearsal",
     "tags": [],
@@ -11967,8 +12438,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Atirian-Chen/ai-pr-review-agent",
     "tags": [],
@@ -12027,8 +12499,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "rendersman/export-repo-wiki-to-pdf",
     "tags": [],
@@ -12080,8 +12553,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "chasexu168340-rgb/codex-skills",
     "tags": [],
@@ -12132,8 +12606,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "leahchen2025/flashcard-generator",
     "tags": [],
@@ -12182,8 +12657,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "lfeng/qoder-cli-skill",
     "tags": [],
@@ -12234,8 +12710,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "CYJ316457/qoder-api-bridge",
     "tags": [],
@@ -12286,8 +12763,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "nichengfuben/qoder-patchs",
     "tags": [],
@@ -12338,8 +12816,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "tuchuanbin/feedback-auto-processor-based-on-qodercli",
     "tags": [],
@@ -12388,8 +12867,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Swampland2553/Crowbar93",
     "tags": [],
@@ -12441,8 +12921,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "yuxiaoyang2007-prog/claude-code-skill",
     "tags": [],
@@ -12494,8 +12975,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "gitjburns/export-session",
     "tags": [],
@@ -12551,8 +13033,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "jseook11/codex-pdf-ocr-to-markdown-skill",
     "tags": [],
@@ -12612,8 +13095,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "StreetJammer/seedance-forge",
     "tags": [],
@@ -12676,8 +13160,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "asd880921/gitnexus-wiki",
     "tags": [],
@@ -12729,8 +13214,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "NewTurn2017/readme-writer",
     "tags": [],
@@ -12782,8 +13268,9 @@
       "adoption": 2,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "withakay/opencode-mcp-tool",
     "tags": [],
@@ -12834,8 +13321,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "jinto-ag/opencode-mcp",
     "tags": [],
@@ -12886,8 +13374,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "sajjadGG/Ghostlab",
     "tags": [],
@@ -12952,8 +13441,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-op7418-humanizer-zh",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "274326424/video-content-extractor",
     "tags": [],
@@ -13006,8 +13496,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "smnji/agentic-data-science-research-template",
     "tags": [],
@@ -13059,8 +13550,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "crazyrussman/codex-working-kit",
     "tags": [],
@@ -13111,6 +13603,7 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
     "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
     "last_analyzed": null,
@@ -13161,6 +13654,7 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
     "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
     "last_analyzed": null,
@@ -13214,8 +13708,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Joonghyun-Lee-Frieren/deus-ex-antigravity",
     "tags": [],
@@ -13265,8 +13760,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "zemloai-ctrl/elecz-antigravity",
     "tags": [],
@@ -13327,8 +13823,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "C1ph3r404/AntigravityCli-Plugin",
     "tags": [],
@@ -13379,8 +13876,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "cyberbobjr/opencode-config",
     "tags": [],
@@ -13431,8 +13929,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "chadleeshaw/dot-opencode",
     "tags": [],
@@ -13483,8 +13982,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "howlerops/opencode-agentic-commands",
     "tags": [],
@@ -13535,8 +14035,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "choumoone/opencode-markitdown-qwen",
     "tags": [],
@@ -13585,8 +14086,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "hxrshxz/opencode-toolkit",
     "tags": [],
@@ -13635,8 +14137,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "adhiman1995/Codebuddy",
     "tags": [],
@@ -13687,8 +14190,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "GipsyDanger-dev/codebuddy-ai-coding-mentor",
     "tags": [],
@@ -13739,8 +14243,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "kang1298749923/skills",
     "tags": [],
@@ -13791,8 +14296,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "maidoudoujiushiwo/workbuddy-skills",
     "tags": [],
@@ -13843,8 +14349,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "ShubhamBhardwaj001/ai-pr-review-agent",
     "tags": [],
@@ -13895,6 +14402,7 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
     "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
     "last_analyzed": null,
@@ -13947,6 +14455,7 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
     "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
     "last_analyzed": null,
@@ -13997,8 +14506,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "rock2089/claude-review-agent",
     "tags": [],
@@ -14047,8 +14557,9 @@
       "adoption": 0,
       "maturity": 3
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": null,
     "tags": [
@@ -14102,8 +14613,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "TTbingo/k12-math-tutor",
     "tags": [],
@@ -14152,8 +14664,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "bettermen/pc-repair",
     "tags": [],
@@ -14202,8 +14715,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "flyliyiyun/startup-operations",
     "tags": [],
@@ -14252,8 +14766,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "flyliyiyun/startup-product",
     "tags": [],
@@ -14302,8 +14817,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "flyliyiyun/startup-fundraising",
     "tags": [],
@@ -14352,8 +14868,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "flyliyiyun/startup-growth",
     "tags": [],
@@ -14402,8 +14919,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "denceee/microsoft-style-chinese-skill",
     "tags": [],
@@ -14463,8 +14981,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "victorpaulee/smb-path-wintomac-tools",
     "tags": [],
@@ -14515,8 +15034,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "vaughnxmedia-alt/kora-engineering-agent",
     "tags": [],
@@ -14567,8 +15087,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "dongho5136/claude-skills",
     "tags": [],
@@ -14619,8 +15140,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Kimseungzzang/zzang-codex-skills",
     "tags": [],
@@ -14671,6 +15193,7 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
     "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
     "last_analyzed": null,
@@ -14723,8 +15246,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "boscorat/opencode-config",
     "tags": [],
@@ -14775,8 +15299,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "ZanzyTHEbar/grok-opencode-bridge",
     "tags": [],
@@ -14840,8 +15365,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "JY110/AI-PR-Review-agent",
     "tags": [],
@@ -14892,8 +15418,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "jacobjerryarackal/ai-pr-review-agent",
     "tags": [],
@@ -14944,8 +15471,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Shri-Aakash/AI-PR-ReviewAgent",
     "tags": [],
@@ -14996,8 +15524,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "AzmatJaved/AI-PR-Review-Agent",
     "tags": [],
@@ -15048,8 +15577,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Fineeeeeee/ai-pr-review-agent",
     "tags": [],
@@ -15100,8 +15630,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "vivekjne/ai-pr-review-agent",
     "tags": [],
@@ -15152,8 +15683,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "jahnavichaurasia67-sys/ai-pr-review-agent",
     "tags": [],
@@ -15202,8 +15734,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Tanmay-Awal/ai-pr-reviewer-agent",
     "tags": [],
@@ -15254,8 +15787,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "tdsnxtaskin-tugay/ai-pr-review-agent",
     "tags": [],
@@ -15306,8 +15840,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "pradeep873511-sudo/ai-pr-review-agent",
     "tags": [],
@@ -15356,6 +15891,7 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
     "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
     "last_analyzed": null,
@@ -15408,8 +15944,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "saiswaroopt514/ai-pr-review-agent",
     "tags": [],
@@ -15460,8 +15997,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "MoonKirito/AI-PR-Review-Agent",
     "tags": [],
@@ -15512,8 +16050,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "sunilchitikina-cpu/ai_pr_review_agent",
     "tags": [],
@@ -15564,6 +16103,7 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
     "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
     "last_analyzed": null,
@@ -15616,6 +16156,7 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
     "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
     "last_analyzed": null,
@@ -15668,8 +16209,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "nandagopal1988/ai-pr-review-agent",
     "tags": [],
@@ -15718,8 +16260,9 @@
       "adoption": 0,
       "maturity": 3
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "qoderAI",
     "tags": [
@@ -15773,6 +16316,7 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
     "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
     "last_analyzed": null,
@@ -15825,8 +16369,9 @@
       "adoption": 0,
       "maturity": 4
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "yassir-elkobi/ai-price-review-agent",
     "tags": [],
@@ -15877,8 +16422,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "zhangdada802-art/ai-pr-review-agent",
     "tags": [],
@@ -15929,8 +16475,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "chadleeshaw/dot-agents",
     "tags": [],
@@ -15979,8 +16526,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "JUST2036/ai-pr-review-agent",
     "tags": [],
@@ -16029,8 +16577,9 @@
       "adoption": 0,
       "maturity": 0
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "bettermen/piano-teacher",
     "tags": [],
@@ -16081,8 +16630,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "Tharun1045/ai-privacy-review-agent",
     "tags": [],
@@ -16133,8 +16683,9 @@
       "adoption": 2,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "ayush488-glitch/ai-pr-review-agent",
     "tags": [],
@@ -16185,8 +16736,9 @@
       "adoption": 0,
       "maturity": 2
     },
+    "quality_detail": {},
     "llm_summary": null,
-    "benchmark_ref": "github-qdhenry-claude-code-mcp-manager",
+    "benchmark_ref": "github-opencoworkai-open-cowork",
     "last_analyzed": null,
     "repo": "maskedtitan08/AI-PR_review-Agent",
     "tags": [],
