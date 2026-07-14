@@ -47,7 +47,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# ljg-roundtable\r\n\r\n结构化圆桌讨论 — 一个 Claude Code Skill，以\"求真\"为目标，邀请代表不同思想的真实人物进行多轮辩证对话。\r\n\r\n## 功能\r\n\r\n- 根据议题自动选择 3-5 位真实历史/当代人物，覆盖多元立场\r\n- 主持人引导多轮辩证讨论，每轮聚焦最深的争议点\r\n- 每轮生成 ASCII 思考框架图（矩阵/光谱/因果环路/层级树）\r\n- 讨论结束后生成完整知识网络和开放问题列表\r\n- 全程输出为 org-mode 文件，保存到 `~/Documents/notes/`\r\n\r\n## 安装\r\n\r\n```bash\r\n/install lijigang/ljg-skill-roundtable\r\n```\r\n\r\n## 使用\r\n\r\n```\r\n/ljg-roundtable 人工智能是否拥有真正的创造力？\r\n圆桌讨论 自由意志是否存在？\r\n圆桌 经济增长的极限在哪里？\r\n```\r\n\r\n### 讨论中的指令\r\n\r\n| 指令 | 含义 |\r\n|------|------|\r\n| `可` | 接受下一层问题，继续推进 |\r\n| `止` | 结束讨论，生成知识网",
     "topics": []
   },
   {
@@ -100,7 +100,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# PrismOS-AI\n\n> **Open the lid, ask, close the lid. Your AI runs on your laptop — zero bytes leave the machine.**\n\nDrop a PDF onto PrismOS-AI and ask *\"what changed in this contract vs. last week's draft?\"* Eight local agents read it, debate the answer, and write the result to a knowledge graph that grows with every conversation. Works on a plane. Works at 30,000 feet. Works with the Wi-Fi off.\n\n  \n    \n  \n  \n  \n    ▶ 1280×720 MP4 (with voiceover) ·\n    animated SVG fallback ·\n    all stills\n  \n",
     "topics": [
       "agentic-ai",
       "ai",
@@ -128,7 +128,10 @@
     "url": "https://github.com/modu-ai/cowork-plugins",
     "source_type": "github",
     "resource_type": [
-      "extension"
+      "extension",
+      "mcp-server",
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -172,7 +175,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# cowork-plugins\n\n[![License: NC-ND v1.0](https://img.shields.io/badge/License-NC--ND%20v1.0-red.svg)](LICENSE)\n[![Claude Cowork](https://img.shields.io/badge/Claude-Cowork-blueviolet)](https://claude.ai)\n[![Version](https://img.shields.io/badge/Version-2.27.0-blue)](CHANGELOG.md)\n[![Plugins](https://img.shields.io/badge/Plugins-28-blue)](.claude-plugin/marketplace.json)\n[![Skills](https://img.shields.io/badge/Skills-176-green)](.claude-plugin/marketplace.json)\n[![Docs](https://img.shields.io/ba",
     "topics": [
       "claude-cowork",
       "agents",
@@ -202,7 +205,7 @@
     "url": "https://github.com/Golden-Promise/vscode-cc-switch",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "extension"
     ],
     "target_tools": [
       "claude-code"
@@ -244,7 +247,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# 🚀 VS Code + cc-Switch 使用教程\n\n本教程旨在帮助开发者通过 **VS Code** 结合 **cc-Switch** 工具，快速实现 Claude Code 对第三方模型（API）的无缝调用与灵活配置。\n\n---\n\n## 💻 一、安装 VS Code（若已安装，可跳过此步骤） \n\n* 🌐 **官方下载地址**：[https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)\n* 📥 请根据您的操作系统选择合适的版本下载并安装，如下图所示：\n\n---\n\n## 🔌 二、安装 cc-Switch\n\n**1. 访问 GitHub 开源仓库**：[https://github.com/farion1231/cc-switch](https://github.com/farion1231/cc-switch)\n\n**2. 下载最新的发行版本（Release）**：\n* 进入仓库后，点击右侧的 `Releases` 区域，或直接访问链接：[Releases 页面](https:/",
     "topics": [
       "api-proxy",
       "cc-switch",
@@ -262,7 +265,10 @@
     "url": "https://github.com/KimYx0207/Meta_Kim",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "cli-tool",
+      "agent-framework",
+      "mcp-server",
+      "skills"
     ],
     "target_tools": [
       "claude-code",
@@ -308,7 +314,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "元\nMETA_KIM\n\n  Language:\n  English |\n  简体中文 |\n  日本語 |\n  한국어\n\n  \n  \n  \n  \n\n  \n\n## Overview\n\n**Meta_Kim** is not another AI coding tool. It is a governance layer for durable AI coding work.\n\nThe hard part of AI coding is no longer getting a model to change files. The hard part is deciding what should happen first, which capability should own it, what evidence proves it worked, and how the lesson survives the next run.\n\nClaude Code, Codex, OpenClaw, and Cursor are all hands: they can write code and ",
     "topics": [
       "agent-governance",
       "ai-agents",
@@ -374,7 +380,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# DeepPowers\n\n  \n    \n  \n\n  DEEPPOWERS is a Fully Homomorphic Encryption (FHE) collaboration framework built for MCP (Model Context Protocol), aiming to provide end-to-end privacy protection and highly efficient computation for the upstream and downstream ecosystems of the MCP protocol. By deeply integrating the FHE framework with the MCP protocol, we are dedicated to creating a secure, efficient, and scalable computing framework for MCP. This ensures that data remains encrypted throughout trans",
     "topics": [
       "accelerator",
       "ai",
@@ -432,7 +438,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Code Skills Collection\n\n个人开发的 Claude Code Skills 集合，提供实用的技能工具，助力提升开发效率和内容创作。\n\n![License](https://img.shields.io/badge/license-MIT-blue.svg)\n![Version](https://img.shields.io/badge/version-0.0.22-green.svg)\n![Skills](https://img.shields.io/badge/skills-18-orange.svg)\n\n> 分享一些好用的 Claude Code Skills，自用、学习两相宜，适用于 Claude Code v2.0 及以上版本。\n\n## 项目介绍\n\n本项目是个人开发的 Claude Code Skills 集合，提供实用的技能工具，助力提升开发效率和内容创作。分享一些好用的 Claude Code Skills，自用、学习两相宜，适用于 Claude Code v2.0 及以上版本。\n\nClaude Skills 是 Claude Cod",
     "topics": []
   },
   {
@@ -444,7 +450,7 @@
       "skills"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code"
     ],
     "summary": "Last-night exam-cram coach as a Claude Agent Skill: turns your slides, notes and past papers into a chaptered knowledge base + quiz bank, teaches only what's in your materials, and never fabricates (measured 100% out-of-scope abstention). B",
     "i18n": {
@@ -485,7 +491,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Exam Cram Coach\n\n*One night left. You studied nothing. Every answer should show where it came from.*\n\nEnglish · [中文](README.zh.md)\n\n[![stars](https://img.shields.io/github/stars/ZeKaiNie/universal-examprep-skill?style=flat&color=blue)](https://github.com/ZeKaiNie/universal-examprep-skill/stargazers)\n[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n[![CI](https://github.com/ZeKaiNie/universal-examprep-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/ZeKaiNie/uni",
     "topics": [
       "agent-skill",
       "ai-tutor",
@@ -510,10 +516,16 @@
     "url": "https://github.com/ad-naan/Adnify",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "skills"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "trae",
+      "cursor"
     ],
     "summary": "Adnify—A lightweight, highly customizable AI Agent Editor.It delivers a superior experience beyond mainstream AI coding tools, featuring instant startup and lag-free performance.",
     "i18n": {
@@ -554,7 +566,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Adnify\n\n  中文 | English\n\n  Connect AI to Your Code.\n  A next-generation code editor with stunning visual experience and deeply integrated AI Agent.\n\n  \n    \n    \n    \n    \n    \n  \n\nAdnify is more than just an editor—it's your **intelligent programming companion**. It replicates and surpasses traditional IDE experiences, blending Cyberpunk glassmorphism design with a powerful built-in AI Agent that supports full-process automation from code generation to file operations.\n\n  \n\n---\n\n### 🏆 Hall of Fa",
     "topics": [
       "claude-code",
       "ai-tools",
@@ -578,10 +590,11 @@
     "url": "https://github.com/tobilg/ai-observer",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "cli-tool"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli"
     ],
     "summary": "Unified local observability for AI coding assistants",
     "i18n": {
@@ -622,7 +635,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# AI Observer\n\n> Unified local observability for AI coding assistants\n\n**AI Observer** is a self-hosted, single-binary, OpenTelemetry-compatible observability backend designed specifically for monitoring local AI coding tools like Claude Code, Gemini CLI, OpenAI Codex CLI, GitHub Copilot, and OpenCode.\n\nTrack token usage, costs, API latency, error rates, and session activity across all your AI coding assistants in one unified dashboard—with real-time updates and zero external dependencies.\n\n## W",
     "topics": [
       "ai",
       "claude-code",
@@ -683,7 +696,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Foundry MCP Server\n\nA simple, lightweight and fast MCP (Model Context Protocol) server that provides Solidity development capabilities using the Foundry toolchain (Forge, Cast, and Anvil).\n\n![Foundry MCP Demo](./assets/analysis_gif.gif)\n\n## Overview\n\nThis server connects LLM assistants to the Foundry ecosystem, enabling them to:\n\n- Interact with nodes (local Anvil instances or remote RPC endpoints)\n- Analyze smart contracts and blockchain data\n- Perform common EVM operations using Cast\n- Manag",
     "topics": [
       "blockchain",
       "mcp-server",
@@ -742,7 +755,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "---\n\nSystem Audio Capture | 12 ASR Providers | Local-First AI Review Workspace\n\nEnglish | [简体中文](./README_ZH.md) | [繁體中文](./README_TW.md) | [日本語](./README_JA.md)\n\n[![Version](https://img.shields.io/github/v/release/XimilalaXiang/DeLive?label=Version&color=blue)](https://github.com/XimilalaXiang/DeLive/releases)\n[![License](https://img.shields.io/github/license/XimilalaXiang/DeLive?label=License&color=green)](https://github.com/XimilalaXiang/DeLive/blob/main/LICENSE)\n[![Platform](https://img.shie",
     "topics": [
       "asr",
       "electron",
@@ -814,7 +827,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# **Claude Code + Higgsfield — The Complete UGC Pipeline**\n\nAutomate AI image generation, Seedance 2.0 video creation, and full UGC ad pipelines with Playwright browser automation. 19 ready-to-use skills.\n\n---\n\n## **Quick Install**\n\nPaste this into Claude Code:\n\n```\nInstall the Higgsfield skills pack: clone https://github.com/AKCodez/higgsfield-claude-skills into a temp folder, copy every subfolder (not the README) into .claude/skills/, then install Playwright MCP with `claude mcp add playwright",
     "topics": []
   },
   {
@@ -869,7 +882,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Zenith: A Continuous-Improvement Harness for Long-Running Tasks\n\n  \n  \n  \n  \n\nZenith is an agent harness for work that may run for days or weeks, where the dominant failure mode is *premature completion* rather than inability to make progress. It runs a coding agent (Claude Code, Codex, or Hermes) as a multi-agent orchestrator over MCP/ACP: one orchestrator session reads task state each turn and decides whether to spawn workers and testers, register reusable skills, replan, or stop.\n\nThis repo",
     "topics": [
       "agent-client-protocol",
       "agent-harness",
@@ -890,11 +903,19 @@
     "url": "https://github.com/VintLin/skill-flow",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills",
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
-      "cursor"
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder",
+      "trae",
+      "cursor",
+      "hermes-agent"
     ],
     "summary": "Install, manage, and share skills across every major coding agent — Claude Code, Cursor, Copilot, and more.",
     "i18n": {
@@ -935,7 +956,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Skill Flow\n\nTurn scattered AI agent skills into organized workflows.\n\n[中文](./README.zh.md) · [日本語](./README.ja.md)\n\n[![Node.js Version](https://img.shields.io/badge/node-%3E%3D20-43853d?style=flat-square)](https://nodejs.org)\n[![npm Version](https://img.shields.io/npm/v/skill-flow?style=flat-square)](https://www.npmjs.com/package/skill-flow)\n[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat-square)](./LICENSE)\n\nInstall, manage, and share skills across every majo",
     "topics": [
       "agent",
       "ai",
@@ -1003,7 +1024,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "[![Contributors][contributors-shield]][contributors-url]\n[![Forks][forks-shield]][forks-url]\n[![Stargazers][stars-shield]][stars-url]\n[![Issues][issues-shield]][issues-url]\n[![Unlicense License][license-shield]][license-url]\n[![LinkedIn][linkedin-shield]][linkedin-url]\n\n# Event Deep Research\n\nAI Agent that researchs the lifes of historical figures and extracts the events into a structured JSON timeline.\n\n## Table of Contents\n\n- [Event Deep Research](#event-deep-research)\n  - [Table of Contents](",
     "topics": [
       "ai-agent",
       "context-engineering",
@@ -1019,10 +1040,14 @@
     "url": "https://github.com/crazyMarky/pentest-skills",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "skills",
+      "cli-tool",
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "opencode"
     ],
     "summary": "💬 🚀 告别繁琐命令行，用自然语言驱动专业级渗透测试。 ⚡ 让安全测试从未如此简单、高效。Forget complex command lines. 🛡️ Professional penetration testing, powered by natural language. ",
     "i18n": {
@@ -1063,7 +1088,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Pentest-Skills\n\n> 专为 AI CLI 工具（Claude Code / Gemini CLI）设计的模块化渗透测试技能集合。\n\n[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)\n\n[English](README_EN.md) | 简体中文\n\n---\n\n## 项目概述\n\n### 💡 核心理念\n\n**告别复杂的命令行，用自然语言完成专业渗透测试。**\n\n你只需描述测试目标，Claude Code 会自动选择合适的工具、执行命令、分析结果。\n\n---\n\nPentest-Skills 为渗透测试工作流程提供原子级能力。每个技能包含：\n\n- **知识文档** - 命令模板和工具使用指南\n- **辅助脚本** - Python/Bash 自动化脚本\n- **参考文档** - 全面的工具文档\n- **资源文件** - 字典、载荷和资源\n\n## 快速开始\n\n### 1️⃣ 安装 Claude Code\n\n在使用本项目的技能之前，你需要先安装 Claude Code ",
     "topics": [
       "ai-agents",
       "claude-code",
@@ -1083,7 +1108,7 @@
     "url": "https://github.com/komunite/kalfa",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -1127,7 +1152,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "![banner-kalfa](https://github.com/user-attachments/assets/5bb0470b-69fd-443b-8710-a2dcb5037ed7)\n## Kalfa\n\nBu araç, Claude Code ile daha düzenli ve üretim kalitesinde çalışma yapmanıza yardımcı olur. Bunu hafıza katmanları, uzman agent'lar, tekrar kullanılabilir skill'ler, komut ritüelleri ve güvenlik hook'ları ile yapar; böylece farklı projelerde tutarlı çıktı alabilirsiniz.\n\nProje durumu: aktif olarak geliştiriliyor\n\n[![npm](https://img.shields.io/npm/v/%40komunite%2Fkalfa)](https://www.npmjs.",
     "topics": [
       "business-operating-system",
       "claude-code",
@@ -1141,8 +1166,7 @@
     "url": "https://github.com/modelscope/MCPBench",
     "source_type": "github",
     "resource_type": [
-      "mcp-server",
-      "tutorial"
+      "mcp-server"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -1186,7 +1210,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "🦊 MCPBench: A Benchmark for Evaluating MCP Servers\n\n[![Documentation][docs-image]][docs-url]\n[![Package License][package-license-image]][package-license-url]\n\n[中文](https://github.com/modelscope/MCPBench/blob/main/README_zh.md) |\n[English](https://github.com/modelscope/MCPBench/blob/main/README.md)\n\nMCPBench is an evaluation framework for MCP Servers. It supports the evaluation of three types of servers: Web Search, Database Query and GAIA, and is compatible with both local and remote MCP Servers",
     "topics": [
       "benchmark",
       "database",
@@ -1245,7 +1269,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Next Move Theory Canon & Skills\n\n**Next Move Theory is a methodology with a step-by-step algorithm for every product decision: it lays out every tactical and strategic move open to you and helps you choose the best, with the odds on your side.**\n\n> **Advanced JTBD — v3.4 · stable.** The proven foundation.\n> **Next Move Theory — v0.6 · in active development** — integrating AJTBD with Riskiest Assumption Test, ABCDX Segmentation, Theory of Constraints, and Unit Economics into one operational sys",
     "topics": []
   },
   {
@@ -1254,7 +1278,7 @@
     "url": "https://github.com/7onez/cti-expert",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -1298,7 +1322,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# CTI Expert\n\n### Cyber Threat Intelligence & OSINT Analysis Toolkit\n\n**Transform Claude into a trained intelligence analyst — 67+ commands, 38 techniques, zero API keys required for core functionality.**\n\n  Installation&nbsp;&nbsp;|&nbsp;&nbsp;View Demo&nbsp;&nbsp;|&nbsp;&nbsp;Quick Start&nbsp;&nbsp;|&nbsp;&nbsp;Commands&nbsp;&nbsp;|&nbsp;&nbsp;Contribute\n\n  &nbsp;\n  &nbsp;\n  &nbsp;\n  &nbsp;\n  \n\n  &nbsp;\n  &nbsp;\n  &nbsp;\n  &nbsp;\n  &nbsp;\n  &nbsp;\n  &nbsp;\n  \n\n  🇬🇧 English&nbsp;&nbsp;·&nbsp;&n",
     "topics": [
       "claude-code",
       "claude-code-skill",
@@ -1362,7 +1386,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "```\n █████╗ ██████╗  ██████╗██╗  ██╗    ███████╗████████╗██╗   ██╗██████╗ ██╗ ██████╗\n██╔══██╗██╔══██╗██╔════╝██║  ██║    ██╔════╝╚══██╔══╝██║   ██║██╔══██╗██║██╔═══██╗\n███████║██████╔╝██║     ███████║    ███████╗   ██║   ██║   ██║██║  ██║██║██║   ██║\n██╔══██║██╔══██╗██║     ██╔══██║    ╚════██║   ██║   ██║   ██║██║  ██║██║██║   ██║\n██║  ██║██║  ██║╚██████╗██║  ██║    ███████║   ██║   ╚██████╔╝██████╔╝██║╚██████╔╝\n╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚══════╝   ╚═╝    ╚═════╝ ╚═════╝ ╚═╝ ╚═════╝\n",
     "topics": [
       "aec",
       "ai-tools",
@@ -1431,7 +1455,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Markdown Exporter\n### An Agent Skill and Dify plugin to Export Markdown Into Powerful Documents\n\n- Author: [bowenliang123](https://github.com/bowenliang123)\n- GitHub Repo: [markdown-exporter](https://github.com/bowenliang123/markdown-exporter)\n\n**Markdown Exporter** can be used as:\n\n| Use As                       | Platforms & Installation                                                                                                                                                             ",
     "topics": [
       "dify",
       "agent-skills",
@@ -1448,8 +1472,7 @@
       "agent-framework"
     ],
     "target_tools": [
-      "claude-code",
-      "cursor"
+      "general-ai-coding"
     ],
     "summary": "A true AI agent for pixel-perfect web cloning. Multi-agent architecture built on Claude Agent SDK with 40+ specialized tools. Clones from CSS & structured blocks—not screenshots—enabling perfect reproduction where single-model tools like Cu",
     "i18n": {
@@ -1490,7 +1513,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Perfect Web Clone\n\n**Open Source Agent Co-work System**\n\n*Claude Code for web cloning. A vertical AI agent with 40+ specialized tools.*\n\nEnglish | [中文](./docs/cn/README_CN.md) | [日本語](./docs/ja/README_JA.md) | [한국어](./docs/ko/README_KO.md) | [Español](./docs/es/README_ES.md) | [Português](./docs/pt/README_PT.md) | [Deutsch](./docs/de/README_DE.md) | [Français](./docs/fr/README_FR.md) | [Tiếng Việt](./docs/vi/README_VI.md)\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](ht",
     "topics": [
       "ai-agent",
       "automation",
@@ -1550,7 +1573,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# The Global Agent Hackathon\n\nWelcome to the May 2025 edition of the Global Agent Hackathon!\n\nJoin us for a month-long, open-source AI Agent Hackathon — open to all builders and dreamers working on agents, RAG, tool use, and multi-agent systems.\n\nPowered by [Agno](https://agno.link/gh), [Exa](https://exa.ai), [Firecrawl](https://www.firecrawl.dev/), [Mem0](http://mem0.ai), [Unwind AI](https://www.theunwindai.com), [Browser Use](https://browser-use.com), [mcp.run](https://www.mcp.run), [Graphlit]",
     "topics": [
       "agents",
       "ai",
@@ -1565,10 +1588,15 @@
     "url": "https://github.com/krzysztofdudek/ResearcherSkill",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "cli-tool",
+      "rules",
+      "skills"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "cursor"
     ],
     "summary": "One file. Your AI coding agent becomes a scientist. 30+ experiments while you sleep.",
     "i18n": {
@@ -1609,7 +1637,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Researcher Skill\n\n**One file. Your AI coding agent becomes a scientist.**\n\n[![Latest Release](https://img.shields.io/github/v/release/krzysztofdudek/ResearcherSkill)](https://github.com/krzysztofdudek/ResearcherSkill/releases/latest)\n[![License](https://img.shields.io/github/license/krzysztofdudek/ResearcherSkill)](LICENSE)\n[![GitHub Stars](https://img.shields.io/github/stars/krzysztofdudek/ResearcherSkill)](...)\n[![GitHub Discussions](https://img.shields.io/badge/Discussions-Join-181717?logo=",
     "topics": [
       "ai-agent",
       "ai-coding",
@@ -1677,7 +1705,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "### 🇻🇳 [Đọc bằng Tiếng Việt → README.vi.md](README.vi.md)\n\n---\n\n# vbsec — Source Code Security Scanner\n\nA multi-platform agent skill that performs in-depth security scans and detects 20+ of the most common security vulnerabilities in your source code. Runs natively on **Claude Code**, **OpenAI Codex CLI**, and **Google Antigravity**.\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![Claude Code](https://img.shields.io/badge/Claude%20C",
     "topics": []
   },
   {
@@ -1730,7 +1758,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# ask-bonk\n\n  \n\nJust `/bonk` it.\n\nIt's a code (and docs!) review agent that responds to mentions in issues and PRs. Built on [OpenCode](https://github.com/sst/opencode), Bonk can review code, answer questions about your codebase, and make changes directly by opening PRs and telling you where you can do better.\n\n- **Code & doc review** - Get feedback on PRs, explain code, or ask questions about your repo just by mentioning `/bonk` in an issue, PR comment or even line comments.\n- **Make changes** ",
     "topics": [
       "agents",
       "bonk",
@@ -1748,10 +1776,13 @@
     "source_type": "github",
     "resource_type": [
       "mcp-server",
-      "extension"
+      "extension",
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
+      "antigravity-cli",
       "cursor"
     ],
     "summary": "Persistent local memory layer for AI. ArcRift uses a extension and a native MCP server to sync context and decisions from your browser chats (Claude, ChatGPT, DeepSeek) straight to your local IDE agents (Cursor, Claude Code, Windsurf)  powe",
@@ -1793,7 +1824,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# ArcRift — Persistent Memory for AI Coding Tools\n\n### Your AI forgets everything between sessions. ArcRift fixes that.\n### Memory saved in a browser chat is instantly available in your coding tool, and vice versa.\n\n**A local-first memory layer that captures your conversations, builds a searchable knowledge graph, and automatically injects the right context into every new prompt — no cloud, no subscriptions, no re-explaining yourself.**\n\n[![Stars](https://img.shields.io/github/stars/Eshaan-Nair/",
     "topics": [
       "mcp",
       "sqlite",
@@ -1823,7 +1854,9 @@
       "tutorial"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli"
     ],
     "summary": "Windows-native CLIProxyAPI fork with TUI, system tray, and multi-provider OAuth for AI coding tools - No API key needed",
     "i18n": {
@@ -1864,7 +1897,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# CLI Proxy API\n\nEnglish | [中文](README_CN.md) | [日本語](README_JA.md)\n\nA proxy server that provides OpenAI/Gemini/Claude/Codex/Grok compatible API interfaces for CLI.\n\nIt now also supports OpenAI Codex (GPT models) and Claude Code via OAuth.\n\nSo you can use local or multi-account CLI access with OpenAI(include Responses)/Gemini/Claude-compatible clients and SDKs.\n\n## Sponsor\n\n[![https://www.packyapi.com/register?aff=cliproxyapi](./assets/packycode-en.png)](https://www.packyapi.com/register?aff=cli",
     "topics": [
       "claude-code",
       "cli-proxy",
@@ -1883,7 +1916,8 @@
       "mcp-server"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "cursor"
     ],
     "summary": "MCP Server for Telegram",
     "i18n": {
@@ -1924,7 +1958,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Enable LLMs to control your Telegram\n\n    \n    \n    \n\n**Connect Large Language Models to Telegram via the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction).**\n\nBuilt with [Telethon](https://github.com/LonamiWebs/Telethon), this server allows AI agents to interact with Telegram, enabling features like sending/editing/deleting messages, searching chats, managing drafts, downloading media, and more using the [MTProto](https://core.telegram.org/mtproto).\n\n---\n\nTable&nbsp;o",
     "topics": [
       "claude",
       "llm",
@@ -1948,11 +1982,14 @@
     "url": "https://github.com/terragon-labs/terragon-oss",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
-      "codex-cli"
+      "codex-cli",
+      "trae",
+      "hermes-agent"
     ],
     "summary": "This is the website formally known as Terragon Labs. It was a remote background agent orchestrator for running Claude Code, Codex, and other coding clis in the cloud.",
     "i18n": {
@@ -1993,7 +2030,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Terragon\n\n> **Snapshot notice (January 16, 2026):** This repository is an open-source snapshot of Terragon at the time of shutdown. It is provided **as-is**, with no guarantees of maintenance, support, or completeness.\n\n![Terragon](https://cdn.terragonlabs.com/dashboard-beRp.png)\n\nDelegate work to coding agents in the cloud.\n\nFor trademark use, see `TRADEMARKS.md`.\n\n## Features\n\n- **Multi-Agent Support**: Use multiple coding agents, including [Claude Code](https://www.anthropic.com/products/cl",
     "topics": [
       "agent",
       "ai",
@@ -2050,7 +2087,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# claude-youtube\n\n> **Status: Beta** -- Actively developed. Core functionality is complete and tested. Breaking changes may occur before v1.0.\n\nA comprehensive [Claude Code](https://claude.com/claude-code) skill for YouTube creators. Covers channel audits, video SEO, retention-engineered scripts, hook writing, thumbnail briefs, content strategy, content calendars, Shorts optimization, analytics interpretation, monetization planning, competitor research, cross-platform repurposing, upload metadat",
     "topics": [
       "claude-code",
       "claude-code-skill",
@@ -2069,7 +2106,11 @@
       "cli-tool"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "trae",
+      "hermes-agent"
     ],
     "summary": "A simple, fast terminal based AI coding assistant",
     "i18n": {
@@ -2110,7 +2151,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "[![Crates.io](https://img.shields.io/crates/v/oli-server?style=flat-square)](https://crates.io/crates/oli-server)\n[![Docs.rs](https://img.shields.io/badge/docs.rs-latest-blue?style=flat-square)](https://docs.rs/oli-server)\n[![License](https://img.shields.io/badge/license-Apache_2.0-blue?style=flat-square)](https://opensource.org/license/apache-2-0)\n[![Codecov](https://img.shields.io/codecov/c/github/amrit110/oli?style=flat-square)](https://codecov.io/github/amrit110/oli)\n[![Rust](https://img.shi",
     "topics": [
       "assistant",
       "coding",
@@ -2128,7 +2169,8 @@
     "url": "https://github.com/ezh0v/weather-mcp-server",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "cli-tool"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -2172,7 +2214,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Weather API MCP Server\n\n[![License](https://img.shields.io/badge/license-MIT-red.svg)](LICENSE)\n[![Go Version](https://img.shields.io/github/go-mod/go-version/ezh0v/weather-mcp-server)](go.mod)\n[![Go Report Card](https://goreportcard.com/badge/github.com/ezh0v/weather-mcp-server?cache)](https://goreportcard.com/report/github.com/ezh0v/weather-mcp-server)\n[![Build](https://github.com/ezh0v/weather-mcp-server/actions/workflows/go.yml/badge.svg?branch=master)](https://github.com/ezh0v/weather-mcp-s",
     "topics": [
       "go",
       "golang",
@@ -2232,7 +2274,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# ComfyUI Custom Node Skills for Claude Code\n\nA curated collection of [Claude Code skills](https://docs.anthropic.com/en/docs/claude-code/skills) for developing ComfyUI custom nodes. These skills give Claude comprehensive knowledge of the ComfyUI node system, covering both the V3 (recommended) and V1 (legacy) APIs.\n\n> **[中文说明](README_ZH.md)**\n\n## Skills Overview\n\n| Skill | Trigger | Description |\n|---|---|---|\n| **comfyui-node-basics** | Creating nodes, defining classes, project setup | V3 node ",
     "topics": []
   },
   {
@@ -2285,7 +2327,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "[![简体中文](https://img.shields.io/badge/简体中文-点击查看-orange)](README-zh.md)\n[![English](https://img.shields.io/badge/English-Click-yellow)](README.md)\n[![MseeP.ai Security Assessment Badge](https://mseep.net/mseep-audited.png)](https://mseep.ai/app/wenb1n-dev-mysql-mcp-server-pro)\n[![MCPHub](https://img.shields.io/badge/mcphub-audited-blue)](https://mcphub.com/mcp-servers/wenb1n-dev/mysql_mcp_server_pro)\n\n# mcp_mysql_server_pro\n\n## Introduction\nmcp_mysql_server_pro is not just about MySQL CRUD operat",
     "topics": [
       "mcp-server",
       "ai",
@@ -2301,6 +2343,7 @@
     "source_type": "github",
     "resource_type": [
       "mcp-server",
+      "skills",
       "rules"
     ],
     "target_tools": [
@@ -2345,7 +2388,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Learn Claude Code by exploring it.\n\n  \n  \n  \n  \n\n---\n\nA simulated Claude Code project you can click through. Every file and folder in the sidebar is a real Claude Code concept — the same `.claude/` directory, config files, and scaffolding you'd find in an actual repo. Click any file to learn what it does, how to set it up, and see annotated examples you can copy into your own projects.\n\n  \n\n## 📚 What You'll Learn\n\n| Folder / File | Feature |\n|---|---|\n| `CLAUDE.md` | Project memory that persists",
     "topics": [
       "claude",
       "claude-code",
@@ -2358,10 +2401,17 @@
     "url": "https://github.com/QVerisAI/qveris-agent-toolkit",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "skills",
+      "agent-framework",
+      "extension",
+      "cli-tool"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
     ],
     "summary": "Open-source toolkit for the QVeris capability routing network: CLI, MCP server, Python SDK, skills, and REST API docs for agents to discover, inspect, call, and audit real-world tools.",
     "i18n": {
@@ -2402,7 +2452,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "QVeris Agent Toolkit\n\n  Every capability. One call away.\n  QVeris is the capability routing network for agents. This repository is the open-source agent toolkit: CLI, MCP server, Python SDK, skills, and REST API docs for discovering, inspecting, calling, and auditing real-world tools.\n  \n  Website: https://qveris.ai\n  \n\n  \n    🇺🇸 English ·\n    🇨🇳 简体中文\n  \n\n  \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n    \n      \n    \n  \n\n---\n\n- `10,000+`",
     "topics": [
       "ai-agent",
       "openclaw",
@@ -2470,7 +2520,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Code + Gemini MCP Server\n\nConnect Claude Code with Google's Gemini AI for powerful AI collaboration. Ask Gemini questions, get code reviews, and brainstorm ideas - all within Claude Code!\n\n## 🚀 Quick Start (2 minutes)\n\n### Prerequisites\n- Python 3.8+ installed\n- Claude Code CLI installed\n- Google Gemini API key ([Get one free](https://aistudio.google.com/apikey))\n\n### One-Line Install\n\n```bash\ncurl -sSL https://raw.githubusercontent.com/RaiAnsar/claude_code-gemini-mcp/main/install.sh | ",
     "topics": [
       "claude-ai",
       "gemini-flash",
@@ -2484,10 +2534,11 @@
     "url": "https://github.com/cosai-oasis/project-codeguard",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "hermes-agent"
     ],
     "summary": "Project CodeGuard is an open-source, model-agnostic security framework that embeds secure-by-default practices into AI coding agent workflows. It provides comprehensive security rules that guide AI assistants to generate more secure code au",
     "i18n": {
@@ -2528,7 +2579,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Project CodeGuard: Security Skills and Rules for AI Coding Agents\n![Securing](https://img.shields.io/badge/Securing%20AI%20Generated%20Code-green)\n![Open Source](https://img.shields.io/badge/Now-Open%20Source-brightgreen)\n[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)\n\nThis repository is for the work of the **Coalition for Secure AI (CoSAI)**. CoSAI is an [OASIS Open Project](https://www.oasis-open.org/ope",
     "topics": [
       "agentic-ai",
       "agents",
@@ -2545,10 +2596,12 @@
     "url": "https://github.com/entropyvortex/meta-llm-charter",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "rules"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "cursor"
     ],
     "summary": "Compact operational charter that turns LLM coding agents into disciplined principal engineers. Eleven rules + one meta-rule.",
     "i18n": {
@@ -2589,7 +2642,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# META v2.0 — LLM Agent Engineering Charter  \n**(with Zero-Pause Native Execution Layer)**\n\n**One file. Eleven rules + continuous-execution layer. One meta-rule. One bias.**\n\nA compact, operational constitution that turns frontier coding agents (Claude Code, Cursor, etc.) from eager-junior behavior into disciplined principal-engineer execution **with unbroken velocity**.\n\n### Quickstart\n\n```bash\n# Drop the charter into your project root\ncurl -O https://raw.githubusercontent.com/entropyvortex/met",
     "topics": [
       "ai",
       "ai-agents",
@@ -2609,10 +2662,13 @@
     "url": "https://github.com/joewinke/jat",
     "source_type": "github",
     "resource_type": [
+      "agent-framework",
       "cli-tool"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "opencode"
     ],
     "summary": "  The World's First Agentic IDE. Visual dashboard: live sessions, task management, code editor, terminal. Epic Swarm parallel workflows. Auto-proceed rules. Automation patterns. Beads + Agent Mail + 50 bash tools. Supervise 20+ agents from ",
     "i18n": {
@@ -2653,7 +2709,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "```\n╔───────────────────────────────────────────╗\n│                                           │\n│           __       ___   .___________.    │\n│          |  |     /   \\  |           |    │\n│          |  |    /  ^  \\ `---|  |----`    │\n│    .--.  |  |   /  /_\\  \\    |  |         │\n│    |  `--'  |  /  _____  \\   |  |         │\n│     \\______/  /__/     \\__\\  |__|         │\n│                                           │\n│         ◇ Supervise the Swarm ◇           │\n│                                   ",
     "topics": [
       "agent-coordination",
       "agent-orchestration",
@@ -2681,10 +2737,14 @@
     "url": "https://github.com/lanes-sh/app",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "cli-tool"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
     ],
     "summary": "Lanes makes parallel AI coding your unfair advantage",
     "i18n": {
@@ -2723,7 +2783,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Lanes\n  Mission control for AI coding agents.\n  Track, orchestrate, and ship across multiple AI CLI sessions from one place.\n  Quick start\n\n  \n\n## You lost track three agents ago.\n\nYou have five AI coding agents running across eight terminal tabs. One is waiting for input. One finished ten minutes ago and you didn't notice. Two are doing overlapping work. The only thing keeping it all together is your short-term memory, and it just failed.\n\nAI agents got powerful. The workflow around them didn't",
     "topics": [
       "agentic-coding",
       "agentic-development-environment",
@@ -2750,9 +2810,11 @@
     "url": "https://github.com/openaccountants/openaccountants",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "agent-framework"
     ],
     "target_tools": [
+      "claude-code",
       "cursor"
     ],
     "summary": "Open-source Tax Guides for AI agents, reviewed by named CPAs/CAs/EAs. 1,000+ Guides across 190+ jurisdictions. MCP server included. Works with Claude, ChatGPT, Cursor.",
@@ -2794,7 +2856,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# OpenAccountants\n\n**The only open tax knowledge layer for AI agents where named, licensed accountants stand behind the answers.**\n\nAgents can already do the math. None of them can stand behind an answer. Every other tax dataset ships with \"not tax advice\" and stops there. Here, a **named professional with a verified credential** reviews the complete Guide for their jurisdiction, publicly, on the record.\n\n### The scoreboard\n\n> ## 10 of 193 jurisdictions\n> have a named, licensed Partner on record",
     "topics": [
       "tax",
       "accounting",
@@ -2822,6 +2884,7 @@
     "source_type": "github",
     "resource_type": [
       "mcp-server",
+      "agent-framework",
       "cli-tool"
     ],
     "target_tools": [
@@ -2868,7 +2931,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# wmux\n\n### The agent fleet that survives a reboot.\n\nFan out one prompt into **N isolated agents** — each in its own git worktree — review their work **hunk by hunk**, and walk away: after a quit, crash, or **full OS reboot**, your agents come back mid-conversation. A native Windows terminal for **Claude Code**, **Codex CLI**, and **Gemini CLI**, with **verified sender identity**, **human approval gates**, and a real browser agents can drive.\n\n[![Windows 10/11](https://img.shields.io/badge/Windo",
     "topics": [
       "ai-agents",
       "ai-coding",
@@ -2896,10 +2959,11 @@
     "url": "https://github.com/Dyalwayshappy/Spice",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "trae",
+      "hermes-agent"
     ],
     "summary": "A decision brain for agentic systems: perceive context, compare options, and control execution.",
     "i18n": {
@@ -2940,7 +3004,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Spice — The Decision Layer Above Agents\n\n  \n  \n    English / 中文\n  \n  \n  \n    \n    \n    \n    \n    \n  \n  \n\n> Agents can **execute**. \n\n> But they don’t know what to do next.\n\n**Spice** is a **decision-layer runtime — a brain above agents**, *inspired by the rise of execution agents like Claude Code, Codex, Hermes, and OpenClaw, and by the idea of a world model.*\n\nSpice controls agent actions before execution.\n\nIt turns messy context into source-backed, comparable, approval-aware decisions — before",
     "topics": [
       "agent",
       "ai",
@@ -3001,7 +3065,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# GPT-INSTAGRAM\n\nA GPT-based autonomous multi-agent AI app using Next.js, LangChain.js, and LangGraph.js to research and recommend Instagram posts based on user queries and personalities extracted from user’s historical Instagram data via Instagram Basic Display API.\n\n## Video\n\nhttps://github.com/user-attachments/assets/ac1850e2-0119-4531-9f9c-2422ac40f48d\n\n## Walkthrough\n\n![Highlevel](https://github.com/user-attachments/assets/b9f0fb41-8428-460d-b2ab-7f9dbeb0ba8e)\n\n### AGENTS\n1.  **Data Explain",
     "topics": [
       "agents",
       "ai",
@@ -3066,7 +3130,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Claude to GCP Vertex AI Proxy\n\n  \n  \n  \n  \n  \n\n  English | 中文\n\n一个用于将 Claude API 请求转换为 Google Cloud Vertex AI 格式的代理服务，使 Claude Code 客户端能够通过 GCP Vertex AI 访问 Claude 模型。\n\n## 声明\n\n本项目是为 **Google Cloud Vertex AI 企业客户**提供的协议转换工具，旨在简化 Claude Code 客户端与 GCP Vertex AI 的集成流程。\n\n**本项目：**\n- ✅ 是合法的 API 协议转换工具\n- ✅ 面向已具备 GCP Vertex AI Claude 模型访问权限的用户\n- ✅ 遵循 Google Cloud 和 Anthropic 的服务条款\n- ❌ 不提供任何绕过授权或网络监管的功能\n- ❌ 不提供任何免费访问付费服务的途径\n\n**使用前提：**\n- 您必须拥有有效的 Google Cloud 账户\n- 您必须已在 GCP 项目中启用 Vertex AI API\n- 您必须具备 Claud",
     "topics": [
       "anthropic",
       "claude-ai",
@@ -3081,10 +3145,15 @@
     "url": "https://github.com/cheapestinference/claude-auto-retry",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
     ],
     "summary": "Auto-retry Claude Code on subscription rate limits, API overload (529/5xx) and safeguard false positives — waits for the printed reset, exponential backoff, tmux-based",
     "i18n": {
@@ -3125,7 +3194,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# claude-auto-retry\n\n> Automatically retry Claude Code sessions when you hit Anthropic subscription rate limits.\n\nWhen Claude Code shows *\"5-hour limit reached - resets 3pm\"*, this tool waits for the reset and sends \"continue\" automatically. You come back to find your work done.\n\n**No dependencies. No workflow change. Just install and forget.**\n\n[![npm version](https://img.shields.io/npm/v/claude-auto-retry.svg)](https://www.npmjs.com/package/claude-auto-retry)\n[![License: MIT](https://img.shiel",
     "topics": [
       "ai-agents",
       "anthropic",
@@ -3148,7 +3217,8 @@
       "tutorial"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "workbuddy-codebuddy"
     ],
     "summary": "Reroll your Claude Code /buddy companion to any species, rarity, eye, hat, and shiny combo",
     "i18n": {
@@ -3189,7 +3259,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# buddy-reroll\n\n> [!IMPORTANT]\n> **This project is no longer maintained.**\n> As of Claude Code v2.1.97, the `/buddy` command has been removed.\n> Meet your buddy in [Notch](https://github.com/talkvalue/Buddi) instead — a new home for buddies.\n\n---\n\nPick the perfect [Claude Code](https://docs.anthropic.com/en/docs/claude-code) `/buddy` companion — any species, rarity, eye, hat, shiny, and stat combination you want.\n\n## Install\n\n```bash\n# Bun (recommended)\nbunx buddy-reroll\n\n# npm\nnpx buddy-reroll\n",
     "topics": [
       "claude",
       "claude-code",
@@ -3204,10 +3274,11 @@
     "source_type": "github",
     "resource_type": [
       "rules",
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
-      "cursor"
+      "cursor",
+      "hermes-agent"
     ],
     "summary": "Cursor AI IDE tips, tricks & best practices - Keyboard shortcuts, Composer mode, .cursorrules examples, and Reddit community wisdom",
     "i18n": {
@@ -3246,7 +3317,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# 🚀 Cursor AI Tips & Tricks\n\n[![GitHub stars](https://img.shields.io/github/stars/murataslan1/cursor-ai-tips?style=social)](https://github.com/murataslan1/cursor-ai-tips/stargazers)\n[![GitHub forks](https://img.shields.io/github/forks/murataslan1/cursor-ai-tips?style=social)](https://github.com/murataslan1/cursor-ai-tips/network/members)\n[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http",
     "topics": [
       "agentic-ai",
       "ai",
@@ -3305,7 +3376,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Anki MCP Server\n\nA Model Context Protocol (MCP) server that enables LLMs to interact with Anki flashcard software through AnkiConnect.\n\n![Anki Icon](./assets/icon.png)\n\n## Features\n\n### Tools\n\n- `anki_check_connection` - Check whether AnkiConnect is reachable\n- `anki_list_decks` - List all available Anki decks, optionally with deck IDs\n- `anki_create_deck` - Create a new Anki deck\n- `anki_list_tags` - List all tags currently used in the collection\n- `anki_add_note_tags` - Add tags to one or mo",
     "topics": [
       "anki",
       "cline",
@@ -3321,7 +3392,7 @@
     "url": "https://github.com/ramtinJ95/opencode-tokenscope",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "cli-tool"
     ],
     "target_tools": [
       "opencode"
@@ -3365,7 +3436,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# OpenCode-Tokenscope, Token Analyzer Plugin\n\n[![npm version](https://img.shields.io/npm/v/@ramtinj95/opencode-tokenscope.svg)](https://www.npmjs.com/package/@ramtinj95/opencode-tokenscope)\n\n> Comprehensive token usage analysis and cost tracking for OpenCode AI sessions\n\nTrack recoverable OpenCode usage, cache activity, model costs, and retained message content. Recorded telemetry is kept separate from explanatory estimates so the report does not imply precision the source data cannot support.\n\n",
     "topics": [
       "ai-tools",
       "cost-tracking",
@@ -3380,7 +3451,7 @@
     "url": "https://github.com/CosmoBlk/email-marketing-bible",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -3422,7 +3493,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Email Marketing Bible\n\n**The AI email automation skill for Claude, ChatGPT, and any agent.**\n\nInstall it and your AI stops guessing about email. It audits your setup, builds your flows from a prompt, drafts copy in your voice (not slop), tells you why you are in spam, and runs your ESP through MCP, with a hard rule that nothing blasts without your say-so.\n\nBuilt from 908 sources and the experience of running [SmartrMail](https://x.com/GTHartley) (email marketing SaaS, ~28,000 customers, 6 bill",
     "topics": [
       "agent-skills",
       "ai-skill",
@@ -3441,7 +3512,7 @@
     "url": "https://github.com/Faust-Donf/beamer-academic",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "claude-code",
@@ -3486,7 +3557,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Beamer Academic\n\n  **Drop your thesis in, get defense slides out.**\n  **论文丢进来，答辩 PPT 自动生成。**\n\n  AI Skill for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) / [Codex](https://openai.com/index/codex/) · 13 Layouts · 5 Color Schemes · Works Out of the Box\n\n  \n\n  [![Version](https://img.shields.io/github/v/release/Faust-Donf/beamer-academic?style=for-the-badge&color=0066cc&label=VERSION)](https://github.com/Faust-Donf/beamer-academic/releases)\n  [![Stars](https://img.shields.io/gith",
     "topics": [
       "academic",
       "ai-tools",
@@ -3510,10 +3581,13 @@
     "url": "https://github.com/ckelsoe/prompt-architect",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "rules"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "codex-cli",
+      "cursor"
     ],
     "summary": "Claude Code skill that transforms vague prompts into structured, expert-level prompts using 7 research-backed   frameworks (CO-STAR, RISEN, RISE, TIDD-EC, RTF, CoT, CoD)",
     "i18n": {
@@ -3554,7 +3628,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Prompt Architect\n\nTransform vague prompts into expert-level, structured prompts using 27 research-backed frameworks across 7 intent categories.\n\nWorks with **Claude Code, ChatGPT, Gemini CLI, Cursor, GitHub Copilot, Windsurf, OpenAI Codex**, and [30+ Agent Skills compatible tools](https://agentskills.io).\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![npm](https://img.shields.io/npm/v/@ckelsoe/prompt-architect)](https://www.npmjs",
     "topics": [
       "agent-skills",
       "ai-coding-agents",
@@ -3583,7 +3657,8 @@
     "url": "https://github.com/jaechang-hits/SciAgent-Skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -3627,7 +3702,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# SciAgent-Skills\n\n  \n  \n  \n  \n\n> **Turn your AI coding agent into a life sciences expert** — 199 bioinformatics skills for Claude Code covering RNA-seq, single-cell analysis, genomics, proteomics, drug discovery, and more. Boosted [BixBench](https://github.com/Future-House/BixBench) from 65% to 92%. Open source.\n\n**SciAgent-Skills** is the largest open-source skill library for scientific AI agents. It equips [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (and any markdown-compati",
     "topics": [
       "ai-agent",
       "bioinformatics",
@@ -3657,10 +3732,13 @@
     "url": "https://github.com/java-up-up/super-agent",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "skills",
+      "mcp-server",
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "trae",
+      "hermes-agent"
     ],
     "summary": "企业级 AI 智能体 Agent 平台，覆盖智能对话、文档知识问答、联网搜索、RAG 检索、MCP 工具协议、Skills 扩展等完整能力。三层执行器体系、双通道混合检索、组合式切块引擎、会话记忆管理、全链路可观测，每个环节都经过深 度设计和工程化打磨。",
     "i18n": {
@@ -3701,7 +3779,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "**开源不易，还请您点个 Star 多谢！🎉**\n\n# Super Agent\n\n**Super Agent** 是一个 **企业级** 的 AI 智能体对话平台，覆盖了智能对话、文档知识问答、联网搜索、RAG 详细检索、MCP 工具协议、Skills 能力扩展、文档全生命周期管理等完整能力。\n\n项目从对话入口开始，到意图分析、检索决策、多路知识召回、证据驱动生成，再到会话记忆管理、MCP 外部工具集成和文档治理，**每一个环节都不是简单调个接口就完事的，而是经过深度设计和反复打磨的工程化实现**。\n\n- **Super Agent 在线体验：** [👉 点击进行体验](http://super-agent-javaup.chat)\n\n- **Super Agent 详细讲解：** [👉 点击查看讲解](https://www.javaup.chat/super-agent/overview/project-intro)\n\n# 为什么需要这个项目\n\n现在的 Java 面试，光靠八股文和 CRUD 项目已经越来越难了。微服务、高并发这些之前算是亮点的东西，现在也慢慢成了标配。面试官开始问",
     "topics": [
       "agent",
       "ai",
@@ -3721,10 +3799,10 @@
     "url": "https://github.com/membranedev/application-skills",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code"
     ],
     "summary": "membranedev/application-skills",
     "i18n": {
@@ -3763,7 +3841,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "3,000+ Integration Skills by Membrane\n\n  Give your AI agent  skills to connect with Gmail, Slack, HubSpot, Salesforce, GitHub, and 3,000+ other apps.\n\n  \n  \n\nEach skill teaches your agent how to work with a specific app: its structure, actions, and when to use what. Built on [Membrane](https://getmembrane.com) and the open [Agent Skills](https://agentskills.io/) specification.\n\n---\n\n## What’s in this repo?\n\n- **3,000+ app-specific skills** — One skill per app (e.g. `gmail`, `slack`, `hubspot`, `",
     "topics": [
       "agent-skills",
       "claude-code-skill",
@@ -3822,7 +3900,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# cafe3310's Public Agent Skills\n\n个人常用的 Agent Skill（公开部分）。通过合适的上下文工程，可以将 Agent Skill 用在几乎任何地方。\n\n## 提醒\n\nAgent Skill 可能非常个性化，很多都是用户个人最佳实践的提炼，不一定对其他人有用。\n\n这玩意儿说穿了是提示词和代码的集合。在当下，提示词也是代码。审核你放进本地 agent 的每一个 skill 的所有文档和代码，不要被人搞啦。\n\n任何 LLM 相关的问题基本都是公开知识，学习如何使用 LLM 或让它协同你工作的方法里，最好的就是问 LLM 自己，最智障的是花钱买课。可以先问问 Gemini / GPT「这是我看到的文档，我希望学习关于 x 的知识。交互式地教教我」。\n\n为了让 Agent 能够正确识别每个 Skill 的依赖，这个仓库中的 `SKILL.md` Frontmatter 声明了以下扩展属性：\n\n- `depends_on_skill`：这个 Agent Skill 运行依赖的其他 Agent Skill。\n- `depends_on_binary`：这个 A",
     "topics": [
       "agent-skill-repository",
       "gemini-cli",
@@ -3835,7 +3913,7 @@
     "url": "https://github.com/get-vix/vix",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -3879,7 +3957,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Sleek, Fast and Token Efficient AI Coding Agent\n\n  \n  \n  \n  \n\n## Features\n\n✦ **Self-Evolving Agent**: vix writes its own scheduled jobs, watchers, and alerts\n\n✦ **Token-Efficient by Design**: stem agents maximize cache reuse across phases, and a Tree-sitter virtual filesystem lets the agent read and edit minified code — 20–50% fewer tokens with zero loss of meaning, benchmark-backed\n\n✦ **Programmable Workflows**: define your own multi-phase agent pipelines in JSON — agent, bash, and tool steps w",
     "topics": [
       "ai-coding-agent",
       "ai-coding-assistant",
@@ -3894,6 +3972,7 @@
     "url": "https://github.com/YassWorks/Ally",
     "source_type": "github",
     "resource_type": [
+      "agent-framework",
       "cli-tool"
     ],
     "target_tools": [
@@ -3938,7 +4017,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Ally\n\n    \n\n[![GitHub stars](https://img.shields.io/github/stars/YassWorks/Ally?style=social)](https://github.com/YassWorks/Ally/stargazers)\n[![GitHub forks](https://img.shields.io/github/forks/YassWorks/Ally?style=social)](https://github.com/YassWorks/Ally/network/members)\n[![Docker Image Version](https://img.shields.io/docker/v/yassw0rks/ally)](https://hub.docker.com/r/yassw0rks/ally)\n[![Docker Pulls](https://img.shields.io/docker/pulls/yassw0rks/ally)](https://hub.docker.com/r/yassw0rks/all",
     "topics": [
       "agentic-ai",
       "ai",
@@ -3997,7 +4076,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# 🎓 Gyoshu & Jogyo\n\n**English** | [中文](README.zh.md) | [한국어](README.ko.md) | [日本語](README.ja.md)\n\n> *\"Every great professor needs a great teaching assistant.\"*\n\n**Gyoshu** (교수, *Professor*) orchestrates. **Jogyo** (조교, *Teaching Assistant*) executes.\n\nTogether, they form an end-to-end research automation system for [OpenCode](https://github.com/opencode-ai/opencode) that turns your research goals into reproducible Jupyter notebooks—complete with hypotheses, experiments, findings, and publication",
     "topics": [
       "data-science",
       "ipython-notebook",
@@ -4024,7 +4103,8 @@
       "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "trae",
+      "hermes-agent"
     ],
     "summary": "AIFlow is an AI agentic framework designed to scale digital AI agents on BNB Chain.",
     "i18n": {
@@ -4065,7 +4145,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# AI Flow\n\nAI Flow is an advanced agentic AI framework designed to bring digital agents to life. With a focus on adaptivity, human-like interaction, and deep environmental integration, AI Flow transforms static, rule-based bots into dynamic, evolving AI agents capable of meaningful engagement.\n\n## The Vision of AI Flow\n\n- An AI That Feels Human\n  AI Flow agents are more than chatbots. They embody rich personalities, opinions, and emotions, adjusting their tone, mood, and interaction style based ",
     "topics": [
       "agent",
       "ai",
@@ -4079,7 +4159,7 @@
     "url": "https://github.com/caido/skills",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -4123,7 +4203,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# 🤹 Caido Skills\n\nCollection of skills to interact with Caido.\n\n## Walkthrough\n\nCheck our [documentation](https://docs.caido.io/app/tutorials/skills.html) for a complete walkthrough on how to setup the skill on your computer.\n\n## Installation\n\n```bash\npnpm dlx skills add caido/skills --skill='*'\n```\n\nor to install all of them globally:\n\n```bash\npnpm dlx skills add caido/skills --skill='*' -g\n```\n\nLearn more about the CLI usage at [skills](https://github.com/vercel-labs/skills).\n\n## Included Skil",
     "topics": [
       "ai",
       "caido",
@@ -4136,7 +4216,8 @@
     "url": "https://github.com/datadrivenconstruction/DDC_Skills_for_AI_Agents_in_Construction",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -4180,7 +4261,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "DDC Skills Collection for AI Coding Assistants\n\n  AI Tools for Construction Company Automation\n\n  \n  \n  \n  \n\nWorks with any AI coding assistant:\n\n  \n  \n  \n  \n\n---\n\n## What is this?\n\nA collection of **221 skills** for automating construction company processes with AI coding assistants.\n\n### What is a \"Skill\"?\n\nA skill is a `SKILL.md` file — structured instructions that an AI coding assistant can read and execute. Each skill describes a specific task: what problem it solves, what code to generate,",
     "topics": [
       "aec-industry",
       "ai-agents",
@@ -4202,7 +4283,8 @@
     "url": "https://github.com/ed3dai/ed3d-plugins",
     "source_type": "github",
     "resource_type": [
-      "extension"
+      "extension",
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -4246,7 +4328,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# ed3d-plugins\n\nThis is my collection of plugins that I use on a day-to-day basis for getting stuff done with Claude Code. Most of these are development-oriented in some way or another, but also often end up being useful for other things. Product design, general research, accidentally becoming my homelab sysadmin—these are a lot of what I've learned so far and what I've found helpful.\n\nThe big stick in this repository is `ed3d-plan-and-execute`, which implements an \"RPI\" (research-plan-implement",
     "topics": [
       "claude",
       "claude-code",
@@ -4303,7 +4385,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Code CLI 技术文档\n\n> 全面深入的技术分析文档，从架构到实现细节\n\n![Claude Code](https://img.shields.io/badge/Claude-Code-blue)\n![Documentation](https://img.shields.io/badge/docs-latest-green)\n![License](https://img.shields.io/badge/license-Public%20Domain-orange)\n\n## 简介\n\n本文档系列是对 Claude Code CLI 的全面技术分析，涵盖从基础架构到高级特性的所有技术细节。无论你是想了解 CLI 工具的设计理念，还是深入研究 LLM 驱动的开发工具实现，这里都能找到你需要的答案。\n\n## 讨论交流\n\n扫描下方二维码加入讨论群：\n\n![讨论群二维码](image.png)\n\n## 文档目录\n\n### 基础与架构\n\n| 章节 | 文件 | 标题 |\n|------|------|------|\n| 前言 | [00-preface.md](00-prefa",
     "topics": [
       "claude-code",
       "claudecode"
@@ -4315,11 +4397,16 @@
     "url": "https://github.com/jdrhyne/agent-skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework",
+      "cli-tool",
+      "mcp-server",
+      "rules"
     ],
     "target_tools": [
       "claude-code",
-      "codex-cli"
+      "codex-cli",
+      "cursor"
     ],
     "summary": "A collection of AI agent skills for Clawdbot, Claude Code, Codex",
     "i18n": {
@@ -4360,7 +4447,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# agent-skills\n\n```\n═══════════════════════════════════════════════════════════════════════════════════════\n█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█\n█                                                                                       █\n█     ░█████╗░░██████╗░███████╗███╗░░██╗████████╗  ░██████╗██╗░░██╗██╗██╗░░░░░██╗░░░░░  █\n█     ██╔══██╗██╔════╝░██╔════╝████╗░██║╚══██╔══╝  ██╔════╝██║░██╔╝██║██║░░░░░██║░░░░░  █\n█     ███████║██║░░██╗░█████╗░░██╔",
     "topics": [
       "agent-skills",
       "agentic-ai",
@@ -4431,7 +4518,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "This repository lets you use Anthropic's **Claude Code CLI** with OpenAI models such as **GPT-5-Codex, GPT-5.1, and others** via a local LiteLLM proxy.\n\n> **⚠️ ATTENTION ⚠️**\n>\n> If you're here to set up `your own LiteLLM Server` with `LibreChat` as the web UI (or any other OpenAI / Anthropic API compatible client, for that matter), head over to the [litellm-server-boilerplate](https://github.com/teremterem/litellm-server-boilerplate) repository. It contains a \"boilerplate\" version of this repo ",
     "topics": [
       "gpt-5",
       "gpt-5-codex",
@@ -4502,7 +4589,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Desktop CN\n\n  \n\n  \n  \n  \n  \n\n面向中文用户持续维护的 Claude Desktop 中文桌面分支，基于 [`pretend1111/claude-desktop-app`](https://github.com/pretend1111/claude-desktop-app) 二次整理、汉化和增强。\n\n这个分支的目标不是简单换皮，而是把原本零散、半占位的能力逐步打磨成一套可维护、可发布、可日用的桌面工作流：中文聊天、项目上下文、GitHub 导入、本地 Code 工作区、权限守卫、命令执行和 Artifact 预览。\n\n## 下载\n\n| 项目 | 内容 |\n| --- | --- |\n| 当前版本 | `1.6.31` |\n| Windows 安装包 | `Claude-Desktop-CN-Setup-1.6.31.exe` |\n| 下载页面 | [GitHub Releases](https://github.com/Qiao-920/claude-desktop-cn/releases) |\n| 本轮更新说明 | [Claude Des",
     "topics": [
       "ai-assistant",
       "chinese",
@@ -4566,7 +4653,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Autopilot - Automated Claude Code Task Management\n\n[![VS Code Marketplace](https://img.shields.io/badge/VS%20Code-Marketplace-brightgreen)](https://marketplace.visualstudio.com/items?itemName=benbasha.claude-autopilot)\n[![Version](https://img.shields.io/badge/version-0.1.6-blue)](https://github.com/benbasha/Claude-Autopilot/releases/tag/v0.1.6)\n[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)\n\n**Claude Autopilot** lets you run Claude Code while you sleep, eat, or pl",
     "topics": [
       "claude",
       "claude-code",
@@ -4585,10 +4672,11 @@
     "url": "https://github.com/lemon07r/SanityHarness",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "trae",
+      "hermes-agent"
     ],
     "summary": "A lightweight harness designed to be simple to use, efficient, universially compatible with any coding agent to evaluate them over a broad set of coding tasks and languages.",
     "i18n": {
@@ -4629,7 +4717,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# SanityHarness\n\n![sanity-banner](https://github.com/user-attachments/assets/b0f8572d-a5fc-4b39-959a-c573e421af17)\n\n[![CI](https://github.com/lemon07r/sanityharness/actions/workflows/ci.yml/badge.svg)](https://github.com/lemon07r/sanityharness/actions/workflows/ci.yml)\n[![Go 1.25+](https://img.shields.io/github/go-mod/go-version/lemon07r/sanityharness)](https://go.dev/)\n[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)\n[![Release](https://img.shields.io/github/v/relea",
     "topics": [
       "agent",
       "agentic-coding",
@@ -4647,10 +4735,12 @@
     "url": "https://github.com/niaka3dayo/agent-skills-vrc-udon",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli"
     ],
     "summary": "Skills, rules, and validation hooks that teach AI coding agents to generate correct UdonSharp code",
     "i18n": {
@@ -4691,7 +4781,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "**English** | [日本語](README.ja.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md)\n\n  \n  \n  \n  \n\n  \n  \n  \n\nAgent Skills for VRChat UdonSharp\n\n  Skills, rules, and validation hooks that teach AI coding agents to generate correct UdonSharp code\n\n  About &bull;\n  Install &bull;\n  Structure &bull;\n  Skills &bull;\n  Rules &bull;\n  Hooks &bull;\n  Contributing &bull;\n  Disclaimer\n\n---\n\nAbout\n\nVRChat world development with **UdonSharp** (C# &rarr; Udon Assembly) has strict compi",
     "topics": [
       "ai-agent",
       "claude-code",
@@ -4708,12 +4798,13 @@
     "url": "https://github.com/umacloud/umadev",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
       "codex-cli",
-      "opencode"
+      "opencode",
+      "hermes-agent"
     ],
     "summary": "UmaDev: A coding agent that works like a real dev team, commanding the Claude Code / Codex / OpenCode you already use.",
     "i18n": {
@@ -4754,7 +4845,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# umadev\n\n### UmaDev: A coding agent that works like a real dev team, commanding the Claude Code / Codex / OpenCode you already use.\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)\n[![Rust](https://img.shields.io/badge/Rust-1.87%2B-orange)](https://www.rust-lang.org/)\n[![Spec](https://img.shields.io/badge/Spec-UMADEV__HOST__SPEC__V1-blue)](spec/UMADEV_HOST_SPEC_V1.md)\n[![Version](https://img.shields.io/badge/Version-1.0.x-success)](CHANGELOG.md)\n\nEnglish | [简体中文]",
     "topics": [
       "ai",
       "ai-coding",
@@ -4780,10 +4871,12 @@
     "url": "https://github.com/AgenticA5/A5-Browser-Use",
     "source_type": "github",
     "resource_type": [
-      "extension"
+      "extension",
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "codex-cli",
+      "antigravity-cli"
     ],
     "summary": "Your commands control the browser - made easy | Chrome Extension and RESTful API for Browser-Use",
     "i18n": {
@@ -4824,7 +4917,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# A5-Browser-Use Chrome Extension and Server for Agentic AI Workflows\n\nYour commands control the browser - made easy. Supports various large language model providers, including OpenAI, Gemini, and Ollama.\n\n**A5** is an open-source project that integrates the powerful [**Browser Use** Python library](https://github.com/browser-use/browser-use) with a user-friendly RESTful API and Chrome extension. It aims to simplify agentic AI-powered browser automation tasks by providing an all-in-one solution ",
     "topics": [
       "agentic-ai",
       "ai",
@@ -4895,7 +4988,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# IELTS Claude Skills · v1.0\n\n> 一套跑在 Claude Code 上的雅思备考 AI 教练 skill。\n> **无状态、零依赖、纯文本提示词。** 装上就能用。\n\n---\n\n## 这是什么\n\n4 个 [Claude Code Skill](https://docs.claude.com/en/docs/claude-code/skills)，构成一个最小可用的雅思备考助手：\n\n| Skill | 干啥 | 触发词 |\n|-------|------|--------|\n| `/ielts` | 路由入口 + 摸底 + 给建议 | 「我要备考雅思」「IELTS」 |\n| `/ielts-writing` | 写作四维批改 + 改写对比 + 审题 | 「批改作文」「帮我看看这篇」 |\n| `/ielts-reading` | 同义替换提取 + T/F/NG 拆解 + 错题诊断 | 「分析阅读」「这道为什么错」 |\n| `/ielts-speaking` | 5 个万能故事覆盖 80% Part 2 话题 | 「口语素材」「Part 2 准备」 |\n\n**特",
     "topics": []
   },
   {
@@ -4904,10 +4997,10 @@
     "url": "https://github.com/ganeshnikhil/J.A.R.V.I.S.2.0",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "antigravity-cli"
     ],
     "summary": " open source assistant  hybrid using small models (2b - 5b) and gemini  , with image and agentic tool capabilities and integration of RAG with effiecient memory. android  support using adb ",
     "i18n": {
@@ -4948,7 +5041,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# 🚀 JARVIS 2.0\n\n---\n## J.A.R.V.I.S. 2.0 – Judgment Augmented Reasoning for Virtual Intelligent Systems\n# 🤖 Jarvis AI Assistant\n\nWelcome to the **Jarvis AI Assistant** project! 🎙️ This AI-powered assistant can perform various tasks such as **providing weather reports 🌦️, summarizing news 📰, sending emails 📧** , **CAG** , and more, all through **voice commands**. Below, you'll find detailed instructions on how to set up, use, and interact with this assistant. 🎧\n\n---\n\n## 🌟 Features\n\n✅ **Voice Activ",
     "topics": [
       "ai",
       "api",
@@ -4969,10 +5062,14 @@
     "url": "https://github.com/govctl-org/govctl",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
     ],
     "summary": "A governance harness for AI coding.",
     "i18n": {
@@ -5013,7 +5110,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "govctl\n\n  \n  \n  \n  \n  \n  \n\n  A governance harness for AI coding.\n  Turn prompts and patches into RFCs, ADRs, work items, and guarded delivery.\n\n  \n\n---\n\n`govctl` is a governance-as-code CLI for teams using AI to build software seriously.\n\nIt gives AI-assisted development a control plane that lives in your repo:\n\n- **RFCs** say what must be true\n- **ADRs** record why a design was chosen\n- **Work items** track execution and acceptance criteria\n- **Verification guards** enforce executable completio",
     "topics": [
       "ai-agent",
       "cli",
@@ -5031,7 +5128,7 @@
       "skills"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code"
     ],
     "summary": "My collection of skills for productivity and automation.",
     "i18n": {
@@ -5072,7 +5169,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "English |\n  简体中文 |\n  日本語\n\n# Guo Yu's Skills\n\nMy collection of custom Claude Code skills for productivity and automation.\n\n## Skills\n\n| Skill | Description |\n|-------|-------------|\n| [port-allocator](./port-allocator/) | Automatically allocate and manage development server ports, avoiding port conflicts between multiple Claude Code instances |\n| [share-skill](./share-skill/) | Migrate local skills to code repositories with Git version control and open source support |\n| [skill-permissions](./ski",
     "topics": [
       "claude-code",
       "llm",
@@ -5085,10 +5182,11 @@
     "url": "https://github.com/semgrep/skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code"
     ],
     "summary": "A collection of skills for AI coding agents from Semgrep",
     "i18n": {
@@ -5129,7 +5227,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Agent Skills [Beta]\n\nA collection of skills for AI coding agents. Skills are packaged instructions and scripts that extend agent capabilities. This should be considered beta-level software; it's primarily generated by transforming open-source Semgrep rules into skill format.\n\nSkills follow the [Agent Skills](https://agentskills.io/) format.\n\n## Installation\n\n```bash\nnpx skills add semgrep/skills\n```\n\n## Available Skills\n\n### code-security\n\nComprehensive code security guidelines from Semgrep En",
     "topics": [
       "agents",
       "claude-code",
@@ -5143,7 +5241,8 @@
     "url": "https://github.com/leemysw/feishu-docx",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -5187,7 +5286,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# feishu-docx\n\n  Feishu knowledge base export, writing, and cloud-space management tool with Markdown, WeChat import, CLI, TUI, and OAuth 2.0\n\n[![PyPI version](https://badge.fury.io/py/feishu-docx.svg)](https://badge.fury.io/py/feishu-docx)\n[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n\n  中文 | English\n\n---\n\n## 🆕 Recent Updates (v0.",
     "topics": [
       "ai-agent",
       "claude-skills",
@@ -5208,7 +5307,7 @@
     "url": "https://github.com/llm-in-sandbox/llm-in-sandbox",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -5252,7 +5351,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "LLM-in-Sandbox\n\n  🌐 Project •\n  📄 Paper •\n  💻 LLM-in-Sandbox-RL •\n  🤗 Huggingface •\n  📦 Model & Data •\n  🎬 Youtube •\n  📽️ Slides •\n  🕶️ Awesome Computer-Use-Agent •\n  🦞 ClawGym•\n\n### Give your LLM a computer, unlocking general agentic intelligence\n\nAs vibe coding becomes common and [🦞 OpenClaw](https://github.com/openclaw/openclaw) draws widespread attention, we present a systematic study to show that placing an LLM inside a code sandbox with basic computer functionalities lets it significantly ",
     "topics": [
       "coding-agent",
       "general-agent",
@@ -5265,7 +5364,8 @@
     "url": "https://github.com/AnyiWang/OpenCovibe",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
@@ -5310,7 +5410,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Local-first desktop app for AI-assisted vibe coding\n\n  Why &middot;\n  Capabilities &middot;\n  Quick Start &middot;\n  Providers &middot;\n  Architecture &middot;\n  License\n\n  English | 简体中文\n\n---\n\n  \n\n## Why OpenCovibe?\n\nAI coding CLIs like Claude Code are powerful, but they run inside a terminal. That means no persistent dashboard, no visual diff review, no cross-session history, and no multi-provider switching. OpenCovibe wraps these CLIs with a native desktop UI that adds the layers the terminal",
     "topics": [
       "ai-coding",
       "claude-code",
@@ -5371,7 +5471,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# memory-lancedb-pro — OpenClaw Memory Skill\n\n> **Claude Code Skill** for [memory-lancedb-pro](https://github.com/CortexReach/memory-lancedb-pro) — production-grade long-term memory plugin for OpenClaw AI agents.\n\nThis skill gives Claude Code deep, accurate knowledge of every feature in `memory-lancedb-pro` (v1.1.0-beta.8): installation, optimal configuration, Smart Extraction, hybrid retrieval, Weibull decay lifecycle, multi-scope isolation, self-improvement governance, and all MCP tools.\n\n---\n",
     "topics": []
   },
   {
@@ -5380,11 +5480,14 @@
     "url": "https://github.com/EliFuzz/awesome-system-prompts",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "extension",
+      "rules",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
       "codex-cli",
+      "antigravity-cli",
       "cursor"
     ],
     "summary": "A collection of system prompts and tool definitions from various AI coding agents: Augment Code, Claude Code, Cluely, Cursor, Devin AI, Kiro, Perplexity, VSCode Agent, Gemini, Codex, OpenAI",
@@ -5426,7 +5529,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Prompt Labs - Leaked System Prompts\n\n## LLMs\n\n### [Aider](https://www.aider.ai): AI-powered coding assistant that helps developers modify codebases efficiently through natural language prompts and context-aware code changes\n\n#### Latest\n\n- [Architect Mode](leaks/aider/2025-07-07_prompt_architect-mode.md): outlining how an AI acts as an expert architect engineer to provide clear, concise, and change-focused instructions to an \"editor engineer\" for modifying code within a git repository\n- [Ask M",
     "topics": [
       "ai",
       "anthropic",
@@ -5448,10 +5551,13 @@
     "source_type": "github",
     "resource_type": [
       "mcp-server",
+      "agent-framework",
       "cli-tool"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "trae",
+      "hermes-agent"
     ],
     "summary": "Code search MCP for Claude Code. Make entire codebase the context for any coding agent. Embeddings are created and stored locally. No API cost. ",
     "i18n": {
@@ -5492,7 +5598,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "```\n  ██████╗ ██╗       █████╗  ██╗   ██╗ ██████╗  ███████╗\n ██╔════╝ ██║      ██╔══██╗ ██║   ██║ ██╔══██╗ ██╔════╝\n ██║      ██║      ███████║ ██║   ██║ ██║  ██║ █████╗\n ██║      ██║      ██╔══██║ ██║   ██║ ██║  ██║ ██╔══╝\n ╚██████╗ ███████╗ ██║  ██║ ╚██████╔╝ ██████╔╝ ███████╗\n  ╚═════╝ ╚══════╝ ╚═╝  ╚═╝  ╚═════╝  ╚═════╝  ╚══════╝\n\n  ██████╗  ██████╗  ███╗   ██╗ ████████╗ ███████╗ ██╗  ██╗ ████████╗\n ██╔════╝ ██╔═══██╗ ████╗  ██║ ╚══██╔══╝ ██╔════╝ ╚██╗██╔╝ ╚══██╔══╝\n ██║      ██║   ██║ ██╔██",
     "topics": [
       "agent",
       "ai-coding",
@@ -5556,7 +5662,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "archived",
-    "readme_preview": "",
+    "readme_preview": "# ⚠️ REPOSITORY MOVED ⚠️\n\n**This repository has been adopted as the foundations of the official C# SDK for the Model Context Protocol and moved to [https://github.com/modelcontextprotocol/csharp-sdk](https://github.com/modelcontextprotocol/csharp-sdk).**\n\n**Please use the official repository for all new issues, pull requests, and development. This repository is kept for historical purposes but is no longer actively maintained.**\n\n---\n\n# mcpdotnet\n[![NuGet version](https://img.shields.io/nuget/v/",
     "topics": [
       "mcp",
       "modelcontextprotocol",
@@ -5614,7 +5720,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Mindmap MCP Server\n\n  \n\nA Model Context Protocol (MCP) server for converting Markdown content to interactive mindmaps.\n\n## Installation\n\n```bash\npip install mindmap-mcp-server\n```\n\nOr using `uvx`:\n\n```bash\nuvx mindmap-mcp-server\n```\nOr using `docker` safer and easier.\n\n## Attention\n\nThree installation methods have been successfully tested on macOS and Linux. \n\nFor Windows users experiencing issues with `npx` for this MCP, consider using the Docker method. Alternatively, if you use Visual Studi",
     "topics": [
       "artifact",
       "mcp-server",
@@ -5627,7 +5733,7 @@
     "url": "https://github.com/itsinseong/value-for-fable",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "rules"
     ],
     "target_tools": [
       "claude-code"
@@ -5671,7 +5777,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# 𝐕𝐚𝐥𝐮𝐞-𝐟𝐨𝐫-𝐅𝐚𝐛𝐥𝐞 (𝐕𝐅𝐅) \n\n**Opus에 근접한 품질을 Sonnet 단가에** · *Near-Opus quality at Sonnet pricing*\n\n***🡒 PRO 사용자들에겐 추천, OPUS 사용자 들에겐 비추천***\n\nFable5 구조를 넣은 Sonnet이 Opus와 블라인드 테스트에서 사실상 비겼다!!\n그것도 답 1건당 비용 3분의 1로!!\n*Sonnet + Fable 5 structure virtually tied Opus in a blind test — at 1/3 the cost per response. ([bench/](bench/RESULTS.md))*\n\n## 왜 Sonnet+VFF인가\n\n### 비용\n\n| 모델 | 입력 ($/1M) | 출력 ($/1M) |\n|---|---|---|\n| Claude Fable 5 | $10.00 | $50.00 |\n| Claude Opus 4.8 | $5.00 | $25.00 |\n| **Claude Sonnet 4",
     "topics": [
       "agentic",
       "anthropic",
@@ -5736,7 +5842,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Lambda MCP Server Demo (Streamable HTTP)\n\n> **⚠️ IMPORTANT: The Lambda MCP Server module code IS maintained, just not in this repository. It is now hosted and maintained at [awslabs/mcp-lambda-handler](https://github.com/awslabs/mcp/tree/main/src/mcp-lambda-handler).  This repository remains as sample code of how to use the module.**\n>\n> **To use the Lambda MCP Server, install the package directly from PyPI:**\n>\n> ```bash\n> pip install awslabs.mcp_lambda_handler\n> # or, if using uv:\n> uv add a",
     "topics": [
       "amazon-web-services",
       "aws",
@@ -5755,11 +5861,16 @@
     "url": "https://github.com/raysonmeng/agent-bridge",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "cli-tool",
+      "mcp-server",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
-      "codex-cli"
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
     ],
     "summary": "A local bridge for bidirectional collaboration between Claude Code and Codex. 连接 Claude Code 与 Codex 的本地实时协作桥接工具。",
     "i18n": {
@@ -5800,7 +5911,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# AgentBridge\n\n[![CI](https://github.com/raysonmeng/agent-bridge/actions/workflows/ci.yml/badge.svg)](https://github.com/raysonmeng/agent-bridge/actions/workflows/ci.yml)\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n\n[中文文档](README.zh-CN.md)\n\n**🌐 Website: [raysonmeng.github.io/agent-bridge](https://raysonmeng.github.io/agent-bridge/)**, with an animated replay of a real session.\n\n> Discussed on [LINUX DO](https://linux.do) — the developer community. / 在 [LINUX DO](http",
     "topics": [
       "agent-collaboration",
       "claude-code",
@@ -5861,7 +5972,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# skill-set\n\nA collection of Claude Code skills.\n\n## Skills\n\n- [`create-onboarding-video`](skills/create-onboarding-video/SKILL.md) — Build app onboarding videos with Remotion.\n- [`react-native-keyboard-handling`](skills/react-native-keyboard-handling/SKILL.md) — Frame-perfect, native-feeling keyboard handling in React Native / Expo (fixes Android 15 edge-to-edge, janky animations, covered inputs).\n\n## Usage\n\nCopy a skill directory into a project's `.claude/skills/` folder (or your global `~/.cl",
     "topics": []
   },
   {
@@ -5914,7 +6025,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "archived",
-    "readme_preview": "",
+    "readme_preview": "# Claude Gemini MCP Integration\n\n![Version](https://img.shields.io/badge/version-1.3.1-blue.svg)\n![Security](https://img.shields.io/badge/security-hardened-green.svg)\n![License](https://img.shields.io/badge/license-MIT-blue.svg)\n![Python](https://img.shields.io/badge/python-3.10+-brightgreen.svg)\n![Status](https://img.shields.io/badge/status-production%20ready-green.svg)\n![Slash Commands](https://img.shields.io/badge/slash%20commands-20+-orange.svg)\n\n> **🚀 What's Coming Next:**\n> I'm building an",
     "topics": [
       "claude-code",
       "claude-hooks",
@@ -5929,7 +6040,9 @@
     "source_type": "github",
     "resource_type": [
       "skills",
-      "agent-framework"
+      "agent-framework",
+      "cli-tool",
+      "rules"
     ],
     "target_tools": [
       "claude-code",
@@ -5974,7 +6087,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Spellbook\n  104 Cross-Runtime Skills | 7 Claude Code Agents | One Command Install\n\n  A cross-runtime skill library for Claude Code, Codex, and multi-agent workflows.\n\n  \n    \n    \n    \n    \n  \n\n  \n    Quick Start •\n    Runtime Targets •\n    Pick a Workflow •\n    Skills •\n    Agents •\n    Changelog •\n    Release Status •\n    Contributing •\n    中文\n  \n\n---\n\n> **Rename notice:** Spellbook was formerly **Claude Arsenal**. Claude Code remains a first-class target; the new name reflects the broader roa",
     "topics": [
       "ai-agents",
       "ai-coding-assistant",
@@ -6004,10 +6117,11 @@
     "url": "https://github.com/LangcliTeam/langcli",
     "source_type": "github",
     "resource_type": [
+      "agent-framework",
       "cli-tool"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code"
     ],
     "summary": "Building agentic coding assistant in public",
     "i18n": {
@@ -6048,7 +6162,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Langcli\n\n[English](./README.md) | [简体中文](./docs/README_zh.md)\n\nLangcli is an interactive AI coding assistant in the terminal, built upon the best practices of Claude Code. It features:\n- Langcli is 100% compatible with Claude Code. Therefore, the way to use Langcli is exactly the same as that of standard Claude Code and your existing projects' .claude or skills are all applicable to Langcli. \n- Even more exciting is that Langcli is deeply integrated with [LangRouter](https://langrouter.ai/),\na",
     "topics": [
       "claude",
       "claude-code",
@@ -6063,11 +6177,13 @@
     "url": "https://github.com/PrismorSec/prismor",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "mcp-server"
     ],
     "target_tools": [
       "claude-code",
-      "codex-cli"
+      "codex-cli",
+      "cursor"
     ],
     "summary": "Runtime Firewall for AI agents which catches the rogue tool call before it runs. Dangerous commands, secret leaks, prompt injection. For Claude Code, Codex and framework SDKs",
     "i18n": {
@@ -6108,7 +6224,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Prismor\n\nformerly Immunity Agent\n\nRuntime security hooks for Claude Code, Cursor, and other AI coding agents.Blocks dangerous commands, prevents secret leaks, and stops prompt injection in real time.\n\n  \n  \n  \n  \n  \n  \n\n  Website &bull;\n  Onboard with Skill &bull;\n  CLI Reference &bull;\n  Supply Chain &bull;\n  Sweep & Cloak\n\n  \n\n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  \n\nPlus generic su",
     "topics": [
       "cybersecurity",
       "security",
@@ -6141,7 +6257,7 @@
       "mcp-server"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "cursor"
     ],
     "summary": "Penpot MCP server",
     "i18n": {
@@ -6182,7 +6298,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Penpot MCP Server 🎨🤖\n\n  \n\n  AI-Powered Design Workflow Automation\n  Connect Claude AI and other LLMs to Penpot designs via Model Context Protocol\n\n  \n    \n  \n  \n    \n  \n  \n    \n  \n  \n    \n  \n\n---\n\n## 🚀 What is Penpot MCP?\n\n**Penpot MCP** is a revolutionary Model Context Protocol (MCP) server that bridges the gap between AI language models and [Penpot](https://penpot.app/), the open-source design and prototyping platform. This integration enables AI assistants like Claude (in both Claude Deskto",
     "topics": [
       "ai",
       "api-integration",
@@ -6205,11 +6321,14 @@
     "url": "https://github.com/ory/lumen",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "cli-tool",
+      "mcp-server",
+      "extension"
     ],
     "target_tools": [
       "claude-code",
       "codex-cli",
+      "antigravity-cli",
       "opencode"
     ],
     "summary": "Save 30% token costs when using Claude Code, Codex, OpenCode for free - with open source, local semantic search. Works for small and large codebases and monorepos! Enterprise-ready and fully compliant via Ollama and SQLite-vec.",
@@ -6251,7 +6370,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "![Ory Lumen: Semantic code search for AI agents](.github/lumen-banner.png)\n\n[![CI](https://github.com/ory/lumen/actions/workflows/ci.yml/badge.svg)](https://github.com/ory/lumen/actions/workflows/ci.yml)\n[![Go Report Card](https://goreportcard.com/badge/github.com/ory/lumen)](https://goreportcard.com/report/github.com/ory/lumen)\n[![Go Reference](https://pkg.go.dev/badge/github.com/ory/lumen.svg)](https://pkg.go.dev/github.com/ory/lumen)\n[![Coverage Status](https://coveralls.io/repos/github/ory/l",
     "topics": [
       "agentic-coding",
       "claude",

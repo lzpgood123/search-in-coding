@@ -5,8 +5,7 @@
   source_type: github
   resource_type:
   - tutorial
-  target_tools:
-  - general-ai-coding
+  target_tools: []
   summary: AI PR review Agent
   i18n:
     zh:
@@ -75,8 +74,7 @@
   source_type: github
   resource_type:
   - agent-framework
-  target_tools:
-  - general-ai-coding
+  target_tools: []
   summary: An autonomous code review agent system that uses AI to analyze GitHub pull
     requests
   i18n:
@@ -126,8 +124,7 @@
   source_type: github
   resource_type:
   - tutorial
-  target_tools:
-  - general-ai-coding
+  target_tools: []
   summary: A service that monitors multiple YouTube channels for new videos and sends
     detailed summaries to a Telegram chat.
   i18n:
@@ -195,8 +192,7 @@
   source_type: github
   resource_type:
   - tutorial
-  target_tools:
-  - general-ai-coding
+  target_tools: []
   summary: FastAPI backend for AI PR review agent
   i18n:
     zh:
@@ -293,7 +289,7 @@
   repo: Sumi451/ai_pr_review_agent
   source_type: github
   resource_type:
-  - tutorial
+  - agent-framework
   target_tools:
   - general-ai-coding
   summary: A ai agent that analyses github pull requests.
@@ -337,8 +333,7 @@
   source_type: github
   resource_type:
   - tutorial
-  target_tools:
-  - general-ai-coding
+  target_tools: []
   summary: chittesh24/AI_PR_Review_Agent
   i18n:
     zh:
@@ -470,6 +465,7 @@
   license: mit
   resource_type:
   - skills
+  - cli-tool
   quantifiable_score: 12
   quality_score: 0
   total_score: 12
@@ -536,7 +532,14 @@
   - mcp
   - mcp-server
   - model-context-protocol
-  readme_preview: ''
+  readme_preview: "# ⚡ go-mcp\n\n  A type‑safe, intuitive Go SDK for MCP server development\n\
+    \n  \U0001F914 What is go‑mcp? •\n  ✨ Features •\n  \U0001F3C1 Quick Start •\n\
+    \  \U0001F50D Examples •\n  ✅ Supported Features •\n  \U0001F91D Contributing\n\
+    \n---\n\n## \U0001F914 What is go‑mcp?\n\n**go‑mcp** is a Go SDK for building\
+    \ MCP (Model Context Protocol) servers with ease and confidence. It provides a\
+    \ type‑safe, intuitive interface that makes server development a breeze.\n\n---\n\
+    \n## ✨ Features\n\n- \U0001F512 **Type‑Safe** – Code generation ensures your tools\
+    \ and prompt parameters are st"
   tags: []
   review_state: auto-rejected
   quantifiable_score: 25
@@ -550,6 +553,7 @@
   tracking_priority: reject
   last_analyzed: null
   benchmark_ref: null
+  readme_checked: true
   rejection_reason: 'Auto-rejected: low score (25), archived, or weak relevance.'
 - id: github-wshobson-mcp-trader
   name: wshobson/mcp-trader
@@ -559,7 +563,7 @@
   resource_type:
   - mcp-server
   target_tools:
-  - general-ai-coding
+  - claude-code
   summary: A Model Context Protocol (MCP) server for stock traders
   i18n:
     zh:
@@ -594,7 +598,32 @@
   - equities
   - finance
   - claude
-  readme_preview: ''
+  readme_preview: '# 📦 Project Archived
+
+
+    **This project has been superseded by a completely new MCP server.**
+
+
+    ## New MCP Server
+
+
+    A new, completely rewritten MCP server is now available at:
+
+
+    **🔗 https://github.com/wshobson/maverick-mcp**
+
+
+    ## What This Means
+
+
+    - This repository (`mcp-trader`) is now archived and will no longer receive updates
+
+    - The new repository contains a completely new MCP server with enhanced capabilities
+
+    - This is not a migration of the same codebase, but rather a fresh implementation
+
+
+    ## Getti'
   tags: []
   review_state: auto-rejected
   quantifiable_score: 26
@@ -608,5 +637,6 @@
   tracking_priority: reject
   last_analyzed: null
   benchmark_ref: null
+  readme_checked: true
   rejection_reason: 'Auto-rejected: low score (26), archived, or weak relevance.'
 

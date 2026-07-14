@@ -245,8 +245,9 @@ def test_extension_detected():
 def test_tutorial_still_detected():
     """Tutorial keywords should still be detected when no concrete type matches."""
     normalize = load_module('normalize')
-    types = normalize.resource_types_for('Best practices for AI coding agents tutorial')
+    types = normalize.resource_types_for('Best practices and case study for newcomers')
     assert 'tutorial' in types, f"tutorial types={types}"
+    assert types == ['tutorial'] or 'tutorial' in types
 
 
 def test_mcp_server_detected():
@@ -283,3 +284,253 @@ def test_default_tutorial_when_nothing_matches():
     normalize = load_module('normalize')
     types = normalize.resource_types_for('some random project about coding')
     assert types == ['tutorial'], f"default types={types}"
+
+
+# ============================================================
+# Batch 3: topics mapping, keyword expansion, empty tools, safe merge
+# ============================================================
+
+def test_topics_map_to_mcp_server():
+    normalize = load_module('normalize')
+    types = normalize.resource_types_for('some random repo', topics=['mcp-server', 'python'])
+    assert 'mcp-server' in types
+    assert types != ['tutorial']
+
+
+def test_topics_map_to_skills():
+    normalize = load_module('normalize')
+    types = normalize.resource_types_for('utility helpers', topics=['claude-skills', 'agent-skills'])
+    assert 'skills' in types
+
+
+def test_topics_map_to_rules():
+    normalize = load_module('normalize')
+    types = normalize.resource_types_for('config pack', topics=['cursor-rules', 'cursorrules'])
+    assert 'rules' in types
+
+
+def test_topics_map_to_agent_framework():
+    normalize = load_module('normalize')
+    types = normalize.resource_types_for('orchestration stuff', topics=['multi-agent', 'agent-framework'])
+    assert 'agent-framework' in types
+
+
+def test_topics_map_to_cli_tool():
+    normalize = load_module('normalize')
+    types = normalize.resource_types_for('dev utilities', topics=['cli-tool', 'command-line'])
+    assert 'cli-tool' in types
+
+
+def test_topics_map_to_tutorial():
+    normalize = load_module('normalize')
+    types = normalize.resource_types_for('learning materials', topics=['awesome-list', 'guide'])
+    assert 'tutorial' in types
+
+
+def test_ai_topics_do_not_fallback_to_cli_tool():
+    """AI-related topics alone must NOT force cli-tool; still tutorial if no type match."""
+    normalize = load_module('normalize')
+    types = normalize.resource_types_for(
+        'random helper library about widgets',
+        topics=['ai', 'llm', 'claude', 'openai', 'agents'],
+    )
+    assert 'cli-tool' not in types, f"AI topics must not become cli-tool: {types}"
+    assert types == ['tutorial'], f"expected tutorial fallback, got {types}"
+
+
+def test_keyword_expansion_mcp_gateway():
+    normalize = load_module('normalize')
+    types = normalize.resource_types_for('An MCP gateway for tool routing')
+    assert 'mcp-server' in types
+
+
+def test_keyword_expansion_agent_skills_library():
+    normalize = load_module('normalize')
+    types = normalize.resource_types_for('A skill library and prompt library for coding agents')
+    assert 'skills' in types
+
+
+def test_keyword_expansion_coding_agent_framework():
+    normalize = load_module('normalize')
+    types = normalize.resource_types_for('coding agent runtime and agent platform SDK')
+    assert 'agent-framework' in types
+
+
+def test_keyword_expansion_devtool_assistant():
+    normalize = load_module('normalize')
+    types = normalize.resource_types_for('AI code assistant and developer tool for completion')
+    assert 'cli-tool' in types
+
+
+def test_concrete_type_does_not_also_force_tutorial_tag():
+    """When a concrete type matches, do not also append tutorial."""
+    normalize = load_module('normalize')
+    types = normalize.resource_types_for('MCP server guide and tutorial for beginners')
+    assert 'mcp-server' in types
+    assert 'tutorial' not in types
+
+
+def test_target_tools_from_topics():
+    normalize = load_module('normalize')
+    tools = [
+        {'id': 'claude-code', 'name': 'Claude Code', 'aliases': ['claude-code']},
+        {'id': 'cursor', 'name': 'Cursor', 'aliases': ['cursor']},
+    ]
+    ids = normalize.target_tools_for('generic description', tools, topics=['claude-code', 'cursor'])
+    assert 'claude-code' in ids
+    assert 'cursor' in ids
+    assert 'general-ai-coding' not in ids
+
+
+def test_target_tools_general_when_ai_topics_no_match():
+    normalize = load_module('normalize')
+    tools = [{'id': 'claude-code', 'name': 'Claude Code', 'aliases': ['claude-code']}]
+    ids = normalize.target_tools_for('unrelated widgets', tools, topics=['ai-agents', 'llm'])
+    assert ids == ['general-ai-coding']
+
+
+def test_target_tools_empty_when_no_match_no_ai_topics():
+    normalize = load_module('normalize')
+    tools = [{'id': 'claude-code', 'name': 'Claude Code', 'aliases': ['claude-code']}]
+    ids = normalize.target_tools_for('postgresql backup utility', tools, topics=['database', 'sql'])
+    assert ids == []
+
+
+def test_target_tools_empty_when_no_topics_no_match():
+    normalize = load_module('normalize')
+    tools = [{'id': 'claude-code', 'name': 'Claude Code', 'aliases': ['claude-code']}]
+    ids = normalize.target_tools_for('postgresql backup utility', tools, topics=[])
+    assert ids == []
+
+
+def test_github_record_passes_topics_into_classification():
+    normalize = load_module('normalize')
+    item = {
+        'nameWithOwner': 'test/mcp-thing',
+        'url': 'https://github.com/test/mcp-thing',
+        'description': 'a helpful package',
+        'stargazerCount': 10,
+        'forkCount': 1,
+        'repositoryTopics': [{'name': 'mcp-server'}, {'name': 'model-context-protocol'}],
+    }
+    rec = normalize.github_record(item, [])
+    assert 'mcp-server' in rec['resource_type']
+
+
+def test_safe_merge_preserves_llm_fields():
+    normalize = load_module('normalize')
+    existing = {
+        'id': 'github-test-repo',
+        'url': 'https://github.com/test/repo',
+        'name': 'test/repo',
+        'source_type': 'github',
+        'resource_type': ['tutorial'],
+        'target_tools': ['general-ai-coding'],
+        'summary': 'old summary with translation',
+        'i18n': {'zh': {'name': 'test', 'summary': '中文摘要'}, 'en': {'name': 'test', 'summary': 'old'}},
+        'quality_score': 28,
+        'quality_detail': {'relevance': 0.9},
+        'tracking_priority': 'track',
+        'last_analyzed': '2026-07-10',
+        'benchmark_ref': 'official-hermes-agent',
+        'readme_preview': 'Existing readme preview content here',
+        'topics': ['ai'],
+        'stars': 100,
+        'quantifiable_score': 40,
+        'total_score': 68,
+        'score_detail': {'stars': 20},
+        'review_state': 'auto-curated',
+        'first_seen': '2026-01-01',
+    }
+    incoming = {
+        'id': 'github-test-repo',
+        'url': 'https://github.com/test/repo',
+        'name': 'test/repo',
+        'source_type': 'github',
+        'resource_type': ['cli-tool'],
+        'target_tools': ['claude-code'],
+        'summary': 'new raw summary',
+        'i18n': {'zh': {'name': 'test', 'summary': 'new raw summary'}, 'en': {'name': 'test', 'summary': 'new raw summary'}},
+        'quality_score': 0,
+        'quality_detail': {},
+        'tracking_priority': 'pending',
+        'last_analyzed': None,
+        'benchmark_ref': None,
+        'readme_preview': '',
+        'topics': ['cli'],
+        'stars': 150,
+        'quantifiable_score': 0,
+        'total_score': 0,
+        'score_detail': {},
+        'review_state': 'auto-indexed',
+        'first_seen': None,
+    }
+    merged = normalize.safe_merge_record(existing, incoming, today='2026-07-15')
+    assert merged['quality_score'] == 28
+    assert merged['quality_detail'] == {'relevance': 0.9}
+    assert merged['tracking_priority'] == 'track'
+    assert merged['last_analyzed'] == '2026-07-10'
+    assert merged['benchmark_ref'] == 'official-hermes-agent'
+    assert merged['readme_preview'] == 'Existing readme preview content here'
+    assert merged['stars'] == 150
+    assert merged['review_state'] == 'auto-curated'
+    assert merged['first_seen'] == '2026-01-01'
+    assert '中文摘要' in (merged.get('i18n') or {}).get('zh', {}).get('summary', '')
+
+
+def test_safe_merge_official_seed_protection():
+    normalize = load_module('normalize')
+    existing = {
+        'id': 'official-claude-code',
+        'url': 'https://github.com/anthropics/claude-code',
+        'name': 'Claude Code',
+        'source_type': 'official-seed',
+        'resource_type': ['cli-tool', 'agent-framework'],
+        'target_tools': ['claude-code'],
+        'tracking_priority': 'track',
+        'quality_score': 37,
+        'last_analyzed': '2026-07-10',
+        'benchmark_ref': 'official-hermes-agent',
+        'stars': 10,
+        'summary': 'Official Claude Code',
+        'i18n': {'zh': {'name': 'Claude Code', 'summary': '官方'}, 'en': {'name': 'Claude Code', 'summary': 'Official'}},
+    }
+    incoming = {
+        'id': 'github-anthropics-claude-code',
+        'url': 'https://github.com/anthropics/claude-code',
+        'name': 'anthropics/claude-code',
+        'source_type': 'github',
+        'resource_type': ['tutorial'],
+        'target_tools': ['general-ai-coding'],
+        'tracking_priority': 'pending',
+        'quality_score': 0,
+        'last_analyzed': None,
+        'benchmark_ref': None,
+        'stars': 999,
+        'summary': 'raw',
+        'i18n': {},
+        'topics': ['cli'],
+    }
+    merged = normalize.safe_merge_record(existing, incoming, today='2026-07-15')
+    assert merged['source_type'] == 'official-seed'
+    assert merged['tracking_priority'] == 'track'
+    assert merged['name'] == 'Claude Code'
+    assert merged['quality_score'] == 37
+    assert merged['last_analyzed'] == '2026-07-10'
+    assert merged['stars'] == 999
+
+
+def test_reclassify_project_does_not_read_readme_preview():
+    """normalize classification must ignore readme_preview content."""
+    normalize = load_module('normalize')
+    tools = [{'id': 'claude-code', 'name': 'Claude Code', 'aliases': ['claude-code']}]
+    project = {
+        'name': 'acme/widgets',
+        'summary': 'a simple widget pack',
+        'topics': [],
+        'readme_preview': 'This is an MCP server with model context protocol tools and Claude Code skills',
+        'source_type': 'github',
+    }
+    out = normalize.reclassify_project(project, tools)
+    assert out['resource_type'] == ['tutorial']
+    assert 'mcp-server' not in out['resource_type']

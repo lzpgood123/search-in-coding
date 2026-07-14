@@ -6,7 +6,7 @@
     "source_type": "github",
     "resource_type": [
       "agent-framework",
-      "cli-tool"
+      "mcp-server"
     ],
     "target_tools": [
       "goose"
@@ -43,12 +43,11 @@
     "url": "https://github.com/JuliusBrussee/caveman",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "rules"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "cursor"
+      "claude-code"
     ],
     "summary": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
     "i18n": {
@@ -82,11 +81,13 @@
     "url": "https://github.com/cline/cline",
     "source_type": "github",
     "resource_type": [
+      "extension",
       "agent-framework",
-      "cli-tool",
-      "extension"
+      "cli-tool"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
     "i18n": {
       "zh": {
@@ -119,7 +120,11 @@
     "url": "https://github.com/alirezarezvani/claude-skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "extension",
+      "agent-framework",
+      "cli-tool",
+      "rules"
     ],
     "target_tools": [
       "claude-code",
@@ -161,7 +166,13 @@
     "resource_type": [
       "cli-tool"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
+    ],
     "summary": "aider is AI pair programming in your terminal",
     "i18n": {
       "zh": {
@@ -194,10 +205,17 @@
     "url": "https://github.com/continuedev/continue",
     "source_type": "github",
     "resource_type": [
-      "extension",
+      "agent-framework",
       "cli-tool"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder",
+      "trae",
+      "hermes-agent"
+    ],
     "summary": "open-source coding agent",
     "i18n": {
       "zh": {
@@ -230,7 +248,6 @@
     "url": "https://github.com/virgiliojr94/book-to-skill",
     "source_type": "github",
     "resource_type": [
-      "cli-tool",
       "skills"
     ],
     "target_tools": [
@@ -414,7 +431,6 @@
     "url": "https://github.com/glitternetwork/pinme",
     "source_type": "github",
     "resource_type": [
-      "cli-tool",
       "skills"
     ],
     "target_tools": [
@@ -452,8 +468,8 @@
     "url": "https://github.com/nowork-studio/NotFair",
     "source_type": "github",
     "resource_type": [
-      "mcp-server",
-      "skills"
+      "skills",
+      "mcp-server"
     ],
     "target_tools": [
       "claude-code"
@@ -493,8 +509,7 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli"
+      "claude-code"
     ],
     "summary": "用 Claude Code Skills 做的视频剪辑 Agent",
     "i18n": {
@@ -565,7 +580,8 @@
     "url": "https://github.com/lackeyjb/playwright-skill",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code"
@@ -604,7 +620,7 @@
     "resource_type": [
       "mcp-server",
       "skills",
-      "cli-tool"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -715,8 +731,7 @@
     "url": "https://github.com/op7418/Humanizer-zh",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "rules"
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -754,7 +769,9 @@
       "extension",
       "cli-tool"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "antigravity-cli"
+    ],
     "summary": "Conductor is a Gemini CLI extension that allows you to specify, plan, and implement software features.",
     "i18n": {
       "zh": {
@@ -820,8 +837,7 @@
     "url": "https://github.com/NeekChaw/RIPER-5",
     "source_type": "github",
     "resource_type": [
-      "rules",
-      "tutorial"
+      "rules"
     ],
     "target_tools": [
       "cursor"
@@ -856,11 +872,13 @@
     "url": "https://github.com/taishi-i/awesome-ChatGPT-repositories",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "claude-code",
-      "codex-cli"
+      "codex-cli",
+      "trae",
+      "hermes-agent"
     ],
     "summary": "A curated list of open source GitHub repositories related to ChatGPT, the OpenAI API, and Codex. Searchable via Claude Code skills.",
     "i18n": {
@@ -894,7 +912,7 @@
     "url": "https://github.com/cursor/cursor",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "tutorial"
     ],
     "target_tools": [
       "cursor"
@@ -929,7 +947,7 @@
     "url": "https://github.com/openclaw/openclaw",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "cli-tool"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -966,10 +984,11 @@
     "url": "https://github.com/obra/superpowers",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "hermes-agent"
     ],
     "summary": "An agentic skills framework & software development methodology that works.",
     "i18n": {
@@ -1003,7 +1022,10 @@
     "url": "https://github.com/affaan-m/ECC",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills",
+      "agent-framework",
+      "cli-tool",
+      "mcp-server"
     ],
     "target_tools": [
       "claude-code",
@@ -1043,7 +1065,7 @@
     "url": "https://github.com/ultraworkers/claw-code",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "codex-cli"
@@ -1117,7 +1139,8 @@
     "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "extension",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -1151,53 +1174,12 @@
     "review_state": "auto-curated"
   },
   {
-    "id": "github-farion1231-cc-switch",
-    "name": "farion1231/cc-switch",
-    "url": "https://github.com/farion1231/cc-switch",
-    "source_type": "github",
-    "resource_type": [
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "hermes-agent"
-    ],
-    "summary": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI & Hermes Agent. Only official website: ccswitch.io",
-    "i18n": {
-      "zh": {
-        "name": "farion1231/cc-switch",
-        "summary": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI & Hermes Agent. Only official website: ccswitch.io"
-      },
-      "en": {
-        "name": "farion1231/cc-switch",
-        "summary": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI & Hermes Agent. Only official website: ccswitch.io"
-      }
-    },
-    "stars": 116990,
-    "forks": 7829,
-    "total_score": 49,
-    "quantifiable_score": 49,
-    "quality_score": 0,
-    "tracking_priority": "pending",
-    "last_updated": "2026-07-14T08:05:22Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Rust"
-    ],
-    "review_state": "auto-curated"
-  },
-  {
     "id": "github-gsd-build-get-shit-done",
     "name": "gsd-build/get-shit-done",
     "url": "https://github.com/gsd-build/get-shit-done",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -1234,11 +1216,9 @@
     "url": "https://github.com/msitarzewski/agency-agents",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
     "i18n": {
       "zh": {
@@ -1308,7 +1288,7 @@
     "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -1340,15 +1320,64 @@
     "review_state": "auto-curated"
   },
   {
+    "id": "github-farion1231-cc-switch",
+    "name": "farion1231/cc-switch",
+    "url": "https://github.com/farion1231/cc-switch",
+    "source_type": "github",
+    "resource_type": [
+      "cli-tool",
+      "mcp-server",
+      "skills"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "hermes-agent"
+    ],
+    "summary": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI & Hermes Agent. Only official website: ccswitch.io",
+    "i18n": {
+      "zh": {
+        "name": "farion1231/cc-switch",
+        "summary": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI & Hermes Agent. Only official website: ccswitch.io"
+      },
+      "en": {
+        "name": "farion1231/cc-switch",
+        "summary": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI & Hermes Agent. Only official website: ccswitch.io"
+      }
+    },
+    "stars": 116990,
+    "forks": 7829,
+    "total_score": 49,
+    "quantifiable_score": 49,
+    "quality_score": 0,
+    "tracking_priority": "pending",
+    "last_updated": "2026-07-14T08:05:22Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Rust"
+    ],
+    "review_state": "auto-curated"
+  },
+  {
     "id": "github-nextlevelbuilder-ui-ux-pro-max-skill",
     "name": "nextlevelbuilder/ui-ux-pro-max-skill",
     "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "cli-tool"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "qoder",
+      "trae",
+      "cursor"
     ],
     "summary": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
     "i18n": {
@@ -1382,7 +1411,7 @@
     "url": "https://github.com/browser-use/browser-use",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -1421,9 +1450,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "deepseek-ai/DeepSeek-V3",
     "i18n": {
       "zh": {
@@ -1456,12 +1483,12 @@
     "url": "https://github.com/thedotmack/claude-mem",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "skills"
     ],
     "target_tools": [
       "claude-code",
-      "codex-cli",
-      "opencode"
+      "codex-cli"
     ],
     "summary": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Herme",
     "i18n": {

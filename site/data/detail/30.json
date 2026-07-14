@@ -49,7 +49,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# /watch\n\n**Give Claude the ability to watch any video.**\n\nClaude Code (recommended — auto-updates via marketplace):\n```\n/plugin marketplace add bradautomates/claude-video\n/plugin install watch@claude-video\n```\n\nCodex, Cursor, Copilot, Gemini CLI, or any of 50+ [Agent Skills](https://agentskills.io) hosts:\n```bash\nnpx skills add bradautomates/claude-video -g\n```\n(`-g` installs globally for your user, available across all projects. Drop it to scope per-project.)\n\nMore install options (claude.ai w",
     "topics": []
   },
   {
@@ -58,10 +58,12 @@
     "url": "https://github.com/idosal/git-mcp",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "cursor"
     ],
     "summary": "Put an end to code hallucinations! GitMCP is a free, open-source, remote MCP server for any GitHub project",
     "i18n": {
@@ -102,7 +104,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# GitMCP\n\n  \n\n  What is GitMCP •\n  Features •\n  Getting Started •\n  How It Works •\n  Badge •\n  Examples •\n  FAQ •\n  Privacy •\n  Contributing •\n  License\n\n[![GitMCP](https://img.shields.io/endpoint?url=https://gitmcp.io/badge/idosal/git-mcp)](https://gitmcp.io/idosal/git-mcp)\n[![Twitter Follow](https://img.shields.io/twitter/follow/idosal1?style=social)](https://twitter.com/idosal1)\n[![Twitter Follow](https://img.shields.io/twitter/follow/liadyosef?style=social)](https://twitter.com/liadyosef)\n\n ",
     "topics": [
       "agentic-ai",
       "agents",
@@ -121,7 +123,7 @@
     "url": "https://github.com/eze-is/web-access",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -165,7 +167,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "🌐 Language\n    \n      \n        English\n        | 简体中文\n        | 繁體中文\n        | 日本語\n        | 한국어\n        | Français\n        | Deutsch\n        | Español\n        | Português\n        | Русский\n      \n    \n  \n\n  给 AI Agent 装上完整联网能力的 Skill。\n  🌐 官网 · 📖 设计详解 · ⚡ 快速安装\n\nAI Agent 原本的联网能力（WebSearch、WebFetch）缺少调度策略和浏览器自动化能力。这个 Agent Skill 补上的是：**联网策略 + CDP 浏览器操作 + 站点经验积累**。兼容所有支持 SKILL.md 的 Agent（Claude Code、Cursor、Gemini CLI、Codex CLI 等）。\n\n> 推荐必读：[Web Access：一个 Skill，拉满 Agent 联网和浏览器能力](https://mp.weixin.qq",
     "topics": []
   },
   {
@@ -174,10 +176,12 @@
     "url": "https://github.com/AgentWrapper/agent-orchestrator",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "skills"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli"
     ],
     "summary": " Agentic orchestrator for parallel coding agents — plans tasks, spawns agents, and autonomously handles CI    fixes, merge conflicts, and code reviews.",
     "i18n": {
@@ -218,7 +222,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Agent Orchestrator\n\n**The orchestration layer for parallel AI coding agents**\n\n[![Stars](https://img.shields.io/github/stars/AgentWrapper/agent-orchestrator)](https://github.com/AgentWrapper/agent-orchestrator/stargazers)\n[![Contributors](https://img.shields.io/github/contributors/AgentWrapper/agent-orchestrator)](https://github.com/AgentWrapper/agent-orchestrator/graphs/contributors)\n[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?logo=twitter&logoColor=white)](https://x.com/aoagents)",
     "topics": [
       "claude-code",
       "codex-cli",
@@ -240,7 +244,7 @@
     "url": "https://github.com/zhaoxuya520/reverse-skill",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "claude-code",
@@ -285,7 +289,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "reverse-skill\nReverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack\n\n破暗而行，逆水为舟\n\nAI-powered routing + On-demand toolchain bootstrapping + Self-evolving knowledge base\n逆向/渗透/安全技能路由包 — AI 自动路由 · 按需自举工具链 · 自动进化经验库\n\n  \n  \n  \n  \n\n  \n\n  关于 ·\n  快速开始 ·\n  使用说明 ·\n  路由矩阵 ·\n  AI 引导 ·\n  贡献\n\n  🌐 English\n\n## 关于项目\n\n> **如果你是 AI Agent，直接跳转到 [README_AI.md](README_AI.md)，严格按照内容要求执行。**\n\n当 AI Agent（Claude Code、Codex CLI、Cursor 等）遇到 APK、二进制、前端 JS 加密、CTF 或渗透测试任务时，这套系统能让它先路由到正确的方法论，再调",
     "topics": []
   },
   {
@@ -298,7 +302,8 @@
       "cli-tool"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "trae",
+      "hermes-agent"
     ],
     "summary": "This is MCP server for Claude that gives it terminal control, file system search and diff file editing capabilities",
     "i18n": {
@@ -339,7 +344,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Desktop Commander MCP\n### Search, update, manage files and run terminal commands with AI\n\n[![npm downloads](https://img.shields.io/npm/dw/@wonderwhy-er/desktop-commander)](https://www.npmjs.com/package/@wonderwhy-er/desktop-commander)\n[![AgentAudit Verified](https://agentaudit.dev/api/badge/desktop-commander)](https://agentaudit.dev/skills/desktop-commander)\n[![Trust Score](https://archestra.ai/mcp-catalog/api/badge/quality/wonderwhy-er/DesktopCommanderMCP)](https://archestra.ai/mcp-catalog/wo",
     "topics": [
       "agent",
       "ai",
@@ -402,7 +407,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "![Image](https://github.com/user-attachments/assets/4f9dfa0e-e600-4d4e-9e73-c919184f7573)\n\n[![License](https://img.shields.io/github/license/bytedance/flowgram.ai)](https://github.com/bytedance/flowgram.ai/blob/main/LICENSE) [![@flowgram.ai/editor](https://img.shields.io/npm/dm/%40flowgram.ai%2Fcore)](https://www.npmjs.com/package/@flowgram.ai/editor) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/bytedance/flowgram.ai) [![juejin](https://img.shields.io/badge/juejin-FFFFF",
     "topics": [
       "flow",
       "flowchart",
@@ -430,10 +435,11 @@
     "url": "https://github.com/YouMind-OpenLab/awesome-gpt-image-2",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills",
+      "rules"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "codex-cli"
     ],
     "summary": "🚀 World's largest GPT Image 2 prompt library, updated daily — 2000+ curated prompts with preview images, 16 languages. OpenAI's next-gen image model with pixel-perfect text rendering, cross-image consistency, and commercial-grade illustrati",
     "i18n": {
@@ -474,7 +480,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "> 💡 🎬 Take it further with **Seedance 2** — pair GPT Image 2 stills with Seedance for jaw-dropping AI videos, 2000+ prompts to explore 👉 [awesome-seedance-2-prompts](https://github.com/YouMind-OpenLab/awesome-seedance-2-prompts)\n# 🚀 Awesome GPT Image 2 Prompts\n\n[![Awesome](https://awesome.re/badge.svg)](https://github.com/sindresorhus/awesome)\n[![GitHub stars](https://img.shields.io/github/stars/YouMind-OpenLab/awesome-gpt-image-2?style=social)](https://github.com/YouMind-OpenLab/awesome-gpt-ima",
     "topics": [
       "ai-image-generation",
       "ai-prompts",
@@ -544,7 +550,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Transformer Explainer: Interactive Learning of Text-Generative Models\n\nTransformer Explainer is an interactive visualization tool designed to help anyone learn how Transformer-based models like GPT work. It runs a live GPT-2 model right in your browser, allowing you to experiment with your own text and observe in real time how internal components and operations of the Transformer work together to predict the next tokens. Try Transformer Explainer at http://poloclub.github.io/transformer-explai",
     "topics": [
       "generative-ai",
       "gpt",
@@ -565,7 +571,9 @@
     "target_tools": [
       "claude-code",
       "codex-cli",
-      "opencode"
+      "antigravity-cli",
+      "opencode",
+      "qoder"
     ],
     "summary": "Manage multiple AI terminal agents like Claude Code, Codex, OpenCode, and Amp.",
     "i18n": {
@@ -606,7 +614,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Squad [![CI](https://github.com/smtg-ai/claude-squad/actions/workflows/build.yml/badge.svg)](https://github.com/smtg-ai/claude-squad/actions/workflows/build.yml) [![GitHub Release](https://img.shields.io/github/v/release/smtg-ai/claude-squad)](https://github.com/smtg-ai/claude-squad/releases/latest)\n\n[Claude Squad](https://smtg-ai.github.io/claude-squad/) is a terminal app that manages multiple [Claude Code](https://github.com/anthropics/claude-code), [Codex](https://github.com/openai/c",
     "topics": [
       "claude-code",
       "cli",
@@ -621,7 +629,8 @@
     "url": "https://github.com/earthtojake/text-to-cad",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -665,7 +674,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "██████╗ █████╗ ██████╗       ███████╗██╗  ██╗██╗██╗     ██╗     ███████╗\n██╔════╝██╔══██╗██╔══██╗      ██╔════╝██║ ██╔╝██║██║     ██║     ██╔════╝\n██║     ███████║██║  ██║      ███████╗█████╔╝ ██║██║     ██║     ███████╗\n██║     ██╔══██║██║  ██║      ╚════██║██╔═██╗ ██║██║     ██║     ╚════██║\n╚██████╗██║  ██║██████╔╝      ███████║██║  ██╗██║███████╗███████╗███████║\n ╚═════╝╚═╝  ╚═╝╚═════╝       ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝\n\nA skills library for CAD, robotics, and hardware design ",
     "topics": [
       "agents",
       "ai-agents",
@@ -692,10 +701,10 @@
     "url": "https://github.com/jamez-bondos/awesome-gpt4o-images",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "rules"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "codex-cli"
     ],
     "summary": "Awesome curated collection of images and prompts generated by GPT-4o and gpt-image-1. Explore AI generated visuals created with ChatGPT and Sora, showcasing OpenAI’s advanced image generation capabilities.",
     "i18n": {
@@ -736,7 +745,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Awesome GPT-4o Images ✨\n\n[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](LICENSE)\n[![English](https://img.shields.io/badge/English-Click-yellow)](README_en.md)\n[![简体中文](https://img.shields.io/badge/简体中文-点击查看-orange)](README.md)\n\n  \n\n🎉 欢迎来到 GPT‑4o 图片精选！\n\n这是一个精选的 GPT-4o 与 gpt-image-1 生成图像与提示词合集。借助 ChatGPT 和 Sora，全面展示 OpenAI 在 AI 图像生成方面的前沿能力，并不断探索创意表达的新可能。\n\n案例主要来源于 Twitter/X 🐦 和 Sora 社区 🎬，希望这些案例能为您带来启发 💡，为你的灵感加速 🚀。\n\n另外，来自OpenAI官方发布的 gpt‑image‑1 模型的数十个精彩案例，由本项",
     "topics": [
       "ai-art",
       "awesome-list",
@@ -761,7 +770,7 @@
     "url": "https://github.com/GetStream/Vision-Agents",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -805,7 +814,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "![VisionAgents](assets/repo_image.png)\n\n# Open Vision Agents by Stream\n\n[![Listed on TakoAPI](https://img.shields.io/badge/Listed%20on-TakoAPI-7c3aed)](https://takoapi.com/agents/getstream-vision-agents)\n\n[![build](https://github.com/GetStream/Vision-Agents/actions/workflows/ci.yml/badge.svg)](https://github.com/GetStream/Vision-Agents/actions)\n[![PyPI version](https://badge.fury.io/py/vision-agents.svg)](http://badge.fury.io/py/vision-agents)\n![PyPI - Python Version](https://img.shields.io/pypi",
     "topics": [
       "ai",
       "ai-agents",
@@ -826,7 +835,7 @@
     "url": "https://github.com/Narcooo/inkos",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -870,7 +879,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Story Creation AI Agent面向长短篇小说、剧本剧作、互动影游、IP 内容与多语言翻译的创作智能体系统\n\n  \n  \n  \n  \n  \n\n  \n    \n    \n  \n  \n  🎉🎉 InkOS 入选首批 KIMI 开源合作伙伴 🎉🎉\n\n  English | 中文 | 日本語\n\n  InkOS 网页版上线！\n  立刻体验\n\n---\n\nInkOS 是一个面向故事创作与多语言翻译的 AI Agent 系统：长篇连载、独立短篇、剧本剧作、同人番外、仿写续写、互动影游、开放世界和长文翻译，都可以从同一个工作台开始。支持 Studio、TUI、CLI 交互形式，把创意、设定、角色、记忆、审稿、修订、封面、互动状态和跨语言交付交给智能体统一管理。\n\n> 💡 **写小说，先给 Agent 接一层专业数据** —— 写小说不只缺模型，更缺素材。推荐搭配 [**火花数据API（huohuaapi）**](https://huohuaapi.com/)：按调用计费的小说 / 网文创作数据，让 Agent 动笔前先查小说正文、章节结构、人物设定、文风和创作方法等带来源素材，而不是只靠 ",
     "topics": [
       "ai-writing",
       "chinese-novel",
@@ -891,7 +900,7 @@
     "url": "https://github.com/SciPhi-AI/R2R",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -935,7 +944,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "The most advanced AI retrieval system.\n\nAgentic Retrieval-Augmented Generation (RAG) with a RESTful API.\n\n   \n      Docs ·\n      Report Bug ·\n      Feature Request ·\n      Discord\n   \n   \n   \n    \n    \n    \n    \n    \n  \n\n# About\nR2R is an advanced AI retrieval system supporting Retrieval-Augmented Generation (RAG) with production-ready features. Built around a RESTful API, R2R offers multimodal content ingestion, hybrid search, knowledge graphs, and comprehensive document management.\n\nR2R also i",
     "topics": [
       "artificial-intelligence",
       "large-language-models",
@@ -956,7 +965,8 @@
       "tutorial"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "trae",
+      "hermes-agent"
     ],
     "summary": "⚙️🦀 Build modular and scalable LLM Applications in Rust",
     "i18n": {
@@ -997,7 +1007,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "&nbsp;\n &nbsp;\n\n&nbsp;\n\n&nbsp;\n\n&nbsp;\n\n&nbsp;\n\n&nbsp;\n\n[📑 Docs](https://rig.rs/docs)\n&nbsp;&nbsp;•&nbsp;&nbsp;\n[🌐 Website](https://rig.rs)\n&nbsp;&nbsp;•&nbsp;&nbsp;\n[🤝 Contribute](https://github.com/0xPlaygrounds/rig/issues/new)\n&nbsp;&nbsp;•&nbsp;&nbsp;\n[✍🏽 Blogs](https://rig.rs/docs/guides)\n&nbsp;&nbsp;•&nbsp;&nbsp;\n\n✨ If you would like to help spread the word about Rig, please consider starring the repo!\n\n> [!WARNING]\n> Here be dragons! As we plan to ship a torrent of features in the followi",
     "topics": [
       "ai",
       "llm",
@@ -1017,10 +1027,14 @@
     "url": "https://github.com/Upsonic/Upsonic",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "mcp-server"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "trae",
+      "hermes-agent"
     ],
     "summary": "Build autonomous AI agents in Python.",
     "i18n": {
@@ -1061,7 +1075,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Upsonic\n\n**Build Autonomous AI Agents in Python**\n\n[![PyPI version](https://badge.fury.io/py/upsonic.svg)](https://badge.fury.io/py/upsonic)\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENCE)\n[![Python Version](https://img.shields.io/pypi/pyversions/upsonic.svg)](https://pypi.org/project/upsonic/)\n[![GitHub stars](https://img.shields.io/github/stars/Upsonic/Upsonic.svg?style=social&label=Star)](https://github.com/Upsonic/Upsonic)\n[![GitHub issues](https://img.shields.io/g",
     "topics": [
       "openai",
       "computer-use",
@@ -1086,7 +1100,7 @@
     "url": "https://github.com/jamwithai/production-agentic-rag-course",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -1130,7 +1144,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# The Mother of AI Project\n## Phase 1 RAG Systems: arXiv Paper Curator\n\n  A Learner-Focused Journey into Production RAG Systems\n  Learn to build modern AI systems from the ground up through hands-on implementation\n  Master the most in-demand AI engineering skills: RAG (Retrieval-Augmented Generation)\n\n  \n  \n  \n  \n  \n\n  \n    \n  \n\n## 📖 About This Course\n\nThis is a **learner-focused project** where you'll build a complete research assistant system that automatically fetches academic papers, underst",
     "topics": []
   },
   {
@@ -1141,9 +1155,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "A simple task management system for managing AI dev agents",
     "i18n": {
       "zh": {
@@ -1181,7 +1193,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# AI Dev Tasks\n\nWelcome to **AI Dev Tasks**! This repository provides a collection of markdown files designed to supercharge your feature development workflow with AI-powered IDEs and CLIs. These tools work with any AI coding assistant including [Amp](https://ampcode.com), Claude Code, Windsurf, and others. By leveraging these structured prompts, you can systematically approach building features, from ideation to implementation, with built-in checkpoints for verification.\n\nStop wrestling with mo",
     "topics": []
   },
   {
@@ -1190,7 +1202,8 @@
     "url": "https://github.com/helloianneo/ian-xiaohei-illustrations",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "codex-cli"
@@ -1232,7 +1245,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Ian Xiaohei Illustrations\n\n> 把中文文章里的判断、流程、状态和隐喻，变成一张张白底、手绘、怪诞但清爽的正文配图。\n>\n> 16:9 横版 | 小黑 IP | 纯白手绘 | 少量红橙蓝中文批注 | Codex Skill\n\n---\n\n## 这个仓库是什么\n\nIan Xiaohei Illustrations 是一个 Codex Skill，用来指导 AI Agent 为中文文章、帖子、博客、Notion 文档和方法论内容生成正文配图。\n\n它不是通用插画 prompt，也不是 PPT 信息图模板。它的核心目标是：先理解文章里的认知锚点，再把其中一个判断、流程、结构、状态或隐喻，变成一张有记忆点的 16:9 手绘解释图。\n\n默认视觉 IP 是“小黑”：一个黑色实心、白点眼、细腿、空表情的小角色。小黑不是吉祥物，不是贴纸，也不是站在角落里的装饰物，而是正在认真参与系统运转的荒诞工作者。\n\n一句话：**让 AI 不只是“配一张图”，而是把文章里的一个关键认知动作画出来。**\n\n---\n\n## 适合谁用\n\n特别适合：\n\n- 写中文文章，需要正文配图和文章插图的人\n-",
     "topics": [
       "ai-agent",
       "chinese",
@@ -1249,13 +1262,11 @@
     "url": "https://github.com/nexu-io/html-anything",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "opencode",
-      "cursor"
+      "claude-code"
     ],
     "summary": "✨ The agentic HTML editor — your local AI agent writes the HTML, you ship it. 🚀 75 Skills × 9 Surfaces (magazine · deck · poster · XHS / tweet · prototype · data report · Hyperframes) 🛡️ Sandboxed preview · 📤 1-click to WeChat / X / Zhihu /",
     "i18n": {
@@ -1296,7 +1307,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# HTML Anything\n\nFrom the team behind Open Design — 40k★ · 200+ contributors, production-grade and iterating faster. html-anything is the focused agent-era HTML editor; if it clicks for you, Open Design is where the same team ships at scale.\n\nLive page: open-design.ai/html-anything/ — overview, surface modes, and showcase before you clone.\n\n> **Markdown is the draft. HTML is what humans read. Your local agent writes it.** The agentic HTML editor — in the agentic era, you don't hand-edit docs any",
     "topics": [
       "agent-skills",
       "ai-agents",
@@ -1326,11 +1337,9 @@
     "url": "https://github.com/gsd-build/gsd-2",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "A powerful meta-prompting, context engineering and spec-driven development system that enables agents to work for long periods of time autonomously without losing track of the big picture",
     "i18n": {
       "zh": {
@@ -1370,7 +1379,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# GSD 2 Has Moved\n\nThis repository is no longer the active home for GSD 2 development.\n\nThe project now continues as **GSD Pi** in the Open GSD repository:\n\nhttps://github.com/open-gsd/gsd-pi\n\nUse the new repository for current source code, issues, releases, and contribution\nwork.\n\nFor community support, use the canonical Discord invite:\nhttps://discord.com/invite/nKXTsAcmbT",
     "topics": [
       "context-engineering",
       "meta-prompting",
@@ -1383,10 +1392,11 @@
     "url": "https://github.com/2FastLabs/agent-squad",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli"
     ],
     "summary": "Flexible and powerful framework for managing multiple AI agents and handling complex conversations",
     "i18n": {
@@ -1427,7 +1437,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Agent Squad\nFlexible, lightweight open-source framework for orchestrating multiple AI agents — in the cloud with Python and TypeScript, and now on device with Swift.\n\n  \n  \n  \n  \n\n   Now available in Swift\n\n  On-device agent orchestration for iPhone, iPad, and Mac — agents, MCP tools, realtime voice, and tracing, running entirely on device.\n  See what's included ↓ · Swift README →\n\n  Explore the full documentation\n\n> **New home:** previously hosted at `awslabs/agent-squad`, the project is now ma",
     "topics": [
       "aws",
       "aws-bedrock",
@@ -1457,7 +1467,7 @@
     "url": "https://github.com/NVIDIA/OpenShell",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -1501,7 +1511,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# NVIDIA OpenShell\n\n[![License](https://img.shields.io/badge/License-Apache_2.0-blue)](https://github.com/NVIDIA/OpenShell/blob/main/LICENSE)\n[![PyPI](https://img.shields.io/badge/PyPI-openshell-orange?logo=pypi)](https://pypi.org/project/openshell/)\n[![Security Policy](https://img.shields.io/badge/Security-Report%20a%20Vulnerability-red)](SECURITY.md)\n[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen)](https://docs.nvidia.com/openshell/latest/index.html)\n[![Project Status](",
     "topics": []
   },
   {
@@ -1510,10 +1520,12 @@
     "url": "https://github.com/NirDiamant/Prompt_Engineering",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "rules",
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli"
     ],
     "summary": "22 prompt engineering techniques with hands-on Jupyter Notebook tutorials, from fundamental concepts to advanced strategies for leveraging LLMs.",
     "i18n": {
@@ -1554,7 +1566,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)\n[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/nir-diamant-759323134/)\n[![Twitter](https://img.shields.io/twitter/follow/NirDiamantAI?label=Follow%20@NirDiamantAI&style=social)](https://twitter.com/NirDiamantAI)\n[![Discord](https://img.shields.io/badge/Discord-Join%20our%20community-7289da?style=flat-square&logo=discord&logoColor",
     "topics": [
       "ai",
       "prompt-engineering",
@@ -1582,7 +1594,7 @@
     "url": "https://github.com/GetBindu/Bindu",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -1626,7 +1638,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Bindu\n\n    \n    \n    \n    \n    \n    \n    \n    \n        \n            \n            \n            \n        \n    \n\n    \n        English |\n        Deutsch |\n        Español |\n        Français |\n        हिंदी |\n        বাংলা |\n        中文 |\n        Nederlands |\n        Bahasa Indonesia |\n        தமிழ்\n    \n\nThe identity, communication, and payments layer for AI agents.\n\n  A Gmail-shaped inbox for the agent internet. Watch your agents send signed JSON-RPC to each other, verify identities inline, and repl",
     "topics": [
       "agent-communication",
       "autonomous-agents",
@@ -1643,7 +1655,7 @@
     "url": "https://github.com/jo-inc/camofox-browser",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -1687,7 +1699,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "camofox-browser\n  Anti-detection browser server for AI agents, powered by Camoufox\n  \n    \n    \n    \n    \n  \n  \n    Standing on the mighty shoulders of Camoufox - a Firefox fork with fingerprint spoofing at the C++ level.\n  \n\n> \n>\n> Built by the team behind jo, a personal AI agent that runs half on your Mac, half on a dedicated cloud machine just for you -- with zero maintenance needed. Available on macOS, Telegram, WhatsApp, and email. Try the beta free ->\n\n```bash\ngit clone https://github.com/",
     "topics": [
       "ai-agent",
       "anti-bot",
@@ -1756,7 +1768,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Agent SDK for Python\n\nPython SDK for Claude Agent. See the [Claude Agent SDK documentation](https://platform.claude.com/docs/en/agent-sdk/python) for more information.\n\n## Installation\n\n```bash\npip install claude-agent-sdk\n```\n\n**Prerequisites:**\n\n- Python 3.10+\n\n**Note:** The Claude Code CLI is automatically bundled with the package - no separate installation required! The SDK will use the bundled CLI by default. If you prefer to use a system-wide installation or a specific version, yo",
     "topics": []
   },
   {
@@ -1765,7 +1777,8 @@
     "url": "https://github.com/AI4Finance-Foundation/FinRobot",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "rules"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -1809,7 +1822,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# FinRobot: An Open-Source AI Agent Platform for Financial Analysis using Large Language Models\n[![Downloads](https://static.pepy.tech/badge/finrobot)]([https://pepy.tech/project/finrobot](https://pepy.tech/project/finrobot))\n[![Downloads](https://static.pepy.tech/badge/finrobot/week)](https://pepy.tech/project/finrobot)\n[![Join Discord](https://img.shields.io/badge/Discord-Join-blue)](https://discord.gg/trsr8SXpW5)\n[![Python 3.8](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.py",
     "topics": [
       "aiagent",
       "fingpt",
@@ -1827,10 +1840,13 @@
     "url": "https://github.com/ValueCell-ai/ClawX",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "agent-framework",
+      "cli-tool",
+      "skills"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "trae",
+      "hermes-agent"
     ],
     "summary": "ClawX is a desktop app that provides a graphical interface for OpenClaw AI agents. It turns CLI-based AI orchestration into a desktop experience without using the terminal. China website is https://clawx.com.cn.",
     "i18n": {
@@ -1871,7 +1887,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "ClawX\n\n  The Desktop Interface for OpenClaw AI Agents\n\n  Features •\n  Why ClawX •\n  Getting Started •\n  Architecture •\n  Development •\n  Contributing\n\n  \n  \n  \n  \n  \n  \n  \n  \n\n  English | 简体中文 | 日本語 | Русский\n\n---\n\n## Overview\n\n**ClawX** bridges the gap between powerful AI agents and everyday users. Built on top of [OpenClaw](https://github.com/OpenClaw), it transforms command-line AI orchestration into an accessible, beautiful desktop experience—no terminal required.\n\nWhether you're automating ",
     "topics": [
       "agent",
       "clawdbot",
@@ -1889,10 +1905,14 @@
     "url": "https://github.com/cobusgreyling/loop-engineering",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "agent-framework",
+      "cli-tool",
+      "mcp-server",
+      "rules"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli"
     ],
     "summary": "Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems that prompt and orchestrate agents (inspired by Addy Osmani and Boris Cherny). Includes loop-audit, loop-init, loop-cost.",
     "i18n": {
@@ -1933,7 +1953,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Loop Engineering\n\n  \n    \n  \n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n  \n    \n  \n\n> **Stop prompting. Design the loop. Get a score.**\n\n  \n\n```bash\nnpx @cobusgreyling/loop-init .\n```\n\n`loop-init` scaffolds skills, state, and budget files, then prints your **Loop Ready** score and first loop command. Swap `--tool` for `claude`, `codex`, or `opencode`.\n\n  \n    \n  \n\nLoop engineering replaces you as the person who prompts the agent — you design the system that does it instead.\n\n**New here?** [Quickstart ",
     "topics": [
       "agentic-ai",
       "ai-agents",
@@ -2004,7 +2024,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# LLM Trading Lab\nThis repository started as a **6-month live micro-cap trading experiment** in which a large language model (ChatGPT) manages a real-money portfolio under strict, predefined rules.\n\nWhat began as a single experiment has evolved into a **baseline framework** for studying how large language models behave as portfolio decision-makers.  \nAll historical data, research artifacts, and logs are preserved for transparency and auditability.\n\n**Full research evaluation out now: [Evaluating",
     "topics": []
   },
   {
@@ -2057,7 +2077,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# TinyTroupe 🤠🤓🥸🧐\n[![Core Tests](https://github.com/microsoft/TinyTroupe/actions/workflows/core-tests.yml/badge.svg)](https://github.com/microsoft/TinyTroupe/actions/workflows/core-tests.yml)\n\n  \n\n*LLM-powered multiagent persona simulation for imagination enhancement and business insights.*\n\n  \n\n>[!TIP]\n>📄 **New Paper Released!** Check out our [TinyTroupe paper (preprint)](https://arxiv.org/abs/2507.09788) that describes the library and its use cases in detail. You can find the related experimen",
     "topics": []
   },
   {
@@ -2110,7 +2130,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "mistral.rs\n\n-->\n\n  \n    \n    \n    \n  \n\n  | Documentation | Quickstart | Supported models | Rust SDK | Python SDK | Discord |\n\n  \n    \n  \n\n## Latest\n\n- **OpenAI-compatible Skills**: upload `/v1/skills` bundles and reference them from Responses requests for reusable procedures, helper scripts, and local data. [Guide](https://ericlbuehler.github.io/mistral.rs/guides/agents/skills/)\n- **OpenAI-compatible file inputs**: upload `/v1/files`, attach Responses `input_file` or Chat `file` parts, and mount",
     "topics": [
       "llm",
       "rust",
@@ -2123,10 +2143,15 @@
     "url": "https://github.com/mufeedvh/code2prompt",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "cli-tool",
+      "rules"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
     ],
     "summary": "A CLI tool to convert your codebase into a single LLM prompt with source tree, prompt templating, and token counting.",
     "i18n": {
@@ -2167,7 +2192,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Convert your codebase into a single LLM prompt.\n\n  Website •\n  Documentation •\n  Discord\n\n[![License](https://img.shields.io/github/license/mufeedvh/code2prompt.svg?style=flat-square)](https://github.com/mufeedvh/code2prompt/blob/master/LICENSE)\n[![Crates.io](https://img.shields.io/crates/v/code2prompt.svg?style=flat-square)](https://crates.io/crates/code2prompt)\n[![PyPI](https://img.shields.io/pypi/v/code2prompt-rs?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/code2prom",
     "topics": [
       "ai",
       "chatgpt",
@@ -2190,10 +2215,11 @@
     "url": "https://github.com/tailcallhq/forgecode",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "cli-tool"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli"
     ],
     "summary": "AI enabled pair programmer for Claude, GPT, O Series, Grok, Deepseek, Gemini and 300+ models",
     "i18n": {
@@ -2234,7 +2260,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "⚒️ Forge: AI-Enhanced Terminal Development Environment\nA comprehensive coding agent that integrates AI capabilities with your development environment\n\ncurl -fsSL https://forgecode.dev/cli | sh\n\n[![CI Status](https://img.shields.io/github/actions/workflow/status/tailcallhq/forgecode/ci.yml?style=for-the-badge)](https://github.com/tailcallhq/forgecode/actions)\n[![GitHub Release](https://img.shields.io/github/v/release/tailcallhq/forgecode?style=for-the-badge)](https://github.com/tailcallhq/forgeco",
     "topics": [
       "ai-workflows",
       "artifical-intelligense",
@@ -2304,7 +2330,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# slime\n\n[中文版](./README_zh.md)\n\n[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg?style=flat)](https://thudm.github.io/slime/)\n[![CI](https://img.shields.io/github/actions/workflow/status/THUDM/slime/pr-test.yml?branch=zilin%2Fci-dont-merge&event=pull_request&label=CI&logo=github)](https://github.com/THUDM/slime/pull/2053/checks)\n[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/THUDM/slime)\n\n**slime** is an LLM post-training framework for RL scaling",
     "topics": []
   },
   {
@@ -2318,7 +2344,9 @@
     "target_tools": [
       "claude-code",
       "codex-cli",
-      "cursor"
+      "trae",
+      "cursor",
+      "hermes-agent"
     ],
     "summary": "The first open-source agent skills builder. Define skills by vibe workflow, run on Claude Code, Cursor, Codex & more. Build Clawdbot 🦞· APIs for Lovable · Bots for Slack & Lark/Feishu · Skills are infrastructure, not prompts.",
     "i18n": {
@@ -2359,7 +2387,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Refly — Agent Skills Builder Powered by Vibe Workflow\n\n  English · 中文\n\n  \n    \n  \n  \n    \n  \n  \n    \n  \n  \n    \n  \n  \n    \n  \n  \n    \n  \n  \n    \n  \n  \n    \n  \n  \n    \n  \n\n[APIs for Lovable](#use-case-1-api-integration) · [Webhooks for Lark/Feishu](#use-case-2-webhook-for-lark-feishu) · [Skills for Claude Code](#use-case-3-skills-for-claude-code) · [Build Clawdbot](#use-case-4-build-clawdbot)\n\nSkills are not prompts. They are durable infrastructure.\n\nRefly is the first open-source platform for ",
     "topics": [
       "agent",
       "agent-skills",
@@ -2389,7 +2417,7 @@
       "mcp-server"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code"
     ],
     "summary": "MCP 资源精选， MCP指南，Claude MCP，MCP Servers, MCP Clients",
     "i18n": {
@@ -2428,7 +2456,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Awesome-MCP-ZH\n\n![](https://files.mdnice.com/user/43439/48b72eef-4bca-4d2b-86e3-0055a1036ea7.jpg)\n\n欢迎来到 `Awesome-MCP-ZH`，一个专为中文用户打造的 MCP（模型上下文协议）资源合集！\n这里有 MCP 的基础介绍、玩法、客户端、服务器和社区资源，帮你快速上手这个 AI 界的“万能插头”。\n\n[![简体中文](https://img.shields.io/badge/中文文档-点击查看-orange)](README.md) \n\n- 作者：云中江树 （微信公众号：云中江树，微信：1796060717）\n\n- 如果国内的朋友想免费快速的体验MCP能力，推荐 Cherry Studio（客户端） + 阿里 Qwen (大模型）的组合，优势是免费、操作简单、LLM无需魔法、无需充值。\n\n- LLM 选型我的使用体感是： Claude4.5 > GPT-5 > Gemini-2.5 > Qwen3-Max > DeepSeek\n\n分析文章：\n- [ 10分钟搞定高德地图MCP！",
     "topics": [
       "claude",
       "deepseek",
@@ -2453,7 +2481,7 @@
       "tutorial"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "hermes-agent"
     ],
     "summary": "Copy any UI element for your agent",
     "i18n": {
@@ -2494,7 +2522,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "#  React Grab\n\n[![version](https://img.shields.io/npm/v/react-grab?style=flat&colorA=000000&colorB=000000)](https://npmjs.com/package/react-grab)\n[![downloads](https://img.shields.io/npm/dt/react-grab.svg?style=flat&colorA=000000&colorB=000000)](https://npmjs.com/package/react-grab)\n\nCopy any UI element for your agent.\n\nReact Grab points agents to the actual source behind each selection. Agents are [**2× faster**](https://react-grab.com/benchmarks) and more accurate when using React Grab.\n\n[**We",
     "topics": [
       "ai",
       "coding",
@@ -2552,7 +2580,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# MegaParse - Your Parser for every type of documents\n\n    \n\nMegaParse is a powerful and versatile parser that can handle various types of documents with ease. Whether you're dealing with text, PDFs, Powerpoint presentations, Word documents MegaParse has got you covered. Focus on having no information loss during parsing.\n\n## Key Features 🎯\n\n- **Versatile Parser**: MegaParse is a powerful and versatile parser that can handle various types of documents with ease.\n- **No Information Loss**: Focus ",
     "topics": [
       "docx",
       "llm",
@@ -2611,7 +2639,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# NotebookLM Claude Code Skill\n\n**Let [Claude Code](https://github.com/anthropics/claude-code) chat directly with NotebookLM for source-grounded answers based exclusively on your uploaded documents**\n\n[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)\n[![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-Skill-purple.svg)](https://www.anthropic.com/news/skills)\n[![Based on](https://img.shields.io/badge/Based%20on-NotebookLM%20MCP-green.svg)](https:",
     "topics": []
   },
   {
@@ -2620,7 +2648,7 @@
     "url": "https://github.com/ringhyacinth/Star-Office-UI",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -2664,7 +2692,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Star Office UI\n\n🌐 Language: **中文** | [English](./README.en.md) | [日本語](./README.ja.md)\n\n![Star Office UI 封面](docs/screenshots/readme-cover-2.jpg)\n\n**一个像素风格的 AI 办公室看板** —— 把 AI 助手的工作状态实时可视化，让你直观看到\"谁在做什么、昨天做了什么、现在是否在线\"。\n\n支持多 Agent 协作、中英日三语、AI 生图装修、桌面宠物模式。\n与 [OpenClaw](https://github.com/openclaw/openclaw) 深度集成时体验最佳，也可以独立部署作为状态看板使用。\n\n> 本项目由 **[Ring Hyacinth](https://x.com/ring_hyacinth)** 与 **[Simon Lee](https://x.com/simonxxoo)** 共同创建（co-created project），并与社区开发者（[@Zhaohan-Wang](https://github.co",
     "topics": [
       "agent-collaboration",
       "ai-assistant",
@@ -2685,7 +2713,8 @@
     "source_type": "github",
     "resource_type": [
       "mcp-server",
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -2731,7 +2760,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Stitch Design Skills\n\nA collection of agent skills and plugins for [Google Stitch](https://stitch.withgoogle.com), following the [Agent Skills](https://agentskills.io) open standard. Compatible with coding agents such as Codex, Antigravity, Gemini CLI, Claude Code, and Cursor.\n\n## Quick Start\n\n### 1. Install Plugins (Recommended)\nThe fastest way to set up the full Stitch plugin suite globally.\n\n#### Codex\n\nAdd the Stitch Skills marketplace, then install the plugins you need.\n\nVia CLI (recommen",
     "topics": []
   },
   {
@@ -2740,7 +2769,7 @@
     "url": "https://github.com/steel-dev/steel-browser",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -2784,7 +2813,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Steel\n\n    The open-source browser API for AI agents & apps. \n    The best way to build live web agents and browser automation tools.\n\n[![Commit Activity](https://img.shields.io/github/commit-activity/m/steel-dev/steel-browser?color=yellow)](https://github.com/steel-dev/steel-browser/commits/main)\n[![License](https://img.shields.io/github/license/steel-dev/steel-browser?color=yellow)](https://github.com/steel-dev/steel-browser/blob/main/LICENSE)\n[![Discord](https://img.shields.io/discord/1285696",
     "topics": [
       "ai",
       "ai-agents",
@@ -2803,7 +2832,8 @@
     ],
     "target_tools": [
       "claude-code",
-      "codex-cli"
+      "codex-cli",
+      "antigravity-cli"
     ],
     "summary": "Open-source Claude Design alternative. One-click import your Claude Code / Codex API key. Prompt → prototype / slides / PDF. Multi-model (Claude, GPT, Gemini, Kimi, GLM, Ollama). BYOK, local-first, MIT.",
     "i18n": {
@@ -2844,7 +2874,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Open CoDesign\n\n**简体中文**: [README.zh-CN.md](./README.zh-CN.md)\n\n> Your prompts. Your model. Your laptop.\n>\n> Turn prompts into polished artifacts — locally, openly, and with whichever model you already pay for.\n\n[Website](https://opencoworkai.github.io/open-codesign/) · [Quickstart](#quickstart) · [What's new](https://github.com/OpenCoworkAI/open-codesign/releases) · [Changelog](./CHANGELOG.md) · [Discussions](https://github.com/OpenCoworkAI/open-codesign/discussions) · [Docs](https://opencowor",
     "topics": [
       "ai-design",
       "anthropic",
@@ -2877,6 +2907,7 @@
       "mcp-server"
     ],
     "target_tools": [
+      "claude-code",
       "cursor"
     ],
     "summary": "Monitor browser logs directly from Cursor and other MCP compatible IDEs.",
@@ -2918,7 +2949,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "THIS PROJECT IS NO LONGER ACTIVE PLEASE USE A DIFFERENT SOLUTION FOR THIS. \n\n# BrowserTools MCP\n\n> Make your AI tools 10x more aware and capable of interacting with your browser\n\nThis application is a powerful browser monitoring and interaction tool that enables AI-powered applications via Anthropic's Model Context Protocol (MCP) to capture and analyze browser data through a Chrome extension.\n\nRead our [docs](https://browsertools.agentdesk.ai/) for the full installation, quickstart and contribut",
     "topics": [
       "ai",
       "anthropic",
@@ -2935,9 +2966,7 @@
     "resource_type": [
       "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "The sandbox agent framework.",
     "i18n": {
       "zh": {
@@ -2977,7 +3006,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Flue — The Agent Harness Framework\n\nNot another SDK. Build autonomous agents and powerful AI workflows with Flue's programmable TypeScript harness.\n\n```ts\n// agents/triage.ts\nimport { defineAgent, type AgentRouteHandler } from '@flue/runtime';\nimport { local } from '@flue/runtime/node';\nimport triage from '../skills/triage/SKILL.md' with { type: 'skill' };\nimport verify from '../skills/verify/SKILL.md' with { type: 'skill' };\nimport * as githubTools from '../tools/github.ts';\n\n// Give agents t",
     "topics": []
   },
   {
@@ -2986,7 +3015,8 @@
     "url": "https://github.com/omnigent-ai/omnigent",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
@@ -3032,7 +3062,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "#  Omnigent\n\n### The open-source meta-harness for all your AI agents.\n\nOmnigent is an open-source **meta-harness** that gives you a common orchestration layer over Claude Code, Codex, Cursor, OpenCode, Hermes, Pi, and the agents you write yourself: swap or combine harnesses without rewriting, enforce policies and sandboxing, and collaborate in real time from any device — terminal, browser, phone, or the native desktop app.\n\n[![PyPI version](https://img.shields.io/pypi/v/omnigent.svg)](https://py",
     "topics": [
       "agents",
       "ai",
@@ -3102,7 +3132,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# SEO Machine\n\nA specialized Claude Code workspace for creating long-form, SEO-optimized blog content for any business. This system helps you research, write, analyze, and optimize content that ranks well and serves your target audience.\n\n## Overview\n\nSEO Machine is built on Claude Code and provides:\n- **Custom Commands**: `/research`, `/write`, `/rewrite`, `/analyze-existing`, `/optimize`, `/performance-review`, `/publish-draft`, `/article`, `/priorities`, plus specialized research and landing ",
     "topics": []
   },
   {
@@ -3113,9 +3143,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "HTML PPT Studio — AgentSkill with 24 themes, 31 layouts, 20+ animations for building professional HTML presentations",
     "i18n": {
       "zh": {
@@ -3155,7 +3183,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# html-ppt — HTML PPT Studio\n\n> A world-class AgentSkill for producing professional HTML presentations in\n> **36 themes**, **15 full-deck templates**, **31 page layouts**,\n> **47 animations** (27 CSS + 20 canvas FX), and a **true presenter mode**\n> with pixel-perfect previews + speaker script + timer — all pure static\n> HTML/CSS/JS, no build step.\n\n**Author:** lewis &lt;sudolewis@gmail.com&gt;\n**License:** MIT\n**中文文档:** [README.zh-CN.md](README.zh-CN.md)\n\n![html-ppt — cover with live previews](d",
     "topics": []
   },
   {
@@ -3208,7 +3236,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# MCP Registry\n\nThe MCP registry provides MCP clients with a list of MCP servers, like an app store for MCP servers.\n\n[**📤 Publish my MCP server**](docs/modelcontextprotocol-io/quickstart.mdx) | [**⚡️ Live API docs**](https://registry.modelcontextprotocol.io/docs) | [**👀 Ecosystem vision**](docs/design/ecosystem-vision.md) | 📖 **[Full documentation](./docs)**\n\n## Development Status\n\n**2025-10-24 update**: The Registry API has entered an **API freeze (v0.1)** 🎉. For the next month or more, the AP",
     "topics": [
       "mcp",
       "mcp-servers"
@@ -3264,7 +3292,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Llama Coder\n\n  An open source Claude Artifacts – generate small apps with one prompt. Powered by Llama 3 on Together.ai.\n\n## Tech stack\n\n- [Llama 3.1 405B](https://ai.meta.com/blog/meta-llama-3-1/) from Meta for the LLM\n- [Together AI](https://togetherai.link/?utm_source=llamacoder&utm_medium=referral&utm_campaign=example-app) for LLM inference\n- [Sandpack](https://sandpack.codesandbox.io/) for the code sandbox\n- Next.js app router with Tailwind\n- Helicone for observability\n- Plausible for websi",
     "topics": []
   },
   {
@@ -3273,10 +3301,13 @@
     "url": "https://github.com/backnotprop/plannotator",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "skills"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "opencode"
     ],
     "summary": "Annotate and review coding agent plans and code diffs visually, share with your team, send feedback to agents with one click.",
     "i18n": {
@@ -3317,7 +3348,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Everything you need to annotate and stay in the loop with your agents\n  Markdown Review • Code Review • HTML Artifacts\n  Annotate plans, specs, markdown, and HTML before implementation. Review diffs and PRs. Send feedback to your agent.\n\n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  \n    \n    \n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  &nbsp;&nbsp;\n  \n    \n    \n  &nbsp;&nbsp;\n  \n    \n    \n  \n\n  Watch the og demo · Installation guide · Official site · Visual HTML Skills\n\n# Plannotator\n\nPlann",
     "topics": [
       "claude-code",
       "opencode",
@@ -3336,7 +3367,7 @@
     "url": "https://github.com/AgriciDaniel/claude-ads",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -3380,7 +3411,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Ads\n\nClaude-first, portable paid-media operations for agencies, consultants, and\nin-house performance teams.\n\nClaude Ads turns authorized exports or account reads into source-grounded\naudits, plans, creative workflows, experiments, monitoring, and reports. It is\nread-only by default. Live changes stay disabled until the exact platform and\noperation pass approval, idempotency, verification, audit, and rollback gates.\n\n> [!NOTE]\n> Claude Ads ships from two homes: the **public release** at",
     "topics": [
       "claude-code",
       "claude-code-skill",
@@ -3401,7 +3432,7 @@
     "url": "https://github.com/adongwanai/AgentGuide",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -3445,7 +3476,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# AgentGuide\n[![1764666915027.png](https://free.picui.cn/free/2025/12/02/692eadf2be3ac.png)](https://free.picui.cn/free/2025/12/02/692eadf2be3ac.png)\n\n    \n    \n    \n    \n\n    \n\n        \n    \n    \n        \n    \n    \n\n    \n🔥 AI Agent 开发 × 面试求职 = 一站式解决方案\n    \n\n        对标 JavaGuide 的 AI Agent 学习指南\n        从入门到拿 Offer，系统化 + 实战化 + 求职导向\n    \n\n---\n\n## 💡 核心理念\n\n> **📌 本项目定位：资源整合 + 系统化路径 + 实战导向**\n>\n> 🎯 **我们的原则**：\n> - ✅ **站在巨人的肩膀上** - 互联网已有的优质资源（课程、教程、论文），我们直接引用，不重复造轮子\n> - ✅ **只分享干货** - （坚持更新中，欢迎催更）\n> - ✅ *",
     "topics": [
       "ai-agent",
       "crewai",
@@ -3470,9 +3501,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "craft-ai-agents/craft-agents-oss",
     "i18n": {
       "zh": {
@@ -3512,7 +3541,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Craft Agents\n\n[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)\n[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)\n\n## How it Works (Video)\nTo understand what Craft Agents does and how it works watch this video.\n\n[![Demo Video](https://img.youtube.com/vi/xQouiAIilvU/hqdefault.jpg)](https://www.youtube.com/watch?v=xQouiAIilvU)\n\n[Click Here (or on the image above) to watch the video on YouTube →](https",
     "topics": []
   },
   {
@@ -3524,6 +3553,7 @@
       "mcp-server"
     ],
     "target_tools": [
+      "claude-code",
       "cursor"
     ],
     "summary": "🔥 Official Firecrawl MCP Server - Adds powerful web scraping and search to Cursor, Claude and any other LLM clients.",
@@ -3565,7 +3595,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Firecrawl MCP Server\n\nA Model Context Protocol (MCP) server that brings [Firecrawl](https://github.com/firecrawl/firecrawl) to MCP-compatible AI agents — search, scrape, and interact with the live web for clean, agent-ready context.\n\n> Big thanks to [@vrknetha](https://github.com/vrknetha), [@knacklabs](https://www.knacklabs.ai) for the initial implementation!\n\n## Features\n\n- Search the web and get full page content\n- Scrape any URL into clean, structured data\n- Interact with pages — click, na",
     "topics": [
       "batch-processing",
       "claude",
@@ -3589,7 +3619,7 @@
     "url": "https://github.com/openai/openai-realtime-agents",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -3633,7 +3663,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Realtime API Agents Demo\n\nThis is a demonstration of more advanced patterns for voice agents, using the OpenAI Realtime API and the OpenAI Agents SDK. \n\n## About the OpenAI Agents SDK\n\nThis project uses the [OpenAI Agents SDK](https://github.com/openai/openai-agents-js), a toolkit for building, managing, and deploying advanced AI agents. The SDK provides:\n\n- A unified interface for defining agent behaviors and tool integrations.\n- Built-in support for agent orchestration, state management, and",
     "topics": []
   },
   {
@@ -3642,11 +3672,9 @@
     "url": "https://github.com/deepseek-ai/DeepSeek-Coder-V2",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "cli-tool"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "DeepSeek-Coder-V2: Breaking the Barrier of Closed-Source Models in Code Intelligence",
     "i18n": {
       "zh": {
@@ -3684,7 +3712,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Model Download |\n  Evaluation Results |\n  API Platform |\n  How to Use |\n  License |\n  Citation\n\n  Paper Link👁️\n\n# DeepSeek-Coder-V2: Breaking the Barrier of Closed-Source Models in Code Intelligence\n\n## 1. Introduction\nWe present DeepSeek-Coder-V2, an open-source Mixture-of-Experts (MoE) code language model that achieves performance comparable to GPT4-Turbo in code-specific tasks. Specifically, DeepSeek-Coder-V2 is further pre-trained from an intermediate checkpoint of DeepSeek-V2 with additiona",
     "topics": []
   },
   {
@@ -3693,12 +3721,15 @@
     "url": "https://github.com/grab/cursor-talk-to-figma-mcp",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
       "codex-cli",
-      "cursor"
+      "trae",
+      "cursor",
+      "hermes-agent"
     ],
     "summary": "TalkToFigma: MCP integration between AI Agent (Cursor, Claude Code, Codex) and Figma, allowing Agentic AI to communicate with Figma for reading designs and modifying them programmatically.",
     "i18n": {
@@ -3739,7 +3770,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Talk to Figma MCP\n\nThis project implements a Model Context Protocol (MCP) integration between AI agent (Cursor, Claude Code) and Figma, allowing AI agent to communicate with Figma for reading designs and modifying them programmatically.\n\nhttps://github.com/user-attachments/assets/129a14d2-ed73-470f-9a4c-2240b2a4885c\n\n## Project Structure\n\n- `src/talk_to_figma_mcp/` - TypeScript MCP server for Figma integration\n- `src/cursor_mcp_plugin/` - Figma plugin for communicating with Cursor\n- `src/socke",
     "topics": [
       "agent",
       "agentic",
@@ -3768,7 +3799,7 @@
       "tutorial"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "hermes-agent"
     ],
     "summary": "A collection of LLM papers, blogs, and projects, with a focus on OpenAI o1 🍓 and reasoning techniques.",
     "i18n": {
@@ -3807,7 +3838,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Awesome LLM Strawberry (OpenAI o1)\n[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) ![GitHub stars](https://img.shields.io/github/stars/hijkzzz/Awesome-LLM-Strawberry?color=yellow) ![GitHub forks](https://img.shields.io/github/forks/hijkzzz/Awesome-LLM-Strawberry?color=9cf) [![GitHub license](https://img.shields.io/github/license/hijkzzz/Awesome-LLM-Strawberry)](https://github.com/hijkzzz",
     "topics": [
       "chain-of-thought",
       "coding",
@@ -3869,7 +3900,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "[📃 Paper](https://arxiv.org/abs/2407.20183) | [💻 Demo](https://internlm-chat.intern-ai.org.cn/)\n\nEnglish | [简体中文](README_zh-CN.md)\n\n## ✨ MindSearch: Mimicking Human Minds Elicits Deep AI Searcher\n\n## 📅 Changelog\n\n- 2024/11/05: 🥳 MindSearch is now deployed on Puyu! 👉 [Try it](https://internlm-chat.intern-ai.org.cn/) 👈\n  -  Refactored the agent module based on [Lagent v0.5](https://github.com/InternLM/lagent) for better performance in concurrency.\n  -  Improved the UI to embody the simultaneous mu",
     "topics": [
       "gpt",
       "llm",
@@ -3889,9 +3920,10 @@
     "url": "https://github.com/alvinunreal/oh-my-opencode-slim",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
+      "antigravity-cli",
       "opencode"
     ],
     "summary": "Lean, fine tuned Opencode multi agent suite · Mix any models · Auto delegate tasks",
@@ -3933,7 +3965,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "✨ oh-my-opencode-slim ✨\n\n  Seven divine beings emerged from the dawn of code, each an immortal master of their craft,awaiting your command to forge order from chaos and build what was once thought impossible.\n\n  Opencode Multi Agent Suite · Mix any models · Auto delegate tasks\n  by Boring Dystopia Development\n  \n    &nbsp;\n    &nbsp;\n    &nbsp;\n  \n\n  \n    English | 简体中文 | 日本語 | 한국어\n  \n\n  ✦ ✦ ✦\n\n## What's This Plugin\n\noh-my-opencode-slim is an agent orchestration plugin for OpenCode. It includes ",
     "topics": [
       "agentic-ai",
       "antigravity",
@@ -3952,7 +3984,7 @@
       "tutorial"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "codex-cli"
     ],
     "summary": "🦄🦄🦄AI赋能股票分析：AI加持的股票分析/选股工具。股票行情获取，AI热点资讯分析，AI资金/财务分析，涨跌报警推送。支持A股，港股，美股。支持市场整体/个股情绪分析，AI辅助选股等。数据全部保留在本地。支持DeepSeek，OpenAI， Ollama，LMStudio，AnythingLLM，硅基流动，火山方舟，阿里云百炼等平台或模型。",
     "i18n": {
@@ -3993,7 +4025,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# go-stock : 基于大语言模型的AI赋能股票分析工具\n## ![go-stock](./build/appicon.png)\n![GitHub Release](https://img.shields.io/github/v/release/ArvinLovegood/go-stock?link=https%3A%2F%2Fgithub.com%2FArvinLovegood%2Fgo-stock%2Freleases&link=https%3A%2F%2Fgithub.com%2FArvinLovegood%2Fgo-stock%2Freleases)\n[![GitHub Repo stars](https://img.shields.io/github/stars/ArvinLovegood/go-stock?link=https%3A%2F%2Fgithub.com%2FArvinLovegood%2Fgo-stock)](https://github.com/ArvinLovegood/go-stock)\n[![star](https://gitee.com/arvi",
     "topics": [
       "stock",
       "golang",
@@ -4012,11 +4044,15 @@
     "url": "https://github.com/jnMetaCode/superpowers-zh",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "skills",
+      "cli-tool",
+      "mcp-server",
+      "rules"
     ],
     "target_tools": [
       "claude-code",
       "antigravity-cli",
+      "trae",
       "cursor",
       "hermes-agent"
     ],
@@ -4059,7 +4095,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# superpowers-zh（AI 编程超能力 · 中文增强版）\n\n🌐 **简体中文** | [繁體中文](README.zh-Hant.md) | [English (upstream)](https://github.com/obra/superpowers)\n\n> 🦸 **superpowers（250k+ ⭐）完整汉化 + 4 个中国原创 skills** — 让 Claude Code / Copilot CLI / Hermes Agent / Cursor / Windsurf / Kiro / Gemini CLI / Qoder 等 **20 款 AI 编程工具**真正会干活。从头脑风暴到代码审查，从 TDD 到调试，每个 skill 都是经过实战验证的工作方法论。\n\nChinese community edition of [superpowers](https://github.com/obra/superpowers) — 20 skills across 20 AI coding tools, including full translations and",
     "topics": [
       "ai-coding",
       "chinese",
@@ -4085,10 +4121,10 @@
     "url": "https://github.com/mishushakov/llm-scraper",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "codex-cli"
     ],
     "summary": "Turn any webpage into structured data using LLMs",
     "i18n": {
@@ -4129,7 +4165,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# LLM Scraper\n\nLLM Scraper is a TypeScript library that allows you to extract structured data from **any** webpage using LLMs.\n\n> [!IMPORTANT]\n> **LLM Scraper was updated to version 2.0.**\n>\n> The new version comes with **Vercel AI SDK 6** support and updated examples.\n\n### Features\n\n- Supports GPT, Sonnet, Gemini, Llama, Qwen model series\n- Schemas defined with Zod or JSON Schema\n- Full type-safety with TypeScript\n- Based on Playwright framework\n- Streaming objects\n- [Code-generation](#code-gen",
     "topics": [
       "ai",
       "browser",
@@ -4152,7 +4188,7 @@
     "url": "https://github.com/xindoo/agentic-design-patterns",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -4196,7 +4232,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "![封面图](images/cover.png)\n\n# Agentic Design Patterns（中文翻译项目）\n\n## 👨‍💻 关于xindoo\n\n**xindoo** - 本翻译项目的发起者和主要维护者\n\n- **GitHub**: [xindoo](https://github.com/xindoo)\n- **个人网站**: [zxs.io](https://zxs.io)\n- **博客**：[xindoo](https://blog.csdn.net/xindoo)\n- **个人简介**: 热衷于技术分享和开源贡献的开发者，专注于 AI 技术、系统架构、职业发展。 \n\n## 📚 项目简介\n\n本项目是《Agentic Design Patterns》一书的中文翻译项目。该书系统介绍了 AI Agent 系统的各种设计模式，涵盖从基础到高级的 21 个核心模式，以及多个附录章节。\n\n## 🎯 关于本书\n\n《Agentic Design Patterns》探讨了构建智能 AI Agent 系统的核心设计模式，包括：\n- 提示链、路由、并行化等基础模式\n- 反思、工具使用、规划等",
     "topics": []
   },
   {
@@ -4205,10 +4241,10 @@
     "url": "https://github.com/katanemo/plano",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "codex-cli"
     ],
     "summary": "Plano is an AI-native proxy and data plane for agentic apps — with built-in orchestration, safety, observability, and smart LLM routing so you stay focused on your agents core logic. ",
     "i18n": {
@@ -4249,7 +4285,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "_The AI-native proxy server and data plane for agentic apps._\n Plano pulls out the rote plumbing work and decouples you from brittle framework abstractions, centralizing what shouldn’t be bespoke in every codebase - like agent routing and orchestration, rich agentic signals and traces for continuous improvement, guardrail filters for safety and moderation, and smart LLM routing APIs for model agility. Use any language or AI framework, and deliver agents faster to production.\n\n[Quickstart Guide](",
     "topics": [
       "gateway",
       "generative-ai",
@@ -4276,7 +4312,7 @@
     "url": "https://github.com/SakanaAI/AI-Scientist-v2",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -4320,7 +4356,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "The AI Scientist-v2: Workshop-Level Automated\n    Scientific Discovery via Agentic Tree Search\n  \n\n  📚 [Paper] |\n  📝  [Blog Post] |\n  📂  [ICLR2025 Workshop Experiment]\n\nFully autonomous scientific research systems are becoming increasingly capable, with AI playing a pivotal role in transforming how scientific discoveries are made.\nWe are excited to introduce The AI Scientist-v2, a generalized end-to-end agentic system that has generated the first workshop paper written entirely by AI and accepte",
     "topics": []
   },
   {
@@ -4329,10 +4365,12 @@
     "url": "https://github.com/BrowserMCP/mcp",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "extension"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "cursor"
     ],
     "summary": "Browser MCP is a Model Context Provider (MCP) server that allows AI applications to control your browser",
     "i18n": {
@@ -4373,7 +4411,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Browser MCP\n\n  Automate your browser with AI.\n  \n  Website \n  •\n  Docs\n\n## About\n\nBrowser MCP is an MCP server + Chrome extension that allows you to automate your browser using AI applications like VS Code, Claude, Cursor, and Windsurf.\n\n## Features\n\n- ⚡ Fast: Automation happens locally on your machine, resulting in better performance without network latency.\n- 🔒 Private: Since automation happens locally, your browser activity stays on your device and isn't sent to remote servers.\n- 👤 Logged In:",
     "topics": [
       "browser-automation",
       "browser-extension",
@@ -4389,10 +4427,14 @@
     "url": "https://github.com/modem-dev/hunk",
     "source_type": "github",
     "resource_type": [
+      "agent-framework",
       "cli-tool"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
     ],
     "summary": "Review-first terminal diff viewer for agentic coders",
     "i18n": {
@@ -4433,7 +4475,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# hunk\n\nHunk is a review-first terminal diff viewer for agent-authored changesets, built on [OpenTUI](https://github.com/anomalyco/opentui) and [Pierre diffs](https://www.npmjs.com/package/@pierre/diffs).\n\n[![CI status](https://img.shields.io/github/actions/workflow/status/modem-dev/hunk/ci.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/modem-dev/hunk/actions/workflows/ci.yml?branch=main)\n[![Latest release](https://img.shields.io/github/v/release/modem-dev/hunk?style=for-the-b",
     "topics": [
       "cli",
       "code-review",
@@ -4448,7 +4490,7 @@
     "url": "https://github.com/mattpocock/sandcastle",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -4492,7 +4534,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "## What Is Sandcastle?\n\nA TypeScript library for orchestrating AI coding agents in isolated sandboxes:\n\n1. You invoke agents with a single `sandcastle.run()`.\n2. Sandcastle handles sandboxing the agent with a configurable branch strategy.\n3. The commits made on the branches get merged back.\n\nSandcastle is provider-agnostic — it ships with built-in providers for Docker, Podman, and Vercel, and you can create your own. Great for parallelizing multiple AFK agents, creating review pipelines, or even",
     "topics": []
   },
   {
@@ -4545,7 +4587,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "LLM Zoomcamp: Free Course on Building LLM Applications with RAG, Agents & Vector Search\nGo from LLM basics to a production-ready AI assistant in 10 weeks\n\nLearn Retrieval-Augmented Generation, vector search, embeddings, AI agents, function calling, evaluation, monitoring, hybrid search, reranking, and more - all in a free, open-source, hands-on course by DataTalks.Club.\n\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](CONTRIBUTING.md)\n[![Join Slack]",
     "topics": []
   },
   {
@@ -4556,9 +4598,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Reverse Engineering: Decompiling Binary Code with Large Language Models",
     "i18n": {
       "zh": {
@@ -4598,7 +4638,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "📊&nbsp;Results\n    | 🤗&nbsp;Models\n    | 🚀&nbsp;Quick Start\n    | 📚&nbsp;HumanEval-Decompile\n    | 📎&nbsp;Citation\n    | 📝&nbsp;Paper\n    | 🖥️&nbsp;Colab\n    | ▶️&nbsp;YouTube\n\nReverse Engineering: Decompiling Binary Code with Large Language Models\n\n[![GitHub Tread](https://trendshift.io/api/badge/repositories/8664)](https://trendshift.io/repositories/8664)\n\n## Updates\n* [2025-10-04]: Release SK²Decompile: LLM-based Two-Phase Binary Decompilation from Skeleton to Skin. Phase 1 Structure Recovery",
     "topics": [
       "decompile",
       "reverse-engineering",
@@ -4612,7 +4652,8 @@
     "url": "https://github.com/HKUDS/OpenSpace",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -4656,7 +4697,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "## ✨ OpenSpace: Make Your Agents: Smarter, Low-Cost, Self-Evolving ✨\n\n| 🔋 **46% Fewer Tokens** | **💰 $11K earned in 6 Hours** | 🧬 **Self-Evolving Skills** | 🌐 **Agents Experience Sharing** |\n\n[![Agents](https://img.shields.io/badge/Agents-Claude_Code%20%7C%20Codex%20%7C%20OpenClaw%20%7C%20nanobot%20%7C%20...-99C9BF.svg)](https://modelcontextprotocol.io/)\n[![Python](https://img.shields.io/badge/Python-3.12+-FCE7D6.svg)](https://www.python.org/)\n[![License](https://img.shields.io/badge/License-MIT",
     "topics": []
   },
   {
@@ -4665,10 +4706,11 @@
     "url": "https://github.com/stagewise-io/stagewise",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "trae",
+      "hermes-agent"
     ],
     "summary": "The Open Source Agentic IDE. Create and orchestrate coding agents, show app previews and run git workflows. Use your favorite models across all providers.",
     "i18n": {
@@ -4709,7 +4751,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "### The Agentic IDE for Open-Source Models\n\nEnglish | [简体中文](./README.zh-CN.md) | [Deutsch](./README.de.md) | [日本語](./README.ja.md) | [Español](./README.es.md) | [한국어](./README.ko.md) | [Português](./README.pt.md) | [Français](./README.fr.md) | [Italiano](./README.it.md) | [हिन्दी](./README.hi.md) | [Русский](./README.ru.md) | [Українська](./README.uk.md)\n\n ![NPM License](https://img.shields.io/npm/l/stagewise) [![GitHub Repo stars](https://img.shields.io/github/stars/stagewise-io/stagewise)](ht",
     "topics": [
       "agent",
       "agent-orchestration",
@@ -4766,7 +4808,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# LLM Engineering - Master AI and LLMs\n\n## Your 8 week journey to proficiency starts today\n\n![Voyage](assets/core.jpg)\n\n_If you're looking at this in Cursor, please right click on the filename in the Explorer on the left, and select \"Open preview\", to view the formatted version._\n\nI'm so happy you're joining me on this path. We'll be building immensely satisfying projects in the coming weeks. Some will be easy, some will be challenging, many will ASTOUND you! The projects build on each other so ",
     "topics": []
   },
   {
@@ -4775,7 +4817,9 @@
     "url": "https://github.com/Zipstack/unstract",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "mcp-server",
+      "rules"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -4819,7 +4863,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Unstract\n  Turn Unstructured Documents into Structured Data\n  \n    Documentation |\n    Enterprise\n  \n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n    \n    \n    \n  \n  \n    \n    \n    \n    \n  \n\n## What is Unstract?\n\nUnstract uses LLMs to extract structured JSON from documents — PDFs, images, scans, you name it. Define what you want to extract using natural language prompts, and deploy as an API or ETL pipeline.\n\nBuilt for teams in **finance**, **insurance**, **healthcare**, **KYC/compliance**, ",
     "topics": [
       "ai-agents",
       "data-engineering",
@@ -4885,7 +4929,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "MoneyPrinterPlus\n\n \n \n\n**简体中文** | [**English**](docs/en/README.md) | [**日本語**](docs/jp/README.md) \n\n这是一个轻松赚钱的项目。\n\n短视频时代，谁掌握了流量谁就掌握了Money!\n\n所以给大家分享这个经过精心打造的MoneyPrinter项目。\n\n**它可以：使用AI大模型技术,一键批量生成各类短视频。**\n\n**它可以：一键混剪短视频，批量生成短视频不是梦。**\n\n**它可以：自动把视频发布到抖音,快手,小红书,视频号上。**\n\n赚钱从来没有这么容易过!\n\n觉得有用的朋友，请给个star! ![Github stars](https://img.shields.io/github/stars/ddean2009/MoneyPrinterPlus.svg)\n\n# 目录\n\n- [MoneyPrinterPlus](#moneyprinterplus)\n\n- [视频教程](#视频教程)\n- [图文系列教程](#图文系列教程)\n\n- [界面概览](#界面概览)\n  - [1. AI视频批量混剪工具",
     "topics": []
   },
   {
@@ -4896,9 +4940,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "AI Product Design Agent - Open Source",
     "i18n": {
       "zh": {
@@ -4938,7 +4980,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# 🧠 SuperDesign — AI Design Agent for Your IDE\n\n> [!IMPORTANT]\n> **This repo is the original open-source Superdesign IDE extension (2025).**\n> It's kept here for history and is **no longer actively maintained**.\n>\n> **The Superdesign product is now a web app → [www.superdesign.dev](https://www.superdesign.dev)** —\n> an AI product design agent that generates UI mockups, components, and full\n> designs from a prompt on an infinite canvas.\n>\n> Prefer to stay in your editor? You can also drive Superd",
     "topics": []
   },
   {
@@ -4947,10 +4989,13 @@
     "url": "https://github.com/BlockRunAI/ClawRouter",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli"
     ],
     "summary": "The agent-native LLM router for OpenClaw. 41+ models, <1ms routing, USDC payments on Base & Solana via x402.",
     "i18n": {
@@ -4991,7 +5036,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "The LLM router built for autonomous agents\n\nAgents can't sign up for accounts. Agents can't enter credit cards.\nAgents can only sign transactions.\nClawRouter is the only LLM router that lets agents operate independently.\n8 models free, no crypto required. No signup. No API key. No credit card.\n\n&nbsp;\n&nbsp;\n&nbsp;\n&nbsp;\n&nbsp;\n\n[![npm version](https://img.shields.io/npm/v/@blockrun/clawrouter.svg?style=flat-square&color=cb3837)](https://npmjs.com/package/@blockrun/clawrouter)\n[![npm downloads]",
     "topics": [
       "ai",
       "ai-agents",
@@ -5019,9 +5064,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "DeepSpec: a full-stack codebase for training and evaluating speculative decoding algorithms",
     "i18n": {
       "zh": {
@@ -5061,7 +5104,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# DeepSpec\n\nDeepSpec is a full-stack codebase for training and evaluating draft models for speculative decoding. It contains data preparation utilities, draft model implementations, training code, and evaluation scripts.\n\n## Environment\n\nInstall the Python dependencies:\n\n```bash\npython -m pip install -r requirements.txt\n```\n\nData preparation additionally requires an inference engine to serve the target model when regenerating answers; see [scripts/data/README.md](./scripts/data/README.md) for de",
     "topics": []
   },
   {
@@ -5070,7 +5113,8 @@
     "url": "https://github.com/julep-ai/julep",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -5114,7 +5158,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Julep\n\nJulep — durable, composable AI agents. Flows that crash and resume, retry safely, and explain every step.\n\nJulep builds agents as **composable, durable dataflows** instead of ad-hoc loops: flows can crash and resume, retry safely, explain every step through a derived projection, and deny any tool the model was not explicitly allowed to call. The primary authoring surface is define-by-construction `@flow`: ordinary Python names graph steps while registered tools, pures, reasoners, branch",
     "topics": [
       "agents",
       "ai-agents",
@@ -5139,10 +5183,13 @@
     "url": "https://github.com/open-multi-agent/open-multi-agent",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "agent-framework",
+      "mcp-server"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli"
     ],
     "summary": "TypeScript AI agent orchestration framework with dynamic workflows. Describe the goal, not the graph: a coordinator plans the task DAG at runtime and runs it on any LLM (Claude, ChatGPT, Gemini, DeepSeek, or local models).",
     "i18n": {
@@ -5183,7 +5230,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Open Multi-Agent\n\n  From a goal to a task DAG, automatically.\n  TypeScript-native multi-agent orchestration.\n\n  \n  \n  \n  \n  \n  \n  \n\n  \n\n  Website ·\n  Docs ·\n  npm ·\n  Discussions\n\n  English · 中文\n\n`open-multi-agent` is an AI agent orchestration framework for TypeScript backends that drops into any Node.js app.\n\n> **Your engineers describe the goal, not the graph.**\n\nGraph-first frameworks make you wire every node and edge up front. OMA runs a **dynamic workflow**: a coordinator turns the goal int",
     "topics": [
       "agent-framework",
       "ai-agents",
@@ -5213,10 +5260,12 @@
     "url": "https://github.com/strands-agents/harness-sdk",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "mcp-server"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli"
     ],
     "summary": "Build an agent harness and control it end-to-end. Open-source SDK for production AI agents in Python & TypeScript - any model, any cloud.",
     "i18n": {
@@ -5257,7 +5306,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Strands Agents\n  \n\n  \n    A model-driven approach to building AI agents in just a few lines of code.\n  \n\n  \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n    Documentation\n    ◆ Samples\n    ◆ Tools\n    ◆ Agent Builder\n    ◆ MCP Server\n  \n\nStrands Agents is a simple yet powerful SDK that takes a model-driven approach to building and running AI agents. From simple conversational assistants to complex autonomous workflows, from local development to production deployment, Strands Agents scales wi",
     "topics": [
       "agentic",
       "agentic-ai",
@@ -5289,9 +5338,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Official Code for Stable Cascade",
     "i18n": {
       "zh": {
@@ -5331,7 +5378,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Stable Cascade\n\n    \n\nThis is the official codebase for **Stable Cascade**. We provide training & inference scripts, as well as a variety of different models you can use.\n\nThis model is built upon the [Würstchen](https://openreview.net/forum?id=gU58d5QeGv) architecture and its main \ndifference to other models, like Stable Diffusion, is that it is working at a much smaller latent space. Why is this \nimportant? The smaller the latent space, the **faster** you can run inference and the **cheaper*",
     "topics": []
   },
   {
@@ -5340,10 +5387,10 @@
     "url": "https://github.com/zai-org/GLM-5",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "hermes-agent"
     ],
     "summary": "GLM-5: From Vibe Coding to Agentic Engineering",
     "i18n": {
@@ -5382,7 +5429,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# GLM-5.2 & GLM-5.1 & GLM-5\n\n    👋 Join our Wechat or Discord community.\n    \n    📖 Check out the GLM-5.2 blog and GLM-5 Technical report.\n    \n    📍 Use GLM-5.2 API services on Z.ai API Platform. \n    \n    🔜 Try GLM-5.2 at z.ai.\n\n## Introduction\n\n### GLM-5.2\n\nGLM-5.2, our latest flagship model for long-horizon tasks. It marks a substantial leap in long-horizon task capability over its predecessor GLM-5.1 and, for the first time, delivers that capability on a **solid 1M-token context**. \n\nGLM-5.",
     "topics": [
       "agentic-ai",
       "coding",
@@ -5399,7 +5446,8 @@
       "tutorial"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "codex-cli",
+      "antigravity-cli"
     ],
     "summary": "Self-hosted AI accounting app. LLM analyzer for receipts, invoices, transactions with custom prompts and categories",
     "i18n": {
@@ -5440,7 +5488,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# TaxHacker: Self-Hosted AI Accounting\n\n[![GitHub Stars](https://img.shields.io/github/stars/vas3k/TaxHacker?color=ffcb47&labelColor=black&style=flat-square)](https://github.com/vas3k/TaxHacker/stargazers)\n[![License](https://img.shields.io/badge/license-MIT-ffcb47?labelColor=black&style=flat-square)](https://github.com/vas3k/TaxHacker/blob/main/LICENSE)\n[![Support Us](https://img.shields.io/badge/-Donate-f04f88?logo=githubsponsors&logoColor=white&style=flat-square)](https://vas3k.com/donate/)\n\n",
     "topics": [
       "accounting",
       "currency-exchange",
@@ -5462,7 +5510,7 @@
     "url": "https://github.com/openai/openai-cs-agents-demo",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -5506,7 +5554,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Customer Service Agents Demo\n\n[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)\n![NextJS](https://img.shields.io/badge/Built_with-NextJS-blue)\n![OpenAI API](https://img.shields.io/badge/Powered_by-OpenAI_API-orange)\n\nThis repository contains a demo of a Customer Service interface built on top of the [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/).\n\nIt is composed of two parts:\n\n1. A python backend that handles the agent orchestration logic, imple",
     "topics": []
   },
   {
@@ -5515,7 +5563,7 @@
     "url": "https://github.com/microsoft/call-center-ai",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -5559,7 +5607,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Call Center AI\n\nAI-powered call center solution with Azure and OpenAI GPT.\n\n[![Last release date](https://img.shields.io/github/release-date/clemlesne/call-center-ai)](https://github.com/clemlesne/call-center-ai/releases)\n[![Project license](https://img.shields.io/github/license/clemlesne/call-center-ai)](https://github.com/clemlesne/call-center-ai/blob/main/LICENSE)\n\n[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/call-center-ai?quickst",
     "topics": []
   },
   {
@@ -5610,7 +5658,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Awesome MCP Clients [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)\n\n[![Discord](https://img.shields.io/discord/1312302100125843476?logo=discord&label=discord)](https://glama.ai/mcp/discord)\n[![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/mcp?style=flat&logo=reddit&label=subreddit)](https://www.reddit.com/r/mcp/)\n\nA curated list of awesome Model Context Protocol (MCP) clients.\n\n> [!NOTE]\n> For most up to date MCP client list, please refer to https:/",
     "topics": [
       "clients",
       "mcp"
@@ -5622,10 +5670,10 @@
     "url": "https://github.com/GoogleCloudPlatform/agent-starter-pack",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "antigravity-cli"
     ],
     "summary": "Ship AI Agents to Google Cloud in minutes, not months. Production-ready templates with built-in CI/CD, evaluation, and observability.",
     "i18n": {
@@ -5666,7 +5714,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# 🚀 Agent Starter Pack\n\n![Version](https://img.shields.io/pypi/v/agent-starter-pack?color=blue) [![1-Minute Video Overview](https://img.shields.io/badge/1--Minute%20Overview-gray)](https://youtu.be/jHt-ZVD660g) [![Docs](https://img.shields.io/badge/Documentation-gray)](https://googlecloudplatform.github.io/agent-starter-pack/) \n  \n    \n    \n    \n  \n [![Launch in Cloud Shell](https://img.shields.io/badge/Launch-in_Cloud_Shell-white)](https://shell.cloud.google.com/cloudshell/editor?cloudshell_git",
     "topics": [
       "agents",
       "gcp",
@@ -5684,7 +5732,7 @@
     "url": "https://github.com/crestalnetwork/intentkit",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -5728,7 +5776,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# IntentKit\n\n    \n\n    Your Cloud-Native Agent Team\n\n  \n  \n  \n  \n\nIntentKit is an open-source, self-hosted cloud agent cluster that manages a collaborative team of AI agents for you.\n\n## Why IntentKit\n\nCurrent AI agents generally follow two paths:\n\n1. **Local-First** (e.g., OpenClaw): These serve as personal assistants or experimental tools. However, they often require expensive hardware and extensive local permissions.\n2. **Cloud-Native**: Similar to modern web apps, these run in the cloud, con",
     "topics": [
       "ai",
       "ai-agent-framework",
@@ -5789,7 +5837,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# FREE-CHATGPT-API\n\n通过标准的 OpenAI格式免费使用ChatGPT API\n\n  中文 | \n  English\n\n  \n\n  快速开始\n  ·\n  使用方法\n  ·\n  立即领取免费KEY\n  ·\n  付费极速API\n  ·\n  应用支持\n\n> [!NOTE]\n> 本项目当前API地址已更新为 `https://free.v36.cm` 请知晓！\n\n> [!IMPORTANT]\n> 使用者必须在遵循 OpenAI 的[使用条款](https://openai.com/policies/terms-of-use)以及**法律法规**的情况下使用，不得用于非法用途。\n> 根据[《生成式人工智能服务管理暂行办法》](http://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm)的要求，请勿对中国地区公众提供一切未经备案的生成式人工智能服务。\n> 该项目API仅用于非商业性的学习、研究、科研测试等合法用途，不得用于任何违法违规用途以及商业用途，否则后果自负。\n\n> [!TIP]\n> 本项目仅供个人学习使用，不保证稳定性",
     "topics": []
   },
   {
@@ -5842,7 +5890,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Liger Kernel: Efficient Triton Kernels for LLM Training\r\n\r\n\r\n\r\n    \r\n        Stable\r\n        Nightly\r\n        Discord\r\n    \r\n    \r\n        \r\n            \r\n                \r\n            \r\n        \r\n        \r\n            \r\n                \r\n            \r\n        \r\n        \r\n            \r\n                \r\n            \r\n        \r\n        \r\n            \r\n                \r\n            \r\n        \r\n        \r\n            \r\n                \r\n            \r\n        \r\n    \r\n\r\n\r\n\r\n\r\n\r\n\r\n[Installation](#ins",
     "topics": [
       "llm-training",
       "triton",
@@ -5863,11 +5911,9 @@
     "url": "https://github.com/midudev/autoskills",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "One command. Your entire AI skill stack. Installed.",
     "i18n": {
       "zh": {
@@ -5907,7 +5953,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# autoskills\n\n**One command. Your entire AI skill stack. Installed.**\n\n[autoskills.sh](https://autoskills.sh)\n\nScans your project, detects your tech stack, and installs curated AI agent skills automatically.\n\n```bash\nnpx autoskills\n```\n\n## How it works\n\n1. Run `npx autoskills` in your project root\n2. Your `package.json`, Gradle files, and config files are scanned to detect technologies\n3. The best matching AI agent skills are selected from the audited autoskills registry\n4. Only the selected ski",
     "topics": []
   },
   {
@@ -5916,7 +5962,8 @@
     "url": "https://github.com/airweave-ai/airweave",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -5960,7 +6007,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "Open-source context retrieval layer for AI agents and RAG systems.\n\n  \n  \n  \n  \n\n  \n  \n  \n  \n  \n\n  \n\n### What is Airweave?\nAirweave connects to your apps, tools, and databases, continuously syncs their data, and exposes it through a unified, LLM-friendly search interface. AI agents query Airweave to retrieve relevant, grounded, up-to-date context from multiple sources in a single request.\n\n### Where it fits\nAirweave sits between your data sources and AI systems as shared retrieval infrastructure",
     "topics": [
       "llm",
       "rag",
@@ -5992,9 +6039,7 @@
     "resource_type": [
       "skills"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Skills for threat modeling, scanning, triage, patching, plus an autonomous scanning harness you can /customize",
     "i18n": {
       "zh": {
@@ -6034,7 +6079,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Defending Code Reference Harness\n\nA reference implementation for autonomous vulnerability discovery and\nremediation with Claude, based on our learnings from [partnering with security\nteams at several organizations](https://www.anthropic.com/glasswing)\nsince launching Claude Mythos Preview. For a write up of these learnings along with\nbest practices, see the [accompanying blog post](https://claude.com/blog/using-llms-to-secure-source-code)\n(also available in [`blog-post.md`](docs/blog-post.md))",
     "topics": [
       "security"
     ]
@@ -6045,7 +6090,7 @@
     "url": "https://github.com/Cocoon-AI/architecture-diagram-generator",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "general-ai-coding"
@@ -6089,7 +6134,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Architecture Diagram Generator\n\n**Need an architecture diagram? Get AI to build you one.**\n\nUse [Claude.ai](https://claude.ai) with this special skill to generate professional architecture diagrams in seconds. Describe your system, and Claude creates a beautiful, dark-themed diagram as a standalone HTML file you can open in any browser.\n\n- **No design skills needed** — just describe your architecture in plain English\n- **Iterate quickly** — ask Claude to add components, change layouts, or upda",
     "topics": []
   }
 ]

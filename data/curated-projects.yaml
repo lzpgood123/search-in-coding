@@ -5,7 +5,7 @@
   source_type: github
   resource_type:
   - agent-framework
-  - cli-tool
+  - mcp-server
   target_tools:
   - goose
   summary: an open source, extensible AI agent that goes beyond code suggestions -
@@ -63,7 +63,7 @@
       interfaces for code generation, execution, and testing with any LLM.
   recommendation_level: try-now
   curation_note: 'Auto-selected by scoring rules: source=github, score=86, resource_types=agent-framework,
-    cli-tool.'
+    mcp-server.'
 - id: github-juliusbrussee-caveman
   name: JuliusBrussee/caveman
   url: https://github.com/JuliusBrussee/caveman
@@ -71,10 +71,9 @@
   source_type: github
   resource_type:
   - skills
+  - rules
   target_tools:
   - claude-code
-  - codex-cli
-  - cursor
   summary: 🪨 why use many token when few token do trick — Claude Code skill that cuts
     65% of tokens by talking like caveman
   i18n:
@@ -136,17 +135,19 @@
     en: A humorous skill that drastically reduces token usage by making AI talk like
       a caveman, applicable to mainstream AI coding agents.
   recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=85, resource_types=skills.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=85, resource_types=skills,
+    rules.'
 - id: github-cline-cline
   name: cline/cline
   url: https://github.com/cline/cline
   repo: cline/cline
   source_type: github
   resource_type:
+  - extension
   - agent-framework
   - cli-tool
-  - extension
-  target_tools: []
+  target_tools:
+  - general-ai-coding
   summary: Autonomous coding agent as an SDK, IDE extension, or CLI assistant.
   i18n:
     zh:
@@ -196,8 +197,8 @@
     en: Cline is a powerful open-source autonomous coding agent that can be used as
       an SDK, IDE extension, or CLI assistant.
   recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=85, resource_types=agent-framework,
-    cli-tool, extension.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=85, resource_types=extension,
+    agent-framework, cli-tool.'
 - id: github-alirezarezvani-claude-skills
   name: alirezarezvani/claude-skills
   url: https://github.com/alirezarezvani/claude-skills
@@ -205,6 +206,10 @@
   source_type: github
   resource_type:
   - skills
+  - extension
+  - agent-framework
+  - cli-tool
+  - rules
   target_tools:
   - claude-code
   - codex-cli
@@ -292,7 +297,8 @@
     en: A comprehensive open-source library of over 350 production-ready skills and
       plugins for multiple AI coding agents, highly practical and valuable.
   recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=83, resource_types=skills.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=83, resource_types=skills,
+    extension, agent-framework, cli-tool, rules.'
 - id: github-aider-ai-aider
   name: Aider-AI/aider
   url: https://github.com/Aider-AI/aider
@@ -300,7 +306,12 @@
   source_type: github
   resource_type:
   - cli-tool
-  target_tools: []
+  target_tools:
+  - claude-code
+  - codex-cli
+  - antigravity-cli
+  - opencode
+  - qoder
   summary: aider is AI pair programming in your terminal
   i18n:
     zh:
@@ -371,9 +382,15 @@
   repo: continuedev/continue
   source_type: github
   resource_type:
-  - extension
+  - agent-framework
   - cli-tool
-  target_tools: []
+  target_tools:
+  - codex-cli
+  - antigravity-cli
+  - opencode
+  - qoder
+  - trae
+  - hermes-agent
   summary: open-source coding agent
   i18n:
     zh:
@@ -443,8 +460,8 @@
     zh: 继续代码代理是领先的开源编码代理，提供IDE扩展和CLI工具，支持多种AI模型，拥有庞大的社区和丰富的文档。
     en: Continue is a leading open-source coding agent offering IDE extensions and
       CLI tools, with strong community adoption and comprehensive documentation.
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=80, resource_types=extension,
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=80, resource_types=agent-framework,
     cli-tool.'
 - id: github-virgiliojr94-book-to-skill
   name: virgiliojr94/book-to-skill
@@ -452,7 +469,6 @@
   repo: virgiliojr94/book-to-skill
   source_type: github
   resource_type:
-  - cli-tool
   - skills
   target_tools:
   - claude-code
@@ -507,8 +523,7 @@
     en: A tool that converts technical books into skills for AI coding agents like
       Claude Code, Copilot CLI, and Amp.
   recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=80, resource_types=cli-tool,
-    skills.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=80, resource_types=skills.'
 - id: github-blader-humanizer
   name: blader/humanizer
   url: https://github.com/blader/humanizer
@@ -802,7 +817,6 @@
   repo: glitternetwork/pinme
   source_type: github
   resource_type:
-  - cli-tool
   - skills
   target_tools:
   - claude-code
@@ -871,16 +885,15 @@
       deployment of full-stack projects, with native Claude Code Skills support, significantly
       streamlining deployment for AI coding agents.
   recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=71, resource_types=cli-tool,
-    skills.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=71, resource_types=skills.'
 - id: github-nowork-studio-notfair
   name: nowork-studio/NotFair
   url: https://github.com/nowork-studio/NotFair
   repo: nowork-studio/NotFair
   source_type: github
   resource_type:
-  - mcp-server
   - skills
+  - mcp-server
   target_tools:
   - claude-code
   summary: Open-source Claude Code skills for SEO, GEO, Google Ads, Meta Ads
@@ -946,8 +959,8 @@
     en: High-quality open-source Claude Code skills for Google Ads, Meta Ads, and
       SEO data, with strong ecosystem value and practicality.
   recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=71, resource_types=mcp-server,
-    skills.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=71, resource_types=skills,
+    mcp-server.'
 - id: github-agentchengfeng-chengfeng-videocut-skills
   name: Agentchengfeng/chengfeng-videocut-skills
   url: https://github.com/Agentchengfeng/chengfeng-videocut-skills
@@ -957,7 +970,6 @@
   - skills
   target_tools:
   - claude-code
-  - codex-cli
   summary: 用 Claude Code Skills 做的视频剪辑 Agent
   i18n:
     zh:
@@ -1143,6 +1155,7 @@
   source_type: github
   resource_type:
   - skills
+  - cli-tool
   target_tools:
   - claude-code
   summary: Claude Code Skill for browser automation with Playwright. Model-invoked
@@ -1217,7 +1230,8 @@
     en: A Claude Code skill that enables autonomous browser automation using Playwright
       for testing and validation.
   recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=69, resource_types=skills.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=69, resource_types=skills,
+    cli-tool.'
 - id: github-yctimlin-mcp-excalidraw
   name: yctimlin/mcp_excalidraw
   url: https://github.com/yctimlin/mcp_excalidraw
@@ -1226,7 +1240,7 @@
   resource_type:
   - mcp-server
   - skills
-  - cli-tool
+  - agent-framework
   target_tools:
   - claude-code
   summary: MCP server and Claude Code skill for Excalidraw — programmatic canvas toolkit
@@ -1284,7 +1298,7 @@
       sync.
   recommendation_level: try-now
   curation_note: 'Auto-selected by scoring rules: source=github, score=68, resource_types=mcp-server,
-    skills, cli-tool.'
+    skills, agent-framework.'
 - id: github-sanjeed5-awesome-cursor-rules-mdc
   name: sanjeed5/awesome-cursor-rules-mdc
   url: https://github.com/sanjeed5/awesome-cursor-rules-mdc
@@ -1427,7 +1441,6 @@
   source_type: github
   resource_type:
   - skills
-  - rules
   target_tools:
   - claude-code
   summary: Humanizer 的汉化版本，Claude Code Skills，旨在消除文本中 AI 生成的痕迹。
@@ -1510,8 +1523,7 @@
       rules and skills to remove AI writing traces, particularly useful with Claude
       Code.
   recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=65, resource_types=skills,
-    rules.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=65, resource_types=skills.'
 - id: github-gemini-cli-extensions-conductor
   name: gemini-cli-extensions/conductor
   url: https://github.com/gemini-cli-extensions/conductor
@@ -1520,7 +1532,8 @@
   resource_type:
   - extension
   - cli-tool
-  target_tools: []
+  target_tools:
+  - antigravity-cli
   summary: Conductor is a Gemini CLI extension that allows you to specify, plan, and
     implement software features.
   i18n:
@@ -1670,7 +1683,6 @@
   source_type: github
   resource_type:
   - rules
-  - tutorial
   target_tools:
   - cursor
   summary: 神级Cursor Rule
@@ -1719,18 +1731,19 @@
     en: A popular repository curating high-quality Cursor rules and prompt engineering
       workflows with over 2600 stars.
   recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=62, resource_types=rules,
-    tutorial.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=62, resource_types=rules.'
 - id: github-taishi-i-awesome-chatgpt-repositories
   name: taishi-i/awesome-ChatGPT-repositories
   url: https://github.com/taishi-i/awesome-ChatGPT-repositories
   repo: taishi-i/awesome-ChatGPT-repositories
   source_type: github
   resource_type:
-  - tutorial
+  - skills
   target_tools:
   - claude-code
   - codex-cli
+  - trae
+  - hermes-agent
   summary: A curated list of open source GitHub repositories related to ChatGPT, the
     OpenAI API, and Codex. Searchable via Claude Code skills.
   i18n:
@@ -1795,15 +1808,15 @@
     zh: 一个精心整理的ChatGPT相关开源仓库列表，对AI编码代理生态有重要参考价值。
     en: A curated list of open-source ChatGPT-related repositories, valuable for discovering
       AI coding agent tools.
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=59, resource_types=tutorial.'
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=59, resource_types=skills.'
 - id: github-cursor-cursor
   name: cursor/cursor
   url: https://github.com/cursor/cursor
   repo: cursor/cursor
   source_type: github
   resource_type:
-  - agent-framework
+  - tutorial
   target_tools:
   - cursor
   summary: cursor/cursor
@@ -1879,15 +1892,15 @@
     zh: Cursor 官方仓库，主要用于问题追踪，不含源代码或详细文档。
     en: Official Cursor repository, primarily used for issue tracking, with no source
       code or detailed documentation.
-  recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=55, resource_types=agent-framework.'
+  recommendation_level: watch
+  curation_note: 'Auto-selected by scoring rules: source=github, score=55, resource_types=tutorial.'
 - id: github-openclaw-openclaw
   name: openclaw/openclaw
   url: https://github.com/openclaw/openclaw
   repo: openclaw/openclaw
   source_type: github
   resource_type:
-  - tutorial
+  - cli-tool
   target_tools:
   - general-ai-coding
   summary: 'Your own personal AI assistant. Any OS. Any Platform. The lobster way.
@@ -1940,16 +1953,17 @@
   last_analyzed: null
   benchmark_ref: null
   recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=tutorial.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=cli-tool.'
 - id: github-obra-superpowers
   name: obra/superpowers
   url: https://github.com/obra/superpowers
   repo: obra/superpowers
   source_type: github
   resource_type:
-  - tutorial
+  - skills
+  - agent-framework
   target_tools:
-  - general-ai-coding
+  - hermes-agent
   summary: An agentic skills framework & software development methodology that works.
   i18n:
     zh:
@@ -1999,15 +2013,19 @@
   tracking_priority: pending
   last_analyzed: null
   benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=tutorial.'
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=skills,
+    agent-framework.'
 - id: github-affaan-m-ecc
   name: affaan-m/ECC
   url: https://github.com/affaan-m/ECC
   repo: affaan-m/ECC
   source_type: github
   resource_type:
-  - tutorial
+  - skills
+  - agent-framework
+  - cli-tool
+  - mcp-server
   target_tools:
   - claude-code
   - codex-cli
@@ -2070,15 +2088,16 @@
   tracking_priority: pending
   last_analyzed: null
   benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=tutorial.'
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=skills,
+    agent-framework, cli-tool, mcp-server.'
 - id: github-ultraworkers-claw-code
   name: ultraworkers/claw-code
   url: https://github.com/ultraworkers/claw-code
   repo: ultraworkers/claw-code
   source_type: github
   resource_type:
-  - tutorial
+  - agent-framework
   target_tools:
   - codex-cli
   summary: An agent-managed museum exhibit, built in Rust with Gajae-Code / LazyCodex
@@ -2121,8 +2140,8 @@
   tracking_priority: pending
   last_analyzed: null
   benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=tutorial.'
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=agent-framework.'
 - id: github-mattpocock-skills
   name: mattpocock/skills
   url: https://github.com/mattpocock/skills
@@ -2177,7 +2196,8 @@
   repo: x1xhlol/system-prompts-and-models-of-ai-tools
   source_type: github
   resource_type:
-  - tutorial
+  - extension
+  - agent-framework
   target_tools:
   - claude-code
   - qoder
@@ -2251,8 +2271,245 @@
   tracking_priority: pending
   last_analyzed: null
   benchmark_ref: null
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=47, resource_types=extension,
+    agent-framework.'
+- id: github-gsd-build-get-shit-done
+  name: gsd-build/get-shit-done
+  url: https://github.com/gsd-build/get-shit-done
+  repo: gsd-build/get-shit-done
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - claude-code
+  summary: A light-weight and powerful meta-prompting, context engineering and spec-driven
+    development system for Claude Code by TÂCHES.
+  i18n:
+    zh:
+      name: gsd-build/get-shit-done
+      summary: A light-weight and powerful meta-prompting, context engineering and
+        spec-driven development system for Claude Code by TÂCHES.
+    en:
+      name: gsd-build/get-shit-done
+      summary: A light-weight and powerful meta-prompting, context engineering and
+        spec-driven development system for Claude Code by TÂCHES.
+  status: archived
+  license: mit
+  stars: 64751
+  forks: 5482
+  last_updated: '2026-07-14T07:55:19Z'
+  first_seen: '2026-07-14'
+  last_seen: '2026-07-14'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics:
+  - claude-code
+  - context-engineering
+  - meta-prompting
+  - spec-driven-development
+  readme_preview: '# GSD Has Moved
+
+
+    This repository is no longer the active home for GSD development.
+
+
+    The project now continues as **GSD Core** in the Open GSD repository:
+
+
+    https://github.com/open-gsd/gsd-core
+
+
+    Use the new repository for current source code, issues, releases, and contribution
+
+    work.'
+  tags: []
+  review_state: auto-curated
+  quantifiable_score: 52
+  quality_score: 0
+  total_score: 52
+  score_detail:
+    stars: 20
+    activity: 15
+    adoption: 10
+    maturity: 7
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: null
+  readme_checked: true
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=52, resource_types=agent-framework.'
+- id: github-msitarzewski-agency-agents
+  name: msitarzewski/agency-agents
+  url: https://github.com/msitarzewski/agency-agents
+  repo: msitarzewski/agency-agents
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools: []
+  summary: A complete AI agency at your fingertips - From frontend wizards to Reddit
+    community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized
+    expert with personality, processes, and proven deliverables.
+  i18n:
+    zh:
+      name: msitarzewski/agency-agents
+      summary: A complete AI agency at your fingertips - From frontend wizards to
+        Reddit community ninjas, from whimsy injectors to reality checkers. Each agent
+        is a specialized expert with personality, processes, and proven deliverables.
+    en:
+      name: msitarzewski/agency-agents
+      summary: A complete AI agency at your fingertips - From frontend wizards to
+        Reddit community ninjas, from whimsy injectors to reality checkers. Each agent
+        is a specialized expert with personality, processes, and proven deliverables.
+  status: unknown
+  license: mit
+  stars: 131253
+  forks: 21551
+  last_updated: '2026-07-14T08:10:50Z'
+  first_seen: '2026-07-14'
+  last_seen: '2026-07-14'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: '# 🎭 The Agency: AI Specialists Ready to Transform Your Workflow
+
+
+    > **A complete AI agency at your fingertips** - From frontend wizards to Reddit
+    community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized
+    expert with personality, processes, and proven deliverables.
+
+
+    [![GitHub stars](https://img.shields.io/github/stars/msitarzewski/agency-agents?style=social)](https://github.com/msitarzewski/agency-agents)
+
+    [![License: MIT](https://img.shields.io/badge/License-MIT-yell'
+  tags: []
+  review_state: auto-curated
+  quantifiable_score: 49
+  quality_score: 0
+  total_score: 49
+  score_detail:
+    stars: 20
+    activity: 15
+    adoption: 10
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: null
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=agent-framework.'
+- id: github-garrytan-gstack
+  name: garrytan/gstack
+  url: https://github.com/garrytan/gstack
+  repo: garrytan/gstack
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - claude-code
+  summary: 'Use Garry Tan''s exact Claude Code setup: 23 opinionated tools that serve
+    as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA'
+  i18n:
+    zh:
+      name: garrytan/gstack
+      summary: 'Use Garry Tan''s exact Claude Code setup: 23 opinionated tools that
+        serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA'
+    en:
+      name: garrytan/gstack
+      summary: 'Use Garry Tan''s exact Claude Code setup: 23 opinionated tools that
+        serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA'
+  status: unknown
+  license: mit
+  stars: 121763
+  forks: 18192
+  last_updated: '2026-07-14T08:11:51Z'
+  first_seen: '2026-07-14'
+  last_seen: '2026-07-14'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics: []
+  readme_preview: '# gstack
+
+
+    > "I don''t think I''ve typed like a line of code probably since December, basically,
+    which is an extremely large change." — [Andrej Karpathy](https://fortune.com/2026/03/21/andrej-karpathy-openai-cofounder-ai-agents-coding-state-of-psychosis-openclaw/),
+    No Priors podcast, March 2026
+
+
+    When I heard Karpathy say this, I wanted to find out how. How does one person
+    ship like a team of twenty? Peter Steinberger built [OpenClaw](https://github.com/openclaw/openclaw)
+    — 247K GitHub stars — essen'
+  tags: []
+  review_state: auto-curated
+  quantifiable_score: 49
+  quality_score: 0
+  total_score: 49
+  score_detail:
+    stars: 20
+    activity: 15
+    adoption: 10
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: null
   recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=47, resource_types=tutorial.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=tutorial.'
+- id: github-shubhamsaboo-awesome-llm-apps
+  name: Shubhamsaboo/awesome-llm-apps
+  url: https://github.com/Shubhamsaboo/awesome-llm-apps
+  repo: Shubhamsaboo/awesome-llm-apps
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - general-ai-coding
+  summary: 100+ AI Agent & RAG apps you can actually run — clone, customize, ship.
+  i18n:
+    zh:
+      name: Shubhamsaboo/awesome-llm-apps
+      summary: 100+ AI Agent & RAG apps you can actually run — clone, customize, ship.
+    en:
+      name: Shubhamsaboo/awesome-llm-apps
+      summary: 100+ AI Agent & RAG apps you can actually run — clone, customize, ship.
+  status: unknown
+  license: apache-2.0
+  stars: 120075
+  forks: 17809
+  last_updated: '2026-07-14T08:11:38Z'
+  first_seen: '2026-07-14'
+  last_seen: '2026-07-14'
+  maturity: unknown
+  languages:
+  - Python
+  topics:
+  - llms
+  - rag
+  - python
+  - agents
+  readme_preview: "<p align=\"center\">\n  <a href=\"http://www.theunwindai.com\"\
+    >\n    <img src=\"docs/banner/unwind_black.png\" width=\"900px\" alt=\"Unwind\
+    \ AI\">\n  </a>\n</p>\n\n<div align=\"center\">\n\n# Awesome LLM Apps\n\n**100+\
+    \ open-source AI agents, agent skills, and RAG apps. Hand-built, tested end-to-end,\
+    \ Apache-2.0.**\n\nClone it, ship it, sell it - 100% free and open-source\n\n\
+    Works with Claude, Gemini, GPT, DeepSeek, Llama, Qwen and other open-source models.\n\
+    \n**[Step-by-step tutorials on Unwind AI](https://www.theunwindai.co"
+  tags: []
+  review_state: auto-curated
+  quantifiable_score: 49
+  quality_score: 0
+  total_score: 49
+  score_detail:
+    stars: 20
+    activity: 15
+    adoption: 10
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: null
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=agent-framework.'
 - id: github-farion1231-cc-switch
   name: farion1231/cc-switch
   url: https://github.com/farion1231/cc-switch
@@ -2260,6 +2517,8 @@
   source_type: github
   resource_type:
   - cli-tool
+  - mcp-server
+  - skills
   target_tools:
   - claude-code
   - codex-cli
@@ -2336,230 +2595,9 @@
   tracking_priority: pending
   last_analyzed: null
   benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=cli-tool.'
-- id: github-gsd-build-get-shit-done
-  name: gsd-build/get-shit-done
-  url: https://github.com/gsd-build/get-shit-done
-  repo: gsd-build/get-shit-done
-  source_type: github
-  resource_type:
-  - tutorial
-  target_tools:
-  - claude-code
-  summary: A light-weight and powerful meta-prompting, context engineering and spec-driven
-    development system for Claude Code by TÂCHES.
-  i18n:
-    zh:
-      name: gsd-build/get-shit-done
-      summary: A light-weight and powerful meta-prompting, context engineering and
-        spec-driven development system for Claude Code by TÂCHES.
-    en:
-      name: gsd-build/get-shit-done
-      summary: A light-weight and powerful meta-prompting, context engineering and
-        spec-driven development system for Claude Code by TÂCHES.
-  status: archived
-  license: mit
-  stars: 64751
-  forks: 5482
-  last_updated: '2026-07-14T07:55:19Z'
-  first_seen: '2026-07-14'
-  last_seen: '2026-07-14'
-  maturity: unknown
-  languages:
-  - JavaScript
-  topics:
-  - claude-code
-  - context-engineering
-  - meta-prompting
-  - spec-driven-development
-  readme_preview: ''
-  tags: []
-  review_state: auto-curated
-  quantifiable_score: 52
-  quality_score: 0
-  total_score: 52
-  score_detail:
-    stars: 20
-    activity: 15
-    adoption: 10
-    maturity: 7
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=52, resource_types=tutorial.'
-- id: github-msitarzewski-agency-agents
-  name: msitarzewski/agency-agents
-  url: https://github.com/msitarzewski/agency-agents
-  repo: msitarzewski/agency-agents
-  source_type: github
-  resource_type:
-  - tutorial
-  target_tools:
-  - general-ai-coding
-  summary: A complete AI agency at your fingertips - From frontend wizards to Reddit
-    community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized
-    expert with personality, processes, and proven deliverables.
-  i18n:
-    zh:
-      name: msitarzewski/agency-agents
-      summary: A complete AI agency at your fingertips - From frontend wizards to
-        Reddit community ninjas, from whimsy injectors to reality checkers. Each agent
-        is a specialized expert with personality, processes, and proven deliverables.
-    en:
-      name: msitarzewski/agency-agents
-      summary: A complete AI agency at your fingertips - From frontend wizards to
-        Reddit community ninjas, from whimsy injectors to reality checkers. Each agent
-        is a specialized expert with personality, processes, and proven deliverables.
-  status: unknown
-  license: mit
-  stars: 131253
-  forks: 21551
-  last_updated: '2026-07-14T08:10:50Z'
-  first_seen: '2026-07-14'
-  last_seen: '2026-07-14'
-  maturity: unknown
-  languages:
-  - Shell
-  topics: []
-  readme_preview: '# 🎭 The Agency: AI Specialists Ready to Transform Your Workflow
-
-
-    > **A complete AI agency at your fingertips** - From frontend wizards to Reddit
-    community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized
-    expert with personality, processes, and proven deliverables.
-
-
-    [![GitHub stars](https://img.shields.io/github/stars/msitarzewski/agency-agents?style=social)](https://github.com/msitarzewski/agency-agents)
-
-    [![License: MIT](https://img.shields.io/badge/License-MIT-yell'
-  tags: []
-  review_state: auto-curated
-  quantifiable_score: 49
-  quality_score: 0
-  total_score: 49
-  score_detail:
-    stars: 20
-    activity: 15
-    adoption: 10
-    maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=tutorial.'
-- id: github-garrytan-gstack
-  name: garrytan/gstack
-  url: https://github.com/garrytan/gstack
-  repo: garrytan/gstack
-  source_type: github
-  resource_type:
-  - tutorial
-  target_tools:
-  - claude-code
-  summary: 'Use Garry Tan''s exact Claude Code setup: 23 opinionated tools that serve
-    as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA'
-  i18n:
-    zh:
-      name: garrytan/gstack
-      summary: 'Use Garry Tan''s exact Claude Code setup: 23 opinionated tools that
-        serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA'
-    en:
-      name: garrytan/gstack
-      summary: 'Use Garry Tan''s exact Claude Code setup: 23 opinionated tools that
-        serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA'
-  status: unknown
-  license: mit
-  stars: 121763
-  forks: 18192
-  last_updated: '2026-07-14T08:11:51Z'
-  first_seen: '2026-07-14'
-  last_seen: '2026-07-14'
-  maturity: unknown
-  languages:
-  - TypeScript
-  topics: []
-  readme_preview: '# gstack
-
-
-    > "I don''t think I''ve typed like a line of code probably since December, basically,
-    which is an extremely large change." — [Andrej Karpathy](https://fortune.com/2026/03/21/andrej-karpathy-openai-cofounder-ai-agents-coding-state-of-psychosis-openclaw/),
-    No Priors podcast, March 2026
-
-
-    When I heard Karpathy say this, I wanted to find out how. How does one person
-    ship like a team of twenty? Peter Steinberger built [OpenClaw](https://github.com/openclaw/openclaw)
-    — 247K GitHub stars — essen'
-  tags: []
-  review_state: auto-curated
-  quantifiable_score: 49
-  quality_score: 0
-  total_score: 49
-  score_detail:
-    stars: 20
-    activity: 15
-    adoption: 10
-    maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=tutorial.'
-- id: github-shubhamsaboo-awesome-llm-apps
-  name: Shubhamsaboo/awesome-llm-apps
-  url: https://github.com/Shubhamsaboo/awesome-llm-apps
-  repo: Shubhamsaboo/awesome-llm-apps
-  source_type: github
-  resource_type:
-  - tutorial
-  target_tools:
-  - general-ai-coding
-  summary: 100+ AI Agent & RAG apps you can actually run — clone, customize, ship.
-  i18n:
-    zh:
-      name: Shubhamsaboo/awesome-llm-apps
-      summary: 100+ AI Agent & RAG apps you can actually run — clone, customize, ship.
-    en:
-      name: Shubhamsaboo/awesome-llm-apps
-      summary: 100+ AI Agent & RAG apps you can actually run — clone, customize, ship.
-  status: unknown
-  license: apache-2.0
-  stars: 120075
-  forks: 17809
-  last_updated: '2026-07-14T08:11:38Z'
-  first_seen: '2026-07-14'
-  last_seen: '2026-07-14'
-  maturity: unknown
-  languages:
-  - Python
-  topics:
-  - llms
-  - rag
-  - python
-  - agents
-  readme_preview: "<p align=\"center\">\n  <a href=\"http://www.theunwindai.com\"\
-    >\n    <img src=\"docs/banner/unwind_black.png\" width=\"900px\" alt=\"Unwind\
-    \ AI\">\n  </a>\n</p>\n\n<div align=\"center\">\n\n# Awesome LLM Apps\n\n**100+\
-    \ open-source AI agents, agent skills, and RAG apps. Hand-built, tested end-to-end,\
-    \ Apache-2.0.**\n\nClone it, ship it, sell it - 100% free and open-source\n\n\
-    Works with Claude, Gemini, GPT, DeepSeek, Llama, Qwen and other open-source models.\n\
-    \n**[Step-by-step tutorials on Unwind AI](https://www.theunwindai.co"
-  tags: []
-  review_state: auto-curated
-  quantifiable_score: 49
-  quality_score: 0
-  total_score: 49
-  score_detail:
-    stars: 20
-    activity: 15
-    adoption: 10
-    maturity: 4
-  tracking_priority: pending
-  last_analyzed: null
-  benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=tutorial.'
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=cli-tool,
+    mcp-server, skills.'
 - id: github-nextlevelbuilder-ui-ux-pro-max-skill
   name: nextlevelbuilder/ui-ux-pro-max-skill
   url: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
@@ -2567,8 +2605,14 @@
   source_type: github
   resource_type:
   - skills
+  - cli-tool
   target_tools:
-  - general-ai-coding
+  - claude-code
+  - codex-cli
+  - antigravity-cli
+  - qoder
+  - trae
+  - cursor
   summary: An AI SKILL that provide design intelligence for building professional
     UI/UX multiple platforms
   i18n:
@@ -2631,14 +2675,15 @@
   last_analyzed: null
   benchmark_ref: null
   recommendation_level: try-now
-  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=skills.'
+  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=skills,
+    cli-tool.'
 - id: github-browser-use-browser-use
   name: browser-use/browser-use
   url: https://github.com/browser-use/browser-use
   repo: browser-use/browser-use
   source_type: github
   resource_type:
-  - tutorial
+  - agent-framework
   target_tools:
   - general-ai-coding
   summary: 🌐 Make websites accessible for AI agents. Automate tasks online with ease.
@@ -2688,8 +2733,8 @@
   tracking_priority: pending
   last_analyzed: null
   benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=tutorial.'
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=agent-framework.'
 - id: github-deepseek-ai-deepseek-v3
   name: deepseek-ai/DeepSeek-V3
   url: https://github.com/deepseek-ai/DeepSeek-V3
@@ -2697,8 +2742,7 @@
   source_type: github
   resource_type:
   - tutorial
-  target_tools:
-  - general-ai-coding
+  target_tools: []
   summary: deepseek-ai/DeepSeek-V3
   i18n:
     zh:
@@ -2746,11 +2790,11 @@
   repo: thedotmack/claude-mem
   source_type: github
   resource_type:
-  - tutorial
+  - agent-framework
+  - skills
   target_tools:
   - claude-code
   - codex-cli
-  - opencode
   summary: Persistent Context Across Sessions for Every Agent –  Captures everything
     your agent does during sessions, compresses it with AI, and injects relevant context
     back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Herme
@@ -2798,7 +2842,20 @@
   - embeddings
   - memory-engine
   - rag
-  readme_preview: ''
+  readme_preview: "\U0001F1E8\U0001F1F3 中文 •\n  \U0001F1F9\U0001F1FC 繁體中文 •\n  \U0001F1EF\
+    \U0001F1F5 日本語 •\n  \U0001F1F5\U0001F1F9 Português •\n  \U0001F1E7\U0001F1F7 Português\
+    \ •\n  \U0001F1F0\U0001F1F7 한국어 •\n  \U0001F1EA\U0001F1F8 Español •\n  \U0001F1E9\
+    \U0001F1EA Deutsch •\n  \U0001F1EB\U0001F1F7 Français •\n  \U0001F1EE\U0001F1F1\
+    \ עברית •\n  \U0001F1F8\U0001F1E6 العربية •\n  \U0001F1F7\U0001F1FA Русский •\n\
+    \  \U0001F1F5\U0001F1F1 Polski •\n  \U0001F1E8\U0001F1FF Čeština •\n  \U0001F1F3\
+    \U0001F1F1 Nederlands •\n  \U0001F1F9\U0001F1F7 Türkçe •\n  \U0001F1FA\U0001F1E6\
+    \ Українська •\n  \U0001F1FB\U0001F1F3 Tiếng Việt •\n  \U0001F1F5\U0001F1ED Tagalog\
+    \ •\n  \U0001F1EE\U0001F1E9 Indonesia •\n  \U0001F1F9\U0001F1ED ไทย •\n  \U0001F1EE\
+    \U0001F1F3 हिन्दी •\n  \U0001F1E7\U0001F1E9 বাংলা •\n  \U0001F1F5\U0001F1F0 اردو\
+    \ •\n  \U0001F1F7\U0001F1F4 Română •\n  \U0001F1F8\U0001F1EA Svenska •\n  \U0001F1EE\
+    \U0001F1F9 Italiano •\n  \U0001F1EC\U0001F1F7 Ελληνικά •\n  \U0001F1ED\U0001F1FA\
+    \ Magyar •\n  \U0001F1EB\U0001F1EE Suomi •\n  \U0001F1E9\U0001F1F0 Dansk •\n \
+    \ \U0001F1F3\U0001F1F4 Norsk\n\nPersistent memory compression system built "
   tags: []
   review_state: auto-curated
   quantifiable_score: 49
@@ -2812,6 +2869,8 @@
   tracking_priority: pending
   last_analyzed: null
   benchmark_ref: null
-  recommendation_level: watch
-  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=tutorial.'
+  readme_checked: true
+  recommendation_level: try-now
+  curation_note: 'Auto-selected by scoring rules: source=github, score=49, resource_types=agent-framework,
+    skills.'
 

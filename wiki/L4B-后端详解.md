@@ -42,27 +42,39 @@ update_tracker.py (入口)
 
 ## 分类系统 (resource_type)
 
-在 normalize.py 中定义的基于关键词的规则引擎（2 维标签）：
+在 `normalize.py` 中定义的基于 **name+summary 关键词 + topics 映射** 的规则引擎（2 维标签）。**不读** `readme_preview`（README 只服务 LLM）。
 
-### resource_type（多选，关键词规则引擎 + LLM 打标）
+### resource_type（多选，关键词规则引擎 + topics；LLM 可再打标）
 
-在 normalize.py 中定义的基于关键词的规则引擎（2 维标签），按优先级顺序匹配：
+按 `CONCRETE_RESOURCE_ORDER` 优先级匹配：
 
-| 标签 | 关键词示例 | 优先级 |
+| 标签 | 关键词/topics 示例 | 优先级 |
 |---------|-----------|--------|
-| mcp-server | mcp server, model context protocol, mcp | 1（最高） |
-| skills | claude code skill, agent skill, skill pack, prompt pack, slash command | 2 |
-| extension | extension, plugin, addon, add-on | 3 |
-| rules | agents.md, claude.md, cursor rules, .cursorrules, ruleset, rules .mdc | 4 |
-| agent-framework | agent framework, multi-agent, subagent, agent orchestration, autonomous agent | 5 |
-| cli-tool | cli tool, command line, terminal, codebase index, repo map, code search | 6 |
-| tutorial | tutorial, best practice, case study, benchmark, awesome list | 7（最低） |
+| mcp-server | mcp server/gateway/hub；topics: mcp, mcp-server, model-context-protocol | 1（最高） |
+| skills | skill library / claude code skill；topics: skills, claude-skills, agent-skills | 2 |
+| extension | extension, plugin, vscode/chrome extension | 3 |
+| rules | cursor rules, coding rules, system prompt；topics: cursor-rules, cursorrules | 4 |
+| agent-framework | agent runtime/platform/sdk, coding agent；topics: multi-agent, agent-framework, langchain | 5 |
+| cli-tool | developer tool, code assistant, terminal；topics: cli, cli-tool, command-line | 6 |
+| tutorial | tutorial, awesome list, benchmark（仅无具体类型时） | 7（最低） |
 
-**匹配规则：** 具体类型（mcp-server ~ cli-tool）先匹配，tutorial 仅在无具体类型匹配或同时含教学关键词时追加。无任何匹配时默认 `['tutorial']`。
+**匹配规则：**
+1. Phase 1：关键词匹配具体类型（mcp-server ~ cli-tool）
+2. Phase 1.5：`TOPIC_RESOURCE_MAP` 精确 topics 映射（tutorial topics 仅在无具体类型时生效）
+3. 兜底：`['tutorial']`
+4. **禁止**「仅有 AI topics → cli-tool」兜底（AI/llm/claude 等信号本身不构成具体类型）
+5. 具体类型命中时**不**再追加 tutorial 标签
+6. CLI：`python3 scripts/normalize.py --skip-raw` 仅重分类现有 `projects.yaml`
 
-### target_tools（多选，可为空）
+### target_tools（多选，**可为空**）
 
-关联到 10 个目标工具之一，通过关键词匹配推断。
+1. seed-tools aliases 在 text 或 topics 中匹配 → 具体工具 id
+2. 无匹配但 topics/文本含 AI 信号 → `['general-ai-coding']`
+3. 无匹配且无 AI 信号 → **`[]`**（前端 `toolLabels` 显示 muted 占位；quality_gate/metrics 兼容）
+
+### 安全 merge
+
+`safe_merge_record()` 刷新 GitHub 字段时**保留** LLM 字段：`quality_score` / `quality_detail` / `tracking_priority` / `last_analyzed` / `benchmark_ref` / `llm_summary`；`official-seed` 强制 `tracking_priority=track` 且不改 display name。
 
 ## 评分系统
 

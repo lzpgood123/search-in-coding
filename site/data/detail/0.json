@@ -355,12 +355,11 @@
     "url": "https://github.com/JuliusBrussee/caveman",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "rules"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "cursor"
+      "claude-code"
     ],
     "summary": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
     "i18n": {
@@ -429,11 +428,13 @@
     "url": "https://github.com/cline/cline",
     "source_type": "github",
     "resource_type": [
+      "extension",
       "agent-framework",
-      "cli-tool",
-      "extension"
+      "cli-tool"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
     "i18n": {
       "zh": {
@@ -561,7 +562,7 @@
     "source_type": "github",
     "resource_type": [
       "agent-framework",
-      "cli-tool"
+      "mcp-server"
     ],
     "target_tools": [
       "goose"
@@ -629,7 +630,13 @@
     "resource_type": [
       "cli-tool"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
+    ],
     "summary": "aider is AI pair programming in your terminal",
     "i18n": {
       "zh": {
@@ -700,10 +707,17 @@
     "url": "https://github.com/continuedev/continue",
     "source_type": "github",
     "resource_type": [
-      "extension",
+      "agent-framework",
       "cli-tool"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder",
+      "trae",
+      "hermes-agent"
+    ],
     "summary": "open-source coding agent",
     "i18n": {
       "zh": {
@@ -828,7 +842,7 @@
     "url": "https://github.com/cursor/cursor",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "tutorial"
     ],
     "target_tools": [
       "cursor"
@@ -946,7 +960,11 @@
     "url": "https://github.com/alirezarezvani/claude-skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "extension",
+      "agent-framework",
+      "cli-tool",
+      "rules"
     ],
     "target_tools": [
       "claude-code",
@@ -1031,8 +1049,7 @@
     "url": "https://github.com/op7418/Humanizer-zh",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "rules"
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -1159,7 +1176,6 @@
     "url": "https://github.com/virgiliojr94/book-to-skill",
     "source_type": "github",
     "resource_type": [
-      "cli-tool",
       "skills"
     ],
     "target_tools": [
@@ -1406,7 +1422,6 @@
     "url": "https://github.com/glitternetwork/pinme",
     "source_type": "github",
     "resource_type": [
-      "cli-tool",
       "skills"
     ],
     "target_tools": [
@@ -1487,7 +1502,9 @@
       "extension",
       "cli-tool"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "antigravity-cli"
+    ],
     "summary": "Conductor is a Gemini CLI extension that allows you to specify, plan, and implement software features.",
     "i18n": {
       "zh": {
@@ -1609,11 +1626,13 @@
     "url": "https://github.com/taishi-i/awesome-ChatGPT-repositories",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "claude-code",
-      "codex-cli"
+      "codex-cli",
+      "trae",
+      "hermes-agent"
     ],
     "summary": "A curated list of open source GitHub repositories related to ChatGPT, the OpenAI API, and Codex. Searchable via Claude Code skills.",
     "i18n": {
@@ -1683,8 +1702,8 @@
     "url": "https://github.com/nowork-studio/NotFair",
     "source_type": "github",
     "resource_type": [
-      "mcp-server",
-      "skills"
+      "skills",
+      "mcp-server"
     ],
     "target_tools": [
       "claude-code"
@@ -1832,7 +1851,8 @@
     "url": "https://github.com/lackeyjb/playwright-skill",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code"
@@ -1907,8 +1927,7 @@
     "url": "https://github.com/NeekChaw/RIPER-5",
     "source_type": "github",
     "resource_type": [
-      "rules",
-      "tutorial"
+      "rules"
     ],
     "target_tools": [
       "cursor"
@@ -2029,8 +2048,7 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli"
+      "claude-code"
     ],
     "summary": "用 Claude Code Skills 做的视频剪辑 Agent",
     "i18n": {
@@ -2151,7 +2169,7 @@
     "resource_type": [
       "mcp-server",
       "skills",
-      "cli-tool"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -2267,6 +2285,7 @@
     "source_type": "github",
     "resource_type": [
       "mcp-server",
+      "skills",
       "agent-framework"
     ],
     "target_tools": [
@@ -2445,7 +2464,9 @@
       "mcp-server"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "trae",
+      "hermes-agent"
     ],
     "summary": "Claude Code as one-shot MCP server to have an agent in your agent.",
     "i18n": {
@@ -2553,7 +2574,8 @@
     "source_type": "github",
     "resource_type": [
       "mcp-server",
-      "rules"
+      "rules",
+      "cli-tool"
     ],
     "target_tools": [
       "cursor"
@@ -2688,10 +2710,14 @@
     "url": "https://github.com/instructa/ai-prompts",
     "source_type": "github",
     "resource_type": [
-      "rules"
+      "rules",
+      "cli-tool",
+      "agent-framework"
     ],
     "target_tools": [
-      "cursor"
+      "trae",
+      "cursor",
+      "hermes-agent"
     ],
     "summary": "Curated AI Prompts for Cursor Rules, Cline, Windsurf and Github Copilot",
     "i18n": {
@@ -2804,7 +2830,7 @@
     "url": "https://github.com/itwanger/PaiAgent",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "qoder"
@@ -3035,7 +3061,8 @@
     "url": "https://github.com/cosmicstack-labs/mercury-agent-skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "hermes-agent"
@@ -3097,7 +3124,10 @@
       "cli-tool"
     ],
     "target_tools": [
-      "antigravity-cli"
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
     ],
     "summary": "Gemini CLI extension for Ralph loops",
     "i18n": {
@@ -3382,8 +3412,7 @@
     "url": "https://github.com/awattar/claude-code-best-practices",
     "source_type": "github",
     "resource_type": [
-      "cli-tool",
-      "tutorial"
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code"
@@ -3602,6 +3631,7 @@
       "extension"
     ],
     "target_tools": [
+      "claude-code",
       "cursor"
     ],
     "summary": "Unity MCP Plugin (UPM) — Editor bridge for AI-assisted game development. Enables Claude, Cursor & MCP-compatible AI to control Unity Editor with 268 tools: scenes, GameObjects, components, builds, profiling, Shader Graph, Amplify Shader Edi",
@@ -3677,6 +3707,7 @@
       "cli-tool"
     ],
     "target_tools": [
+      "claude-code",
       "codex-cli"
     ],
     "summary": "面向 Codex CLI 的演示工作流 skills 集合，包括商业级可编辑 PPT 协作与网页 demo 配音视频合成等可复盘、可复用流程。A Codex CLI skill collection for reusable presentation workflows, covering editable PPT diagram collaboration and end-to-end web demo video synthesis.",
@@ -3736,7 +3767,8 @@
     "url": "https://github.com/Forlives/21-day-self-interview",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "hermes-agent"
@@ -3960,10 +3992,15 @@
     "url": "https://github.com/mverab/eGEOagents",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "cli-tool"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
     ],
     "summary": "Open-source Generative Engine Optimization (GEO) & Answer Engine Optimization (AEO) toolkit — optimize content to rank in ChatGPT, Perplexity, Gemini & Claude. AI SEO / LLM SEO. CLI, Claude Code, MCP.",
     "i18n": {
@@ -4090,6 +4127,7 @@
     "url": "https://github.com/jMerta/codex-skills",
     "source_type": "github",
     "resource_type": [
+      "skills",
       "cli-tool"
     ],
     "target_tools": [
@@ -4196,7 +4234,10 @@
     "url": "https://github.com/madebyaris/advance-minimax-m3-cursor-rules",
     "source_type": "github",
     "resource_type": [
-      "rules"
+      "rules",
+      "agent-framework",
+      "cli-tool",
+      "mcp-server"
     ],
     "target_tools": [
       "cursor"
@@ -4264,9 +4305,7 @@
     "resource_type": [
       "extension"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "figma/figma-gemini-cli-extension",
     "i18n": {
       "zh": {
@@ -4482,7 +4521,7 @@
     "url": "https://github.com/skindhu/harmony-cursor-rules",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "rules"
     ],
     "target_tools": [
       "cursor"
@@ -4711,9 +4750,7 @@
       "extension",
       "cli-tool"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "A Google Gemini-CLI extension than enables Gemini Computer Use from the CLI",
     "i18n": {
       "zh": {
@@ -4884,7 +4921,8 @@
     "url": "https://github.com/AlaeddineMessadi/opencode-mcp",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
@@ -4960,7 +4998,9 @@
     "url": "https://github.com/blefnk/awesome-cursor-rules",
     "source_type": "github",
     "resource_type": [
-      "rules"
+      "extension",
+      "rules",
+      "cli-tool"
     ],
     "target_tools": [
       "cursor"
@@ -5251,7 +5291,8 @@
     "url": "https://github.com/codesstar/hermes-skill-atlas",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "hermes-agent"
@@ -5684,8 +5725,7 @@
     "source_type": "github",
     "resource_type": [
       "extension",
-      "cli-tool",
-      "tutorial"
+      "cli-tool"
     ],
     "target_tools": [
       "antigravity-cli"
@@ -5737,10 +5777,16 @@
     "source_type": "github",
     "resource_type": [
       "rules",
-      "agent-framework"
+      "agent-framework",
+      "cli-tool",
+      "mcp-server"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
     ],
     "summary": "A comprehensive best-practices wiki for Claude Code - setup, CLAUDE.md templates, workflows, multi-agent patterns, and cost optimization.",
     "i18n": {
@@ -5927,11 +5973,15 @@
     "url": "https://github.com/TheStack-ai/zclean",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
       "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder",
       "cursor"
     ],
     "summary": "AI coding runtime hygiene for Claude Code, Codex, Cursor, MCP servers, and developer caches. Try: npx z-clean audit",
@@ -6003,7 +6053,7 @@
     "url": "https://github.com/war851/AI-Governance-Architecture",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "rules"
     ],
     "target_tools": [
       "claude-code"
@@ -6069,7 +6119,7 @@
     "url": "https://github.com/femtopremiertag/r15-shanraisshan-claude-code-best-practice-security",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "claude-code"

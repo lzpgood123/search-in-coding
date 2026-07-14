@@ -11,6 +11,7 @@ import argparse
 import base64
 import json
 import re
+import subprocess
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -28,7 +29,10 @@ REPO_FIELDS = (
 
 def gh_repo_view(full_name: str) -> dict | None:
     cmd = f"gh repo view {full_name} --json {REPO_FIELDS}"
-    r = run(cmd, timeout=60)
+    try:
+        r = run(cmd, timeout=60)
+    except (subprocess.TimeoutExpired, OSError, subprocess.SubprocessError):
+        return None
     if r.returncode != 0:
         return None
     try:
@@ -38,8 +42,16 @@ def gh_repo_view(full_name: str) -> dict | None:
 
 
 def fetch_readme(full_name: str) -> str:
+    """Fetch README base64 content via gh api.
+
+    Never raises: network/timeouts/decode errors return empty string so
+    bulk enrich can continue and mark the repo as checked.
+    """
     cmd = f"gh api repos/{full_name}/readme --jq .content"
-    r = run(cmd, timeout=60)
+    try:
+        r = run(cmd, timeout=60)
+    except (subprocess.TimeoutExpired, OSError, subprocess.SubprocessError):
+        return ""
     if r.returncode != 0 or not (r.stdout or "").strip():
         return ""
     try:
@@ -123,28 +135,99 @@ def _missing_list(project: dict, key: str) -> bool:
     return val is None or val == [None]
 
 
-def needs_enrichment(project: dict) -> bool:
+def _missing_readme(project: dict) -> bool:
+    """True when readme_preview was never successfully queried.
+
+    Empty string is ambiguous historically (bulk --no-readme left many as '').
+    Batch 3 treats empty as still needing a fetch attempt unless
+    readme_checked is set, or the caller uses --readme-only with a
+    separate marker.
+    """
+    if project.get("readme_checked") is True:
+        return False
+    return not project.get("readme_preview")
+
+
+def needs_enrichment(project: dict, readme_only: bool = False) -> bool:
     repo = project.get("repo")
     if not repo or "/" not in str(repo):
         return False
+    if readme_only:
+        return _missing_readme(project)
     return (
         _missing_numeric(project, "forks")
         or not project.get("license")
         or _missing_list(project, "topics")
-        or not project.get("readme_preview")
+        or _missing_readme(project)
         or _missing_numeric(project, "stars")
         or _missing_list(project, "languages")
     )
 
 
-def enrich_one(project: dict) -> tuple[dict, bool, str]:
-    """Return (project, changed, status_note)."""
+def enrich_readme_only(project: dict) -> tuple[dict, bool, str]:
+    """Fetch only readme_preview; always mark readme_checked for resume.
+
+    Never raises. Timeouts / API failures mark the project checked with an
+    empty preview so bulk runs can resume past bad repos.
+    """
+    repo = project.get("repo")
+    if not repo or "/" not in str(repo):
+        return project, False, "no-repo"
+    if project.get("readme_checked") and project.get("readme_preview"):
+        return project, False, "no-new-fields"
+    if project.get("readme_checked") and not _missing_readme(project):
+        return project, False, "no-new-fields"
+
+    note = "ok"
+    try:
+        readme = fetch_readme(repo)
+    except (subprocess.TimeoutExpired, OSError, subprocess.SubprocessError):
+        readme = ""
+        note = "timeout"
+    except Exception:
+        readme = ""
+        note = "error"
+
+    preview = clean_readme_preview(readme)
+    project["readme_preview"] = preview  # may be "" for empty/missing README
+    project["readme_checked"] = True
+    if note in ("timeout", "error"):
+        return project, True, note
+    return project, True, "ok" if preview else "empty-readme"
+
+
+def enrich_one(project: dict, readme_only: bool = False) -> tuple[dict, bool, str]:
+    """Return (project, changed, status_note). Never raises to the pool."""
+    try:
+        return _enrich_one_impl(project, readme_only=readme_only)
+    except (subprocess.TimeoutExpired, OSError, subprocess.SubprocessError):
+        repo = project.get("repo") or "?"
+        if readme_only or _missing_readme(project):
+            project["readme_preview"] = project.get("readme_preview") or ""
+            project["readme_checked"] = True
+            return project, True, "timeout"
+        return project, False, "timeout"
+    except Exception:
+        if readme_only or _missing_readme(project):
+            project["readme_preview"] = project.get("readme_preview") or ""
+            project["readme_checked"] = True
+            return project, True, "error"
+        return project, False, "error"
+
+
+def _enrich_one_impl(project: dict, readme_only: bool = False) -> tuple[dict, bool, str]:
     repo = project.get("repo")
     if not repo or "/" not in str(repo):
         return project, False, "no-repo"
 
+    if readme_only:
+        return enrich_readme_only(project)
+
     data = gh_repo_view(repo)
     if not data:
+        # Still try readme if missing — independent API
+        if _missing_readme(project):
+            return enrich_readme_only(project)
         return project, False, "gh-view-failed"
 
     changed = False
@@ -175,12 +258,12 @@ def enrich_one(project: dict) -> tuple[dict, bool, str]:
         project["topics"] = topics
         changed = True
 
-    if not project.get("readme_preview"):
+    if _missing_readme(project):
         readme = fetch_readme(repo)
         preview = clean_readme_preview(readme)
-        if preview:
-            project["readme_preview"] = preview
-            changed = True
+        project["readme_preview"] = preview  # persist empty as checked
+        project["readme_checked"] = True
+        changed = True
 
     return project, changed, "ok" if changed else "no-new-fields"
 
@@ -190,6 +273,17 @@ def main() -> None:
     ap.add_argument("--limit", type=int, default=None, help="Limit number of projects")
     ap.add_argument("--batch-size", type=int, default=3, help="Concurrent requests")
     ap.add_argument("--sleep", type=float, default=0.2, help="Sleep between batches (sec)")
+    ap.add_argument(
+        "--readme-only",
+        action="store_true",
+        help="Only fetch readme_preview (faster for bulk backfill)",
+    )
+    ap.add_argument(
+        "--min-stars",
+        type=int,
+        default=None,
+        help="Only enrich projects with stars >= this value",
+    )
     args = ap.parse_args()
 
     projects = load_jsonish("data/projects.yaml")
@@ -197,16 +291,21 @@ def main() -> None:
         raise SystemExit("data/projects.yaml must be a list")
 
     # Keep object identity so in-place updates land in `projects`
-    to_enrich = [p for p in projects if needs_enrichment(p)]
+    to_enrich = [p for p in projects if needs_enrichment(p, readme_only=args.readme_only)]
+    if args.min_stars is not None:
+        to_enrich = [p for p in to_enrich if (p.get("stars") or 0) >= args.min_stars]
+    # Prefer high-star projects first for faster quality impact
+    to_enrich.sort(key=lambda p: p.get("stars") or 0, reverse=True)
     if args.limit is not None:
         to_enrich = to_enrich[: args.limit]
 
     print(f"Total projects: {len(projects)}")
-    print(f"Projects to enrich: {len(to_enrich)}")
+    print(f"Projects to enrich: {len(to_enrich)} (readme_only={args.readme_only})")
 
     enriched = 0
     failed = 0
     unchanged = 0
+    empty_readme = 0
     total_batches = max(1, (len(to_enrich) + args.batch_size - 1) // args.batch_size)
 
     for i in range(0, len(to_enrich), args.batch_size):
@@ -215,14 +314,32 @@ def main() -> None:
         print(f"  Batch {batch_no}/{total_batches} ({len(batch)} projects)")
 
         with ThreadPoolExecutor(max_workers=args.batch_size) as executor:
-            futures = {executor.submit(enrich_one, p): p for p in batch}
+            futures = {
+                executor.submit(enrich_one, p, args.readme_only): p for p in batch
+            }
             for future in as_completed(futures):
-                p, changed, note = future.result()
+                orig = futures[future]
+                try:
+                    p, changed, note = future.result()
+                except Exception as exc:
+                    # Defense in depth: worker should not raise, but never kill bulk.
+                    failed += 1
+                    name = (orig.get("name") or orig.get("repo") or "?")[:40]
+                    print(f"    FAIL {name} (worker-exception: {type(exc).__name__})")
+                    if args.readme_only or _missing_readme(orig):
+                        orig["readme_preview"] = orig.get("readme_preview") or ""
+                        orig["readme_checked"] = True
+                    continue
+
                 name = (p.get("name") or p.get("repo") or "?")[:40]
                 if changed:
                     enriched += 1
-                    print(f"    OK  {name}")
-                elif note in ("gh-view-failed", "no-repo"):
+                    if note in ("empty-readme", "timeout", "error"):
+                        empty_readme += 1
+                        print(f"    EMPTY {name} ({note})" if note != "empty-readme" else f"    EMPTY {name}")
+                    else:
+                        print(f"    OK  {name}")
+                elif note in ("gh-view-failed", "no-repo", "timeout", "error"):
                     failed += 1
                     print(f"    FAIL {name} ({note})")
                 else:
@@ -231,15 +348,21 @@ def main() -> None:
 
         if batch_no % 5 == 0:
             save_jsonish("data/projects.yaml", projects)
-            print(f"  Progress saved: enriched={enriched} failed={failed} unchanged={unchanged}")
+            has_r = sum(1 for x in projects if x.get("readme_preview"))
+            print(
+                f"  Progress saved: enriched={enriched} failed={failed} "
+                f"unchanged={unchanged} empty={empty_readme} readme_fill={has_r}/{len(projects)}"
+            )
 
         if args.sleep and batch_no < total_batches:
             time.sleep(args.sleep)
 
     save_jsonish("data/projects.yaml", projects)
+    has_r = sum(1 for x in projects if x.get("readme_preview"))
     print(
         f"\nDone: enriched={enriched}, failed={failed}, unchanged={unchanged}, "
-        f"requested={len(to_enrich)}"
+        f"empty_readme={empty_readme}, requested={len(to_enrich)}, "
+        f"readme_fill={has_r}/{len(projects)} ({100*has_r/max(1,len(projects)):.1f}%)"
     )
 
 

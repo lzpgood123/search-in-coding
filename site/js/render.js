@@ -34,10 +34,14 @@ const SIC_render = {
     }).join('');
   },
 
-  // #11: tool names as human-readable labels
+  // #11: tool names as human-readable labels; empty tools show muted placeholder
   toolLabels: function(toolIds) {
     var self = SIC_render;
-    return (toolIds || []).map(function(tid) {
+    var ids = toolIds || [];
+    if (!ids.length) {
+      return '<span class="pill muted">' + self.esc(SIC_i18n.t('noTools') || '—') + '</span>';
+    }
+    return ids.map(function(tid) {
       var tool = SIC_data.tools.find(function(t) { return t.id === tid; });
       var label = tool ? (SIC_i18n.textOf(tool, 'name') || tool.name) : tid;
       return '<span class="pill">' + self.esc(label) + '</span>';
