@@ -7,6 +7,7 @@ Uses 13 API keys from ~/.hermes/auth.json with round-robin rotation.
 import json
 import os
 import re
+import threading
 import time
 import urllib.request
 import urllib.error
@@ -44,34 +45,38 @@ def load_api_keys():
 
 
 class KeyRotator:
-    """Round-robin key rotation with failure tracking."""
+    """Round-robin key rotation with failure tracking (thread-safe)."""
 
     def __init__(self, keys):
         self.keys = list(keys)
         self.index = 0
         self.failed = set()
+        self._lock = threading.Lock()
 
     def next(self):
-        available = [k for k in self.keys if k not in self.failed]
-        if not available:
-            # All keys failed, reset and try again
-            self.failed.clear()
-            available = self.keys
-        if not available:
-            raise RuntimeError('No API keys available')
-        # Find next available key
-        for _ in range(len(self.keys)):
-            k = self.keys[self.index % len(self.keys)]
-            self.index += 1
-            if k not in self.failed:
-                return k
-        return available[0]
+        with self._lock:
+            available = [k for k in self.keys if k not in self.failed]
+            if not available:
+                # All keys failed, reset and try again
+                self.failed.clear()
+                available = self.keys
+            if not available:
+                raise RuntimeError('No API keys available')
+            # Find next available key
+            for _ in range(len(self.keys)):
+                k = self.keys[self.index % len(self.keys)]
+                self.index += 1
+                if k not in self.failed:
+                    return k
+            return available[0]
 
     def mark_failed(self, key):
-        self.failed.add(key)
+        with self._lock:
+            self.failed.add(key)
 
     def reset(self):
-        self.failed.clear()
+        with self._lock:
+            self.failed.clear()
 
 
 def parse_json_response(text):

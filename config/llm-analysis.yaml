@@ -9,7 +9,7 @@ api:
   max_tokens: 2000
   timeout: 120
   max_retries: 3
-  batch_size: 3  # concurrent requests per batch
+  batch_size: 10  # concurrent requests per batch (batch4: 3 -> 10)
 
 analysis:
   # Projects that haven't been analyzed in N days get re-analyzed

@@ -38,6 +38,36 @@ from llm_prompts import (
 )
 from benchmark_manager import BenchmarkManager, BENCHMARK_RANGES
 
+DEFAULT_BATCH_SIZE = 10
+LLM_CONFIG_PATH = ROOT / 'config' / 'llm-analysis.yaml'
+
+
+def load_llm_config():
+    """Load config/llm-analysis.yaml (empty dict if missing)."""
+    if not LLM_CONFIG_PATH.exists():
+        return {}
+    try:
+        import yaml
+        data = yaml.safe_load(LLM_CONFIG_PATH.read_text(encoding='utf-8')) or {}
+        return data if isinstance(data, dict) else {}
+    except Exception as e:
+        print(f'WARNING: failed to load {LLM_CONFIG_PATH}: {e}')
+        return {}
+
+
+def get_batch_size(override=None):
+    """Resolve concurrent batch size: CLI override > config > default 10."""
+    if override is not None:
+        return int(override)
+    cfg = load_llm_config()
+    api = cfg.get('api') or {}
+    value = api.get('batch_size', DEFAULT_BATCH_SIZE)
+    try:
+        n = int(value)
+        return n if n > 0 else DEFAULT_BATCH_SIZE
+    except (TypeError, ValueError):
+        return DEFAULT_BATCH_SIZE
+
 
 def pre_filter(projects):
     """Pre-filter projects before LLM analysis.
@@ -54,15 +84,23 @@ def get_projects_to_analyze(projects, max_projects=None):
     Priority:
     1. Never analyzed (last_analyzed is None)
     2. Analyzed more than 7 days ago
+
+    Skips archived repos. Within the candidate set, sort by stars
+    descending so high-value projects are analyzed first (batch4).
     """
     now = datetime.date.today()
     cutoff = (now - datetime.timedelta(days=7)).isoformat()
 
     to_analyze = []
     for p in projects:
+        if p.get('status') == 'archived':
+            continue
         last = p.get('last_analyzed')
         if last is None or last < cutoff:
             to_analyze.append(p)
+
+    # High-star first regardless of input order
+    to_analyze.sort(key=lambda p: (p.get('stars') or 0), reverse=True)
 
     if max_projects:
         to_analyze = to_analyze[:max_projects]
@@ -105,17 +143,19 @@ def merge_analysis_result(project, analysis):
     return p
 
 
-def run_analysis(projects, max_projects=None, batch_size=3):
+def run_analysis(projects, max_projects=None, batch_size=None):
     """Run LLM analysis on projects in batches.
 
     Args:
         projects: list of project dicts (already pre-filtered)
         max_projects: limit number of projects to analyze
-        batch_size: concurrent LLM calls per batch
+        batch_size: concurrent LLM calls per batch (default from config)
 
     Returns:
         list of analyzed project dicts (same order as input, with results merged)
     """
+    if batch_size is None:
+        batch_size = get_batch_size()
     to_analyze = get_projects_to_analyze(projects, max_projects)
 
     if not to_analyze:
@@ -277,13 +317,16 @@ def save_snapshot(projects):
 def main():
     ap = argparse.ArgumentParser(description='Weekly LLM analysis pipeline')
     ap.add_argument('--max-projects', type=int, default=None, help='Limit projects to analyze (for testing)')
+    ap.add_argument('--batch-size', type=int, default=None, help='Concurrent LLM workers (default: config/llm-analysis.yaml)')
     ap.add_argument('--dry-run', action='store_true', help='No LLM calls, just show structure')
     ap.add_argument('--skip-reports', action='store_true', help='Skip report generation')
     ap.add_argument('--skip-benchmarks', action='store_true', help='Skip benchmark update')
     ap.add_argument('--skip-build', action='store_true', help='Skip site build')
     args = ap.parse_args()
 
+    batch_size = get_batch_size(args.batch_size)
     print(f'=== Weekly Analysis - {today()} ===')
+    print(f'batch_size={batch_size} (config-driven)')
 
     # Load data
     projects = load_jsonish('data/projects.yaml')
@@ -297,16 +340,19 @@ def main():
         to_analyze = get_projects_to_analyze(projects, args.max_projects)
         print(f'\nDry run: would analyze {len(to_analyze)} projects')
         if to_analyze:
-            print(f'Sample: {to_analyze[0].get("name", "none")}')
+            stars_preview = [(p.get('name'), p.get('stars') or 0) for p in to_analyze[:10]]
+            print(f'Top by stars: {stars_preview}')
+            print(f'Sample: {to_analyze[0].get("name", "none")} stars={to_analyze[0].get("stars") or 0}')
         return
 
-    # Step 1: Pre-filter
-    filtered = pre_filter(projects)
-    print(f'Pre-filtered: {len(filtered)} (removed {len(projects) - len(filtered)} archived)')
+    # Step 1: Pre-filter stats only — NEVER drop archived from the full dataset
+    filtered_count = sum(1 for p in projects if p.get('status') != 'archived')
+    archived_count = len(projects) - filtered_count
+    print(f'Pre-filter stats: active={filtered_count}, archived={archived_count} (archived kept in dataset, skipped for LLM)')
 
-    # Step 2: Run LLM analysis
+    # Step 2: Run LLM analysis on full list (selection skips archived; merge preserves all)
     print('\n--- Step 1: LLM Analysis ---')
-    analyzed = run_analysis(filtered, max_projects=args.max_projects, batch_size=3)
+    analyzed = run_analysis(projects, max_projects=args.max_projects, batch_size=batch_size)
 
     # Step 3: Update benchmarks (before rescoring!)
     if not args.skip_benchmarks:

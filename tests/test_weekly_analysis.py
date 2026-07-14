@@ -154,3 +154,45 @@ class TestGetProjectsToAnalyze:
         ids = [p['id'] for p in result]
         assert 'old' in ids
         assert 'recent' not in ids
+
+    def test_sorts_by_stars_descending(self):
+        from weekly_analysis import get_projects_to_analyze
+        projects = [
+            {'id': 'low', 'last_analyzed': None, 'stars': 5},
+            {'id': 'high', 'last_analyzed': None, 'stars': 9000},
+            {'id': 'mid', 'last_analyzed': None, 'stars': 100},
+            {'id': 'recent', 'last_analyzed': __import__('datetime').date.today().isoformat(), 'stars': 99999},
+        ]
+        result = get_projects_to_analyze(projects)
+        assert [p['id'] for p in result] == ['high', 'mid', 'low']
+
+    def test_max_projects_keeps_highest_stars(self):
+        from weekly_analysis import get_projects_to_analyze
+        projects = [
+            {'id': 'a', 'last_analyzed': None, 'stars': 10},
+            {'id': 'b', 'last_analyzed': None, 'stars': 1000},
+            {'id': 'c', 'last_analyzed': None, 'stars': 50},
+        ]
+        result = get_projects_to_analyze(projects, max_projects=2)
+        assert [p['id'] for p in result] == ['b', 'c']
+
+    def test_skips_archived(self):
+        from weekly_analysis import get_projects_to_analyze
+        projects = [
+            {'id': 'arch', 'last_analyzed': None, 'stars': 99999, 'status': 'archived'},
+            {'id': 'ok', 'last_analyzed': None, 'stars': 10, 'status': 'active'},
+        ]
+        result = get_projects_to_analyze(projects)
+        assert [p['id'] for p in result] == ['ok']
+
+
+class TestGetBatchSize:
+    def test_reads_config_batch_size(self):
+        from weekly_analysis import get_batch_size
+        # config/llm-analysis.yaml should be 10 after batch4
+        assert get_batch_size() == 10
+
+    def test_cli_override_wins(self):
+        from weekly_analysis import get_batch_size
+        assert get_batch_size(7) == 7
+        assert get_batch_size(1) == 1

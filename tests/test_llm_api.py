@@ -105,3 +105,52 @@ class TestCallWithRetry:
             result = call_with_retry('test prompt', 'system', rotator, max_retries=3)
             assert result is None
             assert call_count['n'] == 3
+
+
+class TestKeyRotatorThreadSafety:
+    def test_concurrent_next_is_unique_sequence(self):
+        """Concurrent next() should not crash and should stay within key set."""
+        import threading
+        from llm_api import KeyRotator
+
+        rotator = KeyRotator([f'k{i}' for i in range(10)])
+        results = []
+        lock = threading.Lock()
+
+        def worker():
+            for _ in range(50):
+                k = rotator.next()
+                with lock:
+                    results.append(k)
+
+        threads = [threading.Thread(target=worker) for _ in range(8)]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+
+        assert len(results) == 400
+        assert all(r.startswith('k') for r in results)
+
+    def test_mark_failed_thread_safe(self):
+        import threading
+        from llm_api import KeyRotator
+
+        rotator = KeyRotator(['a', 'b', 'c'])
+        errors = []
+
+        def worker():
+            try:
+                for _ in range(100):
+                    k = rotator.next()
+                    if k == 'b':
+                        rotator.mark_failed(k)
+            except Exception as e:
+                errors.append(e)
+
+        threads = [threading.Thread(target=worker) for _ in range(6)]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+        assert errors == []

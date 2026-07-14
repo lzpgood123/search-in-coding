@@ -279,3 +279,12 @@ weekly_analysis.py (入口，每周一 03:30 via Hermes cron)
 
 **触发条件：** API 端点增删、核心模块变更、错误处理逻辑变更、评分规则变更
 **更新内容：** 管道流程、分类系统、评分系统、配置管理
+
+
+## Batch4 LLM 策略（2026-07-15）
+
+- `config/llm-analysis.yaml`：`api.batch_size: 10`
+- `get_projects_to_analyze`：stars 降序
+- `KeyRotator`：线程锁保护
+- 脚本：`~/.hermes/scripts/search-in-coding-llm-daily.sh`；job id 见 `hermes cron list`（f110f12e4d96）
+- 禁止覆盖 `search-in-coding-daily.sh`（仍为 update_tracker 采集）
