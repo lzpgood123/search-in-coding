@@ -3,7 +3,7 @@
 ## 数据概况
 
 - 总记录数: 5165
-- 生态项目: 5145
+- 生态项目: 5090
 - 推荐项目: 40
 - 官方工具: 10
 
@@ -11,30 +11,30 @@
 
 | # | 名称 | 类型 | 工具 | 分数 | Stars | URL |
 |---|------|------|------|------|-------|-----|
-| 1 | aaif-goose/goose | agent-framework, mcp-server | goose | 86 | 51186 | https://github.com/aaif-goose/goose |
-| 2 | JuliusBrussee/caveman | skills, rules | claude-code | 85 | 89248 | https://github.com/JuliusBrussee/caveman |
-| 3 | cline/cline | extension, agent-framework, cli-tool | general-ai-coding | 85 | 64634 | https://github.com/cline/cline |
-| 4 | alirezarezvani/claude-skills | skills, extension, agent-framework, cli-tool, rules | claude-code, codex-cli, antigravity-cli, cursor | 83 | 22539 | https://github.com/alirezarezvani/claude-skills |
-| 5 | Aider-AI/aider | cli-tool | claude-code, codex-cli, antigravity-cli, opencode, qoder | 82 | 47338 | https://github.com/Aider-AI/aider |
-| 6 | continuedev/continue | agent-framework, cli-tool | codex-cli, antigravity-cli, opencode, qoder, trae, hermes-agent | 80 | 34846 | https://github.com/continuedev/continue |
-| 7 | virgiliojr94/book-to-skill | skills | claude-code | 80 | 8592 | https://github.com/virgiliojr94/book-to-skill |
-| 8 | blader/humanizer | skills | claude-code | 78 | 29101 | https://github.com/blader/humanizer |
-| 9 | trailofbits/skills | skills | claude-code | 73 | 6118 | https://github.com/trailofbits/skills |
-| 10 | zarazhangrui/codebase-to-course | skills | claude-code | 73 | 5223 | https://github.com/zarazhangrui/codebase-to-course |
+| 1 | DietrichGebert/ponytail | skills, rules | claude-code, cursor | 89 | 82616 | https://github.com/DietrichGebert/ponytail |
+| 2 | ultraworkers/claw-code | tutorial | codex-cli | 88 | 194755 | https://github.com/ultraworkers/claw-code |
+| 3 | OpenHands/OpenHands | agent-framework, cli-tool | claude-code, codex-cli, antigravity-cli, opencode, qoder, trae, hermes-agent | 88 | 80721 | https://github.com/OpenHands/OpenHands |
+| 4 | headroomlabs-ai/headroom | mcp-server | claude-code, codex-cli, trae, cursor, hermes-agent | 88 | 59038 | https://github.com/headroomlabs-ai/headroom |
+| 5 | thedotmack/claude-mem | cli-tool, extension | claude-code, codex-cli, hermes-agent | 87 | 87150 | https://github.com/thedotmack/claude-mem |
+| 6 | colbymchenry/codegraph | cli-tool | claude-code, codex-cli, cursor, opencode, antigravity-cli, hermes-agent | 87 | 59807 | https://github.com/colbymchenry/codegraph |
+| 7 | Panniantong/Agent-Reach | cli-tool | claude-code, codex-cli, antigravity-cli, opencode, qoder, cursor | 87 | 55973 | https://github.com/Panniantong/Agent-Reach |
+| 8 | aaif-goose/goose | agent-framework, mcp-server | goose | 86 | 51186 | https://github.com/aaif-goose/goose |
+| 9 | Egonex-AI/Understand-Anything | skills, cli-tool | claude-code, codex-cli, antigravity-cli, opencode, cursor | 86 | 73911 | https://github.com/Egonex-AI/Understand-Anything |
+| 10 | shareAI-lab/learn-claude-code | agent-framework, tutorial | claude-code, trae, hermes-agent | 86 | 70941 | https://github.com/shareAI-lab/learn-claude-code |
 
 ## 分数分布
 
 | 分数段 | 项目数 |
 |--------|--------|
-| 0-20 | 106 |
-| 21-40 | 4682 |
-| 41-60 | 334 |
-| 61-80 | 18 |
-| 81-100 | 5 |
+| 0-20 | 47 |
+| 21-40 | 197 |
+| 41-60 | 2408 |
+| 61-80 | 2361 |
+| 81-100 | 77 |
 
 ## 追踪状态
 
-- 追踪中 (track): 34
-- 索引中 (index): 1
-- 待分析 (pending): 5120
-- 已拒绝 (reject): 10
+- 追踪中 (track): 4495
+- 索引中 (index): 404
+- 待分析 (pending): 201
+- 已拒绝 (reject): 65

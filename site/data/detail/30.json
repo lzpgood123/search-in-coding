@@ -5,10 +5,12 @@
     "url": "https://github.com/bradautomates/claude-video",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "cursor"
     ],
     "summary": "Give Claude the ability to watch any video. /watch downloads, extracts frames, transcribes, hands it all to Claude.",
     "i18n": {
@@ -23,10 +25,10 @@
     },
     "stars": 8305,
     "forks": 909,
-    "total_score": 38,
+    "total_score": 74,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 36,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:29:42Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -41,10 +43,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 10
+    },
+    "llm_summary": {
+      "zh": "让Claude能够观看任何视频，通过下载、提取帧、转录并交由Claude处理，是一个实用的AI代理插件。",
+      "en": "A plugin that gives Claude the ability to watch any video by downloading, extracting frames, transcribing, and handing it all to Claude, enhancing AI coding agents with video understanding."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "bradautomates/claude-video",
     "tags": [],
     "maturity": "unknown",
@@ -58,12 +68,19 @@
     "url": "https://github.com/idosal/git-mcp",
     "source_type": "github",
     "resource_type": [
-      "mcp-server",
-      "agent-framework"
+      "mcp-server"
     ],
     "target_tools": [
       "claude-code",
-      "cursor"
+      "cursor",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "goose",
+      "qoder",
+      "trae",
+      "workbuddy-codebuddy",
+      "hermes-agent"
     ],
     "summary": "Put an end to code hallucinations! GitMCP is a free, open-source, remote MCP server for any GitHub project",
     "i18n": {
@@ -78,10 +95,10 @@
     },
     "stars": 8253,
     "forks": 733,
-    "total_score": 38,
+    "total_score": 75,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 37,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T06:58:26Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -96,10 +113,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "GitMCP是一个开源的远程MCP服务器，让AI编码工具安全地访问GitHub仓库，消除代码幻觉。",
+      "en": "GitMCP is an open-source remote MCP server that enables AI coding tools to safely access any GitHub repository, eliminating code hallucinations."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "idosal/git-mcp",
     "tags": [],
     "maturity": "unknown",
@@ -126,7 +151,9 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "codex-cli",
+      "cursor"
     ],
     "summary": "给 Claude Code 装上完整联网能力的 skill：三层通道调度 + 浏览器 CDP + 并行分治",
     "i18n": {
@@ -141,10 +168,10 @@
     },
     "stars": 8247,
     "forks": 589,
-    "total_score": 36,
+    "total_score": 71,
     "quantifiable_score": 36,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:41:29Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -159,10 +186,18 @@
       "adoption": 7,
       "maturity": 2
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "通过三层通道调度和浏览器CDP，为AI编码Agents提供完整的联网与浏览器自动化能力，实用且广受欢迎。",
+      "en": "A highly practical skill that equips AI coding agents with comprehensive web access and browser automation via a three-layer channel scheduler and CDP, widely adopted and well-documented."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "eze-is/web-access",
     "tags": [],
     "maturity": "unknown",
@@ -177,7 +212,7 @@
     "source_type": "github",
     "resource_type": [
       "agent-framework",
-      "skills"
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
@@ -196,10 +231,10 @@
     },
     "stars": 8237,
     "forks": 1176,
-    "total_score": 41,
+    "total_score": 77,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 36,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:19:26Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -214,10 +249,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "面向并行AI编码代理的编排器，能够规划任务、生成代理并自主处理CI修复、合并冲突和代码审查。",
+      "en": "An orchestrator for parallel AI coding agents that plans tasks, spawns agents, and autonomously handles CI fixes, merge conflicts, and code reviews."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "AgentWrapper/agent-orchestrator",
     "tags": [],
     "maturity": "unknown",
@@ -244,11 +287,13 @@
     "url": "https://github.com/zhaoxuya520/reverse-skill",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
-      "cursor"
+      "cursor",
+      "codex-cli"
     ],
     "summary": "Reverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack AI-powered routing + On-demand toolchain bootstrapping + Self-evolving knowledge base  Supports Claude Code, Kiro, Cursor, Cline, and other AI coding",
     "i18n": {
@@ -263,10 +308,10 @@
     },
     "stars": 8219,
     "forks": 1290,
-    "total_score": 41,
+    "total_score": 77,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 36,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:10:35Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -281,10 +326,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "针对AI编码代理的逆向工程/渗透测试技能路由包，支持自动路由和工具链自举。",
+      "en": "A skill router pack for reverse engineering and penetration testing, enabling AI coding agents to automatically route to correct methodologies and bootstrap toolchains."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "zhaoxuya520/reverse-skill",
     "tags": [],
     "maturity": "unknown",
@@ -298,10 +351,10 @@
     "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
     "source_type": "github",
     "resource_type": [
-      "mcp-server",
-      "cli-tool"
+      "mcp-server"
     ],
     "target_tools": [
+      "claude-code",
       "trae",
       "hermes-agent"
     ],
@@ -318,10 +371,10 @@
     },
     "stars": 8215,
     "forks": 1000,
-    "total_score": 41,
+    "total_score": 78,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 37,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:16:56Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -336,10 +389,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 7,
+      "ecosystem_value": 10
+    },
+    "llm_summary": {
+      "zh": "一个为Claude提供终端控制、文件搜索和差异编辑能力的MCP服务器，广受好评且生态价值高。",
+      "en": "An MCP server that equips Claude with terminal control, file system search, and diff editing capabilities, highly popular and valuable in the AI coding agent ecosystem."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "wonderwhy-er/DesktopCommanderMCP",
     "tags": [],
     "maturity": "unknown",
@@ -363,11 +424,9 @@
     "url": "https://github.com/bytedance/flowgram.ai",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "FlowGram is an extensible workflow development framework with built-in canvas, form, variable, and materials that helps developers build AI workflow platforms faster and simpler.",
     "i18n": {
       "zh": {
@@ -381,10 +440,10 @@
     },
     "stars": 8204,
     "forks": 740,
-    "total_score": 38,
+    "total_score": 64,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 26,
+    "tracking_priority": "track",
     "last_updated": "2026-07-13T18:01:39Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -399,10 +458,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 8,
+      "novelty": 5,
+      "ecosystem_value": 7
+    },
+    "llm_summary": {
+      "zh": "字节跳动开源的FlowGram是一个可扩展的AI工作流开发框架，提供了内置画布、表单、变量和材料，有助于快速构建AI工作流平台。",
+      "en": "FlowGram is an extensible AI workflow development framework from ByteDance with built-in canvas, forms, variables, and materials, helping developers build AI workflow platforms faster."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "bytedance/flowgram.ai",
     "tags": [],
     "maturity": "unknown",
@@ -435,12 +502,9 @@
     "url": "https://github.com/YouMind-OpenLab/awesome-gpt-image-2",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "rules"
+      "tutorial"
     ],
-    "target_tools": [
-      "codex-cli"
-    ],
+    "target_tools": [],
     "summary": "🚀 World's largest GPT Image 2 prompt library, updated daily — 2000+ curated prompts with preview images, 16 languages. OpenAI's next-gen image model with pixel-perfect text rendering, cross-image consistency, and commercial-grade illustrati",
     "i18n": {
       "zh": {
@@ -454,10 +518,10 @@
     },
     "stars": 8201,
     "forks": 743,
-    "total_score": 38,
+    "total_score": 45,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 7,
+    "tracking_priority": "reject",
     "last_updated": "2026-07-14T09:19:24Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -472,10 +536,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 1,
+      "practicality": 3,
+      "novelty": 2,
+      "ecosystem_value": 1
+    },
+    "llm_summary": {
+      "zh": "这是一个专注于GPT Image 2提示词的大型开放库，但与AI编码代理生态系统无关，主要是图像生成资源。",
+      "en": "A large curated prompt library for GPT Image 2, but irrelevant to the AI coding agent ecosystem as it focuses on image generation, not code assistance."
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
     "repo": "YouMind-OpenLab/awesome-gpt-image-2",
     "tags": [],
     "maturity": "unknown",
@@ -508,9 +580,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Transformer Explained Visually: Learn How LLM Transformer Models Work with Interactive Visualization",
     "i18n": {
       "zh": {
@@ -524,10 +594,10 @@
     },
     "stars": 8180,
     "forks": 903,
-    "total_score": 38,
+    "total_score": 59,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 21,
+    "tracking_priority": "index",
     "last_updated": "2026-07-14T09:08:55Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -542,10 +612,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 2,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 3
+    },
+    "llm_summary": {
+      "zh": "Transformer可视化教学工具，帮助理解LLM内部机制，对AI编码工具学习有辅助作用。",
+      "en": "Interactive visualization tool for learning Transformer internals, ancillary to AI coding agent ecosystem."
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
     "repo": "poloclub/transformer-explainer",
     "tags": [],
     "maturity": "unknown",
@@ -566,7 +644,8 @@
     "url": "https://github.com/smtg-ai/claude-squad",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "cli-tool",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -588,10 +667,10 @@
     },
     "stars": 8110,
     "forks": 585,
-    "total_score": 38,
+    "total_score": 74,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 36,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T06:49:25Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -606,10 +685,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个终端应用，用于管理和编排多个AI编码代理，如Claude Code、Codex等，提高了多代理协作效率。",
+      "en": "A terminal app that manages and orchestrates multiple AI coding agents like Claude Code and Codex, enhancing multi-agent collaboration."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "smtg-ai/claude-squad",
     "tags": [],
     "maturity": "unknown",
@@ -629,12 +716,9 @@
     "url": "https://github.com/earthtojake/text-to-cad",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "agent-framework"
+      "skills"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "A collection of agent skills for CAD, robotics and hardware design",
     "i18n": {
       "zh": {
@@ -648,10 +732,10 @@
     },
     "stars": 8111,
     "forks": 931,
-    "total_score": 38,
+    "total_score": 72,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 34,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:09:40Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -666,10 +750,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "为AI编码代理提供CAD、机器人和硬件设计技能的库。",
+      "en": "A library of agent skills for generating CAD models, robotics, and hardware designs from natural language."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "earthtojake/text-to-cad",
     "tags": [],
     "maturity": "unknown",
@@ -701,7 +793,7 @@
     "url": "https://github.com/jamez-bondos/awesome-gpt4o-images",
     "source_type": "github",
     "resource_type": [
-      "rules"
+      "tutorial"
     ],
     "target_tools": [
       "codex-cli"
@@ -719,10 +811,10 @@
     },
     "stars": 8093,
     "forks": 1810,
-    "total_score": 41,
+    "total_score": 57,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 16,
+    "tracking_priority": "index",
     "last_updated": "2026-07-13T23:32:20Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -737,10 +829,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 3,
+      "practicality": 5,
+      "novelty": 6,
+      "ecosystem_value": 2
+    },
+    "llm_summary": {
+      "zh": "GPT-4o图像生成案例精选集，对AI编码代理有间接参考价值。",
+      "en": "Curated collection of GPT-4o generated images and prompts, tangentially useful for AI coding agents."
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
     "repo": "jamez-bondos/awesome-gpt4o-images",
     "tags": [],
     "maturity": "unknown",
@@ -770,11 +870,10 @@
     "url": "https://github.com/GetStream/Vision-Agents",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "agent-framework",
+      "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Open Vision Agents by Stream. Build voice and vision agents quickly with any model or video provider. Uses Stream's edge network for ultra-low latency.",
     "i18n": {
       "zh": {
@@ -788,10 +887,10 @@
     },
     "stars": 7980,
     "forks": 667,
-    "total_score": 38,
+    "total_score": 69,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 31,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T07:28:34Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -806,10 +905,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 7,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个用于构建实时语音和视觉代理的框架，支持任意模型，并通过Stream的边缘网络实现低延迟。",
+      "en": "A framework for building real-time voice and vision agents using any model, with low latency via Stream's edge network."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "GetStream/Vision-Agents",
     "tags": [],
     "maturity": "unknown",
@@ -837,9 +944,7 @@
     "resource_type": [
       "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Story Creation AI Agent for novel, scripts, translation, interactive games, and IP content",
     "i18n": {
       "zh": {
@@ -853,10 +958,10 @@
     },
     "stars": 7965,
     "forks": 1484,
-    "total_score": 41,
+    "total_score": 54,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 13,
+    "tracking_priority": "index",
     "last_updated": "2026-07-14T09:18:05Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -871,10 +976,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 2,
+      "practicality": 8,
+      "novelty": 2,
+      "ecosystem_value": 1
+    },
+    "llm_summary": {
+      "zh": "专为故事创作设计的AI智能体系统，支持多体裁和交互形式，但与AI编程助手生态关联极低。",
+      "en": "An AI agent system tailored for story creation, supporting multiple genres and interaction modes, but with minimal relevance to the AI coding agent ecosystem."
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
     "repo": "Narcooo/inkos",
     "tags": [],
     "maturity": "unknown",
@@ -900,11 +1013,10 @@
     "url": "https://github.com/SciPhi-AI/R2R",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "agent-framework",
+      "cli-tool"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "SoTA production-ready AI retrieval system. Agentic Retrieval-Augmented Generation (RAG) with a RESTful API.",
     "i18n": {
       "zh": {
@@ -918,10 +1030,10 @@
     },
     "stars": 7927,
     "forks": 644,
-    "total_score": 38,
+    "total_score": 66,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 28,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T05:06:53Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -936,10 +1048,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 9,
+      "novelty": 5,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "R2R 是一个生产级的AI检索系统，支持检索增强生成（RAG）和智能体交互，提供RESTful API。",
+      "en": "R2R is a production-ready AI retrieval system with agentic RAG and a RESTful API."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "SciPhi-AI/R2R",
     "tags": [],
     "maturity": "unknown",
@@ -962,7 +1082,7 @@
     "url": "https://github.com/0xPlaygrounds/rig",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "trae",
@@ -981,10 +1101,10 @@
     },
     "stars": 7920,
     "forks": 882,
-    "total_score": 38,
+    "total_score": 71,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T07:03:49Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -999,10 +1119,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "用Rust构建模块化可扩展的LLM应用的框架，高星高关注，生态价值大。",
+      "en": "A modular, scalable Rust framework for building LLM applications, highly starred and actively developed."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "0xPlaygrounds/rig",
     "tags": [],
     "maturity": "unknown",
@@ -1027,8 +1155,7 @@
     "url": "https://github.com/Upsonic/Upsonic",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
-      "mcp-server"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -1049,10 +1176,10 @@
     },
     "stars": 7908,
     "forks": 737,
-    "total_score": 38,
+    "total_score": 69,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 31,
+    "tracking_priority": "track",
     "last_updated": "2026-07-13T12:34:14Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1067,10 +1194,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 9,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个用于构建自主AI代理的Python框架，支持MCP、RAG和计算机使用能力，可与Claude Code等编码工具集成。",
+      "en": "A Python framework for building autonomous AI agents with MCP, RAG, and computer-use capabilities, directly integrable with leading AI coding tools."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "Upsonic/Upsonic",
     "tags": [],
     "maturity": "unknown",
@@ -1100,11 +1235,9 @@
     "url": "https://github.com/jamwithai/production-agentic-rag-course",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "jamwithai/production-agentic-rag-course",
     "i18n": {
       "zh": {
@@ -1118,10 +1251,10 @@
     },
     "stars": 7823,
     "forks": 1746,
-    "total_score": 41,
+    "total_score": 68,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 27,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:15:51Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1136,10 +1269,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 9,
+      "novelty": 5,
+      "ecosystem_value": 7
+    },
+    "llm_summary": {
+      "zh": "一个面向生产环境的RAG系统学习课程，适合构建AI编码工具的学习者。",
+      "en": "A production-oriented RAG system course that teaches building real-world AI systems, relevant for AI coding agent developers."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "jamwithai/production-agentic-rag-course",
     "tags": [],
     "maturity": "unknown",
@@ -1153,9 +1294,11 @@
     "url": "https://github.com/snarktank/ai-dev-tasks",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "claude-code"
+    ],
     "summary": "A simple task management system for managing AI dev agents",
     "i18n": {
       "zh": {
@@ -1169,10 +1312,10 @@
     },
     "stars": 7774,
     "forks": 1727,
-    "total_score": 39,
+    "total_score": 70,
     "quantifiable_score": 39,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 31,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T01:12:23Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1185,10 +1328,18 @@
       "adoption": 10,
       "maturity": 2
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个专为AI编码助手设计的任务管理模板集合，通过结构化提示提升功能开发效率。",
+      "en": "A structured task management kit with markdown prompts to supercharge feature development with AI coding assistants."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "snarktank/ai-dev-tasks",
     "tags": [],
     "maturity": "unknown",
@@ -1202,8 +1353,7 @@
     "url": "https://github.com/helloianneo/ian-xiaohei-illustrations",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "agent-framework"
+      "skills"
     ],
     "target_tools": [
       "codex-cli"
@@ -1221,10 +1371,10 @@
     },
     "stars": 7794,
     "forks": 934,
-    "total_score": 36,
+    "total_score": 69,
     "quantifiable_score": 36,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:20:42Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1237,10 +1387,18 @@
       "adoption": 7,
       "maturity": 2
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个为Codex CLI定制的中文文章配图生成技能，以小黑手绘风格将文章认知锚点转化为记忆点图示。",
+      "en": "A Codex Skill for generating Chinese article illustrations with a distinctive hand-drawn 'Xiaohei' character style, converting cognitive anchors into memorable visuals."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "helloianneo/ian-xiaohei-illustrations",
     "tags": [],
     "maturity": "unknown",
@@ -1281,10 +1439,10 @@
     },
     "stars": 7754,
     "forks": 753,
-    "total_score": 38,
+    "total_score": 74,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 36,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:26:57Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1299,10 +1457,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个智能HTML编辑器，让AI编码代理（如Claude Code）生成和发布多种格式的HTML内容，并提供沙盒预览。",
+      "en": "An agentic HTML editor that allows AI coding agents like Claude Code to generate and ship HTML content across multiple formats with a sandboxed preview."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "nexu-io/html-anything",
     "tags": [],
     "maturity": "unknown",
@@ -1337,7 +1503,8 @@
     "url": "https://github.com/gsd-build/gsd-2",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "agent-framework",
+      "skills"
     ],
     "target_tools": [],
     "summary": "A powerful meta-prompting, context engineering and spec-driven development system that enables agents to work for long periods of time autonomously without losing track of the big picture",
@@ -1353,10 +1520,10 @@
     },
     "stars": 7746,
     "forks": 776,
-    "total_score": 38,
+    "total_score": 70,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 32,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T05:55:58Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1371,10 +1538,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 7,
+      "novelty": 8,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个用于构建自主AI编码代理的元提示与规范驱动开发框架，现已迁移至GSD Pi。",
+      "en": "A meta-prompting and spec-driven development framework for building autonomous AI coding agents, now continued as GSD Pi."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "gsd-build/gsd-2",
     "tags": [],
     "maturity": "unknown",
@@ -1411,10 +1586,10 @@
     },
     "stars": 7701,
     "forks": 727,
-    "total_score": 38,
+    "total_score": 70,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 32,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:22:06Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1429,10 +1604,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个灵活的、支持云端和本地设备的多AI代理编排框架，源自AWS Labs，现支持Swift，可用于构建复杂的对话系统。",
+      "en": "A flexible, open-source framework for orchestrating multiple AI agents, supporting cloud (Python/TypeScript) and on-device (Swift) deployments, with MCP tool integration and real-time voice."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "2FastLabs/agent-squad",
     "tags": [],
     "maturity": "unknown",
@@ -1467,11 +1650,10 @@
     "url": "https://github.com/NVIDIA/OpenShell",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "agent-framework",
+      "cli-tool"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "OpenShell is the safe, private runtime for autonomous AI agents.",
     "i18n": {
       "zh": {
@@ -1485,10 +1667,10 @@
     },
     "stars": 7685,
     "forks": 1095,
-    "total_score": 41,
+    "total_score": 76,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:19:58Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1503,10 +1685,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "NVIDIA OpenShell 提供了一个安全、私有的运行时环境，专为自主 AI 代理设计，对 AI 编码代理生态系统的安全执行具有重要价值。",
+      "en": "NVIDIA OpenShell offers a safe, private runtime for autonomous AI agents, crucially valuable for secure execution in the AI coding agent ecosystem."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "NVIDIA/OpenShell",
     "tags": [],
     "maturity": "unknown",
@@ -1520,8 +1710,7 @@
     "url": "https://github.com/NirDiamant/Prompt_Engineering",
     "source_type": "github",
     "resource_type": [
-      "rules",
-      "agent-framework"
+      "tutorial"
     ],
     "target_tools": [
       "claude-code",
@@ -1540,10 +1729,10 @@
     },
     "stars": 7678,
     "forks": 986,
-    "total_score": 38,
+    "total_score": 71,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-13T19:29:38Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1558,10 +1747,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "全面的提示工程教程集合，包含实用的Jupyter Notebook，对掌握LLM交互至关重要。",
+      "en": "Comprehensive prompt engineering tutorial collection with practical Jupyter Notebooks, essential for mastering LLM interaction."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "NirDiamant/Prompt_Engineering",
     "tags": [],
     "maturity": "unknown",
@@ -1596,9 +1793,7 @@
     "resource_type": [
       "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Bindu: The identity, communication, and payments layer for AI agents.",
     "i18n": {
       "zh": {
@@ -1612,10 +1807,10 @@
     },
     "stars": 7667,
     "forks": 421,
-    "total_score": 38,
+    "total_score": 65,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 27,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:04:58Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1630,10 +1825,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 7,
+      "novelty": 8,
+      "ecosystem_value": 6
+    },
+    "llm_summary": {
+      "zh": "Bindu 为 AI 代理提供身份、通信和支付层，虽非专为编码代理设计，但可用于支持编码代理间的交互。",
+      "en": "Bindu provides identity, communication, and payments for AI agents; it is not specific to coding agents but can support inter-agent coordination in coding workflows."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "GetBindu/Bindu",
     "tags": [],
     "maturity": "unknown",
@@ -1655,11 +1858,9 @@
     "url": "https://github.com/jo-inc/camofox-browser",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "cli-tool"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Stealth headless browser for AI agents — bypass Cloudflare, bot detection, and anti-scraping. Drop-in Puppeteer/Playwright replacement.",
     "i18n": {
       "zh": {
@@ -1673,10 +1874,10 @@
     },
     "stars": 7651,
     "forks": 794,
-    "total_score": 38,
+    "total_score": 73,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:28:38Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1691,10 +1892,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "这个项目为AI代理提供了一个反检测的隐身浏览器，可以绕过Cloudflare和机器人检测，是Puppeteer/Playwright的直接替代品。",
+      "en": "This project provides a stealth headless browser for AI agents to bypass Cloudflare and bot detection, serving as a drop-in replacement for Puppeteer/Playwright."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "jo-inc/camofox-browser",
     "tags": [],
     "maturity": "unknown",
@@ -1724,10 +1933,10 @@
     "url": "https://github.com/anthropics/claude-agent-sdk-python",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code"
     ],
     "summary": "anthropics/claude-agent-sdk-python",
     "i18n": {
@@ -1742,10 +1951,10 @@
     },
     "stars": 7623,
     "forks": 1170,
-    "total_score": 41,
+    "total_score": 75,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 34,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:15:10Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1760,10 +1969,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "Claude Agent的官方Python SDK，集成了Claude Code CLI。",
+      "en": "Official Python SDK for building and interacting with Claude Agent, bundling the Claude Code CLI."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "anthropics/claude-agent-sdk-python",
     "tags": [],
     "maturity": "unknown",
@@ -1778,11 +1995,9 @@
     "source_type": "github",
     "resource_type": [
       "agent-framework",
-      "rules"
+      "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "FinRobot: An Open-Source AI Agent Platform for Financial Analysis using LLMs 🚀 🚀 🚀 ",
     "i18n": {
       "zh": {
@@ -1796,10 +2011,10 @@
     },
     "stars": 7558,
     "forks": 1276,
-    "total_score": 41,
+    "total_score": 65,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 24,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T06:59:55Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1814,10 +2029,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 5,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 5
+    },
+    "llm_summary": {
+      "zh": "FinRobot是一个面向金融分析的开源AI代理平台，利用大语言模型提供智能金融数据分析和决策支持。",
+      "en": "FinRobot is an open-source AI agent platform for financial analysis using large language models, offering smart financial data analysis and decision support."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "AI4Finance-Foundation/FinRobot",
     "tags": [],
     "maturity": "unknown",
@@ -1840,9 +2063,7 @@
     "url": "https://github.com/ValueCell-ai/ClawX",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
-      "cli-tool",
-      "skills"
+      "agent-framework"
     ],
     "target_tools": [
       "trae",
@@ -1861,10 +2082,10 @@
     },
     "stars": 7544,
     "forks": 1122,
-    "total_score": 41,
+    "total_score": 71,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 30,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:04:55Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1879,10 +2100,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 7,
+      "practicality": 9,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "ClawX 为 OpenClaw AI 代理提供了一个桌面图形界面，将 CLI 驱动的代理编排转化为无需终端的易用体验，兼具实用性与普及价值。",
+      "en": "ClawX provides a desktop graphical interface for OpenClaw AI agents, transforming CLI-based agent orchestration into an accessible terminal-free experience, balancing practicality and ecosystem value."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "ValueCell-ai/ClawX",
     "tags": [],
     "maturity": "unknown",
@@ -1905,14 +2134,13 @@
     "url": "https://github.com/cobusgreyling/loop-engineering",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
       "cli-tool",
-      "mcp-server",
-      "rules"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
-      "codex-cli"
+      "codex-cli",
+      "opencode"
     ],
     "summary": "Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems that prompt and orchestrate agents (inspired by Addy Osmani and Boris Cherny). Includes loop-audit, loop-init, loop-cost.",
     "i18n": {
@@ -1927,10 +2155,10 @@
     },
     "stars": 7595,
     "forks": 964,
-    "total_score": 38,
+    "total_score": 75,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 37,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:27:20Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -1945,10 +2173,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个实用的CLI工具包，用于设计和编排AI编码代理的工作循环，提供脚手架、审计和成本追踪功能。",
+      "en": "A practical CLI toolkit for engineering loops that orchestrate AI coding agents, providing scaffolding, auditing, and cost tracking."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "cobusgreyling/loop-engineering",
     "tags": [],
     "maturity": "unknown",
@@ -1980,11 +2216,10 @@
     "url": "https://github.com/LuckyOne7777/LLM-Trading-Lab",
     "source_type": "github",
     "resource_type": [
+      "agent-framework",
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "This repo powers my experiment where ChatGPT manages a real-money micro-cap stock portfolio.",
     "i18n": {
       "zh": {
@@ -1998,10 +2233,10 @@
     },
     "stars": 7499,
     "forks": 1565,
-    "total_score": 39,
+    "total_score": 60,
     "quantifiable_score": 39,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 21,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T07:35:57Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2016,10 +2251,18 @@
       "adoption": 10,
       "maturity": 2
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 5,
+      "practicality": 7,
+      "novelty": 6,
+      "ecosystem_value": 3
+    },
+    "llm_summary": {
+      "zh": "这是一个使用ChatGPT进行实盘微盘股票组合管理的实验项目，可视为LLM在金融决策中的应用参考。",
+      "en": "An experimental project where ChatGPT manages a real-money micro-cap stock portfolio, serving as a reference for LLM application in financial decision-making."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "LuckyOne7777/LLM-Trading-Lab",
     "tags": [],
     "maturity": "unknown",
@@ -2033,11 +2276,9 @@
     "url": "https://github.com/microsoft/TinyTroupe",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "LLM-powered multiagent persona simulation for imagination enhancement and business insights.",
     "i18n": {
       "zh": {
@@ -2051,10 +2292,10 @@
     },
     "stars": 7491,
     "forks": 667,
-    "total_score": 38,
+    "total_score": 57,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 19,
+    "tracking_priority": "index",
     "last_updated": "2026-07-13T10:23:23Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2069,10 +2310,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 2,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 3
+    },
+    "llm_summary": {
+      "zh": "一个基于LLM的多智能体角色模拟库，用于商业洞察，但与AI编码代理生态直接关联不大。",
+      "en": "A multiagent persona simulation library powered by LLMs, useful for business insights but not directly relevant to AI coding agents."
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
     "repo": "microsoft/TinyTroupe",
     "tags": [],
     "maturity": "unknown",
@@ -2086,11 +2335,9 @@
     "url": "https://github.com/EricLBuehler/mistral.rs",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "cli-tool"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Fast, flexible LLM inference",
     "i18n": {
       "zh": {
@@ -2104,10 +2351,10 @@
     },
     "stars": 7473,
     "forks": 658,
-    "total_score": 38,
+    "total_score": 65,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 27,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:19:06Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2122,10 +2369,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 5,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 6
+    },
+    "llm_summary": {
+      "zh": "一个用Rust编写的高效灵活的LLM推理引擎，提供OpenAI兼容的API和SDK，可作为编码助手的后端。",
+      "en": "A fast, flexible LLM inference engine in Rust, offering OpenAI-compatible APIs and SDKs, useful as a backend for coding agents."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "EricLBuehler/mistral.rs",
     "tags": [],
     "maturity": "unknown",
@@ -2143,16 +2398,9 @@
     "url": "https://github.com/mufeedvh/code2prompt",
     "source_type": "github",
     "resource_type": [
-      "cli-tool",
-      "rules"
+      "cli-tool"
     ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder"
-    ],
+    "target_tools": [],
     "summary": "A CLI tool to convert your codebase into a single LLM prompt with source tree, prompt templating, and token counting.",
     "i18n": {
       "zh": {
@@ -2166,10 +2414,10 @@
     },
     "stars": 7472,
     "forks": 425,
-    "total_score": 38,
+    "total_score": 73,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-13T19:29:52Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2184,10 +2432,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "将代码库转换为LLM提示的CLI工具，支持源树、模板和令牌计数。",
+      "en": "A CLI tool to convert a codebase into a single LLM prompt with source tree, templating, and token counting."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "mufeedvh/code2prompt",
     "tags": [],
     "maturity": "unknown",
@@ -2215,7 +2471,8 @@
     "url": "https://github.com/tailcallhq/forgecode",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "cli-tool",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -2234,10 +2491,10 @@
     },
     "stars": 7459,
     "forks": 1445,
-    "total_score": 41,
+    "total_score": 76,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T04:48:21Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2252,10 +2509,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个支持300+模型的多AI代理终端开发环境，提供增强的AI编程体验。",
+      "en": "A multi-AI agent terminal development environment supporting 300+ models, providing an enhanced AI coding experience."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "tailcallhq/forgecode",
     "tags": [],
     "maturity": "unknown",
@@ -2286,11 +2551,9 @@
     "url": "https://github.com/THUDM/slime",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "slime is an LLM post-training framework for RL Scaling.",
     "i18n": {
       "zh": {
@@ -2304,10 +2567,10 @@
     },
     "stars": 7444,
     "forks": 1059,
-    "total_score": 41,
+    "total_score": 67,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 26,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:18:31Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2322,10 +2585,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 5,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 6
+    },
+    "llm_summary": {
+      "zh": "一个用于强化学习扩展的LLM后训练框架，可增强编码代理模型。",
+      "en": "A post-training framework for LLMs using RL scaling, which can improve models for coding agents."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "THUDM/slime",
     "tags": [],
     "maturity": "unknown",
@@ -2339,6 +2610,7 @@
     "url": "https://github.com/refly-ai/refly",
     "source_type": "github",
     "resource_type": [
+      "agent-framework",
       "skills"
     ],
     "target_tools": [
@@ -2361,10 +2633,10 @@
     },
     "stars": 7434,
     "forks": 720,
-    "total_score": 38,
+    "total_score": 73,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-13T18:01:34Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2379,10 +2651,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "开源Agent技能构建平台，通过vibe workflow定义技能，兼容Claude Code、Cursor、Codex等工具。",
+      "en": "Open-source agent skills builder that defines skills via vibe workflows and integrates with Claude Code, Cursor, Codex, and more."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "refly-ai/refly",
     "tags": [],
     "maturity": "unknown",
@@ -2414,7 +2694,7 @@
     "url": "https://github.com/yzfly/Awesome-MCP-ZH",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "tutorial"
     ],
     "target_tools": [
       "claude-code"
@@ -2432,10 +2712,10 @@
     },
     "stars": 7429,
     "forks": 642,
-    "total_score": 36,
+    "total_score": 67,
     "quantifiable_score": 36,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 31,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:13:13Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2448,10 +2728,18 @@
       "adoption": 7,
       "maturity": 2
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 5,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一份中文MCP资源大全，涵盖指南、客户端、服务器和社区资源，适合快速上手MCP。",
+      "en": "A comprehensive Chinese-language curated list of MCP resources, including guides, clients, servers, and community resources."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "yzfly/Awesome-MCP-ZH",
     "tags": [],
     "maturity": "unknown",
@@ -2478,9 +2766,11 @@
     "url": "https://github.com/aidenybai/react-grab",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
+      "claude-code",
+      "cursor",
       "hermes-agent"
     ],
     "summary": "Copy any UI element for your agent",
@@ -2496,10 +2786,10 @@
     },
     "stars": 7415,
     "forks": 333,
-    "total_score": 38,
+    "total_score": 70,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 32,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T07:38:49Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2514,10 +2804,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个供AI编码代理复制任意UI元素并直接访问源代码的React库，提高了速度和准确性。",
+      "en": "A React library that enables AI coding agents to copy any UI element and access its source code directly, improving speed and accuracy."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "aidenybai/react-grab",
     "tags": [],
     "maturity": "unknown",
@@ -2536,11 +2834,9 @@
     "url": "https://github.com/QuivrHQ/MegaParse",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "cli-tool"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "File Parser optimised for LLM Ingestion with no loss 🧠 Parse PDFs, Docx, PPTx in a format that is ideal for LLMs. ",
     "i18n": {
       "zh": {
@@ -2554,10 +2850,10 @@
     },
     "stars": 7400,
     "forks": 418,
-    "total_score": 38,
+    "total_score": 68,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 30,
+    "tracking_priority": "track",
     "last_updated": "2026-07-13T16:07:58Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2572,10 +2868,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 7,
+      "practicality": 9,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "为LLM优化的文件解析器，确保信息不丢失",
+      "en": "A file parser optimized for LLM ingestion with no information loss"
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "QuivrHQ/MegaParse",
     "tags": [],
     "maturity": "unknown",
@@ -2613,10 +2917,10 @@
     },
     "stars": 7380,
     "forks": 826,
-    "total_score": 38,
+    "total_score": 72,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 34,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:21:14Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2631,10 +2935,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "这是一个让Claude Code与Google NotebookLM直接通信的官方技能，支持基于文档的源引用回答。",
+      "en": "A Claude Code skill enabling direct communication with Google NotebookLM for source-grounded answers based on uploaded documents."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "PleasePrompto/notebooklm-skill",
     "tags": [],
     "maturity": "unknown",
@@ -2650,9 +2962,7 @@
     "resource_type": [
       "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "A pixel office for your OpenClaw: turn invisible work states into a cozy little space with characters, daily notes, and guest agents. Code under MIT; art assets for non-commercial learning only.",
     "i18n": {
       "zh": {
@@ -2666,10 +2976,10 @@
     },
     "stars": 7371,
     "forks": 795,
-    "total_score": 38,
+    "total_score": 68,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 30,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:06:58Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2684,10 +2994,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 7
+    },
+    "llm_summary": {
+      "zh": "一个像素风格的AI办公室看板，用于可视化多智能体协作状态，与OpenClaw深度集成。",
+      "en": "A pixel-art AI office dashboard for visualizing multi-agent collaboration status, deeply integrated with OpenClaw."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "ringhyacinth/Star-Office-UI",
     "tags": [],
     "maturity": "unknown",
@@ -2712,12 +3030,11 @@
     "url": "https://github.com/google-labs-code/stitch-skills",
     "source_type": "github",
     "resource_type": [
-      "mcp-server",
-      "skills",
-      "agent-framework"
+      "skills"
     ],
     "target_tools": [
       "claude-code",
+      "codex-cli",
       "antigravity-cli",
       "cursor"
     ],
@@ -2734,10 +3051,10 @@
     },
     "stars": 7354,
     "forks": 971,
-    "total_score": 38,
+    "total_score": 74,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 36,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:58:44Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2752,10 +3069,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个遵循Agent Skills开放标准的Google Stitch代理技能库，兼容多种编码代理。",
+      "en": "A library of agent skills for Google Stitch following the Agent Skills open standard, compatible with multiple coding agents."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "google-labs-code/stitch-skills",
     "tags": [],
     "maturity": "unknown",
@@ -2771,9 +3096,7 @@
     "resource_type": [
       "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "🔥 Open Source Browser API for AI Agents & Apps. Steel Browser is a batteries-included browser sandbox that lets you automate the web without worrying about infrastructure.",
     "i18n": {
       "zh": {
@@ -2787,10 +3110,10 @@
     },
     "stars": 7332,
     "forks": 950,
-    "total_score": 38,
+    "total_score": 72,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 34,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T03:59:29Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2805,10 +3128,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "Steel Browser 是一个开源浏览器 API，专为 AI 智能体设计，提供沙箱环境用于网页自动化。",
+      "en": "Steel Browser is an open-source browser API designed for AI agents, providing a sandboxed environment for web automation."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "steel-dev/steel-browser",
     "tags": [],
     "maturity": "unknown",
@@ -2828,7 +3159,7 @@
     "url": "https://github.com/OpenCoworkAI/open-codesign",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "extension"
     ],
     "target_tools": [
       "claude-code",
@@ -2848,10 +3179,10 @@
     },
     "stars": 7276,
     "forks": 770,
-    "total_score": 38,
+    "total_score": 67,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 29,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:13:03Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2866,10 +3197,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 7
+    },
+    "llm_summary": {
+      "zh": "开源桌面应用，通过导入Claude Code/Codex API密钥，将提示词转化为原型、幻灯片或PDF，支持多种模型并本地运行。",
+      "en": "Open-source desktop app that turns prompts into polished artifacts (prototypes, slides, PDF) using your own API keys from Claude Code, Codex CLI, and other models."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "OpenCoworkAI/open-codesign",
     "tags": [],
     "maturity": "unknown",
@@ -2904,11 +3243,12 @@
     "url": "https://github.com/AgentDeskAI/browser-tools-mcp",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "extension"
     ],
     "target_tools": [
-      "claude-code",
-      "cursor"
+      "cursor",
+      "claude-code"
     ],
     "summary": "Monitor browser logs directly from Cursor and other MCP compatible IDEs.",
     "i18n": {
@@ -2923,10 +3263,10 @@
     },
     "stars": 7271,
     "forks": 525,
-    "total_score": 38,
+    "total_score": 65,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 27,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:06:17Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2941,10 +3281,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 6,
+      "novelty": 7,
+      "ecosystem_value": 5
+    },
+    "llm_summary": {
+      "zh": "一个用于监控浏览器日志的MCP服务器项目，已停止维护。",
+      "en": "An MCP server project for monitoring browser logs, now archived and inactive."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "AgentDeskAI/browser-tools-mcp",
     "tags": [],
     "maturity": "unknown",
@@ -2980,10 +3328,10 @@
     },
     "stars": 7271,
     "forks": 422,
-    "total_score": 38,
+    "total_score": 70,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 32,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:40:29Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -2998,10 +3346,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "基于TypeScript的智能体框架，用于构建自主代理和AI工作流，拥有大量星标和活跃开发。",
+      "en": "A TypeScript agent harness framework for building autonomous agents and AI workflows, with notable stars and active development."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "withastro/flue",
     "tags": [],
     "maturity": "unknown",
@@ -3015,13 +3371,14 @@
     "url": "https://github.com/omnigent-ai/omnigent",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
-      "cli-tool"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
       "codex-cli",
-      "cursor"
+      "cursor",
+      "opencode",
+      "hermes-agent"
     ],
     "summary": "Omnigent is an open-source AI agent framework and meta-harness: orchestrate Claude Code, Codex, Cursor, Pi, and custom agents — swap harnesses without rewriting, enforce policies and sandboxing, and collaborate in real time from any device.",
     "i18n": {
@@ -3036,10 +3393,10 @@
     },
     "stars": 7244,
     "forks": 1002,
-    "total_score": 41,
+    "total_score": 78,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 37,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:13:11Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3054,10 +3411,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 9,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "Omnigent是一个开源AI代理框架和元操控台，可统一编排Claude Code、Codex、Cursor等多个编码代理，实现策略执行和实时协作。",
+      "en": "Omnigent is an open-source meta-harness that orchestrates multiple AI coding agents like Claude Code, Codex, and Cursor, enabling seamless swapping, policy enforcement, and real-time collaboration."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "omnigent-ai/omnigent",
     "tags": [],
     "maturity": "unknown",
@@ -3088,7 +3453,7 @@
     "url": "https://github.com/TheCraigHewitt/seomachine",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -3106,10 +3471,10 @@
     },
     "stars": 7236,
     "forks": 975,
-    "total_score": 38,
+    "total_score": 66,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 28,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T07:10:51Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3124,10 +3489,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 5,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 7
+    },
+    "llm_summary": {
+      "zh": "一个专门用于SEO优化内容创作的Claude Code工作空间，展示了AI编程代理的非编程应用。",
+      "en": "A specialized Claude Code workspace for SEO-optimized content creation, demonstrating a non-coding application of the AI coding agent."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "TheCraigHewitt/seomachine",
     "tags": [],
     "maturity": "unknown",
@@ -3141,7 +3514,7 @@
     "url": "https://github.com/lewislulu/html-ppt-skill",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [],
     "summary": "HTML PPT Studio — AgentSkill with 24 themes, 31 layouts, 20+ animations for building professional HTML presentations",
@@ -3157,10 +3530,10 @@
     },
     "stars": 7133,
     "forks": 632,
-    "total_score": 38,
+    "total_score": 65,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 27,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:56:49Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3175,10 +3548,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 9,
+      "novelty": 5,
+      "ecosystem_value": 7
+    },
+    "llm_summary": {
+      "zh": "一个功能丰富的HTML演示文稿构建工具，自称AgentSkill，提供大量主题和布局，但与AI编码代理的集成不明确。",
+      "en": "A feature-rich HTML presentation builder marketed as an AgentSkill, offering numerous themes and layouts, but its integration with AI coding agents is unclear."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "lewislulu/html-ppt-skill",
     "tags": [],
     "maturity": "unknown",
@@ -3194,9 +3575,7 @@
     "resource_type": [
       "mcp-server"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "A community driven registry service for Model Context Protocol (MCP) servers.",
     "i18n": {
       "zh": {
@@ -3210,10 +3589,10 @@
     },
     "stars": 7016,
     "forks": 899,
-    "total_score": 38,
+    "total_score": 73,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-13T22:08:25Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3228,10 +3607,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 10
+    },
+    "llm_summary": {
+      "zh": "MCP服务器注册中心，为AI编码代理提供可发现和可发布的MCP服务器目录。",
+      "en": "A community-driven registry for MCP servers, acting as an app store to enable AI coding agents to discover and publish tools."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "modelcontextprotocol/registry",
     "tags": [],
     "maturity": "unknown",
@@ -3250,9 +3637,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Open source Claude Artifacts – built with Llama 3.1 405B",
     "i18n": {
       "zh": {
@@ -3266,10 +3651,10 @@
     },
     "stars": 7006,
     "forks": 1654,
-    "total_score": 41,
+    "total_score": 70,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 29,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:31:40Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3284,10 +3669,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 5,
+      "ecosystem_value": 7
+    },
+    "llm_summary": {
+      "zh": "基于Llama 3.1 405B的开源Claude Artifacts实现，用于通过提示生成小型应用。",
+      "en": "Open source implementation of Claude Artifacts using Llama 3.1 405B to generate small apps from prompts."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "Nutlope/llamacoder",
     "tags": [],
     "maturity": "unknown",
@@ -3301,7 +3694,7 @@
     "url": "https://github.com/backnotprop/plannotator",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
+      "extension",
       "skills"
     ],
     "target_tools": [
@@ -3322,10 +3715,10 @@
     },
     "stars": 7010,
     "forks": 506,
-    "total_score": 38,
+    "total_score": 74,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 36,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:53:24Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3340,10 +3733,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "专为AI编程代理设计的计划与代码差异批注工具，支持一键反馈，与多家代理集成。",
+      "en": "A visual annotation tool for reviewing coding agent plans and code diffs, enabling one-click feedback to agents."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "backnotprop/plannotator",
     "tags": [],
     "maturity": "unknown",
@@ -3385,10 +3786,10 @@
     },
     "stars": 6999,
     "forks": 1039,
-    "total_score": 41,
+    "total_score": 76,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:24:34Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3403,10 +3804,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个为 Claude Code 开发的全面付费媒体运营技能，支持主流广告平台。",
+      "en": "A comprehensive Claude Code skill for managing paid media campaigns across major ad platforms."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "AgriciDaniel/claude-ads",
     "tags": [],
     "maturity": "unknown",
@@ -3432,11 +3841,9 @@
     "url": "https://github.com/adongwanai/AgentGuide",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "https://adongwanai.github.io/AgentGuide | AI Agent开发指南 | LangGraph实战 | 高级RAG | 转行大模型 | 大模型面试 | 算法工程师 | 面试题库 | 强化学习｜数据合成",
     "i18n": {
       "zh": {
@@ -3450,10 +3857,10 @@
     },
     "stars": 6963,
     "forks": 691,
-    "total_score": 36,
+    "total_score": 65,
     "quantifiable_score": 36,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 29,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:18:37Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3468,10 +3875,18 @@
       "adoption": 7,
       "maturity": 2
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 7,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一份系统化的AI Agent开发与面试求职指南，整合优质资源，实战导向。",
+      "en": "A comprehensive tutorial and guide for AI Agent development and job hunting, integrating high-quality resources with practical orientation."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "adongwanai/AgentGuide",
     "tags": [],
     "maturity": "unknown",
@@ -3499,7 +3914,7 @@
     "url": "https://github.com/craft-ai-agents/craft-agents-oss",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [],
     "summary": "craft-ai-agents/craft-agents-oss",
@@ -3515,10 +3930,10 @@
     },
     "stars": 6944,
     "forks": 1119,
-    "total_score": 41,
+    "total_score": 74,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:01:46Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3533,10 +3948,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个用于构建和编排多智能体系统的开源AI代理框架，拥有高社区采纳率和演示视频。",
+      "en": "An open-source AI agent framework for building and orchestrating multi-agent systems, with high community adoption and demonstration video."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "craft-ai-agents/craft-agents-oss",
     "tags": [],
     "maturity": "unknown",
@@ -3569,10 +3992,10 @@
     },
     "stars": 6942,
     "forks": 804,
-    "total_score": 38,
+    "total_score": 74,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 36,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:30:01Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3587,10 +4010,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "官方Firecrawl MCP服务器，为AI编码代理提供强大的网页抓取和搜索能力，广泛集成于Claude、Cursor等工具。",
+      "en": "Official Firecrawl MCP server adding powerful web scraping and search to Claude, Cursor, and any MCP-compatible AI clients."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "firecrawl/firecrawl-mcp-server",
     "tags": [],
     "maturity": "unknown",
@@ -3619,11 +4050,9 @@
     "url": "https://github.com/openai/openai-realtime-agents",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "This is a simple demonstration of more advanced, agentic patterns built on top of the Realtime API.",
     "i18n": {
       "zh": {
@@ -3637,10 +4066,10 @@
     },
     "stars": 6925,
     "forks": 1095,
-    "total_score": 41,
+    "total_score": 61,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 20,
+    "tracking_priority": "track",
     "last_updated": "2026-07-12T21:53:49Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3655,10 +4084,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 7,
+      "novelty": 3,
+      "ecosystem_value": 4
+    },
+    "llm_summary": {
+      "zh": "使用OpenAI实时API和代理SDK展示高级代理模式的示例项目。",
+      "en": "Demonstration of advanced agentic patterns using OpenAI Realtime API and Agents SDK."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "openai/openai-realtime-agents",
     "tags": [],
     "maturity": "unknown",
@@ -3672,7 +4109,7 @@
     "url": "https://github.com/deepseek-ai/DeepSeek-Coder-V2",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "tutorial"
     ],
     "target_tools": [],
     "summary": "DeepSeek-Coder-V2: Breaking the Barrier of Closed-Source Models in Code Intelligence",
@@ -3688,10 +4125,10 @@
     },
     "stars": 6902,
     "forks": 1097,
-    "total_score": 39,
+    "total_score": 69,
     "quantifiable_score": 39,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 30,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:52:36Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3704,10 +4141,18 @@
       "adoption": 10,
       "maturity": 2
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 8,
+      "novelty": 8,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "DeepSeek-Coder-V2 是一个开源 MoE 代码模型，性能接近 GPT4-Turbo，为 AI 编程代理提供了强大的基础模型。",
+      "en": "DeepSeek-Coder-V2 is an open-source MoE code model with GPT4-Turbo-level performance, serving as a powerful foundation for AI coding agents."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "deepseek-ai/DeepSeek-Coder-V2",
     "tags": [],
     "maturity": "unknown",
@@ -3722,7 +4167,7 @@
     "source_type": "github",
     "resource_type": [
       "mcp-server",
-      "agent-framework"
+      "extension"
     ],
     "target_tools": [
       "claude-code",
@@ -3744,10 +4189,10 @@
     },
     "stars": 6892,
     "forks": 749,
-    "total_score": 38,
+    "total_score": 71,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:21:46Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3762,10 +4207,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个通过MCP协议桥接AI编程助手（Cursor、Claude Code等）与Figma设计的开源项目，支持读取和修改设计文件。",
+      "en": "Open-source MCP integration bridging AI coding agents (Cursor, Claude Code) with Figma for reading and modifying designs programmatically."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "grab/cursor-talk-to-figma-mcp",
     "tags": [],
     "maturity": "unknown",
@@ -3814,10 +4267,10 @@
     },
     "stars": 6890,
     "forks": 368,
-    "total_score": 36,
+    "total_score": 60,
     "quantifiable_score": 36,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 24,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:01:35Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3830,10 +4283,18 @@
       "adoption": 7,
       "maturity": 2
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 5,
+      "novelty": 6,
+      "ecosystem_value": 7
+    },
+    "llm_summary": {
+      "zh": "一个关于OpenAI o1及推理技术的精选论文和资源列表。",
+      "en": "A curated list of papers and resources on OpenAI o1 and reasoning techniques for LLMs."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "hijkzzz/Awesome-LLM-Strawberry",
     "tags": [],
     "maturity": "unknown",
@@ -3858,9 +4319,7 @@
     "resource_type": [
       "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "🔍 An LLM-based Multi-agent Framework of Web Search Engine (like Perplexity.ai Pro and SearchGPT)",
     "i18n": {
       "zh": {
@@ -3874,10 +4333,10 @@
     },
     "stars": 6889,
     "forks": 685,
-    "total_score": 38,
+    "total_score": 65,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 27,
+    "tracking_priority": "track",
     "last_updated": "2026-07-13T12:04:59Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3892,10 +4351,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 5,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 6
+    },
+    "llm_summary": {
+      "zh": "一个基于LLM的多智能体网络搜索引擎框架，类似Perplexity，可用于增强AI编程代理的搜索能力。",
+      "en": "An LLM-based multi-agent web search framework similar to Perplexity AI, potentially useful for augmenting AI coding agents with search capabilities."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "InternLM/MindSearch",
     "tags": [],
     "maturity": "unknown",
@@ -3920,10 +4387,10 @@
     "url": "https://github.com/alvinunreal/oh-my-opencode-slim",
     "source_type": "github",
     "resource_type": [
+      "extension",
       "agent-framework"
     ],
     "target_tools": [
-      "antigravity-cli",
       "opencode"
     ],
     "summary": "Lean, fine tuned Opencode multi agent suite · Mix any models · Auto delegate tasks",
@@ -3939,10 +4406,10 @@
     },
     "stars": 6887,
     "forks": 413,
-    "total_score": 38,
+    "total_score": 71,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:29:58Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -3957,10 +4424,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "为OpenCode量身定做的多智能体编排插件，支持混合模型和自动任务委派，大幅提升协作效率。",
+      "en": "A multi-agent orchestration plugin for OpenCode that enables mixing models and automatic task delegation, significantly boosting collaborative coding efficiency."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "alvinunreal/oh-my-opencode-slim",
     "tags": [],
     "maturity": "unknown",
@@ -3983,9 +4458,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "codex-cli"
-    ],
+    "target_tools": [],
     "summary": "🦄🦄🦄AI赋能股票分析：AI加持的股票分析/选股工具。股票行情获取，AI热点资讯分析，AI资金/财务分析，涨跌报警推送。支持A股，港股，美股。支持市场整体/个股情绪分析，AI辅助选股等。数据全部保留在本地。支持DeepSeek，OpenAI， Ollama，LMStudio，AnythingLLM，硅基流动，火山方舟，阿里云百炼等平台或模型。",
     "i18n": {
       "zh": {
@@ -3999,10 +4472,10 @@
     },
     "stars": 6876,
     "forks": 1217,
-    "total_score": 41,
+    "total_score": 55,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 14,
+    "tracking_priority": "index",
     "last_updated": "2026-07-14T08:10:38Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4017,10 +4490,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 1,
+      "practicality": 8,
+      "novelty": 5,
+      "ecosystem_value": 0
+    },
+    "llm_summary": {
+      "zh": "一个利用AI大模型进行股票分析的桌面应用，但与AI编码代理生态无关。",
+      "en": "An AI-powered stock analysis desktop application, unrelated to the AI coding agent ecosystem."
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
     "repo": "ArvinLovegood/go-stock",
     "tags": [],
     "maturity": "unknown",
@@ -4045,16 +4526,15 @@
     "source_type": "github",
     "resource_type": [
       "skills",
-      "cli-tool",
-      "mcp-server",
-      "rules"
+      "tutorial"
     ],
     "target_tools": [
       "claude-code",
       "antigravity-cli",
       "trae",
       "cursor",
-      "hermes-agent"
+      "hermes-agent",
+      "qoder"
     ],
     "summary": "🦸 AI 编程超能力 · 中文增强版 — superpowers（116k+ ⭐）完整汉化 + 6 个中国原创 skills，让 Claude Code / Copilot CLI / Hermes Agent / Cursor / Windsurf / Kiro / Gemini CLI 等 16 款 AI 编程工具真正会干活",
     "i18n": {
@@ -4069,10 +4549,10 @@
     },
     "stars": 6856,
     "forks": 657,
-    "total_score": 38,
+    "total_score": 74,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 36,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:30:57Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4087,10 +4567,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "superpowers-zh 是著名 AI 编程工具技能集 superpowers 的中文增强版，包含完整汉化和多个原创技能，支持大量主流 AI 编码工具。",
+      "en": "superpowers-zh is the enhanced Chinese edition of the famous superpowers skill set for AI coding tools, with full translations and original skills supporting many mainstream AI coding agents."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "jnMetaCode/superpowers-zh",
     "tags": [],
     "maturity": "unknown",
@@ -4121,11 +4609,9 @@
     "url": "https://github.com/mishushakov/llm-scraper",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "skills"
     ],
-    "target_tools": [
-      "codex-cli"
-    ],
+    "target_tools": [],
     "summary": "Turn any webpage into structured data using LLMs",
     "i18n": {
       "zh": {
@@ -4139,10 +4625,10 @@
     },
     "stars": 6834,
     "forks": 449,
-    "total_score": 38,
+    "total_score": 64,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 26,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:27:01Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4157,10 +4643,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 9,
+      "novelty": 5,
+      "ecosystem_value": 6
+    },
+    "llm_summary": {
+      "zh": "一个使用LLM从任意网页提取结构化数据的TypeScript库，支持多种模型和代码生成。",
+      "en": "A TypeScript library for extracting structured data from any webpage using LLMs, with support for multiple models and code generation."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "mishushakov/llm-scraper",
     "tags": [],
     "maturity": "unknown",
@@ -4188,11 +4682,9 @@
     "url": "https://github.com/xindoo/agentic-design-patterns",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "谷歌新书Agent设计模式(agentic design patterns)最佳中文版，持续优化。附：在线阅读、pdf和epub电子书下载。 ",
     "i18n": {
       "zh": {
@@ -4206,10 +4698,10 @@
     },
     "stars": 6834,
     "forks": 965,
-    "total_score": 36,
+    "total_score": 59,
     "quantifiable_score": 36,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 23,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:24:14Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4224,10 +4716,18 @@
       "adoption": 7,
       "maturity": 2
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 6,
+      "novelty": 2,
+      "ecosystem_value": 7
+    },
+    "llm_summary": {
+      "zh": "谷歌新书Agent设计模式的中文翻译项目，适合学习AI Agent设计模式。",
+      "en": "A Chinese translation of the book 'Agentic Design Patterns', useful for learning AI agent design patterns."
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
     "repo": "xindoo/agentic-design-patterns",
     "tags": [],
     "maturity": "unknown",
@@ -4259,10 +4759,10 @@
     },
     "stars": 6831,
     "forks": 464,
-    "total_score": 38,
+    "total_score": 73,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:27:12Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4277,10 +4777,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "Plano 是一个面向代理应用的 AI 原生代理和数据平面，内置编排、安全、可观测性和智能 LLM 路由，以简化代理开发。",
+      "en": "Plano is an AI-native proxy and data plane for agentic apps, providing built-in orchestration, safety, observability, and smart LLM routing to streamline agent development."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "katanemo/plano",
     "tags": [],
     "maturity": "unknown",
@@ -4314,9 +4822,7 @@
     "resource_type": [
       "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
     "i18n": {
       "zh": {
@@ -4330,10 +4836,10 @@
     },
     "stars": 6822,
     "forks": 941,
-    "total_score": 38,
+    "total_score": 63,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 25,
+    "tracking_priority": "index",
     "last_updated": "2026-07-14T09:31:54Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4348,10 +4854,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 4,
+      "practicality": 8,
+      "novelty": 8,
+      "ecosystem_value": 5
+    },
+    "llm_summary": {
+      "zh": "一个用于科学发现的自主代理系统，采用树搜索方法，已被 ICLR 研讨会接收。",
+      "en": "An autonomous agentic system for scientific discovery using tree search, accepted to an ICLR workshop."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "SakanaAI/AI-Scientist-v2",
     "tags": [],
     "maturity": "unknown",
@@ -4385,10 +4899,10 @@
     },
     "stars": 6819,
     "forks": 533,
-    "total_score": 38,
+    "total_score": 76,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 38,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:52:56Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4403,10 +4917,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 8,
+      "ecosystem_value": 10
+    },
+    "llm_summary": {
+      "zh": "一个强大的MCP服务器和Chrome扩展，使AI编码代理能够本地自动化浏览器任务。",
+      "en": "A powerful MCP server and Chrome extension that enables AI coding agents to automate browser tasks locally."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "BrowserMCP/mcp",
     "tags": [],
     "maturity": "unknown",
@@ -4427,7 +4949,6 @@
     "url": "https://github.com/modem-dev/hunk",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
       "cli-tool"
     ],
     "target_tools": [
@@ -4449,10 +4970,10 @@
     },
     "stars": 6817,
     "forks": 192,
-    "total_score": 38,
+    "total_score": 75,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 37,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:22:45Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4467,10 +4988,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个专为AI编程助手设计的终端差异查看器，强调审查优先的工作流。",
+      "en": "A review-first terminal diff viewer designed for agent-authored changesets."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "modem-dev/hunk",
     "tags": [],
     "maturity": "unknown",
@@ -4492,9 +5021,7 @@
     "resource_type": [
       "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Orchestrate sandboxed coding agents in TypeScript with sandcastle.run()",
     "i18n": {
       "zh": {
@@ -4508,10 +5035,10 @@
     },
     "stars": 6806,
     "forks": 681,
-    "total_score": 38,
+    "total_score": 70,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 32,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:22:30Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4526,10 +5053,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个用TypeScript编写的AI编码智能体编排库，通过沙箱隔离和分支策略安全地并行运行多个代理。",
+      "en": "A TypeScript library for orchestrating AI coding agents in isolated sandboxes, with branch strategy and auto-merge."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "mattpocock/sandcastle",
     "tags": [],
     "maturity": "unknown",
@@ -4545,9 +5080,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "LLM Zoomcamp - a free online course about real-life applications of LLMs. In 10 weeks you will learn how to build an AI system that answers questions about your knowledge base.",
     "i18n": {
       "zh": {
@@ -4561,10 +5094,10 @@
     },
     "stars": 6803,
     "forks": 1241,
-    "total_score": 39,
+    "total_score": 64,
     "quantifiable_score": 39,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 25,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T07:04:09Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4579,10 +5112,18 @@
       "adoption": 10,
       "maturity": 2
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 8,
+      "novelty": 5,
+      "ecosystem_value": 6
+    },
+    "llm_summary": {
+      "zh": "一个免费的10周在线课程，教授如何构建基于RAG、向量搜索和AI代理的LLM应用，适合入门学习和实践。",
+      "en": "A free 10-week online course teaching how to build LLM applications with RAG, vector search, and AI agents, suitable for learning and practice."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "DataTalksClub/llm-zoomcamp",
     "tags": [],
     "maturity": "unknown",
@@ -4596,7 +5137,8 @@
     "url": "https://github.com/albertan017/LLM4Decompile",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "tutorial",
+      "skills"
     ],
     "target_tools": [],
     "summary": "Reverse Engineering: Decompiling Binary Code with Large Language Models",
@@ -4612,10 +5154,10 @@
     },
     "stars": 6756,
     "forks": 537,
-    "total_score": 38,
+    "total_score": 63,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 25,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:42:44Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4630,10 +5172,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 5,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 5
+    },
+    "llm_summary": {
+      "zh": "一个使用大语言模型将二进制代码反编译为源代码的项目，便利逆向工程，但对AI编程代理生态的直接关联性中等。",
+      "en": "A project that uses large language models to decompile binary code back to source code, facilitating reverse engineering, with moderate relevance to the AI coding agent ecosystem."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "albertan017/LLM4Decompile",
     "tags": [],
     "maturity": "unknown",
@@ -4652,11 +5202,11 @@
     "url": "https://github.com/HKUDS/OpenSpace",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "agent-framework"
+      "skills"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli"
     ],
     "summary": "\"OpenSpace: The Quality-First Skill Hub for AI Agents\" -- https://open-space.cloud/",
     "i18n": {
@@ -4671,10 +5221,10 @@
     },
     "stars": 6731,
     "forks": 831,
-    "total_score": 38,
+    "total_score": 74,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 36,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:00:02Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4689,10 +5239,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一个优先质量的人工智能代理技能中心，通过减少令牌使用和共享经验实现智能体的自我进化。",
+      "en": "A quality-first hub for AI agent skills, reducing token usage and enabling self-evolving agents through shared experiences."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "HKUDS/OpenSpace",
     "tags": [],
     "maturity": "unknown",
@@ -4725,10 +5283,10 @@
     },
     "stars": 6729,
     "forks": 504,
-    "total_score": 38,
+    "total_score": 73,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T04:00:40Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4743,10 +5301,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "开源的代理式集成开发环境，用于编排编码代理并支持多种模型提供商。",
+      "en": "An open-source agentic IDE for orchestrating coding agents with multiple model providers."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "stagewise-io/stagewise",
     "tags": [],
     "maturity": "unknown",
@@ -4766,9 +5332,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Repo to accompany my mastering LLM engineering course",
     "i18n": {
       "zh": {
@@ -4782,10 +5346,10 @@
     },
     "stars": 6718,
     "forks": 6536,
-    "total_score": 41,
+    "total_score": 65,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 24,
+    "tracking_priority": "index",
     "last_updated": "2026-07-14T04:53:05Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4800,10 +5364,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 7,
+      "novelty": 5,
+      "ecosystem_value": 6
+    },
+    "llm_summary": {
+      "zh": "一个深入的LLM工程课程仓库，适合系统学习，但与AI编码代理工具无直接关联。",
+      "en": "A comprehensive LLM engineering course repository, suitable for systematic learning but not directly related to AI coding agent tools."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "ed-donner/llm_engineering",
     "tags": [],
     "maturity": "unknown",
@@ -4817,12 +5389,20 @@
     "url": "https://github.com/Zipstack/unstract",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
       "mcp-server",
-      "rules"
+      "skills"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "goose",
+      "qoder",
+      "trae",
+      "workbuddy-codebuddy",
+      "cursor",
+      "hermes-agent"
     ],
     "summary": "LLM-Driven Extraction of Unstructured Data — Built for API Deployments & ETL Pipeline Workflows",
     "i18n": {
@@ -4837,10 +5417,10 @@
     },
     "stars": 6706,
     "forks": 632,
-    "total_score": 38,
+    "total_score": 68,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 30,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:22:55Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4855,10 +5435,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 7,
+      "practicality": 9,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个文档提取平台，提供MCP服务器，让AI编码代理通过自然语言提示将非结构化文档转换为结构化JSON。",
+      "en": "A document extraction platform that offers an MCP server, enabling AI coding agents to convert unstructured documents into structured JSON via natural language prompts."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "Zipstack/unstract",
     "tags": [],
     "maturity": "unknown",
@@ -4885,11 +5473,9 @@
     "url": "https://github.com/ddean2009/MoneyPrinterPlus",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "cli-tool"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "AI一键批量生成各类短视频,自动批量混剪短视频,自动把视频发布到抖音,快手,小红书,视频号上,赚钱从来没有这么容易过! 支持本地语音模型chatTTS,fasterwhisper,GPTSoVITS,支持云语音：Azure,阿里云,腾讯云。支持Stable diffusion,comfyUI直接AI生图。Generate short videos with one click using AI LLM,print money together! support:chatTTS",
     "i18n": {
       "zh": {
@@ -4903,10 +5489,10 @@
     },
     "stars": 6693,
     "forks": 1196,
-    "total_score": 41,
+    "total_score": 55,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 14,
+    "tracking_priority": "index",
     "last_updated": "2026-07-14T08:56:26Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4921,10 +5507,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 1,
+      "practicality": 8,
+      "novelty": 4,
+      "ecosystem_value": 1
+    },
+    "llm_summary": {
+      "zh": "一个AI短视频批量生成和自动发布工具，与AI编码代理生态系统无关。",
+      "en": "An AI short video batch generation and auto-publishing tool, unrelated to AI coding agent ecosystem."
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
     "repo": "ddean2009/MoneyPrinterPlus",
     "tags": [],
     "maturity": "unknown",
@@ -4938,7 +5532,7 @@
     "url": "https://github.com/superdesigndev/superdesign",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "extension"
     ],
     "target_tools": [],
     "summary": "AI Product Design Agent - Open Source",
@@ -4954,10 +5548,10 @@
     },
     "stars": 6676,
     "forks": 728,
-    "total_score": 38,
+    "total_score": 62,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 24,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:56:41Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -4972,10 +5566,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 7,
+      "practicality": 7,
+      "novelty": 5,
+      "ecosystem_value": 5
+    },
+    "llm_summary": {
+      "zh": "SuperDesign 是一个开源 AI 设计代理，作为 IDE 扩展，可从提示生成 UI 设计，但不再维护。",
+      "en": "SuperDesign is an open-source AI design agent IDE extension for generating UI mockups from prompts, but no longer maintained."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "superdesigndev/superdesign",
     "tags": [],
     "maturity": "unknown",
@@ -4989,8 +5591,7 @@
     "url": "https://github.com/BlockRunAI/ClawRouter",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
-      "cli-tool"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -5010,10 +5611,10 @@
     },
     "stars": 6656,
     "forks": 625,
-    "total_score": 38,
+    "total_score": 73,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:40:16Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5028,10 +5629,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "专为AI代理设计的LLM路由器，支持加密货币支付，无需账户或信用卡，8个模型免费使用。",
+      "en": "An agent-native LLM router with crypto payment support, allowing autonomous AI agents to pay for API calls without accounts or credit cards."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "BlockRunAI/ClawRouter",
     "tags": [],
     "maturity": "unknown",
@@ -5078,10 +5687,10 @@
     },
     "stars": 6629,
     "forks": 593,
-    "total_score": 38,
+    "total_score": 61,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 23,
+    "tracking_priority": "index",
     "last_updated": "2026-07-14T09:27:42Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5096,10 +5705,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 4,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 5
+    },
+    "llm_summary": {
+      "zh": "DeepSpec 是一个用于训练和评估推测解码算法的全栈代码库，对 AI 编码代理的加速推理有间接帮助。",
+      "en": "DeepSpec is a full-stack codebase for training and evaluating speculative decoding algorithms, indirectly useful for accelerating inference in AI coding agents."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "deepseek-ai/DeepSpec",
     "tags": [],
     "maturity": "unknown",
@@ -5113,12 +5730,9 @@
     "url": "https://github.com/julep-ai/julep",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
-      "cli-tool"
+      "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Julep — durable, composable AI agents. Flows that crash and resume, retry safely, and explain every step.",
     "i18n": {
       "zh": {
@@ -5132,10 +5746,10 @@
     },
     "stars": 6598,
     "forks": 971,
-    "total_score": 38,
+    "total_score": 71,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-13T20:18:17Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5150,10 +5764,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "Julep 是一个用于构建持久、可组合 AI 代理的框架，支持流程崩溃恢复和重试，并提供每一步的解释。",
+      "en": "Julep is a framework for building durable, composable AI agents with crash-resilient flows and step-by-step explainability."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "julep-ai/julep",
     "tags": [],
     "maturity": "unknown",
@@ -5183,8 +5805,7 @@
     "url": "https://github.com/open-multi-agent/open-multi-agent",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
-      "mcp-server"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -5204,10 +5825,10 @@
     },
     "stars": 6576,
     "forks": 2406,
-    "total_score": 41,
+    "total_score": 74,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:23:47Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5222,10 +5843,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个TypeScript原生的多智能体编排框架，能从目标动态规划并执行任务DAG，专为与AI编码工具集成而设计。",
+      "en": "A TypeScript-native multi-agent orchestration framework that dynamically plans and executes task DAGs from a goal, designed to integrate with AI coding tools."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "open-multi-agent/open-multi-agent",
     "tags": [],
     "maturity": "unknown",
@@ -5260,8 +5889,7 @@
     "url": "https://github.com/strands-agents/harness-sdk",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
-      "mcp-server"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -5280,10 +5908,10 @@
     },
     "stars": 6564,
     "forks": 951,
-    "total_score": 38,
+    "total_score": 71,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:02:54Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5298,10 +5926,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个模型驱动的AI代理开发工具包，支持任意模型和云平台，并集成MCP协议。",
+      "en": "A model-driven SDK for building production AI agents with support for any model and any cloud, including MCP integration."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "strands-agents/harness-sdk",
     "tags": [],
     "maturity": "unknown",
@@ -5352,10 +5988,10 @@
     },
     "stars": 6545,
     "forks": 512,
-    "total_score": 38,
+    "total_score": 58,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 20,
+    "tracking_priority": "reject",
     "last_updated": "2026-07-13T07:59:44Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5370,10 +6006,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 2,
+      "practicality": 7,
+      "novelty": 5,
+      "ecosystem_value": 1
+    },
+    "llm_summary": {
+      "zh": "Stable Cascade 是一个图像生成模型，与AI编程代理生态系统无关。",
+      "en": "Stable Cascade is an image generation model unrelated to the AI coding agent ecosystem."
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
     "repo": "Stability-AI/StableCascade",
     "tags": [],
     "maturity": "unknown",
@@ -5387,7 +6031,7 @@
     "url": "https://github.com/zai-org/GLM-5",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "tutorial"
     ],
     "target_tools": [
       "hermes-agent"
@@ -5405,10 +6049,10 @@
     },
     "stars": 6547,
     "forks": 812,
-    "total_score": 36,
+    "total_score": 65,
     "quantifiable_score": 36,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 29,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:06:34Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5421,10 +6065,18 @@
       "adoption": 7,
       "maturity": 2
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 7,
+      "practicality": 6,
+      "novelty": 8,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "GLM-5是智谱AI推出的面向长期编码任务的大语言模型，支持百万token上下文。",
+      "en": "GLM-5 is a powerful open-weight LLM from Z.AI, focused on long-horizon agentic coding tasks with 1M context."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "zai-org/GLM-5",
     "tags": [],
     "maturity": "unknown",
@@ -5445,10 +6097,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "codex-cli",
-      "antigravity-cli"
-    ],
+    "target_tools": [],
     "summary": "Self-hosted AI accounting app. LLM analyzer for receipts, invoices, transactions with custom prompts and categories",
     "i18n": {
       "zh": {
@@ -5462,10 +6111,10 @@
     },
     "stars": 6534,
     "forks": 1076,
-    "total_score": 41,
+    "total_score": 61,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 20,
+    "tracking_priority": "index",
     "last_updated": "2026-07-14T00:17:57Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5480,10 +6129,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 2,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 2
+    },
+    "llm_summary": {
+      "zh": "一个使用LLM进行财务分析的自我托管会计应用，与AI编码代理生态系统无关。",
+      "en": "A self-hosted accounting app using LLM for financial analysis, not directly related to AI coding agent ecosystem."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "vas3k/TaxHacker",
     "tags": [],
     "maturity": "unknown",
@@ -5510,11 +6167,9 @@
     "url": "https://github.com/openai/openai-cs-agents-demo",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Demo of a customer service use case implemented with the OpenAI Agents SDK",
     "i18n": {
       "zh": {
@@ -5528,10 +6183,10 @@
     },
     "stars": 6532,
     "forks": 1004,
-    "total_score": 41,
+    "total_score": 65,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 24,
+    "tracking_priority": "track",
     "last_updated": "2026-07-13T12:59:21Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5546,10 +6201,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 8,
+      "novelty": 4,
+      "ecosystem_value": 6
+    },
+    "llm_summary": {
+      "zh": "展示如何使用OpenAI Agents SDK构建客户服务代理的演示项目，包含Python后端和NextJS前端。",
+      "en": "A demo showing how to build a customer service agent using the OpenAI Agents SDK with a Python backend and NextJS frontend."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "openai/openai-cs-agents-demo",
     "tags": [],
     "maturity": "unknown",
@@ -5563,11 +6226,10 @@
     "url": "https://github.com/microsoft/call-center-ai",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "tutorial",
+      "skills"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Send a phone call from AI agent, in an API call. Or, directly call the bot from the configured phone number!",
     "i18n": {
       "zh": {
@@ -5581,10 +6243,10 @@
     },
     "stars": 6531,
     "forks": 772,
-    "total_score": 38,
+    "total_score": 58,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 20,
+    "tracking_priority": "index",
     "last_updated": "2026-07-13T20:43:51Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5599,10 +6261,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 3,
+      "practicality": 8,
+      "novelty": 4,
+      "ecosystem_value": 5
+    },
+    "llm_summary": {
+      "zh": "微软提供的AI呼叫中心示例，使用Azure和OpenAI，可被AI编码代理通过API发起电话呼叫。",
+      "en": "A Microsoft sample project for building an AI-powered call center using Azure and OpenAI, which can be used by coding agents to make phone calls via API."
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
     "repo": "microsoft/call-center-ai",
     "tags": [],
     "maturity": "unknown",
@@ -5616,11 +6286,9 @@
     "url": "https://github.com/punkpeye/awesome-mcp-clients",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "A collection of MCP clients.",
     "i18n": {
       "zh": {
@@ -5634,10 +6302,10 @@
     },
     "stars": 6519,
     "forks": 613,
-    "total_score": 36,
+    "total_score": 68,
     "quantifiable_score": 36,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 32,
+    "tracking_priority": "track",
     "last_updated": "2026-07-13T21:06:30Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5650,10 +6318,18 @@
       "adoption": 7,
       "maturity": 2
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 7,
+      "novelty": 6,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "MCP客户端精选列表，AI编程代理生态系统的重要参考。",
+      "en": "Curated list of MCP clients, essential reference for AI coding agent ecosystem."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "punkpeye/awesome-mcp-clients",
     "tags": [],
     "maturity": "unknown",
@@ -5670,7 +6346,8 @@
     "url": "https://github.com/GoogleCloudPlatform/agent-starter-pack",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "antigravity-cli"
@@ -5688,10 +6365,10 @@
     },
     "stars": 6518,
     "forks": 1496,
-    "total_score": 41,
+    "total_score": 75,
     "quantifiable_score": 41,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 34,
+    "tracking_priority": "track",
     "last_updated": "2026-07-12T11:38:14Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5706,10 +6383,18 @@
       "adoption": 10,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "谷歌云官方AI代理启动包，提供生产级模板和CI/CD、评估、可观测性，快速部署AI代理。",
+      "en": "Official Google Cloud starter pack for AI agents, offering production-ready templates with CI/CD, evaluation, and observability for rapid deployment."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "GoogleCloudPlatform/agent-starter-pack",
     "tags": [],
     "maturity": "unknown",
@@ -5734,9 +6419,7 @@
     "resource_type": [
       "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "IntentKit is an open-source, self-hosted cloud agent cluster that manages a collaborative team of AI agents for you.",
     "i18n": {
       "zh": {
@@ -5750,10 +6433,10 @@
     },
     "stars": 6505,
     "forks": 713,
-    "total_score": 38,
+    "total_score": 66,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 28,
+    "tracking_priority": "track",
     "last_updated": "2026-07-13T09:36:01Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5768,10 +6451,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 7,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 7
+    },
+    "llm_summary": {
+      "zh": "IntentKit是一个开源自托管的云原生智能体集群，用于管理协作式AI代理团队。",
+      "en": "IntentKit is an open-source, self-hosted cloud-native agent cluster for managing collaborative teams of AI agents."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "crestalnetwork/intentkit",
     "tags": [],
     "maturity": "unknown",
@@ -5797,9 +6488,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "🔥 公益免费的ChatGPT API，Free ChatGPT API，GPT4 API，可直连，无需代理，使用标准 OpenAI APIKEY 格式访问 ChatGPT，可搭配ChatGPT-next-web、ChatGPT-Midjourney、Lobe-chat、Botgem、FastGPT、Cherry Studio、沉浸式翻译等项目使用",
     "i18n": {
       "zh": {
@@ -5813,10 +6502,10 @@
     },
     "stars": 6506,
     "forks": 591,
-    "total_score": 36,
+    "total_score": 56,
     "quantifiable_score": 36,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 20,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:00:47Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5829,10 +6518,18 @@
       "adoption": 7,
       "maturity": 2
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 7,
+      "novelty": 2,
+      "ecosystem_value": 5
+    },
+    "llm_summary": {
+      "zh": "提供免费ChatGPT API，兼容OpenAI格式，可用于非商业学习研究，但稳定性不保证。",
+      "en": "Provides a free ChatGPT API compatible with OpenAI format, suitable for non-commercial learning and research, but stability is not guaranteed."
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
     "repo": "popjane/free_chatgpt_api",
     "tags": [],
     "maturity": "unknown",
@@ -5848,9 +6545,7 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Efficient Triton Kernels for LLM Training",
     "i18n": {
       "zh": {
@@ -5864,10 +6559,10 @@
     },
     "stars": 6504,
     "forks": 554,
-    "total_score": 38,
+    "total_score": 60,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 22,
+    "tracking_priority": "index",
     "last_updated": "2026-07-14T05:06:30Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5882,10 +6577,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 2,
+      "practicality": 9,
+      "novelty": 6,
+      "ecosystem_value": 5
+    },
+    "llm_summary": {
+      "zh": "LinkedIn开发的高效Triton内核库，用于加速LLM训练，不是直接面向AI编码代理的工具，但可作为底层优化资源。",
+      "en": "An efficient Triton kernel library from LinkedIn for accelerating LLM training, not directly a coding agent tool but a valuable optimization resource."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "linkedin/Liger-Kernel",
     "tags": [],
     "maturity": "unknown",
@@ -5911,6 +6614,7 @@
     "url": "https://github.com/midudev/autoskills",
     "source_type": "github",
     "resource_type": [
+      "cli-tool",
       "skills"
     ],
     "target_tools": [],
@@ -5927,10 +6631,10 @@
     },
     "stars": 6502,
     "forks": 596,
-    "total_score": 38,
+    "total_score": 71,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:40:57Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5945,10 +6649,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "一键安装AI编码代理技能的自动化工具，自动检测技术栈并匹配最佳技能包。",
+      "en": "One-command tool to automatically install AI coding agent skills by detecting your tech stack and matching curated skill packages."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "midudev/autoskills",
     "tags": [],
     "maturity": "unknown",
@@ -5962,12 +6674,9 @@
     "url": "https://github.com/airweave-ai/airweave",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
-      "cli-tool"
+      "agent-framework"
     ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
+    "target_tools": [],
     "summary": "Open-source context retrieval layer for AI agents",
     "i18n": {
       "zh": {
@@ -5981,10 +6690,10 @@
     },
     "stars": 6483,
     "forks": 813,
-    "total_score": 38,
+    "total_score": 73,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 35,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T02:56:21Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -5999,10 +6708,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "Airweave 是一个开源上下文检索层，统一连接多种数据源，为 AI 智能体提供实时、地面化的检索接口，显著提升代理系统的数据获取效率。",
+      "en": "Airweave is an open-source context retrieval layer that unifies multiple data sources and provides a real-time, grounded search interface for AI agents, enhancing data accessibility for agent systems."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "airweave-ai/airweave",
     "tags": [],
     "maturity": "unknown",
@@ -6037,7 +6754,8 @@
     "url": "https://github.com/anthropics/defending-code-reference-harness",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [],
     "summary": "Skills for threat modeling, scanning, triage, patching, plus an autonomous scanning harness you can /customize",
@@ -6053,10 +6771,10 @@
     },
     "stars": 6468,
     "forks": 519,
-    "total_score": 38,
+    "total_score": 74,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 36,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T08:35:22Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -6071,10 +6789,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 9,
+      "ecosystem_value": 9
+    },
+    "llm_summary": {
+      "zh": "Anthropic提供的自主漏洞发现与修复参考实现，基于Claude，提供威胁建模、扫描、分类和修补技能。",
+      "en": "A reference implementation from Anthropic for autonomous vulnerability discovery and remediation using Claude, providing skills for threat modeling, scanning, triage, and patching."
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
     "repo": "anthropics/defending-code-reference-harness",
     "tags": [],
     "maturity": "unknown",
@@ -6093,7 +6819,7 @@
       "skills"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code"
     ],
     "summary": "Generate beautiful dark-themed system architecture diagrams as standalone HTML/SVG files. Works as a Claude AI skill.    ",
     "i18n": {
@@ -6108,10 +6834,10 @@
     },
     "stars": 6469,
     "forks": 514,
-    "total_score": 38,
+    "total_score": 71,
     "quantifiable_score": 38,
-    "quality_score": 0,
-    "tracking_priority": "pending",
+    "quality_score": 33,
+    "tracking_priority": "track",
     "last_updated": "2026-07-14T09:16:52Z",
     "first_seen": "2026-07-14",
     "last_seen": "2026-07-14",
@@ -6126,10 +6852,18 @@
       "adoption": 7,
       "maturity": 4
     },
-    "quality_detail": {},
-    "llm_summary": null,
-    "benchmark_ref": null,
-    "last_analyzed": null,
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "llm_summary": {
+      "zh": "一个用于生成美观深色系统架构图的Claude AI技能，可导出独立HTML/SVG文件。",
+      "en": "A Claude AI skill for generating beautiful dark-themed system architecture diagrams as standalone HTML/SVG files."
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
     "repo": "Cocoon-AI/architecture-diagram-generator",
     "tags": [],
     "maturity": "unknown",
