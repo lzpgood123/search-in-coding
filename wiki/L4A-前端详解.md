@@ -4,7 +4,9 @@
 >
 > **第 3 批前端重写 v3**（2026-07-13）。批次 B：Linear/Vercel 审美重做 + 15 个 dogfood 交互修复。
 >
-> **Style B 完整视觉落地**（2026-07-15）：Warm paper dark + 琥珀强调；metrics 下并排可读图表；Header 报告 pill + 居中 modal；详情右侧侧栏仅换皮。
+> **Style B 完整视觉落地**（2026-07-15）：Warm paper dark + 琥珀强调；metrics 下并排可读图表；独立报告栏 + 居中 modal；详情右侧侧栏仅换皮。
+>
+> **前端体验打磨**（2026-07-15）：工具/类型标签分区标题；中文模式卡片/表格优先 `llm_summary`；报告表格横向滚动；报告 pill 移出 nav。
 
 ## 架构概览
 
@@ -98,7 +100,7 @@
 
 **状态字段：** `searchMap`（id→text）、`_detailIndex`（id→chunk）、`projectDetails`（详情缓存）
 
-**数据字段（精简版 projects.json）：** id, name, url, source_type, resource_type, target_tools, summary, i18n, stars, forks, total_score, quantifiable_score, quality_score, tracking_priority, last_updated, first_seen, last_seen, license, languages, review_state
+**数据字段（精简版 projects.json / SLIM_FIELDS）：** id, name, url, source_type, resource_type, target_tools, summary, i18n, stars, forks, total_score, quantifiable_score, quality_score, tracking_priority, last_updated, first_seen, last_seen, license, languages, review_state, **llm_summary**（2026-07-15 打磨：卡片/表格中文优先）
 
 **搜索索引（search-index.json）：** `[{id, text}]`，text = lower(name + summary + resource_type + target_tools)
 
@@ -153,13 +155,16 @@
 | toggleFav(id) | (string) => void | 切换收藏状态 |
 | pills(xs) | (array) => string | 渲染色彩标签（v3: 用 i18n 翻译 + pill-type-* 颜色类） |
 | toolLabels(toolIds) | (array) => string | 渲染工具名标签（v3: 用 tools.json 的 name 而非 id） **[v3 新增]** |
-| renderReport(md) | (string) => string | Markdown -> HTML 渲染（v3: 表头用 th 而非 td） |
+| summaryOf(item) | (obj) => string | 中文模式优先 `llm_summary.zh`（无则 en），否则 `textOf(summary)` **[打磨 2026-07-15]** |
+| renderReport(md) | (string) => string | Markdown -> HTML；表格外包 `.table-scroll` 横向滚动 **[打磨]** |
 | showSkeleton() | () => void | 骨架屏 |
 | showError() | () => void | 错误状态 + 重试按钮 |
 
 **分页（2026-07-15）：** `PAGE_SIZE=20`，`currentPage` 0-based；筛选变化默认回第 1 页；URL `page` 深链会 clamp 到合法页。**已移除** IntersectionObserver 无限滚动。
 
 **LLM Summary 修复（Bug 7）：** detail 面板中 llm_summary 字段是 `{zh, en}` 对象（不是 i18n 结构），通过 `llmSummary[SIC_i18n.lang] || llmSummary.en || llmSummary.zh` 取值。
+
+**中文摘要（打磨 2026-07-15）：** 发现卡片 `renderDiscovery()` 与表格 `renderPage()` 用 `summaryOf()`：`lang==='zh'` 且存在 `llm_summary` 时优先中文评价；英文模式与无 llm_summary 时 fallback 原生 summary。详情顶部仍显示原生 summary，下方独立 LLM Summary 区块不变。
 
 ### charts.js - SIC_charts
 
@@ -251,8 +256,8 @@ build_site.py 生成：
 ## 交互模式
 
 **筛选（标签按钮组多选）：**
-1. 工具标签按钮组（#toolTags）- 多选，点击高亮
-2. 类型标签按钮组（#typeTags）- 多选，点击高亮
+1. 工具标签按钮组（#toolTags）- 多选，点击高亮；上方 `.filter-label`（i18n `filterTools`）**[打磨]**
+2. 类型标签按钮组（#typeTags）- 多选，点击高亮；上方 `.filter-label`（i18n `filterTypes`）**[打磨]**
 3. OR/AND 切换（#modeToggle）- 默认 OR，radiogroup 行为（点已选项不翻转）**[v3: dogfood #8]**
 4. 排序下拉框（#sort）- 6 种排序
 5. 只看推荐复选框（#curatedOnly）
@@ -276,9 +281,9 @@ build_site.py 生成：
 - 未分析时质量分标注"待 LLM 分析"
 - 空字段隐藏（forks/license/languages 为空时不展示）**[dogfood #12]**
 - 项目深链：`?project=id` 打开时自动展开详情 **[dogfood #15]**
-- 懒加载详情数据，llm_summary 按 {zh,en} 对象取值
+- 懒加载详情数据，llm_summary 按 {zh,en} 对象取值；列表中文摘要见 `summaryOf()`
 
-**报告渲染（Style B）：** Header 报告 pill（`data-report` 文件名不变）→ 居中 `#reportModal` → 浮窗内 tab 切换三报告（`curated-top.md` / `weekly-report.md` / `tool-comparison.md`）→ `SIC_render.renderReport(md)` 写入 `#reportModalBody`。**不再**把报告塞进 `#detailOverlay`。关闭：× / backdrop / Esc。
+**报告渲染（Style B + 打磨）：** `<nav>` 仅保留导出收藏；其下独立 `.report-bar` 放三个报告 pill（`data-report` 文件名不变）→ 居中 `#reportModal` → 浮窗内 tab 切换三报告（`curated-top.md` / `weekly-report.md` / `tool-comparison.md`）→ `SIC_render.renderReport(md)` 写入 `#reportModalBody`（宽表格包在 `.table-scroll` 内横向滚动）。**不再**把报告塞进 `#detailOverlay`。关闭：× / backdrop / Esc。
 
 **收藏：** 点击 ★ 按钮 -> localStorage 存储 -> 可通过"导出收藏"按钮显示 URL 输入框 -> "只看收藏"筛选 **[v3]**
 

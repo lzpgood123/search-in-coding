@@ -18,7 +18,7 @@ SLIM_FIELDS = [
     'id', 'name', 'url', 'source_type', 'resource_type', 'target_tools',
     'summary', 'i18n', 'stars', 'forks', 'total_score', 'quantifiable_score',
     'quality_score', 'tracking_priority', 'last_updated', 'first_seen', 'last_seen',
-    'license', 'languages', 'review_state',
+    'license', 'languages', 'review_state', 'llm_summary',
 ]
 
 # Fields for detail JSON (lazy-loaded)

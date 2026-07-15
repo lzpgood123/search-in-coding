@@ -24,6 +24,20 @@ const SIC_render = {
     return '#';
   },
 
+  // Chinese mode prefers llm_summary; English / missing falls back to native summary
+  summaryOf: function(item) {
+    if (SIC_i18n.lang === 'zh' && item && item.llm_summary) {
+      var ls = item.llm_summary;
+      if (typeof ls === 'object') {
+        if (ls.zh) return ls.zh;
+        if (ls.en) return ls.en;
+      } else if (typeof ls === 'string') {
+        return ls;
+      }
+    }
+    return SIC_i18n.textOf(item, 'summary') || '';
+  },
+
   // #11: pills with i18n labels + color-coded classes
   pills: function(xs) {
     var self = SIC_render;
@@ -96,7 +110,7 @@ const SIC_render = {
       return '<div class="discovery-card" data-action="detail" data-id="' + self.esc(p.id) + '">' +
         '<span class="score-badge">' + self.safeNum(p.total_score) + '</span> ' +
         '<b>' + self.esc(SIC_i18n.textOf(p, 'name')) + '</b><br>' +
-        '<span class="muted">' + self.esc((SIC_i18n.textOf(p, 'summary') || '').slice(0, 80)) + '</span><br>' +
+        '<span class="muted">' + self.esc((self.summaryOf(p) || '').slice(0, 80)) + '</span><br>' +
         self.pills(p.resource_type) +
         '</div>';
     }).join('');
@@ -231,7 +245,7 @@ const SIC_render = {
       var maxScore = (p.quality_score > 0) ? 100 : 60;
       return '<tr>' +
         '<td><b class="project-name" data-action="detail" data-id="' + self.esc(p.id) + '">' + self.esc(SIC_i18n.textOf(p, 'name')) + '</b><br>' +
-        '<span class="muted">' + self.esc((SIC_i18n.textOf(p, 'summary') || '').slice(0, 100)) + '</span></td>' +
+        '<span class="muted">' + self.esc((self.summaryOf(p) || '').slice(0, 100)) + '</span></td>' +
         '<td>' + self.pills(p.resource_type) + '</td>' +
         '<td>' + self.toolLabels(p.target_tools) + '</td>' +
         '<td><span class="score-badge">' + self.safeNum(p.total_score) + '</span><span class="muted" style="font-size:11px;">/' + maxScore + '</span></td>' +
@@ -491,7 +505,7 @@ const SIC_render = {
         inTable = true;
       } else {
         if (inTable) {
-          result.push('<table>' + tableRows.join('') + '</table>');
+          result.push('<div class="table-scroll"><table>' + tableRows.join('') + '</table></div>');
           tableRows = [];
           inTable = false;
           isFirstRow = true;
@@ -499,7 +513,7 @@ const SIC_render = {
         result.push(line);
       }
     }
-    if (inTable) result.push('<table>' + tableRows.join('') + '</table>');
+    if (inTable) result.push('<div class="table-scroll"><table>' + tableRows.join('') + '</table></div>');
     html = result.join('\n');
     // Unordered lists
     html = html.replace(/^(- .+(?:\n- .+)*)/gm, function(m) {

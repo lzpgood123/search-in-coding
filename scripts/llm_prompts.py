@@ -67,8 +67,8 @@ Respond with JSON in this exact format:
     "ecosystem_value": 0-10
   }},
   "llm_summary": {{
-    "zh": "一句话中文评价",
-    "en": "one sentence English summary"
+    "zh": "2-3 句话中文评价，包含：项目是什么、核心功能、适合谁用",
+    "en": "2-3 sentence English summary: what it is, core features, who it's for"
   }},
   "analysis_notes": "brief explanation of your assessment"
 }}
@@ -81,7 +81,11 @@ Scoring guidelines:
 - quality_score = sum of the 4 dimensions (0-40)
 - tracking_priority: "track" if quality_score >= 20 and relevance >= 0.5, "index" if quality_score >= 10, "reject" otherwise
 - target_tools: list tools this project is relevant to. Empty list = general ecosystem resource
-- resource_type: pick the most fitting types. "tutorial" is the fallback if none fit. "extension" for browser/IDE extensions."""
+- resource_type: pick the most fitting types. "tutorial" is the fallback if none fit. "extension" for browser/IDE extensions.
+- llm_summary: 2-3 句话评价。第一句说明项目是什么，第二句描述核心功能，第三句指出适合谁用。
+  示例（中文）：AgentKit 是一个用于构建 AI Agent 的开源框架。提供工具调用、记忆管理、多步推理等核心能力，适合需要快速搭建定制化 Agent 的开发者。
+  示例（英文）：AgentKit is an open-source framework for building AI agents. It provides tool calling, memory management, and multi-step reasoning, suitable for developers who need to quickly build custom agents.
+"""
 
 
 # === Benchmark Selection Prompt ===

@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://coding.lzpgood.online/">
   <meta name="theme-color" content="#1c1917">
-  <link rel="stylesheet" href="styles.fa874e.css">
+  <link rel="stylesheet" href="styles.3b4571.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,14 +34,16 @@
         <button id="langEn" type="button" aria-pressed="false">English</button>
       </div>
     </div>
-    <!-- Report pills: open centered modal via app.js (not detailOverlay) -->
+    <!-- Export favorites stays in nav; report pills live in independent report-bar -->
     <nav>
-      <a href="#" data-report="curated-top.md" data-i18n="navTop">推荐榜</a>
-      <a href="#" data-report="weekly-report.md" data-i18n="navWeekly">生态周报</a>
-      <a href="#" data-report="tool-comparison.md" data-i18n="navCompare">工具对比</a>
       <button id="exportFav" class="fav-btn" data-i18n="exportFav">导出收藏</button>
       <input id="favExportUrl" type="text" class="fav-export-input" readonly style="display:none;" placeholder="收藏链接">
     </nav>
+    <div class="report-bar">
+      <a href="#" data-report="curated-top.md" data-i18n="navTop">推荐榜</a>
+      <a href="#" data-report="weekly-report.md" data-i18n="navWeekly">生态周报</a>
+      <a href="#" data-report="tool-comparison.md" data-i18n="navCompare">工具对比</a>
+    </div>
     <div id="metrics" class="hero-stats" aria-label="Statistics"></div>
     <!-- Charts under metrics; keep #toolChart / #scoreChart for existing render.js -->
     <section class="charts-row" id="chartsSection" aria-label="Overview charts">
@@ -86,8 +88,14 @@
         <div class="controls">
           <input id="q" data-i18n-placeholder="searchPlaceholder" placeholder="搜索项目名称或描述..." aria-label="Search">
 
-          <div id="toolTags" class="tag-group" role="group" aria-label="Tool filter"></div>
-          <div id="typeTags" class="tag-group" role="group" aria-label="Type filter"></div>
+          <div class="filter-block">
+            <div class="filter-label" data-i18n="filterTools">工具</div>
+            <div id="toolTags" class="tag-group" role="group" aria-label="Tool filter"></div>
+          </div>
+          <div class="filter-block">
+            <div class="filter-label" data-i18n="filterTypes">类型</div>
+            <div id="typeTags" class="tag-group" role="group" aria-label="Type filter"></div>
+          </div>
 
           <div id="modeToggle" class="mode-toggle" role="radiogroup" aria-label="Match mode">
             <button class="active" role="radio" aria-checked="true" data-i18n="modeOR">任一匹配</button>
@@ -161,11 +169,11 @@
   </div>
 
   <!-- Scripts: load order matters; source names unhashed — build_site.py rewrites hashes -->
-  <script src="js/i18n.d59adb.js"></script>
+  <script src="js/i18n.1397bc.js"></script>
   <script src="js/data.08cf6f.js"></script>
   <script src="js/filters.15962a.js"></script>
   <script src="js/charts.921b18.js"></script>
-  <script src="js/render.0dccfd.js"></script>
+  <script src="js/render.3a162e.js"></script>
   <script src="js/app.072ecb.js"></script>
 </body>
 </html>

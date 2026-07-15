@@ -204,7 +204,7 @@ weekly_analysis.py (入口；周一全量 / 工作日增量 via Hermes cron)
   "tracking_priority": "track|index|reject",
   "quality_score": 0-40,
   "quality_detail": {"relevance": 0-10, "practicality": 0-10, "novelty": 0-10, "ecosystem_value": 0-10},
-  "llm_summary": {"zh": "一句话中文评价", "en": "one sentence English summary"},
+  "llm_summary": {"zh": "2-3 句话中文评价：是什么 + 核心功能 + 适合谁用", "en": "2-3 sentence English summary: what it is, core features, who it's for"},
   "analysis_notes": "brief explanation"
 }
 ```
