@@ -5,9 +5,6 @@ on:
       github_limit:
         description: GitHub search results per query
         default: '20'
-      exa_limit:
-        description: Exa results per query
-        default: '3'
   schedule:
     - cron: '0 2 * * *'
 permissions:
@@ -23,14 +20,13 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install test dependencies
-        run: python3 -m pip install pytest
+        run: python3 -m pip install pytest pyyaml
       - name: Update tracker data
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           python3 scripts/update_tracker.py \
-            --github-limit "${{ inputs.github_limit || '20' }}" \
-            --exa-limit "${{ inputs.exa_limit || '3' }}"
+            --github-limit "${{ inputs.github_limit || '20' }}"
       - name: Commit changes
         run: |
           if git diff --quiet data/ docs/; then
