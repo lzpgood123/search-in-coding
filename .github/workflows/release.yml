@@ -38,7 +38,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release create "${{ steps.extract.outputs.tag }}" \
-            --title "Search in Coding ${{ steps.extract.outputs.version }}" \
+            --title "Agent EcoRadar ${{ steps.extract.outputs.version }}" \
             --notes "${{ steps.extract.outputs.notes }}" \
             --target "${{ github.sha }}"
       - name: Upload site artifact
@@ -47,6 +47,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           if [ -d site ]; then
-            tar czf /tmp/search-in-coding-site.tar.gz site/
-            gh release upload "${{ steps.extract.outputs.tag }}" /tmp/search-in-coding-site.tar.gz
+            tar czf /tmp/agent-ecoradar-site.tar.gz site/
+            gh release upload "${{ steps.extract.outputs.tag }}" /tmp/agent-ecoradar-site.tar.gz
           fi

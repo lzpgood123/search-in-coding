@@ -5,7 +5,7 @@
 Search in Coding 的长期权威数据源是 GitHub 仓库：
 
 ```text
-https://github.com/lzpgood123/search-in-coding
+https://github.com/lzpgood123/agent-ecoradar
 ```
 
 正式站点：

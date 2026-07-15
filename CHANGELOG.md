@@ -1,3 +1,16 @@
+## 2026.07.16 — GitHub 仓库更名为 agent-ecoradar
+
+### Changed
+
+- GitHub 仓库从 `lzpgood123/search-in-coding` 重命名为 `lzpgood123/agent-ecoradar`（旧 URL 由 GitHub 保留 redirect）。
+- 公开 README / CONTRIBUTING / 站点 footer / badge / clone 示例同步为新仓库 URL。
+- Release 站点产物包名调整为 `agent-ecoradar-site.tar.gz`。
+
+### Notes
+
+- 正式站仍为 `https://ecoradar.lzpgood.online/`；产品过渡标注 formerly Search in Coding 保留。
+- 采集 / 评分 / LLM 业务逻辑与数据语义未改。
+
 ## 2026.07.16 — Agent EcoRadar 品牌与主站切换
 
 ### Changed
@@ -10,7 +23,7 @@
 
 ### Notes
 
-- GitHub 仓库 slug 仍为 `search-in-coding`（后续阶段再改名）。
+- 当时 GitHub 仓库 slug 仍为 `search-in-coding`（已在后续同日条目完成改名）。
 - 采集 / 评分 / LLM 业务逻辑与数据语义未改。
 
 ## 2026.07.13 — 自动更新

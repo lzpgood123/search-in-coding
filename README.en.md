@@ -4,15 +4,15 @@ English | [中文](README.md)
 
 > formerly Search in Coding
 
-[![Update Data](https://github.com/lzpgood123/search-in-coding/actions/workflows/update-data.yml/badge.svg)](https://github.com/lzpgood123/search-in-coding/actions/workflows/update-data.yml)
-[![Publish Site](https://github.com/lzpgood123/search-in-coding/actions/workflows/publish-site.yml/badge.svg)](https://github.com/lzpgood123/search-in-coding/actions/workflows/publish-site.yml)
+[![Update Data](https://github.com/lzpgood123/agent-ecoradar/actions/workflows/update-data.yml/badge.svg)](https://github.com/lzpgood123/agent-ecoradar/actions/workflows/update-data.yml)
+[![Publish Site](https://github.com/lzpgood123/agent-ecoradar/actions/workflows/publish-site.yml/badge.svg)](https://github.com/lzpgood123/agent-ecoradar/actions/workflows/publish-site.yml)
 
 > An always-on radar that scans, scores, and indexes the AI coding agent ecosystem.  
 > **Not** an awesome list — a continuously running data pipeline.
 
 **Site**: https://ecoradar.lzpgood.online/  
 **Data**: 5,165 projects · 40 curated · 10 rejected · 10 target tools  
-**Repo**: https://github.com/lzpgood123/search-in-coding  
+**Repo**: https://github.com/lzpgood123/agent-ecoradar  
 **Version**: `2026.07.16`
 
 ---
@@ -145,8 +145,8 @@ Local setup needs Python 3, a venv with dependencies, and an authenticated GitHu
 ## Quick start (read-only / local preview)
 
 ```bash
-git clone https://github.com/lzpgood123/search-in-coding.git
-cd search-in-coding
+git clone https://github.com/lzpgood123/agent-ecoradar.git
+cd agent-ecoradar
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt   # if present; or install via pyproject

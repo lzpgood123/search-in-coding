@@ -4,15 +4,15 @@
 
 > formerly Search in Coding
 
-[![Update Data](https://github.com/lzpgood123/search-in-coding/actions/workflows/update-data.yml/badge.svg)](https://github.com/lzpgood123/search-in-coding/actions/workflows/update-data.yml)
-[![Publish Site](https://github.com/lzpgood123/search-in-coding/actions/workflows/publish-site.yml/badge.svg)](https://github.com/lzpgood123/search-in-coding/actions/workflows/publish-site.yml)
+[![Update Data](https://github.com/lzpgood123/agent-ecoradar/actions/workflows/update-data.yml/badge.svg)](https://github.com/lzpgood123/agent-ecoradar/actions/workflows/update-data.yml)
+[![Publish Site](https://github.com/lzpgood123/agent-ecoradar/actions/workflows/publish-site.yml/badge.svg)](https://github.com/lzpgood123/agent-ecoradar/actions/workflows/publish-site.yml)
 
 > 自动扫描、评分并索引 AI Coding Agent 生态的持续雷达。  
 > **不是** awesome list，而是持续运行的数据管道。
 
 **站点**：https://ecoradar.lzpgood.online/  
 **数据**：5,165 项目 · 推荐 40 · 噪声 10 · 目标工具 10  
-**仓库**：https://github.com/lzpgood123/search-in-coding  
+**仓库**：https://github.com/lzpgood123/agent-ecoradar  
 **版本**：`2026.07.16`
 
 ---
@@ -145,8 +145,8 @@ flowchart LR
 ## 快速开始（只读 / 本地预览）
 
 ```bash
-git clone https://github.com/lzpgood123/search-in-coding.git
-cd search-in-coding
+git clone https://github.com/lzpgood123/agent-ecoradar.git
+cd agent-ecoradar
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt   # 若仓库提供；或按 pyproject 安装

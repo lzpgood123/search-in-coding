@@ -6,7 +6,7 @@
 
 ### 1. 报告问题
 
-请用 [Bug report](https://github.com/lzpgood123/search-in-coding/issues/new?template=bug_report.md) 模板，尽量包含：
+请用 [Bug report](https://github.com/lzpgood123/agent-ecoradar/issues/new?template=bug_report.md) 模板，尽量包含：
 
 - 复现步骤
 - 期望 vs 实际
@@ -15,7 +15,7 @@
 
 ### 2. 请求新增追踪工具
 
-使用 [Tool request](https://github.com/lzpgood123/search-in-coding/issues/new?template=tool_request.md) 模板。  
+使用 [Tool request](https://github.com/lzpgood123/agent-ecoradar/issues/new?template=tool_request.md) 模板。  
 维护者侧完整步骤见：[`docs/add-new-tool-checklist.md`](docs/add-new-tool-checklist.md)。
 
 ### 3. 修正数据
