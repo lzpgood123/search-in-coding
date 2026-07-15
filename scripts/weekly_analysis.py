@@ -144,7 +144,7 @@ def merge_analysis_result(project, analysis):
 
 
 def run_analysis(projects, max_projects=None, batch_size=None):
-    """Run LLM analysis on projects in batches.
+    """Run LLM analysis on projects in batches with key stats + 429 degradation.
 
     Args:
         projects: list of project dicts (already pre-filtered)
@@ -162,6 +162,12 @@ def run_analysis(projects, max_projects=None, batch_size=None):
         print(f'No projects need analysis (all analyzed within 7 days)')
         return projects
 
+    # Degradation state
+    original_count = len(to_analyze)
+    degraded_mode = False
+    total_429_errors = 0
+    total_calls = 0
+
     print(f'Projects to analyze: {len(to_analyze)}')
 
     # Map for quick lookup
@@ -169,6 +175,7 @@ def run_analysis(projects, max_projects=None, batch_size=None):
 
     # Process in batches of batch_size
     all_results = {}  # project_id -> analysis result
+    all_key_stats = {}
     updated_projects = list(projects)
 
     def merge_into_projects(source_projects, results_map):
@@ -191,7 +198,25 @@ def run_analysis(projects, max_projects=None, batch_size=None):
         def prompt_fn(p):
             return project_analysis_prompt(p)
 
-        results = batch_analyze(batch, prompt_fn, ANALYSIS_SYSTEM, max_workers=batch_size)
+        results, key_stats = batch_analyze(batch, prompt_fn, ANALYSIS_SYSTEM, max_workers=batch_size)
+
+        # Merge key stats
+        for kid, stat in key_stats.items():
+            if kid not in all_key_stats:
+                all_key_stats[kid] = {'calls': 0, 'success': 0, 'failed': 0, 'fail_reasons': []}
+            all_key_stats[kid]['calls'] += stat.get('calls', 0)
+            all_key_stats[kid]['success'] += stat.get('success', 0)
+            all_key_stats[kid]['failed'] += stat.get('failed', 0)
+            all_key_stats[kid]['fail_reasons'].extend(stat.get('fail_reasons') or [])
+
+        # Count 429 errors for degradation (cumulative across batches)
+        total_429_errors = sum(
+            1
+            for s in all_key_stats.values()
+            for r in (s.get('fail_reasons') or [])
+            if '429' in str(r) or 'rate_limit' in str(r)
+        )
+        total_calls = sum(s.get('calls', 0) for s in all_key_stats.values())
 
         for idx, result in results.items():
             project_id = batch[idx].get('id') if idx < len(batch) else None
@@ -206,9 +231,53 @@ def run_analysis(projects, max_projects=None, batch_size=None):
         save_jsonish('data/projects.yaml', updated_projects)
         print(f'  Checkpoint saved ({len(all_results)} analyzed so far)')
 
+        # Degradation check: if 429 rate > 30%, cut remaining work in half
+        if total_calls > 10:  # only check after enough data
+            rate_429 = total_429_errors / total_calls
+            if rate_429 > 0.3 and not degraded_mode:
+                degraded_mode = True
+                remaining_batches = total_batches - batch_num
+                if remaining_batches > 0:
+                    # Skip half of remaining batches
+                    skip_count = remaining_batches // 2
+                    new_end = len(to_analyze) - (skip_count * batch_size)
+                    to_analyze = to_analyze[:max(new_end, i + batch_size)]
+                    print(
+                        f'  ⚠️  DEGRADED MODE: 429 rate {rate_429:.0%} > 30%, '
+                        f'reducing remaining projects by half'
+                    )
+                    total_batches = (len(to_analyze) - 1) // batch_size + 1
+
     success_count = sum(1 for r in all_results.values() if r is not None)
     fail_count = sum(1 for r in all_results.values() if r is None)
     print(f'\nAnalysis complete: {success_count} success, {fail_count} failed')
+    if degraded_mode:
+        print(f'  ⚠️  Run was in DEGRADED MODE (analyzed {len(all_results)}/{original_count})')
+
+    # Save key stats history
+    stats_path = ROOT / 'data' / 'llm-key-stats.json'
+    stats_path.parent.mkdir(parents=True, exist_ok=True)
+    stats_entry = {
+        'date': today(),
+        'total_calls': sum(s['calls'] for s in all_key_stats.values()),
+        'total_success': sum(s['success'] for s in all_key_stats.values()),
+        'total_failed': sum(s['failed'] for s in all_key_stats.values()),
+        'degraded_mode': degraded_mode,
+        '429_errors': total_429_errors,
+        'keys': all_key_stats,
+    }
+    existing_stats = []
+    if stats_path.exists():
+        try:
+            existing_stats = json.loads(stats_path.read_text(encoding='utf-8'))
+            if not isinstance(existing_stats, list):
+                existing_stats = [existing_stats]
+        except (json.JSONDecodeError, Exception):
+            existing_stats = []
+    existing_stats.append(stats_entry)
+    existing_stats = existing_stats[-30:]
+    stats_path.write_text(json.dumps(existing_stats, ensure_ascii=False, indent=2), encoding='utf-8')
+    print(f'Key stats saved: {stats_path}')
 
     return updated_projects
 

@@ -4,6 +4,7 @@
 Calls OpenAI-compatible chat/completions endpoint at https://token.sensenova.cn/v1
 Uses 13 API keys from ~/.hermes/auth.json with round-robin rotation.
 """
+import copy
 import json
 import os
 import re
@@ -45,13 +46,23 @@ def load_api_keys():
 
 
 class KeyRotator:
-    """Round-robin key rotation with failure tracking (thread-safe)."""
+    """Round-robin key rotation with failure tracking and usage stats (thread-safe)."""
 
     def __init__(self, keys):
         self.keys = list(keys)
         self.index = 0
         self.failed = set()
         self._lock = threading.Lock()
+        # Key monitoring stats (last 8 chars only — never expose full key)
+        self._stats = {}
+        for k in self.keys:
+            kid = k[-8:]
+            self._stats[kid] = {
+                'calls': 0,
+                'success': 0,
+                'failed': 0,
+                'fail_reasons': [],
+            }
 
     def next(self):
         with self._lock:
@@ -67,12 +78,31 @@ class KeyRotator:
                 k = self.keys[self.index % len(self.keys)]
                 self.index += 1
                 if k not in self.failed:
+                    kid = k[-8:]
+                    if kid in self._stats:
+                        self._stats[kid]['calls'] += 1
                     return k
             return available[0]
 
-    def mark_failed(self, key):
+    def mark_success(self, key):
+        with self._lock:
+            kid = key[-8:]
+            if kid in self._stats:
+                self._stats[kid]['success'] += 1
+
+    def mark_failed(self, key, reason=None):
         with self._lock:
             self.failed.add(key)
+            kid = key[-8:]
+            if kid in self._stats:
+                self._stats[kid]['failed'] += 1
+                if reason:
+                    self._stats[kid]['fail_reasons'].append(str(reason))
+
+    def get_stats(self):
+        """Return a copy of per-key usage statistics."""
+        with self._lock:
+            return copy.deepcopy(self._stats)
 
     def reset(self):
         with self._lock:
@@ -174,16 +204,23 @@ def call_with_retry(prompt, system_prompt, rotator, max_retries=3):
             key = rotator.next()
             result = call_llm(prompt, system_prompt, key=key)
             if result:
+                rotator.mark_success(key)
                 return result
-        except KeyError:
+            else:
+                rotator.mark_failed(key, 'empty_response')
+        except KeyError as e:
             # Auth failed, mark key as failed
             if key is not None:
-                rotator.mark_failed(key)
+                rotator.mark_failed(key, f'auth_error: {e}')
             print(f'  Key failed, rotating... (attempt {attempt+1}/{max_retries})')
         except RateLimitError:
+            if key is not None:
+                rotator.mark_failed(key, 'rate_limit_429')
             time.sleep(5 * (attempt + 1))  # exponential backoff
             print(f'  Rate limited, waiting... (attempt {attempt+1}/{max_retries})')
         except Exception as e:
+            if key is not None:
+                rotator.mark_failed(key, f'exception: {e}')
             last_error = e
             print(f'  Error: {e} (attempt {attempt+1}/{max_retries})')
     print(f'  All retries exhausted: {last_error}')
@@ -200,12 +237,14 @@ def batch_analyze(items, prompt_fn, system_prompt, max_workers=3):
         max_workers: concurrent workers (default 3)
 
     Returns:
-        dict mapping item index to parsed JSON result (or None if failed)
+        tuple (results_dict, key_stats):
+          - results_dict maps item index to parsed JSON result (or None if failed)
+          - key_stats is per-key usage stats from KeyRotator
     """
     keys = load_api_keys()
     if not keys:
         print('ERROR: No API keys found')
-        return {}
+        return {}, {}
 
     rotator = KeyRotator(keys)
     results = {}
@@ -229,4 +268,4 @@ def batch_analyze(items, prompt_fn, system_prompt, max_workers=3):
                 print(f'  Item {idx} failed: {e}')
                 results[idx] = None
 
-    return results
+    return results, rotator.get_stats()
