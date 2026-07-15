@@ -41,7 +41,7 @@ def main():
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     report=REPORT_DIR/f'{args.date}-weekly-update.md'
     prev_display = str(prev_path.relative_to(ROOT)) if prev_path else None
-    lines=[f'# Search in Coding Weekly Change Report — {args.date}','',f'Previous snapshot: `{prev_display}`' if prev_display else 'Previous snapshot: none','', '## Summary','', f'- Projects: {len(projects)}', f'- Curated: {len(curated)}', f'- Rejected: {len(rejected)}', f'- New records: {len(new_ids)}', f'- Removed records: {len(removed_ids)}', f'- Newly curated: {len(newly_curated)}', f'- Exited curated: {len(exited_curated)}', '', '## New records', '']
+    lines=[f'# Agent EcoRadar Weekly Change Report — {args.date}','',f'Previous snapshot: `{prev_display}`' if prev_display else 'Previous snapshot: none','', '## Summary','', f'- Projects: {len(projects)}', f'- Curated: {len(curated)}', f'- Rejected: {len(rejected)}', f'- New records: {len(new_ids)}', f'- Removed records: {len(removed_ids)}', f'- Newly curated: {len(newly_curated)}', f'- Exited curated: {len(exited_curated)}', '', '## New records', '']
     lines += [f'- `{pid}` — {cur[pid].get("name")}' for pid in new_ids[:50]] or ['- None']
     lines += ['', '## Newly curated', '']
     lines += [f'- `{pid}` — {cur.get(pid,{}).get("name", pid)}' for pid in newly_curated[:50]] or ['- None']

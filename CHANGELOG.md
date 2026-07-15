@@ -1,3 +1,16 @@
+## 2026.07.16 — 去掉 formerly，公开主路径旧名收口
+
+### Changed
+
+- 移除 README 中英与站点 footer 的 `formerly Search in Coding` 过渡标注。
+- 现行公开文档与脚本门面文案统一为 **Agent EcoRadar** / `https://ecoradar.lzpgood.online/`。
+- 导出包默认文件名改为 `agent-ecoradar-template.zip`；`pyproject.toml` 包名同步为 `agent-ecoradar`。
+
+### Notes
+
+- 历史 CHANGELOG 条目、带日期 dogfood/evaluation 报告、snapshot 数据中的旧名按档案保留。
+- 采集 / 评分 / LLM 业务逻辑与数据语义未改。
+
 ## 2026.07.16 — GitHub 仓库更名为 agent-ecoradar
 
 ### Changed

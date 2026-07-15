@@ -18,7 +18,7 @@ def check_list(path, fields):
     return len(data)
 
 def main():
-    ap=argparse.ArgumentParser(description='Validate Search in Coding data files')
+    ap=argparse.ArgumentParser(description='Validate Agent EcoRadar data files')
     ap.add_argument('--section', choices=['all','tools','projects'], default='all')
     ap.parse_known_args()
     args, _ = ap.parse_known_args()

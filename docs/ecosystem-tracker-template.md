@@ -1,6 +1,6 @@
 # Ecosystem Tracker Template Notes
 
-Search in Coding can be reused as a template for other ecosystem trackers.
+Agent EcoRadar can be reused as a template for other ecosystem trackers.
 
 ## Replaceable inputs
 

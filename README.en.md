@@ -2,8 +2,6 @@
 
 English | [中文](README.md)
 
-> formerly Search in Coding
-
 [![Update Data](https://github.com/lzpgood123/agent-ecoradar/actions/workflows/update-data.yml/badge.svg)](https://github.com/lzpgood123/agent-ecoradar/actions/workflows/update-data.yml)
 [![Publish Site](https://github.com/lzpgood123/agent-ecoradar/actions/workflows/publish-site.yml/badge.svg)](https://github.com/lzpgood123/agent-ecoradar/actions/workflows/publish-site.yml)
 

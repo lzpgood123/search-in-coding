@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Auto-finalize Search in Coding data with new 100-point schema."""
+"""Auto-finalize Agent EcoRadar data with new 100-point schema."""
 import argparse
 import datetime
 import json

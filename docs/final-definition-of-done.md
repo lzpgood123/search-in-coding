@@ -10,4 +10,4 @@ The project is final only when:
 6. Static site is usable.
 7. Automation templates and Hermes cron prompts exist.
 8. Final quality gate passes.
-9. `dist/search-in-coding-final.zip` is generated.
+9. `dist/agent-ecoradar-final.zip` is generated.

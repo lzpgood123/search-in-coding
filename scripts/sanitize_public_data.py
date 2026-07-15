@@ -25,8 +25,11 @@ def clean_text(value):
     if not isinstance(value, str): return value
     value = LOCAL_PATH_RE.sub('[local-source]', value)
     value = PRIVATE_URL_RE.sub('[local-url-removed]', value)
+    value = value.replace('/var/www/ecoradar.lzpgood.online', '[production-webroot]')
     value = value.replace('/var/www/coding.lzpgood.online', '[production-webroot]')
+    value = value.replace('/etc/nginx/sites-available/ecoradar.lzpgood.online', '[nginx-vhost]')
     value = value.replace('/etc/nginx/sites-available/coding.lzpgood.online', '[nginx-vhost]')
+    value = value.replace('/etc/letsencrypt/live/ecoradar.lzpgood.online/fullchain.pem', '[tls-certificate]')
     value = value.replace('/etc/letsencrypt/live/coding.lzpgood.online/fullchain.pem', '[tls-certificate]')
     return value
 

@@ -1,11 +1,11 @@
-# Search in Coding Data API
+# Agent EcoRadar Data API
 
 The static site publishes machine-readable JSON files under `/data/`.
 
 Base URL:
 
 ```text
-https://coding.lzpgood.online/data/
+https://ecoradar.lzpgood.online/data/
 ```
 
 ## Endpoints
@@ -23,7 +23,7 @@ https://coding.lzpgood.online/data/
 ## Example
 
 ```bash
-curl https://coding.lzpgood.online/data/curated-projects.json
+curl https://ecoradar.lzpgood.online/data/curated-projects.json
 ```
 
 ## Record contract

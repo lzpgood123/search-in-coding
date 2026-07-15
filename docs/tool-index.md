@@ -1,6 +1,6 @@
 # AI 工具搜集分类索引
 
-> 本页是 **Agent EcoRadar**（智能体生态雷达，formerly Search in Coding）的工具维度索引，用于从目标 AI Coding 工具进入对应生态数据。数据来源为 `data/seed-tools.yaml` 与 `data/projects.yaml`，由自动采集和评分流程持续更新。
+> 本页是 **Agent EcoRadar**（智能体生态雷达）的工具维度索引，用于从目标 AI Coding 工具进入对应生态数据。数据来源为 `data/seed-tools.yaml` 与 `data/projects.yaml`，由自动采集和评分流程持续更新。
 
 正式站点：<https://ecoradar.lzpgood.online/>  
 总仓库：<https://github.com/lzpgood123/agent-ecoradar>

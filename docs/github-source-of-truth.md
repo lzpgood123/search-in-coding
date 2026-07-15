@@ -2,7 +2,7 @@
 
 ## 定位
 
-Search in Coding 的长期权威数据源是 GitHub 仓库：
+Agent EcoRadar 的长期权威数据源是 GitHub 仓库：
 
 ```text
 https://github.com/lzpgood123/agent-ecoradar
@@ -11,7 +11,7 @@ https://github.com/lzpgood123/agent-ecoradar
 正式站点：
 
 ```text
-https://coding.lzpgood.online/
+https://ecoradar.lzpgood.online/
 ```
 
 站点是仓库数据的展示结果；GitHub 仓库才是完整索引库、历史记录、自动化、报告和版本记录的总仓库。
@@ -42,7 +42,7 @@ https://coding.lzpgood.online/
 1. 每日/每周自动采集 GitHub + Exa；
 2. 自动评分维护 curated/rejected；
 3. 生成报告和站点；
-4. 部署到 `/var/www/coding.lzpgood.online`；
+4. 部署到正式站 webroot（`ecoradar.lzpgood.online`）；
 5. 将所有数据、报告、站点数据、版本记录提交并推送到 GitHub。
 
 ### GitHub Actions

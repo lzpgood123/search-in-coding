@@ -1,6 +1,6 @@
 # Contributing to Agent EcoRadar
 
-感谢关注 **Agent EcoRadar**（智能体生态雷达，formerly Search in Coding）。
+感谢关注 **Agent EcoRadar**（智能体生态雷达）。
 
 ## 如何参与
 

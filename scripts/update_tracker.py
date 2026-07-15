@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the Search in Coding tracker update pipeline.
+"""Run the Agent EcoRadar tracker update pipeline.
 
 Collectors may fail independently, but validation/build quality gates must pass.
 Production deployment is explicit via --deploy; default runs never touch /var/www.

@@ -12,14 +12,14 @@ def zh_summary(p):
     cats='、'.join(p.get('category') or []) or '生态项目'
     tools='、'.join(p.get('target_tools') or []) or '通用 AI Coding'
     source=p.get('source_type') or 'unknown'
-    return f"{name} 是来自 {source} 的 Search in Coding 记录，关联 {tools}，分类为 {cats}。它被用于追踪 AI Coding Agent 生态中的工具、实践或资料。"
+    return f"{name} 是来自 {source} 的 Agent EcoRadar 记录，关联 {tools}，分类为 {cats}。它被用于追踪 AI Coding Agent 生态中的工具、实践或资料。"
 
 def en_summary(p):
     name=p.get('name') or p.get('id')
     cats=', '.join(p.get('category') or []) or 'ecosystem project'
     tools=', '.join(p.get('target_tools') or []) or 'general AI coding'
     source=p.get('source_type') or 'unknown'
-    return f"{name} is a Search in Coding record from {source}, related to {tools}, categorized as {cats}. It helps track tools, practices, or resources in the AI coding agent ecosystem."
+    return f"{name} is an Agent EcoRadar record from {source}, related to {tools}, categorized as {cats}. It helps track tools, practices, or resources in the AI coding agent ecosystem."
 
 def enrich(rows, ids):
     changed=0

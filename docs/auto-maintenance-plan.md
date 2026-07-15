@@ -1,4 +1,4 @@
-# Search in Coding 全自动维护方案
+# Agent EcoRadar 全自动维护方案
 
 ## 目标
 
@@ -10,7 +10,7 @@
 - 每天分析、归一化、评分；
 - 自动维护 auto-curated / auto-rejected；
 - 自动生成报告与站点；
-- 自动部署到 `https://coding.lzpgood.online/`；
+- 自动部署到 `https://ecoradar.lzpgood.online/`；
 - 自动把 raw 数据、归一化数据、报告、站点数据和版本记录提交到 GitHub 总仓库；
 - 导入阶段即持久化 `i18n.zh/en` 展示结构，站点构建阶段防御性补齐，正式站点支持中英切换；
 - 每周发布一次正式更新；
@@ -55,7 +55,7 @@ python3 scripts/update_tracker.py --github-limit 50 --exa-limit 5 --deploy
 手动触发时可执行：
 
 ```text
-立即更新 Search in Coding
+立即更新 Agent EcoRadar
 ```
 
 执行：
@@ -103,5 +103,5 @@ git status --short
 
 ```bash
 python3 scripts/quality_gate.py
-curl -I https://coding.lzpgood.online/
+curl -I https://ecoradar.lzpgood.online/
 ```

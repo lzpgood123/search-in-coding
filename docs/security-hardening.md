@@ -1,6 +1,6 @@
-# Search in Coding 网站安全加固说明
+# Agent EcoRadar 网站安全加固说明
 
-正式站点：<https://coding.lzpgood.online/>
+正式站点：<https://ecoradar.lzpgood.online/>
 
 ## 已启用的安全措施
 
@@ -45,7 +45,7 @@ rel="noopener noreferrer"
 4. 定期运行：
 
 ```bash
-curl -I https://coding.lzpgood.online/
+curl -I https://ecoradar.lzpgood.online/
 ```
 
 确认安全头仍存在。

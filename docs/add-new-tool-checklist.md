@@ -1,6 +1,6 @@
 # 添加新工具 Checklist
 
-> 用途：把一个新的 AI Coding 工具加入 Search in Coding 追踪体系。  
+> 用途：把一个新的 AI Coding 工具加入 Agent EcoRadar 追踪体系。  
 > 范围：从 `data/seed-tools.yaml` 定义，到采集、归一化、评分、构建、质量门禁与可选 LLM 分析。  
 > 注意：`build_site.py` 只构建本地站点产物；线上发布需额外运行 `deploy_site.py`。
 

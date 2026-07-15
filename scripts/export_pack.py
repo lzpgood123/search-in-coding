@@ -15,7 +15,7 @@ def collect():
 def main():
     ap=argparse.ArgumentParser(description='Export reusable tracker package')
     ap.add_argument('--dry-run', action='store_true')
-    ap.add_argument('--output', default='dist/search-in-coding-template.zip')
+    ap.add_argument('--output', default='dist/agent-ecoradar-template.zip')
     args=ap.parse_args()
     files=collect()
     if args.dry_run:
