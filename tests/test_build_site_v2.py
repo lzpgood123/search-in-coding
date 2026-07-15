@@ -41,7 +41,7 @@ class TestBuildSiteV2:
         assert 'stars' in slim
         # Detail fields should NOT be in slim
         assert 'score_detail' not in slim
-        assert 'llm_summary' not in slim
+        assert 'llm_summary' in slim  # llm_summary added to SLIM_FIELDS for Chinese mode display
         assert 'benchmark_ref' not in slim
         assert 'last_analyzed' not in slim
 
