@@ -1,7 +1,15 @@
 // site/js/app.js
 // Entry point, event delegation, debounce, skeleton screen
+// Style B: report centered modal + Esc stack (report first, then detail)
 // Batch B fixes: #5 favoritesOnly, #7 clearFilters + remove-filter, #8 radiogroup, #15 deep link, #14 footer
 var $ = function(id) { return document.getElementById(id); };
+
+var REPORT_TITLES = {
+  'curated-top.md': 'navTop',
+  'weekly-report.md': 'navWeekly',
+  'tool-comparison.md': 'navCompare'
+};
+var activeReportFile = null;
 
 function debounce(fn, ms) {
   var t;
@@ -11,6 +19,80 @@ function debounce(fn, ms) {
     clearTimeout(t);
     t = setTimeout(function() { fn.apply(self, args); }, ms);
   };
+}
+
+function isDetailOpen() {
+  var el = $('detailOverlay');
+  return !!(el && el.classList.contains('open'));
+}
+
+function isReportOpen() {
+  var modal = $('reportModal');
+  return !!(modal && !modal.hidden);
+}
+
+function setBodyScrollLock() {
+  if (isReportOpen() || isDetailOpen()) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+}
+
+function setReportActive(reportFile) {
+  activeReportFile = reportFile || null;
+  var titleKey = REPORT_TITLES[reportFile] || 'navTop';
+  var titleEl = $('reportModalTitle');
+  if (titleEl) titleEl.textContent = SIC_i18n.t(titleKey);
+
+  document.querySelectorAll('[data-report]').forEach(function(el) {
+    var on = !!reportFile && el.dataset.report === reportFile;
+    el.classList.toggle('active', on);
+    if (el.getAttribute('role') === 'tab') {
+      el.setAttribute('aria-selected', on ? 'true' : 'false');
+    }
+  });
+}
+
+async function openReportModal(reportFile) {
+  if (!reportFile) return;
+  var modal = $('reportModal');
+  var backdrop = $('reportBackdrop');
+  var body = $('reportModalBody');
+  if (!modal || !backdrop || !body) return;
+
+  modal.hidden = false;
+  backdrop.hidden = false;
+  setReportActive(reportFile);
+  setBodyScrollLock();
+  body.innerHTML = '<p class="muted">' + SIC_render.esc(SIC_i18n.t('loading')) + '</p>';
+
+  try {
+    var r = await fetch('reports/' + reportFile);
+    if (!r.ok) {
+      body.innerHTML = '<p>Report not found: ' + SIC_render.esc(reportFile) + '</p>';
+      return;
+    }
+    // Guard against race if user switched tabs quickly
+    if (activeReportFile !== reportFile) return;
+    var md = await r.text();
+    if (activeReportFile !== reportFile) return;
+    body.innerHTML = SIC_render.renderReport(md);
+  } catch (err) {
+    console.error('Report load error:', err);
+    body.innerHTML = '<p>' + SIC_render.esc(SIC_i18n.t('loadError')) + '</p>';
+  }
+}
+
+function closeReportModal() {
+  var modal = $('reportModal');
+  var backdrop = $('reportBackdrop');
+  var body = $('reportModalBody');
+  if (modal) modal.hidden = true;
+  if (backdrop) backdrop.hidden = true;
+  if (body) body.innerHTML = '';
+  setReportActive(null);
+  setBodyScrollLock();
 }
 
 // Render tag buttons
@@ -70,6 +152,7 @@ function handleGlobalClick(e) {
     case 'detail':
       e.preventDefault();
       SIC_render.openDetail(id);
+      setBodyScrollLock();
       break;
     case 'fav':
       SIC_render.toggleFav(id);
@@ -77,6 +160,11 @@ function handleGlobalClick(e) {
       break;
     case 'close-detail':
       SIC_render.closeDetail();
+      setBodyScrollLock();
+      break;
+    case 'close-report':
+      e.preventDefault();
+      closeReportModal();
       break;
     case 'tool-tag':
       SIC_filters.toggleTool(btn.dataset.tool);
@@ -184,21 +272,32 @@ function bindEvents() {
     SIC_i18n.setLang('zh');
     SIC_render.renderAll();
     syncUI();
+    if (isReportOpen() && activeReportFile) setReportActive(activeReportFile);
   });
   $('langEn').addEventListener('click', function() {
     SIC_i18n.setLang('en');
     SIC_render.renderAll();
     syncUI();
+    if (isReportOpen() && activeReportFile) setReportActive(activeReportFile);
   });
 
   // Detail overlay close (click on overlay background)
   $('detailOverlay').addEventListener('click', function(e) {
-    if (e.target.id === 'detailOverlay') SIC_render.closeDetail();
+    if (e.target.id === 'detailOverlay') {
+      SIC_render.closeDetail();
+      setBodyScrollLock();
+    }
   });
 
-  // ESC
+  // Esc stack: report modal first, then detail
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') SIC_render.closeDetail();
+    if (e.key !== 'Escape') return;
+    if (isReportOpen()) {
+      closeReportModal();
+      return;
+    }
+    SIC_render.closeDetail();
+    setBodyScrollLock();
   });
 
   // Export favorites - Bug 8 fix: input box instead of alert
@@ -220,28 +319,20 @@ function bindEvents() {
     });
   }
 
-  // Report links
+  // Report links / modal tabs — open centered modal (never detailOverlay)
   document.querySelectorAll('[data-report]').forEach(function(el) {
-    el.addEventListener('click', async function(e) {
+    el.addEventListener('click', function(e) {
       e.preventDefault();
-      var reportFile = el.dataset.report;
-      try {
-        var r = await fetch('reports/' + reportFile);
-        if (!r.ok) {
-          $('detailOverlay').innerHTML = '<button class="detail-close" data-action="close-detail">&times;</button>' +
-            '<div class="report-content"><p>Report not found: ' + SIC_render.esc(reportFile) + '</p></div>';
-          $('detailOverlay').classList.add('open');
-          return;
-        }
-        var md = await r.text();
-        $('detailOverlay').innerHTML = '<button class="detail-close" data-action="close-detail">&times;</button>' +
-          SIC_render.renderReport(md);
-        $('detailOverlay').classList.add('open');
-      } catch (err) {
-        console.error('Report load error:', err);
-      }
+      openReportModal(el.dataset.report);
     });
   });
+
+  var reportBackdrop = $('reportBackdrop');
+  if (reportBackdrop) {
+    reportBackdrop.addEventListener('click', function() {
+      closeReportModal();
+    });
+  }
 }
 
 async function main() {
@@ -264,6 +355,7 @@ async function main() {
   // #15: project deep link - open detail automatically
   if (SIC_filters._pendingProject) {
     SIC_render.openDetail(SIC_filters._pendingProject);
+    setBodyScrollLock();
   }
 }
 

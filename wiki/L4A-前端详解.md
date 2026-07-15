@@ -3,6 +3,8 @@
 > 前端开发者深入文档。读完能独立修改前端代码。
 >
 > **第 3 批前端重写 v3**（2026-07-13）。批次 B：Linear/Vercel 审美重做 + 15 个 dogfood 交互修复。
+>
+> **Style B 完整视觉落地**（2026-07-15）：Warm paper dark + 琥珀强调；metrics 下并排可读图表；Header 报告 pill + 居中 modal；详情右侧侧栏仅换皮。
 
 ## 架构概览
 
@@ -21,6 +23,7 @@
 | `detail` | 点击项目卡片/项目名/详情按钮 | 调用 `SIC_render.openDetail(id)` |
 | `fav` | 点击收藏按钮 | 调用 `SIC_render.toggleFav(id)` + 切换 active 类 |
 | `close-detail` | 点击关闭按钮 | 调用 `SIC_render.closeDetail()` |
+| `close-report` | 报告 modal × | 调用 `closeReportModal()` **[Style B]** |
 | `tool-tag` | 点击工具标签按钮 | `SIC_filters.toggleTool()` + 重新渲染表格 |
 | `type-tag` | 点击类型标签按钮 | `SIC_filters.toggleType()` + 重新渲染表格 |
 | `tool-filter` | 点击工具概览卡片 | `SIC_filters.setTool()` + 同步标签按钮 + 滚动到搜索区 |
@@ -154,8 +157,10 @@
 
 | 方法 | 签名 | 用途 |
 |------|------|------|
-| barChart(data, maxVal) | (array, number) => string | SVG 柱状图 |
-| histogram(scores) | (array) => string | 分数分布直方图（5 个区间） |
+| barChart(data, maxVal, options?) | (array, number, object?) => string | 可读 SVG 柱状图：Y 轴刻度（`text-anchor=end`）+ 网格 + 柱顶数值 + X 短标签；高约 180–210；`options.ariaLabel` 可选 **[Style B]** |
+| histogram(scores) | (array) => string | 分数分布直方图（5 桶 0-20…81-100），内部调 barChart **[Style B]** |
+
+**挂载位置：** `#toolChart` / `#scoreChart` 在 header metrics 下方 `.charts-row` 内（不再位于工具概览 section 底部）。
 
 ### app.js - 入口
 
@@ -163,55 +168,63 @@
 |------|------|
 | main() | 异步入口：骨架屏 -> loadAll -> readState -> renderAll -> 事件绑定 |
 | debounce(fn, ms) | 搜索防抖（300ms） |
-| syncUIFromFilters() | readState 后同步 UI 控件状态 |
+| syncUI() | readState 后同步 UI 控件状态 |
 | renderTagButtons() | 渲染工具和类型标签按钮组 |
-| toggleToolTag(id, btn) / toggleTypeTag(type, btn) | 标签按钮点击处理 |
+| openReportModal(file) | fetch `reports/<file>` → `SIC_render.renderReport` 写入 `#reportModalBody`；**不**写入 detailOverlay **[Style B]** |
+| closeReportModal() | 关 modal/backdrop，清 active，恢复 overflow（若 detail 未开） **[Style B]** |
+| isReportOpen() / setReportActive(file) | modal 状态与 pill/tab 高亮 **[Style B]** |
+| handleGlobalClick() | 含 `close-report` 等 data-action |
 
 ## 样式体系
 
-全深色主题（dark mode only），Linear/Vercel 风格。使用 **CSS 自定义属性**（ADR-0006）。
+全深色主题（dark mode only），**Style B Warm paper dark + 琥珀强调**（2026-07-15）。使用 **CSS 自定义属性**（ADR-0006）。
 
-**CSS 变量（:root）：**
+**CSS 变量（:root，Style B）：**
 
 | 变量 | 值 | 用途 |
 |------|-----|------|
-| --color-bg | #0f172a | 页面背景 |
-| --color-bg-gradient | linear-gradient(180deg, #0f172a 0%, #1e293b 100%) | header 渐变背景 **[v3]** |
-| --color-surface | #111827 | 表格背景 |
-| --color-card | #1e293b | 卡片背景 |
-| --color-card-hover | #243244 | 表格行 hover 背景 **[v3]** |
-| --color-input | #020617 | 输入框背景 |
-| --color-text | #e2e8f0 | 正文文本 |
-| --color-text-secondary | #cbd5e1 | header 副文本 |
-| --color-text-muted | #94a3b8 | 次要文本 |
-| --color-link | #93c5fd | 链接 |
-| --color-border | #334155 | 边框 |
-| --color-border-subtle | rgba(255,255,255,0.08) | 半透明边框 **[v3]** |
-| --color-accent | #2563eb | 强调色 |
-| --color-accent-gradient | linear-gradient(135deg, #2563eb, #7c3aed) | 渐变强调色 **[v3]** |
-| --color-accent-light | #60a5fa | 强调色（边框 hover） |
-| --color-fav | #fbbf24 | 收藏星标色 |
-| --radius | 12px | 圆角 |
-| --spacing | 32px | 间距（v3: 从 24px 增大） |
-| --shadow-card | 0 2px 8px rgba(0,0,0,0.3), 0 0 1px rgba(255,255,255,0.05) | 卡片阴影 **[v3]** |
-| --shadow-card-hover | 0 4px 16px rgba(0,0,0,0.4), 0 0 1px rgba(255,255,255,0.1) | 卡片 hover 阴影 **[v3]** |
+| --color-bg | #1c1917 | 页面背景（暖石色） |
+| --color-bg-gradient | linear-gradient(180deg, #24201c 0%, #1c1917 100%) | header 渐变 |
+| --color-bg-elevated | #292524 | 浮层/详情底 |
+| --color-surface | #292524 | 表格背景 |
+| --color-surface-2 | #35302c | 次级面 |
+| --color-card | #2c2825 | 卡片背景 |
+| --color-card-hover | #35302c | 行/卡 hover |
+| --color-input | #1a1714 | 输入框背景 |
+| --color-text | #faf7f2 | 正文 |
+| --color-text-secondary | #e7e0d6 | 副文本 |
+| --color-text-muted | #b5aa9c | 次要文本 |
+| --color-link | #fcd34d | 链接（琥珀浅） |
+| --color-border | rgba(255,248,240,0.10) | 边框 |
+| --color-border-strong | rgba(255,248,240,0.16) | 强边框 |
+| --color-border-subtle | rgba(255,248,240,0.08) | 细边框 |
+| --color-accent | #f59e0b | 主强调（琥珀） |
+| --color-accent-light | #fbbf24 | 强调浅色 |
+| --color-accent-soft | rgba(245,158,11,0.14) | 软填充 |
+| --color-accent-border | rgba(245,158,11,0.35) | 强调边框 |
+| --color-accent-gradient | linear-gradient(135deg, #f59e0b, #fbbf24) | 兼容旧名，不再作蓝紫主强调 |
+| --color-fav | #fbbf24 | 收藏星标 |
+| --radius / --radius-sm / --radius-xs | 16 / 12 / 10 | 圆角 |
+| --spacing | 22px | 中等偏紧间距 |
+| --shadow-card / --shadow-card-hover | 深色克制阴影 | 卡片 |
 
-**色彩标签 pill 类（v3 新增）：**
+**已停用主用法：** 近黑 `#0f172a` 主背景、蓝紫主强调。
 
-| 类名 | 颜色 | 对应 resource_type |
-|------|------|-------------------|
-| .pill-type-mcp-server | 绿底绿字 | MCP Server |
-| .pill-type-skills | 蓝底蓝字 | Skills |
-| .pill-type-rules | 紫底紫字 | Rules |
-| .pill-type-agent-framework | 橙底橙字 | Agent Framework |
-| .pill-type-cli-tool | 青底青字 | CLI Tool |
-| .pill-type-tutorial | 灰底灰字 | Tutorial |
+**色彩标签 pill 类：** 保留多色语义，**降饱和**与暖底协调（mcp / skills / rules / framework / cli / tutorial）。
 
-**字体层级（v3）：** h1=40px(800), h2=28px(700), h3=20px(600), 正文=16px。**系统字体栈**（`system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif`）；不再加载 Google Fonts，以兼容 Nginx CSP `style-src/font-src 'self'`。
+**字体层级（Style B）：** h1≈25px、section h2≈17px、正文 14px。**系统字体栈 only**；禁止 Google Fonts。
 
-**响应式断点：** 760px（缩小 padding、表格 min-width:600px、topbar 改 column、详情面板全宽、grid 改单列、hero-stat 缩小）
+**布局组件（Style B）：**
+- `.charts-row`：桌面 `1.15fr 0.85fr`，≤1100px 堆叠；`.chart-card` 含标题/副标题
+- `.toolbar`：搜索 controls 外壳
+- `.modal-backdrop` / `.modal` / `.modal-tabs` / `.modal-body`：居中报告浮窗（宽 `min(720px,100vw-32px)`，max-height≈78vh）
+- `.detail-overlay`：右侧侧栏宽 `min(560px,100%)`，仅 B 皮肤
 
-**骨架屏：** shimmer 动画（linear-gradient + background-position 动画）
+**响应式断点：** 1100px（图表堆叠、metrics 2 列）；760px（单列、详情全宽、表格 min-width）
+
+**动效：** `:active { scale(0.97) }`；`prefers-reduced-motion: reduce` 关闭非必要 transform/动画
+
+**骨架屏：** shimmer 动画
 
 ## build_site.py 与前端的关联
 
@@ -256,15 +269,18 @@ build_site.py 生成：
 - 项目深链：`?project=id` 打开时自动展开详情 **[dogfood #15]**
 - 懒加载详情数据，llm_summary 按 {zh,en} 对象取值
 
-**报告渲染：** 点击导航链接 -> fetch .md 文件 -> Markdown 渲染器（v3: 表头用 th）-> 在详情面板中展示
+**报告渲染（Style B）：** Header 报告 pill（`data-report` 文件名不变）→ 居中 `#reportModal` → 浮窗内 tab 切换三报告（`curated-top.md` / `weekly-report.md` / `tool-comparison.md`）→ `SIC_render.renderReport(md)` 写入 `#reportModalBody`。**不再**把报告塞进 `#detailOverlay`。关闭：× / backdrop / Esc。
 
 **收藏：** 点击 ★ 按钮 -> localStorage 存储 -> 可通过"导出收藏"按钮显示 URL 输入框 -> "只看收藏"筛选 **[v3]**
 
-**双语切换：** 点击 中文/English 按钮 -> setLang() + localStorage -> renderAll()，按钮有 aria-pressed **[v3]**
+**双语切换：** 点击 中文/English 按钮 -> setLang() + localStorage -> renderAll()，按钮有 aria-pressed；若报告 modal 开着则刷新标题文案 **[Style B]**
 
 **页脚（v3 新增，dogfood #14）：** 显示数据更新时间 + GitHub 仓库链接 + 数据说明
 
-**键盘导航：** ESC 关闭详情面板
+**键盘导航 / Esc 栈（Style B）：**
+1. 若报告 modal 打开 → 只关 modal
+2. 否则若 detail 打开 → 关 detail
+3. 两者都关时 Esc 无操作
 
 ## 下一步读什么
 

@@ -10,8 +10,8 @@
   <meta property="og:description" content="持续自动更新的 AI Coding Agent 生态追踪索引库">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://coding.lzpgood.online/">
-  <meta name="theme-color" content="#0f172a">
-  <link rel="stylesheet" href="styles.c85a94.css">
+  <meta name="theme-color" content="#1c1917">
+  <link rel="stylesheet" href="styles.bd256a.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,15 +34,32 @@
         <button id="langEn" type="button" aria-pressed="false">English</button>
       </div>
     </div>
+    <!-- Report pills: open centered modal via app.js (not detailOverlay) -->
     <nav>
+      <a href="#" data-report="curated-top.md" data-i18n="navTop">推荐榜</a>
       <a href="#" data-report="weekly-report.md" data-i18n="navWeekly">生态周报</a>
       <a href="#" data-report="tool-comparison.md" data-i18n="navCompare">工具对比</a>
-      <a href="#" data-report="curated-top.md" data-i18n="navTop">推荐榜</a>
       <button id="exportFav" class="fav-btn" data-i18n="exportFav">导出收藏</button>
       <input id="favExportUrl" type="text" class="fav-export-input" readonly style="display:none;" placeholder="收藏链接">
     </nav>
-    <!-- Hero metrics moved here from search zone (dogfood #24) -->
     <div id="metrics" class="hero-stats" aria-label="Statistics"></div>
+    <!-- Charts under metrics; keep #toolChart / #scoreChart for existing render.js -->
+    <section class="charts-row" id="chartsSection" aria-label="Overview charts">
+      <article class="chart-card">
+        <div class="chart-card-head">
+          <h3 class="chart-card-title" data-i18n="toolChartTitle">工具覆盖分布</h3>
+          <p class="chart-card-sub" data-i18n="toolChartSub">各目标工具关联项目数 · 单位：项目</p>
+        </div>
+        <div id="toolChart" class="chart-container chart-body" role="img" aria-label="Tool coverage chart"></div>
+      </article>
+      <article class="chart-card">
+        <div class="chart-card-head">
+          <h3 class="chart-card-title" data-i18n="scoreChartTitle">分数分布</h3>
+          <p class="chart-card-sub" data-i18n="scoreChartSub">项目 total_score 分桶 · 单位：项目数</p>
+        </div>
+        <div id="scoreChart" class="chart-container chart-body" role="img" aria-label="Score distribution chart"></div>
+      </article>
+    </section>
   </header>
 
   <main>
@@ -53,14 +70,11 @@
       <div id="discovery" class="discovery-grid"></div>
     </section>
 
-    <!-- Zone 2: Tool Overview -->
+    <!-- Zone 2: Tool Overview (grid only; charts live under metrics) -->
     <section id="toolOverviewSection">
       <h2 data-i18n="toolOverviewTitle">工具生态概览</h2>
       <p class="hint" data-i18n="toolOverviewHint">点击工具卡片查看该工具的生态资源</p>
       <div id="toolOverview" class="tool-grid"></div>
-      <div id="toolChart" class="chart-container"></div>
-      <!-- Score distribution chart moved here from search zone (dogfood #40) -->
-      <div id="scoreChart" class="chart-container"></div>
     </section>
 
     <!-- Zone 3: Search -->
@@ -68,47 +82,40 @@
       <h2 data-i18n="searchTitle">生态项目搜索</h2>
       <p class="hint" data-i18n="searchHint">多选标签筛选，支持 OR/AND 切换</p>
 
-      <!-- Controls -->
-      <div class="controls">
-        <input id="q" data-i18n-placeholder="searchPlaceholder" placeholder="搜索项目名称或描述..." aria-label="Search">
+      <div class="toolbar">
+        <div class="controls">
+          <input id="q" data-i18n-placeholder="searchPlaceholder" placeholder="搜索项目名称或描述..." aria-label="Search">
 
-        <!-- Tool tag buttons -->
-        <div id="toolTags" class="tag-group" role="group" aria-label="Tool filter"></div>
+          <div id="toolTags" class="tag-group" role="group" aria-label="Tool filter"></div>
+          <div id="typeTags" class="tag-group" role="group" aria-label="Type filter"></div>
 
-        <!-- Resource type tag buttons -->
-        <div id="typeTags" class="tag-group" role="group" aria-label="Type filter"></div>
+          <div id="modeToggle" class="mode-toggle" role="radiogroup" aria-label="Match mode">
+            <button class="active" role="radio" aria-checked="true" data-i18n="modeOR">任一匹配</button>
+            <button role="radio" aria-checked="false" data-i18n="modeAND">全部匹配</button>
+          </div>
 
-        <!-- OR/AND toggle (dogfood #8: radiogroup) -->
-        <div id="modeToggle" class="mode-toggle" role="radiogroup" aria-label="Match mode">
-          <button class="active" role="radio" aria-checked="true" data-i18n="modeOR">任一匹配</button>
-          <button role="radio" aria-checked="false" data-i18n="modeAND">全部匹配</button>
+          <select id="sort" aria-label="Sort">
+            <option value="score" data-i18n="sortScore">分数</option>
+            <option value="stars" data-i18n="sortStars">Stars</option>
+            <option value="updated" data-i18n="sortUpdated">最近更新</option>
+            <option value="match" data-i18n="sortMatch">标签匹配</option>
+            <option value="recent" data-i18n="sortRecent">最近发现</option>
+            <option value="name" data-i18n="sortName">名称</option>
+          </select>
+
+          <label><input id="curatedOnly" type="checkbox"> <span data-i18n="curatedOnly">只看推荐</span></label>
+          <label><input id="recentOnly" type="checkbox"> <span data-i18n="recentOnly">只看最近新增</span></label>
+          <label><input id="favoritesOnly" type="checkbox"> <span data-i18n="favoritesOnly">只看收藏</span></label>
         </div>
-
-        <!-- Sort -->
-        <select id="sort" aria-label="Sort">
-          <option value="score" data-i18n="sortScore">分数</option>
-          <option value="stars" data-i18n="sortStars">Stars</option>
-          <option value="updated" data-i18n="sortUpdated">最近更新</option>
-          <option value="match" data-i18n="sortMatch">标签匹配</option>
-          <option value="recent" data-i18n="sortRecent">最近发现</option>
-          <option value="name" data-i18n="sortName">名称</option>
-        </select>
-
-        <label><input id="curatedOnly" type="checkbox"> <span data-i18n="curatedOnly">只看推荐</span></label>
-        <label><input id="recentOnly" type="checkbox"> <span data-i18n="recentOnly">只看最近新增</span></label>
-        <label><input id="favoritesOnly" type="checkbox"> <span data-i18n="favoritesOnly">只看收藏</span></label>
       </div>
 
-      <!-- Active filter chips (dogfood #7) -->
       <div id="activeFilters" class="active-filters"></div>
 
-      <!-- Result count + clear (dogfood #7) -->
       <div class="result-count">
         <span id="resultCount"></span>
         <button id="clearFilters" class="clear-filters" data-i18n="clearFilters" style="display:none;">清空筛选</button>
       </div>
 
-      <!-- Results table -->
       <div class="table-wrapper">
         <table role="table">
           <thead>
@@ -127,22 +134,37 @@
     </section>
   </main>
 
-  <!-- Footer (dogfood #14) -->
   <footer>
     <span data-i18n="footerUpdated">数据更新于</span>: <span id="lastUpdated"></span> ·
     <a href="https://github.com/lzpgood123/search-in-coding" target="_blank" rel="noopener">GitHub</a> ·
     <span data-i18n="footerDesc">AI Coding Agent 生态追踪器</span>
   </footer>
 
-  <!-- Detail panel overlay -->
   <aside id="detailOverlay" class="detail-overlay" role="dialog" aria-modal="true" aria-label="Project details"></aside>
 
-  <!-- Scripts: load order matters -->
-  <script src="js/i18n.fcaae9.js"></script>
+  <div id="reportBackdrop" class="modal-backdrop" hidden></div>
+  <div id="reportModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="reportModalTitle" hidden>
+    <div class="modal-head">
+      <div>
+        <h2 id="reportModalTitle">推荐榜</h2>
+        <p class="meta" data-i18n="reportMeta">报告</p>
+      </div>
+      <button type="button" class="modal-close" data-action="close-report" aria-label="Close report">×</button>
+    </div>
+    <div class="modal-tabs" role="tablist" aria-label="Report tabs">
+      <button type="button" role="tab" data-report="curated-top.md" data-i18n="navTop">推荐榜</button>
+      <button type="button" role="tab" data-report="weekly-report.md" data-i18n="navWeekly">生态周报</button>
+      <button type="button" role="tab" data-report="tool-comparison.md" data-i18n="navCompare">工具对比</button>
+    </div>
+    <div id="reportModalBody" class="modal-body report-content"></div>
+  </div>
+
+  <!-- Scripts: load order matters; source names unhashed — build_site.py rewrites hashes -->
+  <script src="js/i18n.fb7982.js"></script>
   <script src="js/data.08cf6f.js"></script>
   <script src="js/filters.465341.js"></script>
-  <script src="js/charts.bf7d3b.js"></script>
+  <script src="js/charts.72413c.js"></script>
   <script src="js/render.ec3a64.js"></script>
-  <script src="js/app.ca2729.js"></script>
+  <script src="js/app.76c581.js"></script>
 </body>
 </html>

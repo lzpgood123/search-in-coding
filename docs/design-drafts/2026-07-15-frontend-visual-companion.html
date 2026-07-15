@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search in Coding — Frontend visual companion (Style B)</title>
+  <style>
+    :root {
+      --bg: #1c1917;
+      --elev: #292524;
+      --card: #2c2825;
+      --hover: #35302c;
+      --text: #faf7f2;
+      --muted: #b5aa9c;
+      --accent: #f59e0b;
+      --accent-soft: rgba(245,158,11,.14);
+      --accent-border: rgba(245,158,11,.35);
+      --link: #fcd34d;
+      --border: rgba(255,248,240,.10);
+      --radius: 16px;
+      --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 24px;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    h1 { font-size: 22px; letter-spacing: -.03em; margin: 0 0 6px; }
+    .sub { color: var(--muted); font-size: 13px; margin-bottom: 22px; }
+    h2 { font-size: 14px; margin: 28px 0 10px; color: var(--link); letter-spacing: .02em; text-transform: uppercase; }
+    .grid { display: grid; gap: 12px; }
+    .g2 { grid-template-columns: 1fr 1fr; }
+    .g3 { grid-template-columns: repeat(3, 1fr); }
+    .g4 { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 800px) {
+      .g2, .g3, .g4 { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 14px; }
+    .card p, .card li { font-size: 13px; color: var(--muted); margin: 0; }
+    .card ul { margin: 0; padding-left: 18px; }
+    .card li { margin: 4px 0; }
+    .swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+    .sw {
+      width: 72px; border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border); font-size: 10px; text-align: center;
+    }
+    .sw i { display: block; height: 36px; }
+    .sw b { display: block; padding: 4px; color: var(--muted); font-weight: 500; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      border: 1px solid var(--accent-border); background: var(--accent-soft);
+      color: var(--accent); border-radius: 999px; padding: 6px 12px;
+      font-size: 12px; font-weight: 600; margin: 2px;
+    }
+    .pill.ghost {
+      background: var(--card); color: var(--muted); border-color: var(--border);
+    }
+    .mock-header {
+      background: linear-gradient(180deg, #24201c, var(--bg));
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 16px;
+    }
+    .row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; }
+    .metric {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 10px;
+    }
+    .metric b { display: block; color: var(--accent); font-size: 20px; }
+    .metric span { font-size: 11px; color: var(--muted); }
+    .charts { display: grid; grid-template-columns: 1.15fr .85fr; gap: 8px; margin-top: 10px; }
+    .chart {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 10px; min-height: 110px;
+    }
+    .chart .t { font-size: 12px; font-weight: 700; }
+    .chart .s { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+    .bars { display: flex; align-items: flex-end; gap: 6px; height: 64px; }
+    .bars span {
+      flex: 1; background: var(--accent); border-radius: 4px 4px 0 0; position: relative;
+    }
+    .bars span::after {
+      content: attr(data-v); position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      font-size: 9px; color: var(--muted);
+    }
+    .compare td, .compare th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); font-size: 12px; vertical-align: top; }
+    .compare th { color: var(--muted); font-weight: 600; }
+    .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+    .tag.ok { background: rgba(52,211,153,.12); color: #6ee7b7; }
+    .tag.warn { background: rgba(251,146,60,.12); color: #fdba74; }
+    .tag.no { background: rgba(248,113,113,.12); color: #fca5a5; }
+    .note { font-size: 12px; color: var(--muted); margin-top: 8px; }
+    code { font-size: 12px; color: var(--link); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Frontend visual companion · Style B</h1>
+    <p class="sub">
+      讨论用视觉锚点（非最终 spec）。锁定气质：Warm paper dark · 琥珀强调 · 零框架 · 系统字体（无 Google Fonts）。
+      数据底座已变：5165 项目 · search-index · detail 分片 · LLM 覆盖率高。
+    </p>
+
+    <h2>1. Color system (locked direction)</h2>
+    <div class="card">
+      <div class="swatches">
+        <div class="sw"><i style="background:#1c1917"></i><b>bg</b></div>
+        <div class="sw"><i style="background:#292524"></i><b>elev</b></div>
+        <div class="sw"><i style="background:#2c2825"></i><b>card</b></div>
+        <div class="sw"><i style="background:#35302c"></i><b>hover</b></div>
+        <div class="sw"><i style="background:#faf7f2"></i><b>text</b></div>
+        <div class="sw"><i style="background:#b5aa9c"></i><b>muted</b></div>
+        <div class="sw"><i style="background:#f59e0b"></i><b>accent</b></div>
+        <div class="sw"><i style="background:#fcd34d"></i><b>link</b></div>
+      </div>
+      <p class="note">否决：过暗近黑主底、蓝紫渐变主强调、外链字体依赖。</p>
+    </div>
+
+    <h2>2. Target first-screen skeleton</h2>
+    <div class="mock-header">
+      <div class="row">
+        <div>
+          <div style="font-size:20px;font-weight:700;letter-spacing:-.03em">Search in Coding</div>
+          <div style="font-size:12px;color:var(--muted)">AI Coding Agent 生态追踪器</div>
+        </div>
+        <div>
+          <span class="pill">推荐榜</span>
+          <span class="pill ghost">生态周报</span>
+          <span class="pill ghost">工具对比</span>
+          <span class="pill ghost">导出收藏</span>
+          <span class="pill ghost">中文</span>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>5165</b><span>总记录</span></div>
+        <div class="metric"><b>40</b><span>推荐</span></div>
+        <div class="metric"><b>10</b><span>官方工具</span></div>
+        <div class="metric"><b>…</b><span>生态项目</span></div>
+      </div>
+      <div class="charts">
+        <div class="chart">
+          <div class="t">工具覆盖分布</div>
+          <div class="s">轴 + 网格 + 柱顶数值 · 桌面并排</div>
+          <div class="bars">
+            <span style="height:40%" data-v="120"></span>
+            <span style="height:90%" data-v="340"></span>
+            <span style="height:55%" data-v="180"></span>
+            <span style="height:30%" data-v="90"></span>
+            <span style="height:20%" data-v="60"></span>
+          </div>
+        </div>
+        <div class="chart">
+          <div class="t">分数分布</div>
+          <div class="s">偏斜数据也要读得懂数值</div>
+          <div class="bars">
+            <span style="height:15%" data-v="80"></span>
+            <span style="height:95%" data-v="2.1k"></span>
+            <span style="height:40%" data-v="600"></span>
+            <span style="height:25%" data-v="300"></span>
+            <span style="height:10%" data-v="90"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note">下方仍是：最新发现 → 工具概览（仅网格）→ 搜索工具栏 + 表格 → 页脚。</p>
+
+    <h2>3. Current production vs open design choices</h2>
+    <table class="compare card" style="width:100%;border-collapse:collapse">
+      <thead>
+        <tr>
+          <th>区域</th>
+          <th>线上 / 当前代码能力</th>
+          <th>Style B 目标（待讨论）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>数据加载</td>
+          <td><span class="tag ok">已有</span> search-index + detail 分片 52</td>
+          <td>默认不改后端/JSON 契约</td>
+        </tr>
+        <tr>
+          <td>色板 / 字体</td>
+          <td><span class="tag warn">WIP 本地</span> 暖石色草稿；系统字体（CSP）</td>
+          <td>完整 B 皮肤 + 密度/动效一致</td>
+        </tr>
+        <tr>
+          <td>图表</td>
+          <td><span class="tag warn">WIP</span> 可读 SVG 草稿；可上移 metrics 下</td>
+          <td>标题/轴/数值；并排；偏斜可读</td>
+        </tr>
+        <tr>
+          <td>报告入口</td>
+          <td><span class="tag">现状</span> data-report → 右侧 detailOverlay</td>
+          <td><span class="tag warn">开放</span> pill + 居中 modal？还是 pill 皮 + 侧栏？</td>
+        </tr>
+        <tr>
+          <td>项目详情</td>
+          <td><span class="tag ok">侧栏</span> /60|/100 · score/quality · 深链</td>
+          <td>默认保留侧栏 + B 皮肤</td>
+        </tr>
+        <tr>
+          <td>筛选/收藏/i18n</td>
+          <td><span class="tag ok">完整</span> chips / clear / fav / URL state</td>
+          <td>逻辑冻结，只 polish 呈现</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. Backend touch spectrum (for discussion)</h2>
+    <div class="grid g3">
+      <div class="card">
+        <h3>A · 零后端</h3>
+        <ul>
+          <li>只 site 呈现：CSS/HTML/少量 charts</li>
+          <li>报告仍 detail 或纯前端 modal</li>
+          <li>风险最低，最快上线</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>B · 前端 JS 可动</h3>
+        <ul>
+          <li>app/render 支持报告 modal + Esc 栈</li>
+          <li>i18n 图表文案</li>
+          <li>仍不改 data 管道</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>C · 允许数据/构建</h3>
+        <ul>
+          <li>新字段 / 新 API / build 改 schema</li>
+          <li>非视觉必需则不推荐</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>5. What this companion is NOT</h2>
+    <div class="card">
+      <ul>
+        <li>不是实现计划，也不是批准后的 spec</li>
+        <li>不推翻 Style B 气质（除非你主动否决）</li>
+        <li>下一步：逐题 grilling → 2–3 方案 → 分节设计 → 写 spec</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
