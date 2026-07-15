@@ -1,210 +1,171 @@
-# Search in Coding：AI Coding Agent 生态追踪索引库
+# Agent EcoRadar
+
+[English](README.en.md) | 中文
+
+> formerly Search in Coding
 
 [![Update Data](https://github.com/lzpgood123/search-in-coding/actions/workflows/update-data.yml/badge.svg)](https://github.com/lzpgood123/search-in-coding/actions/workflows/update-data.yml)
 [![Publish Site](https://github.com/lzpgood123/search-in-coding/actions/workflows/publish-site.yml/badge.svg)](https://github.com/lzpgood123/search-in-coding/actions/workflows/publish-site.yml)
 
-> 面向终端型 / Agentic AI Coding 工具的长期自动追踪索引库。GitHub 是完整数据与历史总仓库，正式站点是当前构建结果的公开展示面。
+> 自动扫描、评分并索引 AI Coding Agent 生态的持续雷达。  
+> **不是** awesome list，而是持续运行的数据管道。
 
-- **正式站点**：<https://coding.lzpgood.online/>
-- **GitHub 总仓库**：<https://github.com/lzpgood123/search-in-coding>
-- **当前版本**：`2026.07.06`
-- **维护模式**：Hermes 每日自动采集与分析；每周正式更新；可人工要求立即更新
-- **站点语言**：中文 / English 双语切换；新导入数据保留 `i18n.zh/en` 展示结构
-- **数据规模**：618 条归一化记录，60 条自动推荐，25 条自动低质/噪声记录
-
----
-
-## 目录
-
-- [项目定位](#项目定位)
-- [追踪范围](#追踪范围)
-- [AI 工具分类入口](#ai-工具分类入口)
-- [仓库文件说明](#仓库文件说明)
-- [数据流与自动化](#数据流与自动化)
-- [核心报告](#核心报告)
-- [如何立即更新](#如何立即更新)
-- [维护原则](#维护原则)
+**站点**：https://ecoradar.lzpgood.online/  
+**数据**：5,165 项目 · 推荐 40 · 噪声 10 · 目标工具 10  
+**仓库**：https://github.com/lzpgood123/search-in-coding  
+**版本**：`2026.07.16`
 
 ---
 
-## 项目定位
+## 这是什么
 
-Search in Coding 不是普通 awesome list，而是一个**持续自动更新的 AI Coding Agent 生态索引库**。它追踪工具本体、插件、MCP/ACP/A2A、skills、rules、prompts、上下文工程、PR review、CI 自动化、教程、案例和评测资源。
+Agent EcoRadar（智能体生态雷达）持续发现、归一化、评分并展示 AI Coding Agent 生态资源：插件、MCP、skills、rules、CLI 工具、agent 框架、教程与评测等。
 
-核心目标：
+| 维度 | 说明 |
+|------|------|
+| Eco | 生态全景：覆盖多工具与多资源类型 |
+| Radar | 持续扫描：定时增量采集 + 周期深度分析 |
+| Index | 可检索索引：站点筛选 / 搜索 / 公共 JSON |
 
-1. 每天自动发现新资料；
-2. 自动归一化、评分、分类；
-3. 自动维护推荐集与噪声集；
-4. 将 raw 数据、索引、报告、站点数据全部同步到 GitHub；
-5. 通过正式站点展示当前生态状态。
+GitHub 是完整数据与历史总仓库；正式站点是当前构建结果的公开展示面。
+
+---
+
+## AI 工作流
+
+```mermaid
+flowchart LR
+  A[定时采集 GitHub] --> B[归一化 / 分类]
+  B --> C[可量化评分 60]
+  C --> D[LLM 质量分析 40]
+  D --> E[推荐集 / 噪声集]
+  E --> F[报告 + 静态站构建]
+  F --> G[正式站点 / 公共 JSON]
+  F --> H[GitHub 同步]
+```
+
+公开自动化由两部分组成：
+
+1. **本地定时任务**：每日增量采集与评分；工作日增量 LLM 质量分析；周一全量 LLM 分析并部署站点。
+2. **GitHub Actions**：数据更新校验、站点预览发布与质量门禁备份路径。
+
+不依赖手工维护列表；维护者主要调整目标工具、查询与策略。
 
 ---
 
 ## 追踪范围
 
-### 目标工具
+### 目标工具（10）
 
-- **Claude Code**（`claude-code`）：terminal-agent，扩展点：skills, hooks, slash-commands, mcp, subagents
-- **OpenAI Codex CLI**（`codex-cli`）：terminal-agent，扩展点：skills, slash-commands, execution-policy, hooks, github-pr
-- **Antigravity CLI / Gemini CLI**（`antigravity-cli`）：terminal-agent，扩展点：plugins, skills, mcp, a2a, hooks, subagents
-- **OpenCode**（`opencode`）：terminal-agent，扩展点：commands, agents, mcp, lsp, sourcegraph
-- **Goose**（`goose`）：terminal-agent，扩展点：mcp extensions, recipes, subagents, acp, local models
-- **Qoder / QoderWork**（`qoder`）：ai-ide，扩展点：skills, plugins, mcp, repo-wiki
-- **Trae / Trae Work**（`trae`）：ai-ide，扩展点：mcp, skills, agent-system, online-search
-- **WorkBuddy / CodeBuddy**（`workbuddy-codebuddy`）：ai-ide，扩展点：mcp, skills, connectors, craft-agent
-- **Cursor**（`cursor`）：ai-ide，扩展点：rules, skills, mcp, hooks, cloud-agents, bugbot
-- **Hermes Agent**（`hermes-agent`）：persistent-agent，扩展点：skills, cron, memory, delegation, tools, mcp
-
-### 生态分类
-
-- `agent-harness`：363 条
-- `testing-review-ci`：357 条
-- `skills-prompts`：195 条
-- `mcp-acp-a2a`：162 条
-- `rules-instructions`：135 条
-- `context-engineering`：108 条
-- `terminal-agent`：37 条
-- `benchmark-evaluation`：31 条
-- `tutorial-case-study`：24 条
-- `official-tool`：10 条
-- `ai-ide`：4 条
-- `persistent-agent`：1 条
-
----
-
-## AI 工具分类入口
+- Claude Code（`claude-code`）
+- OpenAI Codex CLI（`codex-cli`）
+- Antigravity / Gemini CLI（`antigravity-cli`）
+- OpenCode（`opencode`）
+- Goose（`goose`）
+- Qoder（`qoder`）
+- Trae（`trae`）
+- WorkBuddy / CodeBuddy（`workbuddy-codebuddy`）
+- Cursor（`cursor`）
+- Hermes Agent（`hermes-agent`）
 
 完整工具索引：[`docs/tool-index.md`](docs/tool-index.md)
 
-| 工具 | 类型 | 当前记录数 | 入口 |
-|---|---|---|---:|---|
-| Claude Code | `terminal-agent` | 108 | [`claude-code`](docs/tool-index.md#claude-code-claude-code) |
-| OpenAI Codex CLI | `terminal-agent` | 61 | [`codex-cli`](docs/tool-index.md#openai-codex-cli-codex-cli) |
-| Antigravity CLI / Gemini CLI | `terminal-agent` | 68 | [`antigravity-cli`](docs/tool-index.md#antigravity-cli---gemini-cli-antigravity-cli) |
-| OpenCode | `terminal-agent` | 59 | [`opencode`](docs/tool-index.md#opencode-opencode) |
-| Goose | `terminal-agent` | 45 | [`goose`](docs/tool-index.md#goose-goose) |
-| Qoder / QoderWork | `ai-ide` | 57 | [`qoder`](docs/tool-index.md#qoder---qoderwork-qoder) |
-| Trae / Trae Work | `ai-ide` | 25 | [`trae`](docs/tool-index.md#trae---trae-work-trae) |
-| WorkBuddy / CodeBuddy | `ai-ide` | 55 | [`workbuddy-codebuddy`](docs/tool-index.md#workbuddy---codebuddy-workbuddy-codebuddy) |
-| Cursor | `ai-ide` | 72 | [`cursor`](docs/tool-index.md#cursor-cursor) |
-| Hermes Agent | `persistent-agent` | 53 | [`hermes-agent`](docs/tool-index.md#hermes-agent-hermes-agent) |
+### 资源类型（`resource_type`）
+
+常见类型包括：`agent-framework`、`skills`、`cli-tool`、`mcp-server`、`tutorial`、`extension`、`rules` 等。  
+站点支持按工具与类型多选筛选。
+
+### 追踪分级（`tracking_priority`）
+
+| 级别 | 含义 |
+|------|------|
+| `track` | 持续跟踪刷新 |
+| `index` | 保留索引，较低刷新优先级 |
+| `pending` | 待进一步判定 |
+| `reject` | 低价值 / 噪声方向 |
 
 ---
 
-## 仓库文件说明
+## 评分（100 分制）
 
-| 路径 | 作用 |
-|---|---|
-| `data/raw/` | GitHub / Exa / fallback web 原始采集快照，保留来源证据 |
-| `data/projects.yaml` | 全量归一化索引库，GitHub 总仓库的核心数据 |
-| `data/curated-projects.yaml` | `auto-curated` 自动评分推荐集，不再依赖人工审核 |
-| `data/rejected-projects.yaml` | `auto-rejected` 自动低质、噪声、弱相关或低可信记录 |
-| `data/scores.yaml` | 每条记录的评分结果与 `score_reason` |
-| `data/seed-tools.yaml` | 目标 AI Coding 工具清单 |
-| `data/queries.yaml` | GitHub / Exa 搜索 query 配置 |
-| `docs/tool-index.md` | 按 AI 工具组织的分类索引 |
-| `docs/reports/` | 自动生成的分析报告 |
-| `docs/releases/` | 日期版本发布说明 |
-| `site/` | 静态站点源码与站点数据 |
-| `scripts/` | 采集、归一化、评分、报告、构建、部署脚本 |
-| `.github/workflows/` | GitHub Actions 自动更新与 Pages 预览 |
-| `VERSION` / `CHANGELOG.md` | 日期版本号与变更记录 |
+| 部分 | 分值 | 更新节奏 |
+|------|------|----------|
+| 可量化分 | 60 | 每日（stars、活跃度、源质量等） |
+| LLM 质量分 | 40 | 周期 / 增量（质量、定位清晰度等） |
+| **总分** | **100** | 合并展示 |
+
+- 尚未完成 LLM 分析的项目，前端按 **/60** 展示可量化分。
+- 自动维护 **curated** 推荐集与 **rejected** 噪声集（规则驱动，非人工逐条审核）。
 
 ---
 
-## 数据流与自动化
+## 仓库结构
 
-```mermaid
-flowchart TD
-  A[GitHub Search / gh] --> R[data/raw/github]
-  B[Exa via mcporter] --> E[data/raw/exa]
-  R --> N[normalize]
-  E --> N
-  N --> P[data/projects.yaml]
-  P --> S[score]
-  S --> C[data/curated-projects.yaml]
-  S --> X[data/rejected-projects.yaml]
-  C --> G[generate reports]
-  X --> G
-  G --> Site[site/data + site/reports]
-  Site --> Deploy[https://coding.lzpgood.online]
-  P --> GitHub[GitHub 总仓库]
-  G --> GitHub
-  Site --> GitHub
+```text
+.
+├── scripts/          # 采集、归一化、评分、构建、部署
+├── tests/            # pytest
+├── site/             # 静态站源码（零依赖 SPA）
+├── data/             # projects / curated / seed-tools / queries 等
+├── config/           # 评分等配置
+├── docs/             # 稳定文档与自动报告
+├── schemas/          # 数据模式
+└── .github/          # Actions 与社区模板
 ```
 
-### Production scheduler
+---
 
-- 每日 03:00：自动收集与分析，部署正式站点，并推送 GitHub。
-- 每周一 09:00：较大范围更新并生成周报。
+## 站点与公共 JSON
 
-### GitHub Actions
+- 正式站：https://ecoradar.lzpgood.online/
+- 旧域名 `coding.lzpgood.online` 已 301 到新域（路径保留）
+- 公共数据示例：
+  - `/data/projects.json` — 精简列表
+  - `/data/search-index.json` — 搜索索引
+  - `/data/metrics.json` — 指标摘要
+  - `/data/detail/` — 详情分片
 
-- `Update Data`：在 GitHub 环境中收集/分析/提交数据；默认不部署服务器。
-- `Publish Site`：发布 GitHub Pages 预览。
+站点特性：中英双语、多选标签筛选、分页表格、详情侧栏、报告弹窗、原生 SVG 图表。
 
 ---
 
-## 核心报告
+## 自动化调度（中性说明）
 
-| 报告 | 说明 |
-|---|---|
-| [`docs/reports/final-delivery-report.md`](docs/reports/final-delivery-report.md) | 总体数据规模、来源分布、Top 项目 |
-| [`docs/reports/curated-top-projects.md`](docs/reports/curated-top-projects.md) | 自动评分推荐项目榜 |
-| [`docs/reports/tool-ecosystem-comparison.md`](docs/reports/tool-ecosystem-comparison.md) | 各目标工具生态对比 |
-| [`docs/reports/trends-and-opportunities.md`](docs/reports/trends-and-opportunities.md) | 趋势与机会 |
-| [`docs/reports/source-quality-audit.md`](docs/reports/source-quality-audit.md) | 来源质量审计 |
-| [`docs/reports/exa-status-and-fallback.md`](docs/reports/exa-status-and-fallback.md) | Exa 状态与 fallback 标注 |
-| [`docs/reports/optimization-backlog.md`](docs/reports/optimization-backlog.md) | 全流程体检与优化清单 |
-| [`docs/security-hardening.md`](docs/security-hardening.md) | 正式站点安全加固说明 |
-| [`docs/github-source-of-truth.md`](docs/github-source-of-truth.md) | GitHub 总仓库原则 |
-| [`docs/auto-maintenance-plan.md`](docs/auto-maintenance-plan.md) | 全自动维护方案 |
+| 节奏 | 内容 |
+|------|------|
+| 每日 | GitHub 增量采集 → 归一化 → 可量化评分 →（可选）分批元数据刷新 |
+| 工作日 | 增量 LLM 质量分析 → 构建 → 部署正式站 |
+| 每周一 | 全量 LLM 分析与基准更新 → 报告 → 构建 → 部署 |
+| Actions | 校验、预览发布、质量门禁 |
+
+本地环境需要 Python 3、虚拟环境依赖，以及已登录的 GitHub CLI（`gh`）用于仓库元数据。详见 [`CONTRIBUTING.md`](CONTRIBUTING.md)。
 
 ---
 
-## 如何立即更新
-
-在production runner工作区执行：
+## 快速开始（只读 / 本地预览）
 
 ```bash
-git pull --ff-only origin main
-python3 scripts/update_tracker.py --github-limit 50 --exa-limit 5 --deploy
-git status --short
+git clone https://github.com/lzpgood123/search-in-coding.git
+cd search-in-coding
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt   # 若仓库提供；或按 pyproject 安装
+python3 scripts/build_site.py
+# 使用任意静态服务器打开 site/
 ```
 
-如有变化：
-
-```bash
-git add -A
-git commit -m "chore(data): auto update tracker snapshot"
-git push origin main
-```
-
-GitHub Actions 也可以手动触发 `Update Data` workflow。
+环境变量样例见 [`.env.example`](.env.example)（无真实密钥）。
 
 ---
 
----
+## 贡献
 
-## 维护原则
+欢迎：报告问题、请求新增追踪工具、修正数据字段、改进前端与文档。
 
-1. **GitHub 是总仓库**：所有 raw、data、reports、site data、版本记录都必须回写 GitHub。
-2. **正式站点是展示面**：`https://coding.lzpgood.online/` 展示当前构建结果。
-3. **全自动评分优先**：不再进行逐条人工审核。
-4. **来源透明**：Exa、GitHub、fallback-web 必须清楚标注。
-5. **日期版本迭代**：重要更新使用 `YYYY.MM.DD` 版本号。
-6. **可复用**：替换 `seed-tools` 和 `queries` 后可迁移到其他技术生态追踪。
+- 贡献指南：[`CONTRIBUTING.md`](CONTRIBUTING.md)
+- 新工具清单：[`docs/add-new-tool-checklist.md`](docs/add-new-tool-checklist.md)
+- Issue / PR 模板：`.github/`
 
-## Additional operation docs
+## License
 
-- [`docs/data-api.md`](docs/data-api.md) | Public JSON data API |
-- [`docs/raw-data-retention.md`](docs/raw-data-retention.md) | Raw evidence retention/archive policy |
-- [`docs/ecosystem-tracker-template.md`](docs/ecosystem-tracker-template.md) | Reuse this project as an ecosystem tracker template |
-
-- [`docs/semantic-deduplication-plan.md`](docs/semantic-deduplication-plan.md) | Embedding / vector-library semantic deduplication plan |
-
-- [`docs/publication-policy.md`](docs/publication-policy.md) | Public repository publication and privacy policy |
-
-
-Production deployment uses `SEARCH_IN_CODING_WEBROOT` or `scripts/deploy_site.py --dest <webroot>`; concrete server paths should stay outside public docs.
+[MIT](LICENSE) © 2026 lzpgood123

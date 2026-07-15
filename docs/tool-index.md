@@ -1,16 +1,16 @@
 # AI 工具搜集分类索引
 
-> 本页是 `Search in Coding` 的工具维度索引，用于从目标 AI Coding 工具进入对应生态数据。数据来源为 `data/seed-tools.yaml` 与 `data/projects.yaml`，由自动采集和评分流程持续更新。
+> 本页是 **Agent EcoRadar**（智能体生态雷达，formerly Search in Coding）的工具维度索引，用于从目标 AI Coding 工具进入对应生态数据。数据来源为 `data/seed-tools.yaml` 与 `data/projects.yaml`，由自动采集和评分流程持续更新。
 
-正式站点：<https://coding.lzpgood.online/>  
+正式站点：<https://ecoradar.lzpgood.online/>  
 总仓库：<https://github.com/lzpgood123/search-in-coding>
 
 ## 总览
 
 - 目标工具数：10
-- 当前总记录数：618
-- Curated 自动推荐集：60
-- Rejected 自动低质/噪声集：25
+- 当前总记录数：5165
+- Curated 自动推荐集：40
+- Rejected 自动低质/噪声集：10
 
 ## 按工具索引
 

@@ -3,7 +3,6 @@ __pycache__/
 .env
 .venv/
 dist/
-.hermes/plans/
 data/raw/**/.tmp
 .DS_Store
 
@@ -20,10 +19,17 @@ data/llm-key-stats.json
 *.bak*
 logs/
 skills-lock.json
+
+# Development internal (not for public repo)
+.hermes/
 .agents/
-.claude/skills/
-.hermes/skills/animation-vocabulary
-.hermes/skills/apple-design
-.hermes/skills/emil-design-eng
-.hermes/skills/improve-animations
-.hermes/skills/review-animations
+.claude/
+HERMES.md
+AGENTS.md
+CONTEXT.md
+dogfood-output/
+.devcontainer/
+docs/superpowers/
+docs/design-drafts/
+wiki/
+.pytest_cache/

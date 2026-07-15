@@ -6,7 +6,7 @@ const SIC_i18n = {
 
   UI: {
     zh: {
-      subtitle: 'AI Coding Agent 生态追踪器：终端 Agent、AI IDE、MCP、Skills、Rules、Context Engineering',
+      subtitle: '智能体生态雷达：自动扫描、评分并索引 AI Coding Agent 生态',
       navWeekly: '生态周报', navCompare: '工具对比', navTop: '推荐榜',
       reportMeta: '报告',
       toolChartTitle: '工具覆盖分布',
@@ -33,12 +33,12 @@ const SIC_i18n = {
       benchmarkRef: '参照项目', relatedProjects: '关联项目', readme: 'README 预览',
       showing: '显示', clearFilters: '清空筛选',
       pageOf: '第 {cur} 页 / 共 {total} 页',
-      footerUpdated: '数据更新于', footerDesc: 'AI Coding Agent 生态追踪器',
+      footerUpdated: '数据更新于', footerDesc: '智能体生态雷达',
       metrics: { projects: '总记录', curated: '推荐', rejected: '噪声', official_tools: '官方工具', ecosystem_projects: '生态项目' },
       resourceTypes: { 'mcp-server': 'MCP Server', 'skills': 'Skills', 'rules': 'Rules', 'agent-framework': 'Agent 框架', 'cli-tool': 'CLI 工具', 'tutorial': '教程' },
     },
     en: {
-      subtitle: 'AI Coding Agent ecosystem tracker: terminal agents, AI IDEs, MCP, skills, rules, and context engineering',
+      subtitle: 'Agent EcoRadar: auto-scanned index of the AI coding agent ecosystem',
       navWeekly: 'Weekly Report', navCompare: 'Tool Comparison', navTop: 'Top Picks',
       reportMeta: 'Report',
       toolChartTitle: 'Tool Coverage',
@@ -65,7 +65,7 @@ const SIC_i18n = {
       benchmarkRef: 'Benchmark Reference', relatedProjects: 'Related Projects', readme: 'README Preview',
       showing: 'Showing', clearFilters: 'Clear filters',
       pageOf: 'Page {cur} of {total}',
-      footerUpdated: 'Data updated', footerDesc: 'AI Coding Agent Ecosystem Tracker',
+      footerUpdated: 'Data updated', footerDesc: 'Agent EcoRadar',
       metrics: { projects: 'Records', curated: 'Curated', rejected: 'Rejected', official_tools: 'Official', ecosystem_projects: 'Ecosystem' },
       resourceTypes: { 'mcp-server': 'MCP Server', 'skills': 'Skills', 'rules': 'Rules', 'agent-framework': 'Agent Framework', 'cli-tool': 'CLI Tool', 'tutorial': 'Tutorial' },
     }

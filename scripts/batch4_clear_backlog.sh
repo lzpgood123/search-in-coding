@@ -52,7 +52,7 @@ for i in $(seq 1 "$ROUNDS"); do
   python3 scripts/build_site.py 2>&1 | tee -a "$LOG" | tail -5
 
   echo "--- deploy ---" | tee -a "$LOG"
-  python3 scripts/deploy_site.py --dest /var/www/coding.lzpgood.online 2>&1 | tee -a "$LOG" | tail -10
+  python3 scripts/deploy_site.py --dest /var/www/ecoradar.lzpgood.online 2>&1 | tee -a "$LOG" | tail -10
 
   read -r P_AFTER A_AFTER T_AFTER < <(count_pending)
   echo "=== ROUND $i done $(date -Is) pending=$P_AFTER analyzed=$A_AFTER total=$T_AFTER ===" | tee -a "$LOG"

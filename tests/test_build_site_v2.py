@@ -86,5 +86,5 @@ class TestBuildSiteV2:
         sitemap = generate_sitemap([])
         assert '<?xml' in sitemap
         assert 'urlset' in sitemap
-        assert 'https://coding.lzpgood.online/' in sitemap
+        assert 'https://ecoradar.lzpgood.online/' in sitemap
         assert '<changefreq>daily</changefreq>' in sitemap

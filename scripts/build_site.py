@@ -31,7 +31,7 @@ DETAIL_FIELDS = SLIM_FIELDS + [
 # Detail shard size (batch 2 frontend perf)
 DETAIL_CHUNK_SIZE = 100
 
-SITE_URL = 'https://coding.lzpgood.online/'
+SITE_URL = 'https://ecoradar.lzpgood.online/'
 
 
 def write_json(name, data):
@@ -282,7 +282,7 @@ def main():
     # Generate robots.txt (dogfood #27)
     robots_path = ROOT / 'site' / 'robots.txt'
     robots_path.write_text(
-        'User-agent: *\nAllow: /\nSitemap: https://coding.lzpgood.online/sitemap.xml\n',
+        f'User-agent: *\nAllow: /\nSitemap: {SITE_URL.rstrip("/")}/sitemap.xml\n',
         encoding='utf-8'
     )
 

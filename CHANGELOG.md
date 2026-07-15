@@ -1,3 +1,18 @@
+## 2026.07.16 — Agent EcoRadar 品牌与主站切换
+
+### Changed
+
+- 产品公开品牌切换为 **Agent EcoRadar**（智能体生态雷达；过渡期标注 formerly Search in Coding）。
+- 正式站主入口切换为 `https://ecoradar.lzpgood.online/`；旧域 `coding.lzpgood.online` 301 到新域。
+- 站点 `SITE_URL`、sitemap / robots、标题与 OG 等可见品牌字符串同步更新。
+- README 中英重写；补充 MIT LICENSE、CONTRIBUTING 与 Issue/PR 模板。
+- 公开仓库清理：内部协作目录（如 wiki、过程规格草稿、本地 agent 配置）移出 git 追踪，本地保留。
+
+### Notes
+
+- GitHub 仓库 slug 仍为 `search-in-coding`（后续阶段再改名）。
+- 采集 / 评分 / LLM 业务逻辑与数据语义未改。
+
 ## 2026.07.13 — 自动更新
 
 ### Changed
