@@ -1,330 +1,299 @@
-[
-  {
-    "id": "claude-code",
-    "name": "Claude Code",
-    "vendor": "Anthropic",
-    "primary_type": "terminal-agent",
-    "repo": "anthropics/claude-code",
-    "website": "https://code.claude.com",
-    "docs": "https://code.claude.com",
-    "aliases": [
-      "Claude Code",
-      "claude-code",
-      "anthropic claude code"
-    ],
-    "config_files": [
-      "CLAUDE.md",
-      ".claude/rules/*.md"
-    ],
-    "extension_points": [
-      "skills",
-      "hooks",
-      "slash-commands",
-      "mcp",
-      "subagents"
-    ],
-    "related_concepts": [
-      "agentic-coding",
-      "context-engineering",
-      "mcp",
-      "skills",
-      "subagents"
-    ],
-    "tracking_priority": "high"
-  },
-  {
-    "id": "codex-cli",
-    "name": "OpenAI Codex CLI",
-    "vendor": "OpenAI",
-    "primary_type": "terminal-agent",
-    "repo": "openai/codex",
-    "website": "https://chatgpt.com/codex",
-    "docs": "https://developers.openai.com/codex",
-    "aliases": [
-      "Codex CLI",
-      "OpenAI Codex",
-      "codex"
-    ],
-    "config_files": [
-      "AGENTS.md",
-      "config.toml",
-      "requirements.toml"
-    ],
-    "extension_points": [
-      "skills",
-      "slash-commands",
-      "execution-policy",
-      "hooks",
-      "github-pr"
-    ],
-    "related_concepts": [
-      "agentic-coding",
-      "AGENTS.md",
-      "sandbox",
-      "policy-engine"
-    ],
-    "tracking_priority": "high"
-  },
-  {
-    "id": "antigravity-cli",
-    "name": "Antigravity CLI / Gemini CLI",
-    "vendor": "Google",
-    "primary_type": "terminal-agent",
-    "repo": "google-gemini/gemini-cli",
-    "website": "https://antigravity.google/",
-    "docs": "https://antigravity.google/docs/cli-install",
-    "aliases": [
-      "Antigravity CLI",
-      "Gemini CLI",
-      "agy",
-      "google gemini cli"
-    ],
-    "config_files": [
-      "context files",
-      "rules"
-    ],
-    "extension_points": [
-      "plugins",
-      "skills",
-      "mcp",
-      "a2a",
-      "hooks",
-      "subagents"
-    ],
-    "related_concepts": [
-      "multi-agent",
-      "a2a",
-      "mcp",
-      "plugins"
-    ],
-    "tracking_priority": "high"
-  },
-  {
-    "id": "opencode",
-    "name": "OpenCode",
-    "vendor": "Anomaly",
-    "primary_type": "terminal-agent",
-    "repo": "sst/opencode",
-    "website": "https://opencode.ai",
-    "docs": "https://opencode.ai/docs",
-    "aliases": [
-      "OpenCode",
-      "opencode ai",
-      "opencode cli"
-    ],
-    "config_files": [
-      ".opencode.json"
-    ],
-    "extension_points": [
-      "commands",
-      "agents",
-      "mcp",
-      "lsp",
-      "sourcegraph"
-    ],
-    "related_concepts": [
-      "multi-provider",
-      "lsp",
-      "mcp",
-      "subagents"
-    ],
-    "tracking_priority": "high"
-  },
-  {
-    "id": "goose",
-    "name": "Goose",
-    "vendor": "AAIF / Block",
-    "primary_type": "terminal-agent",
-    "repo": "block/goose",
-    "website": "https://goose-docs.ai/",
-    "docs": "https://goose-docs.ai/",
-    "aliases": [
-      "Goose",
-      "Block Goose",
-      "AAIF Goose"
-    ],
-    "config_files": [
-      "recipes yaml"
-    ],
-    "extension_points": [
-      "mcp extensions",
-      "recipes",
-      "subagents",
-      "acp",
-      "local models"
-    ],
-    "related_concepts": [
-      "mcp",
-      "acp",
-      "recipes",
-      "sandbox",
-      "local-inference"
-    ],
-    "tracking_priority": "high"
-  },
-  {
-    "id": "qoder",
-    "name": "Qoder / QoderWork",
-    "vendor": "Alibaba",
-    "primary_type": "ai-ide",
-    "repo": "QoderAI/qoder-action",
-    "website": "https://qoder.com",
-    "docs": "https://qoder.com",
-    "aliases": [
-      "Qoder",
-      "QoderWork",
-      "Qoder CLI"
-    ],
-    "config_files": [
-      "rules",
-      "memory"
-    ],
-    "extension_points": [
-      "skills",
-      "plugins",
-      "mcp",
-      "repo-wiki"
-    ],
-    "related_concepts": [
-      "spec-driven-development",
-      "repo-wiki",
-      "skills",
-      "mcp"
-    ],
-    "tracking_priority": "medium"
-  },
-  {
-    "id": "trae",
-    "name": "Trae / Trae Work",
-    "vendor": "ByteDance",
-    "primary_type": "ai-ide",
-    "repo": "bytedance/trae-agent",
-    "website": "https://www.trae.ai",
-    "docs": "https://www.trae.ai/docs",
-    "aliases": [
-      "Trae",
-      "Trae Agent",
-      "Trae SOLO",
-      "Trae Work"
-    ],
-    "config_files": [
-      "skills",
-      "agent settings"
-    ],
-    "extension_points": [
-      "mcp",
-      "skills",
-      "agent-system",
-      "online-search"
-    ],
-    "related_concepts": [
-      "ai-ide",
-      "builder-mode",
-      "solo-agent",
-      "mcp"
-    ],
-    "tracking_priority": "high"
-  },
-  {
-    "id": "workbuddy-codebuddy",
-    "name": "WorkBuddy / CodeBuddy",
-    "vendor": "Tencent",
-    "primary_type": "ai-ide",
-    "repo": null,
-    "website": "https://www.workbuddy.ai",
-    "docs": "https://www.workbuddy.ai/docs/zh/workbuddy/Overview",
-    "aliases": [
-      "WorkBuddy",
-      "CodeBuddy",
-      "Tencent Cloud CodeBuddy",
-      "腾讯云代码助手"
-    ],
-    "config_files": [
-      "skills",
-      "connectors"
-    ],
-    "extension_points": [
-      "mcp",
-      "skills",
-      "connectors",
-      "craft-agent"
-    ],
-    "related_concepts": [
-      "office-agent",
-      "code-completion",
-      "mcp",
-      "skills"
-    ],
-    "tracking_priority": "medium"
-  },
-  {
-    "id": "cursor",
-    "name": "Cursor",
-    "vendor": "Anysphere",
-    "primary_type": "ai-ide",
-    "repo": "getcursor/cursor",
-    "website": "https://cursor.com",
-    "docs": "https://docs.cursor.com",
-    "aliases": [
-      "Cursor",
-      "Cursor AI",
-      "Cursor rules"
-    ],
-    "config_files": [
-      ".cursorrules",
-      ".cursor/rules/*.mdc"
-    ],
-    "extension_points": [
-      "rules",
-      "skills",
-      "mcp",
-      "hooks",
-      "cloud-agents",
-      "bugbot"
-    ],
-    "related_concepts": [
-      "ai-ide",
-      "rules",
-      "mcp",
-      "cloud-agents",
-      "bugbot"
-    ],
-    "tracking_priority": "high"
-  },
-  {
-    "id": "hermes-agent",
-    "name": "Hermes Agent",
-    "vendor": "Nous Research",
-    "primary_type": "persistent-agent",
-    "repo": "NousResearch/hermes-agent",
-    "website": "https://hermes-agent.nousresearch.com/docs/",
-    "docs": "https://hermes-agent.nousresearch.com/docs/",
-    "aliases": [
-      "Hermes Agent",
-      "Nous Hermes",
-      "Hermes coding agent"
-    ],
-    "config_files": [
-      "SKILL.md",
-      "MEMORY.md",
-      "USER.md",
-      "cron prompts"
-    ],
-    "extension_points": [
-      "skills",
-      "cron",
-      "memory",
-      "delegation",
-      "tools",
-      "mcp"
-    ],
-    "related_concepts": [
-      "persistent-memory",
-      "skills",
-      "cron",
-      "delegation",
-      "self-improvement"
-    ],
-    "tracking_priority": "high"
-  }
-]
+- id: claude-code
+  name: Claude Code
+  vendor: Anthropic
+  primary_type: terminal-agent
+  repo: anthropics/claude-code
+  website: https://code.claude.com
+  docs: https://code.claude.com
+  aliases:
+  - Claude Code
+  - claude-code
+  - anthropic claude code
+  config_files:
+  - CLAUDE.md
+  - .claude/rules/*.md
+  extension_points:
+  - skills
+  - hooks
+  - slash-commands
+  - mcp
+  - subagents
+  related_concepts:
+  - agentic-coding
+  - context-engineering
+  - mcp
+  - skills
+  - subagents
+  tracking_priority: high
+  status: active
+  tool_kind: open
+  onboard_state: done
+- id: codex-cli
+  name: OpenAI Codex CLI
+  vendor: OpenAI
+  primary_type: terminal-agent
+  repo: openai/codex
+  website: https://chatgpt.com/codex
+  docs: https://developers.openai.com/codex
+  aliases:
+  - Codex CLI
+  - OpenAI Codex
+  - codex
+  config_files:
+  - AGENTS.md
+  - config.toml
+  - requirements.toml
+  extension_points:
+  - skills
+  - slash-commands
+  - execution-policy
+  - hooks
+  - github-pr
+  related_concepts:
+  - agentic-coding
+  - AGENTS.md
+  - sandbox
+  - policy-engine
+  tracking_priority: high
+  status: active
+  tool_kind: open
+  onboard_state: done
+- id: antigravity-cli
+  name: Antigravity CLI / Gemini CLI
+  vendor: Google
+  primary_type: terminal-agent
+  repo: google-gemini/gemini-cli
+  website: https://antigravity.google/
+  docs: https://antigravity.google/docs/cli-install
+  aliases:
+  - Antigravity CLI
+  - Gemini CLI
+  - agy
+  - google gemini cli
+  config_files:
+  - context files
+  - rules
+  extension_points:
+  - plugins
+  - skills
+  - mcp
+  - a2a
+  - hooks
+  - subagents
+  related_concepts:
+  - multi-agent
+  - a2a
+  - mcp
+  - plugins
+  tracking_priority: high
+  status: active
+  tool_kind: open
+  onboard_state: done
+- id: opencode
+  name: OpenCode
+  vendor: Anomaly
+  primary_type: terminal-agent
+  repo: sst/opencode
+  website: https://opencode.ai
+  docs: https://opencode.ai/docs
+  aliases:
+  - OpenCode
+  - opencode ai
+  - opencode cli
+  config_files:
+  - .opencode.json
+  extension_points:
+  - commands
+  - agents
+  - mcp
+  - lsp
+  - sourcegraph
+  related_concepts:
+  - multi-provider
+  - lsp
+  - mcp
+  - subagents
+  tracking_priority: high
+  status: active
+  tool_kind: open
+  onboard_state: done
+- id: goose
+  name: Goose
+  vendor: AAIF / Block
+  primary_type: terminal-agent
+  repo: block/goose
+  website: https://goose-docs.ai/
+  docs: https://goose-docs.ai/
+  aliases:
+  - Goose
+  - Block Goose
+  - AAIF Goose
+  config_files:
+  - recipes yaml
+  extension_points:
+  - mcp extensions
+  - recipes
+  - subagents
+  - acp
+  - local models
+  related_concepts:
+  - mcp
+  - acp
+  - recipes
+  - sandbox
+  - local-inference
+  tracking_priority: high
+  status: active
+  tool_kind: open
+  onboard_state: done
+- id: qoder
+  name: Qoder / QoderWork
+  vendor: Alibaba
+  primary_type: ai-ide
+  repo: QoderAI/qoder-action
+  website: https://qoder.com
+  docs: https://qoder.com
+  aliases:
+  - Qoder
+  - QoderWork
+  - Qoder CLI
+  config_files:
+  - rules
+  - memory
+  extension_points:
+  - skills
+  - plugins
+  - mcp
+  - repo-wiki
+  related_concepts:
+  - spec-driven-development
+  - repo-wiki
+  - skills
+  - mcp
+  tracking_priority: medium
+  status: active
+  tool_kind: open
+  onboard_state: done
+- id: trae
+  name: Trae / Trae Work
+  vendor: ByteDance
+  primary_type: ai-ide
+  repo: bytedance/trae-agent
+  website: https://www.trae.ai
+  docs: https://www.trae.ai/docs
+  aliases:
+  - Trae
+  - Trae Agent
+  - Trae SOLO
+  - Trae Work
+  config_files:
+  - skills
+  - agent settings
+  extension_points:
+  - mcp
+  - skills
+  - agent-system
+  - online-search
+  related_concepts:
+  - ai-ide
+  - builder-mode
+  - solo-agent
+  - mcp
+  tracking_priority: high
+  status: active
+  tool_kind: open
+  onboard_state: done
+- id: workbuddy-codebuddy
+  name: WorkBuddy / CodeBuddy
+  vendor: Tencent
+  primary_type: ai-ide
+  repo: null
+  website: https://www.workbuddy.ai
+  docs: https://www.workbuddy.ai/docs/zh/workbuddy/Overview
+  aliases:
+  - WorkBuddy
+  - CodeBuddy
+  - Tencent Cloud CodeBuddy
+  - 腾讯云代码助手
+  config_files:
+  - skills
+  - connectors
+  extension_points:
+  - mcp
+  - skills
+  - connectors
+  - craft-agent
+  related_concepts:
+  - office-agent
+  - code-completion
+  - mcp
+  - skills
+  tracking_priority: medium
+  status: active
+  tool_kind: closed
+  onboard_state: done
+- id: cursor
+  name: Cursor
+  vendor: Anysphere
+  primary_type: ai-ide
+  repo: getcursor/cursor
+  website: https://cursor.com
+  docs: https://docs.cursor.com
+  aliases:
+  - Cursor
+  - Cursor AI
+  - Cursor rules
+  config_files:
+  - .cursorrules
+  - .cursor/rules/*.mdc
+  extension_points:
+  - rules
+  - skills
+  - mcp
+  - hooks
+  - cloud-agents
+  - bugbot
+  related_concepts:
+  - ai-ide
+  - rules
+  - mcp
+  - cloud-agents
+  - bugbot
+  tracking_priority: high
+  status: active
+  tool_kind: open
+  onboard_state: done
+- id: hermes-agent
+  name: Hermes Agent
+  vendor: Nous Research
+  primary_type: persistent-agent
+  repo: NousResearch/hermes-agent
+  website: https://hermes-agent.nousresearch.com/docs/
+  docs: https://hermes-agent.nousresearch.com/docs/
+  aliases:
+  - Hermes Agent
+  - Nous Hermes
+  - Hermes coding agent
+  config_files:
+  - SKILL.md
+  - MEMORY.md
+  - USER.md
+  - cron prompts
+  extension_points:
+  - skills
+  - cron
+  - memory
+  - delegation
+  - tools
+  - mcp
+  related_concepts:
+  - persistent-memory
+  - skills
+  - cron
+  - delegation
+  - self-improvement
+  tracking_priority: high
+  status: active
+  tool_kind: open
+  onboard_state: done
+
