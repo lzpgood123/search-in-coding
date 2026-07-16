@@ -236,7 +236,13 @@ def main():
     projects = [enrich_project(p) for p in load_jsonish('data/projects.yaml')]
     curated = [enrich_project(p) for p in load_jsonish('data/curated-projects.yaml')]
     rejected = [enrich_project(p) for p in load_jsonish('data/rejected-projects.yaml')]
-    tools = [enrich_tool(t) for t in load_jsonish('data/seed-tools.yaml')]
+    # Only export status=active tools to the public site (draft/disabled stay offline)
+    raw_tools = load_jsonish('data/seed-tools.yaml') or []
+    tools = [
+        enrich_tool(t)
+        for t in raw_tools
+        if isinstance(t, dict) and t.get('status', 'active') == 'active'
+    ]
     concepts = load_jsonish('data/concepts.yaml')
 
     official = [p for p in projects if p.get('source_type') == 'official-seed']

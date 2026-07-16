@@ -227,6 +227,7 @@ nav .fav-btn { margin-left: 0; }
   width: 100%;
   overflow-x: auto;
   margin-bottom: 0;
+  -webkit-overflow-scrolling: touch;
 }
 .chart-container svg,
 .chart-body svg {
@@ -234,6 +235,15 @@ nav .fav-btn { margin-left: 0; }
   width: 100%;
   height: auto;
   max-width: 100%;
+}
+/* When many tools: allow horizontal scroll instead of crushing labels */
+.chart-scroll-x {
+  overflow-x: auto;
+  max-height: min(70vh, 720px);
+  overflow-y: auto;
+}
+.chart-scroll-x svg {
+  min-width: 320px;
 }
 
 /* === Main Layout === */
@@ -307,6 +317,34 @@ section h2 {
   padding: 4px 14px;
   min-width: 44px;
 }
+
+/* === Section head (title + expand toggle) === */
+.section-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.section-head .hint { margin-bottom: 0; }
+.ghost-btn {
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 160ms var(--ease-out), color 160ms var(--ease-out);
+}
+.ghost-btn:hover {
+  border-color: var(--color-accent-border);
+  color: var(--color-accent);
+}
+.ghost-btn[hidden] { display: none !important; }
 
 /* === Tool Overview === */
 .tool-grid {
@@ -410,7 +448,30 @@ input:focus, select:focus {
   margin-bottom: 0;
   font-weight: 600;
 }
+.tool-filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+#toolTagSearch {
+  min-width: min(180px, 100%);
+  flex: 1 1 160px;
+  border: 1px solid var(--color-border);
+  background: var(--color-input);
+  color: var(--color-text);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 12px;
+}
+#toolTagSearch:focus {
+  outline: none;
+  border-color: var(--color-accent-border);
+  box-shadow: var(--focus-ring);
+}
 .tag-group { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag-group .tag-btn { max-width: 100%; }
 .tag-btn {
   cursor: pointer;
   border: 1px solid var(--color-border);

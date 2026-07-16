@@ -7,6 +7,7 @@ const SIC_render = {
   renderedCount: 0,
   currentPage: 0,
   currentFiltered: [],
+  toolOverviewExpanded: false,
 
   $: function(id) { return document.getElementById(id); },
 
@@ -118,33 +119,63 @@ const SIC_render = {
 
   renderToolOverview: function() {
     var self = this;
+    var TOOL_OVERVIEW_TOP_N = 8;
     var tools = SIC_data.tools.filter(function(t) { return t.id !== 'general-ai-coding'; });
-    this.$('toolOverview').innerHTML = tools.map(function(t) {
+
+    // Precompute counts once
+    var withCounts = tools.map(function(t) {
       var count = SIC_data.projects.filter(function(p) {
         return (p.target_tools || []).includes(t.id) && p.tracking_priority !== 'reject';
       }).length;
       var curated = SIC_data.curated.filter(function(p) {
         return (p.target_tools || []).includes(t.id);
       }).length;
+      return { tool: t, count: count, curated: curated };
+    }).sort(function(a, b) { return b.count - a.count; });
+
+    var expanded = !!this.toolOverviewExpanded;
+    var needToggle = withCounts.length > TOOL_OVERVIEW_TOP_N;
+    var shown = (expanded || !needToggle)
+      ? withCounts
+      : withCounts.slice(0, TOOL_OVERVIEW_TOP_N);
+
+    var toggleBtn = this.$('toolOverviewToggle');
+    if (toggleBtn) {
+      toggleBtn.hidden = !needToggle;
+      if (needToggle) {
+        toggleBtn.textContent = expanded
+          ? SIC_i18n.t('collapseToolOverview')
+          : (SIC_i18n.t('expandToolOverview') + ' (' + withCounts.length + ')');
+      }
+    }
+
+    this.$('toolOverview').innerHTML = shown.map(function(item) {
+      var t = item.tool;
       return '<div class="tool-card" data-action="tool-filter" data-tool="' + self.esc(t.id) + '">' +
-        '<h3>' + self.esc(SIC_i18n.textOf(t, 'name') || t.name) + '</h3>' +
-        '<div class="tool-stats">' + count + (SIC_i18n.lang === 'zh' ? ' 个项目' : ' projects') +
-        ' · ' + curated + (SIC_i18n.lang === 'zh' ? ' 推荐' : ' curated') + '</div>' +
+        '<h3 title="' + self.esc(SIC_i18n.textOf(t, 'name') || t.name) + '">' +
+        self.esc(SIC_i18n.textOf(t, 'name') || t.name) + '</h3>' +
+        '<div class="tool-stats">' + item.count + (SIC_i18n.lang === 'zh' ? ' 个项目' : ' projects') +
+        ' · ' + item.curated + (SIC_i18n.lang === 'zh' ? ' 推荐' : ' curated') + '</div>' +
         '</div>';
     }).join('');
 
-    // Draw bar chart for tool coverage
-    var chartData = tools.map(function(t) {
-      return {
-        label: SIC_i18n.textOf(t, 'name') || t.name,
-        value: SIC_data.projects.filter(function(p) {
-          return (p.target_tools || []).includes(t.id) && p.tracking_priority !== 'reject';
-        }).length,
-      };
-    });
+    // Draw bar chart for tool coverage — hide zero-count tools to reduce clutter
+    var chartData = withCounts
+      .filter(function(item) { return item.count > 0; })
+      .map(function(item) {
+        return {
+          label: SIC_i18n.textOf(item.tool, 'name') || item.tool.name,
+          value: item.count,
+        };
+      });
     var maxVal = Math.max.apply(Math, chartData.map(function(d) { return d.value; }).concat([1]));
     var chartEl = this.$('toolChart');
-    if (chartEl) chartEl.innerHTML = SIC_charts.barChart(chartData, maxVal);
+    if (chartEl) {
+      chartEl.classList.add('chart-scroll-x');
+      chartEl.innerHTML = SIC_charts.barChart(chartData, maxVal, {
+        ariaLabel: SIC_i18n.t('toolChartTitle'),
+      });
+    }
   },
 
   renderScoreChart: function() {

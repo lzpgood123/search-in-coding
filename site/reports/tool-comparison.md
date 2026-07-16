@@ -1,31 +1,31 @@
-# 工具生态对比 - 2026-07-15
+# 工具生态对比 - 2026-07-16
 
 ## 生态规模
 
 | 工具 | 项目数 | 推荐数 | 平均分 | Top 项目 |
 |------|--------|--------|--------|---------|
-| Claude Code | 2652 | 32 | 61.2 | JuliusBrussee/caveman |
-| OpenAI Codex CLI | 1471 | 24 | 62.3 | Aider-AI/aider |
-| Antigravity CLI / Gemini CLI | 662 | 14 | 62.5 | Aider-AI/aider |
-| OpenCode | 795 | 13 | 62.2 | Aider-AI/aider |
-| Goose | 187 | 2 | 63.3 | aaif-goose/goose |
-| Qoder / QoderWork | 386 | 6 | 62.4 | Aider-AI/aider |
-| Trae / Trae Work | 520 | 6 | 62.4 | continuedev/continue |
-| WorkBuddy / CodeBuddy | 138 | 1 | 59.9 | markmcd/gemini-docs-ext |
-| Cursor | 907 | 19 | 62.2 | cursor/cursor |
-| Hermes Agent | 641 | 10 | 62.3 | continuedev/continue |
+| Claude Code | 2233 | 28 | 60.8 | JuliusBrussee/caveman |
+| OpenAI Codex CLI | 1276 | 22 | 62.1 | Aider-AI/aider |
+| Antigravity CLI / Gemini CLI | 683 | 12 | 61.6 | Aider-AI/aider |
+| OpenCode | 637 | 11 | 61.5 | Aider-AI/aider |
+| Goose | 9 | 1 | 65.7 | aaif-goose/goose |
+| Qoder / QoderWork | 356 | 6 | 61.6 | Aider-AI/aider |
+| Trae / Trae Work | 457 | 6 | 61.7 | continuedev/continue |
+| WorkBuddy / CodeBuddy | 49 | 1 | 52.5 | whyashthakker/agent-skills-marketing |
+| Cursor | 571 | 16 | 61.8 | cursor/cursor |
+| Hermes Agent | 546 | 8 | 61.6 | continuedev/continue |
 
 ## 资源类型分布
 
 | 工具 | MCP | Skills | Rules | Framework | CLI | Tutorial |
 |------|-----|--------|-------|-----------|-----|----------|
-| Claude Code | 606 | 1010 | 122 | 622 | 769 | 287 |
-| OpenAI Codex CLI | 329 | 433 | 54 | 433 | 600 | 98 |
-| Antigravity CLI / Gemini CLI | 167 | 126 | 22 | 186 | 355 | 41 |
-| OpenCode | 219 | 149 | 19 | 236 | 393 | 29 |
-| Goose | 154 | 12 | 0 | 20 | 46 | 5 |
-| Qoder / QoderWork | 126 | 47 | 1 | 98 | 267 | 12 |
-| Trae / Trae Work | 150 | 88 | 5 | 257 | 114 | 57 |
-| WorkBuddy / CodeBuddy | 88 | 27 | 0 | 14 | 33 | 7 |
-| Cursor | 379 | 241 | 77 | 139 | 234 | 69 |
-| Hermes Agent | 165 | 130 | 5 | 305 | 141 | 73 |
+| Claude Code | 573 | 951 | 134 | 1062 | 775 | 245 |
+| OpenAI Codex CLI | 336 | 439 | 85 | 740 | 667 | 117 |
+| Antigravity CLI / Gemini CLI | 203 | 171 | 40 | 381 | 486 | 51 |
+| OpenCode | 185 | 154 | 22 | 390 | 438 | 38 |
+| Goose | 5 | 1 | 0 | 6 | 4 | 2 |
+| Qoder / QoderWork | 111 | 83 | 16 | 220 | 344 | 7 |
+| Trae / Trae Work | 114 | 116 | 15 | 305 | 93 | 65 |
+| WorkBuddy / CodeBuddy | 11 | 24 | 0 | 19 | 13 | 7 |
+| Cursor | 228 | 212 | 83 | 302 | 246 | 46 |
+| Hermes Agent | 135 | 161 | 17 | 363 | 107 | 76 |

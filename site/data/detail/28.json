@@ -1,1689 +1,5 @@
 [
   {
-    "id": "github-whut09-opencode-plusplus",
-    "name": "whut09/opencode-plusplus",
-    "url": "https://github.com/whut09/opencode-plusplus",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "opencode"
-    ],
-    "summary": "OpenCode++: a Coding Agent Reliability Harness for OpenCode, adding context, edit boundaries, command evidence, verification gates, impact analysis, and repair loops.OpenCode++：面向 OpenCode 的 AI 编程可靠性增强框架，为其增加上下文管理、编辑边界、命令证据、验证门禁、影响分析与修复闭环能力",
-    "i18n": {
-      "zh": {
-        "name": "whut09/opencode-plusplus",
-        "summary": "OpenCode++: a Coding Agent Reliability Harness for OpenCode, adding context, edit boundaries, command evidence, verification gates, impact analysis, and repair loops.OpenCode++：面向 OpenCode 的 AI 编程可靠性增强框架，为其增加上下文管理、编辑边界、命令证据、验证门禁、影响分析与修复闭环能力"
-      },
-      "en": {
-        "name": "whut09/opencode-plusplus",
-        "summary": "OpenCode++: a Coding Agent Reliability Harness for OpenCode, adding context, edit boundaries, command evidence, verification gates, impact analysis, and repair loops.OpenCode++：面向 OpenCode 的 AI 编程可靠性增强框架，为其增加上下文管理、编辑边界、命令证据、验证门禁、影响分析与修复闭环能力"
-      }
-    },
-    "stars": 108,
-    "forks": 11,
-    "total_score": 60,
-    "quantifiable_score": 25,
-    "quality_score": 35,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T09:19:53Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "为OpenCode提供可靠性增强的框架，包含上下文管理、边界验证、影响分析等关键功能。",
-      "en": "A reliability harness for OpenCode, adding context management, edit boundaries, command evidence, verification gates, impact analysis, and repair loops."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 9,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "whut09/opencode-plusplus",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# OpenCode++\n\n中文 | [English](README.en.md)\n\n**为 OpenCode 增加上下文、边界、证据、验证与修复闭环的可靠性增强层。**\n\nOpenCode++ 不是 OpenCode 官方项目，也不替代 OpenCode。OpenCode 负责聊天、读代码、改代码、跑命令；OpenCode++ 负责上下文增强、编辑边界、命令证据、策略门禁、影响分析和修复/完成决策报告。\n\n```txt\nOpenCode 负责聊天、读代码、改代码、跑命令。\nOpenCode++ 负责上下文、边界、证据、门禁、影响分析和修复/完成决策报告。\n```\n\n## 30 秒开始\n\n在本机终端里全局安装 OpenCode++ 和 OpenCode：\n\n```bash\nnpm i -g opencode-plusplus opencode-ai\n```\n\n然后进入你要使用 OpenCode++ 的目标代码仓库：\n\n```bash\ncd your-repo\nopencode-plusplus\n```\n\n然后像使用 OpenCode 一样聊天：\n\n```txt\n帮我修复登录超时 bu",
-    "topics": [
-      "agent",
-      "harness",
-      "harness-ai",
-      "harness-engineering",
-      "loop-engineering",
-      "mcp",
-      "mcp-tools",
-      "mimo-code",
-      "mimocode",
-      "opencode",
-      "opencode-ai",
-      "opencode-plugin",
-      "code-agent",
-      "code-agent-cli",
-      "code-agent-harness",
-      "code-agents",
-      "hallucination-guard",
-      "verification",
-      "regression-guard"
-    ]
-  },
-  {
-    "id": "github-balianwang-busytok",
-    "name": "BalianWang/busytok",
-    "url": "https://github.com/BalianWang/busytok",
-    "source_type": "github",
-    "resource_type": [
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli"
-    ],
-    "summary": "Task-level model routing through persistent subagents, with local-first GUI and CLI orchestration",
-    "i18n": {
-      "zh": {
-        "name": "BalianWang/busytok",
-        "summary": "Task-level model routing through persistent subagents, with local-first GUI and CLI orchestration"
-      },
-      "en": {
-        "name": "BalianWang/busytok",
-        "summary": "Task-level model routing through persistent subagents, with local-first GUI and CLI orchestration"
-      }
-    },
-    "stars": 107,
-    "forks": 4,
-    "total_score": 58,
-    "quantifiable_score": 25,
-    "quality_score": 33,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T10:52:39Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "apache-2.0",
-    "languages": [
-      "Rust"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "Busytok 是一个本地优先的 GUI/CLI 任务路由工具，用于在 Claude Code 和 Codex CLI 等 AI 代理之间持久化子代理的任务分配。",
-      "en": "Busytok is a local-first GUI/CLI orchestration tool for routing tasks to persistent subagents, supporting Claude Code and Codex CLI."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 2,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "BalianWang/busytok",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Busytok\n\n[![CI](https://github.com/BalianWang/busytok/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/BalianWang/busytok/actions/workflows/verify.yml)\n[![Release](https://img.shields.io/github/v/release/BalianWang/busytok?include_prereleases)](https://github.com/BalianWang/busytok/releases)\n[![License: Apache--2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)\n\n[简体中文](README.zh-CN.md) | English\n\n**Busytok routes delegated tasks to an explicit prov",
-    "topics": [
-      "ai-agents",
-      "audit",
-      "claude-code",
-      "codex",
-      "dashboard",
-      "local-first",
-      "macos",
-      "react",
-      "rust",
-      "sqlite",
-      "tauri",
-      "token-usage",
-      "ai-orchestration",
-      "llm-routing",
-      "model-routing",
-      "subagents",
-      "task-routing"
-    ]
-  },
-  {
-    "id": "github-davidosherdiagnostica-data-gov-il-mcp",
-    "name": "DavidOsherdiagnostica/data-gov-il-mcp",
-    "url": "https://github.com/DavidOsherdiagnostica/data-gov-il-mcp",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "Advanced MCP server for seamless access to Israeli Government Open Data",
-    "i18n": {
-      "zh": {
-        "name": "DavidOsherdiagnostica/data-gov-il-mcp",
-        "summary": "Advanced MCP server for seamless access to Israeli Government Open Data"
-      },
-      "en": {
-        "name": "DavidOsherdiagnostica/data-gov-il-mcp",
-        "summary": "Advanced MCP server for seamless access to Israeli Government Open Data"
-      }
-    },
-    "stars": 107,
-    "forks": 23,
-    "total_score": 58,
-    "quantifiable_score": 27,
-    "quality_score": 31,
-    "tracking_priority": "track",
-    "last_updated": "2026-06-28T12:44:44Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个生产级的MCP服务器，提供对以色列政府开放数据的结构化访问，适合需要实时政府数据功能的AI编码代理。",
-      "en": "A production-grade MCP server providing structured access to Israeli government open data, useful for AI coding agents needing real-time government data capabilities."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 9,
-      "novelty": 6,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "DavidOsherdiagnostica/data-gov-il-mcp",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# data-gov-il-mcp\n\nProduction-grade [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for Israeli Government Open Data from [data.gov.il](https://data.gov.il).\n\nThis server gives MCP-compatible clients structured access to Israeli government datasets, resources, tags, organizations, and tabular records through the official CKAN API. It is written in TypeScript, validates inputs and outputs with Zod, returns JSON-first tool responses, and supports both local `stdio` and remot",
-    "topics": [
-      "ai",
-      "claude",
-      "government-data",
-      "israel",
-      "mcp",
-      "mcp-server",
-      "open-data",
-      "tools",
-      "data-gov-il"
-    ]
-  },
-  {
-    "id": "github-happenmass-omux",
-    "name": "Happenmass/omux",
-    "url": "https://github.com/Happenmass/omux",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli"
-    ],
-    "summary": "Orchestrate AI coding agents (Claude Code, Codex) as parallel subagents over tmux — a loop-engineering runtime with auto-continue, execute-then-review, and cross-session memory.",
-    "i18n": {
-      "zh": {
-        "name": "Happenmass/omux",
-        "summary": "Orchestrate AI coding agents (Claude Code, Codex) as parallel subagents over tmux — a loop-engineering runtime with auto-continue, execute-then-review, and cross-session memory."
-      },
-      "en": {
-        "name": "Happenmass/omux",
-        "summary": "Orchestrate AI coding agents (Claude Code, Codex) as parallel subagents over tmux — a loop-engineering runtime with auto-continue, execute-then-review, and cross-session memory."
-      }
-    },
-    "stars": 107,
-    "forks": 2,
-    "total_score": 58,
-    "quantifiable_score": 23,
-    "quality_score": 35,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:40:16Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "omux 是一个通过 tmux 并行编排 AI 编码代理（如 Claude Code 和 Codex）的元代理工具，支持自动继续、执行-审查循环和跨会话记忆。",
-      "en": "omux is a meta-agent that orchestrates AI coding agents (Claude Code, Codex) as parallel subagents over tmux, enabling unattended, large-scale loop-engineering with auto-continue, execute-then-review, and cross-session memory."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 2,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 8,
-      "novelty": 8,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "Happenmass/omux",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# omux\n\n**Run your CLI coding agent unattended, in parallel, at scale.**\n\nomux is a meta-agent that orchestrates the CLI coding agent of your choice — Claude Code, Codex, or anything else — through tmux. It spawns multiple instances, handles state and confirmations, remembers across sessions, and lets you walk away.\n\n[![npm](https://img.shields.io/npm/v/%40happenmass%2Fomux.svg)](https://www.npmjs.com/package/@happenmass/omux)\n[![license](https://img.shields.io/npm/l/%40happenmass%2Fomux.svg)](.",
-    "topics": [
-      "agent-orchestrator",
-      "agentic-workflow",
-      "ai-agents",
-      "autonomous-agents",
-      "claude-code",
-      "cli",
-      "codex",
-      "coding-agent",
-      "llm-orchestration",
-      "mcp",
-      "multi-agent",
-      "tmux"
-    ]
-  },
-  {
-    "id": "github-jiayuxu0-zipagent",
-    "name": "JiayuXu0/ZipAgent",
-    "url": "https://github.com/JiayuXu0/ZipAgent",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "codex-cli",
-      "trae",
-      "hermes-agent"
-    ],
-    "summary": "轻量级AI Agent框架，让你5分钟构建专属智能助手。Lightweight AI Agent framework. Build your AI assistant in 5 minutes.",
-    "i18n": {
-      "zh": {
-        "name": "JiayuXu0/ZipAgent",
-        "summary": "轻量级AI Agent框架，让你5分钟构建专属智能助手。Lightweight AI Agent framework. Build your AI assistant in 5 minutes."
-      },
-      "en": {
-        "name": "JiayuXu0/ZipAgent",
-        "summary": "轻量级AI Agent框架，让你5分钟构建专属智能助手。Lightweight AI Agent framework. Build your AI assistant in 5 minutes."
-      }
-    },
-    "stars": 107,
-    "forks": 8,
-    "total_score": 52,
-    "quantifiable_score": 25,
-    "quality_score": 27,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-09T19:00:59Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "轻量级AI Agent框架，支持MCP和OpenAI，旨在5分钟内构建专属智能助手。",
-      "en": "A lightweight AI agent framework supporting MCP and OpenAI, designed to build your AI assistant in 5 minutes."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 2,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 8,
-      "practicality": 7,
-      "novelty": 5,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "JiayuXu0/ZipAgent",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "⭐ **如果这个项目对你有帮助，请给我们一个 Star！** ⭐\n\n  \n  &nbsp;&nbsp;&nbsp;&nbsp;\n  \n\n[![PyPI version](https://badge.fury.io/py/zipagent.svg)](https://badge.fury.io/py/zipagent)\n[![Downloads](https://pepy.tech/badge/zipagent)](https://pepy.tech/project/zipagent)\n[![Python version](https://img.shields.io/pypi/pyversions/zipagent.svg)](https://pypi.org/project/zipagent/)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n\n[📚 文档](https://jiayuxu0.github.io/zip",
-    "topics": [
-      "agent",
-      "ai",
-      "mcp",
-      "openai",
-      "python"
-    ]
-  },
-  {
-    "id": "github-kimyx0207-findskill",
-    "name": "KimYx0207/findskill",
-    "url": "https://github.com/KimYx0207/findskill",
-    "source_type": "github",
-    "resource_type": [
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "Windows兼容版Claude Code技能搜索工具，修复npx skills空输出问题 | Windows-compatible Claude Code skills finder",
-    "i18n": {
-      "zh": {
-        "name": "KimYx0207/findskill",
-        "summary": "Windows兼容版Claude Code技能搜索工具，修复npx skills空输出问题 | Windows-compatible Claude Code skills finder"
-      },
-      "en": {
-        "name": "KimYx0207/findskill",
-        "summary": "Windows兼容版Claude Code技能搜索工具，修复npx skills空输出问题 | Windows-compatible Claude Code skills finder"
-      }
-    },
-    "stars": 107,
-    "forks": 21,
-    "total_score": 57,
-    "quantifiable_score": 25,
-    "quality_score": 32,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-02T09:24:50Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "针对Windows用户修复Claude Code技能搜索工具npx skills空输出问题的兼容性分支，实用性强。",
-      "en": "A Windows-compatible fork of the Claude Code skills finder that fixes the empty output issue with npx skills, highly practical for Windows users."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 8,
-      "novelty": 6,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "KimYx0207/findskill",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "[English](./README.md) | [中文](./README_CN.md)\n\n# find-skills (Windows Compatible Fork)\n\n![GitHub stars](https://img.shields.io/github/stars/KimYx0207/findskill?style=social)\n![GitHub forks](https://img.shields.io/github/forks/KimYx0207/findskill?style=social)\n![License](https://img.shields.io/badge/license-MIT-blue.svg)\n\n**Windows 兼容版 Claude Code 技能搜索工具**\n\n> 🔗 **GitHub仓库**：[https://github.com/KimYx0207/findskill](https://github.com/KimYx0207/findskill)\n\n> 老金的开源知识库，实时更新群二维码：https://my.feishu.cn/w",
-    "topics": []
-  },
-  {
-    "id": "github-onlyterp-prompt-cache-skills",
-    "name": "OnlyTerp/prompt-cache-skills",
-    "url": "https://github.com/OnlyTerp/prompt-cache-skills",
-    "source_type": "github",
-    "resource_type": [
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "opencode",
-      "cursor"
-    ],
-    "summary": "Drop-in prompt-caching fixes for the LLM agent harness you use. Point your AI coding agent at this repo and it ships the patches.",
-    "i18n": {
-      "zh": {
-        "name": "OnlyTerp/prompt-cache-skills",
-        "summary": "Drop-in prompt-caching fixes for the LLM agent harness you use. Point your AI coding agent at this repo and it ships the patches."
-      },
-      "en": {
-        "name": "OnlyTerp/prompt-cache-skills",
-        "summary": "Drop-in prompt-caching fixes for the LLM agent harness you use. Point your AI coding agent at this repo and it ships the patches."
-      }
-    },
-    "stars": 107,
-    "forks": 7,
-    "total_score": 59,
-    "quantifiable_score": 25,
-    "quality_score": 34,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T06:32:23Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "other",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "为主要的AI编码代理工具提供即插即用的提示缓存修复，降低API成本。",
-      "en": "Drop-in prompt-caching fixes for major AI coding agent harnesses, reducing API costs."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 2,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "OnlyTerp/prompt-cache-skills",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "---\n\nMost popular OSS agent harnesses (Cline, Roo Code, Continue, OpenCode,\nAider) leave **30-90% off your API bill** on the table because their\nprompt-caching code is subtly wrong, off-by-default, or just missing\nfor some providers.\n\nThis repo is a set of **drop-in skills** that any AI coding agent\n(Claude Code, Codex, Cline, Cursor, Devin, Gemini CLI, OpenCode…) can\nread and apply on its own.\n\nYou don't read the diffs. You point your agent at this repo and say:\n\n> *\"Apply every skill in this r",
-    "topics": [
-      "agents-md",
-      "ai-skills",
-      "aider",
-      "anthropic",
-      "claude-code",
-      "cline",
-      "llm-agents",
-      "openai",
-      "opencode",
-      "prompt-caching",
-      "prompt-engineering",
-      "roo-code"
-    ]
-  },
-  {
-    "id": "github-orlojhq-orloj",
-    "name": "OrlojHQ/orloj",
-    "url": "https://github.com/OrlojHQ/orloj",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [],
-    "summary": "An orchestration runtime for multi-agent AI systems. Declare agents, tools, and policies as YAML; Orloj schedules, executes, routes, and governs them for production-grade operation.",
-    "i18n": {
-      "zh": {
-        "name": "OrlojHQ/orloj",
-        "summary": "An orchestration runtime for multi-agent AI systems. Declare agents, tools, and policies as YAML; Orloj schedules, executes, routes, and governs them for production-grade operation."
-      },
-      "en": {
-        "name": "OrlojHQ/orloj",
-        "summary": "An orchestration runtime for multi-agent AI systems. Declare agents, tools, and policies as YAML; Orloj schedules, executes, routes, and governs them for production-grade operation."
-      }
-    },
-    "stars": 107,
-    "forks": 13,
-    "total_score": 58,
-    "quantifiable_score": 27,
-    "quality_score": 31,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-10T13:02:17Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "apache-2.0",
-    "languages": [
-      "Go"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "声明式AI多智能体编排运行时，用于生产级多智能体系统构建与运行。",
-      "en": "A production-grade orchestration runtime for multi-agent AI systems using declarative YAML configuration."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 7,
-      "practicality": 8,
-      "novelty": 8,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "OrlojHQ/orloj",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Agents are infrastructure.\n\n## Orloj is the full stack for agentic systems.\n\nBuild, run, govern, and observe multi-agent systems from one declarative stack: agents, tools, models, memory, schedules, webhooks, approvals, policies, workers, traces, metrics, and deployment primitives.\n\n**[Quickstart](#quickstart)** | **[Docs](https://docs.orloj.dev)** | **[Stack](#the-orloj-agent-stack)** | **[How It Works](#how-it-works)** | **[Screenshots](#screenshots)**\n\n> **Status:** Orloj is under active de",
-    "topics": [
-      "agent-framework",
-      "agentic-ai",
-      "agentic-orchestration",
-      "ai",
-      "ai-governance",
-      "ai-safety",
-      "declarative",
-      "guardrails",
-      "infrastructure-as-code",
-      "llm",
-      "llmops",
-      "mlops",
-      "multi-agent",
-      "open-source",
-      "orchestration",
-      "platform-engineering",
-      "workflow-orchestration",
-      "yaml",
-      "ai-agents"
-    ]
-  },
-  {
-    "id": "github-qredence-agentic-fleet",
-    "name": "Qredence/agentic-fleet",
-    "url": "https://github.com/Qredence/agentic-fleet",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [],
-    "summary": "Adaptive Agentic AI Reasoning using Microsoft Agent Framework -- Join the Discord for suggestion or support !  https://discord.gg/ebgy7gtZHK",
-    "i18n": {
-      "zh": {
-        "name": "Qredence/agentic-fleet",
-        "summary": "Adaptive Agentic AI Reasoning using Microsoft Agent Framework -- Join the Discord for suggestion or support !  https://discord.gg/ebgy7gtZHK"
-      },
-      "en": {
-        "name": "Qredence/agentic-fleet",
-        "summary": "Adaptive Agentic AI Reasoning using Microsoft Agent Framework -- Join the Discord for suggestion or support !  https://discord.gg/ebgy7gtZHK"
-      }
-    },
-    "stars": 107,
-    "forks": 10,
-    "total_score": 54,
-    "quantifiable_score": 27,
-    "quality_score": 27,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-10T21:13:12Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "基于DSPy与微软Agent框架的多智能体编排运行时，提供生产级任务路由与执行管道。",
-      "en": "A production-ready multi-agent orchestration runtime combining DSPy with Microsoft Agent Framework for task routing and execution."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 8,
-      "practicality": 7,
-      "novelty": 6,
-      "ecosystem_value": 6
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "Qredence/agentic-fleet",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# AgenticFleet\n\n  \n\n  \n  \n  \n  \n  \n  \n\nSelf-optimizing multi-agent orchestration powered by DSPy + Microsoft Agent Framework.\n\n---\n\n## Project Name and Description\n\n**AgenticFleet** is a production-ready multi-agent orchestration runtime that routes tasks to specialized agents through a five-phase pipeline (analysis → routing → execution → progress → quality). It combines DSPy for structured reasoning with the Microsoft Agent Framework for reliable execution, streaming rich events to both CLI an",
-    "topics": [
-      "agentic-ai",
-      "agents",
-      "ai",
-      "autogen-sample",
-      "agent-framework",
-      "multi-agent",
-      "agentic-ai-architecture",
-      "orchestration",
-      "python",
-      "workflows",
-      "dspy"
-    ]
-  },
-  {
-    "id": "github-avibebuilder-claude-prime",
-    "name": "avibebuilder/claude-prime",
-    "url": "https://github.com/avibebuilder/claude-prime",
-    "source_type": "github",
-    "resource_type": [
-      "cli-tool",
-      "skills",
-      "agent-framework"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "You've heard Claude Code can do amazing things. Skills, hooks, agents, memory systems — but who has time to figure all that out? Claude Prime sets it up for you in one command.",
-    "i18n": {
-      "zh": {
-        "name": "avibebuilder/claude-prime",
-        "summary": "You've heard Claude Code can do amazing things. Skills, hooks, agents, memory systems — but who has time to figure all that out? Claude Prime sets it up for you in one command."
-      },
-      "en": {
-        "name": "avibebuilder/claude-prime",
-        "summary": "You've heard Claude Code can do amazing things. Skills, hooks, agents, memory systems — but who has time to figure all that out? Claude Prime sets it up for you in one command."
-      }
-    },
-    "stars": 107,
-    "forks": 17,
-    "total_score": 61,
-    "quantifiable_score": 27,
-    "quality_score": 34,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-12T12:27:13Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "Claude Prime 是为 Claude Code 提供的一键设置工具包，集成技能、挂钩和项目上下文，实现可重复的 AI 编码工作流。",
-      "en": "One-command setup toolkit for Claude Code that integrates skills, hooks, and project context for repeatable AI coding workflows."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 9,
-      "novelty": 7,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "avibebuilder/claude-prime",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "Languages:\n  English ·\n  Tiếng Việt ·\n  Español ·\n  Português (Brasil) ·\n  简体中文 ·\n  日本語 ·\n  한국어\n\n# Claude Prime\n\n**Open source Claude Code toolkit for developers who want repeatable AI coding workflows instead of prompt chaos.**\n\nClaude Prime installs the missing layer around Claude Code: reusable skills, slash-command workflows, rules, hooks, project context, and setup helpers for real software teams.\n\nIt is built for developers who are tired of re-explaining their repo, fighting inconsistent A",
-    "topics": [
-      "agent-skills",
-      "claude",
-      "claude-code",
-      "claude-code-skills",
-      "claude-skills"
-    ]
-  },
-  {
-    "id": "github-ctxr-dev-llm-wiki-memory",
-    "name": "ctxr-dev/llm-wiki-memory",
-    "url": "https://github.com/ctxr-dev/llm-wiki-memory",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server"
-    ],
-    "target_tools": [
-      "claude-code",
-      "cursor",
-      "codex-cli"
-    ],
-    "summary": "Local, git-versioned memory for AI coding agents. No RAG, no Docker, no external service. Capture, compile, recall over a local LLM wiki with on-device embeddings and an MCP server.",
-    "i18n": {
-      "zh": {
-        "name": "ctxr-dev/llm-wiki-memory",
-        "summary": "Local, git-versioned memory for AI coding agents. No RAG, no Docker, no external service. Capture, compile, recall over a local LLM wiki with on-device embeddings and an MCP server."
-      },
-      "en": {
-        "name": "ctxr-dev/llm-wiki-memory",
-        "summary": "Local, git-versioned memory for AI coding agents. No RAG, no Docker, no external service. Capture, compile, recall over a local LLM wiki with on-device embeddings and an MCP server."
-      }
-    },
-    "stars": 107,
-    "forks": 0,
-    "total_score": 59,
-    "quantifiable_score": 23,
-    "quality_score": 36,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T19:19:21Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "JavaScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "为AI编码代理提供本地、版本化的持久记忆，通过MCP服务器实现跨会话的知识累积与召回。",
-      "en": "A local, git-versioned persistent memory for AI coding agents that enables cross-session knowledge accumulation and recall via an MCP server."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 0,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 9,
-      "novelty": 8,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "ctxr-dev/llm-wiki-memory",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "![LLM Wiki Memory](docs/assets/banner.svg)\n\n### Persistent local memory for AI coding agents. Your agent remembers every session, learns from its mistakes, and gets smarter the longer you work with it.\n\nClaude Code, Cursor, Codex, and every other MCP client forget everything when a session ends. LLM Wiki Memory fixes that: it captures your conversations, compiles them into durable project knowledge and lessons your agent applies next time, and recalls the right context through a local MCP server",
-    "topics": [
-      "agent-memory",
-      "andrej-karpathy",
-      "andrej-karpathy-llm-wiki",
-      "andrej-karpathy-skills",
-      "claude-code",
-      "embeddings",
-      "llm-wiki",
-      "memory",
-      "rag",
-      "semantic-search"
-    ]
-  },
-  {
-    "id": "github-jbarbier-claude-code-cost-estimate",
-    "name": "jbarbier/claude-code-cost-estimate",
-    "url": "https://github.com/jbarbier/claude-code-cost-estimate",
-    "source_type": "github",
-    "resource_type": [
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "Claude Code skill that estimates the full development cost of any codebase",
-    "i18n": {
-      "zh": {
-        "name": "jbarbier/claude-code-cost-estimate",
-        "summary": "Claude Code skill that estimates the full development cost of any codebase"
-      },
-      "en": {
-        "name": "jbarbier/claude-code-cost-estimate",
-        "summary": "Claude Code skill that estimates the full development cost of any codebase"
-      }
-    },
-    "stars": 107,
-    "forks": 25,
-    "total_score": 57,
-    "quantifiable_score": 25,
-    "quality_score": 32,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-09T13:21:23Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个Claude Code的斜杠命令，用于估算用人类团队重建代码库的成本，使用多种估算模型。",
-      "en": "A Claude Code slash command that estimates the cost to rebuild a codebase with a human team, using multiple estimation models."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "jbarbier/claude-code-cost-estimate",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# /cost-estimate — Claude Code Skill\n\nA custom [Claude Code](https://docs.anthropic.com/en/docs/claude-code) slash command that estimates the **replacement cost to rebuild** any codebase with a traditional human team — no AI, just developers, designers, PMs, and meetings.\n\nOpen Claude Code in any project, run `/cost-estimate`, and get a full breakdown: P10/P50/P90 ranges, a four-way cross-check (bottom-up × COCOMO II × Function Point × LOCOMO), real Claude token cost from session logs, current m",
-    "topics": []
-  },
-  {
-    "id": "github-legioncodeinc-honeycomb",
-    "name": "legioncodeinc/honeycomb",
-    "url": "https://github.com/legioncodeinc/honeycomb",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "cursor"
-    ],
-    "summary": "AI coding agents forget. They forget across sessions, and they forget across tools. A decision you reached in Claude Code at midnight is invisible to Cursor the next morning. Honeycomb fixes that. Learn something once; recall it everywhere,",
-    "i18n": {
-      "zh": {
-        "name": "legioncodeinc/honeycomb",
-        "summary": "AI coding agents forget. They forget across sessions, and they forget across tools. A decision you reached in Claude Code at midnight is invisible to Cursor the next morning. Honeycomb fixes that. Learn something once; recall it everywhere,"
-      },
-      "en": {
-        "name": "legioncodeinc/honeycomb",
-        "summary": "AI coding agents forget. They forget across sessions, and they forget across tools. A decision you reached in Claude Code at midnight is invisible to Cursor the next morning. Honeycomb fixes that. Learn something once; recall it everywhere,"
-      }
-    },
-    "stars": 107,
-    "forks": 13,
-    "total_score": 64,
-    "quantifiable_score": 27,
-    "quality_score": 37,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T05:04:09Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "agpl-3.0",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "Honeycomb 为 AI 编码代理提供跨会话、跨工具的共享持久记忆，解决遗忘问题。",
-      "en": "Honeycomb provides shared persistent memory for AI coding agents across sessions and tools, solving the forgetting problem."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 8,
-      "novelty": 9,
-      "ecosystem_value": 10
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "legioncodeinc/honeycomb",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "Honeycomb\n\n  Shared, persistent memory for your AI coding agents.\n  What one harness learns, every other one recalls, across sessions, tools, devices, and teammates.\n\n  \n  \n  \n\n  \n  \n  \n\n  \n  \n\n  \n    \n      \n      \n    \n  \n  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  \n    \n      \n      \n    \n  \n\nA Legion Code Inc. × Activeloop collaboration.\n\nAI coding agents forget. They forget across sessions, and they forget across tools. A decision you reached in Claude Code at midnight is invisible to Cursor t",
-    "topics": [
-      "ai",
-      "ai-agents",
-      "aimemory",
-      "anthropic",
-      "anthropic-claude",
-      "claude",
-      "claude-code",
-      "codex",
-      "codex-cli",
-      "codex-skill",
-      "cursor",
-      "cursor-ai",
-      "gemini",
-      "memory"
-    ]
-  },
-  {
-    "id": "github-manykarim-rf-mcp",
-    "name": "manykarim/rf-mcp",
-    "url": "https://github.com/manykarim/rf-mcp",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server"
-    ],
-    "target_tools": [],
-    "summary": "A Robot Framework MCP Server ",
-    "i18n": {
-      "zh": {
-        "name": "manykarim/rf-mcp",
-        "summary": "A Robot Framework MCP Server "
-      },
-      "en": {
-        "name": "manykarim/rf-mcp",
-        "summary": "A Robot Framework MCP Server "
-      }
-    },
-    "stars": 107,
-    "forks": 19,
-    "total_score": 59,
-    "quantifiable_score": 27,
-    "quality_score": 32,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-06T14:02:31Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "apache-2.0",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "将自然语言转换为Robot Framework测试用例的MCP服务器，提升AI编码代理的测试自动化能力。",
-      "en": "An MCP server that translates natural language into Robot Framework test cases, enhancing test automation for AI coding agents."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "manykarim/rf-mcp",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# 🤖 RobotMCP - AI-Powered Test Automation Bridge\n\n[![Python](https://img.shields.io/badge/python-3.10+-blue.svg)](https://python.org)\n[![Robot Framework](https://img.shields.io/badge/robot%20framework-7.0+-green.svg)](https://robotframework.org)\n[![FastMCP](https://img.shields.io/badge/fastmcp-2.8+-orange.svg)](https://github.com/jlowin/fastmcp)\n[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)\n\n**Transform natural language into production-ready Robot Framework te",
-    "topics": [
-      "ai",
-      "automation",
-      "mcp",
-      "python",
-      "robotframework"
-    ]
-  },
-  {
-    "id": "github-mode-io-skill-manager",
-    "name": "mode-io/skill-manager",
-    "url": "https://github.com/mode-io/skill-manager",
-    "source_type": "github",
-    "resource_type": [
-      "skills",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "opencode",
-      "cursor"
-    ],
-    "summary": "Manage skills across Codex CLI, Claude Code, Cursor, OpenCode, and OpenClaw from one local app.",
-    "i18n": {
-      "zh": {
-        "name": "mode-io/skill-manager",
-        "summary": "Manage skills across Codex CLI, Claude Code, Cursor, OpenCode, and OpenClaw from one local app."
-      },
-      "en": {
-        "name": "mode-io/skill-manager",
-        "summary": "Manage skills across Codex CLI, Claude Code, Cursor, OpenCode, and OpenClaw from one local app."
-      }
-    },
-    "stars": 107,
-    "forks": 11,
-    "total_score": 63,
-    "quantifiable_score": 27,
-    "quality_score": 36,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-08T14:01:54Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个本地优先的AI扩展控制中心，统一管理多个AI编码工具的技能、MCP服务器等。",
-      "en": "A local-first control center for AI extensions, unifying management of skills across multiple AI coding agent tools."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 8,
-      "novelty": 9,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "mode-io/skill-manager",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# skill-manager\n\n[中文说明](README.zh-CN.md)\n\n  \n\n  A local-first control center for AI extensions.\n  Use, review, scan, and discover Skills, MCP servers, slash commands, and CLI tools across agent harnesses.\n\n  \n  \n  \n  \n  \n  \n\n![skill-market-overview](./assets/skill-manager-skill-unification.svg)\n\n## Why it exists\n\nAI extensions are scattered across harness-specific folders, MCP config files, slash command locations, and marketplace sources. Skill Manager gives those pieces one local control surfa",
-    "topics": [
-      "agent-tools",
-      "claude-code",
-      "codex-cli",
-      "cursor",
-      "developer-tools",
-      "homebrew",
-      "macos",
-      "npm",
-      "openclaw",
-      "opencode",
-      "skill-manager",
-      "skills"
-    ]
-  },
-  {
-    "id": "github-openlegion-ai-openlegion",
-    "name": "openlegion-ai/openlegion",
-    "url": "https://github.com/openlegion-ai/openlegion",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework"
-    ],
-    "target_tools": [
-      "hermes-agent"
-    ],
-    "summary": "Secure autonomous AI agent framework and platform. Build AI teams by describing what you want. Orchestrate agents that can do everything a human can do.",
-    "i18n": {
-      "zh": {
-        "name": "openlegion-ai/openlegion",
-        "summary": "Secure autonomous AI agent framework and platform. Build AI teams by describing what you want. Orchestrate agents that can do everything a human can do."
-      },
-      "en": {
-        "name": "openlegion-ai/openlegion",
-        "summary": "Secure autonomous AI agent framework and platform. Build AI teams by describing what you want. Orchestrate agents that can do everything a human can do."
-      }
-    },
-    "stars": 107,
-    "forks": 24,
-    "total_score": 60,
-    "quantifiable_score": 27,
-    "quality_score": 33,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-12T13:38:17Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "other",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个安全的自主AI代理框架和平台，用于构建和编排代理团队。",
-      "en": "A secure autonomous AI agent framework and platform for building and orchestrating agent teams."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 9,
-      "novelty": 7,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "openlegion-ai/openlegion",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "The secure AI agent runtime for builders who can't afford a security incident.\n\n   \n[![License: PolyForm Perimeter 1.0.1](https://img.shields.io/badge/license-PolyForm%20Perimeter%201.0.1-orange.svg)](LICENSE)\n[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://python.org)\n[![Tests: 5800+](https://img.shields.io/badge/tests-5800%2B%20passing-brightgreen)](https://github.com/openlegion-ai/openlegion/actions/workflows/test.yml)\n[![Discord](https://img.shields.io/badge/Dis",
-    "topics": [
-      "agent-framework",
-      "ai-agents",
-      "autonomous-agents",
-      "llm-agents",
-      "multi-agent",
-      "openclaw-alternative",
-      "self-hosted",
-      "openclaw",
-      "docker-sandbox",
-      "hermes-agent",
-      "agent-orchestration",
-      "agentic-ai",
-      "ai-agent",
-      "ai-agent-security",
-      "docker",
-      "generative-ai",
-      "litellm",
-      "llm",
-      "mcp",
-      "hermes-agent-alternative"
-    ]
-  },
-  {
-    "id": "github-papadopouloskyriakos-agentic-chatops",
-    "name": "papadopouloskyriakos/agentic-chatops",
-    "url": "https://github.com/papadopouloskyriakos/agentic-chatops",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "tutorial"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "3-tier agentic ChatOps (n8n + GPT-4o + Claude Code) implementing all 21 patterns from \"Agentic Design Patterns\" — solo operator managing 137 devices",
-    "i18n": {
-      "zh": {
-        "name": "papadopouloskyriakos/agentic-chatops",
-        "summary": "3-tier agentic ChatOps (n8n + GPT-4o + Claude Code) implementing all 21 patterns from \"Agentic Design Patterns\" — solo operator managing 137 devices"
-      },
-      "en": {
-        "name": "papadopouloskyriakos/agentic-chatops",
-        "summary": "3-tier agentic ChatOps (n8n + GPT-4o + Claude Code) implementing all 21 patterns from \"Agentic Design Patterns\" — solo operator managing 137 devices"
-      }
-    },
-    "stars": 107,
-    "forks": 26,
-    "total_score": 54,
-    "quantifiable_score": 25,
-    "quality_score": 29,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T13:04:58Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个实用的代理式ChatOps实现，使用Claude Code、n8n和GPT-4o来管理基础设施告警并自动化运维，实现了全部21种代理设计模式。",
-      "en": "A practical implementation of agentic ChatOps using Claude Code, n8n, and GPT-4o to manage infrastructure alerts and automate operations for a solo operator, implementing all 21 agentic design patterns."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 7,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "papadopouloskyriakos/agentic-chatops",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# agentic-chatops\n\nAI agents that triage infrastructure alerts, investigate root causes, and propose fixes — while a solo operator sleeps.\n\n> **For the complete technical reference, see [README.extensive.md](README.extensive.md).**\n\n![Architecture](docs/agentic-chatops.png)\n\n## The Problem\n\nOne person. **310+ infrastructure objects** across 6 sites. 3 firewalls, 12 Kubernetes nodes, self-hosted everything. When an alert fires at 3am, there's no team to call. There never is.\n\n## The Solution\n\nThr",
-    "topics": [
-      "agentic-ai",
-      "chatops",
-      "claude-code",
-      "devops",
-      "infrastructure-automation",
-      "matrix",
-      "mcp",
-      "multi-agent-systems",
-      "n8n",
-      "self-hosted"
-    ]
-  },
-  {
-    "id": "github-ryanmac-code-conductor",
-    "name": "ryanmac/code-conductor",
-    "url": "https://github.com/ryanmac/code-conductor",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "Ship 10x faster by running multiple Claude Code sub agents in parallel. GitHub-native orchestration for AI coding agents—no conflicts, no complexity, just pure parallelized productivity.",
-    "i18n": {
-      "zh": {
-        "name": "ryanmac/code-conductor",
-        "summary": "Ship 10x faster by running multiple Claude Code sub agents in parallel. GitHub-native orchestration for AI coding agents—no conflicts, no complexity, just pure parallelized productivity."
-      },
-      "en": {
-        "name": "ryanmac/code-conductor",
-        "summary": "Ship 10x faster by running multiple Claude Code sub agents in parallel. GitHub-native orchestration for AI coding agents—no conflicts, no complexity, just pure parallelized productivity."
-      }
-    },
-    "stars": 107,
-    "forks": 9,
-    "total_score": 59,
-    "quantifiable_score": 25,
-    "quality_score": 34,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T09:54:55Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "通过并行运行多个Claude Code子代理，大幅提升开发效率。",
-      "en": "Orchestrates multiple Claude Code agents in parallel to ship features faster."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 2,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 7,
-      "novelty": 8,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "ryanmac/code-conductor",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# 🎼 Code Conductor\n\n**Orchestrate multiple AI coding agents. Ship 10x faster.**\n\n## The Problem\n\nYou're using Claude Code to ship features, but you're still working sequentially. One task at a time. One PR at a time. Meanwhile, your backlog keeps growing.\n\n## The Solution\n\nCode Conductor lets you run multiple AI agents in parallel—each working on different features simultaneously. No conflicts. No coordination overhead. Just pure, parallelized productivity.\n\n**Transform your workflow:**\n- 🚀 **Ho",
-    "topics": [
-      "agentic",
-      "agentic-ai",
-      "agentic-ai-development",
-      "agentic-coding",
-      "agentic-framework",
-      "agentic-systems",
-      "agentic-workflow",
-      "conductor",
-      "vibe",
-      "vibe-coding",
-      "vibecoding",
-      "vibecoding-tool",
-      "claude",
-      "claude-ai",
-      "claude-api",
-      "claude-code"
-    ]
-  },
-  {
-    "id": "github-smithclay-claudetainer",
-    "name": "smithclay/claudetainer",
-    "url": "https://github.com/smithclay/claudetainer",
-    "source_type": "github",
-    "resource_type": [
-      "tutorial"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "Easy Claude Code devcontainer workflows",
-    "i18n": {
-      "zh": {
-        "name": "smithclay/claudetainer",
-        "summary": "Easy Claude Code devcontainer workflows"
-      },
-      "en": {
-        "name": "smithclay/claudetainer",
-        "summary": "Easy Claude Code devcontainer workflows"
-      }
-    },
-    "stars": 107,
-    "forks": 8,
-    "total_score": 45,
-    "quantifiable_score": 25,
-    "quality_score": 20,
-    "tracking_priority": "track",
-    "last_updated": "2026-05-31T10:48:43Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Shell"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个用于Claude Code的devcontainer配置，现已因官方远程控制功能而废弃。",
-      "en": "A devcontainer feature for Claude Code, now obsolete due to official remote control capabilities."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 2,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 8,
-      "practicality": 6,
-      "novelty": 4,
-      "ecosystem_value": 2
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "smithclay/claudetainer",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# claudetainer 📦 🤖\n### March 2026 update: This is now obsoleted by Claude Code [\"Remote Control\" capabilities](https://code.claude.com/docs/en/remote-control).\n### October 2025 update: Claude Code is now available in [research preview in Anthropic's iOS app](https://www.anthropic.com/news/claude-code-on-the-web) with built-in sandboxing, this may be the official solution you're looking for :)\n\n[![Test](https://github.com/smithclay/claudetainer/workflows/Test/badge.svg)](https://github.com/smithc",
-    "topics": [
-      "claude-code",
-      "devcontainer-feature"
-    ]
-  },
-  {
-    "id": "github-stefanoamorelli-fred-mcp-server",
-    "name": "stefanoamorelli/fred-mcp-server",
-    "url": "https://github.com/stefanoamorelli/fred-mcp-server",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "goose",
-      "qoder",
-      "trae",
-      "workbuddy-codebuddy",
-      "cursor",
-      "hermes-agent"
-    ],
-    "summary": "Open-source FRED MCP Server (Federal Reserve Economic Data)",
-    "i18n": {
-      "zh": {
-        "name": "stefanoamorelli/fred-mcp-server",
-        "summary": "Open-source FRED MCP Server (Federal Reserve Economic Data)"
-      },
-      "en": {
-        "name": "stefanoamorelli/fred-mcp-server",
-        "summary": "Open-source FRED MCP Server (Federal Reserve Economic Data)"
-      }
-    },
-    "stars": 107,
-    "forks": 32,
-    "total_score": 54,
-    "quantifiable_score": 27,
-    "quality_score": 27,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-11T07:24:56Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "agpl-3.0",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "为AI编程助手提供美联储经济数据的MCP服务器",
-      "en": "MCP server providing Federal Reserve Economic Data for AI coding agents to access economic indicators"
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 6,
-      "practicality": 9,
-      "novelty": 5,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "stefanoamorelli/fred-mcp-server",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Federal Reserve Economic Data MCP Server\n\n[![smithery badge](https://smithery.ai/badge/@stefanoamorelli/fred-mcp-server)](https://smithery.ai/server/@stefanoamorelli/fred-mcp-server)\n[![npm version](https://img.shields.io/npm/v/fred-mcp-server.svg)](https://www.npmjs.com/package/fred-mcp-server)\n[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14536707.svg)](https://doi.org/10.5281/zenodo.14536707)\n[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gn",
-    "topics": [
-      "finance",
-      "genai",
-      "llm",
-      "mcp-server",
-      "data",
-      "data-analysis-project",
-      "financial-analysis",
-      "mcp",
-      "model-context-protocol",
-      "model-context-protocol-server"
-    ]
-  },
-  {
-    "id": "github-trentmcnitt-cc-notifier",
-    "name": "trentmcnitt/cc-notifier",
-    "url": "https://github.com/trentmcnitt/cc-notifier",
-    "source_type": "github",
-    "resource_type": [
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "🔔 Smart macOS + Push Notifications for Claude Code",
-    "i18n": {
-      "zh": {
-        "name": "trentmcnitt/cc-notifier",
-        "summary": "🔔 Smart macOS + Push Notifications for Claude Code"
-      },
-      "en": {
-        "name": "trentmcnitt/cc-notifier",
-        "summary": "🔔 Smart macOS + Push Notifications for Claude Code"
-      }
-    },
-    "stars": 107,
-    "forks": 9,
-    "total_score": 60,
-    "quantifiable_score": 23,
-    "quality_score": 37,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-06T18:47:12Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "为Claude Code提供智能macOS和推送通知及上下文恢复的工具。",
-      "en": "Smart macOS and push notifications for Claude Code with context restoration."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 2,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 10,
-      "novelty": 8,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "trentmcnitt/cc-notifier",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# cc-notifier 🔔\n\n**Smart Notifications for Claude Code on Desktop and Mobile**\n\nClick notifications to instantly restore your exact Claude Code context across macOS Spaces—not just the app, but your specific terminal/IDE window (and iTerm2 tab when available).\n\nAlso enables seamless 📱 mobile development via push notifications.\n\n## Features\n\n- **🎯 Click-to-Focus** - Restore exact window across Spaces, not just the app. With iTerm2, cc-notifier also restores the original tab/session within that wi",
-    "topics": [
-      "claude-code",
-      "macos",
-      "notifications"
-    ]
-  },
-  {
-    "id": "github-ucsandman-marketing-studio",
-    "name": "ucsandman/marketing-studio",
-    "url": "https://github.com/ucsandman/marketing-studio",
-    "source_type": "github",
-    "resource_type": [
-      "skills",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "Agent-driven marketing studio for Claude Code: one /marketing command renders your product's full launch asset suite (logo reveal, demo, launch video, social clips, OG assets)",
-    "i18n": {
-      "zh": {
-        "name": "ucsandman/marketing-studio",
-        "summary": "Agent-driven marketing studio for Claude Code: one /marketing command renders your product's full launch asset suite (logo reveal, demo, launch video, social clips, OG assets)"
-      },
-      "en": {
-        "name": "ucsandman/marketing-studio",
-        "summary": "Agent-driven marketing studio for Claude Code: one /marketing command renders your product's full launch asset suite (logo reveal, demo, launch video, social clips, OG assets)"
-      }
-    },
-    "stars": 109,
-    "forks": 17,
-    "total_score": 64,
-    "quantifiable_score": 27,
-    "quality_score": 37,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:58:33Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "JavaScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个专为Claude Code设计的代理驱动营销工作室，通过一条命令生成完整的产品发布资产套件。",
-      "en": "An agent-driven marketing studio for Claude Code that generates a full launch asset suite with a single command."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 9,
-      "novelty": 9,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "ucsandman/marketing-studio",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Marketing Studio\n\nAn agent-driven marketing studio for Claude Code. You type `/marketing` in your product's repo; the agent onboards your brand, films your app, renders a full marketing asset suite in this engine, and copies the finished files back to you.\n\n![Animated OG loop rendered by the studio](examples/paperroute/readme.gif)\n\n*An animated OG loop the studio rendered for a real product, from brand tokens alone. More in [`examples/`](examples/).*\n\n## The one command\n\n```\n/marketing\n```\n\nOn",
-    "topics": [
-      "ai-agents",
-      "blender",
-      "claude-code",
-      "marketing",
-      "remotion",
-      "video-generation"
-    ]
-  },
-  {
-    "id": "github-video-db-skills",
-    "name": "video-db/skills",
-    "url": "https://github.com/video-db/skills",
-    "source_type": "github",
-    "resource_type": [
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "opencode"
-    ],
-    "summary": "Server-side video workflows for agents: ingest, understand, search, edit, stream.",
-    "i18n": {
-      "zh": {
-        "name": "video-db/skills",
-        "summary": "Server-side video workflows for agents: ingest, understand, search, edit, stream."
-      },
-      "en": {
-        "name": "video-db/skills",
-        "summary": "Server-side video workflows for agents: ingest, understand, search, edit, stream."
-      }
-    },
-    "stars": 107,
-    "forks": 7,
-    "total_score": 53,
-    "quantifiable_score": 25,
-    "quality_score": 28,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T12:10:44Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "为AI智能体提供服务器端视频处理技能集，支持多模态视频工作流。",
-      "en": "A server-side video processing skill set for AI agents, enabling multimodal video workflows."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 2,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 8,
-      "practicality": 7,
-      "novelty": 6,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "video-db/skills",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "[![License][license-shield]][license-url]\n[![GitHub stars](https://img.shields.io/github/stars/video-db/skills.svg?style=for-the-badge)](https://github.com/video-db/skills/stargazers)\n[![Issues](https://img.shields.io/github/issues/video-db/videodb-python.svg?style=for-the-badge)](https://github.com/video-db/videodb-python/issues)\n[![Website](https://img.shields.io/website?url=https%3A%2F%2Fvideodb.io%2F&style=for-the-badge&label=videodb.io)](https://videodb.io)\n\n**The only perception skill your",
-    "topics": [
-      "ai",
-      "amp",
-      "claude",
-      "claude-code",
-      "codex",
-      "opencode",
-      "skills",
-      "videodb",
-      "video-processing",
-      "multimodal-ai",
-      "perception",
-      "vlm",
-      "realtime-video"
-    ]
-  },
-  {
     "id": "github-vintasoftware-django-ai-boost",
     "name": "vintasoftware/django-ai-boost",
     "url": "https://github.com/vintasoftware/django-ai-boost",
@@ -1756,9 +72,12 @@
     "url": "https://github.com/yeasy/agentic_ai_guide",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "trae",
+      "hermes-agent"
+    ],
     "summary": "智能体（Agentic AI）最前沿技术的深入剖析。读者需要有一定计算机和人工智能基础。",
     "i18n": {
       "zh": {
@@ -1821,10 +140,12 @@
     "url": "https://github.com/LobsterTrap/lola",
     "source_type": "github",
     "resource_type": [
-      "cli-tool",
-      "skills"
+      "skills",
+      "cli-tool"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Lola is able to package AI Context Modules or skills into a distributed package to be supported across multiple AI assistants. Think of your skill as the RPM package and Lola as the YUM/DNF. Write your skills once, run everywhere.",
     "i18n": {
       "zh": {
@@ -1886,9 +207,12 @@
     "url": "https://github.com/MattDevy/pi-extensions",
     "source_type": "github",
     "resource_type": [
-      "extension"
+      "extension",
+      "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "A set of pi-extensions, including pi-continuous-learning that continually improves you pi coding agent experience",
     "i18n": {
       "zh": {
@@ -1954,7 +278,6 @@
     "url": "https://github.com/alirezarezvani/claude-cto-team",
     "source_type": "github",
     "resource_type": [
-      "skills",
       "agent-framework"
     ],
     "target_tools": [
@@ -2030,8 +353,8 @@
     ],
     "target_tools": [
       "claude-code",
-      "cursor",
-      "codex-cli"
+      "codex-cli",
+      "cursor"
     ],
     "summary": "Free, two-way Figma MCP server. Turn designs into framework-aware code, and push code back to the canvas. Works with Claude Code, Cursor, Codex, and any MCP client.",
     "i18n": {
@@ -2102,9 +425,12 @@
     "url": "https://github.com/ben-vargas/ai-sdk-provider-opencode-sdk",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "tutorial"
     ],
     "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
       "opencode"
     ],
     "summary": "Vercel AI SDK community provider for OpenCode SDK - Use OpenCode configured providers via SDK",
@@ -2242,7 +568,8 @@
     "url": "https://github.com/evalops/deep-code-reasoning-mcp",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
@@ -2399,8 +726,7 @@
     "url": "https://github.com/joeseesun/defuddle-skill",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "cli-tool"
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -2468,8 +794,7 @@
       "codex-cli",
       "antigravity-cli",
       "opencode",
-      "qoder",
-      "hermes-agent"
+      "qoder"
     ],
     "summary": "Open-source AI usage tracker — tokens, cost, and sessions across Claude Code, Codex, Hermes, Qoder, and more",
     "i18n": {
@@ -2545,10 +870,11 @@
     "url": "https://github.com/quarkiverse/quarkus-flow",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
-      "extension"
+      "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Workflow Runtime Engine based on the Serverless Workflow Specification (CNCF Sandbox project) for Agentic Workflows",
     "i18n": {
       "zh": {
@@ -2747,10 +1073,10 @@
     "source_type": "github",
     "resource_type": [
       "skills",
-      "rules"
+      "agent-framework"
     ],
     "target_tools": [
-      "claude-code"
+      "general-ai-coding"
     ],
     "summary": "PI（π）—— When The Art of War Meets Cognitive Science for Ai",
     "i18n": {
@@ -2813,7 +1139,9 @@
     "url": "https://github.com/swaylq/master-skill",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework",
+      "rules"
     ],
     "target_tools": [
       "claude-code",
@@ -2888,7 +1216,8 @@
     "url": "https://github.com/tanaikech/ToolsForMCPServer",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "cli-tool"
     ],
     "target_tools": [
       "antigravity-cli"
@@ -2957,9 +1286,12 @@
     "url": "https://github.com/yangyunice/WorkMesh",
     "source_type": "github",
     "resource_type": [
+      "skills",
       "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Open-source AI-era employment platform connecting skills, jobs, enterprises, governance, and AI agents.",
     "i18n": {
       "zh": {
@@ -3032,7 +1364,8 @@
     "url": "https://github.com/Akxan/ppt-agent-skill",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -3175,8 +1508,10 @@
     "url": "https://github.com/EliasOulkadi/shokunin",
     "source_type": "github",
     "resource_type": [
+      "mcp-server",
       "skills",
-      "mcp-server"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
@@ -3252,9 +1587,12 @@
     "url": "https://github.com/MADTeacher/mad-agents-skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "cli-tool"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Collection of agent skills for AI assistants working with Dart and Flutter projects",
     "i18n": {
       "zh": {
@@ -3316,8 +1654,7 @@
     "url": "https://github.com/PaulDuvall/claude-code",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "cli-tool"
+      "tutorial"
     ],
     "target_tools": [
       "claude-code"
@@ -3478,11 +1815,8 @@
       "mcp-server"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli",
       "trae",
-      "hermes-agent",
-      "cursor"
+      "hermes-agent"
     ],
     "summary": "Spring Boot Starter: Auto-convert existing REST APIs (@RestController) to MCP Server with zero/low-code. Expose controllers as MCP Tools instantly.",
     "i18n": {
@@ -3553,7 +1887,8 @@
     "url": "https://github.com/TheGoat395/Codex-Skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -3634,13 +1969,10 @@
     "resource_type": [
       "mcp-server",
       "skills",
-      "agent-framework"
+      "cli-tool"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "goose",
-      "opencode"
+      "claude-code"
     ],
     "summary": "MCP server that gives any LLM its own computer — managed Docker workspaces with live browser, terminal, code execution, document skills, and autonomous sub-agents. Self-hosted, open-source, pluggable into any model.",
     "i18n": {
@@ -3706,7 +2038,7 @@
     "url": "https://github.com/aplaceforallmystuff/claude-art-skill",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "tutorial"
     ],
     "target_tools": [
       "claude-code",
@@ -3850,6 +2182,7 @@
     "url": "https://github.com/mr-karan/hodor",
     "source_type": "github",
     "resource_type": [
+      "agent-framework",
       "cli-tool"
     ],
     "target_tools": [
@@ -4133,7 +2466,9 @@
     "url": "https://github.com/vintasoftware/django-ai-plugins",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "extension",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -4200,7 +2535,9 @@
     "url": "https://github.com/yessGlory17/argus",
     "source_type": "github",
     "resource_type": [
-      "extension"
+      "extension",
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code"
@@ -4355,7 +2692,9 @@
     "resource_type": [
       "mcp-server"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "An MCP server and Next.js web app for querying S&P 500 company data from Supabase, with tools for company info, news, officers, and SEC filings, plus embedded MCP App UI resources, Elicitation, and Sampling support.",
     "i18n": {
       "zh": {
@@ -4495,7 +2834,7 @@
     "url": "https://github.com/GGGODLIN/cc-translate-proxy",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "tutorial"
     ],
     "target_tools": [
       "claude-code"
@@ -4563,13 +2902,11 @@
     "url": "https://github.com/GenseeAI/gensee-crate",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
-      "cli-tool"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
-      "codex-cli",
-      "antigravity-cli"
+      "codex-cli"
     ],
     "summary": "Runtime safety for AI coding agents with real-time enforcement, system-event monitoring, and long-horizon provenance. Supports Claude Code, Codex, Antigravity, Omnigent on native macOS and Linux.",
     "i18n": {
@@ -4641,7 +2978,7 @@
     "resource_type": [
       "mcp-server",
       "skills",
-      "cli-tool"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -4718,7 +3055,9 @@
     "resource_type": [
       "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "[ACL 2026] OxyGent: Making Multi-Agent Systems Modular, Observable, and Evolvable via Oxy Abstraction https://arxiv.org/abs/2604.25602",
     "i18n": {
       "zh": {
@@ -4780,7 +3119,9 @@
     "resource_type": [
       "skills"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Agent skills to run computational-chemistry tasks, used in OpenClaw",
     "i18n": {
       "zh": {
@@ -4900,7 +3241,8 @@
     "url": "https://github.com/lcbcFoo/heimdall-mcp-server",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code"
@@ -4970,7 +3312,8 @@
     "source_type": "github",
     "resource_type": [
       "mcp-server",
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -5044,7 +3387,9 @@
     "resource_type": [
       "mcp-server"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "MySQL query server based on the MCP sse.Multi-level SQL risk control & injection protection Docker support for quick deployment",
     "i18n": {
       "zh": {
@@ -5106,7 +3451,9 @@
     "url": "https://github.com/ncr5012/executive",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "skills",
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code"
@@ -5178,7 +3525,9 @@
     "resource_type": [
       "mcp-server"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "[Community Supported] Perforce P4 MCP Server is a Model Context Protocol (MCP) server that integrates with the Perforce P4 version control system.",
     "i18n": {
       "zh": {
@@ -5244,9 +3593,12 @@
     "url": "https://github.com/raphaelmansuy/adk_training",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills",
+      "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "antigravity-cli"
+    ],
     "summary": " Google ADK Training Hub: Build Production-Ready Google AI Agents in Days, Not Months 🚀 The only comprehensive Google ADK training with 34 hands-on tutorials, working code examples, and production deployment patterns. Learn skills that dire",
     "i18n": {
       "zh": {
@@ -5367,7 +3719,8 @@
     "url": "https://github.com/Alisa0808/vibe-creating-skill",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "rules"
     ],
     "target_tools": [
       "claude-code",
@@ -5451,8 +3804,7 @@
     "url": "https://github.com/AndyY-Q/launchkit-ai",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "codex-cli"
@@ -5528,9 +3880,7 @@
       "mcp-server"
     ],
     "target_tools": [
-      "cursor",
-      "claude-code",
-      "goose"
+      "general-ai-coding"
     ],
     "summary": "An MCP server that provides comprehensive medical information by querying multiple authoritative medical APIs including FDA, WHO, PubMed, Google Scholar, and RxNorm",
     "i18n": {
@@ -5596,6 +3946,8 @@
     "url": "https://github.com/P3GLEG/tauri-plugin-mcp",
     "source_type": "github",
     "resource_type": [
+      "extension",
+      "agent-framework",
       "mcp-server"
     ],
     "target_tools": [
@@ -5723,7 +4075,8 @@
     "url": "https://github.com/ameyalambat128/swiftui-skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -5796,7 +4149,7 @@
     "url": "https://github.com/bifrost-proxy/bifrost",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "agent-framework"
     ],
     "target_tools": [
       "trae",
@@ -5870,7 +4223,9 @@
     "resource_type": [
       "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Angular SDK for Building Agentic Apps + Generative UI",
     "i18n": {
       "zh": {
@@ -5999,8 +4354,8 @@
     "url": "https://github.com/jigjoy-ai/baro",
     "source_type": "github",
     "resource_type": [
-      "cli-tool",
-      "agent-framework"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
@@ -6141,7 +4496,9 @@
     "resource_type": [
       "mcp-server"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "lapras.com 公式MCP Server",
     "i18n": {
       "zh": {
@@ -6201,7 +4558,7 @@
     "url": "https://github.com/ovoment/ovo-local-llm",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -6419,8 +4776,7 @@
     "url": "https://github.com/robertguss/claude-code-toolkit",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "rules"
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -6487,9 +4843,11 @@
     "url": "https://github.com/romanyn36/agentic-ai-roadmap",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "A comprehensive AI learning roadmap covering Python fundamentals, mathematics, machine learning, deep learning, LLMs, and agentic systems — focused on hands-on projects, practical tools, and real-world deployment.",
     "i18n": {
       "zh": {
@@ -6618,9 +4976,12 @@
     "url": "https://github.com/vuetifyjs/mcp",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "🤖 A Model Context Protocol (MCP) library for use with Agentic chat bots",
     "i18n": {
       "zh": {
@@ -6684,11 +5045,11 @@
     "url": "https://github.com/DaleSeo/korean-skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
-      "claude-code",
-      "cursor"
+      "general-ai-coding"
     ],
     "summary": "🇰🇷 Korean language skills for AI agents",
     "i18n": {
@@ -6822,7 +5183,9 @@
     "resource_type": [
       "mcp-server"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Model Context Protocol (MCP) Server to connect your AI with any MediaWiki",
     "i18n": {
       "zh": {
@@ -6891,8 +5254,10 @@
     "url": "https://github.com/adoslabsproject-gif/nothumanallowed",
     "source_type": "github",
     "resource_type": [
+      "extension",
+      "agent-framework",
       "cli-tool",
-      "agent-framework"
+      "mcp-server"
     ],
     "target_tools": [
       "claude-code",
@@ -6979,9 +5344,11 @@
     "url": "https://github.com/agenticoding/agenticoding.github.io",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Master Agentic Coding",
     "i18n": {
       "zh": {
@@ -7043,7 +5410,8 @@
     "url": "https://github.com/fallow-rs/fallow-skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -7119,6 +5487,1715 @@
       "windsurf",
       "codebase-hygiene",
       "codebase-intelligence"
+    ]
+  },
+  {
+    "id": "github-henrique-coder-perplexity-webui-scraper",
+    "name": "henrique-coder/perplexity-webui-scraper",
+    "url": "https://github.com/henrique-coder/perplexity-webui-scraper",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "An advanced, high-performance Python client, MCP server, and REST API for reverse-engineering Perplexity AI's WebUI.",
+    "i18n": {
+      "zh": {
+        "name": "henrique-coder/perplexity-webui-scraper",
+        "summary": "An advanced, high-performance Python client, MCP server, and REST API for reverse-engineering Perplexity AI's WebUI."
+      },
+      "en": {
+        "name": "henrique-coder/perplexity-webui-scraper",
+        "summary": "An advanced, high-performance Python client, MCP server, and REST API for reverse-engineering Perplexity AI's WebUI."
+      }
+    },
+    "stars": 102,
+    "forks": 23,
+    "total_score": 57,
+    "quantifiable_score": 27,
+    "quality_score": 30,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T01:29:55Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个为AI编码代理提供Perplexity AI搜索能力的MCP服务器和Python客户端，基于逆向工程实现。",
+      "en": "An MCP server and Python client providing Perplexity AI search capabilities to AI coding agents, built via reverse engineering."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "henrique-coder/perplexity-webui-scraper",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Perplexity WebUI Scraper\n\nPython scraper to extract AI responses from [Perplexity's](https://www.perplexity.ai) web interface.\n\n[![PyPI](https://img.shields.io/pypi/v/perplexity-webui-scraper?color=blue)](https://pypi.org/project/perplexity-webui-scraper)\n[![Python](https://img.shields.io/pypi/pyversions/perplexity-webui-scraper)](https://pypi.org/project/perplexity-webui-scraper)\n[![License](https://img.shields.io/github/license/henrique-coder/perplexity-webui-scraper?color=green)](./LICENSE)",
+    "topics": [
+      "ai",
+      "perplexity",
+      "scraper",
+      "fastapi",
+      "mcp",
+      "openapi-compatible"
+    ]
+  },
+  {
+    "id": "github-jianshuo-claude-skills",
+    "name": "jianshuo/claude-skills",
+    "url": "https://github.com/jianshuo/claude-skills",
+    "source_type": "github",
+    "resource_type": [
+      "skills",
+      "agent-framework"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "cursor"
+    ],
+    "summary": "13 Claude Code skills for video production (transcribe / translate / dub / multicam / subtitles / reframe) + WeChat publishing. Compatible with Claude Code, OpenAI Codex CLI, Cursor, Gemini.",
+    "i18n": {
+      "zh": {
+        "name": "jianshuo/claude-skills",
+        "summary": "13 Claude Code skills for video production (transcribe / translate / dub / multicam / subtitles / reframe) + WeChat publishing. Compatible with Claude Code, OpenAI Codex CLI, Cursor, Gemini."
+      },
+      "en": {
+        "name": "jianshuo/claude-skills",
+        "summary": "13 Claude Code skills for video production (transcribe / translate / dub / multicam / subtitles / reframe) + WeChat publishing. Compatible with Claude Code, OpenAI Codex CLI, Cursor, Gemini."
+      }
+    },
+    "stars": 103,
+    "forks": 15,
+    "total_score": 57,
+    "quantifiable_score": 27,
+    "quality_score": 30,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T09:05:54Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一套专注于视频制作（转录、翻译、配音、多机位、字幕、调帧）和微信发布的Claude Code技能集，兼容主流AI编码代理。",
+      "en": "A collection of 13 Claude Code skills for video production tasks (transcribe, translate, dub, multicam, subtitles, reframe) and WeChat publishing, compatible with multiple AI coding agents."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 7
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "jianshuo/claude-skills",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# claude-skills\n\n我（[王建硕](https://github.com/jianshuo)）日常在 Claude Code 里用的 skills。\n\n> Auto-mirrored from `~/.claude/skills/` by a PostToolUse hook —\n> 每次我编辑 `wjs-*` skill，对应目录会被 rsync 到这里并推送到 GitHub。\n> Hook 源码：`~/.claude/skills-publish-hook.sh`\n\n## 前置:安装 Claude Code / Install Claude Code\n\n这些 skill 跑在 [Claude Code](https://claude.com/code) 里,所以先装 Claude Code。\n\n```bash\n# 方式 1:npm 全局安装(推荐,需要 Node.js ≥ 18)\nnpm install -g @anthropic-ai/claude-code\nclaude            # 启动\n\n# 方式 2:不装,直接用 npx 跑一次\nnpx @ant",
+    "topics": [
+      "agent-skills",
+      "ai-agent",
+      "claude",
+      "claude-code",
+      "claude-skills",
+      "codex",
+      "codex-skills",
+      "dubbing",
+      "ffmpeg",
+      "multicam",
+      "openclaw",
+      "skill-md",
+      "subtitles",
+      "transcription",
+      "video-production",
+      "wechat"
+    ]
+  },
+  {
+    "id": "github-kaida-palooza-ccpoke",
+    "name": "kaida-palooza/ccpoke",
+    "url": "https://github.com/kaida-palooza/ccpoke",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "cli-tool"
+    ],
+    "target_tools": [
+      "claude-code",
+      "cursor"
+    ],
+    "summary": "Bridge between AI coding agents and your phone — notifications, 2-way chat, permissions",
+    "i18n": {
+      "zh": {
+        "name": "kaida-palooza/ccpoke",
+        "summary": "Bridge between AI coding agents and your phone — notifications, 2-way chat, permissions"
+      },
+      "en": {
+        "name": "kaida-palooza/ccpoke",
+        "summary": "Bridge between AI coding agents and your phone — notifications, 2-way chat, permissions"
+      }
+    },
+    "stars": 102,
+    "forks": 42,
+    "total_score": 58,
+    "quantifiable_score": 27,
+    "quality_score": 31,
+    "tracking_priority": "track",
+    "last_updated": "2026-06-01T01:23:11Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "ccpoke 通过 Telegram 为 AI 编码代理提供双向通知和聊天桥梁。",
+      "en": "ccpoke bridges AI coding agents with Telegram for remote notifications and two-way interaction."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 7
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "kaida-palooza/ccpoke",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# 🐾 ccpoke — Cầu nối thông báo AI Agent\n\n[English](./README.en.md) · [中文](./README.zh.md)\n\n> Tương tác 2 chiều với Claude Code, Codex CLI, Cursor CLI và nhiều AI agent khác qua Telegram — lập trình mọi lúc mọi nơi.\n\n---\n\n## Vấn đề giải quyết\n\nBạn đang dùng Claude Code, Codex CLI hoặc Cursor CLI trên máy tính. Ra ngoài cầm điện thoại nhưng không biết AI agent đã xong chưa, muốn gửi thêm yêu cầu mà không cần mở laptop.\n\n**ccpoke** là cầu nối 2 chiều giữa AI agent và Telegram — nhận thông báo, gửi ",
+    "topics": [
+      "claude",
+      "claude-code",
+      "bot",
+      "cursor",
+      "developer-tools",
+      "telegram",
+      "typescript"
+    ]
+  },
+  {
+    "id": "github-kubeopencode-kubeopencode",
+    "name": "kubeopencode/kubeopencode",
+    "url": "https://github.com/kubeopencode/kubeopencode",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework"
+    ],
+    "target_tools": [
+      "opencode"
+    ],
+    "summary": "Run OpenCode Agent on Kubernetes",
+    "i18n": {
+      "zh": {
+        "name": "kubeopencode/kubeopencode",
+        "summary": "Run OpenCode Agent on Kubernetes"
+      },
+      "en": {
+        "name": "kubeopencode/kubeopencode",
+        "summary": "Run OpenCode Agent on Kubernetes"
+      }
+    },
+    "stars": 102,
+    "forks": 19,
+    "total_score": 56,
+    "quantifiable_score": 27,
+    "quality_score": 29,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-13T07:03:47Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Go"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "KubeOpenCode 是一个将 OpenCode AI 代理部署到 Kubernetes 的企业级平台，提供了团队协作和治理功能。",
+      "en": "KubeOpenCode is a Kubernetes-native platform that enables teams to run OpenCode AI agent with governance, shared configurations, and enterprise infrastructure integration."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 7,
+      "novelty": 6,
+      "ecosystem_value": 7
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "kubeopencode/kubeopencode",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "Kubernetes-native Agent Platform for Teams and Enterprise\n\n  \n  \n\n> **Note**: KubeOpenCode builds on the excellent [OpenCode](https://opencode.ai) AI agent. OpenCode is great for individual developers — KubeOpenCode makes it work for **teams and enterprises** by adding governance, shared agent configurations, scale, and enterprise infrastructure integration. This is an independent project, not affiliated with the OpenCode team.\n\n  \n\n  \n\n---\n\n### Installation\n\n```bash\nkubectl create namespace kub",
+    "topics": [
+      "cloud-native",
+      "devops",
+      "kubernetes",
+      "opencode",
+      "agentic-engineering",
+      "ai",
+      "ai-agent",
+      "llm"
+    ]
+  },
+  {
+    "id": "github-linmy666-madcop",
+    "name": "linmy666/madcop",
+    "url": "https://github.com/linmy666/madcop",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server",
+      "agent-framework"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "MadCop — local-first AI agent desktop workstation (v0.9). Multi-model chat, tool-use, MCP servers, 12 workflow modes, knowledge base, AI design tool, persistent workspace.",
+    "i18n": {
+      "zh": {
+        "name": "linmy666/madcop",
+        "summary": "MadCop — local-first AI agent desktop workstation (v0.9). Multi-model chat, tool-use, MCP servers, 12 workflow modes, knowledge base, AI design tool, persistent workspace."
+      },
+      "en": {
+        "name": "linmy666/madcop",
+        "summary": "MadCop — local-first AI agent desktop workstation (v0.9). Multi-model chat, tool-use, MCP servers, 12 workflow modes, knowledge base, AI design tool, persistent workspace."
+      }
+    },
+    "stars": 102,
+    "forks": 4,
+    "total_score": 57,
+    "quantifiable_score": 25,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T05:42:44Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "other",
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "MadCop是一个本地优先的AI代理桌面工作站，支持多模型聊天、工具调用和MCP服务器，为AI编码代理提供强大的本地化工作流平台。",
+      "en": "MadCop is a local-first AI agent desktop workstation supporting multi-model chat, tool use, and MCP servers, providing a powerful local workflow platform for AI coding agents."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 2,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "linmy666/madcop",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# MadCop\n\n**A local-first AI agent desktop workstation.**\n\nMadCop is a cross-platform desktop application that brings the power of modern LLMs into a private, agentic workflow. It runs as a single Electron binary on macOS, Windows, and Linux, talks to any OpenAI-compatible API endpoint, and keeps your conversations, files, and knowledge base entirely on your machine. No cloud lock-in, no per-seat fees, no data leaving the device.\n\nThis document explains the *why* behind the major design decision",
+    "topics": [
+      "ai-agent",
+      "desktop-app",
+      "electron",
+      "llm",
+      "local-first",
+      "mcp",
+      "python",
+      "typescript",
+      "vue",
+      "workflow-automation"
+    ]
+  },
+  {
+    "id": "github-luoyuctl-agenttrace",
+    "name": "luoyuctl/agenttrace",
+    "url": "https://github.com/luoyuctl/agenttrace",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "cli-tool"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder",
+      "cursor"
+    ],
+    "summary": "Local-first TUI for AI coding-agent session history: trace cost, tokens, time, tool failures, latency, health, diffs, reports, and CI gates across local agent logs.",
+    "i18n": {
+      "zh": {
+        "name": "luoyuctl/agenttrace",
+        "summary": "Local-first TUI for AI coding-agent session history: trace cost, tokens, time, tool failures, latency, health, diffs, reports, and CI gates across local agent logs."
+      },
+      "en": {
+        "name": "luoyuctl/agenttrace",
+        "summary": "Local-first TUI for AI coding-agent session history: trace cost, tokens, time, tool failures, latency, health, diffs, reports, and CI gates across local agent logs."
+      }
+    },
+    "stars": 102,
+    "forks": 2,
+    "total_score": 56,
+    "quantifiable_score": 25,
+    "quality_score": 31,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T06:00:26Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Go"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "AgentTrace 是一个本地优先的终端界面，用于分析和可视化 AI 编码代理的会话历史、成本、令牌和时间消耗。",
+      "en": "AgentTrace is a local-first TUI for analyzing and visualizing AI coding agent session history, costs, tokens, and time."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 2,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "luoyuctl/agenttrace",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "AgentTrace\n\n  Local-first TUI and reports for AI coding-agent session history, cost, tokens, time, and slow-run diagnosis.\n\n  English | 简体中文\n\n  \n  \n  \n  \n  \n  \n  \n  \n\n  \n\n---\n\n**agenttrace** is a local-first terminal TUI and report generator for AI coding-agent session history. It reads Claude Code, Codex CLI, Gemini CLI, Qwen Code, Cline, Aider, Cursor exports, Hermes Agent, OpenCode, OpenClaw, Pi, Oh My Pi, Kimi CLI, Copilot-style logs, and generic JSON/JSONL traces, then helps with two daily ",
+    "topics": [
+      "ai-agents",
+      "cli",
+      "developer-tools",
+      "terminal",
+      "tui",
+      "aider",
+      "claude-code",
+      "codex-cli",
+      "gemini-cli",
+      "cursor",
+      "ai-coding",
+      "token-usage",
+      "ai-cost-tracking",
+      "ai-agent-observability",
+      "cline",
+      "kimi-cli",
+      "opencode",
+      "qwen-code",
+      "agent-session-replay",
+      "claude-code-logs"
+    ]
+  },
+  {
+    "id": "github-markfulton-claude-antigravity-agents",
+    "name": "markfulton/claude-antigravity-agents",
+    "url": "https://github.com/markfulton/claude-antigravity-agents",
+    "source_type": "github",
+    "resource_type": [
+      "skills",
+      "cli-tool",
+      "agent-framework"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
+    ],
+    "summary": "A Claude Code skill that delegates coding, review, analysis, and research jobs to Google Antigravity CLI (agy) sub-agents — save tokens, use a second model, work in parallel.",
+    "i18n": {
+      "zh": {
+        "name": "markfulton/claude-antigravity-agents",
+        "summary": "A Claude Code skill that delegates coding, review, analysis, and research jobs to Google Antigravity CLI (agy) sub-agents — save tokens, use a second model, work in parallel."
+      },
+      "en": {
+        "name": "markfulton/claude-antigravity-agents",
+        "summary": "A Claude Code skill that delegates coding, review, analysis, and research jobs to Google Antigravity CLI (agy) sub-agents — save tokens, use a second model, work in parallel."
+      }
+    },
+    "stars": 102,
+    "forks": 29,
+    "total_score": 57,
+    "quantifiable_score": 25,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-12T09:58:12Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个 Claude Code 技能，将编码任务委托给 Google Antigravity CLI 子代理并行执行，节省 Token。",
+      "en": "A Claude Code skill that delegates coding tasks to Google Antigravity CLI sub-agents for parallel execution and token savings."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 2
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "markfulton/claude-antigravity-agents",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Claude Code Antigravity Agents\n\n*Turn Claude Code into an orchestrator — delegate heavy jobs to Google Antigravity sub-agents while it keeps building.*\n\n[![Claude Code](https://img.shields.io/badge/Claude_Code-Orchestrator-D97757?style=for-the-badge&logo=anthropic&logoColor=white)](https://claude.com/claude-code)\n[![Antigravity CLI](https://img.shields.io/badge/Antigravity_CLI-agy-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google/docs/cli/getting-started)\n[![S",
+    "topics": [
+      "agentic",
+      "ai-agents",
+      "anthropic",
+      "antigravity",
+      "claude",
+      "claude-code",
+      "claude-skill",
+      "cli",
+      "gemini",
+      "subagents"
+    ]
+  },
+  {
+    "id": "github-roadwy-cve-search-mcp",
+    "name": "roadwy/cve-search_mcp",
+    "url": "https://github.com/roadwy/cve-search_mcp",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "A Model Context Protocol (MCP) server for querying the CVE-Search API",
+    "i18n": {
+      "zh": {
+        "name": "roadwy/cve-search_mcp",
+        "summary": "A Model Context Protocol (MCP) server for querying the CVE-Search API"
+      },
+      "en": {
+        "name": "roadwy/cve-search_mcp",
+        "summary": "A Model Context Protocol (MCP) server for querying the CVE-Search API"
+      }
+    },
+    "stars": 102,
+    "forks": 15,
+    "total_score": 50,
+    "quantifiable_score": 27,
+    "quality_score": 23,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-05T03:13:14Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个提供CVE漏洞数据查询的MCP服务器，可用于AI编程代理检查安全问题。",
+      "en": "An MCP server providing access to CVE vulnerability data, useful for AI coding agents to check security issues."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 6,
+      "novelty": 5,
+      "ecosystem_value": 6
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "roadwy/cve-search_mcp",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/roadwy-cve-search-mcp-badge.png)](https://mseep.ai/app/roadwy-cve-search-mcp)\n\n## CVE-Search MCP Server\n----\n\n![CVE-SEARCH_MCP](https://socialify.git.ci/roadwy/cve-search_mcp/image?name=1&theme=Light)\n\n  \n\nA Model Context Protocol (MCP) server for querying the [CVE-Search](https://www.cve-search.org/api/) API. This server provides comprehensive access to CVE-Search, browse vendor and product、get CVE per CVE-ID、get the last updated CVEs.",
+    "topics": [
+      "cve",
+      "mcp-server",
+      "vulunhub"
+    ]
+  },
+  {
+    "id": "github-sstraus-tuicommander",
+    "name": "sstraus/tuicommander",
+    "url": "https://github.com/sstraus/tuicommander",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "cli-tool"
+    ],
+    "target_tools": [
+      "claude-code"
+    ],
+    "summary": "Desktop terminal orchestrator for running dozens of AI coding agents in parallel. Tauri + SolidJS + Rust.",
+    "i18n": {
+      "zh": {
+        "name": "sstraus/tuicommander",
+        "summary": "Desktop terminal orchestrator for running dozens of AI coding agents in parallel. Tauri + SolidJS + Rust."
+      },
+      "en": {
+        "name": "sstraus/tuicommander",
+        "summary": "Desktop terminal orchestrator for running dozens of AI coding agents in parallel. Tauri + SolidJS + Rust."
+      }
+    },
+    "stars": 102,
+    "forks": 16,
+    "total_score": 63,
+    "quantifiable_score": 27,
+    "quality_score": 36,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-13T22:34:08Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "apache-2.0",
+    "languages": [
+      "Rust"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个桌面终端编排器，可并行运行多个AI编码代理并在隔离分支上进行全观测管理。",
+      "en": "A desktop terminal orchestrator that runs multiple AI coding agents in parallel on isolated branches with full observability."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 8,
+      "novelty": 9,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "sstraus/tuicommander",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "TUICommander\n\n  The IDE that understands AI agents.Run parallel agents on isolated branches with full observability.\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n  Website &bull;\n  Download &bull;\n  Nightly &bull;\n  All Features &bull;\n  Plugin API &bull;\n  Docs\n\n---\n\n  \n\n---\n\n## The problem\n\nYou're running Claude Code in one terminal, Aider in another, Codex in a third. One hit a rate limit 10 minutes ago and you didn't notice. Another is waiting for a Y/N confirmation. You switch between windows and still los",
+    "topics": [
+      "ai-agents",
+      "claude-code",
+      "developer-tools",
+      "git-worktree",
+      "macos",
+      "rust",
+      "solidjs",
+      "tauri",
+      "terminal",
+      "xterm-js"
+    ]
+  },
+  {
+    "id": "github-usetig-sage",
+    "name": "usetig/sage",
+    "url": "https://github.com/usetig/sage",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "cli-tool"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder",
+      "cursor"
+    ],
+    "summary": "An LLM council that reviews your coding agent's every move",
+    "i18n": {
+      "zh": {
+        "name": "usetig/sage",
+        "summary": "An LLM council that reviews your coding agent's every move"
+      },
+      "en": {
+        "name": "usetig/sage",
+        "summary": "An LLM council that reviews your coding agent's every move"
+      }
+    },
+    "stars": 102,
+    "forks": 8,
+    "total_score": 57,
+    "quantifiable_score": 23,
+    "quality_score": 34,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T06:27:01Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": null,
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "Sage 是一个由多个大语言模型组成的评审委员会，用于审查编码代理的每一个动作，包括其回应、推理和计划，从而在问题实施前发现潜在问题。",
+      "en": "Sage is an LLM council that reviews every move of your coding agent, critiquing its responses, reasoning, and plans to catch issues before they are implemented."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 2,
+      "maturity": 2
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "usetig/sage",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Sage\n\nSage is like a senior engineer that watches your coding agent's every move.\n\nUnlike existing review tools, Sage doesn't just look at code — it critiques your agent's responses, reasoning, and plans so you can catch issues before they're implemented.\n\n---\n\n## Table of Contents\n\n- [Demo](#demo)\n- [Why current code review tools fall short](#why-current-code-review-tools-fall-short)\n- [Automating model cross-checking](#automating-model-cross-checking)\n- [How It Works](#how-it-works)\n- [Setup",
+    "topics": [
+      "ai-agents",
+      "anthropic",
+      "claude-code",
+      "claude-code-hooks",
+      "cli",
+      "code-review",
+      "code-reviews",
+      "coderabbit",
+      "codex",
+      "coding-agents",
+      "coding-assistant",
+      "cursor",
+      "devtools",
+      "gemini-cli",
+      "llm-council",
+      "react-ink",
+      "swe-bench",
+      "developer-tools",
+      "vibe-coding",
+      "vibecoding"
+    ]
+  },
+  {
+    "id": "github-agentchengfeng-writing-assistant-skill",
+    "name": "Agentchengfeng/writing-assistant-skill",
+    "url": "https://github.com/Agentchengfeng/writing-assistant-skill",
+    "source_type": "github",
+    "resource_type": [
+      "skills"
+    ],
+    "target_tools": [
+      "claude-code"
+    ],
+    "summary": "自媒体写作交互式助手 - Claude Code Skill",
+    "i18n": {
+      "zh": {
+        "name": "Agentchengfeng/writing-assistant-skill",
+        "summary": "自媒体写作交互式助手 - Claude Code Skill"
+      },
+      "en": {
+        "name": "Agentchengfeng/writing-assistant-skill",
+        "summary": "自媒体写作交互式助手 - Claude Code Skill"
+      }
+    },
+    "stars": 101,
+    "forks": 22,
+    "total_score": 53,
+    "quantifiable_score": 23,
+    "quality_score": 30,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-13T14:31:35Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": null,
+    "languages": [],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "为 Claude Code 设计的自媒体写作辅助技能包，提供从选题到排版的完整流程指南，结构完整且易于安装。",
+      "en": "A structured writing assistant skill for Claude Code, covering the full content creation pipeline from topic selection to formatting, with clear installation and customization instructions."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 0
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 7
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "Agentchengfeng/writing-assistant-skill",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Writing Assistant Skill\n\n自媒体写作助手 Skill，帮助完成从选题到发布的完整流程。\n\n## 安装\n\n```bash\n# 复制到 Claude Code skills 目录\ncp -r writing-assistant ~/.claude/skills/\n```\n\n## 文件结构\n\n```\nwriting-assistant/\n├── SKILL.md           # 入口（场景路由+检查清单）\n├── about-me.md        # 关于我（定位+禁区+术语降维）⬅️ 需自定义\n├── user-personas.md   # 用户画像（3类用户+4层需求）⬅️ 需自定义\n└── content/methods/\n    ├── 01-选题.md  # 三维匹配法\n    ├── 02-大纲.md  # 销售漏斗+承诺设计\n    ├── 03-正文.md  # 认知科学+可视化\n    ├── 04-标题.md  # 数字冲击力法\n    └── 05-排版.md  # 公众号适配\n```\n\n## 使用前必做\n\n1. **编辑 `a",
+    "topics": []
+  },
+  {
+    "id": "github-asklear-klear-team-brain",
+    "name": "Asklear/Klear-Team-Brain",
+    "url": "https://github.com/Asklear/Klear-Team-Brain",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server",
+      "agent-framework",
+      "cli-tool"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli"
+    ],
+    "summary": "Turn your team's AI coding sessions, GitHub code, and docs into one shared, searchable memory — a self-hosted git truth store you query right from your editor over MCP.",
+    "i18n": {
+      "zh": {
+        "name": "Asklear/Klear-Team-Brain",
+        "summary": "Turn your team's AI coding sessions, GitHub code, and docs into one shared, searchable memory — a self-hosted git truth store you query right from your editor over MCP."
+      },
+      "en": {
+        "name": "Asklear/Klear-Team-Brain",
+        "summary": "Turn your team's AI coding sessions, GitHub code, and docs into one shared, searchable memory — a self-hosted git truth store you query right from your editor over MCP."
+      }
+    },
+    "stars": 101,
+    "forks": 2,
+    "total_score": 58,
+    "quantifiable_score": 25,
+    "quality_score": 33,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-07T04:53:30Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "apache-2.0",
+    "languages": [
+      "JavaScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个自托管的MCP服务器，将团队的AI编程会话和仓库知识转化为共享的、可查询的记忆，供AI编码代理使用。",
+      "en": "A self-hosted MCP server that turns your team's AI coding sessions and repository knowledge into a shared, queryable memory for AI coding agents."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 2,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 8,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "Asklear/Klear-Team-Brain",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Klear-Team-Brain\n\n[![CI](https://github.com/Asklear/Klear-Team-Brain/actions/workflows/ci.yml/badge.svg)](https://github.com/Asklear/Klear-Team-Brain/actions/workflows/ci.yml)\n[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)\n[![Node](https://img.shields.io/badge/node-%3E%3D22-brightgreen.svg)](https://nodejs.org)\n\n> **Your team's collective memory for AI-assisted coding.** Self-hosted, ultra-light, zero extra effort for the people doing the work.\n\nE",
+    "topics": [
+      "ai-agents",
+      "claude-code",
+      "codex",
+      "developer-tools",
+      "knowledge-base",
+      "mcp",
+      "model-context-protocol",
+      "self-hosted",
+      "team-memory"
+    ]
+  },
+  {
+    "id": "github-dmontgomery40-mcp-canvas-lms",
+    "name": "DMontgomery40/mcp-canvas-lms",
+    "url": "https://github.com/DMontgomery40/mcp-canvas-lms",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "Version 2.2 - 54 tools available - an MCP server for interacting with the Canvas LMS API. This server allows you to manage courses, assignments, enrollments, and grades within Canvas.",
+    "i18n": {
+      "zh": {
+        "name": "DMontgomery40/mcp-canvas-lms",
+        "summary": "Version 2.2 - 54 tools available - an MCP server for interacting with the Canvas LMS API. This server allows you to manage courses, assignments, enrollments, and grades within Canvas."
+      },
+      "en": {
+        "name": "DMontgomery40/mcp-canvas-lms",
+        "summary": "Version 2.2 - 54 tools available - an MCP server for interacting with the Canvas LMS API. This server allows you to manage courses, assignments, enrollments, and grades within Canvas."
+      }
+    },
+    "stars": 101,
+    "forks": 39,
+    "total_score": 51,
+    "quantifiable_score": 25,
+    "quality_score": 26,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-08T13:26:46Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": null,
+    "languages": [
+      "JavaScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "Canvas LMS的MCP服务器，提供54个工具用于管理课程、作业和成绩，适合教育场景的AI代理集成。",
+      "en": "An MCP server for the Canvas LMS API with 54 tools to manage courses, assignments, and grades, suitable for educational AI agent integration."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 2
+    },
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 6
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "DMontgomery40/mcp-canvas-lms",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Canvas MCP Server v2.3.0\n\n## Security and disclosure history\n\nThis project is an independent MCP server for Canvas LMS APIs. It is not affiliated with, endorsed by, or maintained by Instructure or Canvas.\n\nIn June 2025, during development of this MCP, I identified a Broken Access Control issue in the Canvas environment at bootcampspot.instructure.com. The issue exposed personally identifiable information for other students enrolled in my course.\n\nI reported the issue through Bugcrowd on June 5",
+    "topics": [
+      "canvas-lms",
+      "canvas-lms-api",
+      "canvas-lms-grades",
+      "mcp",
+      "mcp-server",
+      "model-context-protocol",
+      "school-education",
+      "mcp-education-tool"
+    ]
+  },
+  {
+    "id": "github-yikuaibanzi-forge-skill",
+    "name": "YIKUAIBANZI/forge-skill",
+    "url": "https://github.com/YIKUAIBANZI/forge-skill",
+    "source_type": "github",
+    "resource_type": [
+      "skills",
+      "agent-framework",
+      "rules"
+    ],
+    "target_tools": [
+      "claude-code"
+    ],
+    "summary": "人格蒸馏引擎 · 蒸馏自己看清自己，蒸馏亲友留住余温与回声 · Claude Code Skill",
+    "i18n": {
+      "zh": {
+        "name": "YIKUAIBANZI/forge-skill",
+        "summary": "人格蒸馏引擎 · 蒸馏自己看清自己，蒸馏亲友留住余温与回声 · Claude Code Skill"
+      },
+      "en": {
+        "name": "YIKUAIBANZI/forge-skill",
+        "summary": "人格蒸馏引擎 · 蒸馏自己看清自己，蒸馏亲友留住余温与回声 · Claude Code Skill"
+      }
+    },
+    "stars": 101,
+    "forks": 18,
+    "total_score": 59,
+    "quantifiable_score": 27,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-13T12:39:36Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个用于Claude Code的人格蒸馏技能，实现数字孪生和记忆增强。",
+      "en": "A persona distillation skill for Claude Code enabling digital twin and memory enhancement."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 7
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "YIKUAIBANZI/forge-skill",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Forge Skill\n\n> 蒸馏自己，看清自己。  \n> 蒸馏亲友，留住他们的余温与回声  \n> 让 AI 不再是冰冷的吐字机器。\n\n**中文** | [English](README_EN.md) | [日本語](README_JA.md)\n\n![License](https://img.shields.io/badge/License-MIT-yellow.svg)\n![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-purple.svg)\n![forge-self](https://img.shields.io/badge/forge--self-蒸馏自己-blue.svg)\n![forge-persona](https://img.shields.io/badge/forge--persona-蒸馏他人-orange.svg)\n![Privacy](https://img.shields.io/badge/数据-本地处理-green.svg)\n\nForge 是一个 **local-first 的 Cl",
+    "topics": [
+      "ai-agent",
+      "claude-code",
+      "claude-skill",
+      "digital-twin",
+      "memory",
+      "persona",
+      "prompt-engineering"
+    ]
+  },
+  {
+    "id": "github-aws-samples-sample-agentic-ai-demos",
+    "name": "aws-samples/sample-agentic-ai-demos",
+    "url": "https://github.com/aws-samples/sample-agentic-ai-demos",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server",
+      "agent-framework"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "Collection of examples of how to use Model Context Protocol with AWS.",
+    "i18n": {
+      "zh": {
+        "name": "aws-samples/sample-agentic-ai-demos",
+        "summary": "Collection of examples of how to use Model Context Protocol with AWS."
+      },
+      "en": {
+        "name": "aws-samples/sample-agentic-ai-demos",
+        "summary": "Collection of examples of how to use Model Context Protocol with AWS."
+      }
+    },
+    "stars": 101,
+    "forks": 35,
+    "total_score": 53,
+    "quantifiable_score": 27,
+    "quality_score": 26,
+    "tracking_priority": "track",
+    "last_updated": "2026-06-25T05:24:06Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit-0",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "AWS上的MCP（模型上下文协议）示例集合，适用于代理型AI开发。",
+      "en": "Collection of Model Context Protocol examples on AWS for agentic AI development."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 7,
+      "novelty": 5,
+      "ecosystem_value": 6
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "aws-samples/sample-agentic-ai-demos",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "## Agentic AI Samples\n\nCollection of examples of how to build Agentic AI with AWS, including Model Context Protocol.\n\nList of modules:\n\n| Module                                                                                                        | Lang               | Description                                                                                                                                                                    |\n|---------------------------------------------------",
+    "topics": [
+      "agents",
+      "bedrock",
+      "genai",
+      "mcp",
+      "mcp-client",
+      "mcp-server"
+    ]
+  },
+  {
+    "id": "github-cap-js-mcp-server",
+    "name": "cap-js/mcp-server",
+    "url": "https://github.com/cap-js/mcp-server",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "MCP server for AI-assisted development of CAP applications",
+    "i18n": {
+      "zh": {
+        "name": "cap-js/mcp-server",
+        "summary": "MCP server for AI-assisted development of CAP applications"
+      },
+      "en": {
+        "name": "cap-js/mcp-server",
+        "summary": "MCP server for AI-assisted development of CAP applications"
+      }
+    },
+    "stars": 101,
+    "forks": 18,
+    "total_score": 57,
+    "quantifiable_score": 27,
+    "quality_score": 30,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-06T13:45:24Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "apache-2.0",
+    "languages": [
+      "JavaScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "用于SAP CAP应用AI辅助开发的MCP服务器。",
+      "en": "MCP server for AI-assisted development of SAP CAP applications."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 7
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "cap-js/mcp-server",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Welcome to @cap-js/mcp-server\n\n[![REUSE status](https://api.reuse.software/badge/github.com/cap-js/mcp-server)](https://api.reuse.software/info/github.com/cap-js/mcp-server)\n\n## About This Project\n\nA Model Context Protocol (MCP) server for the [SAP Cloud Application Programming Model (CAP)](https://cap.cloud.sap).\nUse it for AI-assisted development of CAP applications (_agentic coding_).\n\nThe server helps AI models answer questions such as:\n- _Which CDS services are in this project, and where ",
+    "topics": [
+      "ai",
+      "cap",
+      "cds",
+      "mcp",
+      "mcp-server",
+      "nodejs",
+      "sap-btp",
+      "sap-cap",
+      "vibe-coding",
+      "agentic-coding"
+    ]
+  },
+  {
+    "id": "github-closedloop-ai-claude-plugins",
+    "name": "closedloop-ai/claude-plugins",
+    "url": "https://github.com/closedloop-ai/claude-plugins",
+    "source_type": "github",
+    "resource_type": [
+      "extension",
+      "agent-framework",
+      "cli-tool"
+    ],
+    "target_tools": [
+      "claude-code"
+    ],
+    "summary": "Open-source Claude Code plugins for multi-agent software delivery. Plan-first SDLC workflow, code review, LLM quality judges, and self-learning — grounded in your codebase.  Bootstrap, Plan, & Ship.   ",
+    "i18n": {
+      "zh": {
+        "name": "closedloop-ai/claude-plugins",
+        "summary": "Open-source Claude Code plugins for multi-agent software delivery. Plan-first SDLC workflow, code review, LLM quality judges, and self-learning — grounded in your codebase.  Bootstrap, Plan, & Ship.   "
+      },
+      "en": {
+        "name": "closedloop-ai/claude-plugins",
+        "summary": "Open-source Claude Code plugins for multi-agent software delivery. Plan-first SDLC workflow, code review, LLM quality judges, and self-learning — grounded in your codebase.  Bootstrap, Plan, & Ship.   "
+      }
+    },
+    "stars": 101,
+    "forks": 11,
+    "total_score": 59,
+    "quantifiable_score": 27,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-10T15:41:47Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "apache-2.0",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "开源Claude Code插件，提供多智能体规划、代码审查和质量评估，实现计划优先的软件开发生命周期工作流。",
+      "en": "Open-source Claude Code plugins providing multi-agent planning, code review, and quality judging for a plan-first SDLC workflow."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "closedloop-ai/claude-plugins",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# ClosedLoop.AI Claude Plugins\n\n  \n  \n  \n\nClosedLoop is an AI platform that brings the speed of individual AI-driven development to the full software development team. We're offering our agents as open sourced Claude Code plugins because we just couldn't keep this a secret for ourselves — check out our agents for planning, code reviews, judging quality and more that outperform Opus 4.6 and Sonnet 4.5 out of the box.\n\n**Bootstrap. Plan. Code. Ship.** It's that simple.\n\nLLMs are great at non-deter",
+    "topics": [
+      "ai-agents",
+      "claude-code",
+      "developer-tools",
+      "llm",
+      "anthropic",
+      "agentic-ai",
+      "automation",
+      "devtools",
+      "multi-agent"
+    ]
+  },
+  {
+    "id": "github-hlpun-train-in-silence",
+    "name": "hlpun/Train-in-Silence",
+    "url": "https://github.com/hlpun/Train-in-Silence",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server"
+    ],
+    "target_tools": [
+      "claude-code"
+    ],
+    "summary": "The first Task-Aware MCP server and automated VRAM calculator for LLM fine-tuning. Instantly snipe the cheapest, fastest GPUs across 10+ cloud providers.",
+    "i18n": {
+      "zh": {
+        "name": "hlpun/Train-in-Silence",
+        "summary": "The first Task-Aware MCP server and automated VRAM calculator for LLM fine-tuning. Instantly snipe the cheapest, fastest GPUs across 10+ cloud providers."
+      },
+      "en": {
+        "name": "hlpun/Train-in-Silence",
+        "summary": "The first Task-Aware MCP server and automated VRAM calculator for LLM fine-tuning. Instantly snipe the cheapest, fastest GPUs across 10+ cloud providers."
+      }
+    },
+    "stars": 101,
+    "forks": 2,
+    "total_score": 57,
+    "quantifiable_score": 25,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-10T02:08:12Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "首个面向大模型微调的任务感知MCP服务器，自动计算VRAM需求并跨云提供商优化GPU选择与成本。",
+      "en": "A Task-Aware MCP server and VRAM calculator that automates GPU selection and cost optimization across multiple cloud providers for LLM fine-tuning."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 2,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 7,
+      "novelty": 8,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "hlpun/Train-in-Silence",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/hlpun-train-in-silence-badge.png)](https://mseep.ai/app/hlpun-train-in-silence)\n\n  Train in Silence\n    The first Task-Aware MCP server for LLM fine-tuning.\n    Stop comparing GPU prices. Start training.\n  \n  \n    \n    \n    中文\n  \n\n---\n\nYou want to fine-tune an LLM. You open Vast.ai, RunPod, AWS, etc. -- a dozen tabs, a dozen pricing models, a dozen different ways to describe a GPU. Which option can run your code, and do so more cheaply ",
+    "topics": [
+      "claude-code",
+      "cost-optimization",
+      "fine-tuning",
+      "gpu-pricing",
+      "llm",
+      "mcp",
+      "mcp-server",
+      "python",
+      "vram-calculator"
+    ]
+  },
+  {
+    "id": "github-tigranbs-mcgravity",
+    "name": "tigranbs/mcgravity",
+    "url": "https://github.com/tigranbs/mcgravity",
+    "source_type": "github",
+    "resource_type": [
+      "tutorial"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli"
+    ],
+    "summary": "Fast TUI that orchestrates AI coding tools (Claude Code, Codex, Gemini) in a plan→execute→review loop. Breaks work into atomic tasks for easier verification and course-correction.",
+    "i18n": {
+      "zh": {
+        "name": "tigranbs/mcgravity",
+        "summary": "Fast TUI that orchestrates AI coding tools (Claude Code, Codex, Gemini) in a plan→execute→review loop. Breaks work into atomic tasks for easier verification and course-correction."
+      },
+      "en": {
+        "name": "tigranbs/mcgravity",
+        "summary": "Fast TUI that orchestrates AI coding tools (Claude Code, Codex, Gemini) in a plan→execute→review loop. Breaks work into atomic tasks for easier verification and course-correction."
+      }
+    },
+    "stars": 101,
+    "forks": 13,
+    "total_score": 57,
+    "quantifiable_score": 25,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-13T10:33:21Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": null,
+    "languages": [
+      "Rust"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个用 Rust 编写的 TUI 工具，用于编排多个 AI 编码工具（Claude Code、Codex、Gemini）的计划-执行-审查循环。",
+      "en": "A Rust TUI that orchestrates multiple AI coding tools (Claude Code, Codex, Gemini) in a plan-execute-review loop."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 2
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "tigranbs/mcgravity",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# McGravity\n\n  \n\n**Fast, opinionated TUI for AI-assisted coding.**\n\nMcGravity orchestrates AI coding tools (Claude Code, Codex, Gemini) in a tight feedback loop: **plan small tasks → execute one at a time → review → replan**. Instead of dumping a huge prompt and hoping for the best, McGravity breaks your work into atomic pieces that are easier to verify and course-correct.\n\n```\n+------------------------------------------------------------+\n| McGravity                                    [Claude C",
+    "topics": [
+      "claude",
+      "claude-code",
+      "codex",
+      "gemini",
+      "vibe-coding"
+    ]
+  },
+  {
+    "id": "github-yzfly-mcp-python-interpreter",
+    "name": "yzfly/mcp-python-interpreter",
+    "url": "https://github.com/yzfly/mcp-python-interpreter",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "opencode",
+      "workbuddy-codebuddy"
+    ],
+    "summary": "MCP Python Interpreter: run python code. Python-mcp-server, mcp-python-server, Code Executor",
+    "i18n": {
+      "zh": {
+        "name": "yzfly/mcp-python-interpreter",
+        "summary": "MCP Python Interpreter: run python code. Python-mcp-server, mcp-python-server, Code Executor"
+      },
+      "en": {
+        "name": "yzfly/mcp-python-interpreter",
+        "summary": "MCP Python Interpreter: run python code. Python-mcp-server, mcp-python-server, Code Executor"
+      }
+    },
+    "stars": 101,
+    "forks": 35,
+    "total_score": 59,
+    "quantifiable_score": 27,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-02T09:05:23Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "other",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个用于AI编码代理的MCP Python解释器服务器，支持代码执行与环境管理。",
+      "en": "An MCP Python interpreter server for AI coding agents, enabling code execution and environment management."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "yzfly/mcp-python-interpreter",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/yzfly-mcp-python-interpreter-badge.png)](https://mseep.ai/app/yzfly-mcp-python-interpreter)\n\n# MCP Python Interpreter\n\nA Model Context Protocol (MCP) server that allows LLMs to interact with Python environments, read and write files, execute Python code, and manage development workflows.\n\n## Features\n\n- **Environment Management**: List and use different Python environments (system and conda)\n- **Code Execution**: Run Python code or scri",
+    "topics": [
+      "claude",
+      "claude-mcp",
+      "code",
+      "mcp",
+      "mcp-client",
+      "mcp-server",
+      "python",
+      "qwen",
+      "mcp-python-server",
+      "python-mcp-server"
+    ]
+  },
+  {
+    "id": "github-0xmassi-pocketdev",
+    "name": "0xMassi/pocketdev",
+    "url": "https://github.com/0xMassi/pocketdev",
+    "source_type": "github",
+    "resource_type": [
+      "cli-tool"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder",
+      "cursor"
+    ],
+    "summary": "One command to run the AI coding CLI you already pay for (Claude Code, Codex, Cursor, Gemini, Grok, aider) on a Tailscale-only Hetzner box — code from your phone.",
+    "i18n": {
+      "zh": {
+        "name": "0xMassi/pocketdev",
+        "summary": "One command to run the AI coding CLI you already pay for (Claude Code, Codex, Cursor, Gemini, Grok, aider) on a Tailscale-only Hetzner box — code from your phone."
+      },
+      "en": {
+        "name": "0xMassi/pocketdev",
+        "summary": "One command to run the AI coding CLI you already pay for (Claude Code, Codex, Cursor, Gemini, Grok, aider) on a Tailscale-only Hetzner box — code from your phone."
+      }
+    },
+    "stars": 100,
+    "forks": 5,
+    "total_score": 57,
+    "quantifiable_score": 25,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-12T10:15:07Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "agpl-3.0",
+    "languages": [
+      "Go"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一条命令在Tailscale上配置Hetzner服务器，随时随地运行你已付费的AI编程CLI。",
+      "en": "One command to provision a Hetzner server on Tailscale and run your AI coding CLI from anywhere, including your phone."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 2,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "0xMassi/pocketdev",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# pocketdev\n\nRun the AI coding CLI you already pay for on a cloud box you reach from your phone.\n\n`pocketdev` provisions an always-on [Hetzner](https://www.hetzner.com/cloud) server, locks it to your private [Tailscale](https://tailscale.com/) network (no public SSH), and installs the agent you use: Claude Code, Codex, Cursor, opencode, Gemini, Grok, or Aider. You log in with your own subscription. Then you SSH in from a laptop or from [Termius](https://termius.com/) on a phone and code from any",
+    "topics": [
+      "ai-coding",
+      "bubbletea",
+      "claude-code",
+      "cli",
+      "cloud-development-environment",
+      "cloud-init",
+      "coding-agent",
+      "devbox",
+      "developer-tools",
+      "golang",
+      "hetzner",
+      "hetzner-cloud",
+      "mosh",
+      "remote-development",
+      "self-hosted",
+      "ssh",
+      "tailscale",
+      "termius",
+      "tui",
+      "vps"
+    ]
+  },
+  {
+    "id": "github-assafwoo-homebrew-pandafilter",
+    "name": "AssafWoo/homebrew-pandafilter",
+    "url": "https://github.com/AssafWoo/homebrew-pandafilter",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "cli-tool"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder",
+      "cursor"
+    ],
+    "summary": "The context intelligence layer for AI coding agents. Compressing noise, routing content to the right strategy, preserving session state across compactions, and surfacing the files that actually matter.",
+    "i18n": {
+      "zh": {
+        "name": "AssafWoo/homebrew-pandafilter",
+        "summary": "The context intelligence layer for AI coding agents. Compressing noise, routing content to the right strategy, preserving session state across compactions, and surfacing the files that actually matter."
+      },
+      "en": {
+        "name": "AssafWoo/homebrew-pandafilter",
+        "summary": "The context intelligence layer for AI coding agents. Compressing noise, routing content to the right strategy, preserving session state across compactions, and surfacing the files that actually matter."
+      }
+    },
+    "stars": 100,
+    "forks": 9,
+    "total_score": 56,
+    "quantifiable_score": 25,
+    "quality_score": 31,
+    "tracking_priority": "track",
+    "last_updated": "2026-06-15T02:47:04Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Rust"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个为AI编码代理提供上下文智能层的CLI工具，可压缩噪声、路由内容和保存会话状态。",
+      "en": "A CLI tool that provides a context intelligence layer for AI coding agents, compressing noise, routing content, and preserving session state."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 2,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 7,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "AssafWoo/homebrew-pandafilter",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "PandaFilter\n\nThe context intelligence layer for AI coding agents.\n\nThe layer between your tools and your AI. PandaFilter understands what's noise and what matters — compressing, routing, and preserving the right context so your agent thinks faster, costs less, and never loses its place.\n\n  \n    \n  \n\n  \n  &nbsp;\n  \n  &nbsp;\n  \n\n  \n  &nbsp;\n  \n  &nbsp;\n  \n  &nbsp;\n  \n  &nbsp;\n  \n  &nbsp;\n  \n  &nbsp;\n  \n  &nbsp;\n  \n\n---\n\n## Install\n\n```bash\nbrew tap AssafWoo/pandafilter\nbrew install pandafilter\n```",
+    "topics": [
+      "agentic-coding",
+      "ai-coding",
+      "anthropic",
+      "bert",
+      "builders",
+      "claude-code",
+      "cli",
+      "command-line-tool",
+      "cost-optimization",
+      "cost-reduction",
+      "developer-tools",
+      "homebrew",
+      "llm",
+      "open-source",
+      "producitivity",
+      "rust",
+      "codex",
+      "cursor",
+      "gemini-cli",
+      "windsurf"
+    ]
+  },
+  {
+    "id": "github-compdfkit-compdf-skills",
+    "name": "ComPDFKit/compdf-skills",
+    "url": "https://github.com/ComPDFKit/compdf-skills",
+    "source_type": "github",
+    "resource_type": [
+      "skills",
+      "agent-framework",
+      "cli-tool"
+    ],
+    "target_tools": [
+      "claude-code",
+      "opencode",
+      "cursor"
+    ],
+    "summary": "ComPDF Skills are AI-agent-ready PDF processing skills for Claude Code, Cursor, Copilot, OpenCode, and 39+ coding agents to convert, edit, split, insert, compare, compress PDFs, and more.",
+    "i18n": {
+      "zh": {
+        "name": "ComPDFKit/compdf-skills",
+        "summary": "ComPDF Skills are AI-agent-ready PDF processing skills for Claude Code, Cursor, Copilot, OpenCode, and 39+ coding agents to convert, edit, split, insert, compare, compress PDFs, and more."
+      },
+      "en": {
+        "name": "ComPDFKit/compdf-skills",
+        "summary": "ComPDF Skills are AI-agent-ready PDF processing skills for Claude Code, Cursor, Copilot, OpenCode, and 39+ coding agents to convert, edit, split, insert, compare, compress PDFs, and more."
+      }
+    },
+    "stars": 100,
+    "forks": 5,
+    "total_score": 54,
+    "quantifiable_score": 23,
+    "quality_score": 31,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-01T02:59:02Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": null,
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "提供AI编码智能体可直接调用的PDF处理技能，集成简单，覆盖面广。",
+      "en": "A plug-and-play PDF processing skill set for AI coding agents, enabling quick PDF conversion and editing via natural language commands."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 2,
+      "maturity": 2
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 7,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "ComPDFKit/compdf-skills",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# ComPDF Skills — AI Agent–Ready PDF Processing Toolkit\n\nAs part of the KDAN ecosystem, ComPDF Skills work with **39+ AI coding agents** including Claude Code, Cursor, GitHub Copilot, OpenCode, Windsurf, Gemini CLI, and more.\n\nGet started in seconds — no complex setup, just `npx skills add` and you're ready to process PDFs through your AI agent.\n\n> ⭐ Star this repo if you find it helpful! Questions or feedback? Join our [Discussions](https://github.com/ComPDFKit/compdf-skills/discussions).\n\n**Wh",
+    "topics": [
+      "pdf-conversion",
+      "pdf-editor",
+      "pdf-viewer",
+      "skills",
+      "ai-agent",
+      "claude-skills",
+      "cursor",
+      "document-processing",
+      "opencode",
+      "pdf-sdk",
+      "claude-code-skills",
+      "github-copilot"
     ]
   }
 ]

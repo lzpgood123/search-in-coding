@@ -55,10 +55,11 @@ const SIC_charts = {
       const barW = (val / niceMax) * chartW;
       const y = padT + i * rowH + (rowH - barH) / 2;
       let label = String(d.label || '');
+      const fullLabel = label;
       if (label.length > 16) label = label.slice(0, 15) + '…';
 
-      return '<text x="' + (padL - 8) + '" y="' + (y + barH / 2 + 4) + '" text-anchor="end" font-size="11" fill="var(--color-text-secondary)">' + this._escText(label) + '</text>' +
-        '<rect x="' + padL + '" y="' + y + '" width="' + barW + '" height="' + barH + '" fill="var(--color-accent)" rx="3"/>' +
+      return '<text x="' + (padL - 8) + '" y="' + (y + barH / 2 + 4) + '" text-anchor="end" font-size="11" fill="var(--color-text-secondary)"><title>' + this._escText(fullLabel) + '</title>' + this._escText(label) + '</text>' +
+        '<rect x="' + padL + '" y="' + y + '" width="' + barW + '" height="' + barH + '" fill="var(--color-accent)" rx="3"><title>' + this._escText(fullLabel + ': ' + val) + '</title></rect>' +
         '<text x="' + (padL + barW + 6) + '" y="' + (y + barH / 2 + 4) + '" text-anchor="start" font-size="11" font-weight="600" fill="var(--color-text-secondary)">' + val + '</text>';
     }).join('');
 

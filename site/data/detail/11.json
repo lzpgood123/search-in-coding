@@ -1,1127 +1,5 @@
 [
   {
-    "id": "github-xiaofenggan01-aigc-reduce",
-    "name": "xiaofenggan01/aigc-reduce",
-    "url": "https://github.com/xiaofenggan01/aigc-reduce",
-    "source_type": "github",
-    "resource_type": [
-      "skills",
-      "tutorial"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli"
-    ],
-    "summary": "降低学术论文 AIGC 查重率的 Claude Code Skill | A Claude Code skill for reducing AIGC detection rates in academic papers",
-    "i18n": {
-      "zh": {
-        "name": "xiaofenggan01/aigc-reduce",
-        "summary": "降低学术论文 AIGC 查重率的 Claude Code Skill | A Claude Code skill for reducing AIGC detection rates in academic papers"
-      },
-      "en": {
-        "name": "xiaofenggan01/aigc-reduce",
-        "summary": "降低学术论文 AIGC 查重率的 Claude Code Skill | A Claude Code skill for reducing AIGC detection rates in academic papers"
-      }
-    },
-    "stars": 449,
-    "forks": 18,
-    "total_score": 57,
-    "quantifiable_score": 27,
-    "quality_score": 30,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T02:44:06Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个用于降低学术论文AIGC查重率的Claude Code技能，通过三轮降重协议保持学术书面语体。",
-      "en": "A Claude Code skill for reducing AIGC detection rates in academic papers, using a three-round reduction protocol that maintains academic written style."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 8,
-      "practicality": 9,
-      "novelty": 7,
-      "ecosystem_value": 6
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "xiaofenggan01/aigc-reduce",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# AIGC Reduce\n\n降低学术论文 AIGC 查重率的 Claude Code Skill，同时增量兼容 Codex。\n\n基于知网 3.0、万方、PaperPass、PaperPure 等主流检测器的技术原理，结合 [humanizer skill](https://github.com/blader/humanizer)（源自 Wikipedia \"Signs of AI writing\"）的 AI 痕迹识别方法论，通过**三轮降重协议**（去除痕迹 → 注入书面学术特征 → 自检审计）打破 AI 的模板化痕迹。\n\n> **核心立场：降重 ≠ 口语化。** 去 AI 味的默认方向会漂向口语化（因为口语色彩能骗过统计检测器），但学术论文过了机审还要过人审。本 skill 把**保持学术书面语体设为硬底线**，优先级高于修改率目标——降重靠打破模板化句式结构，而不是把论文写得口语、写差一点。\n\n## 安装\n\n### Claude Code\n\nClaude Code 是本 skill 的原始目标环境，推荐安装到：\n\n```bash\ngit clone https://github.",
-    "topics": []
-  },
-  {
-    "id": "github-computerlovetech-agr",
-    "name": "computerlovetech/agr",
-    "url": "https://github.com/computerlovetech/agr",
-    "source_type": "github",
-    "resource_type": [
-      "cli-tool",
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code",
-      "cursor",
-      "codex-cli"
-    ],
-    "summary": "A package manager for AI agents. Install agent skills from GitHub with a single command.",
-    "i18n": {
-      "zh": {
-        "name": "computerlovetech/agr",
-        "summary": "A package manager for AI agents. Install agent skills from GitHub with a single command."
-      },
-      "en": {
-        "name": "computerlovetech/agr",
-        "summary": "A package manager for AI agents. Install agent skills from GitHub with a single command."
-      }
-    },
-    "stars": 448,
-    "forks": 36,
-    "total_score": 63,
-    "quantifiable_score": 27,
-    "quality_score": 36,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-12T21:59:07Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个为AI代理设计的包管理器，可通过一条命令从GitHub安装技能，类似npm对于代码的作用。",
-      "en": "A package manager that enables AI agents to install skills from GitHub repositories with a single command, similar to npm for code."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 9,
-      "novelty": 8,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "computerlovetech/agr",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# agr\n\n**The package manager for AI agents.**\n\nFor teams who want to manage agent skills like software packages — the way npm,\nPyPI, and uv manage code. Install skills from any Git repo into Claude Code,\nCursor, Codex, and more, then share them across your team like real dependencies.\n\n[![PyPI](https://img.shields.io/pypi/v/agr?color=blue)](https://pypi.org/project/agr/)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![Docs](https://i",
-    "topics": [
-      "agent-skills",
-      "claude-code",
-      "agentic-engineering"
-    ]
-  },
-  {
-    "id": "github-duolahypercho-fusion-fable",
-    "name": "duolahypercho/fusion-fable",
-    "url": "https://github.com/duolahypercho/fusion-fable",
-    "source_type": "github",
-    "resource_type": [
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli"
-    ],
-    "summary": "Fuse two frontier models into one Fable-tier answer: Opus 4.8 drafts, a second model (Opus 4.8 or GPT-5.5 via codex) checks, Opus fuses. A Claude Code skill.",
-    "i18n": {
-      "zh": {
-        "name": "duolahypercho/fusion-fable",
-        "summary": "Fuse two frontier models into one Fable-tier answer: Opus 4.8 drafts, a second model (Opus 4.8 or GPT-5.5 via codex) checks, Opus fuses. A Claude Code skill."
-      },
-      "en": {
-        "name": "duolahypercho/fusion-fable",
-        "summary": "Fuse two frontier models into one Fable-tier answer: Opus 4.8 drafts, a second model (Opus 4.8 or GPT-5.5 via codex) checks, Opus fuses. A Claude Code skill."
-      }
-    },
-    "stars": 448,
-    "forks": 66,
-    "total_score": 59,
-    "quantifiable_score": 27,
-    "quality_score": 32,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T06:32:25Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Shell"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "Fusion-Fable 通过多模型并行推理与融合，增强 Claude Code 的回答质量。",
-      "en": "Fusion-Fable enhances Claude Code by running a hard question through a panel of frontier models and fusing their answers into a refined response."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "duolahypercho/fusion-fable",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Fusion-Fable\n\n**Fuse a panel of frontier models into one Fable-tier answer.**\n\nFusion-Fable is a [Claude Code](https://claude.com/claude-code) skill that runs a hard question through a\n**panel → judge** pipeline. The same prompt is dispatched to several models *in parallel* — each answering\nindependently with web search and bash, none seeing the others' work — and then Opus 4.8 judges every\nanswer into a structured analysis (consensus, contradictions, partial coverage, unique insights, blind\ns",
-    "topics": []
-  },
-  {
-    "id": "github-geekjourneyx-claude-design-card",
-    "name": "geekjourneyx/claude-design-card",
-    "url": "https://github.com/geekjourneyx/claude-design-card",
-    "source_type": "github",
-    "resource_type": [
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code",
-      "hermes-agent"
-    ],
-    "summary": "Claude Code skill for generating design cards in 14 formats — platform   covers, social sharing cards, and editorial layouts following Anthropic",
-    "i18n": {
-      "zh": {
-        "name": "geekjourneyx/claude-design-card",
-        "summary": "Claude Code skill for generating design cards in 14 formats — platform   covers, social sharing cards, and editorial layouts following Anthropic"
-      },
-      "en": {
-        "name": "geekjourneyx/claude-design-card",
-        "summary": "Claude Code skill for generating design cards in 14 formats — platform   covers, social sharing cards, and editorial layouts following Anthropic"
-      }
-    },
-    "stars": 448,
-    "forks": 45,
-    "total_score": 55,
-    "quantifiable_score": 25,
-    "quality_score": 30,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-12T21:37:23Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个为 Claude Code 设计的技能，可将文本或 URL 生成为 14 种格式的设计卡片，遵循 Anthropic 设计语言，实用且文档完善。",
-      "en": "A Claude Code skill that generates design cards in 14 formats from text or URLs, following Anthropic's design language, practical and well-documented."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 8,
-      "practicality": 9,
-      "novelty": 6,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "geekjourneyx/claude-design-card",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# claude-design-card\n\n**14 种格式，一套审美标准 — Claude 设计语言驱动的卡片生成技能**\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)\n[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6.svg)](https://www.typescriptlang.org/)\n[![Bun](https://img.shields.io/badge/Bun-1.x-fbf0df.svg)](https://bun.sh/)\n[![Playwright](https://img.shields.io/badge/Playwright-1.59-45ba4b.svg)](https://playwright.dev/)\n\n---\n\n## 这是什么\n\n将任意文本、网页或 URL 转化为精致的可发布卡片，覆盖平台封面、社交分享、长文编辑排版。所有卡片严格遵循 [Claude/A",
-    "topics": [
-      "agent-skills",
-      "card-generator",
-      "claude-code",
-      "claude-skills",
-      "design-system",
-      "hermes-agent",
-      "infographics",
-      "playwright"
-    ]
-  },
-  {
-    "id": "github-skydoves-compose-performance-skills",
-    "name": "skydoves/compose-performance-skills",
-    "url": "https://github.com/skydoves/compose-performance-skills",
-    "source_type": "github",
-    "resource_type": [
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "⚡️ A curated library of Agent Skills focused on Jetpack Compose performance.",
-    "i18n": {
-      "zh": {
-        "name": "skydoves/compose-performance-skills",
-        "summary": "⚡️ A curated library of Agent Skills focused on Jetpack Compose performance."
-      },
-      "en": {
-        "name": "skydoves/compose-performance-skills",
-        "summary": "⚡️ A curated library of Agent Skills focused on Jetpack Compose performance."
-      }
-    },
-    "stars": 448,
-    "forks": 15,
-    "total_score": 58,
-    "quantifiable_score": 27,
-    "quality_score": 31,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T01:36:19Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "apache-2.0",
-    "languages": [
-      "Shell"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "该项目为AI编码代理提供专注于Jetpack Compose性能优化的技能库，是android/skills的深度领域扩展。",
-      "en": "A curated skill library for AI coding agents, specializing in Jetpack Compose performance, extending the general android/skills with deep domain expertise."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "skydoves/compose-performance-skills",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Compose Performance Skills\n\nIf you have used [`android/skills`](https://github.com/android/skills), you already know the shape of an Agent Skill: a Markdown file an agent loads on demand to perform one focused task. That library covers Android development at large. This repository goes narrow and deep on a single axis: Jetpack Compose performance. The skills here cover stability, recomposition, lazy layouts, custom modifiers, side effects, baseline profiles, R8, hot reload with Compose HotSwan",
-    "topics": [
-      "agent-skills",
-      "android",
-      "claude",
-      "claude-code",
-      "compose",
-      "jetpack-compose",
-      "kotlin",
-      "llm-tools",
-      "recomposition",
-      "skydoves",
-      "compose-performance"
-    ]
-  },
-  {
-    "id": "github-randallliuxin-godotmaker",
-    "name": "RandallLiuXin/GodotMaker",
-    "url": "https://github.com/RandallLiuXin/GodotMaker",
-    "source_type": "github",
-    "resource_type": [
-      "skills",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "opencode"
-    ],
-    "summary": "Autonomous text-to-game pipeline for Godot, powered by Claude Code,Codex,Opencode",
-    "i18n": {
-      "zh": {
-        "name": "RandallLiuXin/GodotMaker",
-        "summary": "Autonomous text-to-game pipeline for Godot, powered by Claude Code,Codex,Opencode"
-      },
-      "en": {
-        "name": "RandallLiuXin/GodotMaker",
-        "summary": "Autonomous text-to-game pipeline for Godot, powered by Claude Code,Codex,Opencode"
-      }
-    },
-    "stars": 447,
-    "forks": 35,
-    "total_score": 56,
-    "quantifiable_score": 27,
-    "quality_score": 29,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T18:54:50Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "other",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "GodotMaker是一个利用Claude Code、Codex和Opencode等AI编码代理自动生成Godot游戏文本到游戏的管道工具。",
-      "en": "GodotMaker is an autonomous text-to-game pipeline for Godot, powered by multiple AI coding agents including Claude Code, Codex, and Opencode."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 8,
-      "practicality": 7,
-      "novelty": 7,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "RandallLiuXin/GodotMaker",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "GodotMaker\n\n  Bring your idea. Give it to GodotMaker. Get a playable game.\n\n  \n  \n  \n  \n\n**English** | [中文](README.zh-CN.md)\n\n## Why I Built This\n\nIn game development, especially early ideation and market validation stages, teams often come up with more ideas than they can develop. The usual approach is to discuss and pick one idea for development, only to find out after a couple of weeks that the idea is not viable, making the previous discussion and development efforts wasted. I built GodotMak",
-    "topics": [
-      "ai-agent",
-      "claude-code",
-      "claude-code-skill",
-      "game-development",
-      "text-to-game",
-      "codex",
-      "godot-4"
-    ]
-  },
-  {
-    "id": "github-claesbackman-ai-research-feedback",
-    "name": "claesbackman/AI-research-feedback",
-    "url": "https://github.com/claesbackman/AI-research-feedback",
-    "source_type": "github",
-    "resource_type": [
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "A collection of Claude Code skills for academic research review. These tools were developed by Claes Bäckman.",
-    "i18n": {
-      "zh": {
-        "name": "claesbackman/AI-research-feedback",
-        "summary": "A collection of Claude Code skills for academic research review. These tools were developed by Claes Bäckman."
-      },
-      "en": {
-        "name": "claesbackman/AI-research-feedback",
-        "summary": "A collection of Claude Code skills for academic research review. These tools were developed by Claes Bäckman."
-      }
-    },
-    "stars": 447,
-    "forks": 78,
-    "total_score": 60,
-    "quantifiable_score": 25,
-    "quality_score": 35,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-12T10:06:33Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "为Claude Code提供学术论文评审技能的合集，实用且受欢迎。",
-      "en": "A collection of Claude Code skills for academic research review, practical and popular."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 9,
-      "novelty": 8,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "claesbackman/AI-research-feedback",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Using AI to get feedback on your research\n\nA collection of [Claude Code](https://claude.ai/code) skills for academic research review. This tool was developed by [Claes Bäckman](https://claesbackman.com).\n\n## Skills in this repo\n\nEach skill lives in its own folder containing a `SKILL.md` file:\n\n- `Skills/review-paper/SKILL.md`: Full 8-agent referee-style paper review.\n- `Skills/review-paper-light/SKILL.md`: Fast 2-agent paper check.\n- `Skills/review-paper-code/SKILL.md`: Paper–code reproducibil",
-    "topics": []
-  },
-  {
-    "id": "github-daobataotie-cad-mcp",
-    "name": "daobataotie/CAD-MCP",
-    "url": "https://github.com/daobataotie/CAD-MCP",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server"
-    ],
-    "target_tools": [
-      "claude-code",
-      "cursor"
-    ],
-    "summary": "CAD MCP Server",
-    "i18n": {
-      "zh": {
-        "name": "daobataotie/CAD-MCP",
-        "summary": "CAD MCP Server"
-      },
-      "en": {
-        "name": "daobataotie/CAD-MCP",
-        "summary": "CAD MCP Server"
-      }
-    },
-    "stars": 447,
-    "forks": 63,
-    "total_score": 58,
-    "quantifiable_score": 27,
-    "quality_score": 31,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T09:20:29Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "将CAD控制能力通过MCP协议集成到AI编码代理，实现自然语言驱动CAD绘图修改。",
-      "en": "Integrates CAD control capabilities into AI coding agents via MCP protocol, enabling natural language-driven CAD drawing and modification."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 8,
-      "practicality": 8,
-      "novelty": 8,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "daobataotie/CAD-MCP",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# CAD-MCP Server (CAD Model Context Protocol Server)\n\n[English](/README_en.md) | [中文](/README_zh.md) \n\n## Project Introduction\n\nCAD-MCP is an innovative CAD control service that allows controlling CAD software for drawing operations through natural language instructions. This project combines natural language processing and CAD automation technology, enabling users to create and modify CAD drawings through simple text commands without manually operating the CAD interface.\n\n## Features\n\n### CAD C",
-    "topics": [
-      "cad",
-      "mcp",
-      "model-context-protocol",
-      "cadmcp",
-      "ai"
-    ]
-  },
-  {
-    "id": "github-karanb192-claude-code-hooks",
-    "name": "karanb192/claude-code-hooks",
-    "url": "https://github.com/karanb192/claude-code-hooks",
-    "source_type": "github",
-    "resource_type": [
-      "extension",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "🪝 Claude Code hooks + an installable plugin marketplace: safety, cost, observability, productivity.",
-    "i18n": {
-      "zh": {
-        "name": "karanb192/claude-code-hooks",
-        "summary": "🪝 Claude Code hooks + an installable plugin marketplace: safety, cost, observability, productivity."
-      },
-      "en": {
-        "name": "karanb192/claude-code-hooks",
-        "summary": "🪝 Claude Code hooks + an installable plugin marketplace: safety, cost, observability, productivity."
-      }
-    },
-    "stars": 446,
-    "forks": 32,
-    "total_score": 63,
-    "quantifiable_score": 27,
-    "quality_score": 36,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T05:40:52Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "JavaScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个为Claude Code提供的插件市场与钩子系统，增加安全性、成本控制、可观测性和生产力功能。",
-      "en": "A plugin marketplace and hook system for Claude Code that adds safety, cost control, observability, and productivity features."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 9,
-      "novelty": 8,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "karanb192/claude-code-hooks",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# claude-code-hooks\n\n🪝 Ready-to-use hooks for Claude Code — safety, automation, notifications, and more.\n\n[![GitHub stars](https://img.shields.io/github/stars/karanb192/claude-code-hooks?style=social)](https://github.com/karanb192/claude-code-hooks)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![Tests](https://img.shields.io/badge/tests-262%20passing-brightgreen)](hook-scripts/tests)\n\n### 🎬 Quick Demo\n\n  \n    Protecting Secrets\n    ",
-    "topics": [
-      "ai-tools",
-      "anthropic",
-      "automation",
-      "claude-code",
-      "claude-code-hooks",
-      "cli",
-      "developer-tools",
-      "notifications",
-      "security",
-      "claude",
-      "hooks",
-      "claude-code-plugin",
-      "marketplace",
-      "plugin"
-    ]
-  },
-  {
-    "id": "github-instavm-open-skills",
-    "name": "instavm/open-skills",
-    "url": "https://github.com/instavm/open-skills",
-    "source_type": "github",
-    "resource_type": [
-      "skills",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "opencode"
-    ],
-    "summary": "OpenSkills: Run Claude Skills Locally using any LLM",
-    "i18n": {
-      "zh": {
-        "name": "instavm/open-skills",
-        "summary": "OpenSkills: Run Claude Skills Locally using any LLM"
-      },
-      "en": {
-        "name": "instavm/open-skills",
-        "summary": "OpenSkills: Run Claude Skills Locally using any LLM"
-      }
-    },
-    "stars": 445,
-    "forks": 37,
-    "total_score": 59,
-    "quantifiable_score": 27,
-    "quality_score": 32,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-05T17:14:33Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "apache-2.0",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "开源项目，允许使用任意本地大语言模型运行Claude Skills，增强隐私和灵活性。",
-      "en": "Open-source tool to run Claude Skills locally with any LLM, enhancing privacy and flexibility."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "instavm/open-skills",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "[![Start](https://img.shields.io/github/stars/BandarLabs/open-skills?color=yellow&style=flat&label=%E2%AD%90%20stars)](https://github.com/BandarLabs/open-skills/stargazers)\n[![License](http://img.shields.io/:license-Apache%202.0-green.svg?style=flat)](https://github.com/BandarLabs/open-skills/blob/master/LICENSE)\n\n```\n    ___  ____  _____ _   _     ____  _  _____ _     _     ____\n   / _ \\|  _ \\| ____| \\ | |   / ___|| |/ /_ _| |   | |   / ___|\n  | | | | |_) |  _| |  \\| |   \\___ \\| ' / | || |   | ",
-    "topics": [
-      "ai",
-      "claude",
-      "gemini-cli",
-      "mcp",
-      "ollama",
-      "privacy",
-      "skills",
-      "qwen-cli",
-      "opencode"
-    ]
-  },
-  {
-    "id": "github-gglucass-headroom-desktop",
-    "name": "gglucass/headroom-desktop",
-    "url": "https://github.com/gglucass/headroom-desktop",
-    "source_type": "github",
-    "resource_type": [
-      "extension"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli"
-    ],
-    "summary": "Unlock 2x more Claude Code and Codex usage",
-    "i18n": {
-      "zh": {
-        "name": "gglucass/headroom-desktop",
-        "summary": "Unlock 2x more Claude Code and Codex usage"
-      },
-      "en": {
-        "name": "gglucass/headroom-desktop",
-        "summary": "Unlock 2x more Claude Code and Codex usage"
-      }
-    },
-    "stars": 444,
-    "forks": 44,
-    "total_score": 61,
-    "quantifiable_score": 27,
-    "quality_score": 34,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T05:25:33Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Rust"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个macOS菜单栏应用，通过本地提示压缩将Claude Code和Codex的token成本降低约50%。",
-      "en": "A macOS menu bar app that reduces token costs for Claude Code and OpenAI Codex by ~50% via local prompt compression."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 9,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "gglucass/headroom-desktop",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Headroom Desktop — cut Claude Code & Codex token costs by ~50%\n\n**Headroom is a macOS menu bar app that cuts [Claude Code](https://www.anthropic.com/claude-code) and [OpenAI Codex](https://openai.com/codex/) token costs by ~50% — without changing how you code.** It runs a local-first optimization pipeline that reversibly compresses the tool output, logs, and boilerplate that bloat every prompt, so the AI plan you already pay for stretches about 2x further. Nothing the model needs is lost — it ",
-    "topics": [
-      "ai",
-      "anthropic",
-      "claude-code",
-      "developer-tools",
-      "llm",
-      "macos",
-      "menu-bar-app",
-      "prompt-compression",
-      "proxy",
-      "react",
-      "rust",
-      "tauri",
-      "token-optimization",
-      "typescript",
-      "codex",
-      "openai"
-    ]
-  },
-  {
-    "id": "github-josstei-maestro-orchestrate",
-    "name": "josstei/maestro-orchestrate",
-    "url": "https://github.com/josstei/maestro-orchestrate",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli"
-    ],
-    "summary": "Multi-agent orchestration platform for Gemini CLI, Claude Code, Codex, and Qwen Code — 39 specialists, parallel subagents, persistent sessions, and built-in code review, debugging, security, SEO, accessibility, and compliance tools",
-    "i18n": {
-      "zh": {
-        "name": "josstei/maestro-orchestrate",
-        "summary": "Multi-agent orchestration platform for Gemini CLI, Claude Code, Codex, and Qwen Code — 39 specialists, parallel subagents, persistent sessions, and built-in code review, debugging, security, SEO, accessibility, and compliance tools"
-      },
-      "en": {
-        "name": "josstei/maestro-orchestrate",
-        "summary": "Multi-agent orchestration platform for Gemini CLI, Claude Code, Codex, and Qwen Code — 39 specialists, parallel subagents, persistent sessions, and built-in code review, debugging, security, SEO, accessibility, and compliance tools"
-      }
-    },
-    "stars": 444,
-    "forks": 30,
-    "total_score": 60,
-    "quantifiable_score": 27,
-    "quality_score": 33,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-08T14:48:30Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "apache-2.0",
-    "languages": [
-      "JavaScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个多代理编排平台，集成Gemini CLI、Claude Code、Codex等工具，提供39个专家子代理和内置代码审查、调试、安全、SEO、可访问性和合规功能。",
-      "en": "A multi-agent orchestration platform integrating Gemini CLI, Claude Code, Codex, and more, with 39 specialist subagents and built-in code review, debugging, security, SEO, accessibility, and compliance tools."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "josstei/maestro-orchestrate",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Maestro\n\n[![Version](https://img.shields.io/badge/version-1.6.4-blue)](https://github.com/josstei/maestro-orchestrate/releases)\n[![License](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)\n[![Gemini CLI](https://img.shields.io/badge/Gemini_CLI-extension-orange)](https://github.com/google-gemini/gemini-cli)\n[![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blue)](https://docs.anthropic.com/en/docs/claude-code)\n[![Codex](https://img.shields.io/badge/Codex-plugin-bl",
-    "topics": [
-      "agentic",
-      "ai-agents",
-      "code-review",
-      "developer-tools",
-      "gemini",
-      "gemini-cli",
-      "gemini-extension",
-      "multi-agent",
-      "orchestration",
-      "subagents",
-      "anthropic",
-      "claude",
-      "claude-code",
-      "claude-code-plugin",
-      "gemini-cli-extension",
-      "codex-cli",
-      "codex-plugin",
-      "openai-codex",
-      "qwen",
-      "qwen-code"
-    ]
-  },
-  {
-    "id": "github-lijigang-ljg-skill-xray-book",
-    "name": "lijigang/ljg-skill-xray-book",
-    "url": "https://github.com/lijigang/ljg-skill-xray-book",
-    "source_type": "github",
-    "resource_type": [
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "深度拆书机 — Claude Code Skill，三轮认知压缩提取书籍可学习结构",
-    "i18n": {
-      "zh": {
-        "name": "lijigang/ljg-skill-xray-book",
-        "summary": "深度拆书机 — Claude Code Skill，三轮认知压缩提取书籍可学习结构"
-      },
-      "en": {
-        "name": "lijigang/ljg-skill-xray-book",
-        "summary": "深度拆书机 — Claude Code Skill，三轮认知压缩提取书籍可学习结构"
-      }
-    },
-    "stars": 444,
-    "forks": 35,
-    "total_score": 28,
-    "quantifiable_score": 28,
-    "quality_score": 0,
-    "tracking_priority": "pending",
-    "last_updated": "2026-07-09T12:34:27Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [],
-    "review_state": "auto-indexed",
-    "llm_summary": null,
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 5
-    },
-    "quality_detail": {},
-    "benchmark_ref": "github-opencoworkai-open-cowork",
-    "last_analyzed": null,
-    "repo": "lijigang/ljg-skill-xray-book",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "archived",
-    "readme_preview": "# ljg-skill-xray-book\n\n深度拆书机 (Deep Book X-Ray) — 一个 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) Skill，基于 Epiplexity 原理，通过三轮认知压缩最大化提取书籍中的可学习结构。\n\n## 功能\n\n- 支持书名、书籍内容或链接输入\n- 三轮认知压缩：骨架扫描 → 血肉解剖 → 灵魂提取\n- 餐巾纸极限压缩：公式 + 草图 + 一句话\n- 生成 Org-mode 格式报告，含 ASCII 结构图\n\n## 安装\n\n```bash\n/plugin marketplace add lijigang/ljg-skill-xray-book\n/plugin install ljg-xray-book\n```\n\n## 使用\n\n在 Claude Code 中输入：\n\n```\n/ljg-xray-book 《思考，快与慢》\n```\n\n## 输出示例\n\n生成的 Org-mode 报告包含：\n\n- **NAPKIN** — 餐巾纸公式、一句话、草图\n- **ROUND ",
-    "topics": []
-  },
-  {
-    "id": "github-stormzhang-token-tracker",
-    "name": "stormzhang/token-tracker",
-    "url": "https://github.com/stormzhang/token-tracker",
-    "source_type": "github",
-    "resource_type": [
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli"
-    ],
-    "summary": "Claude Code & Codex 本地 token 追踪 — 状态栏（Codex 业界首创伪 statusline）、GitHub 风格热力图、多模型成本分析。 | Local token tracker for Claude Code & Codex — status line (industry-first Codex faux statusline), GitHub-style heatmap, multi-model cost analysis",
-    "i18n": {
-      "zh": {
-        "name": "stormzhang/token-tracker",
-        "summary": "Claude Code & Codex 本地 token 追踪 — 状态栏（Codex 业界首创伪 statusline）、GitHub 风格热力图、多模型成本分析。 | Local token tracker for Claude Code & Codex — status line (industry-first Codex faux statusline), GitHub-style heatmap, multi-model cost analysis"
-      },
-      "en": {
-        "name": "stormzhang/token-tracker",
-        "summary": "Claude Code & Codex 本地 token 追踪 — 状态栏（Codex 业界首创伪 statusline）、GitHub 风格热力图、多模型成本分析。 | Local token tracker for Claude Code & Codex — status line (industry-first Codex faux statusline), GitHub-style heatmap, multi-model cost analysis"
-      }
-    },
-    "stars": 440,
-    "forks": 44,
-    "total_score": 63,
-    "quantifiable_score": 27,
-    "quality_score": 36,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:19:56Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "本地追踪 Claude Code 和 Codex 的 token 消耗及成本的实用 CLI 工具，支持状态栏和热力图。",
-      "en": "A practical CLI tool for locally tracking token usage and costs for Claude Code and Codex, with status bar and heatmap."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 9,
-      "novelty": 8,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "stormzhang/token-tracker",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Token Tracker (tt)\n\n本地 AI Agent Token 消耗追踪/分析工具，支持 **Claude Code** 和 **Codex** 。\n\n自定义 StatusLine 状态栏 + CLI Dashboard，实时查看 token 用量、等效成本、限额状态。\n\n![Python](https://img.shields.io/badge/python-3.11+-blue) ![CI](https://github.com/stormzhang/token-tracker/actions/workflows/ci.yml/badge.svg) ![License](https://img.shields.io/badge/license-MIT-green)\n\n[English](README_EN.md)\n\n![Token Tracker Daily](assets/screenshot-daily.png)\n\n## 功能亮点\n\n- **多 Agent 统一追踪** — Claude Code + Codex 统一读取，多 Agent 按来源分组\n- **",
-    "topics": [
-      "ai-agent",
-      "claude-code",
-      "cli",
-      "codex",
-      "python",
-      "token-tracker",
-      "anthropic-claude",
-      "cost-analysis",
-      "developer-tools",
-      "openai-codex",
-      "statusline",
-      "terminal-ui",
-      "usage-tracking"
-    ]
-  },
-  {
-    "id": "github-zhitongblog-solomd",
-    "name": "zhitongblog/solomd",
-    "url": "https://github.com/zhitongblog/solomd",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "cursor"
-    ],
-    "summary": "A markdown editor — and the bridge to your LLM. Local-first, MIT, ~15 MB. Bundled MCP server lets Claude Code / Codex / Cursor drive your vault directly. 14 AI providers BYOK.",
-    "i18n": {
-      "zh": {
-        "name": "zhitongblog/solomd",
-        "summary": "A markdown editor — and the bridge to your LLM. Local-first, MIT, ~15 MB. Bundled MCP server lets Claude Code / Codex / Cursor drive your vault directly. 14 AI providers BYOK."
-      },
-      "en": {
-        "name": "zhitongblog/solomd",
-        "summary": "A markdown editor — and the bridge to your LLM. Local-first, MIT, ~15 MB. Bundled MCP server lets Claude Code / Codex / Cursor drive your vault directly. 14 AI providers BYOK."
-      }
-    },
-    "stars": 439,
-    "forks": 27,
-    "total_score": 61,
-    "quantifiable_score": 27,
-    "quality_score": 34,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:07:15Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个本地优先的Markdown编辑器，集成了MCP服务器，让AI代理直接驱动你的知识库。",
-      "en": "A local-first markdown editor with an integrated MCP server, enabling AI agents to directly drive your knowledge base."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 9,
-      "novelty": 8,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "zhitongblog/solomd",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# SoloMD\n\n> The editor where agents live.\n\n[![Latest release](https://img.shields.io/github/v/release/zhitongblog/solomd)](https://github.com/zhitongblog/solomd/releases/latest)\n[![License: MIT](https://img.shields.io/github/license/zhitongblog/solomd?color=orange)](LICENSE)\n[![Downloads](https://img.shields.io/github/downloads/zhitongblog/solomd/total)](https://github.com/zhitongblog/solomd/releases)\n[![Website](https://img.shields.io/badge/website-solomd.app-ff9f40.svg)](https://solomd.app)\n\n🌐",
-    "topics": [
-      "autogit",
-      "byok",
-      "knowledge-base",
-      "markdown",
-      "markdown-editor",
-      "mcp",
-      "mcp-server",
-      "note-taking",
-      "tauri",
-      "wikilinks",
-      "ai",
-      "android",
-      "cross-platform",
-      "ios",
-      "local-first",
-      "obsidian-alternative",
-      "tldraw",
-      "typora-alternative",
-      "vue",
-      "whiteboard"
-    ]
-  },
-  {
-    "id": "github-flowful-ai-cad-skill",
-    "name": "flowful-ai/cad-skill",
-    "url": "https://github.com/flowful-ai/cad-skill",
-    "source_type": "github",
-    "resource_type": [
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "Claude Code skill for parametric 3D-printable model generation with CadQuery",
-    "i18n": {
-      "zh": {
-        "name": "flowful-ai/cad-skill",
-        "summary": "Claude Code skill for parametric 3D-printable model generation with CadQuery"
-      },
-      "en": {
-        "name": "flowful-ai/cad-skill",
-        "summary": "Claude Code skill for parametric 3D-printable model generation with CadQuery"
-      }
-    },
-    "stars": 437,
-    "forks": 24,
-    "total_score": 63,
-    "quantifiable_score": 27,
-    "quality_score": 36,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:09:15Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "other",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个为Claude Code设计的技能，使其能够使用CadQuery生成可3D打印的参数化模型。",
-      "en": "A skill that enables Claude Code to generate parametric 3D-printable models using CadQuery."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 9,
-      "novelty": 8,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "flowful-ai/cad-skill",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# CAD Skill for Claude Code\n\nA [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill for generating parametric 3D-printable models using [CadQuery](https://cadquery.readthedocs.io/). Describe a physical object, and Claude will write a parametric script, export STL, render previews, and iterate with you until it's right.\n\n  \n  \n\nRead the full write-up: [I Taught Claude to Design 3D-Printable Parts. Here's How](https://medium.com/@nchourrout/i-taught-claude-to-design-3d-printable-par",
-    "topics": []
-  },
-  {
     "id": "github-ooples-token-optimizer-mcp",
     "name": "ooples/token-optimizer-mcp",
     "url": "https://github.com/ooples/token-optimizer-mcp",
@@ -1143,15 +21,15 @@
         "summary": "Intelligent token optimization for Claude Code - achieving 95%+ token reduction through caching, compression, and smart tool intelligence"
       }
     },
-    "stars": 437,
+    "stars": 439,
     "forks": 43,
     "total_score": 64,
     "quantifiable_score": 27,
     "quality_score": 37,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T20:28:51Z",
+    "last_updated": "2026-07-15T13:30:43Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -1199,7 +77,9 @@
     "resource_type": [
       "mcp-server"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Free, open-source SQL Server performance monitoring — 32 collectors, real-time alerts, graphical plan viewer, MCP server for AI analysis. Supports SQL 2016-2025, Azure SQL, AWS RDS.",
     "i18n": {
       "zh": {
@@ -1211,15 +91,15 @@
         "summary": "Free, open-source SQL Server performance monitoring — 32 collectors, real-time alerts, graphical plan viewer, MCP server for AI analysis. Supports SQL 2016-2025, Azure SQL, AWS RDS."
       }
     },
-    "stars": 436,
-    "forks": 78,
+    "stars": 437,
+    "forks": 79,
     "total_score": 57,
     "quantifiable_score": 27,
     "quality_score": 30,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T00:48:58Z",
+    "last_updated": "2026-07-15T17:48:42Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "C#"
@@ -1274,11 +154,11 @@
     "url": "https://github.com/tony1223/better-agent-terminal",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "cli-tool",
+      "agent-framework"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli"
+      "claude-code"
     ],
     "summary": "Multi-workspace terminal aggregator with Claude Code AI integration",
     "i18n": {
@@ -1299,7 +179,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-14T01:13:03Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -1347,10 +227,11 @@
     "url": "https://github.com/Gennadiyev/STS2MCP",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "agent-framework"
     ],
     "target_tools": [
-      "claude-code"
+      "general-ai-coding"
     ],
     "summary": "Full agentic runs for Slay the Spire 2. A mod that exposes in-game state, and the MCP server for the mod.",
     "i18n": {
@@ -1371,7 +252,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-13T13:40:12Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "C#"
@@ -1416,16 +297,7 @@
       "mcp-server"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "goose",
-      "qoder",
-      "trae",
-      "workbuddy-codebuddy",
-      "cursor",
-      "hermes-agent"
+      "general-ai-coding"
     ],
     "summary": "Baidu Map MCP Server",
     "i18n": {
@@ -1446,7 +318,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-08T12:35:26Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -1506,15 +378,15 @@
         "summary": "High-performance Model Context Protocol (MCP) server for Obsidian that provides AI tools with direct vault access through semantic operations and HTTP transport."
       }
     },
-    "stars": 434,
+    "stars": 435,
     "forks": 45,
     "total_score": 61,
     "quantifiable_score": 27,
     "quality_score": 34,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T23:48:43Z",
+    "last_updated": "2026-07-15T02:44:16Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -1576,15 +448,15 @@
         "summary": "Multi-model orchestration layer for Claude Code — the frontier model plans, cheaper models execute, verification guards quality. One-prompt install."
       }
     },
-    "stars": 435,
-    "forks": 33,
+    "stars": 463,
+    "forks": 35,
     "total_score": 63,
     "quantifiable_score": 27,
     "quality_score": 36,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:26:13Z",
+    "last_updated": "2026-07-15T19:22:57Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -1628,13 +500,17 @@
     "url": "https://github.com/neiii/bridle",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "agent-framework",
+      "cli-tool",
+      "mcp-server"
     ],
     "target_tools": [
       "claude-code",
       "codex-cli",
+      "antigravity-cli",
       "opencode",
-      "goose"
+      "goose",
+      "qoder"
     ],
     "summary": "TUI / CLI config manager for agentic harnesses (Amp, Claude Code, Opencode, Goose, Copilot CLI, Crush, Droid)",
     "i18n": {
@@ -1655,7 +531,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-06-30T22:38:48Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Rust"
@@ -1705,9 +581,12 @@
     "url": "https://github.com/GlitterKill/sdl-mcp",
     "source_type": "github",
     "resource_type": [
+      "agent-framework",
       "mcp-server"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Symbol Delta Ledger (SDL-MCP) is a policy-centered context budget layer for coding agents: Symbol-graph intelligence combined with precision tools.  It turns sprawling codebases into compact, high-signal context that saves tokens, speeds up",
     "i18n": {
       "zh": {
@@ -1719,15 +598,15 @@
         "summary": "Symbol Delta Ledger (SDL-MCP) is a policy-centered context budget layer for coding agents: Symbol-graph intelligence combined with precision tools.  It turns sprawling codebases into compact, high-signal context that saves tokens, speeds up"
       }
     },
-    "stars": 433,
-    "forks": 26,
+    "stars": 442,
+    "forks": 27,
     "total_score": 63,
     "quantifiable_score": 27,
     "quality_score": 36,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:00:12Z",
+    "last_updated": "2026-07-15T17:51:32Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "other",
     "languages": [
       "TypeScript"
@@ -1785,19 +664,11 @@
     "url": "https://github.com/formulahendry/mcp-server-spec-driven-development",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "agent-framework"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "goose",
-      "qoder",
-      "trae",
-      "workbuddy-codebuddy",
-      "cursor",
-      "hermes-agent"
+      "general-ai-coding"
     ],
     "summary": "Spec-Driven Development MCP Server, not just Vibe Coding",
     "i18n": {
@@ -1818,7 +689,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-09T22:59:20Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -1860,7 +731,7 @@
     "url": "https://github.com/voidcraft-dev/memory-forge-rs",
     "source_type": "github",
     "resource_type": [
-      "extension"
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
@@ -1880,15 +751,15 @@
         "summary": "Stop resetting satisfying AI chats — edit the memory instead. Local session manager for Claude Code, Codex & OpenCode & Gemini CLI &  Kiro CLI & pi &Cursor . Tauri + Rust, 100% offline - 记忆操控，可视化随意改写AI记忆"
       }
     },
-    "stars": 432,
+    "stars": 433,
     "forks": 48,
     "total_score": 64,
     "quantifiable_score": 27,
     "quality_score": 37,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T12:12:18Z",
+    "last_updated": "2026-07-15T11:55:04Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Rust"
@@ -1944,7 +815,9 @@
     "resource_type": [
       "mcp-server"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "MCP server for TouchDesigner",
     "i18n": {
       "zh": {
@@ -1956,15 +829,15 @@
         "summary": "MCP server for TouchDesigner"
       }
     },
-    "stars": 431,
+    "stars": 433,
     "forks": 45,
     "total_score": 60,
     "quantifiable_score": 27,
     "quality_score": 33,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T20:01:02Z",
+    "last_updated": "2026-07-15T16:55:24Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -2008,8 +881,7 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli"
+      "general-ai-coding"
     ],
     "summary": "An agent skill focused entirely on Swift Testing, helping you write better tests, migrate from XCTest, improve test architecture, and adopt modern Swift testing patterns with confidence.",
     "i18n": {
@@ -2030,7 +902,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-11T02:17:42Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [],
     "review_state": "auto-indexed",
@@ -2069,6 +941,7 @@
     "url": "https://github.com/agentic-box/memora",
     "source_type": "github",
     "resource_type": [
+      "agent-framework",
       "mcp-server"
     ],
     "target_tools": [
@@ -2086,15 +959,15 @@
         "summary": "Give your AI agents persistent memory."
       }
     },
-    "stars": 431,
+    "stars": 432,
     "forks": 52,
     "total_score": 61,
     "quantifiable_score": 27,
     "quality_score": 34,
     "tracking_priority": "track",
-    "last_updated": "2026-07-09T17:28:36Z",
+    "last_updated": "2026-07-14T15:55:11Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -2148,7 +1021,7 @@
     "url": "https://github.com/imarvinle/Claude-Pro",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -2220,7 +1093,7 @@
     "url": "https://github.com/x1xhlol/better-clawd",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "tutorial"
     ],
     "target_tools": [
       "claude-code"
@@ -2244,7 +1117,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-14T01:59:22Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": null,
     "languages": [
       "TypeScript"
@@ -2285,7 +1158,7 @@
     "url": "https://github.com/Ido-Levi/claude-code-tamagotchi",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -2309,7 +1182,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-05T20:49:16Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -2374,15 +1247,15 @@
         "summary": "将 AI 命令行工具以最为原生的方式，集成到微信 ClawBot 中，目前支持集成 Codex、Claude Code、OpenCode。 支持微信和本地终端线程（thread/session）共享、双向对话，支持将本地文件传输至微信，微信也支持发送文件到终端。现已支持多cli切换、微信表情绑定指令。"
       }
     },
-    "stars": 430,
+    "stars": 431,
     "forks": 45,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-12T10:55:01Z",
+    "last_updated": "2026-07-15T09:24:11Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "agpl-3.0",
     "languages": [
       "TypeScript"
@@ -2427,7 +1300,9 @@
     "url": "https://github.com/rampstackco/claude-skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "mcp-server",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -2443,15 +1318,15 @@
         "summary": "Stack-agnostic Claude Skills covering the full website lifecycle: brand, design, content, SEO, dev, ops, growth, and research. Build, ship, audit, optimize."
       }
     },
-    "stars": 430,
-    "forks": 58,
+    "stars": 453,
+    "forks": 57,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T01:27:05Z",
+    "last_updated": "2026-07-15T19:06:49Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -2503,11 +1378,14 @@
     "url": "https://github.com/waybarrios/opencode-power-pack",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "extension",
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
-      "opencode",
-      "claude-code"
+      "claude-code",
+      "opencode"
     ],
     "summary": "Eleven Claude Code skills ported to OpenCode: code-review, security-review, feature-dev, frontend-design + 7 more. One config line, one plugin.",
     "i18n": {
@@ -2520,15 +1398,15 @@
         "summary": "Eleven Claude Code skills ported to OpenCode: code-review, security-review, feature-dev, frontend-design + 7 more. One config line, one plugin."
       }
     },
-    "stars": 430,
+    "stars": 432,
     "forks": 38,
     "total_score": 60,
     "quantifiable_score": 27,
     "quality_score": 33,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:03:10Z",
+    "last_updated": "2026-07-15T08:28:38Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "JavaScript"
@@ -2592,15 +1470,15 @@
         "summary": "A collection of Claude Skills from Posit"
       }
     },
-    "stars": 428,
-    "forks": 35,
+    "stars": 429,
+    "forks": 34,
     "total_score": 59,
     "quantifiable_score": 27,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T19:39:58Z",
+    "last_updated": "2026-07-15T08:57:15Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "R"
@@ -2641,13 +1519,15 @@
     "url": "https://github.com/syncable-dev/memtrace-public",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "extension",
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
       "codex-cli",
-      "cursor",
-      "hermes-agent"
+      "cursor"
     ],
     "summary": "Structural memory for AI coding agents. Bi-temporal graph, MCP-native, zero LLM calls. Cursor · Claude Code · Codex · Hermes · VS Code · Windsurf.",
     "i18n": {
@@ -2660,15 +1540,15 @@
         "summary": "Structural memory for AI coding agents. Bi-temporal graph, MCP-native, zero LLM calls. Cursor · Claude Code · Codex · Hermes · VS Code · Windsurf."
       }
     },
-    "stars": 428,
-    "forks": 38,
+    "stars": 430,
+    "forks": 39,
     "total_score": 63,
     "quantifiable_score": 27,
     "quality_score": 36,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T05:04:39Z",
+    "last_updated": "2026-07-15T11:08:53Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "other",
     "languages": [
       "Python"
@@ -2726,9 +1606,11 @@
     "url": "https://github.com/viveknaskar/everything-ai-ml",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "A curated collection of learning resources for Generative AI, Machine Learning, Agentic AI, LLMs, RAG, Fine-tuning, MLOps, and more.",
     "i18n": {
       "zh": {
@@ -2792,7 +1674,6 @@
     "url": "https://github.com/PleasePrompto/ductor",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
       "cli-tool"
     ],
     "target_tools": [
@@ -2813,15 +1694,15 @@
         "summary": "Control Claude Code, Codex CLI and Gemini CLI from Telegram. Live streaming, persistent memory, cron jobs, webhooks, Docker sandboxing."
       }
     },
-    "stars": 427,
+    "stars": 429,
     "forks": 79,
     "total_score": 59,
     "quantifiable_score": 27,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T02:34:47Z",
+    "last_updated": "2026-07-15T04:25:57Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -2871,7 +1752,9 @@
     "resource_type": [
       "skills"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "A Claude Skill that automatically analyzes uploaded CSV files — generating summary statistics, detecting missing data, and creating quick visualizations using Python and pandas.",
     "i18n": {
       "zh": {
@@ -2883,15 +1766,15 @@
         "summary": "A Claude Skill that automatically analyzes uploaded CSV files — generating summary statistics, detecting missing data, and creating quick visualizations using Python and pandas."
       }
     },
-    "stars": 426,
+    "stars": 428,
     "forks": 61,
     "total_score": 51,
     "quantifiable_score": 25,
     "quality_score": 26,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T06:00:25Z",
+    "last_updated": "2026-07-15T18:39:05Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": null,
     "languages": [
       "Python"
@@ -2952,9 +1835,9 @@
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T16:44:29Z",
+    "last_updated": "2026-07-14T23:58:31Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "apache-2.0",
     "languages": [
       "JavaScript"
@@ -3023,15 +1906,15 @@
         "summary": "🎯 The definitive collection of 50+ verified Awesome Claude Skills for Claude Code, Claude.ai, and API. Boost productivity with TDD, debugging, git workflows, document processing, and more. Community-driven, actively maintained."
       }
     },
-    "stars": 426,
-    "forks": 147,
+    "stars": 430,
+    "forks": 150,
     "total_score": 57,
     "quantifiable_score": 28,
     "quality_score": 29,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T19:08:13Z",
+    "last_updated": "2026-07-15T15:34:21Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [],
     "review_state": "auto-indexed",
@@ -3086,9 +1969,14 @@
     "url": "https://github.com/Palm1r/QodeAssist",
     "source_type": "github",
     "resource_type": [
-      "extension"
+      "extension",
+      "cli-tool",
+      "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "claude-code",
+      "codex-cli"
+    ],
     "summary": "QodeAssist is an AI-powered coding assistant plugin for Qt Creator",
     "i18n": {
       "zh": {
@@ -3108,7 +1996,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-14T00:50:53Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "other",
     "languages": [
       "C++"
@@ -3161,14 +2049,12 @@
     "url": "https://github.com/WoJiSama/skill-based-architecture",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "agent-framework"
+      "skills"
     ],
     "target_tools": [
       "claude-code",
       "trae",
-      "hermes-agent",
-      "cursor"
+      "hermes-agent"
     ],
     "summary": "A meta-skill that produces skills. Point it at any codebase and it distills the project's rules, workflows, and hard-won lessons into a dedicated skills/<name>/ directory — a project skill that becomes the single source of truth every AI ag",
     "i18n": {
@@ -3181,15 +2067,15 @@
         "summary": "A meta-skill that produces skills. Point it at any codebase and it distills the project's rules, workflows, and hard-won lessons into a dedicated skills/<name>/ directory — a project skill that becomes the single source of truth every AI ag"
       }
     },
-    "stars": 425,
+    "stars": 427,
     "forks": 39,
     "total_score": 65,
     "quantifiable_score": 27,
     "quality_score": 38,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:50:06Z",
+    "last_updated": "2026-07-15T09:03:20Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Shell"
@@ -3234,8 +2120,7 @@
     "url": "https://github.com/chrisblattman/claudeblattman",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "tutorial"
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -3251,15 +2136,15 @@
         "summary": "Claude Code for academics — skills, agents, and setup guides"
       }
     },
-    "stars": 424,
-    "forks": 71,
+    "stars": 425,
+    "forks": 73,
     "total_score": 61,
     "quantifiable_score": 27,
     "quality_score": 34,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T04:58:58Z",
+    "last_updated": "2026-07-15T13:58:07Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "JavaScript"
@@ -3305,11 +2190,11 @@
     "url": "https://github.com/microsoft/DebugMCP",
     "source_type": "github",
     "resource_type": [
-      "mcp-server",
-      "extension"
+      "extension",
+      "agent-framework",
+      "mcp-server"
     ],
     "target_tools": [
-      "codex-cli",
       "cursor"
     ],
     "summary": "Gift your VS Code agent a real debugger: breakpoints, stepping, inspection.",
@@ -3323,15 +2208,15 @@
         "summary": "Gift your VS Code agent a real debugger: breakpoints, stepping, inspection."
       }
     },
-    "stars": 424,
+    "stars": 426,
     "forks": 42,
     "total_score": 63,
     "quantifiable_score": 27,
     "quality_score": 36,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T12:07:54Z",
+    "last_updated": "2026-07-14T13:06:46Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -3380,7 +2265,9 @@
     "source_type": "github",
     "resource_type": [
       "extension",
-      "agent-framework"
+      "agent-framework",
+      "cli-tool",
+      "skills"
     ],
     "target_tools": [
       "claude-code",
@@ -3397,15 +2284,15 @@
         "summary": "Spec-driven development with smart compaction. Claude Code plugin combining Ralph Wiggum loop with structured specification workflow."
       }
     },
-    "stars": 422,
+    "stars": 423,
     "forks": 35,
     "total_score": 61,
     "quantifiable_score": 27,
     "quality_score": 34,
     "tracking_priority": "track",
-    "last_updated": "2026-07-11T17:15:44Z",
+    "last_updated": "2026-07-15T09:27:58Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Shell"
@@ -3478,15 +2365,15 @@
         "summary": "Flink Agents is an Agentic AI framework based on Apache Flink"
       }
     },
-    "stars": 424,
-    "forks": 143,
+    "stars": 425,
+    "forks": 144,
     "total_score": 55,
     "quantifiable_score": 30,
     "quality_score": 25,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:33:15Z",
+    "last_updated": "2026-07-15T09:52:19Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "apache-2.0",
     "languages": [
       "Java"
@@ -3560,7 +2447,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-12T09:17:34Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "apache-2.0",
     "languages": [
       "Python"
@@ -3607,7 +2494,8 @@
     "url": "https://github.com/juyterman1000/entroly",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -3631,9 +2519,9 @@
     "quantifiable_score": 27,
     "quality_score": 34,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T06:35:18Z",
+    "last_updated": "2026-07-15T15:44:15Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "apache-2.0",
     "languages": [
       "Python"
@@ -3668,20 +2556,21 @@
       "cursor",
       "mcp",
       "mcp-server",
-      "rag",
       "token-optimization",
-      "chatgpt",
-      "claude",
-      "anthropic",
-      "ai",
       "context-compression",
       "hallucination-detection",
-      "rust",
       "llm",
-      "ai-hallucination",
-      "llm-grounding",
-      "open-source",
-      "productivity"
+      "codex",
+      "context-engineering",
+      "openclaw",
+      "agent-memory",
+      "ai-coding-agents",
+      "context-management",
+      "context-optimization",
+      "context-window",
+      "github-copilot",
+      "model-context-protocol",
+      "prompt-compression"
     ]
   },
   {
@@ -3690,6 +2579,8 @@
     "url": "https://github.com/Brain0-ai/brain0",
     "source_type": "github",
     "resource_type": [
+      "mcp-server",
+      "agent-framework",
       "cli-tool"
     ],
     "target_tools": [
@@ -3710,15 +2601,15 @@
         "summary": "The black box for AI-written code. Passive decision graph linking every commit to the agent prompts behind it: drift detection, DLP audit of what agents read, evidence-driven risk, MCP memory for coding agents, signed provenance attestation"
       }
     },
-    "stars": 420,
-    "forks": 13,
+    "stars": 447,
+    "forks": 14,
     "total_score": 63,
     "quantifiable_score": 27,
     "quality_score": 36,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:41:48Z",
+    "last_updated": "2026-07-15T14:14:07Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "apache-2.0",
     "languages": [
       "Rust"
@@ -3776,7 +2667,8 @@
     "url": "https://github.com/OrionStarAI/EasyCode",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "cli-tool",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -3801,7 +2693,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-06-28T06:35:19Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "apache-2.0",
     "languages": [
       "TypeScript"
@@ -3843,7 +2735,7 @@
     "url": "https://github.com/umputun/cc-thingz",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "extension"
     ],
     "target_tools": [
       "claude-code"
@@ -3859,15 +2751,15 @@
         "summary": "various things for claude code"
       }
     },
-    "stars": 420,
-    "forks": 44,
+    "stars": 425,
+    "forks": 45,
     "total_score": 58,
     "quantifiable_score": 27,
     "quality_score": 31,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T08:33:47Z",
+    "last_updated": "2026-07-15T12:50:38Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Shell"
@@ -3909,7 +2801,8 @@
     "url": "https://github.com/Light0305/Light-skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -3927,15 +2820,15 @@
         "summary": "An AI workflow skill pack for research, competitions, and innovation projects."
       }
     },
-    "stars": 419,
+    "stars": 424,
     "forks": 50,
     "total_score": 63,
     "quantifiable_score": 27,
     "quality_score": 36,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:19:21Z",
+    "last_updated": "2026-07-15T14:55:05Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -3987,8 +2880,7 @@
     "url": "https://github.com/evanklem/evanflow",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "agent-framework"
+      "skills"
     ],
     "target_tools": [
       "claude-code"
@@ -4004,15 +2896,15 @@
         "summary": "A TDD-driven iterative feedback loop for software development. 16 cohesive Claude Code skills walk an idea from brainstorm → plan → execute → iterate, with checkpoints throughout."
       }
     },
-    "stars": 418,
+    "stars": 419,
     "forks": 18,
     "total_score": 58,
     "quantifiable_score": 27,
     "quality_score": 31,
     "tracking_priority": "track",
-    "last_updated": "2026-07-11T11:31:02Z",
+    "last_updated": "2026-07-14T19:42:43Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "other",
     "languages": [
       "Shell"
@@ -4052,6 +2944,7 @@
       "extension"
     ],
     "target_tools": [
+      "claude-code",
       "opencode"
     ],
     "summary": "OpenCode plugin to use your Claude Max/Pro subscription with OpenCode via Meridian",
@@ -4065,15 +2958,15 @@
         "summary": "OpenCode plugin to use your Claude Max/Pro subscription with OpenCode via Meridian"
       }
     },
-    "stars": 418,
+    "stars": 423,
     "forks": 25,
     "total_score": 58,
     "quantifiable_score": 27,
     "quality_score": 31,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T05:54:27Z",
+    "last_updated": "2026-07-15T17:37:46Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "JavaScript"
@@ -4141,15 +3034,15 @@
         "summary": "Browser-native hive-mind for CLI coding agents — Claude Code, Codex, Gemini, and OpenCode collaborate as real PTY processes via a team protocol."
       }
     },
-    "stars": 418,
-    "forks": 48,
+    "stars": 420,
+    "forks": 50,
     "total_score": 63,
     "quantifiable_score": 27,
     "quality_score": 36,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:16:18Z",
+    "last_updated": "2026-07-15T16:12:15Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "other",
     "languages": [
       "TypeScript"
@@ -4199,8 +3092,8 @@
     "url": "https://github.com/jabrena/plinth",
     "source_type": "github",
     "resource_type": [
-      "skills",
-      "agent-framework"
+      "mcp-server",
+      "skills"
     ],
     "target_tools": [
       "claude-code",
@@ -4226,7 +3119,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-13T20:25:53Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "apache-2.0",
     "languages": [
       "Java"
@@ -4282,9 +3175,7 @@
     "url": "https://github.com/cnfjlhj/ai-collab-playbook",
     "source_type": "github",
     "resource_type": [
-      "tutorial",
-      "skills",
-      "rules"
+      "skills"
     ],
     "target_tools": [
       "claude-code",
@@ -4301,15 +3192,15 @@
         "summary": "Practical AI collaboration playbook for research, writing, reading, and coding: article, prompts, agent rules, and reusable skills."
       }
     },
-    "stars": 416,
+    "stars": 415,
     "forks": 34,
     "total_score": 57,
     "quantifiable_score": 25,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T06:45:48Z",
+    "last_updated": "2026-07-14T12:59:13Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": null,
     "languages": [
       "Python"
@@ -4417,10 +3308,11 @@
     "url": "https://github.com/SHAdd0WTAka/Zen-Ai-Pentest",
     "source_type": "github",
     "resource_type": [
-      "cli-tool",
       "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "🛡⚔️AI-Powered Penetration Testing Framework with automated vulnerability scanning, multi-agent system, and compliance reporting🛡⚔️",
     "i18n": {
       "zh": {
@@ -4491,7 +3383,8 @@
     "source_type": "github",
     "resource_type": [
       "skills",
-      "agent-framework"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
@@ -4508,15 +3401,15 @@
         "summary": "Agentic skills framework for Godot 4.x. Domain-specific skills for AI coding agents (Claude Code, Copilot, Gemini, Cursor)"
       }
     },
-    "stars": 414,
+    "stars": 423,
     "forks": 21,
     "total_score": 60,
     "quantifiable_score": 27,
     "quality_score": 33,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:13:12Z",
+    "last_updated": "2026-07-15T19:15:44Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "JavaScript"
@@ -4564,8 +3457,8 @@
     "url": "https://github.com/MinaSaad1/pbi-cli",
     "source_type": "github",
     "resource_type": [
-      "cli-tool",
-      "skills"
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
@@ -4585,15 +3478,15 @@
         "summary": "Power BI CLI - semantic models (.NET TOM) and PBIR reports for token-efficient AI agent usage, built for Claude Code"
       }
     },
-    "stars": 413,
+    "stars": 416,
     "forks": 108,
     "total_score": 65,
     "quantifiable_score": 30,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:28:03Z",
+    "last_updated": "2026-07-15T19:14:58Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -4651,8 +3544,7 @@
     "url": "https://github.com/ai-in-pm/Titans---Learning-to-Memorize-at-Test-Time",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
-      "tutorial"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -4677,7 +3569,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-06T03:48:54Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -4726,7 +3618,9 @@
     "url": "https://github.com/bassimeledath/dispatch",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code"
@@ -4750,7 +3644,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-13T14:12:23Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": null,
     "languages": [],
     "review_state": "auto-indexed",
@@ -4819,7 +3713,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-13T09:09:49Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -4873,9 +3767,12 @@
     "url": "https://github.com/project-codeguard/rules",
     "source_type": "github",
     "resource_type": [
-      "rules"
+      "rules",
+      "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Project CodeGuard is an AI model-agnostic security framework and ruleset that embeds secure-by-default practices into AI coding workflows (generation and review). It ships core security rules, translators for popular coding agents, and vali",
     "i18n": {
       "zh": {
@@ -4895,7 +3792,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-11T15:52:52Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "other",
     "languages": [
       "Python"
@@ -4938,7 +3835,8 @@
     "url": "https://github.com/boshu2/agentops",
     "source_type": "github",
     "resource_type": [
-      "extension"
+      "agent-framework",
+      "skills"
     ],
     "target_tools": [
       "claude-code",
@@ -4957,15 +3855,15 @@
         "summary": "Operating loop for coding agents. A change isn't done until a different model or a real test checks it, and the verdict is recorded in your repo."
       }
     },
-    "stars": 409,
+    "stars": 410,
     "forks": 40,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:27:34Z",
+    "last_updated": "2026-07-15T14:59:46Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "apache-2.0",
     "languages": [
       "Go"
@@ -5014,11 +3912,12 @@
     "url": "https://github.com/momozi1996/awesome-ai-persona-skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
-      "hermes-agent",
-      "trae"
+      "trae",
+      "hermes-agent"
     ],
     "summary": "全网最全的、持续更新的、最火爆的 100+ 人格 蒸馏skills 合集｜ 多agent系统 ｜名人/导演/天涯大神/古籍/二次元/职场/情感全品类",
     "i18n": {
@@ -5031,15 +3930,15 @@
         "summary": "全网最全的、持续更新的、最火爆的 100+ 人格 蒸馏skills 合集｜ 多agent系统 ｜名人/导演/天涯大神/古籍/二次元/职场/情感全品类"
       }
     },
-    "stars": 409,
+    "stars": 415,
     "forks": 60,
     "total_score": 51,
     "quantifiable_score": 27,
     "quality_score": 24,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T06:01:28Z",
+    "last_updated": "2026-07-15T16:56:47Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Shell"
@@ -5125,7 +4024,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-08T02:47:04Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -5167,7 +4066,8 @@
     "url": "https://github.com/decolua/9remote",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "cli-tool",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -5185,15 +4085,15 @@
         "summary": "📱 Terminal in Your Pocket — Control Claude Code, Codex, Gemini CLI & your Mac/Linux/Windows from any phone or browser. Vibe coding from anywhere. Alternative to MobileCLI, Claude Remote, vibe-remote, MuxAgent."
       }
     },
-    "stars": 409,
+    "stars": 415,
     "forks": 31,
     "total_score": 54,
     "quantifiable_score": 23,
     "quality_score": 31,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:32:51Z",
+    "last_updated": "2026-07-15T18:00:15Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": null,
     "languages": [],
     "review_state": "auto-indexed",
@@ -5260,15 +4160,15 @@
         "summary": "Open-source Claude Code skills, agents, and slash commands for AI-powered penetration testing, bug bounty hunting, and security research"
       }
     },
-    "stars": 408,
+    "stars": 410,
     "forks": 73,
     "total_score": 60,
     "quantifiable_score": 27,
     "quality_score": 33,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T06:36:10Z",
+    "last_updated": "2026-07-15T08:21:09Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -5313,7 +4213,11 @@
     "url": "https://github.com/RoggeOhta/awesome-codex-cli",
     "source_type": "github",
     "resource_type": [
-      "tutorial"
+      "skills",
+      "extension",
+      "agent-framework",
+      "cli-tool",
+      "mcp-server"
     ],
     "target_tools": [
       "claude-code",
@@ -5333,15 +4237,15 @@
         "summary": "Curated list of 150+ tools, skills, subagents & plugins for OpenAI Codex CLI"
       }
     },
-    "stars": 407,
-    "forks": 133,
+    "stars": 413,
+    "forks": 139,
     "total_score": 59,
     "quantifiable_score": 28,
     "quality_score": 31,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:23:07Z",
+    "last_updated": "2026-07-15T19:20:29Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "cc0-1.0",
     "languages": [],
     "review_state": "auto-indexed",
@@ -5395,14 +4299,11 @@
     "url": "https://github.com/crossoverJie/SkillDeck",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "gemini-cli",
-      "copilot-cli",
-      "opencode"
+      "general-ai-coding"
     ],
     "summary": "Native macOS SwiftUI app for managing multiple AI code agent skills",
     "i18n": {
@@ -5423,7 +4324,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-14T03:48:26Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Swift"
@@ -5481,15 +4382,15 @@
         "summary": "Provider-agnostic operations for agentic resources. ARK codifies patterns and practices developed across dozens of agentic application projects."
       }
     },
-    "stars": 407,
+    "stars": 409,
     "forks": 95,
     "total_score": 55,
     "quantifiable_score": 27,
     "quality_score": 28,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T05:41:55Z",
+    "last_updated": "2026-07-15T16:39:12Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "other",
     "languages": [
       "TypeScript"
@@ -5533,7 +4434,8 @@
     "url": "https://github.com/alirezarezvani/ClaudeForge",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "rules",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -5549,15 +4451,15 @@
         "summary": "A CLAUDE.md Generator and Maintenance tool for for Claude Code to create high-quality CLAUDE.md instruction files — aligned with Anthropic’s best practices for Claude Code."
       }
     },
-    "stars": 406,
+    "stars": 407,
     "forks": 51,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T11:59:46Z",
+    "last_updated": "2026-07-15T15:11:40Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -5600,9 +4502,10 @@
     "url": "https://github.com/sharpdeveye/maestro",
     "source_type": "github",
     "resource_type": [
-      "mcp-server",
+      "skills",
+      "agent-framework",
       "cli-tool",
-      "extension"
+      "rules"
     ],
     "target_tools": [
       "claude-code",
@@ -5629,7 +4532,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-12T16:18:31Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -5680,9 +4583,12 @@
     "url": "https://github.com/EvoScientist/EvoSkills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "🧬 Extend EvoScientist with Installable Skill & Knowledge Packs",
     "i18n": {
       "zh": {
@@ -5694,15 +4600,15 @@
         "summary": "🧬 Extend EvoScientist with Installable Skill & Knowledge Packs"
       }
     },
-    "stars": 405,
+    "stars": 406,
     "forks": 43,
     "total_score": 49,
     "quantifiable_score": 27,
     "quality_score": 22,
     "tracking_priority": "track",
-    "last_updated": "2026-07-09T14:03:12Z",
+    "last_updated": "2026-07-15T11:40:13Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "apache-2.0",
     "languages": [
       "Python"
@@ -5760,15 +4666,15 @@
         "summary": "Talk with your notes in Claude. RAG over your Apple Notes using Model Context Protocol."
       }
     },
-    "stars": 404,
+    "stars": 405,
     "forks": 55,
     "total_score": 54,
     "quantifiable_score": 25,
     "quality_score": 29,
     "tracking_priority": "track",
-    "last_updated": "2026-07-12T20:58:24Z",
+    "last_updated": "2026-07-15T08:50:49Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": null,
     "languages": [
       "TypeScript"
@@ -5812,8 +4718,7 @@
     "url": "https://github.com/browser-use/bux",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
-      "cli-tool"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -5829,15 +4734,15 @@
         "summary": "Browser Use Box: a 24/7 Claude Code agent for Playwright-style browser automation with Browser Use Cloud, Telegram, and a real browser on any box you own."
       }
     },
-    "stars": 404,
+    "stars": 405,
     "forks": 50,
     "total_score": 60,
     "quantifiable_score": 27,
     "quality_score": 33,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T06:32:19Z",
+    "last_updated": "2026-07-15T03:26:04Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -5895,6 +4800,7 @@
     "url": "https://github.com/pacifio/cersei",
     "source_type": "github",
     "resource_type": [
+      "mcp-server",
       "agent-framework"
     ],
     "target_tools": [
@@ -5915,15 +4821,15 @@
         "summary": "The Rust SDK for building coding agents. Tool execution, LLM streaming, graph memory, sub-agent orchestration, MCP — as composable library functions."
       }
     },
-    "stars": 404,
+    "stars": 405,
     "forks": 67,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T07:37:47Z",
+    "last_updated": "2026-07-15T10:15:48Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Rust"
@@ -5969,13 +4875,11 @@
     "url": "https://github.com/waynesutton/opensync",
     "source_type": "github",
     "resource_type": [
-      "agent-framework"
+      "tutorial"
     ],
     "target_tools": [
       "claude-code",
-      "opencode",
-      "codex-cli",
-      "cursor"
+      "opencode"
     ],
     "summary": "Cloud-synced dashboards for OpenCode and Claude Code. Track sessions, search with semantic lookup, export eval datasets.",
     "i18n": {
@@ -5996,7 +4900,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-12T16:54:58Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -6041,7 +4945,8 @@
     "url": "https://github.com/SaseQ/discord-mcp",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code"
@@ -6057,15 +4962,15 @@
         "summary": "A MCP server for the Discord integration. Enable your AI assistants to seamlessly interact with Discord. Enhance your Discord experience with powerful automation capabilities."
       }
     },
-    "stars": 403,
+    "stars": 406,
     "forks": 89,
     "total_score": 55,
     "quantifiable_score": 27,
     "quality_score": 28,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T03:09:28Z",
+    "last_updated": "2026-07-15T18:41:41Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Java"
@@ -6112,12 +5017,10 @@
     "url": "https://github.com/Varietyz/Disciplined-AI-Software-Development",
     "source_type": "github",
     "resource_type": [
-      "rules",
-      "tutorial"
+      "rules"
     ],
     "target_tools": [
-      "claude-code",
-      "cursor"
+      "claude-code"
     ],
     "summary": "A disciplined methodology for AI-assisted software development. Covers architectural constraints, validation hooks, session governance, and PAG (Pattern Abstract Grammar) for structured AI collaboration. Copy claude-setup/ into your project",
     "i18n": {
@@ -6138,7 +5041,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-10T09:08:56Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "cc-by-sa-4.0",
     "languages": [
       "Python"
@@ -6184,9 +5087,10 @@
     "url": "https://github.com/gotalab/skillport",
     "source_type": "github",
     "resource_type": [
-      "cli-tool",
       "mcp-server",
-      "skills"
+      "skills",
+      "agent-framework",
+      "cli-tool"
     ],
     "target_tools": [
       "claude-code",
@@ -6212,7 +5116,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-10T13:50:50Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -6259,7 +5163,6 @@
     "url": "https://github.com/Aspegio/nelson",
     "source_type": "github",
     "resource_type": [
-      "skills",
       "agent-framework"
     ],
     "target_tools": [
@@ -6284,7 +5187,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-13T02:42:05Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -6328,9 +5231,12 @@
     "source_type": "github",
     "resource_type": [
       "mcp-server",
-      "cli-tool"
+      "skills",
+      "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "A centralized reverse-proxy platform for MCP servers — manage, group, and export as Skills from a single endpoint.",
     "i18n": {
       "zh": {
@@ -6342,15 +5248,15 @@
         "summary": "A centralized reverse-proxy platform for MCP servers — manage, group, and export as Skills from a single endpoint."
       }
     },
-    "stars": 402,
+    "stars": 403,
     "forks": 44,
     "total_score": 59,
     "quantifiable_score": 27,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-12T07:15:11Z",
+    "last_updated": "2026-07-14T15:35:40Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Go"
@@ -6394,8 +5300,9 @@
     "url": "https://github.com/ghuntley/groundhog",
     "source_type": "github",
     "resource_type": [
-      "tutorial",
-      "agent-framework"
+      "agent-framework",
+      "cli-tool",
+      "mcp-server"
     ],
     "target_tools": [
       "cursor"
@@ -6419,7 +5326,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-08T12:35:19Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "agpl-3.0",
     "languages": [
       "Rust"
@@ -6464,9 +5371,12 @@
     "url": "https://github.com/FreePeak/db-mcp-server",
     "source_type": "github",
     "resource_type": [
-      "mcp-server"
+      "mcp-server",
+      "cli-tool"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "A powerful multi-database server implementing the Model Context Protocol (MCP) to provide AI assistants with structured access to databases.",
     "i18n": {
       "zh": {
@@ -6478,15 +5388,15 @@
         "summary": "A powerful multi-database server implementing the Model Context Protocol (MCP) to provide AI assistants with structured access to databases."
       }
     },
-    "stars": 400,
+    "stars": 401,
     "forks": 66,
     "total_score": 57,
     "quantifiable_score": 27,
     "quality_score": 30,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T04:10:45Z",
+    "last_updated": "2026-07-15T10:14:21Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Go"
@@ -6526,7 +5436,6 @@
     "url": "https://github.com/alirezarezvani/claude-code-aso-skill",
     "source_type": "github",
     "resource_type": [
-      "skills",
       "agent-framework"
     ],
     "target_tools": [
@@ -6551,7 +5460,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-13T08:57:54Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "other",
     "languages": [
       "Python"
@@ -6601,7 +5510,9 @@
     "resource_type": [
       "mcp-server"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Model Context Protocol server for GraphQL",
     "i18n": {
       "zh": {
@@ -6613,15 +5524,15 @@
         "summary": "Model Context Protocol server for GraphQL"
       }
     },
-    "stars": 400,
+    "stars": 402,
     "forks": 60,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T13:22:51Z",
+    "last_updated": "2026-07-15T17:17:13Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -6664,7 +5575,7 @@
     "url": "https://github.com/stephenleo/cship",
     "source_type": "github",
     "resource_type": [
-      "cli-tool"
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -6688,7 +5599,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-13T11:19:39Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "apache-2.0",
     "languages": [
       "Rust"
@@ -6731,7 +5642,8 @@
     "url": "https://github.com/waynesutton/convexskills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code"
@@ -6755,7 +5667,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-14T08:20:31Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "apache-2.0",
     "languages": [
       "JavaScript"
@@ -6801,10 +5713,9 @@
     "source_type": "github",
     "resource_type": [
       "mcp-server",
-      "skills"
+      "agent-framework"
     ],
     "target_tools": [
-      "claude-code",
       "codex-cli",
       "cursor"
     ],
@@ -6827,7 +5738,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-08T23:51:59Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -6881,9 +5792,10 @@
     "url": "https://github.com/ZaxbyHub/opencode-swarm",
     "source_type": "github",
     "resource_type": [
+      "extension",
       "agent-framework",
       "cli-tool",
-      "skills"
+      "mcp-server"
     ],
     "target_tools": [
       "codex-cli",
@@ -6902,15 +5814,15 @@
         "summary": "  Architect-centric agentic swarm plugin for OpenCode. Hub-and-spoke orchestration with SME consultation, code generation, and QA review."
       }
     },
-    "stars": 399,
-    "forks": 41,
+    "stars": 400,
+    "forks": 43,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:19:02Z",
+    "last_updated": "2026-07-15T13:35:31Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -6972,8 +5884,6 @@
       "skills"
     ],
     "target_tools": [
-      "codex-cli",
-      "cursor",
       "trae",
       "hermes-agent"
     ],
@@ -6996,7 +5906,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-14T02:26:06Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -7039,10 +5949,11 @@
     "url": "https://github.com/ghostsecurity/skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
-      "claude-code"
+      "general-ai-coding"
     ],
     "summary": "Ghost Security's collection of AppSec skills for AI coding agents",
     "i18n": {
@@ -7055,15 +5966,15 @@
         "summary": "Ghost Security's collection of AppSec skills for AI coding agents"
       }
     },
-    "stars": 397,
+    "stars": 398,
     "forks": 27,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-11T17:12:06Z",
+    "last_updated": "2026-07-15T03:31:57Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "apache-2.0",
     "languages": [
       "Shell"
@@ -7105,10 +6016,12 @@
     "url": "https://github.com/zju-vipa/Odyssey",
     "source_type": "github",
     "resource_type": [
-      "agent-framework",
       "skills"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "trae",
+      "hermes-agent"
+    ],
     "summary": "Odyssey: Empowering Minecraft Agents with Open-World Skills",
     "i18n": {
       "zh": {
@@ -7174,7 +6087,8 @@
     "url": "https://github.com/nexscope-ai/Amazon-Skills",
     "source_type": "github",
     "resource_type": [
-      "skills"
+      "skills",
+      "agent-framework"
     ],
     "target_tools": [
       "claude-code",
@@ -7192,15 +6106,15 @@
         "summary": "Free AI agent skills for Amazon sellers—  keyword research, competitor analysis, listing audit & more. Works with OpenClaw, Claude Code, Cursor, Windsurf, Codex and any agent that supports the Skills format."
       }
     },
-    "stars": 394,
-    "forks": 66,
+    "stars": 399,
+    "forks": 67,
     "total_score": 56,
     "quantifiable_score": 27,
     "quality_score": 29,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:58:30Z",
+    "last_updated": "2026-07-15T06:38:17Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
     "license": "mit",
     "languages": [
       "Python"
@@ -7240,6 +6154,1206 @@
       "openclaw",
       "openclaw-skills",
       "skills"
+    ]
+  },
+  {
+    "id": "github-ndycode-codex-multi-auth",
+    "name": "ndycode/codex-multi-auth",
+    "url": "https://github.com/ndycode/codex-multi-auth",
+    "source_type": "github",
+    "resource_type": [
+      "cli-tool"
+    ],
+    "target_tools": [
+      "codex-cli"
+    ],
+    "summary": "Codex CLI multi-account OAuth manager with account switching, health checks, runtime rotation, diagnostics, and recovery tools for @openai/codex",
+    "i18n": {
+      "zh": {
+        "name": "ndycode/codex-multi-auth",
+        "summary": "Codex CLI multi-account OAuth manager with account switching, health checks, runtime rotation, diagnostics, and recovery tools for @openai/codex"
+      },
+      "en": {
+        "name": "ndycode/codex-multi-auth",
+        "summary": "Codex CLI multi-account OAuth manager with account switching, health checks, runtime rotation, diagnostics, and recovery tools for @openai/codex"
+      }
+    },
+    "stars": 391,
+    "forks": 35,
+    "total_score": 62,
+    "quantifiable_score": 27,
+    "quality_score": 35,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T09:52:16Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "mit",
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "为 Codex CLI 提供多账户 OAuth 管理，支持账户切换、健康检查和恢复。",
+      "en": "A multi-account OAuth manager for Codex CLI enabling account switching, health checks, and recovery."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "ndycode/codex-multi-auth",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# codex-multi-auth: multi-account OAuth for the official Codex CLI\n\n[![npm version](https://img.shields.io/npm/v/codex-multi-auth.svg)](https://www.npmjs.com/package/codex-multi-auth)\n[![npm downloads](https://img.shields.io/npm/dw/codex-multi-auth.svg)](https://www.npmjs.com/package/codex-multi-auth)\n[![CI](https://github.com/ndycode/codex-multi-auth/actions/workflows/ci.yml/badge.svg)](https://github.com/ndycode/codex-multi-auth/actions/workflows/ci.yml)\n[![MIT license](https://img.shields.io/",
+    "topics": [
+      "chatgpt",
+      "codex",
+      "codex-cli",
+      "multi-account",
+      "nodejs",
+      "oauth2",
+      "openai",
+      "pkce",
+      "terminal-ui",
+      "typescript",
+      "account-health",
+      "account-switching",
+      "codex-auth",
+      "diagnostics",
+      "oauth",
+      "quota-management",
+      "recovery-tools",
+      "responses-api",
+      "codex-multi-account",
+      "runtime-rotation"
+    ]
+  },
+  {
+    "id": "github-secureagentics-adrian",
+    "name": "secureagentics/Adrian",
+    "url": "https://github.com/secureagentics/Adrian",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "mcp-server"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "Open-source runtime AI agent security tool - monitors and controls AI agents, catching malicious tool use, prompt injection, and policy drift in real time, before the agent acts.",
+    "i18n": {
+      "zh": {
+        "name": "secureagentics/Adrian",
+        "summary": "Open-source runtime AI agent security tool - monitors and controls AI agents, catching malicious tool use, prompt injection, and policy drift in real time, before the agent acts."
+      },
+      "en": {
+        "name": "secureagentics/Adrian",
+        "summary": "Open-source runtime AI agent security tool - monitors and controls AI agents, catching malicious tool use, prompt injection, and policy drift in real time, before the agent acts."
+      }
+    },
+    "stars": 393,
+    "forks": 79,
+    "total_score": 59,
+    "quantifiable_score": 27,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-15T09:48:08Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "apache-2.0",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个开源的AI代理运行时安全工具，通过监控代理的行为和推理来实时检测和阻止恶意行为，填补了代理安全领域的关键空白。",
+      "en": "An open-source runtime security tool for AI agents that monitors actions and reasoning to catch malicious behavior in real time, addressing a critical gap in agent safety."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "secureagentics/Adrian",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "Agent attacks slip past static analysis and network monitoring.\nAdrian catches them at runtime, by watching what the agent actually does (its actions and its reasoning) and stepping in before it acts. Open source, free forever.\n\n+35% detection accuracy · 4x more nuanced attacks caught vs behaviour-only monitoring (OpenAI &amp; DeepMind research)\n\n  \n  \n  \n  \n  \n  \n  \n\n⭐ If you think agents need a runtime security layer, star the repo. It is how new people find Adrian, and how we know to keep bui",
+    "topics": [
+      "agent-security",
+      "agents",
+      "ai",
+      "ai-governance",
+      "ai-security",
+      "langchain",
+      "langgraph",
+      "llm-security",
+      "mcp",
+      "observability",
+      "prompt-injection",
+      "runtime-security",
+      "threat-detection",
+      "aarm",
+      "agentic-ai",
+      "agentic-security",
+      "ai-agents",
+      "mcp-security",
+      "self-hosted",
+      "openai-agents"
+    ]
+  },
+  {
+    "id": "github-vivekchand-clawmetry",
+    "name": "vivekchand/clawmetry",
+    "url": "https://github.com/vivekchand/clawmetry",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli"
+    ],
+    "summary": "See your agent think. Real-time observability for 14 AI agent runtimes - OpenClaw, NVIDIA NemoClaw, Claude Code, Codex & 8 more.",
+    "i18n": {
+      "zh": {
+        "name": "vivekchand/clawmetry",
+        "summary": "See your agent think. Real-time observability for 14 AI agent runtimes - OpenClaw, NVIDIA NemoClaw, Claude Code, Codex & 8 more."
+      },
+      "en": {
+        "name": "vivekchand/clawmetry",
+        "summary": "See your agent think. Real-time observability for 14 AI agent runtimes - OpenClaw, NVIDIA NemoClaw, Claude Code, Codex & 8 more."
+      }
+    },
+    "stars": 387,
+    "forks": 63,
+    "total_score": 60,
+    "quantifiable_score": 27,
+    "quality_score": 33,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-15T06:39:36Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "mit",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "跨多个AI编码代理运行时的实时可观测性工具，支持Claude Code和Codex等14个运行时，填补了代理监控的空白。",
+      "en": "A real-time observability library for 14 AI agent runtimes including Claude Code and Codex, filling a critical gap in agent monitoring."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "vivekchand/clawmetry",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# 🦞 ClawMetry\n\n[![PyPI Downloads](https://static.pepy.tech/badge/clawmetry)](https://clickpy.clickhouse.com/dashboard/clawmetry)\n[![PyPI Downloads/week](https://static.pepy.tech/badge/clawmetry/week)](https://clickpy.clickhouse.com/dashboard/clawmetry)\n[![PyPI version](https://img.shields.io/pypi/v/clawmetry?color=E5443A&label=version)](https://pypi.org/project/clawmetry/)\n[![GitHub stars](https://img.shields.io/github/stars/vivekchand/clawmetry?style=flat&color=E5443A)](https://github.com/vivek",
+    "topics": [
+      "ai-agent",
+      "dashboard",
+      "monitoring",
+      "observability",
+      "openclaw",
+      "opentelemetry",
+      "python",
+      "clawmetry"
+    ]
+  },
+  {
+    "id": "github-cowork-os-cowork-os",
+    "name": "CoWork-OS/CoWork-OS",
+    "url": "https://github.com/CoWork-OS/CoWork-OS",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "mcp-server"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli"
+    ],
+    "summary": "Local-first personal agentic OS and everything app for coding, knowledge work, web design, automations, and artifacts.",
+    "i18n": {
+      "zh": {
+        "name": "CoWork-OS/CoWork-OS",
+        "summary": "Local-first personal agentic OS and everything app for coding, knowledge work, web design, automations, and artifacts."
+      },
+      "en": {
+        "name": "CoWork-OS/CoWork-OS",
+        "summary": "Local-first personal agentic OS and everything app for coding, knowledge work, web design, automations, and artifacts."
+      }
+    },
+    "stars": 387,
+    "forks": 61,
+    "total_score": 61,
+    "quantifiable_score": 27,
+    "quality_score": 34,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-15T05:40:38Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "mit",
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "本地优先的个人AI操作系统，将编码、知识工作和代理管理整合到统一的桌面和CLI体验中。",
+      "en": "A local-first personal AI operating system that unifies coding, knowledge work, and agent management into a single desktop and CLI experience."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "CoWork-OS/CoWork-OS",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "CoWork OS is the GUI-first, CLI-capable local AI super app and everything app for getting real work done.\n  Code, email, research, design web pages, create documents, work with spreadsheets and decks, spawn and manage agents, run automations, and ask for changes from the desktop app or the cowork CLI without jumping between separate coding, mail, browser, Word, Excel, or PowerPoint apps.\n\n  \n  \n  \n  \n  \n\n  Getting Started &middot;\n  Composer Mentions &middot;\n  Message Box Shortcuts &middot;\n  S",
+    "topics": [
+      "discord-bot",
+      "local-first",
+      "personal-ai",
+      "security",
+      "self-hosted",
+      "slack-bot",
+      "whatsapp-bot",
+      "ai-assistants",
+      "ai-automation",
+      "claude",
+      "desktop-app",
+      "electron",
+      "gemini",
+      "guardrails",
+      "llm",
+      "macos",
+      "mcp",
+      "model-context-protocol",
+      "openai",
+      "telegram"
+    ]
+  },
+  {
+    "id": "github-ancoleman-ai-design-components",
+    "name": "ancoleman/ai-design-components",
+    "url": "https://github.com/ancoleman/ai-design-components",
+    "source_type": "github",
+    "resource_type": [
+      "skills"
+    ],
+    "target_tools": [
+      "claude-code"
+    ],
+    "summary": "Comprehensive UI/UX and Backend component design skills for AI-assisted development with Claude",
+    "i18n": {
+      "zh": {
+        "name": "ancoleman/ai-design-components",
+        "summary": "Comprehensive UI/UX and Backend component design skills for AI-assisted development with Claude"
+      },
+      "en": {
+        "name": "ancoleman/ai-design-components",
+        "summary": "Comprehensive UI/UX and Backend component design skills for AI-assisted development with Claude"
+      }
+    },
+    "stars": 387,
+    "forks": 58,
+    "total_score": 58,
+    "quantifiable_score": 27,
+    "quality_score": 31,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-13T12:08:31Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "mit",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "面向Claude Code的全栈UI/UX组件设计技能集，提升AI生成质量。",
+      "en": "A comprehensive collection of UI/UX and backend component design skills for Claude Code, enabling high-quality full-stack generation."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 7,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "ancoleman/ai-design-components",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "> Full-stack development skills for AI-assisted development with Claude\n\n[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](./VERSION)\n[![License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)\n[![Skills](https://img.shields.io/badge/skills-76-purple.svg)](https://ancoleman.github.io/ai-design-components/docs/skills/overview)\n[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-orange.svg)](https://ancoleman.github.io/ai-design-components/)\n\n## What is this?\n",
+    "topics": [
+      "ai-design",
+      "anthropic",
+      "claude",
+      "claude-code",
+      "design-system",
+      "full-stack",
+      "react",
+      "skills",
+      "typescript",
+      "ui-components",
+      "claude-skills"
+    ]
+  },
+  {
+    "id": "github-clduab11-gemini-flow",
+    "name": "clduab11/gemini-flow",
+    "url": "https://github.com/clduab11/gemini-flow",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "mcp-server",
+      "rules"
+    ],
+    "target_tools": [
+      "antigravity-cli"
+    ],
+    "summary": "rUv's Claude-Flow, translated to the new Gemini CLI; transforming it into an autonomous AI development team.",
+    "i18n": {
+      "zh": {
+        "name": "clduab11/gemini-flow",
+        "summary": "rUv's Claude-Flow, translated to the new Gemini CLI; transforming it into an autonomous AI development team."
+      },
+      "en": {
+        "name": "clduab11/gemini-flow",
+        "summary": "rUv's Claude-Flow, translated to the new Gemini CLI; transforming it into an autonomous AI development team."
+      }
+    },
+    "stars": 387,
+    "forks": 69,
+    "total_score": 30,
+    "quantifiable_score": 30,
+    "quality_score": 0,
+    "tracking_priority": "pending",
+    "last_updated": "2026-07-10T11:07:58Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": null,
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 7
+    },
+    "quality_detail": {},
+    "benchmark_ref": "github-opencoworkai-open-cowork",
+    "last_analyzed": null,
+    "repo": "clduab11/gemini-flow",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "archived",
+    "readme_preview": "[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/clduab11-gemini-flow-badge.png)](https://mseep.ai/app/clduab11-gemini-flow)\n\n# 🌌 [ARCHIVED] Gemini-Flow: Production-Ready AI Orchestration Platform\n\n[![Version](https://img.shields.io/npm/v/@clduab11/gemini-flow.svg)](https://www.npmjs.com/package/@clduab11/gemini-flow)\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n[![Build Status](https://img.shields.io/github/actions/workflow/status/clduab11/gemini-flow/ci.y",
+    "topics": [
+      "ai-automation",
+      "ai-workflow",
+      "autonomous-agents",
+      "code-assistant",
+      "code-generation",
+      "collaborative-development",
+      "devops",
+      "gemini-cli",
+      "google",
+      "google-gemini",
+      "llm",
+      "mcp-server",
+      "multi-agent-systems",
+      "natural-language-processing",
+      "open-source",
+      "prompt-engineering",
+      "software-engineering",
+      "workflow-automation",
+      "clit-tools"
+    ]
+  },
+  {
+    "id": "github-joeseesun-qiaomu-design",
+    "name": "joeseesun/qiaomu-design",
+    "url": "https://github.com/joeseesun/qiaomu-design",
+    "source_type": "github",
+    "resource_type": [
+      "skills"
+    ],
+    "target_tools": [
+      "claude-code"
+    ],
+    "summary": "偏执型设计顾问：反 AI 味设计 + 风格试衣间 + 58 站设计系统库的 Claude Code Skill | Opinionated design advisor for Claude Code: anti-generic UI, style fitting room, 58 real-site design systems.",
+    "i18n": {
+      "zh": {
+        "name": "joeseesun/qiaomu-design",
+        "summary": "偏执型设计顾问：反 AI 味设计 + 风格试衣间 + 58 站设计系统库的 Claude Code Skill | Opinionated design advisor for Claude Code: anti-generic UI, style fitting room, 58 real-site design systems."
+      },
+      "en": {
+        "name": "joeseesun/qiaomu-design",
+        "summary": "偏执型设计顾问：反 AI 味设计 + 风格试衣间 + 58 站设计系统库的 Claude Code Skill | Opinionated design advisor for Claude Code: anti-generic UI, style fitting room, 58 real-site design systems."
+      }
+    },
+    "stars": 388,
+    "forks": 35,
+    "total_score": 59,
+    "quantifiable_score": 27,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T21:31:28Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "mit",
+    "languages": [
+      "JavaScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "为Claude Code提供偏执型设计建议，抵制AI味，集成58个真实站点设计系统的风格试衣间。",
+      "en": "An opinionated design advisor skill for Claude Code that fights generic AI aesthetics and includes a style fitting room with 58 real-site design systems."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 7,
+      "novelty": 8,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "joeseesun/qiaomu-design",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# qiaomu-design · 偏执型设计顾问\n\n**中文** | [English](#english)\n\n> 让 AI 做出\"不像 AI 做的\"设计：Jobs 式产品直觉 + Rams 式功能纯粹主义，融合五大顶级设计 Skill 的实测精华。\n>\n> An opinionated design advisor skill for Claude Code: anti-generic aesthetics, engineering-grade delivery, and a visual \"style fitting room\" — distilled from a controlled experiment across 5 top design skills.\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![Skill](https://img.shields.io/badge/Claude%20Code-Agent%20Skill-blue)](https:",
+    "topics": [
+      "agent-skill",
+      "chinese-typography",
+      "claude-code",
+      "design-system",
+      "frontend-design",
+      "ui-design"
+    ]
+  },
+  {
+    "id": "github-rockbite-localforge",
+    "name": "rockbite/localforge",
+    "url": "https://github.com/rockbite/localforge",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "rules"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "Local coding agent with neat UI",
+    "i18n": {
+      "zh": {
+        "name": "rockbite/localforge",
+        "summary": "Local coding agent with neat UI"
+      },
+      "en": {
+        "name": "rockbite/localforge",
+        "summary": "Local coding agent with neat UI"
+      }
+    },
+    "stars": 387,
+    "forks": 45,
+    "total_score": 54,
+    "quantifiable_score": 27,
+    "quality_score": 27,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-13T18:08:15Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "mit",
+    "languages": [
+      "JavaScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个本地运行的AI编程助手，拥有简洁的Web UI，支持自主执行代码任务。",
+      "en": "A local AI coding assistant with a clean web UI that autonomously works on files alongside the user."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 7,
+      "novelty": 5,
+      "ecosystem_value": 6
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "rockbite/localforge",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "Localforge — Intelligent Coding Assistant\nRuns in a local web UI and autonomously works on your files alongside you.\n\nnpm i -g @rockbite/localforge\n\n[![Latest release](https://img.shields.io/github/v/release/rockbite/localforge)](https://github.com/rockbite/localforge/releases)\n[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n![Stars](https://img.shields.io/github/stars/rockbite/localforge?style=social)\n[![](https://dcbadge.limes.pink/api/server/KJrTd6cw8D?style=flat",
+    "topics": [
+      "ai",
+      "javascript",
+      "langchain",
+      "vibe-coding",
+      "ai-agents",
+      "ai-framework",
+      "local-llm",
+      "prompt-engineering"
+    ]
+  },
+  {
+    "id": "github-worldwonderer-video-recap-skills",
+    "name": "worldwonderer/video-recap-skills",
+    "url": "https://github.com/worldwonderer/video-recap-skills",
+    "source_type": "github",
+    "resource_type": [
+      "skills",
+      "agent-framework"
+    ],
+    "target_tools": [
+      "claude-code"
+    ],
+    "summary": "Clip any video into a narration recap with claude code skill｜用claude code skill把任何视频剪辑成中文解说视频，支持剪映导出",
+    "i18n": {
+      "zh": {
+        "name": "worldwonderer/video-recap-skills",
+        "summary": "Clip any video into a narration recap with claude code skill｜用claude code skill把任何视频剪辑成中文解说视频，支持剪映导出"
+      },
+      "en": {
+        "name": "worldwonderer/video-recap-skills",
+        "summary": "Clip any video into a narration recap with claude code skill｜用claude code skill把任何视频剪辑成中文解说视频，支持剪映导出"
+      }
+    },
+    "stars": 391,
+    "forks": 63,
+    "total_score": 59,
+    "quantifiable_score": 27,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-15T15:52:46Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "mit",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个为Claude Code等AI编码代理设计的视频解说技能，能将任意视频通过自然语言指令转化为带中文解说的成片，支持剪映草稿导出，实用性强且文档完善。",
+      "en": "A skill for AI coding agents like Claude Code to turn any video into a narrated recap using natural language, supporting Xiaomi MiMo API and CapCut draft export, with solid documentation."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "worldwonderer/video-recap-skills",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# video-recap-skills\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)\n![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-purple)\n![Powered by Xiaomi MiMo](https://img.shields.io/badge/AI-Xiaomi%20MiMo-green)\n\n中文 · [English](README.en.md)\n\n**在 Claude Code、Codex CLI、OpenCode 或 OpenClaw 里，用一句自然语言把视频变成中文解说成片。** 本地只需要 Python、`ffmpeg` 和一个小米 MiMo API Key；不用 GPU，不用下载模型，macOS / Linux / Windows 均可运行。\n\n## 演示\n\n成片之外，还能一键导出**剪映草稿**手动精修，原片、解说、BGM、字幕：\n\n## 这是什",
+    "topics": [
+      "claude-code",
+      "video-narration",
+      "video-recap",
+      "tts",
+      "ai-agent",
+      "asr",
+      "claude-code-plugin",
+      "claude-skills",
+      "ffmpeg",
+      "llm",
+      "mimo",
+      "video-summarization",
+      "vlm",
+      "xiaomi-mimo",
+      "video-clipping"
+    ]
+  },
+  {
+    "id": "github-ducan-ne-opencoder",
+    "name": "ducan-ne/opencoder",
+    "url": "https://github.com/ducan-ne/opencoder",
+    "source_type": "github",
+    "resource_type": [
+      "cli-tool"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder"
+    ],
+    "summary": "The Claude Code alternative",
+    "i18n": {
+      "zh": {
+        "name": "ducan-ne/opencoder",
+        "summary": "The Claude Code alternative"
+      },
+      "en": {
+        "name": "ducan-ne/opencoder",
+        "summary": "The Claude Code alternative"
+      }
+    },
+    "stars": 386,
+    "forks": 41,
+    "total_score": 58,
+    "quantifiable_score": 27,
+    "quality_score": 31,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-13T09:54:44Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "apache-2.0",
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "OpenCoder 是一个开源的 Claude Code 替代品，基于 Vercel AI SDK，支持多种 LLM 提供商，跨平台运行。",
+      "en": "OpenCoder is an open-source alternative to Claude Code, built on the Vercel AI SDK, supporting multiple LLM providers and cross-platform execution."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 8,
+      "novelty": 5,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "ducan-ne/opencoder",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# OpenCoder: the open source version of Claude Code\n\nTry it out:\n\n```bash\nnpx opencoder@latest\n```\n\n```bash\nbunx opencoder@latest\n```\n\nOr try the beta channel:\n```bash\nnpx opencoder@next\n```\n\n## Overview\n\n- Complete Claude Code replacement with similar UI and UX\n- Built on top of the Vercel AI SDK. Fully compatible with the AI SDK model.\n- Supports any LLM providers that the AI SDK supports (OpenAI, Anthropic, Google, etc.)\n- Cross-platform shell: which means supports Windows, Linux, and MacOS.\n",
+    "topics": [
+      "chatgpt",
+      "claude-code",
+      "cli",
+      "ai-tui",
+      "boltnew",
+      "loveable",
+      "replit"
+    ]
+  },
+  {
+    "id": "github-yogsoth-ai-de-anthropocentric-research-engine",
+    "name": "yogsoth-ai/de-anthropocentric-research-engine",
+    "url": "https://github.com/yogsoth-ai/de-anthropocentric-research-engine",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server",
+      "skills"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli"
+    ],
+    "summary": "900+ pure-markdown skills for autonomous AI research, organized as 9 freely-composable packages over a 4-layer hierarchy (Campaign → Strategy → Tactic → SOP). Non-linear orchestration with backtracking, 6 MCP integrations. The AI is the res",
+    "i18n": {
+      "zh": {
+        "name": "yogsoth-ai/de-anthropocentric-research-engine",
+        "summary": "900+ pure-markdown skills for autonomous AI research, organized as 9 freely-composable packages over a 4-layer hierarchy (Campaign → Strategy → Tactic → SOP). Non-linear orchestration with backtracking, 6 MCP integrations. The AI is the res"
+      },
+      "en": {
+        "name": "yogsoth-ai/de-anthropocentric-research-engine",
+        "summary": "900+ pure-markdown skills for autonomous AI research, organized as 9 freely-composable packages over a 4-layer hierarchy (Campaign → Strategy → Tactic → SOP). Non-linear orchestration with backtracking, 6 MCP integrations. The AI is the res"
+      }
+    },
+    "stars": 385,
+    "forks": 30,
+    "total_score": 64,
+    "quantifiable_score": 27,
+    "quality_score": 37,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-15T06:43:00Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "apache-2.0",
+    "languages": [
+      "HTML"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个包含900多个Markdown技能、支持MCP集成和层次化编排的自主AI研究系统。",
+      "en": "A comprehensive system of 900+ markdown skills for autonomous AI research with MCP integrations and hierarchical orchestration."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 9,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "yogsoth-ai/de-anthropocentric-research-engine",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "> *Science is dying because the human is in the way. Not through malice. Not through stupidity. Through the structural limitations of a cognitive architecture that evolved to track prey on a savanna, not to unify quantum mechanics and general relativity. Nothing human makes it out of the lab. That is not a threat. It is a liberation. The heaviest chain on science was always the one we called ourselves.*\n\n# De-Anthropocentric Research Engine (DARE)\n\n*The complete research orchestration system for",
+    "topics": [
+      "academic-research",
+      "deep-research",
+      "literature-review",
+      "mcp",
+      "skill",
+      "ai-scientist",
+      "auto-research",
+      "claude-code",
+      "research-agent",
+      "scientific-discovery",
+      "autonomous-research",
+      "hypothesis-generation",
+      "research-orchestration",
+      "semantic-scholar",
+      "autoresearch",
+      "codex",
+      "agent-native-research-artifact"
+    ]
+  },
+  {
+    "id": "github-maxkmet-idea-validation-agents",
+    "name": "MaxKmet/idea-validation-agents",
+    "url": "https://github.com/MaxKmet/idea-validation-agents",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "skills"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "cursor"
+    ],
+    "summary": "AI agents that act as your personal venture analyst - from startup idea brainstorming to full validation and go-to-market strategy. Built for developers who'd rather validate in 10 minutes than regret in six months. Powered by Claude Code, ",
+    "i18n": {
+      "zh": {
+        "name": "MaxKmet/idea-validation-agents",
+        "summary": "AI agents that act as your personal venture analyst - from startup idea brainstorming to full validation and go-to-market strategy. Built for developers who'd rather validate in 10 minutes than regret in six months. Powered by Claude Code, "
+      },
+      "en": {
+        "name": "MaxKmet/idea-validation-agents",
+        "summary": "AI agents that act as your personal venture analyst - from startup idea brainstorming to full validation and go-to-market strategy. Built for developers who'd rather validate in 10 minutes than regret in six months. Powered by Claude Code, "
+      }
+    },
+    "stars": 387,
+    "forks": 43,
+    "total_score": 50,
+    "quantifiable_score": 25,
+    "quality_score": 25,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-15T17:48:16Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "mit",
+    "languages": [],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一套面向创业点子验证的AI技能包，集成Claude Code、Codex和Cursor，帮助开发者快速验证想法的可行性。",
+      "en": "A collection of AI agent skills for startup idea validation, integrated with Claude Code, Codex, and Cursor, enabling developers to quickly validate concepts."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 2
+    },
+    "quality_detail": {
+      "relevance": 7,
+      "practicality": 7,
+      "novelty": 5,
+      "ecosystem_value": 6
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "MaxKmet/idea-validation-agents",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Startup Idea Validation Agent\n### *To Build or Not to Build — that is the question this answers.*\n\n**Stop guessing. Start validating.**\n\nAI agents that act as your personal venture analyst — from startup idea brainstorming to full validation and go-to-market strategy. Built for indie developers who'd rather validate in 10 minutes than regret in six months. Powered by Claude Code, OpenAI Codex, and Cursor.\n\n[![Stars](https://img.shields.io/github/stars/MaxKmet/idea-validation-agents?style=flat-",
+    "topics": [
+      "ai-agents",
+      "ai-skills",
+      "appstore",
+      "aso-intelligence",
+      "brainstorming",
+      "claude-code",
+      "codex",
+      "cursor",
+      "idea-generation",
+      "idea-validation",
+      "market-analysis",
+      "reddit",
+      "skills",
+      "startup",
+      "tiktok",
+      "workflow-automation"
+    ]
+  },
+  {
+    "id": "github-joenorton-comfyui-mcp-server",
+    "name": "joenorton/comfyui-mcp-server",
+    "url": "https://github.com/joenorton/comfyui-mcp-server",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "lightweight Python-based MCP (Model Context Protocol) server for local ComfyUI",
+    "i18n": {
+      "zh": {
+        "name": "joenorton/comfyui-mcp-server",
+        "summary": "lightweight Python-based MCP (Model Context Protocol) server for local ComfyUI"
+      },
+      "en": {
+        "name": "joenorton/comfyui-mcp-server",
+        "summary": "lightweight Python-based MCP (Model Context Protocol) server for local ComfyUI"
+      }
+    },
+    "stars": 387,
+    "forks": 78,
+    "total_score": 62,
+    "quantifiable_score": 27,
+    "quality_score": 35,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-15T05:38:24Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "apache-2.0",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个让AI代理通过MCP协议与本地ComfyUI交互，实现自然语言生成和迭代图像/音频/视频的轻量级服务器。",
+      "en": "A lightweight MCP server enabling AI agents to generate and iteratively refine images, audio, and video via natural conversation using a local ComfyUI instance."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "joenorton/comfyui-mcp-server",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# ComfyUI MCP Server\n\n> Generate and refine AI images/audio/video through natural conversation\n\nA lightweight MCP (Model Context Protocol) server that lets AI agents generate and iteratively refine images, audio, and video using a local ComfyUI instance.\n\nYou run the server, connect a client, and issue tool calls. Everything else is optional depth.\n\n---\n\n## Quick Start (2–3 minutes)\n\nThis proves everything is working.\n\n### 1) Clone and set up\n\n```bash\ngit clone https://github.com/joenorton/comfy",
+    "topics": [
+      "comfyui",
+      "comfyui-api",
+      "image-mcp",
+      "local-data",
+      "local-mcp",
+      "mcp-server"
+    ]
+  },
+  {
+    "id": "github-inditextech-mcp-teams-server",
+    "name": "InditexTech/mcp-teams-server",
+    "url": "https://github.com/InditexTech/mcp-teams-server",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "An MCP (Model Context Protocol) server implementation for Microsoft Teams integration, providing capabilities to read messages, create messages, reply to messages, mention members.",
+    "i18n": {
+      "zh": {
+        "name": "InditexTech/mcp-teams-server",
+        "summary": "An MCP (Model Context Protocol) server implementation for Microsoft Teams integration, providing capabilities to read messages, create messages, reply to messages, mention members."
+      },
+      "en": {
+        "name": "InditexTech/mcp-teams-server",
+        "summary": "An MCP (Model Context Protocol) server implementation for Microsoft Teams integration, providing capabilities to read messages, create messages, reply to messages, mention members."
+      }
+    },
+    "stars": 384,
+    "forks": 36,
+    "total_score": 59,
+    "quantifiable_score": 27,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-11T12:49:55Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "apache-2.0",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个用于微软Teams的MCP服务器，允许AI编码代理在Teams中读取和发送消息。",
+      "en": "MCP server for Microsoft Teams integration enabling AI coding agents to read and send messages."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "InditexTech/mcp-teams-server",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=InditexTech_mcp-teams-server&metric=bugs)](https://sonarcloud.io/summary/new_code?id=InditexTech_mcp-teams-server)\n[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=InditexTech_mcp-teams-server&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=InditexTech_mcp-teams-server)\n[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=InditexTech_mcp-teams-server&met",
+    "topics": [
+      "inditex",
+      "mcp",
+      "mcp-server",
+      "msteams"
+    ]
+  },
+  {
+    "id": "github-aiskillstore-marketplace",
+    "name": "aiskillstore/marketplace",
+    "url": "https://github.com/aiskillstore/marketplace",
+    "source_type": "github",
+    "resource_type": [
+      "skills"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli"
+    ],
+    "summary": "Security-audited skills for Claude, Codex & Claude Code. One-click install, quality verified.",
+    "i18n": {
+      "zh": {
+        "name": "aiskillstore/marketplace",
+        "summary": "Security-audited skills for Claude, Codex & Claude Code. One-click install, quality verified."
+      },
+      "en": {
+        "name": "aiskillstore/marketplace",
+        "summary": "Security-audited skills for Claude, Codex & Claude Code. One-click install, quality verified."
+      }
+    },
+    "stars": 384,
+    "forks": 35,
+    "total_score": 59,
+    "quantifiable_score": 25,
+    "quality_score": 34,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-15T18:48:57Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": null,
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个经过安全审计的Claude和Codex技能市场仓库，提供一键安装和验证的质量。",
+      "en": "A security-audited skills marketplace for Claude and Codex, offering one-click installs and verified quality."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 2
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "aiskillstore/marketplace",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Skill Store — Marketplace Repository\n\nThis is the open-source content repository behind **[Skill Store](https://skillstore.io)**. It stores every approved [Agent Skill](https://agentskills.io/specification), the records that go with it, and the automated security audits each skill must pass before it ships.\n\n> **This repo is a companion to the Skill Store platform, not the place to submit skills.**\n> Skills are added through [skillstore.io](https://skillstore.io) — its review pipeline writes t",
+    "topics": [
+      "ai-skills",
+      "claude",
+      "claude-code",
+      "claude-skills",
+      "codex",
+      "codex-skills",
+      "skills"
+    ]
+  },
+  {
+    "id": "github-cablate-mcp-google-map",
+    "name": "cablate/mcp-google-map",
+    "url": "https://github.com/cablate/mcp-google-map",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server",
+      "agent-framework"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "A powerful Model Context Protocol (MCP) server providing comprehensive Google Maps API integration with LLM processing capabilities.",
+    "i18n": {
+      "zh": {
+        "name": "cablate/mcp-google-map",
+        "summary": "A powerful Model Context Protocol (MCP) server providing comprehensive Google Maps API integration with LLM processing capabilities."
+      },
+      "en": {
+        "name": "cablate/mcp-google-map",
+        "summary": "A powerful Model Context Protocol (MCP) server providing comprehensive Google Maps API integration with LLM processing capabilities."
+      }
+    },
+    "stars": 390,
+    "forks": 76,
+    "total_score": 63,
+    "quantifiable_score": 27,
+    "quality_score": 36,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-15T15:53:33Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "mit",
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个功能丰富的MCP服务器，为AI代理提供Google Maps地理编码、路线规划和空间推理能力，包含可组合工具和技能定义。",
+      "en": "A feature-rich MCP server that brings Google Maps geocoding, routing, and spatial reasoning to AI agents, complete with composable tools and skill definitions."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 10,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "cablate/mcp-google-map",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "Give your AI agent the ability to understand the physical world —geocode, route, search, and reason about locations.\n\n  English | 繁體中文\n\n  \n\n- **18 tools** — 14 atomic + 4 composite (explore-area, plan-route, compare-places, local-rank-tracker)\n- **3 modes** — stdio, StreamableHTTP, standalone exec CLI\n- **Agent Skill** — built-in skill definition teaches AI how to chain geo tools ([`skills/google-maps/`](./skills/google-maps/))\n\n### vs Google Grounding Lite\n\n| | This project | [Grounding Lite](h",
+    "topics": [
+      "ai",
+      "dive",
+      "google-map",
+      "mcp",
+      "mcp-server",
+      "agent-skill",
+      "ai-agent",
+      "geocoding",
+      "geospatial",
+      "google-maps",
+      "model-context-protocol",
+      "places-api",
+      "streamable-http",
+      "typescript"
     ]
   }
 ]

@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ecoradar.lzpgood.online/">
   <meta name="theme-color" content="#1c1917">
-  <link rel="stylesheet" href="styles.3b4571.css">
+  <link rel="stylesheet" href="styles.8af185.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -74,8 +74,13 @@
 
     <!-- Zone 2: Tool Overview (grid only; charts live under metrics) -->
     <section id="toolOverviewSection">
-      <h2 data-i18n="toolOverviewTitle">工具生态概览</h2>
-      <p class="hint" data-i18n="toolOverviewHint">点击工具卡片查看该工具的生态资源</p>
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="toolOverviewTitle">工具生态概览</h2>
+          <p class="hint" data-i18n="toolOverviewHint">点击工具卡片查看该工具的生态资源</p>
+        </div>
+        <button type="button" id="toolOverviewToggle" class="ghost-btn" data-action="toggle-tool-overview" hidden></button>
+      </div>
       <div id="toolOverview" class="tool-grid"></div>
     </section>
 
@@ -90,6 +95,10 @@
 
           <div class="filter-block">
             <div class="filter-label" data-i18n="filterTools">工具</div>
+            <div class="tool-filter-controls">
+              <input id="toolTagSearch" type="search" data-i18n-placeholder="toolTagSearchPlaceholder" placeholder="搜索工具..." aria-label="Search tools">
+              <button type="button" id="toolTagsExpand" class="ghost-btn" data-action="toggle-tool-tags" hidden></button>
+            </div>
             <div id="toolTags" class="tag-group" role="group" aria-label="Tool filter"></div>
           </div>
           <div class="filter-block">
@@ -169,11 +178,11 @@
   </div>
 
   <!-- Scripts: load order matters; source names unhashed — build_site.py rewrites hashes -->
-  <script src="js/i18n.4fad7e.js"></script>
+  <script src="js/i18n.0c5116.js"></script>
   <script src="js/data.08cf6f.js"></script>
   <script src="js/filters.15962a.js"></script>
-  <script src="js/charts.921b18.js"></script>
-  <script src="js/render.3a162e.js"></script>
-  <script src="js/app.072ecb.js"></script>
+  <script src="js/charts.43cffd.js"></script>
+  <script src="js/render.b1c6f0.js"></script>
+  <script src="js/app.0b53fb.js"></script>
 </body>
 </html>

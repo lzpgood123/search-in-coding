@@ -48,7 +48,10 @@ def main():
                 fail(f'{dataset_name} {i} {p.get("id")} review_state != {expected_state}: {p.get("review_state")}'); break
 
     tc = collections.Counter(t for p in projects for t in p.get('target_tools', []))
+    # Only require coverage for active tools; draft/disabled are offline until onboarded
     for t in tools:
+        if t.get('status', 'active') != 'active':
+            continue
         if tc[t['id']] < 1: fail(f'tool coverage <1 for {t["id"]}: {tc[t["id"]]}')
 
     # Official tools should have tracking_priority=track and source_type=official-seed

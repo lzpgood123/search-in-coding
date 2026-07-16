@@ -95,18 +95,85 @@ function closeReportModal() {
   setBodyScrollLock();
 }
 
-// Render tag buttons
+// Render tag buttons (tool chips support search + collapse for 31 tools)
+var TOOL_TAGS_COLLAPSE_N = 10;
+var toolTagsExpanded = false;
+var toolTagQuery = '';
+
+function getToolList() {
+  return (SIC_data.tools || []).filter(function(t) {
+    return t.id !== 'general-ai-coding';
+  });
+}
+
+function toolMatchesQuery(tool, q) {
+  if (!q) return true;
+  var name = String(SIC_i18n.textOf(tool, 'name') || tool.name || '').toLowerCase();
+  var id = String(tool.id || '').toLowerCase();
+  var aliases = (tool.aliases || []).join(' ').toLowerCase();
+  return name.indexOf(q) !== -1 || id.indexOf(q) !== -1 || aliases.indexOf(q) !== -1;
+}
+
+function updateToolTagsExpandBtn(visibleCount, totalCount) {
+  var btn = $('toolTagsExpand');
+  if (!btn) return;
+  // Only show expand when not searching and there are more than N tools
+  var needToggle = !toolTagQuery && totalCount > TOOL_TAGS_COLLAPSE_N;
+  btn.hidden = !needToggle;
+  if (!needToggle) return;
+  btn.textContent = toolTagsExpanded
+    ? SIC_i18n.t('collapseTools')
+    : SIC_i18n.t('expandTools') + ' (' + totalCount + ')';
+}
+
 function renderTagButtons() {
   var toolContainer = $('toolTags');
   if (toolContainer) {
-    toolContainer.innerHTML = SIC_data.tools
-      .filter(function(t) { return t.id !== 'general-ai-coding'; })
-      .map(function(t) {
-        var active = SIC_filters.selectedTools.has(t.id) ? ' active' : '';
-        var name = SIC_i18n.textOf(t, 'name') || t.name;
-        return '<button class="tag-btn' + active + '" data-action="tool-tag" data-tool="' + SIC_render.esc(t.id) + '">' + SIC_render.esc(name) + '</button>';
-      }).join('');
+    var allTools = getToolList();
+    var q = (toolTagQuery || '').trim().toLowerCase();
+    var matched = allTools.filter(function(t) { return toolMatchesQuery(t, q); });
+
+    // Always keep selected tools visible even if collapsed / filtered out of search
+    var selected = allTools.filter(function(t) {
+      return SIC_filters.selectedTools.has(t.id);
+    });
+
+    var visible;
+    if (q) {
+      // Searching: show all matches (selected first)
+      var seen = {};
+      visible = [];
+      selected.concat(matched).forEach(function(t) {
+        if (seen[t.id]) return;
+        seen[t.id] = true;
+        if (toolMatchesQuery(t, q) || SIC_filters.selectedTools.has(t.id)) {
+          visible.push(t);
+        }
+      });
+    } else if (toolTagsExpanded || allTools.length <= TOOL_TAGS_COLLAPSE_N) {
+      visible = allTools.slice();
+    } else {
+      // Collapsed: first N + any selected beyond N
+      var seen2 = {};
+      visible = [];
+      allTools.slice(0, TOOL_TAGS_COLLAPSE_N).concat(selected).forEach(function(t) {
+        if (seen2[t.id]) return;
+        seen2[t.id] = true;
+        visible.push(t);
+      });
+    }
+
+    toolContainer.innerHTML = visible.map(function(t) {
+      var active = SIC_filters.selectedTools.has(t.id) ? ' active' : '';
+      var name = SIC_i18n.textOf(t, 'name') || t.name;
+      return '<button class="tag-btn' + active + '" data-action="tool-tag" data-tool="' +
+        SIC_render.esc(t.id) + '" title="' + SIC_render.esc(name) + '">' +
+        SIC_render.esc(name) + '</button>';
+    }).join('');
+
+    updateToolTagsExpandBtn(visible.length, allTools.length);
   }
+
   var typeContainer = $('typeTags');
   if (typeContainer) {
     var allTypes = [];
@@ -121,6 +188,13 @@ function renderTagButtons() {
       var label = (SIC_i18n.t('resourceTypes')[type]) || type;
       return '<button class="tag-btn' + active + '" data-action="type-tag" data-type="' + SIC_render.esc(type) + '">' + SIC_render.esc(label) + '</button>';
     }).join('');
+  }
+
+  // Keep tool search placeholder in sync with language
+  var toolSearch = $('toolTagSearch');
+  if (toolSearch) {
+    toolSearch.placeholder = SIC_i18n.t('toolTagSearchPlaceholder');
+    if (toolSearch.value !== toolTagQuery) toolSearch.value = toolTagQuery;
   }
 }
 
@@ -169,6 +243,8 @@ function handleGlobalClick(e) {
     case 'tool-tag':
       SIC_filters.toggleTool(btn.dataset.tool);
       btn.classList.toggle('active');
+      // Re-render chips so selected tools stay visible when collapsed/searching
+      renderTagButtons();
       SIC_render.renderSearchZone();
       SIC_filters.writeState();
       break;
@@ -177,6 +253,14 @@ function handleGlobalClick(e) {
       btn.classList.toggle('active');
       SIC_render.renderSearchZone();
       SIC_filters.writeState();
+      break;
+    case 'toggle-tool-tags':
+      toolTagsExpanded = !toolTagsExpanded;
+      renderTagButtons();
+      break;
+    case 'toggle-tool-overview':
+      SIC_render.toolOverviewExpanded = !SIC_render.toolOverviewExpanded;
+      SIC_render.renderToolOverview();
       break;
     case 'tool-filter':
       // Bug 3 fix: sync tag button active state
@@ -228,6 +312,17 @@ function bindEvents() {
     SIC_render.renderSearchZone();
     SIC_filters.writeState();
   }, 300));
+
+  // Tool chip search (filter visible tool tags only; does not change project query)
+  var toolSearchEl = $('toolTagSearch');
+  if (toolSearchEl) {
+    toolSearchEl.addEventListener('input', debounce(function(e) {
+      toolTagQuery = e.target.value || '';
+      // Auto-expand while searching so matches aren't hidden by collapse
+      if (toolTagQuery.trim()) toolTagsExpanded = true;
+      renderTagButtons();
+    }, 150));
+  }
 
   // Sort
   $('sort').addEventListener('change', function(e) {
