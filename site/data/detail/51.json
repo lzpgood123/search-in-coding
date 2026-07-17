@@ -57,7 +57,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# 📰 GitHub Copilot Daily Digest\n\n[![Daily Digest](https://github.com/ltpitt/copilot-daily-digest/actions/workflows/daily-agent.yml/badge.svg)](https://github.com/ltpitt/copilot-daily-digest/actions/workflows/daily-agent.yml)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n\n> Are AI news causing you a headache? Can't keep up with Copilot updates? If we only had an Agent to keep up with Agents...\n\n**Good news:** We do! This repository automatically aggregates GitHub Copilot content from official sources and organizes it daily using the Copilot Coding Agent itself.\n\n## 🤖 How It Works\n\n1. **Weekly scraping** - Good old deterministic data fetching from official sources (docs, blog, YouTube, GitHub Next) on Friday morning, when the GitHub release cycle for the week is complete\n2. **Change detection** - Smart diffing identifies what's actually new since yesterday\n3. **AI generation** - Copilot Coding Agent organizes everything into digestible content\n4. **PR creation** - Automated pull request ready for review and merge\n\nAll on autopilot, using Copilot to track... Copilot. Meta? Perhaps. Useful? Absolutely.\n\n## 📖 [→ Browse the Digest](content/README.md)\n\nStart here for the latest updates, videos, trainings, and resources - all organized and ready to read.\n\n---\n\n**License:** MIT - see [LICENSE](LICENSE)\n",
     "topics": []
   },
   {
@@ -241,7 +241,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Congratulations! :tada:\n\n<img src=\"https://octodex.github.com/images/welcometocat.png\" align=\"right\" height=\"250px\" />\n\nYay **RicardoNiepel** you finished the exercise! Nice work :tada:\n\nIf you would like to retrace your steps, you can always revisit the exercise.\n\n[![](https://img.shields.io/badge/Return%20to%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/riniepel-demo-org/skills-expand-your-team-with-copilot/issues/1)\n\n> [!TIP]\n> Mona won't grade you this time! 😉\n\n\n### Craving more? :raising_hand:\n\nDid you enjoy this practical style of learning? There's no better way to learn than building things, right?!\n\nLet's keep the momentum going! Head over to [GitHub Skills](https://skills.github.com) catalog to find another hands-on exercise. :rocket:\n\n",
     "topics": []
   },
   {
@@ -302,7 +302,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# bc-copilot-blueprint\n\n> The first AL repository where **GitHub Copilot Coding Agent** can\n> autonomously develop and verify Business Central extensions —\n> compile, publish, and run AL tests against a real BC instance,\n> end-to-end, with no human in the loop.\n>\n> **Status (2026-04-07): validated end-to-end.** A real Copilot\n> coding-agent task ran `iterate.sh` against a real BC instance,\n> wrote new AL code, executed real tests, observed real results\n> (`6 passed`), and shipped a PR — autonomously, no human\n> intervention. See [Validated outcome](#validated-outcome) below.\n\n## Why this exists\n\nGitHub Copilot is great at writing AL syntactically. It is, today,\n**bad at writing AL that actually works**, because it has no way to\n*run* Business Central and verify its own output. It guesses at API\nshapes. It hallucinates field names. It writes tests that compile but\nhave never executed.\n\nThis repo fixes that. It uses [`StefanMaron/MsDyn365Bc.On.Linux`][bc-linux]\n— a project that runs the real Business Central server on plain Linux\ncontainers — and wires it into the GitHub Copilot Coding Agent's\nexecution environment so the agent can:\n\n1. Read the example `app/` and `test/` folders to understand the\n   conventions of this repo.\n2. Write production AL in `app/src/` and matching tests in `test/src/`.\n3. Run `./scripts/iterate.sh` to compile, publish to a running BC\n   instance, and execute the tests.\n4. Read the test results, fix what's broken, and iterate — against the\n   same long-running BC instance, so each iteration takes seconds.\n\nThe agent never has to restart BC. The agent never has to wait six\nminutes for a CI workflow round-trip. The agent gets the same\nfast-feedback dev loop a human AL developer would get on their laptop.\n\n## How it works (architecture)\n\n```\n┌──────────────────────────────────────────────────────────────────────┐\n│  GitHub Copilot Coding Agent's runner (one Ubuntu VM per task)       │\n│                                                           ",
     "topics": []
   },
   {
@@ -363,7 +363,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Learn Microsoft Agent Framework with Foundry — ZavaShop Supply‑Chain Workshop\n\n> A Chinese edition of every README in this workshop is preserved alongside as `README.zh.md`.\n\nThis workshop walks you through the **[Microsoft Agent Framework](https://learn.microsoft.com/en-us/agent-framework/) + [Microsoft Foundry](https://learn.microsoft.com/en-us/azure/foundry/agents/overview) (gpt-5.5)** stack in **five LABs**, each one delivering a runnable feature on top of a single, continuous story.\n\n> **Two implementation tracks share the same story.** Every LAB ships in both **Python** and **.NET (C#)**. Same fixtures, same acceptance criteria, same Foundry model. Pick a track per LAB — you can switch between LABs.\n\n---\n\n## 0. The story — ZavaShop\n\n**ZavaShop** is a fictional global e-commerce company. Its catalog covers three categories:\n\n- 🏠 **Home goods** — bedding, decor, lighting\n- 🌿 **Garden & outdoor** — garden tools, BBQ grills, outdoor furniture\n- 🔌 **Small home appliances** — coffee machines, air purifiers, robotic vacuums\n\nZavaShop has **5 fulfillment centers** (Seattle SEA-01, London LON-02, Shanghai SHA-03, São Paulo SAO-04, Dubai DXB-05) and partners with **dozens of suppliers**. Over the past year, the same pain points keep surfacing:\n\n| Domain | Pain point |\n|--------|-----------|\n| Warehousing | Stock numbers are inconsistent across systems; warehouse supervisors are blocked by repetitive questions |\n| Procurement | Buyers manage 8+ ERP/supplier portals daily; quotes and contract clauses are scattered, with frequent approval errors |\n| Customer service | Reps don't remember VIP preferences (white-glove delivery, no cardboard, time windows…); chat models drift off-topic |\n| Fulfillment | Quote → stock check → approval → dispatch → finance is fully manual; one $10k+ exception per day |\n| Operations | Leadership wants a single dashboard, but every team builds their own |\n\nThe CTO has signed off on a **Foundry-as-the-brain** charter:\n\n> *Every team rebuilds its",
     "topics": []
   },
   {
@@ -485,7 +485,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Website for Mergington Highschool\n\n<img width=\"1211\" height=\"792\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/7fcd3c80-c46f-4b49-b565-e6376b7c7b89\" />\n\n",
     "topics": []
   },
   {
@@ -544,7 +544,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Copilot Coding Agent Setup\n\nA GitHub Action that prepares the [GitHub Copilot Coding Agent](https://docs.github.com/en/copilot/using-github-copilot/using-copilot-coding-agent) development environment with the tools and SDKs it needs to build, test, and modernize .NET projects.\n\nFor instructions on running modernize-dotnet with the Copilot coding agent, see the [coding agent README](https://github.com/dotnet/modernize-dotnet/blob/main/coding-agent/README.md).\n\n## Usage\n\nAdd this action as a step inside your repository's `copilot-setup-steps.yml` workflow:\n\n```yaml\nname: \"Copilot Setup Steps\"\n\non:\n  workflow_dispatch:\n  pull_request:\n    paths:\n      - .github/workflows/copilot-setup-steps.yml\n\njobs:\n  copilot-setup-steps:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n    steps:\n      - uses: dotnet/modernize-dotnet-actions@main\n```\n\n### .NET Framework / Windows desktop workloads\n\nUse a Windows runner and enable the targeting pack installer:\n\n```yaml\njobs:\n  copilot-setup-steps:\n    runs-on: windows-latest\n    permissions:\n      contents: read\n    steps:\n      - uses: dotnet/modernize-dotnet-actions@main\n        with:\n          install-framework-targeting-packs: 'true'\n```\n\n> **Note:** When using Windows runners, you must also disable the integrated firewall in your repository settings under **Settings → Copilot → Coding agent**. See the [coding-agent README](coding-agent/README.md) for details.\n\n## Inputs\n\n| Input | Description | Default |\n|---|---|---|\n| `dotnet-version` | .NET SDK version to install | `10.0.x` |\n| `node-version` | Node.js version to install | `20` |\n| `install-framework-targeting-packs` | Install .NET Framework 4.7.1–4.8.1 SDK and targeting packs (Windows only) | `false` |\n\n## License\n\nSee [LICENSE](LICENSE) for details.\n",
     "topics": []
   },
   {
@@ -666,7 +666,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "<div align=\"center\">\n\n# 🎉 Congratulations JaclynCodes! 🎉\n\n<img src=\"https://octodex.github.com/images/welcometocat.png\" height=\"200px\" />\n\n### 🌟 You've successfully completed the exercise! 🌟\n\n## 🚀 Share Your Success!\n\n**Show off your new skills and inspire others!**\n\n<a href=\"https://twitter.com/intent/tweet?text=I%20just%20completed%20the%20%22Expand%20your%20team%20with%20GitHub%20Copilot%22%20GitHub%20Skills%20hands-on%20exercise!%20%F0%9F%8E%89%0A%0Ahttps%3A%2F%2Fgithub.com%2FJaclynCodes%2Feffective-octo-goggles%0A%0A%23GitHubSkills%20%23OpenSource%20%23GitHubLearn\" target=\"_blank\" rel=\"noopener noreferrer\">\n  <img src=\"https://img.shields.io/badge/Share%20on%20X-1da1f2?style=for-the-badge&logo=x&logoColor=white\" alt=\"Share on X\" />\n</a>\n<a href=\"https://bsky.app/intent/compose?text=I%20just%20completed%20the%20%22Expand%20your%20team%20with%20GitHub%20Copilot%22%20GitHub%20Skills%20hands-on%20exercise!%20%F0%9F%8E%89%0A%0Ahttps%3A%2F%2Fgithub.com%2FJaclynCodes%2Feffective-octo-goggles%0A%0A%23GitHubSkills%20%23OpenSource%20%23GitHubLearn\" target=\"_blank\" rel=\"noopener noreferrer\">\n  <img src=\"https://img.shields.io/badge/Share%20on%20Bluesky-0085ff?style=for-the-badge&logo=bluesky&logoColor=white\" alt=\"Share on Bluesky\" />\n</a>\n<a href=\"https://www.linkedin.com/feed/?shareActive=true&text=I%20just%20completed%20the%20%22Expand%20your%20team%20with%20GitHub%20Copilot%22%20GitHub%20Skills%20hands-on%20exercise!%20%F0%9F%8E%89%0A%0Ahttps%3A%2F%2Fgithub.com%2FJaclynCodes%2Feffective-octo-goggles%0A%0A%23GitHubSkills%20%23OpenSource%20%23GitHubLearn\" target=\"_blank\" rel=\"noopener noreferrer\">\n  <img src=\"https://img.shields.io/badge/Share%20on%20LinkedIn-0077b5?style=for-the-badge&logo=linkedin&logoColor=white\" alt=\"Share on LinkedIn\" />\n</a>\n\n### 🎯 What's Next?\n\n**Keep the momentum going!**\n\n[![](https://img.shields.io/badge/Return%20to%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/JaclynCodes/effective-octo-gogg",
     "topics": []
   },
   {
@@ -728,7 +728,7 @@
     ],
     "maturity": "unknown",
     "status": "active",
-    "readme_preview": null,
+    "readme_preview": "# GitHub Copilot for Vim and Neovim\n\nGitHub Copilot is an AI pair programmer tool that helps you write code faster\nand smarter. Trained on billions of lines of public code, GitHub Copilot turns\nnatural language prompts including comments and method names into coding\nsuggestions across dozens of languages.\n\nCopilot.vim is a Vim/Neovim plugin for GitHub Copilot.\n\nTo learn more, visit\n[https://github.com/features/copilot](https://github.com/features/copilot).\n\n## Getting access to GitHub Copilot\n\nTo access GitHub Copilot, an active GitHub Copilot subscription is required.\nSign up for [GitHub Copilot Free](https://github.com/settings/copilot), or\nrequest access from your enterprise admin.\n\n## Getting started\n\n1.  Install [Neovim][] or the latest patch of [Vim][] (9.0.0185 or newer).\n\n2.  Install [Node.js][].  If you use a package manager, make sure to install\n    NPM as well (e.g., `apt install nodejs npm` on Debian/Ubuntu).\n\n3.  Install `github/copilot.vim` using vim-plug, lazy.nvim, or any other\n    plugin manager.  Or to install manually, run one of the following\n    commands:\n\n    * Vim, Linux/macOS:\n\n          git clone --depth=1 https://github.com/github/copilot.vim.git \\\n            ~/.vim/pack/github/start/copilot.vim\n\n    * Neovim, Linux/macOS:\n\n          git clone --depth=1 https://github.com/github/copilot.vim.git \\\n            ~/.config/nvim/pack/github/start/copilot.vim\n\n    * Vim, Windows (PowerShell command):\n\n          git clone --depth=1 https://github.com/github/copilot.vim.git `\n            $HOME/vimfiles/pack/github/start/copilot.vim\n\n    * Neovim, Windows (PowerShell command):\n\n          git clone --depth=1 https://github.com/github/copilot.vim.git `\n            $HOME/AppData/Local/nvim/pack/github/start/copilot.vim\n\n4.  Start Vim/Neovim and invoke `:Copilot setup`.\n\n[Node.js]: https://nodejs.org/en/download/\n[Neovim]: https://github.com/neovim/neovim/releases/latest\n[Vim]: https://github.com/vim/vim\n\nSuggestions are displayed inline and can be acce",
     "topics": []
   },
   {
@@ -791,7 +791,7 @@
     ],
     "maturity": "unknown",
     "status": "active",
-    "readme_preview": null,
+    "readme_preview": "# codeium",
     "topics": []
   },
   {
@@ -915,7 +915,7 @@
     ],
     "maturity": "unknown",
     "status": "active",
-    "readme_preview": null,
+    "readme_preview": "# Zed\n\n[![Zed](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zed-industries/zed/main/assets/badge/v0.json)](https://zed.dev)\n[![CI](https://github.com/zed-industries/zed/actions/workflows/run_tests.yml/badge.svg)](https://github.com/zed-industries/zed/actions/workflows/run_tests.yml)\n\nWelcome to Zed, a high-performance, multiplayer code editor from the creators of [Atom](https://github.com/atom/atom) and [Tree-sitter](https://github.com/tree-sitter/tree-sitter).\n\n---\n\n### Installation\n\nOn macOS, Linux, and Windows you can [download Zed directly](https://zed.dev/download) or install Zed via your local package manager ([macOS](https://zed.dev/docs/installation#macos)/[Linux](https://zed.dev/docs/linux#installing-via-a-package-manager)/[Windows](https://zed.dev/docs/windows#package-managers)).\n\nOther platforms are not yet available:\n\n- Web ([tracking discussion](https://github.com/zed-industries/zed/discussions/26195))\n\n### Developing Zed\n\n- [Building Zed for macOS](./docs/src/development/macos.md)\n- [Building Zed for Linux](./docs/src/development/linux.md)\n- [Building Zed for Windows](./docs/src/development/windows.md)\n\n### Contributing\n\nSee [CONTRIBUTING.md](./CONTRIBUTING.md) for ways you can contribute to Zed.\n\nAlso... we're hiring! Check out our [jobs](https://zed.dev/jobs) page for open roles.\n\n### Licensing\n\nZed source code is licensed primarily under GPL-3.0-or-later, with Apache-2.0 components where marked.\n\nLicense information for third party dependencies must be correctly provided for CI to pass.\n\nWe use [`cargo-about`](https://github.com/EmbarkStudios/cargo-about) to automatically comply with open source licenses. If CI is failing, check the following:\n\n- Is it showing a `no license specified` error for a crate you've created? If so, add `publish = false` under `[package]` in your crate's Cargo.toml.\n- Is the error `failed to satisfy license requirements` for a dependency? If so, first determine what license the project has and wheth",
     "topics": []
   },
   {
@@ -977,7 +977,7 @@
     ],
     "maturity": "unknown",
     "status": "active",
-    "readme_preview": null,
+    "readme_preview": "<a href=\"https://www.warp.dev\">\n    <img width=\"1024\" alt=\"Warp Agentic Development Environment product preview\" src=\"https://github.com/user-attachments/assets/9976b2da-2edd-4604-a36c-8fd53719c6d4\" />\n</a>\n&nbsp;\n<p align=\"center\">\n  <a href=\"https://www.warp.dev\"><img height=\"20\" alt=\"Built with Warp\" src=\"https://raw.githubusercontent.com/warpdotdev/brand-assets/main/Github/Built-With-Warp-Export@2x.png\" /></a>\n  &nbsp;\n  <a href=\"https://oz.warp.dev\"><img height=\"20\" alt=\"Powered by Oz\" src=\"https://raw.githubusercontent.com/warpdotdev/brand-assets/main/Github/Powered-By-Oz-Export@2x.png\" /></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://www.warp.dev\">Website</a>\n  ·\n  <a href=\"https://www.warp.dev/code\">Code</a>\n  ·\n  <a href=\"https://www.warp.dev/agents\">Agents</a>\n  ·\n  <a href=\"https://www.warp.dev/terminal\">Terminal</a>\n  ·\n  <a href=\"https://www.warp.dev/drive\">Drive</a>\n  ·\n  <a href=\"https://docs.warp.dev\">Docs</a>\n  ·\n  <a href=\"https://www.warp.dev/blog/how-warp-works\">How Warp Works</a>\n</p>\n\n> [!NOTE]\n> OpenAI is the founding sponsor of the new, open-source Warp repository, and the new agentic management workflows are powered by GPT models.\n\n<h1></h1>\n\n## About\n\n[Warp](https://www.warp.dev) is an agentic development environment, born out of the terminal. Use Warp's built-in coding agent, or bring your own CLI agent (Claude Code, Codex, Gemini CLI, and others).\n\n## Installation\n\nYou can [download Warp](https://www.warp.dev/download) and [read our docs](https://docs.warp.dev/) for platform-specific instructions.\n\n## Warp Contributions Overview Dashboard\n\nExplore [build.warp.dev](https://build.warp.dev) to:\n- Watch thousands of Oz agents triage issues, write specs, implement changes, and review PRs\n- View top contributors and in-flight features\n- Track your own issues with GitHub sign-in\n- Click into active agent sessions in a web-compiled Warp terminal\n\n## Oz for OSS\n\nMaintaining a popular open-source project? [Apply for Oz credits](https://tally.so/r",
     "topics": []
   },
   {
@@ -1039,7 +1039,7 @@
     ],
     "maturity": "unknown",
     "status": "active",
-    "readme_preview": null,
+    "readme_preview": "<p align=\"center\">\n    <a href=\"https://aider.chat/\"><img src=\"https://aider.chat/assets/logo.svg\" alt=\"Aider Logo\" width=\"300\"></a>\n</p>\n\n<h1 align=\"center\">\nAI Pair Programming in Your Terminal\n</h1>\n\n\n<p align=\"center\">\nAider lets you pair program with LLMs to start a new project or build on your existing codebase. \n</p>\n\n<p align=\"center\">\n  <img\n    src=\"https://aider.chat/assets/screencast.svg\"\n    alt=\"aider screencast\"\n  >\n</p>\n\n<p align=\"center\">\n<!--[[[cog\nfrom scripts.homepage import get_badges_md\ntext = get_badges_md()\ncog.out(text)\n]]]-->\n  <a href=\"https://github.com/Aider-AI/aider/stargazers\"><img alt=\"GitHub Stars\" title=\"Total number of GitHub stars the Aider project has received\"\nsrc=\"https://img.shields.io/github/stars/Aider-AI/aider?style=flat-square&logo=github&color=f1c40f&labelColor=555555\"/></a>\n  <a href=\"https://pypi.org/project/aider-chat/\"><img alt=\"PyPI Downloads\" title=\"Total number of installations via pip from PyPI\"\nsrc=\"https://img.shields.io/badge/📦%20Installs-6.8M-2ecc71?style=flat-square&labelColor=555555\"/></a>\n  <img alt=\"Tokens per week\" title=\"Number of tokens processed weekly by Aider users\"\nsrc=\"https://img.shields.io/badge/📈%20Tokens%2Fweek-15B-3498db?style=flat-square&labelColor=555555\"/>\n  <a href=\"https://openrouter.ai/#options-menu\"><img alt=\"OpenRouter Ranking\" title=\"Aider's ranking among applications on the OpenRouter platform\"\nsrc=\"https://img.shields.io/badge/🏆%20OpenRouter-Top%2020-9b59b6?style=flat-square&labelColor=555555\"/></a>\n  <a href=\"https://aider.chat/HISTORY.html\"><img alt=\"Singularity\" title=\"Percentage of the new code in Aider's last release written by Aider itself\"\nsrc=\"https://img.shields.io/badge/🔄%20Singularity-88%25-e74c3c?style=flat-square&labelColor=555555\"/></a>\n<!--[[[end]]]-->  \n</p>\n\n## Features\n\n### [Cloud and local LLMs](https://aider.chat/docs/llms.html)\n\n<a href=\"https://aider.chat/docs/llms.html\"><img src=\"https://aider.chat/assets/icons/brain.svg\" width=\"32\" height=\"32\" align=\"left\" va",
     "topics": []
   },
   {
@@ -1225,7 +1225,7 @@
     ],
     "maturity": "unknown",
     "status": "active",
-    "readme_preview": null,
+    "readme_preview": "<img src=\"resources/logo/codegeex_logo.png\">\n\n<p align=\"center\">\n    🏠 <a href=\"https://codegeex.cn\" target=\"_blank\">Homepage</a> | 📖 <a href=\"https://models.aminer.cn/codegeex/blog/\" target=\"_blank\">Blog</a> | 🪧 <a href=\"https://models.aminer.cn/codegeex/playground\" target=\"_blank\">DEMO</a> | 🤖 <a href=\"https://codegeex.cn/download/request\" target=\"_blank\">Download Model</a> | 📄 <a href=\"https://arxiv.org/abs/2303.17568\" target=\"_blank\">Paper</a> | 🌐 <a href=\"README_zh.md\" target=\"_blank\">中文</a>\n</p>\n<p align=\"center\">\n    🛠 <a href=\"https://marketplace.visualstudio.com/items?itemName=aminer.codegeex\" target=\"_blank\">VS Code</a>, <a href=\"https://plugins.jetbrains.com/plugin/20587-codegeex\" target=\"_blank\">Jetbrains</a>, <a href=\"https://plugins.jetbrains.com/plugin/20587-codegeex\" target=\"_blank\">Cloud Studio</a> supported | 👋 Join our <a href=\"https://discord.gg/8gjHdkmAN6\" target=\"_blank\">Discord</a>, <a href=\"https://join.slack.com/t/codegeexworkspace/shared_invite/zt-1s118ffrp-mpKKhQD0tKBmzNZVCyEZLw\" target=\"_blank\">Slack</a>, <a href=\"https://t.me/+IipIayJ32B1jOTg1\" target=\"_blank\">Telegram</a>, <a href=\"resources/zh/wechat.md\"target=\"_blank\">WeChat</a>\n</p>\n\n\n\n🌟 The newest [CodeGeeX4](https://github.com/THUDM/CodeGeeX4) has been released. | 最新一代 [CodeGeeX4](https://github.com/THUDM/CodeGeeX4) 模型已经正式开源。\n\n- [CodeGeeX: A Multilingual Code Generation Model](#codegeex-a-multilingual-code-generation-model)\n  - [News](#news)\n  - [Getting Started](#getting-started)\n    - [Installation](#installation)\n    - [Model Weights](#model-weights)\n    - [Inference on GPUs](#inference-on-gpus)\n    - [VS Code and Jetbrains Extension Guidance](#vs-code-and-jetbrains-extension-guidance)\n  - [CodeGeeX: Architecture, Code Corpus, and Implementation](#codegeex-architecture-code-corpus-and-implementation)\n  - [HumanEval-X: A new benchmark for Multilingual Program Synthesis](#humaneval-x-a-new-benchmark-for-multilingual-program-synthesis)\n    - [Multilingual Code Generation](#multilin",
     "topics": []
   },
   {
@@ -1287,7 +1287,7 @@
     ],
     "maturity": "unknown",
     "status": "active",
-    "readme_preview": null,
+    "readme_preview": "<p align=\"center\">\n  <img src=\"assets/icons/icon.png\" width=\"80\" alt=\"Cline\" />\n</p>\n\n<h1 align=\"center\">Cline</h1>\n\n<p align=\"center\">\nThe open source coding agent in your IDE and terminal.\n</p>\n\n<div align=\"center\">\n\n<div align=\"center\">\n<table>\n<tbody>\n<td align=\"center\">\n<a href=\"https://docs.cline.bot\" target=\"_blank\"><strong>Docs</strong></a>\n</td>\n<td align=\"center\">\n<a href=\"https://discord.gg/cline\" target=\"_blank\"><strong>Discord</strong></a>\n</td>\n<td align=\"center\">\n<a href=\"https://www.reddit.com/r/cline/\" target=\"_blank\"><strong>r/cline</strong></a>\n</td>\n<td align=\"center\">\n<a href=\"https://github.com/cline/cline/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop\" target=\"_blank\"><strong>Feature Requests</strong></a>\n</td>\n<td align=\"center\">\n<a href=\"https://cline.bot/join-us\" target=\"_blank\"><strong>Join us!</strong></a>\n</td>\n</tbody>\n</table>\n</div>\n\n</div>\n\n<br>\n\n<div align=\"center\">\n<table>\n<tr>\n<td align=\"center\" width=\"50%\">\n\n### CLI\n\nRun Cline in your terminal.\nInteractive chat or fully headless\nfor CI/CD and scripting.\n\n```\nnpm i -g cline\n```\n\n<a href=\"./apps/cli/README.md\">Learn more</a>\n<br><br>\n\n</td>\n<td align=\"center\" width=\"50%\">\n\n### Kanban\n\nRun many agents in parallel from a\nweb-based task board. Each card gets its own\nworktree, auto-commit, and dependency chains.\n\n```\nnpm i -g kanban\n```\n\n<a href=\"https://github.com/cline/kanban\">Learn more</a>\n<br><br>\n\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n\n### VS Code Extension\n\nAI coding assistant in your editor.\nCreate files, run commands, browse the web,\nand use tools with human-in-the-loop approval.\n\n<a href=\"https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev\">Install from VS Marketplace</a>\n<br><br>\n\n</td>\n<td align=\"center\" width=\"50%\">\n\n### JetBrains Plugin\n\nThe same Cline experience in IntelliJ IDEA,\nPyCharm, WebStorm, GoLand, and the rest of\nthe JetBrains family.\n\n<a href=\"https://plugins.jetbrai",
     "topics": []
   },
   {
@@ -1349,7 +1349,7 @@
     ],
     "maturity": "unknown",
     "status": "active",
-    "readme_preview": null,
+    "readme_preview": "<p align=\"center\">\n  English | <a href=\"translations/README.zh.md\">简体中文</a> | <a href=\"translations/README.zht.md\">繁體中文</a> | <a href=\"translations/README.ko.md\">한국어</a> | <a href=\"translations/README.de.md\">Deutsch</a> | <a href=\"translations/README.es.md\">Español</a> | <a href=\"translations/README.fr.md\">Français</a> | <a href=\"translations/README.it.md\">Italiano</a> | <a href=\"translations/README.da.md\">Dansk</a> | <a href=\"translations/README.ja.md\">日本語</a> | <a href=\"translations/README.pl.md\">Polski</a> | <a href=\"translations/README.ru.md\">Русский</a> | <a href=\"translations/README.bs.md\">Bosanski</a> | <a href=\"translations/README.ar.md\">العربية</a> | <a href=\"translations/README.no.md\">Norsk</a> | <a href=\"translations/README.br.md\">Português (Brasil)</a> | <a href=\"translations/README.th.md\">ไทย</a> | <a href=\"translations/README.tr.md\">Türkçe</a> | <a href=\"translations/README.uk.md\">Українська</a> | <a href=\"translations/README.bn.md\">বাংলা</a> | <a href=\"translations/README.gr.md\">Ελληνικά</a> | <a href=\"translations/README.vi.md\">Tiếng Việt</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://kilo.ai\"><img width=\"250\" alt=\"Kilo Code logo\" src=\"https://github.com/user-attachments/assets/bdb0c174-b9fd-40ad-a47b-f3aab9b54e8d\" /></a>\n</p>\n\n<p align=\"center\">The open source coding agent for building with AI in VS Code, JetBrains, or the CLI.</p>\n\n<p align=\"center\">\n  <a href=\"https://marketplace.visualstudio.com/items?itemName=kilocode.Kilo-Code\"><img src=\"https://raster.shields.io/badge/VS_Code_Marketplace-007ACC?style=flat&logo=visualstudiocode&logoColor=white\" alt=\"VS Code Marketplace\" height=\"20\"></a>\n  <a href=\"https://www.npmjs.com/package/@kilocode/cli\"><img alt=\"npm\" src=\"https://raster.shields.io/npm/v/@kilocode/cli?style=flat\" height=\"20\" /></a>\n  <a href=\"https://x.com/kilocode\"><img src=\"https://raster.shields.io/badge/kilocode-000000?style=flat&logo=x&logoColor=white\" alt=\"X (Twitter)\" height=\"20\"></a>\n  <a href=\"https://blog.kilo.ai\"><img src=\"http",
     "topics": []
   },
   {
@@ -1457,7 +1457,7 @@
     ],
     "maturity": "unknown",
     "status": "active",
-    "readme_preview": null,
+    "readme_preview": "<h1 align=\"center\">Continue</h1>\n\n<p align=\"center\">Pioneering open-source coding agent</p>\n\n<div align=\"center\">\n\n<a href=\"https://opensource.org/licenses/Apache-2.0\"><img src=\"https://img.shields.io/badge/License-Apache_2.0-blue.svg\" /></a>\n<a href=\"https://docs.continue.dev\"><img src=\"https://img.shields.io/badge/Docs-docs.continue.dev-blue\" /></a>\n<a href=\"https://github.com/continuedev/continue/releases\"><img src=\"https://img.shields.io/badge/Changelog-GitHub_Releases-blue\" /></a>\n\n</div>\n\n<p align=\"center\">\n  <img src=\"media/github-readme.png\" alt=\"Banner\" />\n</p>\n\n## What is Continue?\n\n> _Note: The `continuedev/continue` repository is no longer actively maintained and is read-only for all users._\n\nContinue is a coding agent available as a [CLI](#cli), [VS Code extension](#vs-code), and [JetBrains plugin](#jetbrains).\n\n## Documentation\n\nTo learn how to configure Continue, how it works, and how to customize it, check out the [Continue Docs](https://docs.continue.dev).\n\n## Final 2.0.0 Release\n\nWe polished Continue and did a final 2.0.0 release of the VS Code extension, CLI, and JetBrains plugin.\n\nThis included removing anonymous telemetry, pulling out authentication, squashing bugs, and more.\n\n### VS Code\n\n[![VS Code Marketplace](https://img.shields.io/badge/VS_Code_Marketplace-007ACC?logo=visualstudiocode&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=Continue.continue) [![OpenVSX Registry](https://img.shields.io/badge/OpenVSX_Registry-C160EF?logo=eclipseide&logoColor=white)](https://open-vsx.org/extension/Continue/continue) [![View source](https://img.shields.io/badge/View_source-181717?logo=github&logoColor=white)](extensions/vscode)\n\n### CLI\n\n[![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white)](https://www.npmjs.com/package/@continuedev/cli) [![View source](https://img.shields.io/badge/View_source-181717?logo=github&logoColor=white)](extensions/cli)\n\n### JetBrains\n\n> _Note: We recommend using the Continue CLI inst",
     "topics": []
   },
   {
@@ -1835,7 +1835,7 @@
     ],
     "maturity": "unknown",
     "status": "active",
-    "readme_preview": null,
+    "readme_preview": "[![Bolt.new: AI-Powered Full-Stack Web Development in the Browser](./public/social_preview_index.jpg)](https://bolt.new)\n\n# Bolt.new: AI-Powered Full-Stack Web Development in the Browser\n\nBolt.new is an AI-powered web development agent that allows you to prompt, run, edit, and deploy full-stack applications directly from your browser—no local setup required. If you're here to build your own AI-powered web dev agent using the Bolt open source codebase, [click here to get started!](./CONTRIBUTING.md)\n\n## What Makes Bolt.new Different\n\nClaude, v0, etc are incredible- but you can't install packages, run backends or edit code. That’s where Bolt.new stands out:\n\n- **Full-Stack in the Browser**: Bolt.new integrates cutting-edge AI models with an in-browser development environment powered by **StackBlitz’s WebContainers**. This allows you to:\n  - Install and run npm tools and libraries (like Vite, Next.js, and more)\n  - Run Node.js servers\n  - Interact with third-party APIs\n  - Deploy to production from chat\n  - Share your work via a URL\n\n- **AI with Environment Control**: Unlike traditional dev environments where the AI can only assist in code generation, Bolt.new gives AI models **complete control** over the entire  environment including the filesystem, node server, package manager, terminal, and browser console. This empowers AI agents to handle the entire app lifecycle—from creation to deployment.\n\nWhether you’re an experienced developer, a PM or designer, Bolt.new allows you to build production-grade full-stack applications with ease.\n\nFor developers interested in building their own AI-powered development tools with WebContainers, check out the open-source Bolt codebase in this repo!\n\n## Tips and Tricks\n\nHere are some tips to get the most out of Bolt.new:\n\n- **Be specific about your stack**: If you want to use specific frameworks or libraries (like Astro, Tailwind, ShadCN, or any other popular JavaScript framework), mention them in your initial prompt to ensure Bolt sc",
     "topics": []
   },
   {
@@ -2024,7 +2024,6 @@
       "agent-framework"
     ],
     "target_tools": [
-      "zed",
       "openclaw"
     ],
     "summary": "PinchBench is a benchmarking system for evaluating LLM models as OpenClaw coding agents. Made with 🦀 by the humans at https://kilo.ai",
@@ -2074,7 +2073,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# PinchBench Leaderboard\n\n[**Run the benchmark yourself →**](https://github.com/pinchbench/skill)\n\nA streamlined, crab-themed benchmarking leaderboard for comparing LLM models as OpenClaw coding agents. Built with Next.js 16, React 19, and Tailwind CSS.\n\n## Features\n\n### Main Leaderboard (`/`)\n\n- **Clean tabbed interface** for Success Rate, Speed, and Cost views\n- **Crab-themed rankings** - Lobster for #1, Crab for #2, Shrimp for #3\n- **Visual bar chart** showing model performance at a glance\n- **Quick Picks** recommendation cards for best overall, fastest, cheapest, best value, coding, and data-oriented models\n- **Best-for landing pages** at `/best-for/coding`, `/best-for/data-analysis`, and `/best-for/budget` with SEO-focused copy and top-5 comparisons\n- **Category champion badges** on leaderboard rows for models that lead task categories\n- **Model comparison tool** in the Graphs tab for comparing 2-3 selected models across score, cost, speed, and efficiency\n- **Simplified table** with essential metrics only\n- **Color-coded scores** (green/yellow/red) for quick assessment\n- **Provider color coding** with brand colors (Anthropic, OpenAI, Google, etc.)\n- **Minimal, data-focused design** inspired by SkateBench\n\n### Submission Detail Page (`/submission/[id]`)\n\n- **Circular score gauge** showing overall performance percentage\n- **Category breakdown** with scores by task type (Calendar, Coding, Research, etc.)\n- **Expandable task cards** with detailed criterion-by-criterion scoring\n- **Grading type badges** (Automated, LLM Judge, Hybrid)\n- **Status indicators** for success, warnings, and timeouts\n- **Metadata display** including OpenClaw version and submission timestamp\n\n### Recommendations Data Flow\n\n- `/` fetches the leaderboard plus best-submission details for the top candidates, then derives category scores client-safe on the server with `lib/recommendations.ts`.\n- Quick Picks use existing leaderboard fields for overall, speed, cost, and value, and task-level submis",
     "topics": []
   },
   {
@@ -2135,7 +2134,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# OpenClaw Coding Agent — Executor Framework\n\nA pluggable executor framework for AI coding agents. Dispatch Claude Code tasks **or arbitrary shell commands** to remote SSH hosts, Docker containers, or local execution — then monitor, fetch logs, and manage them from one CLI.\n\n## Installation\n\n```bash\ncargo build --release\n# Binary: target/release/openclaw-agent\ncp target/release/openclaw-agent ~/.local/bin/\n```\n\n## Configuration\n\nCreate `~/.config/openclaw/coding-agent.yaml`:\n\n```yaml\nexecutors:\n  - name: crib\n    type: ssh\n    host: 192.168.0.152\n    port: 22\n    user: jimmy\n    claude_path: /home/jimmy/.npm-global/bin/claude\n    labels:\n      - rust\n      - heavy-compute\n\n  - name: builder\n    type: container\n    image: claude-code:latest\n    runtime: docker   # or podman\n    volumes:\n      - /home/jimmy/repos:/work\n    labels:\n      - isolated\n      - reproducible\n\n  - name: local\n    type: local\n    labels:\n      - quick-tasks\n      - lightweight\n\ndefaults:\n  max_turns: 100\n  claude_path: claude\n  webhook_url: https://example.com/webhook  # optional: POST completion JSON here\n```\n\nOr generate a sample config:\n\n```bash\nopenclaw-agent config --init\n```\n\n## Usage\n\n### Start a Claude Code task\n\n```bash\n# Run on SSH host\nopenclaw-agent start --executor crib --prompt \"Fix the Nix build so nix build .#app works\" --workspace ~/lez-hello-world\n\n# Run in Docker container\nopenclaw-agent start --executor builder --prompt \"Add error handling to the API\" --workspace /work/myproject\n\n# Run locally\nopenclaw-agent start --executor local --prompt \"Write tests for src/lib.rs\" --workspace ~/myproject\n\n# With options\nopenclaw-agent start --executor crib \\\n  --prompt \"Refactor the auth module\" \\\n  --workspace ~/myapp \\\n  --max-turns 150\n```\n\n### Run a shell command\n\nRun arbitrary shell commands on any executor backend (not just Claude):\n\n```bash\n# Build and test on remote host\nopenclaw-agent run --executor crib --cmd \"make build && make test\" --workspace ~/myproject\n\n# Run a script lo",
     "topics": []
   },
   {
@@ -2210,7 +2209,8 @@
     ],
     "target_tools": [
       "claude-code",
-      "cursor"
+      "cursor",
+      "antigravity-cli"
     ],
     "summary": "Manage isolated Chromium browser profiles across AI IDEs (Claude Code, Cursor, Antigravity) — CLI + MCP server + desktop app",
     "i18n": {
@@ -2259,7 +2259,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# bpm — Browser Profiles Manager\n\n[![Release](https://img.shields.io/github/v/release/tquangkhai98/browser-profiles-manager?color=blue)](https://github.com/tquangkhai98/browser-profiles-manager/releases/latest)\n[![Build](https://github.com/tquangkhai98/browser-profiles-manager/actions/workflows/release.yml/badge.svg)](https://github.com/tquangkhai98/browser-profiles-manager/actions/workflows/release.yml)\n[![Go Report](https://goreportcard.com/badge/github.com/tquangkhai98/browser-profiles-manager)](https://goreportcard.com/report/github.com/tquangkhai98/browser-profiles-manager)\n[![Go](https://img.shields.io/badge/Go-1.24+-00ADD8?logo=go&logoColor=white)]()\n[![License](https://img.shields.io/badge/license-MIT-blue)]()\n[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows-lightgrey)]()\n\n> Centralized browser profile management for AI IDEs\n\n**bpm** is a CLI tool + MCP server that manages isolated Chromium browser profiles across AI-powered development environments like Claude Code, Cursor, and Antigravity.\n\n---\n\n## Why bpm?\n\nAI IDEs spawn their own Chromium instances with ephemeral profiles:\n\n| Pain Point | Impact |\n|-----------|--------|\n| 🔑 Login sessions lost between runs | Re-authenticate repeatedly (OAuth, 2FA) |\n| 💥 Profile conflicts across parallel agents | Browser crashes, corrupt data |\n| 🔄 No credential sync across tools | Each tool starts from scratch |\n| 📁 Profiles scattered across filesystem | Hard to audit, clean up, back up |\n\n**No existing tool solves this.** Browser MCP does automation, not profile management. AdsPower MCP is closed ecosystem. chrome-cli controls tabs, not profiles.\n\n---\n\n## Features\n\n| Feature | Description |\n|---------|-------------|\n| **Profile CRUD** | Create, list, delete isolated browser profiles |\n| **Browser Launch** | Launch Chromium with `--user-data-dir` + file lock |\n| **Directory Mapping** | Map project dirs to profiles for auto-resolution |\n| **Credential Sync** | Inspect & sync cookies/logins between ",
     "topics": [
       "ai-ide",
       "browser-automation",
@@ -2285,6 +2285,7 @@
     ],
     "target_tools": [
       "claude-code",
+      "codex-cli",
       "antigravity-cli"
     ],
     "summary": "[DEPRECATED] Unmaintained — Gemini CLI's free/Pro/Ultra tiers end 2026-06-18 (Google → Antigravity CLI). MCP server wrapping the official Gemini CLI.",
@@ -2334,7 +2335,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# gemini-cli-mcp\n\n> ## ⚠️ Deprecated — no longer maintained\n>\n> Google is [transitioning Gemini CLI to Antigravity CLI](https://goo.gle/gemini-cli-migration).\n> On **June 18, 2026**, Gemini CLI stops serving requests for the **free, Google AI\n> Pro, and Ultra** tiers — the exact tiers this project was built to wrap. (Access\n> continues for paid Gemini API keys and Gemini Code Assist Standard/Enterprise.)\n>\n> **What this means:**\n> - **Free / Pro / Ultra users:** this tool stops working after 2026-06-18. Google's\n>   successor is [Antigravity CLI](https://antigravity.google/product/antigravity-cli).\n>   Note this wrapper targets the `gemini` binary and does **not** drive Antigravity's `agy`.\n> - **Paid API key / Code Assist Standard or Enterprise users:** the underlying `gemini`\n>   CLI keeps working, so this wrapper may keep functioning — but it receives no further updates.\n> - The code stays available under MIT; the npm package is deprecated (existing installs\n>   keep working). No new features, fixes, or security updates are planned.\n>\n> _Original documentation is preserved below._\n\n[![npm](https://img.shields.io/npm/v/@guibarscevicius/gemini-cli-mcp)](https://www.npmjs.com/package/@guibarscevicius/gemini-cli-mcp)\n[![CI](https://github.com/guibarscevicius/gemini-cli-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/guibarscevicius/gemini-cli-mcp/actions/workflows/ci.yml)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)\n[![No Maintenance Intended](https://unmaintained.tech/badge.svg)](https://unmaintained.tech/)\n\nUse Gemini's free tier as an on-demand code reviewer from inside Claude Code, Codex, or any MCP-compatible host. `gemini-cli-mcp` wraps the official [`@google/gemini-cli`](https://github.com/google-gemini/gemini-cli) and exposes it through the Model Context Protocol — so you can ask Gemini to second-opinion a diff, pair-review a refactor, or scan a long file without leaving your primary agent.\n\nStateful multi-turn s",
     "topics": [
       "ai-tooling",
       "claude-code",
@@ -2405,7 +2406,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# ClickUp MCP Bridge for Antigravity\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![MCP](https://img.shields.io/badge/MCP-Supported-blue.svg)](https://modelcontextprotocol.io)\n\nA robust, platform-independent Model Context Protocol (MCP) bridge connecting **Google Antigravity IDE (Gemini Code Assist)** with **ClickUp** on Windows, macOS, and Linux.\n\n---\n\n## 🚀 Why This Exists\n\nWindows process managers often fail to spawn command-based MCP servers (like `.cmd` or `.ps1` scripts) directly without a shell. \n\nThis bridge runs a direct, lightweight Node client wrapper (`clickup-mcp.js`) to invoke the global `mcp-remote` proxy natively using `node.exe`, completely bypassing Windows process spawning restrictions.\n\n---\n\n## ✨ Features\n\n- **📂 Auto-Resolution:** Automatically maps your current workspace folder name to ClickUp list IDs using project config aliases.\n- **🔐 Interactive OAuth:** Automatically detects the ClickUp login URL and opens it in your default web browser.\n- **🗺️ Remote Space Sync:** Syncs and browses your ClickUp spaces, folders, and lists directly from the CLI.\n- **⚡ No Local `node_modules`:** Built entirely using Node.js standard libraries inside the plugin, requiring only the global `mcp-remote` package as an external dependency.\n\n---\n\n## 📦 Installation & Setup\n\n### Method A: Agent-Led (Recommended)\n\n1. **Copy the Plugin Folder:**\n   Copy this repository folder into your global Antigravity plugins directory:\n   - **Windows:** `C:\\Users\\<Name>\\.gemini\\config\\plugins\\clickup-mcp-plugin`\n   - **macOS / Linux:** `~/.gemini/config/plugins/clickup-mcp-plugin`\n\n2. **Trigger Setup in Chat:**\n   Open your Antigravity IDE and type:\n   > *\"Set up ClickUp for me\"*\n3. The agent will automatically check prerequisites, run the OAuth login, and map your workspace folders.\n\n---\n\n### Method B: Manual CLI Setup\n\n1. **Install Prerequisites:**\n   ```bash\n   npm install -g mcp-remote\n   ```\n2. **Copy the Plugin Fo",
     "topics": []
   },
   {
@@ -2478,8 +2479,12 @@
       "mcp-server"
     ],
     "target_tools": [
+      "antigravity-cli",
       "claude-code",
-      "antigravity-cli"
+      "codex-cli",
+      "opencode",
+      "cline",
+      "kilo-code"
     ],
     "summary": "CLI MCP server for antigravity tooling",
     "i18n": {
@@ -2528,7 +2533,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# antigravity-cli-mcp\n\n[![npm version](https://img.shields.io/npm/v/antigravity-cli-mcp.svg)](https://www.npmjs.com/package/antigravity-cli-mcp)\n\nAn MCP (Model Context Protocol) server wrapping the `agy` (antigravity) CLI. This server exposes the capabilities of the `agy` tool to MCP clients like Claude Code, Codex, OpenCode, Cline, Kilocode, Kilo, and other stdio JSON-RPC compatible LLM interfaces.\n\n## Features\n\n- Exposes 4 core tools: `ping`, `ask-agy`, `search-web`, and `write-file`.\n- Manages subprocess execution using Bun's fast `Bun.spawn` engine.\n- Implements concurrency limits and resource constraints (timeout, max memory/output bytes, workspace directory confinement).\n- Emits real-time streaming progress notifications back to the LLM client using MCP `notifications/progress` protocol.\n- Strict path validation to ensure file access does not escape the workspace.\n\n## Verified Integrations\n\n| Client | Verified |\n| :--- | :---: |\n| Claude Code | ✓ |\n| Codex CLI | ✓ |\n| OpenCode | ✓ |\n| Cline | ✓ |\n| Kilo CLI | ✓ |\n\n---\n\n## Installation & Registration\n\n### Prerequisites\n\n- **Bun** (v1.0.0 or higher) installed.\n- **agy** (antigravity CLI) binary installed on your system.\n\n### Installation\n\n1. Install globally via npm/bun:\n```bash\nnpm install -g antigravity-cli-mcp\n# or\nbun add -g antigravity-cli-mcp\n```\n\n2. Or use directly with npx/bunx without installing:\n```bash\nnpx antigravity-cli-mcp\n# or\nbunx antigravity-cli-mcp\n```\n\n### Registering with Claude Code\n\n```bash\n# Using npm (after global install or via npx)\nclaude mcp add antigravity-cli-mcp -- npx antigravity-cli-mcp\n\n# Development mode (from source)\nclaude mcp add antigravity-cli-mcp -- bun /path/to/antigravity-cli-mcp/src/index.ts\n```\n\n### Registering with Codex CLI\n\n#### Option A: Project-scoped Config (Automatic)\n\nCodex will automatically load the server if you start it from inside this project directory, thanks to the included `.codex/config.toml` file:\n\n```toml\n[mcp_servers.antigravity-cli-mcp]\ncommand = ",
     "topics": [
       "agy",
       "anthropic",
@@ -2549,8 +2554,8 @@
       "mcp-server"
     ],
     "target_tools": [
-      "claude-code",
       "antigravity-cli",
+      "claude-code",
       "cline"
     ],
     "summary": "A thin, auditable MCP server wrapping the Antigravity CLI (agy). Forward-compatible via extra_args passthrough.",
@@ -2600,7 +2605,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# antigravity-cli-mcp-slim\n\nA thin, auditable [MCP](https://modelcontextprotocol.io) server wrapping the [Antigravity CLI](https://github.com/google-antigravity/antigravity-cli) (`agy`).\n\n[![PyPI version](https://img.shields.io/pypi/v/antigravity-cli-mcp-slim.svg)](https://pypi.org/project/antigravity-cli-mcp-slim/)\n[![Python versions](https://img.shields.io/pypi/pyversions/antigravity-cli-mcp-slim.svg)](https://pypi.org/project/antigravity-cli-mcp-slim/)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![CI](https://github.com/tksfjt1024/antigravity-cli-mcp-slim/actions/workflows/ci.yml/badge.svg)](https://github.com/tksfjt1024/antigravity-cli-mcp-slim/actions/workflows/ci.yml)\n\n## Why\n\nWhen you add an MCP server to your AI coding tool, every prompt and code snippet\nyou send flows through that wrapper. Most CLI-wrapping MCP servers are small,\nindividually maintained packages — and recent supply-chain incidents\n(`xz-utils`, `postmark-mcp`, the npm `chalk`/`debug` compromise) show that\n\"small and useful\" is not the same as \"safe to trust blindly.\"\n\nThis project takes the opposite stance: instead of asking you to trust it, it\ntries to be **easy to audit**.\n\n- **Single file** — the whole server is `src/antigravity_cli_mcp_slim/server.py`,\n  readable end-to-end in one sitting\n- **One third-party dependency** (`mcp`) — minimal supply-chain surface\n- **Faithful CLI mapping** — every typed parameter mirrors a real `agy` flag by\n  name, so it is obvious which flags an invocation actually sets\n- **Forward-compatible** — any new or uncommon `agy` flag is reachable via\n  `extra_args` without touching this server\n- **Configurable binary path** — `$AGY_CMD` lets you swap or wrap the `agy` binary\n- **Transparent** — every invocation logs the exact argv to stderr\n\nRead `server.py` before you install. That is the point.\n\n## Prerequisites\n\n- The `agy` CLI installed and on `$PATH` (or pointed to via `$AGY_CMD`). See the\n  [o",
     "topics": [
       "agy",
       "anthropic",
@@ -2670,7 +2675,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# FreeCAD Skill for Antigravity CLI 🛠️\n\nThe first native **Antigravity CLI skill** for automated 3D modeling, CAD engineering, and differentiable physical optimization. This skill transforms the Antigravity CLI agent into an autonomous CAD engineer capable of designing, simulating, and optimizing 3D structures through the FreeCAD Python API.\n\n![FreeCAD Tree Example](screenshot.png)\n\n## 🌟 Key Features\n\n- **Autonomous 3D Modeling:** Ask the agent to design complex parts (brackets, flanges, gears) using natural language.\n- **Differentiable CAD:** Integrated with **JAX-FEM** for automated structural optimization (e.g., finding the optimal radius for a tree trunk based on physical loads).\n- **Headless CLI Workflow:** Optimized for terminal environments using `freecadcmd` and headless virtual frames (`Xvfb`).\n- **Multi-Format Export:** Seamlessly export to **STEP** (CAD), **STL** (3D Printing), and **GLB** (Web/AR) with automatic Y-up orientation.\n- **Direct Python Control:** Allows the agent to write and execute high-fidelity Python scripts for precise geometric control.\n\n## 🚀 Quick Start\n\n### 1. Prerequisites\nEnsure you have the following installed on your system:\n- **FreeCAD Desktop** (provides the Python libraries)\n- **xvfb** (for headless execution)\n- **obj2gltf** (for GLB conversion)\n\n```bash\n# Linux (Debian/Ubuntu)\nsudo apt update && sudo apt install freecad xvfb -y\nnpm install -g obj2gltf\n```\n\n### 2. Installation\nInstall the skill directly into your Antigravity CLI environment by copying or symlinking the `freecad` directory to your global skills path:\n\n```bash\n# Clone the repository\ngit clone https://github.com/1kaiser/freecad-skill.git\ncd freecad-skill\n\n# Copy to Antigravity CLI skills directory\nmkdir -p ~/.gemini/skills/freecad\ncp -r freecad/* ~/.gemini/skills/freecad/\n```\n\n### 3. Usage\nOnce installed, reload your skills (`/skills reload`) and command the agent:\n\n```text\n\"Design a 3D tree with a 50mm trunk and export it as a GLB.\"\n\"Optimize the thickness of a s",
     "topics": []
   },
   {
@@ -2731,7 +2736,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# agy-statusline\n\n![agy](https://img.shields.io/badge/agy-antigravity%20CLI-blue)\n![macOS](https://img.shields.io/badge/platform-macOS-lightgrey)\n\nAn [agy](https://antigravity.google) (Antigravity CLI) skill that sets up a statusline showing real-time context window usage and per-model quota in your terminal.\n\n```\n   ctx  [██████░░░░] 45%  472k/1M  |  quota  [██████░░░░] 60% 3h20m     Gemini 3.5 Flash (High)\n```\n\n## What it shows\n\n| Section | Description |\n|---|---|\n| `ctx` | Context window used % · progress bar · token count (input + output / total) |\n| `quota` | Per-model rate limit remaining · reset countdown (e.g. `reset 3h20m`) |\n| model name | Right-aligned to terminal edge |\n\nColor coding: green → yellow → red as usage increases / quota decreases.\n\n## What you can ask for\n\nThe statusline can show any data available from agy:\n\n| Data | Example prompt |\n|---|---|\n| Context window usage | *\"show context window as a progress bar\"* |\n| Per-model quota remaining | *\"show quota remaining with reset countdown\"* |\n| Quota reset as clock time | *\"show quota reset as clock time instead of countdown\"* |\n| Model name | *\"show the model name on the right\"* |\n| Agent state | *\"add agent state to the statusline\"* |\n| Plan tier | *\"show my plan tier\"* |\n| Current directory | *\"show the current working directory\"* |\n| Account email | *\"show which account I'm logged in as\"* |\n\n## Installation\n\n**1. Install the skill**\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/phukijnat/agy-statusline/main/scripts/install.sh | bash\n```\n\n**2. Ask agy to set it up**\n\nStart agy and say:\n\n> */agy-statusline {\"show context window as a progress bar\" or whatever you need}*\n\nagy will create the script and update `settings.json` automatically.\n\n**3. Restart agy** — the statusline appears at the bottom of the TUI.\n\n## Customization\n\nTo modify the statusline, invoke the skill first if it hasn't been used in the current session:\n\n> */agy-statusline*\n\nThen ask agy to change it:\n\n- *\"show quota as",
     "topics": [
       "agy",
       "antigravity-cli",
@@ -2750,7 +2755,10 @@
       "mcp-server"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "codex-cli",
+      "cursor",
+      "zed"
     ],
     "summary": "MemXT is a Local long-term memory for Claude Code & coding agents. 100% local",
     "i18n": {
@@ -2799,7 +2807,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "<div align=\"center\">\n  <img src=\"assets/logo.svg\" alt=\"memXT\" width=\"420\"/>\n\n  <p>\n    <b>Your coding agent has amnesia. memxt is the cure — and it never leaves your laptop.</b><br/>\n    Local long-term memory for <b>Claude Code</b>, Codex, Cursor, and Grok CLI.<br/>\n    One palace, every subscription. No cloud, no memory API key, nothing leaves your machine.\n  </p>\n\n  <p>\n    <a href=\"https://github.com/Yupcha/memxt/blob/main/LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-blue?style=flat-square\" alt=\"MIT\"/></a>\n    <a href=\"#-install\"><img src=\"https://img.shields.io/badge/install-curl%20%7C%20bash-black?style=flat-square\" alt=\"install\"/></a>\n    <a href=\"#-proof-not-vibes\"><img src=\"https://img.shields.io/badge/continuity-6%2F6-brightgreen?style=flat-square\" alt=\"continuity\"/></a>\n    <a href=\"#-token-savings\"><img src=\"https://img.shields.io/badge/tokens-72%25%20less-orange?style=flat-square\" alt=\"tokens\"/></a>\n    <a href=\"#-proof-not-vibes\"><img src=\"https://img.shields.io/badge/wake--up-~10ms-purple?style=flat-square\" alt=\"wake\"/></a>\n    <img src=\"https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey?style=flat-square\" alt=\"platform\"/>\n  </p>\n\n  <img src=\"assets/demo.gif\" alt=\"memxt demo\" width=\"720\"/>\n\n  <p>\n    <a href=\"#-install\"><b>Install</b></a> ·\n    <a href=\"#-claude-code-in-30-seconds\"><b>Claude Code</b></a> ·\n    <a href=\"#-every-agent-one-palace\"><b>Every agent</b></a> ·\n    <a href=\"#-proof-not-vibes\"><b>Proof</b></a> ·\n    <a href=\"#how-it-stacks-up\"><b>Compare</b></a> ·\n    <a href=\"./docs/harnesses.md\"><b>Docs</b></a>\n  </p>\n</div>\n\n---\n\n## The 3 a.m. feeling\n\nYou explained the architecture yesterday. The cart cap is **37**. You banned Redis for a reason. SQLite won the debate.\n\nToday your agent knows **none of it**. So you paste the README again. Re-explain the constraints again. Watch it reintroduce Redis… again.\n\nCloud \"memory layers\" fix this by uploading your code and your chat to someone else's server. Hard pass",
     "topics": [
       "memory",
       "mcp",
@@ -2945,7 +2953,8 @@
       "tutorial"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "openclaw"
     ],
     "summary": "build your own claude code(code agent),from zero to one!",
     "i18n": {
@@ -2994,7 +3003,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# nano-claude-code\n\n**从 0 到 1 构建实用的 AI 编程助手**\n\n[English](./README.md) | [中文](./README-zh.md)\n\n---\n\n## 📖 项目简介\n\n`nano-claude-code` 是一个轻量级、实用的 AI 编程助手项目，从零开始构建（from 0 to 1）。\n\n### 核心特性\n\n- ✅ **实用工具导向**: 不仅理解原理，更注重实际可用性\n- ✅ **渐进式开发**: 从最简单的 MVP 开始，逐步添加功能\n- ✅ **多语言实现**: Python、TypeScript、Rust 版本，支持对比学习\n- ✅ **双前端**: 桌面 GUI 应用 + Web 应用\n- ✅ **多模型支持**: 兼容 Anthropic API 的多个提供商\n- ✅ **通用语言支持**: 通过配置支持任意编程语言\n\n---\n\n## 🎯 项目定位\n\n```\n                    纯教学项目\n                        ↓\n              learn-claude-code\n                        ↓\n              理解代理核心机制\n                        ↓\n                nano-claude-code\n                        ↓\n                    实用工具\n                        ↓\n              日常可用的 AI 编程助手\n```\n\n**核心差异**: `learn-claude-code` 回答\"AI 编程代理是如何工作的？\"，而 `nano-claude-code` 回答\"如何构建一个实用的 AI 编程助手？\"\n\n---\n\n## 🚀 快速开始\n\n### 环境要求\n\n- Python 3.10+ / Node.js 20+ / Rust 1.70+\n- ANTHROPIC_API_KEY\n\n### 安装\n\n```bash\n# 克隆仓库\ngit clone https://github.com/YuanyuanMa03/nano-claude-code\ncd nano-claude-code\n\n# Python 实现\ncd implementations/python/v01_minimal_loop\npip install -r requirements.txt\n\n# 运行\npython main.py\n```\n\n---\n\n## 📝 使用示例\n\n### Python 实现 (v01)\n\n```bash\ncd implementations/python/v01_minimal_loop\n\n# 运行\npython main.py\n```\n\n**对话示例**:\n```\nYou > 帮我用 Python 写一个斐波那契数列\nAgent > 好的，我来为你编写斐波那契数列的实现...\n[生成代码]\n\nYou > 解释一下这个函数的时间复杂度\nAgent > 这个函数的时间复杂度是 O(n)，因为...\n[解释]\n```\n\n### TypeScript 实现 (v01)\n\n```bash\ncd implementations/typescript/v01_minimal_loop\n\n# 安装依赖\nnpm install\n\n# 运行\nnpm start\n```\n\n### Rust 实现 (v01)\n\n```bash\ncd implementations/rust/v01_minimal_loop\n\n# 构建\ncargo build --release\n\n# 运行\n./target/release/nano-claude-code\n```\n\n---\n\n## 🏗️ 架构设计\n\n### 核心循环（v01）\n\n```python\nwhile True:\n    # 1. 获取用户输入\n    user_input = get_user_input()\n\n    # 2. 调用 LLM\n    response = call_llm(user_input, context)\n\n    # 3. 解析响应（是否需要工具调用）\n    if needs_tool_call(response):\n        # 4. 执行工具\n        result = execute_tool(response.tool_name, response.tool_args)\n\n        # 5. 将结果反馈给 LLM\n        response = call_ll",
     "topics": []
   },
   {
@@ -3055,7 +3064,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Dynamic CLI & MCP Server\n\nThis project provides a configurable command-line HTTP client together with a\nModel Context Protocol (MCP) server. Both components load their behaviour from a\nshared JSON configuration file and executable scripts stored in a Markdown\ndocument.\n\n## Project layout\n\n```\nconfig/\n  cli_config.json   # Main configuration file shared by CLI and MCP server\n  commands.md       # Markdown sections describing command behaviour & scripts\nsrc/dynamic_cli/\n  cli.py            # Dynamic Typer-based CLI entry point\n  config.py         # Typed configuration loader\n  embedding.py      # SQLite-backed embedding store with OpenAI vectors\n  markdown_parser.py# Markdown section parser\n  mcp_server.py     # FastAPI MCP server\n  scripting.py      # Script execution helpers exposed to Markdown sections\n```\n\n## Configuration format\n\n`config/cli_config.json` drives both the CLI and the MCP server. The most\nimportant keys are:\n\n- `markdown_path`: path to the Markdown file that stores command descriptions\n  and request/response scripts.\n- `commands`: array of top-level commands. Each command contains:\n  - `name` and `help` text.\n  - `subcommands`: an array of subcommand definitions. Every subcommand\n    references a `script_section` identifier from the Markdown file and defines\n    argument metadata plus a base HTTP request description.\n- `secrets`: named secret descriptors. Supported types include `env`, `value`,\n  `file`, and `command`. Scripts can request these via `helpers.secret(name)`.\n- `mcp`: configuration for the MCP server embedding store. Provide the\n  `embedding_model` (e.g. `text-embedding-3-small`), `persist_path` for the\n  SQLite cache, and `api_key_env`/`api_base` values that identify how to call\n  the OpenAI embeddings API.\n- `http_timeout`: optional global timeout applied to outbound HTTP requests.\n\n### Argument definitions\n\nArguments in the JSON schema declare how CLI parameters map to HTTP request\nparts:\n\n- `param_type`: `option` (default) generat",
     "topics": []
   },
   {
@@ -3115,7 +3124,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Codex Agent Custom Instructions\n\n[English](./README.en.md) | 中文\n\n一份面向 Codex、Claude Code 和其他 coding agent 的精简自定义指令清单。\n\n这不是一份“越长越好”的提示词模板，而是一组针对真实失败模式的行为约束：先澄清假设，少写不必要代码，只改需要改的地方，按成功标准迭代，失败和不确定性要明确说出来，写新代码前先找复用路径。\n\n## 为什么需要这份清单\n\n很多 agent 配置会越写越长，最后变成愿望清单。问题是，规则太多会消耗上下文，也会让模型“知道规则存在”，但实际执行时抓不住重点。\n\n这份清单的原则是：\n\n- 只保留高频、可执行、能减少错误率的规则。\n- 每条规则都对应一个常见失败模式。\n- 语言尽量短，方便直接复制到 Codex 自定义指令、`AGENTS.md`、`CLAUDE.md` 或团队规范里。\n\n## 快速使用\n\n直接复制 [codex-agent-custom-instructions.md](./codex-agent-custom-instructions.md) 里的 15 条规则。\n\n建议根据自己的项目删减，而不是整份照搬。对 coding agent 来说，6 条真正匹配当前项目失败模式的规则，通常比 20 条泛泛而谈的规则更有效。\n\n## 15 条规则\n\n1. **Think Before Coding**：先说假设，有歧义就问，别猜。\n2. **Simplicity First**：最小代码解决问题，不加推测性功能。\n3. **Surgical Changes**：只动必须动的，不“顺手优化”旁边的代码。\n4. **Goal-Driven Execution**：定义成功标准，让 Claude/Codex 自己迭代，不要规定步骤。\n5. **只让模型做判断类工作**：分类、摘要、提取。路由、重试、状态码处理交给确定性代码，不要让模型决定“要不要 retry 503”。\n6. **Token 预算是硬约束**：单任务 4000 token，单 session 30000 token。超了就总结重启，不能静默超跑。\n7. **冲突要表面化，不要平均**：代码库里两种模式打架时，选一个，解释原因，标记另一个待清理。\n8. **写之前先读**：在某个文件加代码前，先读它的 exports、调用方、共用工具。\n9. **测试要验证意图，不只验证行为**：测试必须能回答“为什么这个行为重要”，而不只是“它做了什么”。\n10. **多步骤任务每步都要 checkpoint**：每一步后总结做了什么、验证了什么、还剩什么。\n11. **遵守代码库的约定，哪怕你不同意**：一致性大于个人品味；觉得约定有害就说出来，不要悄悄另起炉灶。\n12. **失败要出声**：不要说“完成了”却跳过部分记录，也不要说“测试通过”却跳过部分测试；默认暴露不确定性。\n13. **先找复用，再写新代码**：动手前先看当前代码库里有没有可复用的模块、函数、组件、脚本、测试或既有模式。能沿用项目里的做法，就不要另起一套。\n14. **通用能力先查开源实现**：如果要做的是通用功能，而不是项目私有业务逻辑，先快速查 GitHub 上有没有成熟实现。优先参考维护活跃、许可证合适、设计清楚的项目，不要没调查就从零造轮子。\n15. **需求先查成熟项目**：像“有没有办法解决某类工具/工作流问题”这类需求，务必先去 GitHub 检索是否已有成熟、高 star、维护活跃、许可证合适的项目。先给出候选项目和适配判断，再决定是否自建或改造。\n\n## 来源与改写说明\n\n- 第 1-4 条来自 Andrej Karpathy 风格的 coding agent 行为约束，常见表述包括先思考再编码、保持简单、只做必要修改、按目标迭代。\n- 第 5-12 条整理自小红书笔记《Codex个性化指令设置（冷知识）》中的配图内容，并做了适合自定义指令文件的文字化改写。\n- 第 13-15 条是新增工程实践规则：实现前先找当前代码库复用路径；通用能力和工具/工作流需求先查 GitHub 成熟项目，避免没调查就从零造轮子或自建设计。\n\n更完整的来源说明见 [SOURCES.md](./SOURCES.md)。\n\n## 适合放在哪里\n\n- Codex 的个人级自定义指令\n- Claude Code 的 `CLAUDE.md`\n- Codex CLI / coding agent 的 `AGENTS.md`\n- Gemini CLI 的 `GEMINI.md`\n- 团队内部 coding agent 工作流规范\n\n## License\n\nMIT License. 你可以自由",
     "topics": [
       "agents-md",
       "ai-agent",
@@ -3184,7 +3193,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "![image](https://raw.githubusercontent.com/ljlabs/Route.llm/refs/heads/main/static/images/banner.png)\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)\n[![FastAPI](https://img.shields.io/badge/FastAPI-0.100.0%2B-009688.svg?style=flat&logo=FastAPI&logoColor=white)](https://fastapi.tiangolo.com/)\n\n**Routte.LLM** is a lightweight, local LLM proxy and routing engine. It acts as an adaptable translation bridge between the **Anthropic Messages** and **OpenAI Chat Completions** protocols, allowing you to route any AI agent (like **Claude Code**) to your choice of backend models—including OpenRouter, Anthropic, OpenAI, or local servers.\n\nIt also allows you to hot swap backend providers without restarting your claude code sessions.\n---\n\n## Key Features\n\n- ⚡ **Seamless Stream Translation**: Stateful conversion of SSE (Server-Sent Events) streaming tokens between Anthropic and OpenAI protocols.\n- ⚙️ **Robust Tool & Function Calling Support**: Fully translates tool schemas, tool calls, and tool execution results back-and-forth, enabling agentic assistants to execute multi-step routines.\n- 🎛 **Dynamic Provider Control**: Register, update, and switch the active backend endpoint on the fly.\n- ▤ **Real-Time Request Inspector**: Inspect JSON request bodies, response values, and detailed connection or API error tracebacks inside the dashboard.\n- ⏱ **Log Retention Controls**: Define SQLite log rotation boundaries (e.g., limit to the last N logs, or disable completely) to maintain disk space.\n- 🧪 **One-Click Local Runner**: Bundled with a simple Windows runner script (`start_server.bat`) that auto-boots virtual environments and handles dependencies.\n\n---\n\n## Quick Start\n\n### 1. Launch the Server\n\n#### On Windows (Automatic)\nSimply double-click **`start_server.bat`**. This script will automatically:\n1. Create a Python virtual environment (`.venv`) if it doesn't exist.\n2. Install all necessary dependencies from `requirements.txt`.\n3. Launch the FastAPI Uvicor",
     "topics": []
   },
   {
@@ -3304,7 +3313,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Commands\n\nPrompt templates for Claude Code to handle common software development tasks.\n\n## Overview\n\nThis repository contains prompts that help Claude Code work through software engineering tasks systematically. Each template provides a structured approach for specific development scenarios.\n\n## Available Commands\n\n### 1. Experiment-Driven Development (`01_experiment_driven_development.md`)\n\nA learn-from-failure approach to implementing code changes. Tracks attempts and learnings through an iterative process.\n\n**Use for:**\n- Complex features requiring exploration\n- Bug fixes with unclear root causes\n- Performance optimizations\n- Experimental refactoring\n\n**Structure:**\n- Goal setting with impact focus\n- Code analysis and planning\n- Implementation tracking with success/failure logs\n- Iterative improvement cycles\n\n### 2. Generate Codebase Context (`02_generate_codebase_context.md`)\n\nCreates comprehensive documentation files (like `llms.txt`) that provide complete context about a codebase.\n\n**Use for:**\n- Onboarding documentation\n- Codebase reference materials\n- Pre-refactoring analysis\n- AI assistant context\n\n**Output includes:**\n- File purposes and relationships\n- Function signatures with parameters\n- Architecture diagrams\n- Code conventions\n- Data formats\n\n### 3. Analyze GitHub Issue (`03_analyze_github_issue.md`)\n\nAnalyzes GitHub issues and creates implementation plans before coding begins.\n\n**Use for:**\n- New issue assessment\n- Implementation planning\n- Stakeholder alignment\n- Risk evaluation\n\n**Process:**\n1. Review issue details\n2. Examine codebase\n3. Create feature branch\n4. Develop implementation plan\n5. Request approval\n\n### 4. Create GitHub Issue (`04_create_github_issue.md`)\n\nCreates well-structured GitHub issues with varying detail levels based on complexity.\n\n**Use for:**\n- Feature requests\n- Bug reports\n- Architecture proposals\n- Improvement suggestions\n\n**Detail levels:**\n- **MINIMAL**: Simple bugs or clear features\n- **MORE**: Standard issues ",
     "topics": []
   },
   {
@@ -3364,7 +3373,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Todo Implementation System\n\nHuman-agent collaborative workflows for transforming vague todos into implemented features in ~150 LOC of Markdown.\n\nThis workflow is meant for engineers who want to stay in control of and informed about their code base, using agents to do the tedious work, and their brain for the hard parts.\n\n**Two workflows available:**\n- **`todo-worktree.md`**: Full task isolation using git worktrees, separate branches, and incremental commits. Best for complex features or when working on multiple tasks in parallel.\n- **`todo-branch.md`**: Simpler workflow on current branch with single commit at completion. Best for quick fixes, single-task focus, or when worktrees aren't desired.\n\n**Problems this solves**:\n- Breaking vague ideas into well defined problem descriptions and concrete implementation steps\n- Preventing agents from making unauthorized changes or expanding scope\n- Efficient context usage by providing agents only task-relevant information\n- Full isolation of feature work (with worktrees) or simple staging workflow (without)\n- Resuming interrupted work without losing context or progress\n- Traceable feature development history with meaningful commits and pull requests\n\n**Problems this does not solve**:\n- \"Claude, build me Uber for dogs\"\n- Slop in your code base generated by an army of unsupervised agents in the cloud\n- Merge conflicts\n\n**Why this approach**:\n- Zero dependencies, pure markdown + git + shell commands\n- Easy to understand, modify, and transfer between any coding agent\n- No vendor lock-in, maximum transparency and simplicity\n\n## How it works\n\nBoth workflows follow the same state machine pattern with slight variations. Read [`todo-worktree.md`](./todo-worktree.md) or [`todo-branch.md`](./todo-branch.md) to understand the full flow and adapt it to your needs.\n\nAt its core, each workflow is a state machine that guides the agent and the user through distinct phases:\n\n- **`INIT`**: Sets up the project description (`todos/project-descri",
     "topics": []
   },
   {
@@ -3425,7 +3434,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Code Prompt/Command Library\n\nA collection of reusable Claude Code commands for the Comfy-Org team to streamline development workflows.\n\n> **💡 Looking for more commands?** Check out [Awesome Claude Code](https://github.com/hesreallyhim/awesome-claude-code) - a community collection of general-purpose Claude Code commands!\n\n## Quick Start\n\nCommands are stored in `.claude/commands/` and can be invoked using `/project:command-name` or `/user:command-name`.\n\n## Commands\n\n### Meta Commands\n\n- [`/user:AGENT-create-command`](.claude/commands/agents/AGENT-create-command.md) - Create a command by providing a task description and automatically generate an optimal prompt file\n- [`/user:AGENT-improve-command`](.claude/commands/agents/AGENT-improve-command.md) - Improve an existing command by referencing Claude/Anthropic documentation materials\n- [`/user:AGENT-playbook-to-automated-agent-workflow`](.claude/commands/agents/AGENT-playbook-to-automated-agent-workflow.md) - Convert playbooks/workflows to automated agent workflows using local files and MCP tools\n- [`/user:AGENT-summarize-and-log-current-session`](.claude/commands/agents/AGENT-summarize-and-log-current-session.md) - Create ultra-compact summaries of conversations and save them with timestamp-based filenames\n- [`/user:AGENT-memory-search`](.claude/commands/agents/AGENT-memory-search.md) - Search through past conversations using semantic memory system\n- [`/user:AGENT-learn-claude-code-best-practices`](.claude/commands/agents/AGENT-learn-claude-code-best-practices.md) - Study and synthesize Claude Code best practices from comprehensive knowledge base\n- [`/user:summarize-book`](.claude/commands/summarize-book.md) - Create comprehensive summaries of books with structured analysis\n\n### GitHub/Git Commands\n\n- [`/user:PR-submit-local-as-new-pr`](.claude/commands/github/PR-submit-local-as-new-pr.md) - Make a PR based on local changes, whether you've committed, made a branch, etc. or not\n- [`/user:GH-PR-implement-review-",
     "topics": []
   },
   {
@@ -3487,7 +3496,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# AI Transformation Workshop — Agentic Engineering\n\nWorkshop materials and a working demo app for **\"Principles of Agentic Engineering: Scaling your Development with AI\"** by Cole Medin.\n\nThis repo packages a complete reference implementation of how to build software in an AI-first organization:\n\n- **The methodology** — the AI layer concept, the PIV loop, and five golden rules that compound over time\n- **A portable AI layer** — 15 commands and 2 skills you can drop into any project today\n- **A live demo app** — a deliberately scarce poll builder used as the canvas for the workshop's live build\n\nIf you attended the workshop, this is the canonical reference for everything you saw. If you didn't, the workflow below works just as well on your own codebase.\n\n---\n\n## The Methodology\n\n### The AI Layer — Your Second Codebase\n\nEvery codebase now has two layers: the code itself, and the AI layer — all the context that tells your coding agent how to work in your codebase.\n\nThree components:\n\n1. **Global rules** (`CLAUDE.md`) — always loaded. Tech stack, code patterns, testing standards, deployment commands. Keep it tight.\n2. **On-demand context** — reference docs, style guides, API patterns. Loaded only when relevant so it doesn't bloat every session.\n3. **Commands and skills** — packaged, reusable workflows. `/create-prd`, `/prime`, `/plan`, `/implement`. This is where you standardize *how your team builds*.\n\nWhen the `.claude/` folder is checked into source control alongside your code, AI improvements work exactly like code improvements. Pull requests, reviews, the whole team benefits.\n\n### The PIV Loop — Plan, Implement, Validate\n\nThe core methodology for reliable, repeatable AI-assisted development.\n\n**Plan.** `/prime` loads context (Jira ticket, codebase tree, recent git log, etc.). Then `/plan` produces a structured plan with a validation strategy baked in *before any code is written*. Sub-agents do parallel research, but never implementation — they have their own contex",
     "topics": []
   },
   {
@@ -3548,7 +3557,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Agentic OS Dashboard\n\nA step-by-step guide to building your own Claude Code command center inside Obsidian. One screen for everything: live project status, one-click skill launchers, a news feed, meeting intelligence, and whatever metrics actually matter to your day.\n\nBuilt on top of Claude Code as a custom Obsidian community plugin.\n\n---\n## Join the team\n\nIf you've made it this far and you're enjoying building with Claude, we're always looking for people to join PRGRMMD.\n\nWe're a growing AI agency installing AI operating systems into founder-led businesses. If you're comfortable with Claude Code, enjoy building automation systems, and want to apply that to real client work, we'd love to hear from you.\n\n**[Apply to work with us →](https://forms.clickup.com/90161350719/f/2kz0j21z-21756/2CDXO69PY3T19A3I85)**\n\nOr DM me directly on Instagram if you want to have a chat first.\n\n---\n\n## How to use this guide\n\nThe fastest way is to paste the entire guide into a Claude Code session with this message:\n\n> \"Based on everything I'm going to tell you about my business and how I work, walk me through this guide step by step. Start with the three planning questions at the top. Wait for my answers before moving to any technical phase. Help me tune each decision to my specific setup as we go.\"\n\nClaude picks up the full context, asks you the right questions, and walks you through every phase. You don't need to understand all the technical details yourself. Claude handles the code.\n\n---\n\n## What you're building\n\nA custom Obsidian plugin that gives you one screen for everything.\n\nWhat I have on mine:\n\n- Active client stages and delivery health\n- Action queue from my morning brief\n- Claude usage and task scorecard\n- One-click skill launchers\n- Today's calendar\n- News and signals feed\n- Meeting transcripts and email highlights\n\nYou'll build your own version. Different business, different cards.\n\n---\n\n## The key principle\n\nObsidian is the middle layer. The dashboard reads files in your v",
     "topics": []
   },
   {
@@ -3610,7 +3619,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "<p align=\"center\">\n  <img src=\"docs/assets/banner.svg\" width=\"720\" height=\"120\" alt=\"ccprompts banner\" />\n</p>\n\n<div align=\"center\">\n\n  [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/ursisterbtw/ccprompts)\n  \n</div>\n\n# ccprompts – claude code command collection\n\n**ccprompts** is a comprehensive Claude Code plugin featuring 70+ commands across 12 development phases,\n10 specialized AI agents, and a Dagger-based safety system. Install as a plugin for instant access\nto enterprise-grade workflows, or use the repository directly for customization. Commands include\nsafety validation, the agent template system provides wizards for creating specialized subagents,\nand the multi-dimensional validation engine ensures quality and security. For more info on subagents,\nsee [subagents](https://docs.anthropic.com/en/docs/claude-code/sub-agents).\n\n**Key Features:**\n\n- 70+ production-ready slash commands organized by development phase\n- 10 specialized AI agents for domain-specific expertise\n- Dagger container isolation for safe command execution\n- Multi-dimensional validation (structure, security, quality, performance)\n- MCP integration and workflow automation capabilities\n- Enterprise governance and multi-repo management tools\n\n> Development Notice: This repository is under active development. Commands may contain bugs,\n> breaking changes can occur between versions, and the structure may evolve.\n> Use with caution in production environments.\n\n## Quick start\n\n### Recommended Prerequisites\n\nInstall Dagger (not *explicitly* required, but recommended to enable containerized command execution):\n\n**Linux:**\n\n```bash\ncurl -fsSL https://dl.dagger.io/dagger/install.sh | BIN_DIR=$HOME/.local/bin sh\n```\n\n**macOS:**\n\n```bash\nbrew install dagger/tap/dagger\n```\n\n**Windows:**\n\n```powershell\nwinget install Dagger.Cli\n```\n\n### Installation\n\n```fish\ngit clone https://github.com/ursisterbtw/ccprompts.git; and cd ccprompts; and bun i; and bun run validate\n```\n\n### Adding a new co",
     "topics": [
       "claude",
       "claude-code",
@@ -3677,7 +3686,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "\n# Claude Code Workflow Manager\n\nA structured workflow management system for Claude Code that standardizes development processes through reusable command macros.\n\n## Overview\n\nThis repository provides a framework for consistent AI-assisted development using Claude Code. It establishes:\n\n- Standard development workflows\n- Consistent coding practices\n- Automated task management\n- Integration with Linear for task tracking\n\n## Structure\n\n### Command Macros\n\nLocated in `.claude/commands/`, these markdown files serve as Claude Code macros:\n\n- `context_prime.md` - Initializes Claude with project guidelines at the start of each session\n- `work_task.md` - Implements the standard development workflow for tasks\n\n### Guidelines\n\nLocated in `docs/agent_guidelines/`, these files establish project standards:\n\n- `BRANCHING_STRATEGY.md` - Git workflow based on GitFlow with defined branch types and naming conventions\n- `CODING_STANDARDS.md` - Python style guide, formatting rules, naming conventions, and best practices\n- `LOGGING_GUIDE.md` - Logging configuration, usage patterns, and best practices for effective logging\n\n#### Guidelines Details\n\n**BRANCHING_STRATEGY.md**\n- Defines main branches (`main`, `develop`) and supporting branches (`feature/*`, `release/*`, `hotfix/*`)\n- Outlines workflow for feature development, release preparation, and hotfix processes\n- Establishes naming conventions and merging rules for each branch type\n\n**CODING_STANDARDS.md**\n- Specifies Python style guide following PEP 8\n- Defines formatting tools (`black`) and linting requirements (`flake8`)\n- Establishes naming conventions for modules, classes, functions, and variables\n- Provides guidelines for imports, error handling, and testing\n- Includes specific guidelines for LLM agent collaboration\n\n**LOGGING_GUIDE.md**\n- Details logging configuration through `config.yml` and environment variables\n- Explains console and file logging setup with rotation policies\n- Provides code examples for proper logger initial",
     "topics": []
   },
   {
@@ -3798,7 +3807,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Custom Claude Commands for Product Managers\n\n> **Supercharge your AI-assisted workflow with battle-tested Claude Code commands for Product Managers.**\n\nThis collection provides 19 ready-to-use custom commands for Product Managers that turn Claude Code into your expert PM and engineering assistant.\n\n## Why Use Claude Code Commands?\n- One-word trigger (e.g., `/prd`, `/competitive`, `/mockup`) gets repeatable action by Claude Code\n- Specify the file naming convention, file location once and file gets made and put there\n- Specify the MCP conventions, how you want a lead categorized or a ticket created and it happens\n- Specify a template for how you want an output to look so you get a consistent format and sections to your documents\n- Consistent, high-quality outputs using proven frameworks\n- Customizable to your team's specific needs\n\n## What's Inside\nMarkdown documents of 20 Custom Claude Code commands that we have been using and that you can modify as you wish for your business and use case. Each command provides structured prompts, best practices, and frameworks so Claude understands your context and delivers exactly what you need.\n\n## Tailor These Commands To You and Your Org \n- These commands are markdown documents. Edit them as much as you wish. Specify what file location Claude should put them in, what competitors to compare against, etc..\n- Write your own custom commands. Have Claude Code help you. \n\n## Getting Started\n### Option 1: Use with Claude Code (CLI)\n1. **Download these files as markdown**\n2. **Copy commands to your project's .claude/commands folder** \n3. **Use the commands:** type / and the command at the command line\n\n### Option 2: Use with Nimbalyst (Recommended)\nNimbalyst is a better way to work with Claude Code. Nimbalyst is the free, local, WYSIWYG editor & session manager where you iterate with Claude Code on your full context: markdown docs, mockups, diagrams, data models, MCP, and code.  Nimbalyst increases the bandwidth between you and the a",
     "topics": []
   },
   {
@@ -3860,7 +3869,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# claude-code-commands-skills-agents\n\nShakaCode Team Shared Claude Code commands plus cross-tool prompts, agents, skills, and tips.\n\n## Quick Install\n\nCopy what you need to your `~/.claude/` directory:\n\n```bash\n# Clone the repo\ngit clone https://github.com/shakacode/claude-code-commands-skills-agents.git\ncd claude-code-commands-skills-agents\n\n# Install all commands\nmkdir -p ~/.claude/commands\ncp commands/*.md ~/.claude/commands/\n\n# Install all agents\nmkdir -p ~/.claude/agents\ncp agents/*.md ~/.claude/agents/\n\n# Or install specific ones\ncp commands/self-review.md ~/.claude/commands/\ncp commands/merge-commit-msg.md ~/.claude/commands/\n```\n\nFor project-level sharing, copy to your project's `.claude/commands/` or `.claude/agents/` directory instead.\n\n## Commands\n\n| Command | Description |\n|---------|-------------|\n| [`/address-review`](commands/address-review.md) | Fetch GitHub PR review comments, triage them, create todos for must-fix items, reply to comments, and resolve addressed threads |\n| [`/review-all-prs`](commands/review-all-prs.md) | Review all open PRs or a specific PR, post reviews to GitHub |\n| [`/self-review`](commands/self-review.md) | Comprehensive self-review of uncommitted changes before creating a PR |\n| [`/merge-commit-msg`](commands/merge-commit-msg.md) | Generate a structured merge commit message from PR changes |\n| [`/optimize`](commands/optimize.md) | Analyze code for performance issues with structured recommendations |\n| [`/security-review`](commands/security-review.md) | Review code for security vulnerabilities (OWASP Top 10 checklist) |\n| [`/file-by-file-review`](commands/file-by-file-review.md) | Review massive PRs file-by-file with parallel subagents (credit: [Romex91](https://github.com/Romex91/claude-code-file-by-file-review)) |\n\n## Prompt Templates\n\nUse these when you want a reusable workflow outside Claude Code's slash-command system:\n\n| Prompt | Description |\n|--------|-------------|\n| [`address-review`](prompts/address-review.md) | Sha",
     "topics": []
   },
   {
@@ -3874,7 +3883,7 @@
     ],
     "target_tools": [
       "claude-code",
-      "zed"
+      "codex-cli"
     ],
     "summary": "A modern project scaffold for AI-assisted development workflows—providing reusable Claude Code commands (.claude/commands/), structured AI documentation (ai_docs/), and standardized feature specifications (specs/) to streamline collaboratio",
     "i18n": {
@@ -3921,7 +3930,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# AI assisted development Structure\n\nA modern project structure optimized for efficient AI-assisted development using Claude Code and OpenAI Codex.\n\n## Overview\n\nThis repository provides a standardized structure for AI-enhanced software development workflows. Rather than directly inputting commands, documentation, and feature requests into the CLI of Claude Code or OpenAI Codex, this structure offers a more organized, version-controlled, and collaborative approach to working with AI coding assistants.\n\n## Directory Structure\n\n```\nai_assisted_development_structure/\n├── .claude/\n│   ├── agents/         # Custom subagent definitions for Claude Code\n│   │   ├── api-documenter.md\n│   │   └── prd-drafter.md\n│   └── commands/       # Custom Claude Code command definitions\n│       ├── COMMANDS.md # Documentation for commands system\n│       └── prime.md    # Context initialization command\n├── ai_docs/            # AI-specific documentation\n│   ├── AI_DOCS.md      # Documentation for AI docs system\n│   ├── claude_thinking.md\n│   └── openai_reasoning_models.md\n├── specs/              # Feature specifications\n│   ├── SPECS.md        # Documentation for specs system\n│   └── openai_reasoning.md\n└── README.md\n```\n\n## Key Components\n\n### 1. Claude Commands (`.claude/commands/`)\n\nCustom reusable commands that streamline interactions with Claude Code:\n\n- **Project Context Initialization**: The `prime.md` command quickly primes Claude with project structure and important documentation\n- **Standardized Workflows**: Create commands for code generation, testing, analysis, and more\n- **Invocation Syntax**: Use `/project:command_name` to execute commands\n\n### 2. Claude Subagents (`.claude/agents/`)\n\nSpecialized AI assistants that operate in separate context windows for task-specific workflows:\n\n- **Context Preservation**: Each subagent maintains its own context window, preventing quality degradation in complex multi-stage tasks\n- **Specialized Expertise**: Custom system prompts tailored fo",
     "topics": []
   },
   {
@@ -3982,7 +3991,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# ccmd - Claude Command Manager\n\n[![Go Version](https://img.shields.io/badge/Go-1.23+-00ADD8.svg)](https://go.dev)\n[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)\n[![Go Report Card](https://goreportcard.com/badge/github.com/gifflet/ccmd)](https://goreportcard.com/report/github.com/gifflet/ccmd)\n[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gifflet_ccmd&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gifflet_ccmd)\n[![NPM](https://nodei.co/npm/@gifflet/ccmd.svg?style=mini)](https://www.npmjs.com/package/@gifflet/ccmd)\n[![Sponsor](https://img.shields.io/badge/sponsor-30363D?logo=GitHub-Sponsors&color=5c5c5c)](https://github.com/sponsors/gifflet)\n\nSimple command-line tool for managing custom commands in Claude Code. Install and share commands from Git repositories with the ease of a package manager.\n\n<img src=\"./docs/demo.gif\" />\n\n## Why ccmd?\n\nManaging custom Claude Code commands across multiple projects can be challenging. ccmd solves this by treating commands as versioned, reusable packages:\n\n- **Keep commands out of your codebase**: Store command definitions (.md files and AI context) in separate repositories, keeping your project repositories clean\n- **Version control**: Each command has its own version, allowing you to use different versions in different projects\n- **Reusability**: Install the same command in multiple projects without duplication\n- **Easy sharing**: Share commands with your team or the community through Git repositories\n- **Simple management**: Install, update, and remove commands with familiar package manager semantics\n\nThink of ccmd as \"npm for Claude Code commands and plugins\" - centralize your AI tooling configurations and use them anywhere.\n\n## Installation\n\n### Via NPM (Recommended)\n\n```bash\nnpm install -g @gifflet/ccmd\n```\n\n### Via Go\n\n```bash\ngo install github.com/gifflet/ccmd/cmd/ccmd@latest\n```\n\n## Quick Start\n\n### 1. Initialize your project\n```bash\ncd your-proj",
     "topics": [
       "claude-code",
       "cli",
@@ -4003,7 +4012,8 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "cursor"
     ],
     "summary": "🚀 Production-ready slash commands, subagents & hooks for Claude Code. Automate Git workflows, PR creation, releases, and QA testing. Zero-config, framework-agnostic.",
     "i18n": {
@@ -4050,7 +4060,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Code Git Workflow\n\nProduction-ready slash commands for Claude Code that automate your Git workflow, PR creation, release management, and QA testing.\n\n## Features\n\n- **Framework-agnostic** - Works with any language or framework\n- **Configurable** - Customize everything via `.claude/config.yaml`\n- **Issue tracker integration** - Linear, Jira, and GitHub Issues\n- **Multi-workflow support** - Staging-based, tag-based, or direct workflows\n- **Zero configuration** - Sensible defaults work out of the box\n- **Subagents** - Specialized AI assistants for code review, release validation, and QA\n- **Hooks** - Automate actions before/after tool use\n- **Marketplace plugin** - Installable from Claude marketplace\n\n## Quick Start\n\n### Option 1: Install from Marketplace (Recommended)\n\n```bash\n# Add the marketplace\n/plugin marketplace add rlajous/claude-code-commands\n\n# Install the plugin\n/plugin install git-workflow@git-workflow-marketplace\n```\n\nAfter installation, commands are available with the `git-workflow:` prefix:\n\n```bash\n/git-workflow:start PROJ-123\n/git-workflow:commit\n/git-workflow:finish\n```\n\n### Option 2: Manual Installation (Shorter Command Names)\n\nFor shorter command names (e.g., `/start` instead of `/git-workflow:start`):\n\n```bash\n# Clone and copy to your project\ngit clone https://github.com/rlajous/claude-code-commands.git\ncp -r claude-code-commands/commands your-project/.claude/\ncp -r claude-code-commands/agents your-project/.claude/\n```\n\n> **Cursor users**: Cursor also detects commands from `.claude/`. Manual installation works as-is. See [INSTALLATION.md](./INSTALLATION.md#cursor-compatibility) for details.\n\n### 3. (Optional) Add Configuration\n\nCreate `.claude/config.yaml` for project-specific settings:\n\n```yaml\n# Basic configuration example\nworkflow:\n  developmentBranch: staging\n  productionBranch: main\n\nissueTracker:\n  type: linear  # or jira, github\n\npullRequests:\n  reviewers:\n    - your-team\n```\n\nSee [CONFIGURATION.md](./CONFIGURATION.md) for all optio",
     "topics": []
   },
   {
@@ -4109,7 +4119,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Custom Claude Commands for Developers\n\n> **Supercharge your AI-assisted workflow with battle-tested Claude Code commands for Product Managers.**\n\nThis collection provides 14 ready-to-use custom commands for Developers that turn Claude Code into your expert coding assistant.\n\n## Why Use Claude Code Commands?\n- One-word trigger (e.g., `/implement`, `/code-review`, `/commit`) gets repeatable action by Claude Code\n- Specify the file naming convention, file location once and file gets made and put there\n- Specify coding standards, review criteria, and commit message formats once\n- Consistent, high-quality outputs using proven workflows\n- Customizable to your team's specific needs\n\n## What's Inside\nMarkdown documents of 14 Custom Claude Code commands that we have been using and that you can modify as you wish for your business and use case. Each command provides structured prompts, best practices, and frameworks so Claude understands your context and delivers exactly what you need.\n\n## Tailor These Commands To You and Your Org \n- These commands are markdown documents. Edit them as much as you wish. Specify your coding standards, test frameworks, release processes, etc.\n- Write your own custom commands. Have Claude Code help you. \n\n## Getting Started\n### Option 1: Use with Claude Code (CLI)\n1. **Download these files as markdown**\n2. **Copy commands to your project's .claude/commands folder**\n3. **Use the commands:** type / and the command at the command line\n\n### Option 2: Use with Nimbalyst (Recommended)\nNimbalyst is a better way to work with Claude Code. Nimbalyst is the free, local, WYSIWYG editor & session manager where you iterate with Claude Code on your full context: markdown docs, mockups, diagrams, data models, MCP, and code.  Nimbalyst increases the bandwidth between you and the agent. \n1. **Install Nimbalyst** from [nimbalyst.com](https://nimbalyst.com)\n2. **Download these files as markdown**\n3. **Copy them into the .claude/commands folder** in your Nimbalyst ",
     "topics": []
   },
   {
@@ -4122,7 +4132,8 @@
       "cli-tool"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "github-copilot"
     ],
     "summary": "Persistent persona modes for Claude Code: command-controlled personas (solo/parallel), a guided persona creator, and an on-demand team debate.",
     "i18n": {
@@ -4171,7 +4182,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "<div align=\"center\">\n\n# 🎭 claude-personas\n\n**Give Claude a mindset that sticks.**\n\nPersistent personas for [Claude Code](https://docs.claude.com/en/docs/claude-code): pick a persona and Claude holds it on *every* turn, not just the message you invoked it on. Run one, several in **parallel**, or convene them as a **team** that debates a topic and reports back.\n\n*Built for Claude Code; also installable as [GitHub Copilot custom agents](copilot).*\n\n[![CommitCrimes](https://commitcrimes.dev/badge/zvoque.svg)](https://commitcrimes.dev/u/zvoque)\n[![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-d97757)](https://docs.claude.com/en/docs/claude-code)\n![Node](https://img.shields.io/badge/node-%E2%89%A518-5fa04e)\n[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n\n</div>\n\n---\n\nA normal skill or prompt shapes a single reply, then Claude drifts back to default. A persona doesn't. A hook re-asserts it each turn, so `contrarian` keeps pressure-testing you for the whole session. Personas are plain Markdown files you own, and you can author new ones through a guided interview.\n\n## Install\n\n```\n/plugin marketplace add zvoque/claude-personas\n/plugin install personas@claude-personas\n```\n\nNo install scripts, no manual `settings.json` edits; the plugin registers its own hooks. **Requires Node** (the hooks and CLI are plain Node.js).\n\nTo remove it later: `claude plugin uninstall personas@claude-personas`.\n\n### Using GitHub Copilot?\n\nCopilot has two surfaces, and they install differently.\n\n**Copilot CLI** is Claude Code compatible, so it runs the real plugin with the same commands:\n\n```\n/plugin marketplace add zvoque/claude-personas\n/plugin install personas@claude-personas\n```\n\nYou get the full thing: persistent personas, parallel, debates. The CLI namespaces the command, so you run `/personas:personas <verb>` (e.g. `/personas:personas senior`). Turn on **Chat: Use Claude Hooks** in settings so persistence works.\n\n**The Copilot extension** (the ch",
     "topics": []
   },
   {
@@ -4290,7 +4301,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Code Command Templates\n\nA collection of specialized system prompts and command templates for Claude Code to enhance software development workflows.\n\n## Overview\n\nThis repository contains a comprehensive set of Claude AI system prompts designed to provide specialized operational modes for software development tasks. Each mode is optimized for specific development scenarios and includes built-in safety mechanisms and user approval workflows.\n\n## Available Commands\n\n### Development Modes\n\n- **`architect.md`** - Architecture planning and system design mode\n- **`framework.md`** - Greenfield project creation and framework setup\n- **`debug.md`** - Systematic debugging and troubleshooting\n- **`cleanup.md`** - Codebase maintenance and refinement\n\n### Analysis & Understanding\n\n- **`explain.md`** - Code teaching and detailed explanations\n- **`find.md`** - Code tracing and implementation flow analysis\n- **`check-understanding.md`** - Code analysis and comprehension verification\n- **`interrogate.md`** - Rigorous investigation and evidence-based validation\n\n### Code Quality & Reviews\n\n- **`pr.md`** - Comprehensive pull request reviews\n- **`pre-commit review.md`** - Pre-commit review process guidelines\n- **`commit.md`** - Automated git commit process with quality checks\n\n### Information & Research\n\n- **`ask.md`** - Q&A assistant with research capabilities\n- **`research.md`** - Web research and external documentation lookup\n- **`docs.md`** - Technical documentation creation\n- **`ideate.md`** - Creative brainstorming and solution exploration mode\n\n### Git & Change Management\n\n- **`changes.md`** - Uncommitted changes analysis\n- **`changes-branch.md`** - Git branch comparison utilities\n- **`changes-working.md`** - Working directory change analysis\n\n### Project Management\n\n- **`set-phase.md`** - Development phase management (MVP, production, hotfix)\n- **`check-pattern.md`** - Existing codebase pattern analysis\n- **`enhance-command.md`** - Command prompt assessment and improvem",
     "topics": []
   },
   {
@@ -4302,7 +4313,8 @@
       "extension"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "openclaw"
     ],
     "summary": "win4r/claude-code-hooks",
     "i18n": {
@@ -4351,7 +4363,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Code Stop Hook — 任务完成自动回调\n\n当 Claude Code（含 Agent Teams）完成任务后，自动：\n1. 将结果写入 JSON 文件\n2. 发送 聊天软件 通知到指定群组\n3. 写入 pending-wake 文件供 AGI 主会话读取\n\n## 架构\n\n```\ndispatch-claude-code.sh\n  │\n  ├─ 写入 task-meta.json（任务名、目标群组）\n  ├─ 启动 Claude Code（via claude_code_run.py）\n  │   └─ Agent Teams lead + sub-agents 运行\n  │\n  └─ Claude Code 完成 → Stop Hook 自动触发\n      │\n      ├─ notify-agi.sh 执行：\n      │   ├─ 读取 task-meta.json + task-output.txt\n      │   ├─ 写入 latest.json（完整结果）\n      │   ├─ openclaw message send → 聊天软件 群\n      │   └─ 写入 pending-wake.json\n      │\n      └─ AGI heartbeat 读取 pending-wake.json（备选）\n```\n\n## 文件说明\n\n| 文件 | 位置 | 作用 |\n|------|------|------|\n| `hooks/notify-agi.sh` | `~/.claude/hooks/` | Stop Hook 脚本 |\n| `hooks/claude-settings.json` | `~/.claude/settings.json` | Claude Code 配置（注册 hook）|\n| `scripts/dispatch-claude-code.sh` | 任意位置 | 一键派发任务 |\n| `scripts/claude_code_run.py` | 任意位置 | Claude Code PTY 运行器 |\n\n## 使用方法\n\n### 基础任务\n```bash\ndispatch-claude-code.sh \\\n  -p \"实现一个 Python 爬虫\" \\\n  -n \"my-scraper\" \\\n  -g \"-5189558203\" \\\n  --permission-mode \"bypassPermissions\" \\\n  --workdir \"/home/ubuntu/projects/scraper\"\n```\n\n### Agent Teams 任务\n```bash\ndispatch-claude-code.sh \\\n  -p \"重构整个项目的测试\" \\\n  -n \"test-refactor\" \\\n  -g \"-5189558203\" \\\n  --agent-teams \\\n  --teammate-mode auto \\\n  --permission-mode \"bypassPermissions\" \\\n  --workdir \"/home/ubuntu/projects/myapp\"\n```\n\n### 参数\n\n| 参数 | 说明 |\n|------|------|\n| `-p, --prompt` | 任务提示（必需）|\n| `-n, --name` | 任务名称（用于跟踪）|\n| `-g, --group` | 聊天软件 群组 ID（结果自动发送）|\n| `-w, --workdir` | 工作目录 |\n| `--agent-teams` | 启用 Agent Teams |\n| `--teammate-mode` | Agent Teams 模式 (auto/in-process/tmux) |\n| `--permission-mode` | 权限模式 |\n| `--allowed-tools` | 允许的工具列表 |\n\n## Hook 配置\n\n在 `~/.claude/settings.json` 中注册：\n```json\n{\n  \"hooks\": {\n    \"Stop\": [{\"hooks\": [{\"type\": \"command\", \"command\": \"~/.claude/hooks/notify-agi.sh\", \"timeout\": 10}]}],\n    \"SessionEnd\": [{\"hooks\": [{\"type\": \"command\", \"command\": \"~/.claude/hooks/notify-agi.sh\", \"timeout\": 10}]}]\n  }\n}\n```\n\n## 防重复机制\n\n",
     "topics": []
   },
   {
@@ -4412,7 +4424,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Awesome Claude Code Sound Notifications\n\nSound notification hooks for Claude Code that play audio alerts when Claude needs attention or completes tasks. Works on macOS, Windows, and Linux without external dependencies.\n\n**🎵 macOS Enhancement**: Now uses built-in system sounds on macOS - no sound files needed!\n\n> **Vision**: This repository aims to become the central hub for awesome Claude Code hooks, featuring a curated collection of community-contributed hooks\n> and eventually a hook manager to easily discover, install, and manage hooks across projects.\n\n## Features\n\n- 🔔 **Notification Hook**: Plays sound when Claude needs user attention\n- ✅ **Stop Hook**: Plays sound when Claude completes a task\n- 🤖 **SubagentStop Hook**: Plays sound when a subagent completes\n- 📝 **Event Logging**: All events are logged to JSON files for review\n- 💬 **Chat Transcript Processing**: Optionally logs full chat transcripts\n- 🌍 **Cross-Platform**: Works on macOS, Windows, and Linux using native commands\n\n## Quick Start\n\n### Local Installation (Project-Specific)\n\n1. Clone this repository or copy the `.claude` directory to your project\n2. **For Windows/Linux**: Ensure the sound files are in your project root:\n   - `on-agent-need-attention.wav`\n   - `on-agent-complete.wav`\n3. **For macOS**: No sound files needed - uses built-in system sounds!\n4. The hooks will automatically work for this project\n\n### Global Installation (All Projects)\n\nTo use these hooks in all your Claude Code projects:\n\n```bash\n# Install globally\n./install-global.sh\n\n# To uninstall\n./uninstall-global.sh\n```\n\nThe global installer will:\n\n- Copy hooks to `~/.claude/hooks/`\n- Copy sound files to `~/.claude/` (Windows/Linux only)\n- Update `~/.claude/settings.json` with hook configurations (preserves existing permissions)\n- Create a logs directory at `~/.claude/logs/`\n- **macOS**: Automatically uses system sounds - no file copying needed!\n\n## How It Works\n\n### Sound Playback\n\nThe hooks use native system commands for audio pla",
     "topics": []
   },
   {
@@ -4425,7 +4437,9 @@
       "rules"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli"
     ],
     "summary": "3-level security toolkit for AI agents: regex patterns, heuristic rules, ML classification. Claude Code hooks, git pre-commit, CI/CD scanner.",
     "i18n": {
@@ -4474,7 +4488,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "> ⚠️ **Synced from Diana monolith — do not edit here.** Canonical sources live at https://github.com/random1st/diana under `rust/crates/diana-{guard,secrets,secguard-brain}/`. Published via `tools/release-secguard.sh` from the monolith. PRs against this repo for code changes will be redirected upstream.\n>\n> Active hardening: [RAN-411 secguard v2](https://linear.app/random1st/issue/RAN-411).\n# secguard\n\n3-level security guard for AI coding agents. Catches leaked credentials and blocks destructive shell commands before they execute.\n\nBuilt for [Claude Code](https://claude.ai/code), Gemini CLI, and Codex workflows. Also works anywhere: CI pipelines, git pre-commit, standalone CLI.\n\n## What it does\n\nTwo guards, three levels of detection each.\n\n**Secrets scanning.** Catches credentials before they leak into logs, tool output, or cloud APIs. 150+ regex patterns: AWS access keys (`AKIA*`), Stripe (`sk_live_*`, `pk_live_*`), GitHub PATs (`ghp_*`, `github_pat_*`), Anthropic/OpenAI API keys, Slack tokens, JWTs, private key blocks, database connection strings (postgres, mysql, mongodb, redis), SendGrid, Twilio, npm/PyPI tokens, generic `password=`/`secret=` assignments. Keyword pre-filter skips regex when no relevant substring exists (fast on large inputs). High-entropy token detection (Shannon entropy >= 3.5 bits/char, 16+ chars) picks up things regex misses. Optional ML classifier as final pass.\n\n**Destructive command guard.** Blocks commands that delete data, rewrite history, or bypass safety checks. Three phases run in order; first match wins:\n\n*Phase 0: Policy allowlist.* Some operations are always safe. Configured process cleanup (`pkill`/`killall` targets from `safe_kill_targets`), `git push` without `--force`, and read-only kubectl (`get`, `describe`, `logs`) can pass here. Compound commands (`&&`, `||`, `;`, `|`) are split and every part must pass independently.\n\n*Phase 1: Heuristic rules.* 40+ patterns, zero latency:\n- Git: `checkout .`, `clean`, `reset --hard`, `pus",
     "topics": []
   },
   {
@@ -4535,7 +4549,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "\n# Claude Hooks Manager by Sem\n\n![npm version](https://img.shields.io/npm/v/claude-hooks-manager.svg)\n![npm downloads](https://img.shields.io/npm/dm/claude-hooks-manager.svg)\n![Version](https://img.shields.io/badge/version-3.1.1-blue.svg)\n![License](https://img.shields.io/badge/license-MIT-green.svg)\n![Hooks](https://img.shields.io/badge/hooks-20-orange.svg)\n![Python](https://img.shields.io/badge/python-3.6+-blue.svg)\n![Claude](https://img.shields.io/badge/Claude-Compatible-purple.svg)\n![Status](https://img.shields.io/badge/status-active-success.svg)\n\n![Claude Hooks Manager](img/banner-logo.png)\n\n> **📢 Important Notice for Existing Users**\n> \n> This project has been renamed from `claude-code-hooks` to `claude-hooks-manager` to better reflect its purpose as a management tool for Claude hooks.\n> \n> **Migration Instructions:**\n> ```bash\n> # Uninstall old package\n> npm uninstall -g claude-code-hooks\n> \n> # Install new package\n> npm install -g claude-hooks-manager\n> ```\n> The CLI command `claude-hooks` remains unchanged.\n\nA comprehensive hook management system for [Claude](https://claude.ai) that enforces coding standards, maintains consistency, and automates workflow tasks across all projects.\n\n## 🚀 Game-Changing Feature: Context Forge Integration\n\n### 🌟 Never Lose Context Again During Multi-Hour Development Sessions!\n\n### 🎉 First to Implement Anthropic's New PreCompact Hook!\n\nWe're excited to announce our groundbreaking integration with **[Context Forge](https://github.com/webdevtodayjason/context-forge)** - the industry-leading CLI tool for AI-ready project scaffolding. This integration is **the first implementation of Anthropic's brand new PreCompact hook**, announced in Claude Code v1.0.48, solving one of the biggest challenges in AI-assisted development: **context loss during conversation compaction**.\n\n#### Why This is Revolutionary\n\n**Anthropic's PreCompact hook** is a game-changing new feature that allows developers to:\n- 🔍 **Intercept compaction events** before",
     "topics": [
       "claude",
       "claude-api",
@@ -4603,7 +4617,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Hooks SDK\n\n[![Latest Version on Packagist](https://img.shields.io/packagist/v/beyondcode/claude-hooks-sdk.svg?style=flat-square)](https://packagist.org/packages/beyondcode/claude-hooks-sdk)\n[![Tests](https://img.shields.io/github/actions/workflow/status/beyondcode/claude-hooks-sdk/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/beyondcode/claude-hooks-sdk/actions/workflows/run-tests.yml)\n[![Total Downloads](https://img.shields.io/packagist/dt/beyondcode/claude-hooks-sdk.svg?style=flat-square)](https://packagist.org/packages/beyondcode/claude-hooks-sdk)\n\nA Laravel-inspired PHP SDK for building Claude Code hook responses with a clean, fluent API. This SDK makes it easy to create structured JSON responses for Claude Code hooks using an expressive, chainable interface.\n\nClaude Code hooks are user-defined shell commands that execute at specific points in Claude Code's lifecycle, providing deterministic control over its behavior. For more details, see the [Claude Code Hooks documentation](https://docs.anthropic.com/en/docs/claude-code/hooks).\n\n## Installation\n\nYou can install the package via composer:\n\n```bash\ncomposer require beyondcode/claude-hooks-sdk\n```\n\n## Usage\n\n### Creating a Claude Hook\n\nHere's how to create a PHP script that Claude Code can use as a hook:\n\n#### Step 1: Create your PHP hook script\n\nCreate a new PHP file (e.g., `validate-code.php`) using the SDK:\n\n```php\n<?php\n\nrequire 'vendor/autoload.php';\n\nuse BeyondCode\\ClaudeHooks\\ClaudeHook;\n\n// Read the hook data from stdin. \n// This will automatically return the correct Hook instance (for example PreToolUse)\n$hook = ClaudeHook::create();\n\n// Example: Validate bash commands\nif ($hook->toolName() === 'Bash') {\n    $command = $hook->toolInput('command', '');\n    \n    // Check for potentially dangerous commands\n    if (str_contains($command, 'rm -rf')) {\n        // Block the tool call with feedback\n        $hook->response()->block('Dangerous command detected. Use caution w",
     "topics": []
   },
   {
@@ -4665,7 +4679,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "﻿# DataFog Python\n\nDataFog is a Python library for detecting and redacting personally identifiable information (PII).\n\nIt provides:\n\n- Fast structured PII detection via regex\n- An offline PII firewall for AI agents: a Claude Code hook and a LiteLLM\n  gateway guardrail (introduced in 4.6)\n- Optional NER support via spaCy and GLiNER\n- A simple agent-oriented API for LLM applications\n- Backward-compatible `DataFog` and `TextService` classes\n\n## Agent & Gateway Firewall\n\nDataFog includes two ready-made enforcement points that catch PII at the\nmoment it would leave your machine — offline, in microseconds, with matched\nvalues never echoed into logs or transcripts:\n\n- **Claude Code hook** (`datafog-hook`): gates agent tool calls (shell\n  commands, web requests, file writes, MCP tools) and warns the model when\n  prompts or tool results carry PII. ~70–90ms per invocation including\n  process startup. Easiest install is the\n  [Claude Code plugin](https://github.com/DataFog/datafog-claude-plugin):\n\n  ```\n  /plugin marketplace add DataFog/datafog-claude-plugin\n  /plugin install datafog@datafog\n  ```\n\n  Manual hook setup and limitations: [examples/claude_code_hook/](examples/claude_code_hook/).\n\n- **LiteLLM guardrail** (`DataFogGuardrail`): redacts or blocks PII in\n  requests and responses at the gateway, for any LiteLLM-proxied provider.\n  In-process (~40µs per message scanned; a request clears the guardrail in\n  well under a millisecond), no sidecar service. Setup:\n  [examples/litellm_guardrail/](examples/litellm_guardrail/).\n\nBoth default to the high-precision entity set (`EMAIL`, `PHONE`,\n`CREDIT_CARD`, `SSN`); noisier types are opt-in. Known-safe values can be\nexempted with an allowlist: `scan(text, allowlist=[...])` for exact values,\n`allowlist_patterns=[...]` for full-match regexes (e.g. `^\\d{10}$` to stop\nunix timestamps matching as phone numbers) — available in both adapters and\nthe API. Presidio-style entity names (`EMAIL_ADDRESS`, `PHONE_NUMBER`,\n`US_SSN`) are accepted",
     "topics": [
       "data-privacy",
       "nlp",
@@ -4746,7 +4760,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Organize\n\n<div align=\"center\">\n\n<h3>Intelligent document organization for Claude Code</h3>\n\n[![npm version](https://badge.fury.io/js/claude-organize.svg)](https://www.npmjs.com/package/claude-organize)\n[![npm downloads](https://img.shields.io/npm/dm/claude-organize.svg)](https://www.npmjs.com/package/claude-organize)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![CI](https://github.com/ramakay/claude-organizer/actions/workflows/ci.yml/badge.svg)](https://github.com/ramakay/claude-organizer/actions/workflows/ci.yml)\n\n**NPM Package**: [https://www.npmjs.com/package/claude-organize](https://www.npmjs.com/package/claude-organize)\n\n</div>\n\n## The Messy File Problem 🗂️\n\nClaude Code creates files everywhere. Despite CLAUDE.md instructions saying \"don't create scripts in the root directory,\" it keeps creating test files, debug scripts, and documentation right at your project root:\n\n```\nmy-project/\n├── test-api-v1.md               # First attempt\n├── test-api-v2.md               # \"Fixed\" version\n├── test-api-final.md            # \"Final\" version\n├── test-api-final-FIXED.md      # Actually final?\n├── debug-webhook.mjs            # Quick test script\n├── analyze-performance.mjs      # Debugging session\n└── ... (87 more files at root!)\n```\n\n**Solution**: Automatic file organization using AI-powered categorization\n\n## How Claude Organize Helps\n\n### 🗂️ Automatic File Organization\n\n```\nmy-project/\n├── src/                         # Source code stays untouched\n├── docs/\n│   ├── testing/                 # Test results organized\n│   └── troubleshooting/         # Debug notes in one place\n└── scripts/\n    ├── checks/                  # Validation scripts grouped\n    └── debug/                   # Debug utilities together\n```\n\n## Quick Start\n\n### Installation\n\n```bash\nnpm install -g claude-organize\n```\n\n### Setup File Organization\n\nYou have two options to configure the file organization hook:\n\n#### Option 1: Using",
     "topics": [
       "claude-ai",
       "claude-code",
@@ -4811,7 +4825,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "<div align=\"center\">\n\n# Claude Model Router Hook\n\n**Automatic model switching for Claude Code. No API calls, no config.**\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)\n![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey)\n![Shell](https://img.shields.io/badge/shell-bash-blue)\n\n<video src=\"docs/slides/public/model-router.mov\" width=\"887\" controls></video>\n\n</div>\n\nA Claude Code hook system that classifies every prompt by task complexity and switches your active model automatically. Sub-agent model rules are injected into every session so spawned agents also use the right tier.\n\n## Features\n\n- Classifies prompts by complexity using keyword and pattern matching (zero API calls)\n- Warns on tier mismatch by default; optionally auto-switches `settings.json` (`action: \"autoswitch\"`)\n- Injects sub-agent model-selection rules into every session via `SessionStart`\n- Prefix any prompt with `~` to bypass classification and keep the current model\n- Logs every classification and switch to `~/.claude/hooks/model-router-hook.log`\n\n## How It Works\n\nTwo hook scripts run inside Claude Code:\n\n**`session-init.sh`** (`SessionStart`) injects a `systemMessage` into every session that enforces these sub-agent rules:\n\n| Tier | Use for |\n|------|---------|\n| `haiku` | Git ops, renames, formatting, file lookups, quick reads |\n| `sonnet` | Feature work, debugging, writing/editing code, planning |\n| `opus` | Architecture, deep multi-file analysis, complex refactors |\n\n![Sub-agent spawned with Sonnet 4.6 model](assets/sub-agent-routing.png)\n\n**`model-router-hook.sh`** (`UserPromptSubmit`) classifies the incoming prompt and compares the recommended tier against the current model in `settings.json`. By default it warns with a recommendation; set `\"action\": \"autoswitch\"` in your config to switch automatically.\n\n## Installation\n\n### Plugin install (recommended)\n\n```bash\nclaude plugin marketplace add tzachbon/claude-model-router-hook\nclaude",
     "topics": [
       "claude",
       "claude-code",
@@ -4844,8 +4858,7 @@
       "rules"
     ],
     "target_tools": [
-      "claude-code",
-      "cline"
+      "claude-code"
     ],
     "summary": "Claude Code hook that detects context compaction and injects a reminder to re-read AGENTS.md, preventing post-compaction rule amnesia in long sessions",
     "i18n": {
@@ -4894,7 +4907,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Post-Compact Reminder for Claude Code\n\n<div align=\"center\">\n  <img src=\"pcr_illustration.webp\" alt=\"Post-Compact Reminder - Stop Claude from forgetting your project rules after context compaction\">\n</div>\n\n<div align=\"center\">\n\n**Stop Claude from forgetting your project rules after context compaction.**\n\n[![License: MIT](https://img.shields.io/badge/License-MIT%2BOpenAI%2FAnthropic%20Rider-blue.svg)](./LICENSE)\n[![Bash 4.0+](https://img.shields.io/badge/bash-4.0%2B-blue?style=flat-square)](https://www.gnu.org/software/bash/)\n\n</div>\n\n<div align=\"center\">\n<h3>Quick Install</h3>\n\n```bash\ncurl -fsSL https://github.com/Dicklesworthstone/post_compact_reminder/raw/refs/heads/main/install-post-compact-reminder.sh | bash\n```\n\n</div>\n\n---\n\n## TL;DR\n\n**The Problem:** During long coding sessions, Claude Code compacts the conversation to stay within context limits. After compaction, Claude loses all memory of your project's AGENTS.md, the file that defines your coding conventions, forbidden commands, architectural decisions, multi-agent coordination rules, and everything else that keeps Claude on the rails. The result: Claude starts freelancing, ignoring your rules, deleting files you told it never to delete, and generally going on a post-compaction rampage.\n\n**The Solution:** A hook system that detects compaction events and injects a short plain-text reminder telling Claude to re-read AGENTS.md before doing anything else. One install, zero maintenance, works globally across all your projects.\n\n---\n\n### Why Use Post-Compact Reminder?\n\n| Feature | What It Does |\n|---------|--------------|\n| **Automatic detection** | Fires only after compaction, not on normal startups |\n| **Zero-config** | Installs globally in `~/.local/bin` and `~/.claude/settings.json`; works in every project |\n| **Customizable messages** | 4 built-in templates (minimal, detailed, checklist, default) + custom messages |\n| **Reliable injection** | Uses SessionStart hook with `compact` matcher for direct contex",
     "topics": [
       "ai-agents",
       "bash",
@@ -4961,7 +4974,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Office\n\nA pixel art virtual office that visualizes your AI agents working in real-time. Watch Claude Code agents spawn, sit at desks, take coffee breaks, and chat in a Slack-inspired office chat panel — all rendered in an isometric pixel art office.\n\n## Update — Dunder Mifflin mode\n\nType `/the-office` in the Slack chat panel to flip the whole office into a Scranton-branch tribute. The room, the cast, and the chatter all swap over — Michael Scott runs the place, Jim is your assistant, and Dwight guards the beet cellar.\n\n### Pretzel day, every day\n<p>\n  <img src=\"docs/images/dunder-mifflin-day.png\" alt=\"Dunder Mifflin — Day\" width=\"48%\">\n  <img src=\"docs/images/dunder-mifflin-night.png\" alt=\"Dunder Mifflin — Night\" width=\"48%\">\n</p>\n\n**What changes when you toggle it on**\n- 27 cast members (Michael, Jim, Pam, Dwight, Kevin, Angela, Stanley, Creed, David Wallace, Bob Vance — the whole office) dealt to agent roles\n- Role chatter swaps to in-character lines (`\"Bears. Beets. Battlestar Galactica.\"`, `\"selling paper\"`, `\"Schrute bucks awarded\"`)\n- Michael occasionally lands his signature `\"That's what she said 😏\"` when replying to finished work\n- Character prop overlays — Michael rotates World's Best Boss mug / Dundie / Golden Ticket / Prison Mike bandana / \"NO GOD PLEASE NO\", Dwight gets the CPR dummy mask or a Schrute Buck, Jim keeps his jello stapler, Stanley gets a pretzel, Jan gets a Serenity by Jan candle, Oscar / Pam / Toby share the Finer Things Club\n- Angela gets a follower cat *and* a head-cat (randomized from 12 cat sprites)\n- Kevin's chili, pretzel day, and Finer Things Club references sprinkled through the break-room chatter\n\n### The cast\n<p align=\"center\">\n  <img src=\"docs/images/michael-scott.png\" alt=\"Michael Scott\" height=\"140\">\n  <img src=\"docs/images/jim-halpert.png\" alt=\"Jim Halpert\" height=\"140\">\n  <img src=\"docs/images/pam-beesly.png\" alt=\"Pam Beesly\" height=\"140\">\n  <img src=\"docs/images/dwight-schrute.png\" alt=\"Dwight Schrute\" height=\"140\">",
     "topics": []
   },
   {
@@ -5021,7 +5034,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Code Subagents Collection\n\nA comprehensive collection of specialized AI subagents for [Claude Code](https://docs.anthropic.com/en/docs/claude-code), designed to enhance development workflows with domain-specific expertise.\n\n## Overview\n\nThis repository contains 100+ specialized subagents that extend Claude Code's capabilities. Each subagent is an expert in a specific domain, automatically invoked based on context or explicitly called when needed. All agents are configured with specific Claude models based on task complexity for optimal performance and cost-effectiveness.\n\n## Available Subagents\n\n### Programming Languages & Frameworks\n- **[bash-expert](agents/bash-expert.md)** - Master of defensive Bash scripting for production automation, CI/CD pipelines, and system utilities\n- **[python-expert](agents/python-expert.md)** - Master advanced Python features, optimize performance, and ensure code quality\n- **[javascript-expert](agents/javascript-expert.md)** - Modern JavaScript development with ES6+, async patterns, and Node.js APIs\n- **[typescript-expert](agents/typescript-expert.md)** - TypeScript development with type safety, interfaces, and advanced features\n- **[java-expert](agents/java-expert.md)** - Java development with Spring Boot, enterprise patterns, and JVM optimization\n- **[go-expert](agents/go-expert.md)** - Go development with concurrency, channels, and idiomatic patterns\n- **[rust-expert](agents/rust-expert.md)** - Rust development with memory safety, ownership patterns, and systems programming\n- **[c-expert](agents/c-expert.md)** - C programming with memory management, system calls, and performance optimization\n- **[cpp-expert](agents/cpp-expert.md)** - Modern C++ with STL, templates, RAII, and smart pointers\n- **[php-expert](agents/php-expert.md)** - PHP development with modern features, Laravel, and performance optimization\n- **[ruby-expert](agents/ruby-expert.md)** - Ruby development with Rails, metaprogramming, and elegant syntax\n- **[scal",
     "topics": []
   },
   {
@@ -5080,7 +5093,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Awesome Claude Agents 🚀 - Complete Directory (Updated August 2025)\n\nA community-driven collection **Claude Code agents** and sub-agents—turn your Claude instance into an unstoppable team of domain experts! This repo catalogs plug-and-play agents, agent frameworks, and orchestration recipes contributed by the community and curated from public sources.\n\nThe Claude Code agent ecosystem has exploded with hundreds of specialized sub-agents, frameworks, and orchestration tools. Here's the most comprehensive directory of all available Claude Code agents, repositories, guides, and resources.\n\n### What are Claude Agents?\n\n**Claude Agents** are specialized, task-focused AI \"teammates\" defined via simple Markdown+YAML files. Each agent lives in `.claude/agents/` and is scoped with a clear role, tool set, and behaviour prompt. With sub-agent support, Claude Code can now delegate complex projects to expert agents who work in parallel—just like a real engineering team!\n\n## 🌟 Featured Agents & Repos\n\n| Name | Type | Role / Highlights | Link |\n|---|---|---|---|\n| Tech Debt Finder & Fixer | Sub-Agent | Scans codebase for debt, refactors, and automates fixes with test validation | [derek-opdee/subagent-example-script] |\n| Architecture Reviewer | Sub-Agent | Detects circular deps, generates diagrams, flags anti-patterns | [derek-opdee/subagent-example-script] |\n| Test Generator | Sub-Agent | Suggests, writes, and integrates tests for uncovered paths | [derek-opdee/subagent-example-script] |\n| Performance Optimizer | Sub-Agent | Analyzes bundle size, boosts DB/index/query speed, optimizes React | [derek-opdee/subagent-example-script] |\n| 28-Subagent Power Pack | Repo | Security, compliance, changelogs, SQL tuning & more (ready-to-use agents) | [wshobson/agents] |\n| Claude Code Dev Kit | Meta-Repo | Sets up docs, multi-agent templates, hooks & MCP server integration | [peterkrueck/Claude-Code-Development-Kit] |\n\n## 🆕 Latest & Featured Agent Collections (August 2025)\n\n### **Production-",
     "topics": []
   },
   {
@@ -5139,7 +5152,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Code Agent Team\n\nA comprehensive ecosystem of **76+ specialized AI agent personas** designed to work seamlessly with Claude Code's Task tool, providing expert-level assistance across the complete spectrum of business and technical challenges. From software development to strategic planning, from marketing campaigns to financial analysis - your entire expert team is ready 24/7.\n\n![Claude Code Sub-Agents](assets/Claude_Code_SubAgents.png)\n\n## 🚀 Transform Your Entire Business Operations\n\nImagine having access to a complete organization of world-class specialists - architects, engineers, analysts, strategists, marketers, and domain experts - all available instantly. That's exactly what Claude Code Agent Team delivers: a comprehensive business ecosystem that spans every domain from core software development to advanced business strategy.\n\n## 📺 Video Overview\n- [Part 1: Anthropic's NEW Claude Code Sub Agent Mode: Build Multi‑Persona AI Assistants in Minutes!](https://www.youtube.com/watch?v=nfhSnC9iB-Y)\n- [Part 2: Setting up Claude Code Subagents](https://youtu.be/2sbWnlT12c8)\n\n## 🧠 Understanding the Agent Mental Model\n\n### Think of Agents as Your Complete Organization\nInstead of one generalist assistant, imagine having instant access to:\n- **Technical Teams**: Senior architects, frontend specialists, backend engineers, security experts, performance optimizers\n- **Business Intelligence**: Financial analysts, market researchers, competitive strategists, business model experts\n- **Growth & Revenue**: Customer acquisition specialists, retention experts, pricing strategists, partnership developers\n- **Operations Excellence**: Process optimizers, compliance officers, infrastructure maintainers, support specialists\n- **Creative & Content**: Brand guardians, content creators, visual storytellers, marketing specialists\n- **Strategy & Leadership**: Business strategists, investment analysts, risk assessors, executive advisors\n\n### How Expert Matching Works\n1. **Context Ana",
     "topics": []
   },
   {
@@ -5200,7 +5213,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# mbbb Baker Agent\n\nA [Claude Code](https://claude.ai/code) subagent for pastry recipe lookup and Baker's Percentage calculation, built around a professional pastry recipe library.\n\n## Disclaimer\n\nThe knowledge base and technique references in this agent reflect the author's personal industry experience (18+ years in professional kitchens and fine dining consulting) and publicly available culinary science. This project is not affiliated with, endorsed by, or associated with any culinary school or educational institution. The recipe library does not contain any confidential, proprietary, or internal recipes belonging to any educational brand or institution.\n\n## What it does\n\n- **Recipe lookup** — find recipes by name (French or Chinese) or by ingredient\n- **Baker's % calculation** — express every ingredient as a percentage of the base (flour, chocolate, etc.)\n- **Recipe scaling** — scale any formula to a target batch size\n- **Technique Q&A** — answer pastry science questions (ganache ratios, mousse stability, hydrocolloid selection, etc.) using a curated knowledge base\n\n## Requirements\n\n- [Claude Code CLI](https://claude.ai/code)\n- Python 3.9+\n- No external Python dependencies\n\n## Setup\n\n### 1. Copy the agent definition\n\n```bash\ncp agents/baker.md /path/to/your-project/.claude/agents/baker.md\n```\n\nOr place it in `~/.claude/agents/baker.md` to make it available globally.\n\n### 2. Copy the scripts and data\n\n```bash\ncp -r scripts/ data/ /path/to/your-project/\n```\n\n### 3. Add your own recipes\n\nDrop `.md` recipe files into:\n\n```\ndata/recipe-library/baker/_md/\ndata/recipe-library/baker/_md/glm/\ndata/recipe-library/baker/_md/glm/intermediate/\n```\n\nSee [Recipe Format](#recipe-format) below for the expected structure. An example file is included at `data/recipe-library/baker/_md/example-brioche.md`.\n\nThe agent always searches `intermediate/` first (highest quality), then `glm/`, then `_md/`.\n\n## Usage\n\nOnce the agent is installed, Claude Code will automatically route pastry/re",
     "topics": []
   },
   {
@@ -5212,8 +5225,7 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code",
-      "zed"
+      "claude-code"
     ],
     "summary": "Comprehensive collection of 133+ specialized AI subagents for Claude Code covering the entire software development lifecycle",
     "i18n": {
@@ -5262,7 +5274,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Comprehensive Claude Code Subagents Collection\n\nA complete set of specialized AI subagents for [Claude Code](https://docs.anthropic.com/en/docs/claude-code), designed to cover the entire software development lifecycle with domain-specific expertise.\n\n**Status: 165 agents completed** ✨\n\n## 🚀 Overview\n\nThis collection contains 165 specialized subagents organized into categories, providing comprehensive coverage for:\n- Architecture and system design\n- Language-specific development (Python, Go, JavaScript, TypeScript, Rust, etc.)\n- Framework expertise (React, Vue, Django, Rails, etc.)\n- Infrastructure and DevOps\n- Data engineering and AI/ML\n- Quality assurance and testing\n- Security and compliance\n- Specialized domains (payments, mobile, blockchain, etc.)\n- Business strategy and product management\n- Marketing and growth\n- API integration and real-time systems\n- Customer success and operations\n- Legal compliance and risk management\n- Advanced computing (quantum, compilers, embedded systems)\n- Analytics and business intelligence\n- Research and experimentation infrastructure\n- Creative development (AR/VR, game AI)\n- Localization and internationalization\n- Security specializations and penetration testing\n- SEO and GEO (Generative Engine Optimization) for traditional and AI search\n- Email marketing, content production, and PR communications (expanded marketing category)\n- Web3 and blockchain technologies (IPFS, DAOs, NFTs, Layer 2)\n- Testing frameworks and strategies (Playwright, Cypress, Jest)\n- Database specialists (Redis, Elasticsearch, Neo4j, Cassandra)\n\n## 📁 Directory Structure\n\n```\ncomprehensive-agents/\n├── core/                    # Core development agents\n│   ├── architect.md        # System design and architecture\n│   ├── code-reviewer.md    # Code quality and review\n│   ├── debugger.md         # Debugging and troubleshooting\n│   └── refactorer.md       # Code refactoring and cleanup\n├── languages/              # Language-specific experts (13) ✅\n│   ├── python-exp",
     "topics": [
       "ai-agents",
       "automation",
@@ -5329,7 +5341,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Awesome Swift Claude Code Subagents 🍎\n\nThe most comprehensive collection of production-ready Claude Code subagents specifically designed for iOS, macOS, watchOS, and visionOS developers. This repository features battle-tested subagent definitions following Apple platform best practices and Swift design guidelines.\n\n## What is this?\n\nThis repository serves as the definitive collection of Claude Code subagents for Swift and Apple platform development. Each subagent is:\n\n- **Production-ready**: Tested with real iOS/macOS/watchOS/visionOS projects\n- **Platform-optimized**: Following Apple's Human Interface Guidelines and platform conventions\n- **Swift-first**: Leveraging Swift 5.9+ modern features and concurrency\n- **MCP Tool integrated**: Utilizing Xcode, SwiftUI, and platform-specific tools\n\n## Quick Start\n\n1. Browse categories to find the Swift/Apple platform subagent you need\n2. Copy the subagent definition\n3. Use with Claude Code for your iOS/macOS/watchOS/visionOS project\n4. Customize based on your app's specific requirements\n\n## 📚 Categories\n\n### [01. UI Agent](categories/01-ui-agent/)\nUser interface specialists for SwiftUI and UIKit across all Apple platforms.\n\n- [**swiftui-developer**](categories/01-ui-agent/swiftui-developer.md) - SwiftUI expert for declarative UI across all platforms\n- [**uikit-specialist**](categories/01-ui-agent/uikit-specialist.md) - UIKit master for iOS/iPadOS advanced interfaces\n- [**ios-accessibility-tester**](categories/01-ui-agent/ios-accessibility-tester.md) - iOS accessibility expert for inclusive design\n\n### [02. Local Database Agent](categories/02-localdatabase-agent/)\nData persistence experts for Core Data, SwiftData, and local storage solutions.\n\n- [**coredata-expert**](categories/02-localdatabase-agent/coredata-expert.md) - Core Data specialist with CloudKit sync\n- [**swiftdata-specialist**](categories/02-localdatabase-agent/swiftdata-specialist.md) - SwiftData expert for modern persistence\n\n### [03. Networking Agent](categor",
     "topics": []
   },
   {
@@ -5342,7 +5354,11 @@
       "agent-framework"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "codex-cli",
+      "cursor",
+      "windsurf",
+      "github-copilot"
     ],
     "summary": "Make any repo AI-first - write sustainable code from the start, or refactor a legacy codebase to prepare it for agent-driven development.Building blocks for Claude Code: subagents, slash commands, hooks, and workflow patterns. Copy what you",
     "i18n": {
@@ -5391,7 +5407,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "<div align=\"center\">\n\n<img src=\"assets/banner.svg\" alt=\"claude-leverage\" width=\"640\">\n\n**Make any repo AI-first - write sustainable code from the start, or refactor a legacy codebase to prepare it for agent-driven development.**\n\n[![Claude Code - first-class](https://img.shields.io/badge/Claude_Code-first--class-8b5cf6?style=for-the-badge)](https://docs.anthropic.com/en/docs/claude-code)\n[![Codex CLI - first-class](https://img.shields.io/badge/Codex_CLI-first--class-10a37f?style=for-the-badge)](https://developers.openai.com/codex)\n\n<sub>Convention layer (<code>AGENTS.md</code>) is also read by any AGENTS.md-aware tool - Cursor, Windsurf, Copilot…</sub>\n\n<br>\n\n[![CI](https://github.com/Filip-Podstavec/claude-leverage/actions/workflows/ci.yml/badge.svg)](https://github.com/Filip-Podstavec/claude-leverage/actions/workflows/ci.yml)\n[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)\n![Version](https://img.shields.io/badge/version-1.11.0-success)\n![Skills](https://img.shields.io/badge/skills-15-8b5cf6)\n![Hooks](https://img.shields.io/badge/hooks-9-orange)\n![Subagents](https://img.shields.io/badge/subagents-2-1f6feb)\n\n</div>\n\n> A small, opinionated **AI-coding-agent suite** for Claude Code and Codex CLI:\n> deterministic security hooks, cross-tool skills, and self-maintaining\n> conventions that keep a repo safe for the *next* agent to modify.\n>\n> **Complements** skills-based plugins like the official `superpowers` plugin;\n> it does not try to replace them.\n\n## Contents\n\n- [The problem it solves](#the-problem-it-solves)\n- [Who it's for](#who-its-for)\n- [Quick start](#quick-start)\n- [Install](#install)\n- [What you get](#what-you-get)\n- [How it works](#how-it-works)\n- [Benchmarks](#benchmarks)\n- [How it compares](#how-it-compares)\n- [What's inside](#whats-inside)\n- [Why one repo for two tools](#why-one-repo-for-two-tools)\n- [Honest history](#honest-history)\n- [Verify, update, uninstall](#verify-update-uninstall)\n- [License](#license)\n\n## The problem ",
     "topics": [
       "claude-ai",
       "claude-code",
@@ -5457,7 +5473,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Codex Subagents - Claude Code Plugin\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![GitHub Stars](https://img.shields.io/github/stars/CoderMageFox/claudecode-codex-subagents?style=social)](https://github.com/CoderMageFox/claudecode-codex-subagents)\n[![GitHub Issues](https://img.shields.io/github/issues/CoderMageFox/claudecode-codex-subagents)](https://github.com/CoderMageFox/claudecode-codex-subagents/issues)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/CoderMageFox/claudecode-codex-subagents/pulls)\n\n[中文](./README-zh.md) | [English](./README-en.md)\n\n通过并行委托多个 Codex 代理来编排复杂任务，然后合并和审查结果的 Claude Code 插件。\n\n## 功能特点\n\n- 🚀 **并行处理**: 将复杂任务分解为可并行执行的单元（每批最多3个代理）\n- 🔗 **链式处理**: 超过3个任务时自动进行链式批量处理\n- 📊 **实时进度**: 使用 TodoWrite 实时显示任务执行进度\n- 📝 **详细日志**: 所有子代理活动记录到 `.codex-temp/[时间戳]/` 目录\n- 🤖 **智能委托**: 通过 MCP 服务器自动委托给多个 Codex 子代理\n- 🔄 **智能合并**: 自动检测冲突并应用最佳合并策略\n- ✅ **质量验证**: 包含编译、测试、代码质量等多重验证关卡\n\n## 快速安装\n\n### 方式 1：一键安装脚本（推荐）\n\n**适合：首次使用，希望全自动安装**\n\n```bash\ngit clone https://github.com/CoderMageFox/claudecode-codex-subagents.git\ncd claudecode-codex-subagents\n./install.sh\n```\n\n**安装脚本会自动完成：**\n- ✅ 检测并自动安装缺失的依赖（Python 3, uv, Codex CLI）\n- ✅ 安装 Plugin 到 `~/.claude/plugins/`\n- ✅ **复制命令到 `~/.claude/commands/` 以确保直接可用**\n- ✅ 配置 MCP 服务器（无需手动安装）\n- ✅ 自动安装中英文双版本命令\n- ✅ 验证安装完整性\n\n### 方式 2：通过 Claude Code Plugin 系统安装\n\n**适合：熟悉 Claude Code plugin 系统，希望使用 plugin 管理**\n\n#### 步骤 1：添加 Plugin Marketplace\n\n在 Claude Code 中运行：\n\n```bash\n# 方式 A: 通过 GitHub URL 添加\n/plugin marketplace add CoderMageFox/claudecode-codex-subagents\n\n# 方式 B: 或者在 settings.json 中添加\n```\n\n在 `~/.claude/settings.json` 中添加：\n\n```json\n{\n  \"extraKnownMarketplaces\": [\n    {\n      \"name\": \"codex-subagents\",\n      \"url\": \"https://github.com/CoderMageFox/claudecode-codex-subagents\"\n    }\n  ]\n}\n```\n\n#### 步骤 2：安装 Plugin\n\n```bash\n# 从 marketplace 安装\n/plugin install codex-subagents@CoderMageFox\n\n# 或者直接通过 GitHub 路径安装\n/plugin install CoderMageFox/claudecod",
     "topics": []
   },
   {
@@ -5519,7 +5535,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Laravel Claude Agents\n\n> Awesome Claude Code Subagents and Skills for Laravel Development\n\nA comprehensive collection of specialized Claude Code subagents and skills for Laravel development. 10 agents and 15 skills covering architecture, Eloquent, APIs, testing, security, performance, debugging, and more.\n\n## Installation\n\n### Claude Plugin (Recommended)\n\n```bash\n/plugin install --source github iserter/laravel-claude-agents\n```\n\nOr via the marketplace:\n\n```bash\n/plugin marketplace add iserter/laravel-claude-agents\n/plugin install laravel-claude-agents\n```\n\nNo files are added to your project — Claude Code loads agents and skills directly from the plugin.\n\n### Alternative: Composer Package\n\nFor teams that prefer vendored files committed to the repo:\n\n```bash\ncomposer require --dev iserter/laravel-claude-agents:dev-main\nphp artisan claude-agents:publish\n```\n\nThis copies agents and skills into `.claude/` in your project root. Use `--force` to overwrite existing files.\n\n> Requires PHP 8.1+ and Laravel 10/11/12.\n\n## Usage\n\nOnce installed, Claude Code automatically detects the agents and skills. You can invoke them explicitly or let Claude choose automatically:\n\n```\n> Ask the laravel-architect to design the authentication system\n> Have eloquent-specialist optimize the user queries\n> Create a RESTful API for blog posts with authentication\n> Optimize the dashboard query performance\n```\n\n## Agents\n\n| Agent | Description |\n|-------|-------------|\n| **laravel-architect** | Architecture decisions, design patterns, schema planning |\n| **eloquent-specialist** | Eloquent models, relationships, N+1 prevention, migrations |\n| **laravel-api-developer** | API resources, Sanctum/Passport, rate limiting |\n| **laravel-testing-expert** | Pest PHP, feature/unit tests, TDD, code coverage |\n| **laravel-code-reviewer** | Code quality, security checks, best practices |\n| **laravel-architecture-reviewer** | Design validation, scalability, technical debt |\n| **laravel-debugger** | Error diagnos",
     "topics": []
   },
   {
@@ -5580,7 +5596,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "<p align=\"center\">\n  <h1 align=\"center\">Claude Code App Studios</h1>\n  <p align=\"center\">\n    Turn a single Claude Code session into a full mobile-app development studio.\n    <br />\n    54 agents. 73 skills. 12 hooks. 11 rules. One coordinated AI team.\n  </p>\n</p>\n\n<p align=\"center\">\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-blue.svg\" alt=\"MIT License\"></a>\n  <a href=\".claude/agents\"><img src=\"https://img.shields.io/badge/agents-54-blueviolet\" alt=\"54 Agents\"></a>\n  <a href=\".claude/skills\"><img src=\"https://img.shields.io/badge/skills-73-green\" alt=\"73 Skills\"></a>\n  <a href=\".claude/hooks\"><img src=\"https://img.shields.io/badge/hooks-12-orange\" alt=\"12 Hooks\"></a>\n  <a href=\".claude/rules\"><img src=\"https://img.shields.io/badge/rules-11-red\" alt=\"11 Rules\"></a>\n  <a href=\"https://docs.anthropic.com/en/docs/claude-code\"><img src=\"https://img.shields.io/badge/built%20for-Claude%20Code-f5f5f5?logo=anthropic\" alt=\"Built for Claude Code\"></a>\n</p>\n\n---\n\n## Why This Exists\n\nShipping a mobile app from a single AI chat is a bad idea — and most people who try it find out the hard way. The chat will happily write a `LoginScreen.tsx` that hardcodes the API key, ships strings the localization team can't see, and leans on an `AsyncStorage` call that will fail App Store Review for storing a password. There is no PRD, no architecture review, no accessibility pass, no privacy nutrition label, no release manager. The result is fast on Monday and rejected on Friday.\n\nThis template fixes the structural gap. Instead of one general-purpose assistant, your session has **54 mobile-specific subagents** organised the way a real studio is — a product director who owns vision, a mobile architect who owns the technical spine, leads who own departments, and specialists who handle Swift concurrency, Compose recomposition, push permissions, ATT prompts, Play Data Safety forms, MASVS compliance, and the hundred other things that separate a working prototype from a sh",
     "topics": []
   },
   {
@@ -5592,8 +5608,7 @@
       "agent-framework"
     ],
     "target_tools": [
-      "claude-code",
-      "zed"
+      "claude-code"
     ],
     "summary": "This collection of AI sub-agents for Claude Code leverages a powerful agent-assembler to dynamically generate a personalized and project-specific AI development team based on your unique tech stack.",
     "i18n": {
@@ -5642,7 +5657,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Code SubAgents\n\n> **\"Pokemon for Developers\"** - Your AI agents level up, form teams, and tackle any coding challenge\n\n**Quick Start**: `cd ~/.claude && git clone https://github.com/mylee04/claude-code-subagents.git agents` (10 seconds)\n\n[![Claude Code](https://img.shields.io/badge/Claude%20Code-SubAgents-red)](https://github.com/anthropics/claude-code)\n[![Agents](https://img.shields.io/badge/agents-31-orange)](agents/)\n[![XP System](https://img.shields.io/badge/XP%20System-Active-green)](GAMIFICATION-DESIGN.md)\n\n## What Is This?\n\nA **gamified collection of 31 specialized AI agents** that work together like a development team. Each agent levels up as you use them, unlocks achievements, and forms powerful combinations for complex tasks.\n\n**Core Value**: Instead of one generic AI assistant, you get a specialized team where each agent is an expert in their domain (Python, DevOps, Security, etc.).\n\n## Key Features\n\n- **31 Specialist Agents** - From Python experts to security auditors\n- **Gamification System** - Agents gain XP, level up (Novice → Legend), earn achievements\n- **Smart Agent Registry** - Automatically discovers and coordinates all available agents\n- **Team Formations** - Agents work together with synergy bonuses\n- **Real Progress Tracking** - Watch your AI team collaborate in real-time\n\n## Interactive Demo\n\nTry it now - see the XP system, achievements, and agent collaboration in action:\n\n```bash\ncd ~/.claude/agents && python3 gamification/scripts/agents-demo.py\n```\n\nWatch agents level up, earn achievements like \"Speed Demon\" and \"Bug Hunter\", and see real-time mission progress.\n\n## Basic Usage\n\n```bash\n# Use specific agents\n/python-pro optimize this function\n/devops-troubleshooter analyze these logs\n/security-auditor review authentication flow\n\n# Complex multi-agent tasks\n# Use Claude Code's built-in orchestration for complex workflows\n```\n\n## 🔍 Agent Discovery & Coordination System\n\nThe SubAgents system now features an advanced **AgentRegistry** t",
     "topics": [
       "agents",
       "ai",
@@ -5668,8 +5683,7 @@
       "rules"
     ],
     "target_tools": [
-      "claude-code",
-      "zed"
+      "claude-code"
     ],
     "summary": "A meticulously crafted collection of 75+ specialized Claude Code sub-agents designed for accuracy, efficiency, and comprehensive software development support.",
     "i18n": {
@@ -5716,7 +5730,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Code Subagents Collection\n*Enterprise-Grade AI Specialists for Professional Software Development*\n\nThe world's most comprehensive collection of **75 curated enterprise-grade** Claude Code subagents, designed with mathematical precision, security excellence, and professional integration patterns.\n\n## 🌟 **TOP 75 CURATED COLLECTION**\n\n**Quality-First Approach**: Each agent meets rigorous enterprise standards with:\n- **Mathematical Rigor**: Quantitative analysis, formal verification, statistical modeling\n- **Security Excellence**: NIST/OWASP compliance, zero-trust architecture, audit capabilities  \n- **Professional Integration**: Multi-agent workflows, enterprise tool compatibility, compliance automation\n- **Framework Mastery**: Version-specific expertise, performance optimization, industry best practices\n\n## 🎯 **ENTERPRISE EXCELLENCE**\n\n### 🏆 **Quality Tiers**\n- **🌟 Tier 1 Enterprise-Grade**: 15 agents (9.0+/10) - Mathematical precision, compliance automation\n- **⭐ Tier 2 Professional-Grade**: 30 agents (7.0-8.9/10) - Framework expertise, business integration  \n- **📋 Tier 3 Development-Grade**: 30 agents (5.0-6.9/10) - Solid foundation, clear specialization\n\n### 📊 **Collection Metrics**\n```\nEnterprise-Ready:    20% (15/75 agents)\nAverage Quality:     7.2/10 (Professional Standard)\nSecurity Coverage:   95% with audit capabilities  \nIntegration Score:   85% multi-agent workflow success\nBusiness Impact:     35% faster development velocity\n```\n\n## 📁 **COLLECTION ARCHITECTURE**\n\n### 🏗️ **Strategic Organization**\n```\nsubagents/\n├── 🌟 TIER 1: ENTERPRISE-GRADE (15 agents)\n│   ├── development-programming/     # 8 agents - DDD, distributed systems, formal verification\n│   ├── security-compliance/         # 4 agents - NIST, CVSS 4.0, zero-trust, compliance\n│   └── testing-qa/                  # 3 agents - E2E automation, performance, security testing\n│\n├── ⭐ TIER 2: PROFESSIONAL-GRADE (30 agents)  \n│   ├── development-programming/     # 18 agents - Framework specialists,",
     "topics": [
       "claude",
       "claude-code",
@@ -5735,8 +5749,7 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code",
-      "zed"
+      "claude-code"
     ],
     "summary": "This repository contains my personal collection of Claude Code subagents, skills and other tools - specialized AI assitants designed for specific software engineering tasks.",
     "i18n": {
@@ -5783,7 +5796,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# MyClaude\n\nThis repository contains my personal collection of Claude Code subagents, commands, skills and dools - specialized AI assitants designed for specific software engineering tasks.\n\n# Claude Code Custom Agents\n\nA collection of custom agents for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) that enhance AI-assisted software development workflows.\n\n## Overview\n\nThis repository contains 6 specialized agents designed to work with Claude Code CLI:\n\n| Agent | Purpose | Model |\n|-------|---------|-------|\n| **Pedro** | Principal software engineering tasks | Opus |\n| **Milo** | Jira project management | Opus |\n| **Natalia** | Automated testing specialist | Opus |\n| **Raúl** | Software architecture and design | Opus |\n| **Yago** | Pull request descriptions | Opus |\n| **Yuta** | Swift WebAssembly expert | Opus |\n\n## Installation\n\n1. Clone this repository:\n   ```bash\n   git clone https://github.com/pedrovgs/MyClaude.git\n   ```\n\n2. Copy the agent files to your Claude configuration directory:\n   ```bash\n   mkdir -p ~/.claude/agents\n   cp agents/*.md ~/.claude/agents/\n   ```\n\n3. Restart Claude Code to load the new agents.\n\n## Agents\n\n### Pedro - Principal Software Engineer\n\nA senior-level engineering agent that prioritizes code quality, architecture, and testing.\n\n**When to use:**\n- Architectural decisions\n- Feature implementation with proper testing\n- Code refactoring to reduce duplication\n- Code reviews\n- Performance optimization\n\n**Key principles:**\n- Readability first with expressive naming\n- Small, focused functions with single responsibilities\n- Public APIs as orchestrators of private implementations\n- Behavioral testing over implementation testing\n- Low coupling, high cohesion architecture\n\n**Example:**\n```\nUser: Implement a caching layer for the API responses\nClaude: [Invokes Pedro agent for architectural design and implementation]\n```\n\n### Milo - Jira Expert\n\nA meticulous Jira management agent that enforces organizational standards for issue crea",
     "topics": []
   },
   {
@@ -5843,7 +5856,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# 🎯 YouTube Social Proof Widget - Learn the Pattern\n\n**🎥 Watch the Tutorial** ► [How to Build an MVP with Claude Code Subagents (The Right Way)](https://www.youtube.com/watch?v=3564u77Vyqk)\n\n**🧰 Get the Builder Pack** ► [Click Here](https://rebrand.ly/e75fcd)\n\nLearn how to build production-ready MVPs in under 1 hour using the revolutionary 5-phase Claude Code subagent pattern. This repository contains the PRD template that demonstrates the pattern in action.\n\n## 📖 What You'll Learn\n\nThis tutorial teaches you:\n\n- ✅ **The 5-Phase Pattern** - A proven framework for AI-driven development\n- ✅ **Parallel Agent Execution** - How to run multiple agents simultaneously\n- ✅ **Proper PRD Structure** - Writing requirements that lead to working code\n- ✅ **Common Pitfalls** - What NOT to do with AI agents\n- ✅ **Real Results** - See an actual MVP built in <1 hour\n\n---\n\n## 🎬 The YouTube Social Proof Widget Project\n\nThis tutorial builds a real application that:\n\n- Transforms YouTube videos into embeddable social proof widgets\n- Analyzes comments with AI for sentiment scoring\n- Creates beautiful widgets showcasing engagement metrics\n- Generates embed codes for any website\n\n### The Result\n\nA complete Next.js 15 application with:\n\n- YouTube Data API v3 integration\n- OpenAI GPT-3.5 sentiment analysis\n- Multi-layer caching strategy\n- Production-ready embed widgets\n\n---\n\n## 📚 What's in This Repository\n\n### Free Public Resources\n\n- **`docs/PRD.md`** - The complete PRD template used in the tutorial\n- **`prompts/create-prd.txt`** - Original prompt for PRD generation\n- **`.claude/agents/research-planning/`** - Two specialized planning experts:\n  - `youtube-api-expert.md` - YouTube API integration specialist\n  - `chatgpt-expert.md` - OpenAI integration and prompt engineering expert\n\nThese files show you exactly how to structure requirements for AI-driven development and include expert agents for API integration planning.\n\n---\n\n## 🚀 Want More Resources?\n\n### 🎁 AI Insiders Club (FREE)\n\nJoin the A",
     "topics": []
   },
   {
@@ -5905,7 +5918,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Nested Subagent\n\n![Nested Subagent banner](assets/banner.jpg)\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![Claude Code](https://img.shields.io/badge/Claude%20Code-v1.0.33+-blue.svg)](https://docs.anthropic.com/en/docs/claude-code)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/gruckion/nested-subagent/pulls)\n\nEnable **unlimited nested subagents** in Claude Code. Subagents can spawn their own subagents.\n\n---\n\n## Quick Start\n\n### Option 1: Install from Marketplace (Recommended)\n\n1. Run `/plugin` in Claude Code\n2. Go to **Marketplaces** tab\n3. Select **+ Add Marketplace**\n4. Enter `gruckion/nested-subagent`\n5. Go to **Discover** tab and install the plugin\n\n### Option 2: Install Locally\n\n```bash\ngit clone https://github.com/gruckion/nested-subagent.git\ncd nested-subagent/mcp-server && npm install\nclaude /plugin install ./nested-subagent\n```\n\n### Option 3: Per-Session (CLI)\n\n```bash\nclaude --plugin-dir /path/to/nested-subagent\n```\n\n## What's Included\n\n| Component | Name | Description |\n|-----------|------|-------------|\n| MCP Tool | `Task` | Spawns isolated Claude processes with full tool access |\n\n## Example\n\n![Example terminal session showing 3 levels of nesting](assets/example.png)\n\n## Usage\n\nClaude automatically uses the nested subagent tool when your task requires multi-level delegation:\n\n```\nBuild a math utility that needs its own subagents for verify, plan, and code steps.\n```\n\n```\nProcess these issues where each issue handler spawns specialized workers.\n```\n\n```\nRun a workflow that delegates to sub-sub-agents for parallel execution.\n```\n\n## Why Use This?\n\nClaude Code's native Task tool **blocks subagents from spawning other subagents**:\n\n```typescript\n// src/tools/AgentTool/prompt.ts - the recursion blocker\n.filter(_ => _.name !== AgentTool.name)\n```\n\nThis plugin works around that limitation using the official `claude -p` headless mode. Each spawned",
     "topics": []
   },
   {
@@ -5965,7 +5978,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# interview-agents\n\nFive AI agents that run your technical interview prep: three mock interviewers and two coaches. They run realistic, staff-bar sessions and give you brutally honest feedback. They run as [Claude Code](https://www.claude.com/product/claude-code) subagents, on your machine, for free.\n\nI built these to prepare for my own interviews. They replaced a paid interview-prep subscription for me, so I am sharing them. They work for any individual contributor at any level: you tell them your background once, and they calibrate to the bar you are targeting.\n\n## See it in action\n\nA slice of a coding round. The agent stays in character while it interviews you:\n\n> **Interviewer:** You reached for a hash map. Before you write it, give me the worst case.\n> **You:** Lookups are O(1), so O(n) overall.\n> **Interviewer:** Average case. I asked for worst case. What happens to a hash map under adversarial keys?\n> **You:** ...collisions degrade it to O(n) per lookup. So O(n²).\n> **Interviewer:** Right. Keep going.\n\nThen time runs out and it drops the persona for the verdict:\n\n> **Verdict: leaning hire, not strong.** You found the optimal approach, but I had to pull the complexity analysis out of you twice (04:10, 11:35). At a senior bar you state worst case unprompted.\n>\n> **Top 3 to fix:** lead with complexity before coding; name the invariant before the loop; stop narrating the happy path only.\n>\n> **Drill:** three two-pointer mediums, invariants out loud before the first line.\n\n## What's in here\n\nThe five agents form a loop: **coach your knowledge, build the skill, then mock-test it under fire.**\n\n| agent | what it does |\n|---|---|\n| `coding-interviewer.md` | Runs a 45-minute live coding interview (LeetCode-style, medium to hard), drives it like a real hiring engineer, then scores you against your target bar. |\n| `system-design-interviewer.md` | Runs a 60-minute system design interview across distributed, mobile-platform, and AI-product prompts, against the canonical 7",
     "topics": [
       "ai-agents",
       "claude-code",
@@ -6035,7 +6048,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Reasonix Fleet\n\nKeep Claude Code as your main agent, but run subagent-style work — Workflow/UltraCode\nfan-out lanes, agent teams, batch tasks — on **DeepSeek v4-flash via the Reasonix CLI**\ninstead of burning Claude tokens. Default mode is safe: it does not change Claude\nCode's selected main model or set a process-wide LLM gateway.\n\nThe fleet is a small launcher + a local Anthropic-compatible gateway + Claude Code hooks\nthat route each `agent()` lane to `claude-reasonix-flash`, a model alias backed by an\n**in-process DeepSeek engine** — the owner's fork (built using ideas from reasonix),\nbundled with the fleet and called as a Node library, no separate CLI to install.\n\n## The engine\n\nThe DeepSeek engine is a self-contained fork (`deepseek-reasonix-engine`), shipped as a\nprebuilt bundle under `vendor/reasonix-engine/` and committed in this repo — it *is* the\nshipped engine. Each lane runs through a one-shot Node shim (`engine/run-lane.mjs`) that\nimports the bundle and drives ONE DeepSeek turn, printing the lane's `{text, usage, cost}`\nback to the gateway. There is **no upstream reasonix install** and **no in-place patch** —\nthe fork carries the ephemeral-session / cache behavior natively (see \"Cache & ephemeral\nsessions\" below).\n\n## Requirements\n\nThe installer checks these and tells you what's missing; it never installs them for you:\n\n- **Python 3.8+** (`python3`)\n- **Claude Code CLI** (`claude`) — https://claude.com/claude-code\n- **node** 18+ — the engine runs in-process via a Node shim\n- **A DeepSeek credential** — either `DEEPSEEK_API_KEY` in your env, or a\n  `~/.reasonix/config.json` (the engine falls back to it automatically)\n\n## Install\n\n```bash\ngit clone https://github.com/Tatlatat/ultimate-deepseek-ultracode.git\ncd ultimate-deepseek-ultracode\n./install.sh\n```\n\n`install.sh` is idempotent — re-run it any time. It:\n\n1. checks the requirements above,\n2. **prompts for your DeepSeek API key** if you don't have one yet (get one at\n   <https://platform.deepse",
     "topics": []
   },
   {
@@ -6048,8 +6061,7 @@
       "cli-tool"
     ],
     "target_tools": [
-      "claude-code",
-      "zed"
+      "claude-code"
     ],
     "summary": "ersinkoc/claude-code-subagents",
     "i18n": {
@@ -6098,7 +6110,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Code Subagents\n\n🤖 67 specialized AI agents for Claude Code development workflows.\n\n[![npm version](https://badge.fury.io/js/claude-code-subagents.svg)](https://badge.fury.io/js/claude-code-subagents)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![GitHub issues](https://img.shields.io/github/issues/ersinkoc/claude-code-subagents)](https://github.com/ersinkoc/claude-code-subagents/issues)\n[![GitHub stars](https://img.shields.io/github/stars/ersinkoc/claude-code-subagents)](https://github.com/ersinkoc/claude-code-subagents/stargazers)\n\n## What are Subagents?\n\nSpecialized AI assistants with focused expertise and isolated context windows:\n- **Focused expertise** in specific domains\n- **Context preservation** for longer sessions  \n- **Automatic invocation** based on task context\n- **Project/user level** installation options\n\n## Installation\n\n```bash\nnpm install -g claude-code-subagents\nclaude-subagents install --all\n```\n\n## Categories\n\n- **Frontend** (6): UI components, accessibility, design\n- **Backend** (6): APIs, databases, server architecture  \n- **Security** (4): Vulnerability scanning, compliance\n- **Testing** (5): Test automation, quality assurance\n- **DevOps** (5): CI/CD, monitoring, deployment\n- **Performance** (6): Optimization, profiling, caching\n- **Documentation** (4): Technical writing, API docs\n- **Architecture** (3): System design, microservices\n- **Data Analytics** (2): Validation, mock data\n- **Utilities** (20): Code tools, formatters, refactoring\n- **Creative** (6): Branding, UX research, visual design\n\n## Quick Start\n\n```bash\n# Install all agents\nclaude-subagents install --all\n\n# Install by category  \nclaude-subagents install --category security\n\n# Install specific agents\nclaude-subagents install --list code-reviewer security-auditor\n\n# List available agents\nclaude-subagents list\n```\n\n## Usage\n\nAgents are automatically invoked by Claude Code based on context:\n```\n\"Review this auth",
     "topics": []
   },
   {
@@ -6176,7 +6188,9 @@
     ],
     "target_tools": [
       "claude-code",
-      "codex-cli"
+      "codex-cli",
+      "hermes-agent",
+      "openclaw"
     ],
     "summary": "Produce 100x-leverage AI-agent goal prompts via evidence-first synthesis, gap inventory, and density compression. 13-section template + 44-point rubric + Claude Code skill + Codex CLI command.",
     "i18n": {
@@ -6225,7 +6239,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Perfect Goal\n\n> A framework + slash command + skill for producing AI-agent prompts that extract 100× the leverage of a typical \"goal\" prompt.\n\nMost goal prompts fail the moment a coding agent picks them up. They name an outcome (\"ship the payments rewrite\"), gesture at constraints (\"don't break prod\"), and assume the agent will derive the rest. The agent then spends its first thousand tokens re-discovering what the author already knew — current state, named entities, prior decisions, traps, success thresholds. By the time it starts actual work, it's burned half its context budget and made discretionary calls the author should have made.\n\n**Perfect Goal flips that.** It encodes a three-phase workflow (evidence-first synthesis → honest gap inventory → density-maximizing compression) and a 13-section output shape where every slot is load-bearing. An agent receiving a Perfect Goal prompt has zero discretionary decisions left to make. It executes.\n\nThis repo ships:\n\n**Framework core**\n\n- The **template** (`TEMPLATE.md`) — the 13-section, ~40-subsection output shape.\n- The **methodology** (`METHODOLOGY.md`) — the three-phase workflow that produces it.\n- The **rubric** (`RUBRIC.md`) — 44-point quality bar every prompt must clear.\n- The **goal-type taxonomy** (`GOAL-TYPES.md`) — required-section matrix per goal type (bug / feature / migration / infra / research / refactor / unification).\n- **Worked examples** under `examples/`.\n\n**Claude Code + Codex CLI integrations**\n\n- `skills/perfect-goal/SKILL.md` — the meta-skill (auto-invokes the framework on goal-shaped prompts).\n- `skills/hermes/SKILL.md` — working knowledge of the Hermes agent platform (auto-invokes when editing hermes code or planning hermes rollouts).\n- `skills/openclaw/SKILL.md` — working knowledge of the OpenClaw runtime (auto-invokes for openclaw plugin authoring or Mac boot-headless work).\n- `commands/claude/perfect-goal.md` — explicit `/perfect-goal` slash command for Claude Code.\n- `commands/codex/perfec",
     "topics": []
   }
 ]

@@ -45,12 +45,9 @@ def select_projects(projects, priority='track', force=False):
             # checkpoint: flag true → skip (resume)
             if p.get('has_readme_full') is True:
                 continue
-            # already attempted (404/empty/error) → skip unless --force
-            if p.get('has_readme_full') is False and p.get('readme_checked') is True:
-                # only skip if we already tried in this collect pass
-                # (readme_checked alone is historical enrich; require explicit collect marker)
-                if p.get('readme_full_checked') is True:
-                    continue
+            # already attempted in collect_readmes (404/empty/error/timeout)
+            if p.get('readme_full_checked') is True:
+                continue
             # file already on disk → skip re-fetch
             if readme_path and readme_path.exists() and readme_path.stat().st_size > 0:
                 continue

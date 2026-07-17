@@ -126,7 +126,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Codex CLI Hooks\n[![Hooks](https://img.shields.io/badge/supports-8%20hooks-white?style=flat&labelColor=555)](.codex/hooks/HOOKS-README.md) [![Version](https://img.shields.io/badge/updated%20with%20Codex%20CLI-v0.130.0%20(May%2016%2C%202026%204%3A45%20AM%20PKT)-white?style=flat&labelColor=555)](https://github.com/openai/codex/releases) [![Stars](https://img.shields.io/github/stars/shanraisshan/codex-cli-hooks?style=flat&label=%E2%98%85&labelColor=555&color=white)](https://github.com/shanraisshan/codex-cli-hooks/stargazers)\n\n<p align=\"center\">\n  <img src=\"!/codex-speaking.svg\" alt=\"Codex CLI mascot speaking\" width=\"176\" height=\"158\">\n</p>\n\n<p align=\"center\">\n  <img src=\"!/repo-description.svg\" alt=\"Human sounds on session start, stop, and agent turn complete, context injection\" height=\"56\">\n</p>\n\n<p align=\"center\">\n  <img src=\"!/hooks-tags.svg\" alt=\"Supported hooks: SessionStart, UserPromptSubmit, PreToolUse, PermissionRequest, PostToolUse, Stop, PreCompact, PostCompact\" height=\"32\">\n</p>\n\n## Installation\n\n<p>\n  <a href=\"install/README-mac.md\"><img src=\"!/pill-mac.svg\" alt=\"Mac\" height=\"36\"></a>&nbsp;\n  <a href=\"install/README-linux.md\"><img src=\"!/pill-linux.svg\" alt=\"Linux\" height=\"36\"></a>&nbsp;\n  <a href=\"install/README-windows.md\"><img src=\"!/pill-windows.svg\" alt=\"Windows\" height=\"36\"></a>\n</p>\n\n![How to Use](!/how-to-use.svg)\n\n**Step 1.** Start Codex CLI:\n```bash\ncodex\n```\n\n**Step 2.** First run only — trust each hook. run `/hooks`\n\n<p>\n  <img src=\"!/codex-cli/hook-1.png\" alt=\"Codex CLI showing hooks need review\" width=\"50%\" />\n</p>\n\n<p>\n  <img src=\"!/codex-cli/hook-2.png\" alt=\"Codex CLI /hooks trust prompt\" width=\"50%\" />\n</p>\n\n**Step 3.** Send a prompt (e.g., `Hi`) — you'll hear a sound on session start, tool use, prompt submit, and session stop.\n\n## Changelog\nnew hook addition changelogs only\n\n| Date | Hooks | Changes | Codex CLI Version | Demo |\n|------|:-----:|---------|:-----------------:|:----:|\n| May 7, 2026 | 8 | Added `PreCompact` and `PostCompact` |",
     "topics": [
       "agentic-ai",
       "agentic-coding",
@@ -208,7 +208,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# codex-516-hook — warn the user when gpt-5.5 truncates in Codex\n\ngpt-5.5 serving Codex sometimes stops its hidden reasoning at **exactly 516\noutput tokens** and answers anyway, in its normal confident register\n([openai/codex#30364](https://github.com/openai/codex/issues/30364),\n[HN discussion](https://news.ycombinator.com/item?id=48789428)) — under both\nChatGPT-subscription and API-key auth. In our measurements, truncated turns\nwere wrong on many nontrivial reasoning tasks, while every untruncated run\nof the same prompts was correct.\n\nThis Stop hook reads the per-turn `reasoning_output_tokens` that Codex already\nwrites to the local session transcript. When a turn hits exactly 516, a\n`[c516]` warning renders in the Codex TUI so **you** know the answer above it is\nsuspect before acting on it. The warning is user-facing only: the hook does not\ninject anything into the model's context or tell the next agent turn what to\ndo.\n\nIf you want the truncation automatically *repaired* rather than flagged, see\n[CodexCont](https://github.com/neteroster/CodexCont) and\n[codexcomp](https://github.com/dzshzx/codexcomp): they run a local proxy\nthat catches the truncation in-flight and auto-continues the reasoning.\nThis hook is the lighter-touch complement — it leaves Codex's connection to\nthe API untouched and simply flags truncations to you after the fact.\n\n## Install\n\nRequirements: Python 3.8+ on PATH (stdlib only). We've tested on codex-cli\n0.142.3 on Windows only.\n\n1. Clone this repo anywhere; on macOS/Linux `chmod +x c516-hook.sh`. The\n   shims locate `hook.py` relative to themselves, so keep the files together.\n2. Add to `~/.codex/config.toml`, using the **absolute path** of your clone.\n   `command` is what macOS/Linux runs; `command_windows` overrides it on\n   Windows — set whichever applies (or both):\n\n```toml\n[[hooks.Stop]]\n[[hooks.Stop.hooks]]\ntype = \"command\"\ncommand = '/path/to/clone/c516-hook.sh stop'\ncommand_windows = 'C:\\path\\to\\clone\\c516-hook.cmd stop'\n```\n\n3. Start C",
     "topics": []
   },
   {
@@ -270,7 +270,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# codex-hooks\n\n**A composable catalog, scaffolder, and debugger for Codex CLI hooks.**\n\nCodex 0.122+ ships a hooks system — `SessionStart` / `UserPromptSubmit` / `PreToolUse` / `PostToolUse` / `Stop` — that runs your scripts at well-defined moments in a session. The mechanism is powerful but raw: there is no marketplace, no scaffolding, no replay, and no obvious way to share what you build.\n\n`codex-hooks` is the missing layer.\n\n```bash\nnpm install -g codex-hooks\ncodex-hooks catalog                  # browse\ncodex-hooks install notify-macos     # one wrapped entry into ~/.codex/hooks.json\ncodex-hooks dry-run notify-macos     # replay a fixture through it\ncodex-hooks logs --tail              # see every invocation\ncodex-hooks doctor                   # validate everything\n```\n\n> **Status:** pre-1.0, in active development. Requires Codex CLI ≥ 0.122 with the `codex_hooks` feature enabled (default-on).\n\n---\n\n## Why this exists\n\nThe Codex hook surface today is where the Claude Code hook surface was 18 months ago: real, useful, and undocumented for end users. When nobody owns the ecosystem, two failure modes are predictable:\n\n- **Reinvention.** Every team writes its own `notify-on-stop`, `block-rm-rf`, `auto-commit`. The 30-LOC scripts are easy; the surrounding rigging — matcher syntax, JSON shape, install/uninstall idempotency, debugging a script that runs invisibly inside the editor — is the actual cost.\n- **Lock-in.** Frameworks that own the entire `hooks.json` make hooks portable to themselves and brittle elsewhere. If your dispatcher dies, every hook it composed dies with it.\n\n`codex-hooks` is the opposite. Hooks are independent files. The CLI is one of several possible curators. Ownership is per-entry and explicit. `codex-hooks uninstall` is a clean inverse of `install`. You can run codex-hooks alongside `oh-my-codex`, hand-written entries, or your team's own dispatcher — none of them see codex-hooks; codex-hooks doesn't see any of them.\n\n---\n\n## Bundled catalog\n\nFi",
     "topics": []
   },
   {
@@ -332,7 +332,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# codex-toolkit\n\n> **Stop AI scope creep in Codex CLI.**\n> A toolkit of practical hooks that keep your AI edits scoped, budgeted, and safe.\n>\n> A hook-based safety layer for Codex CLI that blocks scope creep,\n> unsafe commands, sensitive-file writes, and oversized edits before they\n> turn into review noise.\n\n[![CI](https://github.com/fox328230966-alt/codex-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/fox328230966-alt/codex-toolkit/actions)\n[![npm version](https://img.shields.io/npm/v/codex-toolkit.svg)](https://www.npmjs.com/package/codex-toolkit)\n[![npm downloads](https://img.shields.io/npm/dw/codex-toolkit.svg)](https://www.npmjs.com/package/codex-toolkit)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)\n[![Node](https://img.shields.io/badge/node-%E2%89%A518-blue.svg)](package.json)\n\n---\n\n## The problem\n\nYou ask Codex CLI to fix a bug in `auth.ts`. It comes back having\nreformatted 14 unrelated files, rewritten your `README`, and bumped a\ndependency. The result is technically fine — but it is **not what you\nasked for**, and now you have 200 lines of unreviewed churn in your diff.\n\nThis is **scope creep**, and it is the unsolved ergonomic problem of\nAI coding tools in 2026.\n\n## The fix\n\n`codex-toolkit` is a small set of **hooks** (lifecycle scripts) you\ninstall into Codex CLI. Each hook has one job:\n\n| Hook | Job |\n| --- | --- |\n| `scope-guard` | Block file edits outside the scope you declared for this task. |\n| `diff-budget` | Refuse edits once a per-task file/line budget is exceeded. |\n| `tool-pace-check` | Slow the agent down when it tries to chain many tool calls in a row. |\n| `shield-destructive-cmd` | Refuse `rm -rf`, `git push --force`, `drop table`, etc. |\n| `shield-env-guard` | Refuse writes to `.env`, `id_rsa`, `*.key`, and similar. |\n| `auto-lint` | Run the right linter after a Go / Python / TS file is touched. |\n\n> The v0.4.0 release ships the full six-hook suite:\n> **`scope-guard`**, **`diff-budget`**, *",
     "topics": [
       "agent-safety",
       "ai-agents",
@@ -465,7 +465,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Codex Fusion\n\n**Automatic peer review for Claude Code, powered by your local Codex CLI.**\n\nCodex Fusion makes [Claude Code](https://claude.com/claude-code) automatically consult\n[OpenAI Codex CLI](https://github.com/openai/codex) as an independent second opinion on nearly\nevery non-empty prompt — *without* a slash command, and *without* you typing anything.\nIt uses Claude Code **hooks**:\n\n- **Before** Claude plans or edits, a `UserPromptSubmit` hook runs Codex **read-only** over your\n  repo and injects Codex's independent analysis into Claude's context. For broader or riskier\n  prompts, it can automatically fan out to bounded `planner`, `skeptic`, and `verifier` Codex\n  sub-agents before synthesizing their reports for Claude.\n- **After** Claude finishes with changes since the prompt-start baseline, a `Stop` hook runs Codex\n  **read-only** over the incremental tracked/untracked review surface. Larger or high-risk diffs can\n  fan out to `correctness`, `security-data-loss-concurrency`, and `tests-regression` reviewers. If\n  any reviewer flags serious problems, Claude is asked to address them before finalizing.\n\nClaude stays the editor and the final judge. Codex only advises and reviews — it is always\n**read-only** and never edits your files.\n\n> **No credential games.** Codex Fusion shells out to the official `codex exec` CLI that you are\n> already logged into. It does **not** use browser cookies, ChatGPT scraping, private APIs, token\n> extraction, or inspection of `~/.codex/auth.json`.\n\n---\n\n## How it works\n\n```\n                    ┌─────────────────────────── you type a prompt\n                    ▼\n   UserPromptSubmit hook ── pure ack / [no-codex] / nested? ──yes──▶ (silent)\n        │ no\n        ▼\n   1 or more codex exec --sandbox read-only peers\n        │\n        ▼\n   synthesized analysis injected as additionalContext + visible systemMessage\n        │\n        ▼\n   Claude synthesizes Claude + Codex, then edits\n        │\n        ▼\n   Stop hook ── changes since prompt",
     "topics": [
       "ai-pair-programming",
       "claude-code",
@@ -533,7 +533,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# RTK Guard for Codex CLI\n\n利用 Codex CLI 的 `UserPromptSubmit` + `PreToolUse` hooks，实现比 AGENTS.md 更积极的 RTK 命令替换。\n\n## 方案亮点\n\n| 特性 | AGENTS.md 方式 | 本 Hook 方案 |\n|------|---------------|-------------|\n| 主动性 | 被动，依赖模型遵守 | 主动，每轮检测注入 |\n| 精准度 | 全轮次生效，可能干扰 | 条件触发，只在对开发命令感兴趣时提醒 |\n| 兜底能力 | 无 | `PreToolUse` 硬拦截 |\n| 状态感知 | 无 | 会话级频率控制，配合后减少打扰 |\n| 中英文 | 单一语言 | 中英文意图同时识别 |\n\n## 工作原理\n\n```\n用户输入 -> UserPromptSubmit Hook -> 意图检测\n                                    |\n                                    v\n                              [检测到命令意图?]\n                                    |\n                        是 -> 注入简短 systemMessage\n                                    |\n                        否 -> 静默通过\n                                    |\n                                    v\n                              模型处理 prompt\n                                    |\n                                    v\n                              调用 Bash 工具\n                                    |\n                                    v\n                         PreToolUse Hook -> 命令检查\n                                    |\n                              [是裸命令?]\n                                    |\n                        是 -> 拦截，要求改用 rtk\n                                    |\n                        否 -> 放行\n```\n\n## 安装\n\n### 方式一：一键脚本（推荐）\n\n```bash\ncd /tmp/rtk-codex-hooks\nbash install.sh\n```\n\n### 方式二：手动安装\n\n```bash\n# 1. 复制核心脚本\ncp rtk_guard.py ~/.codex/rtk_guard.py\nchmod +x ~/.codex/rtk_guard.py\n\n# 2. 安装 hooks 配置\ncp hooks.json ~/.codex/hooks.json\n\n# 3. 启用 hooks 功能\necho '[features]' >> ~/.codex/config.toml\necho 'codex_hooks = true' >> ~/.codex/config.toml\n\n# 4. 可选：增强 AGENTS.md\ncat AGENTS.md >> ~/.codex/AGENTS.md\n```\n\n## 配置说明\n\n### hooks.json\n\n```json\n{\n  \"hooks\": {\n    \"UserPromptSubmit\": [\n      {\n        \"matcher\": \".*\",\n        \"hooks\": [{\n          \"type\": \"command\",\n          \"command\": \"python3 ~/.codex/rtk_guard.py\",\n          \"timeout\": 3,\n          \"statusMessage\": \"RTK Guard: 意图检测\"\n        }]\n      }\n    ],\n    \"PreToolUs",
     "topics": []
   },
   {
@@ -594,7 +594,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Speech MCP\n\nA Goose MCP extension for voice interaction with modern audio visualization.\n\n\nhttps://github.com/user-attachments/assets/f10f29d9-8444-43fb-a919-c80b9e0a12c8\n\n\n\n## Overview\n\nSpeech MCP provides a voice interface for [Goose](https://github.com/block/goose), allowing users to interact through speech rather than text. It includes:\n\n- Real-time audio processing for speech recognition\n- Local speech-to-text using faster-whisper (a faster implementation of OpenAI's Whisper model)\n- High-quality text-to-speech with multiple voice options\n- Modern PyQt-based UI with audio visualization\n- Simple command-line interface for voice interaction\n\n## Features\n\n- **Modern UI**: Sleek PyQt-based interface with audio visualization and dark theme\n- **Voice Input**: Capture and transcribe user speech using faster-whisper\n- **Voice Output**: Convert agent responses to speech with 54+ voice options\n- **Multi-Speaker Narration**: Generate audio files with multiple voices for stories and dialogues\n- **Single-Voice Narration**: Convert any text to speech with your preferred voice\n- **Audio/Video Transcription**: Transcribe speech from various media formats with optional timestamps and speaker detection\n- **Voice Persistence**: Remembers your preferred voice between sessions\n- **Continuous Conversation**: Automatically listen for user input after agent responses\n- **Silence Detection**: Automatically stops recording when the user stops speaking\n- **Robust Error Handling**: Graceful recovery from common failure modes with helpful voice suggestions\n\n## Installation\n> **Important Note**: After installation, the first time you use the speech interface, it may take several minutes to download the Kokoro voice models (approximately 523 KB per voice). During this initial setup period, the system will use a more robotic-sounding fallback voice. Once the Kokoro voices are downloaded, the high-quality voices will be used automatically.\n\n## ⚠️ IMPORTANT PREREQUISITES ⚠️\n\nBefore installing",
     "topics": []
   },
   {
@@ -655,7 +655,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# goose_mcp\n\nAn attempt at MCP servers for [Goose](https://github.com/block/goose)\n\nI tried to follow their [custom-extensions guide](https://block.github.io/goose/docs/tutorials/custom-extensions)\n\nRunning `uv sync` in each directory creates the Python .venv environment for each mcp.\n\nFrom there you can add the `uv run /foo/bar/path/to/mcp_server/.venv/bin/mcp_server_name` command to your `goose configure` and it should show up in your goose.\n\n> The only thing not afraid of Canada Mooses, is Canada Gooses.\n",
     "topics": []
   },
   {
@@ -668,8 +668,7 @@
       "tutorial"
     ],
     "target_tools": [
-      "goose",
-      "zed"
+      "goose"
     ],
     "summary": "This is an evolving toolkit focused on AI agent experiments that combine the capabilities of Codename Goose, MCP tools, the Robot Framework ecosystem, decentralized LLMs on Ollama, and Docker.",
     "i18n": {
@@ -718,7 +717,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Robot-Framework-AI-Agent-Datadriver\n\n![Robot](./notes-images-and-demonstrations/robotframework-ai-agent.png)\n\n## LLMs, AI agents, MCP tools, combined with RPA\n\nThis experimental toolkit is intended to help explore new technologies related to LLMs, AI agents, and [MCP tools](https://www.pulsemcp.com/) combined with battle-tested Robot Framework RPA strategies. My intention is to demonstrate the usefulness of AI agents and LLMs [beyond the \"vibecode\" trend](https://x.com/karpathy/status/1886192184808149383). To get the gist of what I mean, scroll down to the `Toolkit Roadmap` section.\n\nI've taken some inspiration from the Codename Goose approach to using [instruction files](https://block.github.io/goose/docs/guides/running-tasks#using-an-instruction-file) to automate AI agents. Instead of Markdown files, I am using [robotframework-datadriver](https://github.com/Snooz82/robotframework-datadriver) and Robot Framework tags to control different categories of AI agent prompts. [Pabot](https://github.com/mkorpela/pabot) is also being used to control parallel running Codename Goose Docker containers.\n\n![Agent](./notes-images-and-demonstrations/demonstration1.png)\n\nThere are two primary options for using this project. [Both have their strengths and technical challenges.](https://block.github.io/goose/blog/2025/03/31/goose-benchmark/#technical-challenges-with-open-models) I will be writing up more documentation to explain that soon.\n\n- The first option is to use a fully decentralized LLM provider that runs privately and locally on your hardware. The screenshot above shows an example of an automation run using the qwen2.5:14b model on Ollama.\n    - In my case, I only use macOS machines for this work, but it is definitely possible to run all of this on Windows or Linux (scroll down to the `Technical Requirements` section for more information).\n    - This project was designed, created, and tested on an M3 Max MacBook Pro with the following specifications. **You may need to cons",
     "topics": [
       "ai-agents",
       "ollama",
@@ -914,7 +913,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# goose-mcp\n\nMCP server wrapping the [goose](https://goose-docs.ai) CLI — start sessions, run recipes, inspect providers and extensions. Includes a Vite/React webapp dashboard.\n\n## Ports\n\n| Service | Port |\n|---------|------|\n| Backend (Starlette + MCP ASGI) | 10948 |\n| Frontend (Vite/React) | 10949 |\n| MCP HTTP endpoint | `http://localhost:10948/mcp` |\n\n## Quick start\n\n```bat\nstart.bat\n```\n\nSee [INSTALL.md](INSTALL.md) for manual steps and troubleshooting.\n\n## Tools\n\n| Tool | Description |\n|------|-------------|\n| `goose_version` | Check goose binary version |\n| `goose_session_start` | Start a session with a prompt |\n| `goose_session_status` | Poll session output |\n| `goose_session_list` | List recent sessions |\n| `goose_recipe_run` | Run a YAML recipe file |\n| `goose_providers_list` | List configured providers |\n| `goose_extensions_list` | List active extensions |\n| `show_sessions_card` | Prefab UI: session list card |\n| `show_goose_status_card` | Prefab UI: status summary card |\n\n## Claude Desktop config\n\n```json\n{\n  \"mcpServers\": {\n    \"goose-mcp\": {\n      \"command\": \"C:\\\\Users\\\\sandr\\\\.local\\\\bin\\\\uv.exe\",\n      \"args\": [\"run\", \"--project\", \"D:\\\\Dev\\\\repos\\\\goose-mcp\", \"python\", \"-m\", \"goose_mcp.server\"]\n    }\n  }\n}\n```\n\n## Environment\n\nCopy `.env.example` to `.env` and set `GOOSE_BIN` if goose is not on PATH.\n\n## Stack\n\n- FastMCP 3.2 — dual transport (stdio + ASGI `/mcp`)\n- Starlette 1.0, no Pydantic\n- Vite + React + TailwindCSS + Framer Motion + Zustand\n- prefab-ui for Prefab UI cards\n",
     "topics": [
       "agent",
       "fastmcp",
@@ -1161,7 +1160,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# 🪿 Rizel's Goose Recipes\n\nA beautiful web interface for managing and launching Goose AI recipes.\n\n## 🌐 Live Site\n\nVisit the live site at: **https://blackgirlbytes.github.io/rizels-goose-recipes/**\n\n## 📋 Features\n\n- **Recipe Cards**: Beautiful card-based layout for each Goose recipe\n- **Launch Integration**: Direct `goose://` links to launch recipes in Goose Desktop\n- **Format Toggle**: View recipes in both YAML and JSON formats\n- **Responsive Design**: Works on desktop and mobile devices\n- **Expandable Content**: Toggle between compact and detailed views\n\n## 🚀 Current Recipes\n\n### Log Completed PRs\nAutomatically find merged PRs and add them to GitHub project boards under the DONE column. Perfect for tracking completed work that wasn't properly logged.\n\n**Activities:**\n- Fetch merged PRs by date range\n- Cross-reference project board items\n- Create missing tracking issues\n- Generate activity summaries\n- Update project board status\n\n## 🛠️ Adding New Recipes\n\nTo add new recipes to this collection:\n\n1. Create your recipe in Goose Desktop\n2. Export it as YAML/JSON\n3. Add a new recipe card to `index.html`\n4. Update the recipe data and goose:// URL\n5. Commit and push changes\n\n## 🎨 Built With\n\n- HTML5 & CSS3\n- Vanilla JavaScript\n- GitHub Pages\n- Goose AI Recipe format\n\n## 📝 License\n\nThis project is open source and available under the MIT License.\n\n---\n\n*Created with ❤️ for the Goose AI community*\n",
     "topics": []
   },
   {
@@ -1235,6 +1234,7 @@
     ],
     "target_tools": [
       "claude-code",
+      "antigravity-cli",
       "opencode",
       "goose"
     ],
@@ -1283,7 +1283,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Goose Ralph Loop Research Summary\n\n## Project Overview\n\nThis project creates a comprehensive specification for Goose Recipes that enable users to harness existing claude-code, gemini-cli, and opencode installations within the Ralph Loop philosophy, following Geoffrey Huntley's best practices for autonomous AI development.\n\n## Research Findings\n\n### 1. Ralph Loop Philosophy (Geoffrey Huntley)\n- **Core Principle**: Simple bash loop: `while :; do cat PROMPT.md | claude-code ; done`\n- **Key Values**: Simplicity over complexity, small verifiable tasks, strong feedback loops\n- **Success Metrics**: Y Combinator hackathon (6 repos overnight), $50k contract for $297\n- **Anti-Patterns**: Don't blame tools, focus on context engineering, avoid over-orchestration\n\n### 2. Existing Ralph Implementations\n- **frankbria/ralph-claude-code**: 2.9k stars, v0.9.9, intelligent exit detection\n- **vercel-labs/ralph-loop-agent**: 525 stars, AI SDK integration\n- **anthropics/claude-code**: Official Ralph Wiggum plugin\n- **Common Patterns**: Exit detection, rate limiting, session management, progress tracking\n\n### 3. Goose CLI Capabilities\n- **Recipe System**: Reusable workflows with extensions, prompts, and settings\n- **Multi-Provider Support**: Claude Code, Cursor Agent, Google Gemini\n- **Subrecipes**: Orchestrate multiple AI models and complex workflows\n- **Session Management**: Save, resume, export conversation history\n- **Extensions**: Modular capabilities (developer, memory, git, testing, MCP)\n\n### 4. AI Provider Analysis\n\n#### Claude Code CLI\n- **Session Continuity**: `--continue` flag for context preservation\n- **JSON Output**: Structured response parsing\n- **Skill Integration**: SuperClaude and community skills\n- **Rate Limiting**: 5-hour usage limit detection\n- **Exit Detection**: Dual-condition check (completion + EXIT_SIGNAL)\n\n#### Gemini CLI\n- **Model Selection**: Diverse Gemini family access\n- **SuperGemini Skills**: Community enhancements\n- **Web Integration**: Built-in search",
     "topics": []
   },
   {
@@ -1405,7 +1405,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# octto\n\nAn interactive browser UI for AI brainstorming. Stop typing in terminals. Start clicking in browsers.\n\n\n\nhttps://github.com/user-attachments/assets/9ba8868d-16f3-4451-9b73-6b7e1fc54655\n\n\n\nWhen you describe your idea, octto opens an interactive UI:\n\n- Click options instead of typing\n- See all questions at once\n- Answer in any order\n- Watch follow-ups appear instantly\n- Review the final plan visually\n\n**10 minutes of terminal typing → 2 minutes of clicking.**\n\n## Quick Start\n\nAdd to `~/.config/opencode/opencode.json`:\n\n```json\n{ \"plugin\": [\"octto\"] }\n```\n\nSelect the **octto** agent:\n\n```\nI want to add a caching layer to the API\n```\n\nA browser window opens. Click your answers. Done.\n\n## The Interactive UI\n\n### Rich Question Types\n\nNo more typing everything. Pick from 14 visual input types:\n\n| Type | What You See |\n|------|--------------|\n| `pick_one` | Radio buttons |\n| `pick_many` | Checkboxes |\n| `confirm` | Yes/No buttons |\n| `slider` | Draggable range |\n| `rank` | Drag to reorder |\n| `rate` | Star rating |\n| `thumbs` | Thumbs up/down |\n| `show_options` | Cards with pros/cons |\n| `show_diff` | Side-by-side code diff |\n| `ask_code` | Syntax-highlighted editor |\n| `ask_text` | Text input (when needed) |\n| `ask_image` | Image upload |\n| `ask_file` | File upload |\n| `emoji_react` | Emoji picker |\n\n### Live Updates\n\n- Questions appear as you answer previous ones\n- Progress indicator shows remaining questions\n- Completed answers visible for context\n- Final plan rendered as reviewable sections\n\n### Parallel Branches\n\nYour request is split into 2-4 exploration branches. All initial questions appear at once:\n\n```\n         ┌─ Branch 1: [question card]\nRequest ─┼─ Branch 2: [question card]\n         └─ Branch 3: [question card]\n                ↓\n        Answer any, in any order\n```\n\nEach branch goes as deep as needed. Some finish in 2 questions, others take 4.\n\n## How It Works Behind the Scenes\n\n### 3 Agents\n\n| Agent | Job |\n|-------|-----|\n| **bootstrapper** | Splits ",
     "topics": []
   },
   {
@@ -1467,7 +1467,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Farfield\n\nRemote control for AI coding agents — read conversations, send messages, switch models, and monitor agent activity from a clean web UI.\n\nSupports [Codex](https://openai.com/codex) and [OpenCode](https://opencode.ai).\n\nBuilt by [@anshuchimala](https://x.com/anshuchimala).\n\nThis is an independent project and is not affiliated with, endorsed by, or sponsored by OpenAI or the OpenCode team.\n\n[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000000)](https://buymeacoffee.com/achimalap)\n\n<img src=\"./screenshot.png\" alt=\"Farfield screenshot\" width=\"500\" />\n\n## Features\n\n- Thread browser grouped by project\n- Chat view with model/reasoning controls\n- Plan mode toggle\n- Live agent monitoring and interrupts\n- Debug tab with full IPC history\n\n## Quick start (recommended)\n\nStart the Farfield server:\n\n```bash\nnpx -y @farfield/server@latest\n```\n\nor:\n\n```bash\nbunx @farfield/server@latest\n```\n\nThis runs the backend on `127.0.0.1:4311` by default.\n\nYou can pass server flags too to customize the agents (default is only Codex):\n\n```bash\nnpx -y @farfield/server@latest -- --agents=opencode\nnpx -y @farfield/server@latest -- --agents=codex,opencode\nnpx -y @farfield/server@latest -- --agents=all\n```\n\nYou can access the web app at [farfield.app](https://farfield.app). Tap the bottom left status dot to pull up settings.\n\nYou will need to make port 4311 remotely accessible via HTTPS and give the public URL to it to the Farfield frontend. None of this routes through an external server. The app runs inside entirely in your browser and tunnels directly to the Farfield server you started above, and all of it is open-source for you to audit yourself. However, if you are ultra paranoid, you can run and host the Farfield frontend too; read on!\n\nThe securest way to open the port for remote access is by putting all devices involved in a private VPN. Tailscale is a free option that works.\n\nDoing this with Tailscale i",
     "topics": []
   },
   {
@@ -1528,7 +1528,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# opencode-agent-memory\n\n[Letta](https://letta.com)-style editable [memory blocks](https://docs.letta.com/guides/agents/memory-blocks/) for [OpenCode](https://opencode.ai).\n\n## Experimental\n\nThis plugin is experimental. The core idea - giving the agent persistent, self-editable memory blocks - is adapted from [Letta](https://github.com/letta-ai/letta). Specifially, the plugin follows Letta's [shared memory blocks](https://docs.letta.com/tutorials/shared-memory-blocks) pattern - the markdown files on disk are shared state that every OpenCode session can read and write.\n\nThink of it as AGENTS.md with a harness. OpenCode supports [rules](https://opencode.ai/docs/rules/) via `AGENTS.md` and custom instruction files - this plugin is similar in spirit, but adds structure (scoped blocks with metadata and size limits), dedicated tools for memory operations, and prompting that encourages the agent to actively maintain its own memory. The content is similar; the scaffolding around it is what's different.\n\nFor background on the memory concept, see Letta's docs on [memory](https://docs.letta.com/guides/agents/memory/) and [memory blocks](https://docs.letta.com/guides/agents/memory-blocks/).\n\n## Features\n\n- **Persistent memory** - Information survives across sessions and context compaction\n- **Shared across sessions** - Global blocks shared across all projects, project blocks shared across sessions in that codebase\n- **Self-editing** - The agent can read and modify its own memory with dedicated tools\n- **System prompt injection** - Memory blocks appear in the system prompt, always in-context\n- **Journal** - Append-only entries with semantic search for capturing insights, decisions, and discoveries across sessions\n\n## Requirements\n\n- [OpenCode](https://opencode.ai/) v1.0.115 or later\n\n## Installation\n\nAdd to your OpenCode config (`~/.config/opencode/opencode.json`):\n\n```json\n{\n  \"plugin\": [\"opencode-agent-memory\"]\n}\n```\n\nRestart OpenCode and you're ready to go.\n\nOptionally, pin t",
     "topics": []
   },
   {
@@ -1540,8 +1540,7 @@
       "tutorial"
     ],
     "target_tools": [
-      "opencode",
-      "zed"
+      "opencode"
     ],
     "summary": "A simple dashboard to track OpenCode + Oh-My-Opencode agents",
     "i18n": {
@@ -1590,7 +1589,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Oh My OpenCode Dashboard\n\nLocal-only, read-only dashboard for viewing OpenCode & OhMyOpenCode agent progress.\n\n![Dashboard GUI](./gui.png)\n\n## Goals\n\n- Show plan progress from `.sisyphus/boulder.json` + the active plan markdown.\n- Show a best-effort view of background tasks from persisted OpenCode session artifacts.\n- Show main-session activity + recent tool-call activity as lightweight signals.\n- Never render prompts, tool arguments, or raw tool outputs.\n\n## What You Can See\n\n- Main session: agent, current tool/model, session label/id, last update, status.\n- Plan progress: checkbox progress + optional step list (parsed from plan markdown).\n- Main session task row: a single roll-up row for the detected main session.\n- Source dropdown (optional): switch between registered project sources; each source shows its active main session.\n- Background tasks: best-effort inferred from `delegate_task`/`task` tool parts; expandable.\n- Tool calls (metadata only): per-session tool name/status/timestamp, capped for safety.\n- Token usage: totals with an expandable per-model breakdown.\n- Time-series activity: last 5 minutes of tool-call counts (main agents + background total).\n- Sound notifications (optional): dings when progress advances / question appears / waiting for user.\n- Raw JSON (redacted): copy the API payload that the UI is rendering.\n\n## Requirements\n\n- Bun\n\n## Install (npm)\n\n> [!IMPORTANT]\n> If the dashboard looks empty after the OpenCode SQLite update, register your project as a source first.\n>\n> Run this from your project directory:\n>\n> ```bash\n> bunx oh-my-opencode-dashboard@latest add --name \"My Project\"\n> ```\n\nThen start the dashboard:\n\n```bash\nbunx oh-my-opencode-dashboard@latest\n```\n\nRegister additional project sources (enables the source dropdown in the UI):\n\n```bash\nbunx oh-my-opencode-dashboard@latest add --name \"My Project\"\n```\n\nOr register a different project path:\n\n```bash\nbunx oh-my-opencode-dashboard@latest add --name \"My Project\" --project /absolute/pa",
     "topics": []
   },
   {
@@ -1651,7 +1650,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# opencode-agent-skills\n\nA dynamic skills plugin for OpenCode that provides tools for loading and using reusable AI agent skills.\n\n> [!NOTE]\n> OpenCode now includes first-party support for agent skills, including native skill discovery and a built-in `skill` tool. For most users, this plugin is no longer necessary. It remains available in maintenance mode for users who depend on its extra behavior, such as automatic semantic skill matching, synthetic context injection, compaction reinjection, Superpowers bootstrapping, and helper tools for reading skill files or running skill scripts.\n\n## Features\n\n- **Dynamic skill discovery** - Automatically finds skills from project, user, and plugin directories\n- **Context injection** - Loads skill content directly into the conversation context\n- **Compaction resilient** - Skills survive context compaction in long sessions\n- **Claude Code compatible** - Works with existing Claude Code skills and plugins\n- **Optional Superpowers integration** - Drop-in support for the [Superpowers](https://github.com/obra/superpowers) workflow\n\n## Requirements\n\n- [OpenCode](https://opencode.ai/) v1.0.110 or later\n\n## Installation\n\nIf you only need standard skill loading, prefer OpenCode's built-in skills support. Install this plugin only if you need one of its additional behaviors.\n\nAdd to your OpenCode config (`~/.config/opencode/opencode.json`):\n\n```json\n{\n  \"plugin\": [\"opencode-agent-skills\"]\n}\n```\n\nRestart OpenCode and you're ready to go.\n\nOptionally, pin to a specific version for stability:\n\n```json\n{\n  \"plugin\": [\"opencode-agent-skills@0.7.0\"]\n}\n```\n\nOpenCode fetches unpinned plugins from npm on each startup; pinned versions are cached and require a manual version bump to update.\n\n### Local Development\n\nIf you want to customize or contribute:\n\n```bash\ngit clone https://github.com/joshuadavidthomas/opencode-agent-skills ~/.config/opencode/opencode-agent-skills\nmkdir -p ~/.config/opencode/plugin\nln -sf ~/.config/opencode/opencode-agent-skills",
     "topics": []
   },
   {
@@ -1663,7 +1662,9 @@
       "tutorial"
     ],
     "target_tools": [
-      "opencode"
+      "opencode",
+      "claude-code",
+      "hermes-agent"
     ],
     "summary": "从零理解如何构建 AI Agent",
     "i18n": {
@@ -1712,7 +1713,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# 从零理解如何构建 AI Agent — OpenCode 源码剖析与实战\n\n这是一个基于 VitePress 构建的 AI Agent 工程学习站点。项目不只是一本线性电子书，而是围绕「源码拆解、工程实践、智能体选型、动画理解、面试复盘、企业落地」组织的多专区知识库。\n\n核心目标：\n\n- 用固定源码快照拆解 OpenCode、Claude Code、Hermes Agent 等真实 Agent 系统\n- 用 TypeScript 实践项目串起工具调用、记忆、RAG、规划、多 Agent、评估与部署\n- 用动画实验室把 Agent 运行闭环、上下文、工具边界、测试修复等机制可视化\n- 用智能体选型专区把 Agent Framework、RAG、搜索、模型、工具、权限、观测和成本预算收束成工程决策\n- 用企业 Agent 专栏把 IMS AI Copilot 这类真实业务场景拆成可落地的工程契约\n\n## 站点入口\n\n| 模块 | 路径 | 用途 |\n|------|------|------|\n| 首页 | `/` | 站点总入口 |\n| 发现中心 | `/discover/` | 按目标和主题浏览内容 |\n| 学习路径 | `/learning-paths/` | 按学习目标选择路线 |\n| OpenCode 拆解 | `/02-agent-core/` | OpenCode 源码主线 |\n| 实践篇 | `/practice/` | 28 个实践章节 |\n| 中级篇 | `/intermediate/` | RAG、多 Agent、上下文、生产化等进阶专题 |\n| 智能体选型 | `/agent-selection/` | Agent Framework、RAG、搜索、模型、工具和生产准入的选型指南 |\n| 动画实验室 | `/animation-lab/` | Agent 机制的交互式可视化实验 |\n| 面试题专区 | `/interview/` | Agent 工程面试复盘 |\n| Claude Code 架构思维 | `/claude-code/` | 从架构视角理解 Agent 工程判断 |\n| Claude Code 源码业务流 | `/new-claude/` | 从业务链路还原 Claude Code 执行流 |\n| Hermes Agent 拆解 | `/hermes-agent/` | 商业 Agent 产品工程拆解 |\n| 从零设计企业 Agent | `/enterprise-agent/` | 以 IMS AI Copilot 为主线的企业 Agent 落地专栏 |\n\n## 内容结构\n\n| 专区 | 位置 | 说明 |\n|------|------|------|\n| OpenCode 拆解 | `docs/00-what-is-ai-agent/` 至 `docs/20-best-practices/`，以及 `docs/oh-*` | 24 章主线，覆盖 Agent 基础、工具系统、多模型、TUI、插件与最佳实践 |\n| 实践篇 | `docs/practice/` + `practice/` | 28 个实践章节，配套 P1-P28 示例脚本；其中 P14 额外包含一个 MCP Server 脚本 |\n| 中级篇 | `docs/intermediate/` | 第 25-32 章，覆盖 RAG、协作、规划、上下文、生产架构、安全与成本 |\n| 智能体选型 | `docs/agent-selection/` | 24 篇选型指南 + 官方资源速查，覆盖 Agent Framework、LangGraph、RAG、搜索、模型、数据库、工具、安全、观测和成本 |\n| 动画实验室 | `docs/animation-lab/` + `.vitepress/theme/data/animation-lab*` | 数据驱动的 Agent 机制可视化实验 |\n| 面试题专区 | `docs/interview/` | 按基础、工具、RAG、记忆、多 Agent、规划、工程化等主题组织 |\n| Claude Code 架构思维 | `docs/claude-code/` | 20 章架构判断框架 |\n| Claude Code 源码业务流 | `docs/new-claude/` | 4 卷 14 章 + 附录 |\n| Hermes Agent 拆解 | `docs/hermes-agent/` | 主干章节 + A-Z 附录 |\n| 企业 Agent 专栏 | `docs/enterprise-agent/` | 18 章理论主线 + 落地工具包 |\n\n## 本地开发\n\n从仓库根目录执行：\n\n```ba",
     "topics": []
   },
   {
@@ -1774,7 +1775,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "<div align=\"center\">\n\n# 🔥 OpenCodeDocs\n\n![OpenCodeDocs Banner](./images/readme-banner-en.jpeg)\n\n![VitePress](https://img.shields.io/badge/VitePress-1.0-646CFF?style=flat&logo=vitepress)\n![License](https://img.shields.io/badge/License-MIT%2B%20CC--BY--NC--SA%204.0-green?style=flat)\n![Cloudflare](https://img.shields.io/badge/Deploy-Cloudflare%20Pages-orange?style=flat)\n![Languages](https://img.shields.io/badge/Languages-10%2B-blue?style=flat)\n\n**🎯 #1 AI Ecosystem Tutorial Site · Source-Driven · 100% Runnable**\n\nAI tools iterating too fast? Official docs can't keep up? Tutorials online are outdated?\n\nWe deeply analyze open source project source code, and every line of code is verified.\n**✅ Follow along, succeed on the first try, no detours.**\n\n[🚀 Get Started](https://opencodedocs.com) · [⭐ Star This Repo](../../) · [💬 Join Discussion](../../discussions)\n\n</div>\n\n## 语言\n\n[简体中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [繁體中文](README.zh-TW.md)\n\n---\n\n## 💡 Have you encountered these situations?\n\n- ❌ Official docs lag behind, following tutorials but can't get it working?\n- ❌ Online tutorials are just copy-paste, code won't run?\n- ❌ Encounter errors, search everywhere but can't find solutions?\n- ❌ Want to advance, but can't find practical guidance diving into source code?\n\n**OpenCodeDocs is specifically designed to solve these problems.**\n\n---\n\n## ✨ Why Choose OpenCodeDocs?\n\n### 🎯 Source-Verified, No Hallucinations\n\n> Not copied from the internet, but core logic derived from **real source code**\n\nWe deeply analyze open source project source code, ensuring every line of code passes automated verification. **Tutorials specify the exact Git Commit version**, so you know exactly which version the code is based on.\n\n### 🚀 Continuous Updates, Synchronized Upgrades\n\n> When tools update, tutorials update autom",
     "topics": []
   },
   {
@@ -1835,7 +1836,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "<p align=\"center\">\n  <a href=\"README.md\">🇷🇺 Русский</a> · <a href=\"README.en.md\">🇬🇧 English</a> · <a href=\"README.zh.md\">🇨🇳 中文</a>\n</p>\n\n# OpenCode Agents\n\nВсе модели писались и тестировались из расчёта на GLM4.6/GLM4.7\n\nВ особенности под Coding Plan подписку без ограничений на токены.\n\n<p align=\"center\">\n  <img src=\"https://raw.githubusercontent.com/veschin/opencode-agents/refs/heads/main/logo.svg\" width=\"512\" alt=\"OpenCode Agents Logo\">\n</p>\n\n<p align=\"center\">\n  <em>\"Репозиторий с .md-файлами... но каждый файл — это нейродегенерат.\"</em>\n</p>\n\n---\n\n## Установка\n\n**Linux/macOS:**\n\n```bash\n# Создаём директорию агентов\nmkdir -p ~/.config/opencode/agent/\n\n# Загружаем только файлы агентов через GitHub API\ncurl -s \"https://api.github.com/repos/veschin/opencode-agents/contents\" | \\\n  jq -r '.[] | select(.name | startswith(\"_\") and endswith(\".md\")) | \"\\(.name)\\t\\(.download_url)\"' | \\\n  while IFS=$'\\t' read -r name url; do curl -s \"$url\" -o ~/.config/opencode/agent/\"$name\"; done\n```\n\n*Требуется jq для обработки JSON. Установите через `sudo apt install jq` (Ubuntu/Debian), `brew install jq` (macOS), или `pacman -S jq` (Arch).*\n\n**Windows (PowerShell):**\n\n```powershell\n# Создаём директорию агентов\n$agentDir = Join-Path $env:USERPROFILE \".config\\opencode\\agent\"\nif (-not (Test-Path $agentDir)) {\n    New-Item -ItemType Directory -Path $agentDir -Force | Out-Null\n}\n\n# Загружаем только файлы агентов через GitHub API\n$response = Invoke-RestMethod -Uri \"https://api.github.com/repos/veschin/opencode-agents/contents\"\n$response | Where-Object { $_.name -like '_*.md' } | ForEach-Object {\n    $content = Invoke-RestMethod -Uri $_.download_url\n    $path = Join-Path $agentDir $_.name\n    $content | Out-File -FilePath $path -Encoding UTF8\n    Write-Host \"Downloading $($_.name)...\"\n}\n```\n\n---\n\n## Changelog\n\n### _beagle → _beagle_v2\n- Полный редизайн алгоритма исследования\n- Новая система уровней достоверности (Sci/Prof/Pers)\n- Добавлен 10-шаговый алгоритм мышления с рекурсивным поиском\n- Но",
     "topics": []
   },
   {
@@ -1896,7 +1897,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# OpenCode Observability\n\nReal-time monitoring and visualization for OpenCode agents.\n\n![Dashboard](docs/dashboard-preview.png)\n\n## Quick Start\n\n### 1. Install Bun\n\n```bash\ncurl -fsSL https://bun.sh/install | bash\n```\n\n### 2. Install the Plugin\n\n```bash\n./scripts/setup.sh\n```\n\n### 3. Start the System\n\n```bash\n./scripts/start-system.sh\n```\n\nOpens:\n- Dashboard: http://localhost:5173\n- API: http://localhost:4000\n\nThis installs a **global plugin** that tracks ALL your OpenCode sessions across ALL projects.\n\n**Restart OpenCode** to activate.\n\n## Requirements\n\n- **Bun** 1.0+\n- **OpenCode** (the AI agent)\n- **Linux, WSL, or macOS**\n\n## What It Tracks\n\n- Tool executions (before/after)\n- Session lifecycle (created, idle, error, stopped)\n- Messages and permissions\n- Full I/O capture with JSON details\n\n## Event Flow\n\n```\nOpenCode → Plugin → HTTP POST → Bun Server → SQLite → WebSocket → Vue Dashboard\n```\n\n## Configuration\n\nOptional environment variables:\n\n```bash\n# Server (apps/server/.env)\nPORT=4000\nDB_PATH=./data/events.db\n\n# Plugin (.env.opencode.observability)\nOPENCODE_OBSERVABILITY_URL=http://localhost:4000\n```\n\n## Credits\n\nInspired by [claude-code-hooks-multi-agent-observability](https://github.com/disler/claude-code-hooks-multi-agent-observability) by [@disler](https://github.com/disler).\n\n## License\n\nMIT",
     "topics": [
       "opencode",
       "opencode-plugin"
@@ -1960,7 +1961,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# OpenCode Agent Orchestration Kit\n\n[![Check](https://github.com/jcarlosrodicio/opencode-agent-orchestration-kit/actions/workflows/check.yml/badge.svg)](https://github.com/jcarlosrodicio/opencode-agent-orchestration-kit/actions/workflows/check.yml)\n[![License](https://img.shields.io/github/license/jcarlosrodicio/opencode-agent-orchestration-kit)](LICENSE)\n[![Latest release](https://img.shields.io/github/v/release/jcarlosrodicio/opencode-agent-orchestration-kit)](https://github.com/jcarlosrodicio/opencode-agent-orchestration-kit/releases)\n\nA reproducible product-development workflow for OpenCode.\n\nTurn OpenCode into a structured team of specialized agents that can research, design, specify, implement, review, and validate software changes — without building every agent, command, skill, tool, and workflow convention from scratch.\n\nBuilt for developers and small teams who want more structure than a single general-purpose coding agent, while keeping the setup local, inspectable, version-controlled, and adaptable.\n\n> [!NOTE]\n> This project is a configuration and workflow kit for OpenCode. It is not a hosted platform, a fully autonomous software factory, or a replacement for engineering judgment.\n\n## Why this exists\n\nA basic coding-agent setup often starts simple:\n\n- One general-purpose agent.\n- A few custom prompts.\n- Some copied skills.\n- Ad hoc instructions.\n- Manual review and validation.\n\nOver time, that setup becomes harder to maintain:\n\n- Agents overlap or contradict each other.\n- Planning, research, implementation, and review blur together.\n- Workflows become prompt-dependent and difficult to reproduce.\n- Configuration changes become risky.\n- Documentation and validation drift away from the actual setup.\n\nThis kit provides a documented OpenCode harness with:\n\n- Specialized agents with explicit responsibilities.\n- Predictable handoffs between research, design, specification, implementation, and review.\n- Slash commands for common product-development workflows.\n- Lo",
     "topics": [
       "opencode",
       "agent-orchestration-as-code",
@@ -2034,7 +2035,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "<p align=\"center\">\n  <img src=\"public/app-icon.png\" alt=\"OpenCode Monitor icon\" width=\"128\" height=\"128\">\n</p>\n\n# OpenCode Monitor\n\nOpenCode Monitor is a desktop app for monitoring and interacting with [OpenCode](https://github.com/anomalyco/opencode) agents across multiple workspaces.\n\nIt is forked from [CodexMonitor](https://github.com/Dimillian/CodexMonitor) by Dimillian, adapted to use OpenCode's REST API + SSE backend while preserving CodexMonitor-shaped frontend event contracts.\n\nOpenCode Monitor is an independent community project and is not affiliated with or endorsed by the OpenCode team.\n\n![OpenCode Monitor demo](OpenCodeMonitorDemo.png)\n\n## Status\n\n**Active development** — core REST/SSE support is live for thread/session lifecycle, event translation, messaging, model discovery, approvals, and image attachments. Remaining work is parity polish and OpenCode-specific UX cleanup.\n\n## Install\n\nDownload the latest packaged build from [GitHub Releases](https://github.com/jacobjmc/OpenCodeMonitor/releases).\n\nCurrent release targets:\n\n- macOS Apple Silicon\n- Windows x64\n- Linux x64 / arm64 (`AppImage` and `rpm`)\n\n## Requirements\n\n### 1) OpenCode CLI (required)\n\nOpenCode Monitor uses your local `opencode` CLI installation and manages its own local `opencode serve` process automatically. You do not need to start the server yourself.\n\nInstall OpenCode first:\n\n```bash\n# Recommended (macOS/Linux)\nbrew install anomalyco/tap/opencode\n\n# Or npm\nnpm i -g opencode-ai@latest\n```\n\nThen verify the CLI:\n\n```bash\nopencode --version\n```\n\n### 2) Local tooling for development only\n\n- Node.js 20+\n- npm 10+\n- Rust stable toolchain (`cargo`)\n\n## First Run\n\n1. Install the `opencode` CLI and confirm `opencode --version` works in your terminal.\n\n2. Launch OpenCode Monitor.\n\n3. Open `Settings -> OpenCode` if you want to verify the managed server status. The app starts and monitors its own local OpenCode server, which defaults to `http://127.0.0.1:14096`.\n\n4. Add a workspace and start a th",
     "topics": []
   },
   {
@@ -2047,6 +2048,8 @@
     ],
     "target_tools": [
       "codex-cli",
+      "claude-code",
+      "antigravity-cli",
       "opencode"
     ],
     "summary": "ccbox: Remote control to manage Codex/Claude/Gemini/Opencode agent sessions",
@@ -2096,7 +2099,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# ccbox\n\nTUI “box” for managing coding-agent sessions (Codex, Claude, Gemini, OpenCode): browse local session logs now, and later reconstruct exactly what the agent did (files, tools, tokens).\n\n## Table of contents\n\n- [Features](#features)\n- [Key features (what it’s for)](#key-features-what-its-for)\n  - [Skill spans (and loop detection)](#skill-spans-and-loop-detection)\n  - [Timeline analysis (TUI + CLI)](#timeline-analysis-tui--cli)\n  - [Fork/resume sessions (Codex)](#forkresume-sessions-codex)\n  - [ccbox-insights skill (code-insights)](#ccbox-insights-skill-code-insights)\n- [Install](#install)\n- [Screenshots](#screenshots)\n  - [Projects](#projects)\n  - [Menu bar](#menu-bar)\n  - [Session Detail (timeline)](#session-detail-timeline)\n  - [Session actions (fork/resume)](#session-actions-forkresume)\n  - [Session stats](#session-stats)\n  - [Tasks](#tasks)\n  - [Processes](#processes)\n- [Roadmap](#roadmap)\n- [Run](#run)\n- [Skill (skills.sh)](#skill-skillssh)\n- [Keybindings (prototype)](#keybindings-prototype)\n- [License](#license)\n\n## Features\n\n- Full-screen **Projects** → **Sessions** → **Session Detail** timeline\n- Multi-engine support (Codex, Claude, Gemini, OpenCode) with TUI + CLI filters\n- Type-to-filter + highlight, multi-select, and batch delete (with confirmation)\n- “Online” dot (`●`) for recently modified projects/sessions\n- Skill span tracing (colored gutter + loop detection) and a Skills overlay (`S`)\n- Fork/resume Codex from a selected timeline item (`f`)\n- Statistics windows for projects/sessions (`F3`)\n- Tasks screen + editor (including clipboard image paste)\n- New Session prompt editor (`n`) that spawns agents in `Pipes` or `TTY` mode\n- Processes screen (`P`) for stdout/stderr/log viewing + killing spawned agents; attach/detach TTY (`a`, `Ctrl-]`)\n- Auto-rescans when session sources change (file watcher for Codex/Claude/Gemini/OpenCode)\n- Update notifications and self-update (`ccbox update`)\n\n## Key features (what it’s for)\n\n### Skill spans (and loop detec",
     "topics": []
   },
   {
@@ -2158,7 +2161,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# opencode-openmemory\n\n[![npm version](https://badge.fury.io/js/@happycastle%2Fopencode-openmemory.svg)](https://www.npmjs.com/package/@happycastle%2Fopencode-openmemory)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n\n**Local-first, privacy-focused persistent memory for OpenCode agents** using [OpenMemory](https://github.com/CaviraOSS/OpenMemory).\n\nA fork of [opencode-supermemory](https://github.com/supermemoryai/opencode-supermemory), redesigned to work with OpenMemory - an open-source, self-hosted cognitive memory engine that keeps your data on your machine.\n\n## Features\n\n- **Local-first**: All memories stored on your machine via OpenMemory\n- **Privacy-focused**: No data sent to external services\n- **Automatic context injection**: User profile, project memory, and relevant memories injected into conversations\n- **Explicit & implicit memory capture**: Save memories with \"remember this\" or let the agent extract knowledge automatically\n- **Scope separation**: User-level (cross-project) vs project-level memories\n- **Context compaction**: Smart summarization when context window fills up\n\n## Architecture\n\n```\n┌───────────────────────────────────────────────────────────────┐\n│                   OpenCode (Plugin)                           │\n│  - Injection Policy (format, token budget, priority)          │\n│  - Memory Capture Policy (explicit \"remember\", implicit)      │\n│  - Scope Router (user_id, project_id)                         │\n└───────────────────┬───────────────────────────────────────────┘\n                    │\n                    v\n┌───────────────────────────────────────────────────────────────┐\n│                 OpenMemory Server (REST API)                   │\n│  - Store: raw notes / facts / events / snippets                │\n│  - Index: embeddings + metadata (scope/recency/type)           │\n│  - Retrieval: hybrid scoring (similarity + salience + decay)   │\n│  - Default: http://localhost:8080      ",
     "topics": []
   },
   {
@@ -2171,8 +2174,7 @@
       "rules"
     ],
     "target_tools": [
-      "opencode",
-      "zed"
+      "opencode"
     ],
     "summary": "OpenCode agent configuration — a read-only orchestrator delegates to 6 specialized subagents. Expert model plans, fast models execute. Isolated contexts, minimal permissions, adversarial verification built in. Ready to drop in.",
     "i18n": {
@@ -2219,7 +2221,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "<p align=\"center\">\n  <a href=\"https://github.com/Dqz00116/opencode-solo\">\n    <picture>\n      <source srcset=\"./assets/logo-dark.svg\" media=\"(prefers-color-scheme: dark)\">\n      <source srcset=\"./assets/logo-light.svg\" media=\"(prefers-color-scheme: light)\">\n      <img src=\"./assets/logo-light.svg\" width=\"128\" height=\"128\" alt=\"opencode-solo\">\n    </picture>\n  </a>\n</p>\n<p align=\"center\">A closed-loop orchestrator + specialized subagent system for <a href=\"https://opencode.ai\">opencode</a>.</p>\n<p align=\"center\">\n  <img alt=\"Version\" src=\"https://img.shields.io/badge/version-2.0-8b5cf6?style=flat-square\" />\n  <img alt=\"License\" src=\"https://img.shields.io/badge/license-MIT-blue?style=flat-square\" />\n  <img alt=\"Platform\" src=\"https://img.shields.io/badge/platform-opencode-38bdf8?style=flat-square\" />\n</p>\n\n<p align=\"center\">\n  <a href=\"./README.md\">English</a> |\n  <a href=\"./README.zh-CN.md\">简体中文</a>\n</p>\n\n---\n\n### Overview\n\nSolo is a primary agent that orchestrates a **closed-loop workflow** — it directly senses test results via bash and delegates all code changes to specialized subagents. It iterates: edit → run tests → decide, until target tests pass.\n\n```mermaid\ngraph TB\n    Solo[\"Solo — Closed-loop Orchestrator<br/>Expert Model + bash test sensing\"]\n    Solo -->|\"1. Initialize once\"| Explore[\"explore<br/>Fast Model — find target tests + root cause\"]\n    Solo -->|\"2a. Fix\"| Editor[\"editor<br/>Fast Model — minimal diff\"]\n    Solo -->|\"2b. Test directly\"| Tests[\"Solo runs tests via bash<br/>reads raw output\"]\n    Solo -->|\"3. Conditional\"| Verify[\"verify<br/>Expert Model — adversarial\"]\n    Solo -.->|\"on-demand\"| Reviewer[\"reviewer<br/>Expert Model\"]\n    Solo -.->|\"on-demand\"| Observer[\"observer<br/>Vision Model\"]\n    Solo -.->|\"fallback\"| General[\"general<br/>Configurable\"]\n```\n\n### Why Solo?\n\n**Closed-loop feedback.** Solo directly runs target tests via bash and reads raw output, using the failing-test count as an error signal. It iterates until tests pass — then",
     "topics": [
       "agent-system",
       "ai-agent",
@@ -2295,7 +2297,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Claude Code Plugins\n\nA collection of plugins (skills and hooks) for [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [OpenAI's Codex CLI](https://developers.openai.com/codex/cli), and [OpenCode](https://opencode.ai/docs/skills/), from [Christopher Boone](https://cboone.github.io).\n\n## Install\n\n### Claude Code\n\nFrom within `claude`, open the plugins manager via `/plugin`, tab to `Marketplace`, and hit `enter` on `Add Marketplace`. Type `cboone/agent-harness-plugins`, then choose which plugins to install.\n\nOr, from within `claude`:\n\n```bash\n/plugin marketplace add cboone/agent-harness-plugins\n```\n\n### Codex CLI\n\n```bash\ncodex plugin marketplace add cboone/agent-harness-plugins\n```\n\nSee [Using with Codex CLI](#using-with-codex-cli) below for the `plugin_hooks` feature flag, marketplace upgrade and remove semantics, and Codex-specific limitations.\n\n### OpenCode\n\n```bash\nexport OPENCODE_CONFIG_DIR=\"$(pwd)/dist/opencode\"\n```\n\nSee [Using with OpenCode](#using-with-opencode) below for mirror regeneration and known limitations.\n\n## Skills\n\nEach skill links to its own README. The `Trigger` column shows the slash command. Some style-guide skills also activate automatically when you touch their target file types; see the per-plugin README for activation rules.\n\n### Git\n\n| Plugin | Trigger | What it does |\n| --- | --- | --- |\n| [Commit](./plugins/commit/README.md) | `/commit` | Smart, context-aware git commits with conventional commit messages and plan awareness. |\n| [Merge Main](./plugins/merge-main/README.md) | `/merge-main` | Fetch and merge the base branch into the current feature branch with automatic conflict resolution. |\n| [PR](./plugins/pr/README.md) | `/pr` | Lint, commit, push, and create a pull request in one step with no prompts. |\n| [Rebase Onto Main](./plugins/rebase-onto-main/README.md) | `/rebase-onto-main` | Fetch and rebase the current feature branch onto the base branch with automatic conflict resolution and force-with-lease push. |\n| [Release",
     "topics": [
       "claude",
       "claude-code",
@@ -2441,7 +2443,10 @@
       "cli-tool"
     ],
     "target_tools": [
-      "opencode"
+      "opencode",
+      "codex-cli",
+      "claude-code",
+      "cursor"
     ],
     "summary": "OpenCode command to generate AI context for repositories",
     "i18n": {
@@ -2490,7 +2495,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# ai-first\n\n<p align=\"center\">\n  <a href=\"https://github.com/julianperezpesce/ai-first/stargazers\">\n    <img src=\"https://img.shields.io/github/stars/julianperezpesce/ai-first?style=flat&color=ffd700\" alt=\"Stars\">\n  </a>\n  <a href=\"https://www.npmjs.com/package/ai-first-cli\">\n    <img src=\"https://img.shields.io/npm/dt/ai-first-cli?color=blue\" alt=\"NPM Downloads\">\n  </a>\n  <a href=\"https://opensource.org/licenses/MIT\">\n    <img src=\"https://img.shields.io/badge/License-MIT-green.svg\" alt=\"License\">\n  </a>\n  <a href=\"https://github.com/julianperezpesce/ai-first/issues\">\n    <img src=\"https://img.shields.io/github/issues/julianperezpesce/ai-first\" alt=\"Issues\">\n  </a>\n</p>\n\n[Español](./README.es.md)\n\nAI-First is a CLI and MCP server that gives AI coding agents a compact, verifiable understanding of a repository before they edit it.\n\nIt generates `ai-context/` with architecture, symbols, entrypoints, tests, dependencies, rules, risks, freshness metadata, and an agent brief. It also exposes the same context through MCP tools for agents that support the Model Context Protocol.\n\nCurrent release train: `v1.5`.\n\nThe goal is not to create more documentation files. The goal is to help an agent answer: **what is this repo, where should I work, what evidence supports that, and how do I verify my change?**\n\n## Why It Exists\n\nAI agents are much better when they start with trusted context instead of reading a random subset of files. AI-First focuses on:\n\n- Freshness: generated context records when and from which git/file state it was created.\n- Evidence: important claims include source paths, package/config references, reasons, and confidence.\n- Task focus: agents can request context for a specific task instead of loading the whole repository.\n- Shared interfaces: humans use the CLI; agents use MCP; both rely on the same core services.\n- Quality gates: CI and agents can check whether the repo and generated context are safe to trust.\n\n## Install\n\n```bash\nnpm install -g ai-first-cli",
     "topics": []
   },
   {
@@ -2552,7 +2557,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Command Inject Plugin for OpenCode\n\n![Version](https://img.shields.io/npm/v/opencode-command-inject)\n\nAuto-inject project commands into OpenCode. Finds `Makefile` targets, `package.json` scripts, and local skills at startup.\n\n## Prerequisites\n\n- [OpenCode CLI](https://opencode.ai) installed\n- A project with `Makefile`, `package.json`, or local skills\n\n## Installation\n\nAdd the plugin to your OpenCode config (`~/.config/opencode/opencode.json`):\n\n```json\n{\n  \"$schema\": \"https://opencode.ai/config.json\",\n  \"plugin\": [\"opencode-command-inject@latest\"]\n}\n```\n\n## Usage\n\nThe plugin scans your project at startup and injects commands from multiple sources. Type `/` in OpenCode to see and run them.\n\nCommands are loaded from pluggable sources ([command-sources](src/command-sources)). Each source reads a specific file format and transforms it into OpenCode commands with consistent naming and templates.\n\nBy default, generated names stay the same. You only change naming when you add `command_name_prefix` config.\n\n### Makefile\n\nReads `Makefile` targets and exposes them as `make:<target>` commands.\n\nSupports `target: ## description` syntax for descriptions. Without description, uses the target name.\n\n**Example:**\n\n```makefile\nbuild: ## Build the project\n\tbun run build\n```\n→ command: `/make:build` with description \"Build the project\"\n\n### NPM Scripts\n\nReads `scripts` from `package.json` and exposes them as `<runner>:<script>` commands.\n\nRunner is auto-detected: checks `packageManager` field first, then lockfiles (`pnpm-lock.yaml`, `yarn.lock`, `bun.lockb`, `bun.lock`, `package-lock.json`), falls back to `npm`.\n\n**Example:** in a pnpm project:\n\n```json\n{\n  \"scripts\": {\n    \"dev\": \"vite\"\n  }\n}\n```\n\n→ command: `/pnpm:dev`\n\n### Skills\n\nDiscovers local skills from these directories (first match wins):\n\n1. `.opencode/skills`\n2. `~/.config/opencode/skills`\n3. `.claude/skills`\n4. `.agents/skills`\n5. `~/.claude/skills`\n6. `~/.agents/skills`\n\nSkills are exposed as `skill:<name>` commands. E",
     "topics": []
   },
   {
@@ -2790,7 +2795,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# promptr\n<p align=\"center\">\n  <img width=\"585\" height=\"422\" alt=\"image\" src=\"https://github.com/user-attachments/assets/f3b0e059-9a01-42e5-9cde-cb901a60fabc\" />\n</p>\n\nA GTK4 overlay application that runs `opencode` commands through a\nresizable window. Supports `layer-shell` on wlroots compositors. \n\n## Contents\n\n- [Installation](#installation)\n- [Usage](#usage)\n- [Configuration](#configuration)\n- [Build](#build)\n- [Releases](#releases)\n- [License](#license)\n\n## Installation\n\n### Ubuntu / Debian\n\nSet up the apt repository:\n\n```sh\nsudo install -m 0755 -d /etc/apt/keyrings\ncurl -fsSL https://packages.toxdes.com/apt/pubkey.gpg \\\n  | sudo tee /etc/apt/keyrings/promptr.asc > /dev/null\nsudo chmod a+r /etc/apt/keyrings/promptr.asc\n\nsudo tee /etc/apt/sources.list.d/promptr.sources <<'EOF'\nTypes: deb\nURIs: https://packages.toxdes.com/apt\nSuites: stable\nComponents: main\nArchitectures: amd64 arm64\nSigned-By: /etc/apt/keyrings/promptr.asc\nEOF\n\nsudo apt update\nsudo apt install promptr\n```\n\n### Fedora / RHEL\n\nSet up the DNF repository:\n\n```sh\nsudo rpm --import https://packages.toxdes.com/rpm/pubkey.gpg\n\nsudo tee /etc/yum.repos.d/promptr.repo <<'EOF'\n[promptr]\nname=Promptr\nbaseurl=https://packages.toxdes.com/rpm\ngpgcheck=1\ngpgkey=https://packages.toxdes.com/rpm/pubkey.gpg\nenabled=1\nEOF\n\nsudo dnf install promptr\n```\n\n### Arch Linux\n\npromptr is available in the AUR. Install with an AUR helper:\n\n```sh\nyay -S promptr-bin\n```\n\nOr build from latest source:\n\n```sh\nyay -S promptr-git\n```\n\n### AppImage\n\nFor now, `.AppImage` packages are available in select releases. Check the [releases page](https://github.com/toxdes/promptr/releases).\n\nOnce you have the `promptr-*.AppImage`, run:\n```sh\nchmod +x promptr-*.AppImage\n./promptr-*.AppImage\n```\n\n### Manual install\n\nSee [Build](#build) to compile from source.\n\n## Usage\n\n```sh\npromptr\n```\n\n- Type a query in the **Prompt** field. Enter inserts a newline.\n- Optionally select an **Agent** and a **Model** from the dropdowns.\n- Press **Ctrl+Enter** or ",
     "topics": [
       "gtk4",
       "gtk4-layer-shell",
@@ -2914,7 +2919,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# CodeRefactoring-QoderSkills\n代码skills结构\n<img width=\"1077\" height=\"582\" alt=\"adce604c8e345a37dea31d5a8251fb6b\" src=\"https://github.com/user-attachments/assets/9e85c1a3-d734-48e1-b857-a87b42d50f0c\" />\n",
     "topics": []
   },
   {
@@ -3036,7 +3041,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# docker-api-bridge\n\n🔧 Unattended deployment of a `socat` sidecar container that exposes a remote host's `/var/run/docker.sock` as TCP `2375`, without touching `systemd`, `docker.service`, or `daemon.json`.\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![Qoder Skill](https://img.shields.io/badge/Qoder-Skill-blue)](https://github.com/JiangLongLiu/docker-api-bridge)\n\n[[English](README.md)] [[中文](README_zh.md)]\n\n## Overview\n\nA Qoder Skill that takes a CSV of remote hosts and, for each one, SSHs in, detects the environment (CPU arch / OS / Docker / port / existing container / daemon proxy), generates a plan, and deploys an `alpine/socat` container that forwards `tcp://0.0.0.0:2375` to `unix:///var/run/docker.sock`.\n\nThis is the safe alternative to \"edit `docker.service` and add `-H tcp://0.0.0.0:2375`\" — that approach gets reset by every fnOS / Synology / vendor system update. The `socat` sidecar lives entirely inside Docker, survives upgrades, and rolls back with a single `docker rm -f`.\n\nDesigned for unified control planes such as **dockhand**, Portainer, or any custom ops dashboard that needs uniform TCP access across a fleet.\n\n## Features\n\n- ✅ **Zero system mutation** — never touches `systemd`, `docker.service`, `daemon.json`, or firewall rules\n- 🛡️ **Survives vendor OS updates** — fnOS / Synology DSM upgrade-proof by design\n- 🔍 **Auto environment detection** — arch, kernel, OS, Docker version, socket, port, existing container, daemon proxy\n- 🚦 **Smart planning** — SKIP if already healthy, REMOVE+RUN if stale, ABORT if port hijacked, PULL only when missing\n- 🌐 **Multi-host batch** — feed any number of hosts via one CSV\n- 🔁 **One-command rollback** — `--rollback` flag completely removes the bridge\n- 🐢 **Wide compatibility** — auto base64 fallback when SFTP is disabled (Synology DSM 6.2 default), expanded `PATH` covering Synology, OpenWrt, Entware\n- 🌏 **Proxy-friendly** — keeps your existing `daemon.json`",
     "topics": []
   },
   {
@@ -3048,7 +3053,8 @@
       "skills"
     ],
     "target_tools": [
-      "qoder"
+      "qoder",
+      "workbuddy-codebuddy"
     ],
     "summary": "Qoder Skill - Qoder 全自动 Bug 诊断与修复 Skill —— 多 Agent 协作编排，从 Bug 采集到修复审查一站式完成。",
     "i18n": {
@@ -3097,7 +3103,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "",
+    "readme_preview": "# Handday Auto Bug Fix\n\n> 全自动 Bug 诊断与修复 Skill —— 支持 Qoder 和 Workbuddy 环境，多 Agent 协作编排，从 Bug 采集到修复审查一站式完成。\n\n## 简介\n\n`handday-auto-bug-fix` 是一个面向 [Qoder](https://qoder.ai) 和 Workbuddy 的高级 Skill，采用 **多 Agent 协作模式**，实现 Bug 的全自动处理：\n\n- **PM（主 Agent）**：流程编排、任务分配、协调各 Agent、最终汇报\n- **前端专家（`frontend-bug-fixer` subagent）**：页面定位、接口追踪、前端问题分析与修复\n- **后端专家（`senior-java-expert` subagent）**：Java 代码定位、根因分析、修复实施\n- **腾讯云日志专家（`tencent-cloud-troubleshooter` subagent）**：生产环境 CLS 日志检索、APM 链路追踪、根因诊断（可选启用）\n- **工单采集（`handday-workorder` 子 Skill）**：自动从 handday OS 平台采集工单信息\n\n## 核心功能\n\n| 功能 | 说明 |\n|------|------|\n| 多来源 Bug 采集 | 支持工单（GD编号）、禅道 Bug 链接、用户文字/截图描述 |\n| 智能归属判定 | 自动判断前端 / 后端 / 接口联调问题，精准分派 |\n| 生产日志抓取（可选） | 当工单中存在 traceId 或明显异常信息时，自动决策是否通过腾讯云日志专家进行 CLS 日志检索和 APM 链路追踪 |\n| 业务异常分析 | 当日志诊断确认为业务异常时，协调前后端专家定位业务逻辑，输出业务异常解释报告 |\n| 多 Agent 协作排查 | 前后端专家可多轮交互，直到根因明确 |\n| 自动修复实施 | 用户确认后自动执行代码修改 + 编译验证 |\n| 代码审查 | 修复后自动调用 `code-review` 进行代码审查 |\n| 环境自初始化 | 首次运行自动检查并安装所有依赖（subagent + 子 Skill） |\n\n## 子 Skill 说明\n\n本 Skill 集成了三个子 Skill，分别负责工单信息采集、TCCLI 环境配置和日志链路查询，既可被主流程自动调用，也支持独立使用。\n\n### 1. handday-workorder — 工单信息采集\n\n| 项目 | 说明 |\n|------|------|\n| **功能简介** | 通过浏览器自动化从 handday OS 平台自动采集工单的标题、描述、截图、报错信息等关键数据 |\n| **触发方式** | 主 Skill 中自动调用（Bug 采集环节）；独立使用：Qoder 中输入 `/handday-workorder` |\n| **适用场景** | 工单 Bug 自动信息采集；查看工单详情、订单信息、客户信息；平台数据查询与验证 |\n| **注意事项** | 依赖 Chrome DevTools MCP Server；需要 handday OS 平台登录权限 |\n\n### 2. tccli-setup — TCCLI 安装配置引导\n\n| 项目 | 说明 |\n|------|------|\n| **功能简介** | 引导用户安装、配置和认证腾讯云 CLI（TCCLI），支持浏览器授权登录、多账号 Profile 管理 |\n| **触发方式** | 主 Skill 中首次需要生产日志抓取时自动触发（可选）；独立使用：Qoder 中输入 `/tccli-setup` |\n| **适用场景** | TCCLI 首次安装与配置；认证过期后重新授权；多账号 Profile 配置管理 |\n| **注意事项** | TCCLI 未安装不影响主 Bug 修复流程；推荐使用 `tccli auth login` 浏览器授权，无需 SecretKey |\n\n### 3. tccli-log-query — CLS 日志检索与 APM 链路查询\n\n| 项目 | 说明 |\n|------|------|\n| **功能简介** | 通过 TCCLI 检索腾讯云 CLS 日志和 APM 链路数据，用于生产环境问题诊断 |\n| **触发方式** | 主 Skill 中检测到 traceId 或明显异常信息时自动决策启用；独立使用：Qoder 中输入 `/tccli-log-query` |\n| **适用场景** | traceId 链路追踪；生产异常日志检索；服务崩溃根因分析；APM 调用链查询与性能分析 |\n| **注意事",
     "topics": []
   },
   {
@@ -3218,7 +3224,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# TRAE MCPs\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)\n\n![alt text](assets/images/MCP.gif)\n\n[中文](./README.zh-CN.md)\n\n**TRAE MCPs** is a community-maintained collection of [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers designed for the **TRAE** editor.\n\nBy integrating MCP servers, TRAE can break thr",
+    "readme_preview": "# TRAE MCPs\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)\n\n![alt text](assets/images/MCP.gif)\n\n[中文](./README.zh-CN.md)\n\n**TRAE MCPs** is a community-maintained collection of [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers designed for the **TRAE** editor.\n\nBy integrating MCP servers, TRAE can break through the limitations of pure text interaction, connecting to local file systems, databases, browsers, and various third-party services, becoming a powerful all-around development assistant.\n\n> **💡 Note**: This project primarily hosts **MCP Servers (Tools)**. If you are looking for **Skills (SOPs)** for TRAE, please check out [TRAE Agent Skills](./README-skills.md).\n\n---\n\n## 📖 What is MCP?\n\n**Model Context Protocol (MCP)** is an open standard protocol introduced by Anthropic, designed to standardize how AI models connect with external systems.\n\nIf the AI model is the \"brain\", then MCP is its \"senses\" and \"limbs\". It empowers AI with the following capabilities:\n- **🔧 Operate Tools**: Execute command lines, send messages, manage code repositories, etc.\n- **📂 Read Data**: Access local files, query databases, read documents, etc.\n- **🌐 Connect Services**: Seamlessly interact with external platforms like Slack, GitHub, Google Drive, etc.\n\nIn TRAE, configured MCP servers serve as callable **Tools** for the agent. The agent can automatically select and execute these tools based on task requirements.\n\n## 🚀 Features\n\n- **Out of the Box**: Provides MCP servers that are tested and adapted for the TRAE environment.\n- **Community Driven**: Gathers wisdom from community developers to continuously expand the tool library.\n- **Unified Standard**: Follows the MCP standard protocol to ensure compatibility and stability.\n\n## 📦 MCP Server List\n\n| MCP Name | Description | Status | Documentation |\n",
     "topics": []
   },
   {
@@ -3231,9 +3237,14 @@
       "mcp-server"
     ],
     "target_tools": [
+      "claude-code",
       "codex-cli",
+      "opencode",
       "trae",
-      "cursor"
+      "cursor",
+      "hermes-agent",
+      "github-copilot",
+      "openclaw"
     ],
     "summary": "Build your own local LLM Wiki in 30 seconds. Multi-agent native (Claude/Codex/Cursor/VSCode/Trae), MCP server built-in, Astro static site publishing.",
     "i18n": {
@@ -3282,7 +3293,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# create-opc-wiki\n\n> **Build your own personal LLM wiki in 30 seconds.** Multi-agent native, MCP-ready, SEO/GEO-optimized publish target.\n\n> **Inspired by [Andrej Karpathy's \"LLM Wiki\" gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).**\n> This package is one concrete instantiation of that idea — opinionated about agent rules, directory ontology, frontmatter schema, privacy, and the publish pipeline. The idea is Andrej's; the implementation is this project's. Full credit a",
+    "readme_preview": "# create-opc-wiki\n\n> **Build your own personal LLM wiki in 30 seconds.** Multi-agent native, MCP-ready, SEO/GEO-optimized publish target.\n\n> **Inspired by [Andrej Karpathy's \"LLM Wiki\" gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).**\n> This package is one concrete instantiation of that idea — opinionated about agent rules, directory ontology, frontmatter schema, privacy, and the publish pipeline. The idea is Andrej's; the implementation is this project's. Full credit and quoted lineage in [INSPIRATION.md](./INSPIRATION.md).\n\n```bash\n# Interactive\nnpx create-opc-wiki my-wiki\n\n# Zero-prompt (any agent, any IM, any CI)\nnpx -y create-opc-wiki@latest ~/wiki --yes --agents=claude,codex,cursor,openclaw,hermes\n```\n\nThat's it. Open the generated folder in Obsidian, fire up your AI agent, and start building your second brain.\n\n## Quickstart\n\n```bash\nnpx create-opc-wiki my-wiki         # interactive prompts\ncd my-wiki\n# Open in Obsidian: File → Open Vault → this folder\n# Or fire up Claude Code / Codex / Cursor and try /wiki-ingest <url>\n```\n\n## What it scaffolds\n\nA local-first knowledge base with three layers (per the [Karpathy LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)):\n\n- **`raw/`** — immutable source archive (articles, papers, chats, notes)\n- **`wiki/<domain>/`** — agent-compiled markdown, your synthesized knowledge\n- **`agent-rules/main.md`** — single source of truth for agent behavior, synced to nine agent file formats\n\nPlus:\n\n- ✨ **Multi-agent native** — one rules file, synced to `CLAUDE.md`, `AGENTS.md`, `.cursor/rules/main.mdc`, `.cursorrules`, `.github/copilot-instructions.md`, `.trae/rules.md`, `.openclaw/rules.md`, `.hermes/agent.md`\n- 🔌 **MCP server built-in** — three tools (`wiki_query`, `wiki_list`, `wiki_read`) with privacy enforcement at the boundary\n- 📥 **5 source recipes** — arXiv papers, X threads, YouTube transcripts, RSS articles, podcast transcripts\n- 🌐 **SEO + GEO publish target** — `n",
     "topics": [
       "ai-tools",
       "knowledge-base",
@@ -3422,8 +3433,7 @@
       "extension"
     ],
     "target_tools": [
-      "trae",
-      "zed"
+      "general-ai-coding"
     ],
     "summary": "Traefik plugin: OAuth 2.1 / OIDC bouncer for MCP (Model Context Protocol) servers. Read-only derivative of github.com/Sipioteo/MCPBouncer.",
     "i18n": {
@@ -3472,7 +3482,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "<p align=\"center\">\n  <img src=\"https://raw.githubusercontent.com/Sipioteo/traefik-mcpbouncer/main/assets/banner.png\" alt=\"MCPBouncer Traefik plugin — OAuth 2.1 middleware for MCP servers\" width=\"100%\">\n</p>\n\n# traefik-mcpbouncer\n\n[![CI](https://github.com/Sipioteo/traefik-mcpbouncer/actions/workflows/ci.yml/badge.svg)](https://github.com/Sipioteo/traefik-mcpbouncer/actions/workflows/ci.yml)\n[![CodeQL](https://github.com/Sipioteo/traefik-mcpbouncer/actions/workflows/codeql.yml/badge.svg)](https:/",
+    "readme_preview": "<p align=\"center\">\n  <img src=\"https://raw.githubusercontent.com/Sipioteo/traefik-mcpbouncer/main/assets/banner.png\" alt=\"MCPBouncer Traefik plugin — OAuth 2.1 middleware for MCP servers\" width=\"100%\">\n</p>\n\n# traefik-mcpbouncer\n\n[![CI](https://github.com/Sipioteo/traefik-mcpbouncer/actions/workflows/ci.yml/badge.svg)](https://github.com/Sipioteo/traefik-mcpbouncer/actions/workflows/ci.yml)\n[![CodeQL](https://github.com/Sipioteo/traefik-mcpbouncer/actions/workflows/codeql.yml/badge.svg)](https://github.com/Sipioteo/traefik-mcpbouncer/actions/workflows/codeql.yml)\n[![govulncheck](https://github.com/Sipioteo/traefik-mcpbouncer/actions/workflows/govulncheck.yml/badge.svg)](https://github.com/Sipioteo/traefik-mcpbouncer/actions/workflows/govulncheck.yml)\n[![Go Report Card](https://goreportcard.com/badge/github.com/Sipioteo/traefik-mcpbouncer?v=2)](https://goreportcard.com/report/github.com/Sipioteo/traefik-mcpbouncer)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)\n[![Latest tag](https://img.shields.io/github/v/tag/Sipioteo/traefik-mcpbouncer?sort=semver)](https://github.com/Sipioteo/traefik-mcpbouncer/releases)\n[![Traefik plugin](https://img.shields.io/badge/Traefik-plugin-1F2D5C.svg?logo=traefikproxy&logoColor=white)](https://plugins.traefik.io)\n\nTraefik middleware plugin that adds OAuth 2.1 / OIDC authentication to MCP (Model Context Protocol) servers.\n\nThe plugin enforces the MCP Authorization spec (rev. 2025-06-18) in front of any MCP server image — including ones with no native auth — by:\n\n- Validating Bearer JWTs locally against a JWKS cache (Ed25519 / RS256).\n- Returning `401` with `WWW-Authenticate: Bearer resource_metadata=...` (RFC 9728) on missing or invalid tokens.\n- Reverse-proxying OAuth endpoints (`/.well-known/oauth-protected-resource`, `/.well-known/oauth-authorization-server`, `/.well-known/openid-configuration`, `/oauth/authorize`, `/oauth/token`, `/oauth/register`, `/oauth/callback`, `/oauth/jwks.json`) to a companion",
     "topics": [
       "mcp",
       "middleware",
@@ -3542,7 +3552,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# TRAE-MC: The Ultimate Minecraft MCP AI Agent\n\n> *\"Transform TRAE into a god-like Minecraft entity — 500+ commands, 10 transformation modes, datapack manipulation, and intelligent automation.\"*\n\n---\n\n## 📖 Table of Contents\n\n1. [Overview](#overview)\n2. [Features](#features)\n3. [Installation](#installation)\n4. [Usage](#usage)\n5. [Commands Overview](#commands-overview)\n6. [Transformation Modes](#transformation-modes)\n7. [Datapack System](#datapack-system)\n8. [Architecture](#architecture)\n9. [Confi",
+    "readme_preview": "# TRAE-MC: The Ultimate Minecraft MCP AI Agent\n\n> *\"Transform TRAE into a god-like Minecraft entity — 500+ commands, 10 transformation modes, datapack manipulation, and intelligent automation.\"*\n\n---\n\n## 📖 Table of Contents\n\n1. [Overview](#overview)\n2. [Features](#features)\n3. [Installation](#installation)\n4. [Usage](#usage)\n5. [Commands Overview](#commands-overview)\n6. [Transformation Modes](#transformation-modes)\n7. [Datapack System](#datapack-system)\n8. [Architecture](#architecture)\n9. [Configuration](#configuration)\n10. [Troubleshooting](#troubleshooting)\n11. [Contributing](#contributing)\n12. [License](#license)\n13. [FAQ](#faq)\n\n---\n\n## Overview\n\n**TRAE-MC** is a ground-breaking enhancement to the standard Minecraft MCP (Model Context Protocol) server. While basic MCP implementations allow AI to read game state and execute simple commands, TRAE-MC transforms the AI into a **truly intelligent in-game entity** capable of executing over **500 distinct commands**, switching between **10 transformation modes**, manipulating **datapacks in real-time**, and making **context-aware decisions**.\n\nThis project was **written by TRAE itself** — a demonstration of what AI can build when given the right tools and prompts.\n\n### Why TRAE-MC?\n\n| Problem | TRAE-MC Solution |\n|---------|------------------|\n| Basic MCP has ~20 commands | 500+ structured commands |\n| No role-based behavior | 10 transformation modes |\n| No datapack manipulation | Full real-time datapack editing |\n| No batch operations | Natural language batch building |\n| No safety system | Auto-backup & confirmation dialogs |\n\n---\n\n## Features\n\n### Core Statistics\n\n- **500+** distinct commands\n- **10** transformation modes\n- **20+** command categories\n- **100%** open source\n- **Minecraft 1.20.4 – 1.21.4** support\n\n### Feature Matrix\n\n| Category | Commands | Description |\n|----------|----------|-------------|\n| Mode Switching | 10 | Change AI behavior roles |\n| World Editing | 60+ | Setblock, fill, clone, sphere, cyli",
     "topics": []
   },
   {
@@ -3603,7 +3613,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# TRAE Agent Skills\n\n![TRAE Skills Banner](./assets/image/Skills.gif)\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)\n\nCommunity-maintained Agent Skills for **TRAE**. In TRAE, a skill is a reusable, scenario-specific “capability manual” defined by a `SKILL.md` file, optionally packaged with scripts, templates, examples, and othe",
+    "readme_preview": "# TRAE Agent Skills\n\n![TRAE Skills Banner](./assets/image/Skills.gif)\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)\n\nCommunity-maintained Agent Skills for **TRAE**. In TRAE, a skill is a reusable, scenario-specific “capability manual” defined by a `SKILL.md` file, optionally packaged with scripts, templates, examples, and other resources. The agent scans skill descriptions first and only loads full skill content when a task is highly relevant, reducing token usage and avoiding irrelevant context.\n\n[中文说明](./README.zh-CN.md)\n\n## Quickstart\n\n1. Clone this repository.\n2. Put skills into the right location for TRAE:\n   - Project skills: `.trae/skills/<skill-name>/SKILL.md`\n   - Global skills: `~/.trae/skills/<skill-name>/SKILL.md`\n3. Refresh TRAE's skill discovery in settings (location varies by TRAE version).\n4. Ask TRAE for a task that matches a skill’s description, for example:\n   - “Use the webapp-testing skill to create Playwright tests for the login flow.”\n   - “Use the release-notes skill to draft release notes from recent PR titles.”\n\n## What are Agent Skills?\n\nAgent Skills are folders of instructions, scripts, and resources that an AI agent can discover and load dynamically to perform specialized tasks in a repeatable way. A typical skill is a directory with a `SKILL.md` file that contains:\n\n- YAML frontmatter metadata (especially `name` and `description`)\n- A Markdown body with steps, guidelines, and examples\n\nThis pattern keeps the agent’s core rules lightweight while making SOP-style workflows portable and shareable.\n\n## Skills vs. other features in TRAE\n\n- Skills vs. Rules: rules are fully injected into every chat and continuously occupy context; skills are loaded on-demand only when called.\n- Skills vs. MCP servers: skills describe how TRAE should accomplish a task; MCP servers provide to",
     "topics": []
   },
   {
@@ -3615,8 +3625,7 @@
       "skills"
     ],
     "target_tools": [
-      "trae",
-      "github-copilot"
+      "trae"
     ],
     "summary": "this is a repository of original skills for Trae / Trae Solo",
     "i18n": {
@@ -3665,7 +3674,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# Trae Skills Collection\n\n> 基于 Trae SOLO 平台的 AI Skills 合集 — 提供科研辅助、学术写作、低碳生活等多领域智能工具\n\n## 📦 Skills 概览\n\n| Skill | 描述 | 适用场景 |\n|-------|------|---------|\n| [research-copilot](./research-copilot/) | 科研论文选题与文献综述助手 | 研究生、博士生、科研人员 |\n| [mla-format-master](./mla-format-master/) | MLA 9th Edition 学术论文格式化工具 | 人文社科论文写作 |\n| [carbon-footprint-auditor](./carbon-footprint-auditor/) | 个人/家庭碳排放追踪与减碳建议 | 低碳生活、环保意识培养 |\n\n---\n\n## 🔬 research-copilot\n\n科研论文选题与文献综述助手，帮助研究生和科研人员高效完成论文选题、文献检索、趋势分析和综述撰写。\n\n### 核心功能\n\n- 🔍 **多源",
+    "readme_preview": "# Trae Skills Collection\n\n> 基于 Trae SOLO 平台的 AI Skills 合集 — 提供科研辅助、学术写作、低碳生活等多领域智能工具\n\n## 📦 Skills 概览\n\n| Skill | 描述 | 适用场景 |\n|-------|------|---------|\n| [research-copilot](./research-copilot/) | 科研论文选题与文献综述助手 | 研究生、博士生、科研人员 |\n| [mla-format-master](./mla-format-master/) | MLA 9th Edition 学术论文格式化工具 | 人文社科论文写作 |\n| [carbon-footprint-auditor](./carbon-footprint-auditor/) | 个人/家庭碳排放追踪与减碳建议 | 低碳生活、环保意识培养 |\n\n---\n\n## 🔬 research-copilot\n\n科研论文选题与文献综述助手，帮助研究生和科研人员高效完成论文选题、文献检索、趋势分析和综述撰写。\n\n### 核心功能\n\n- 🔍 **多源文献检索** — 支持 Semantic Scholar、CrossRef、PubMed、OpenAlex、arXiv 五大数据库\n- 🇨🇳 **中文文献检索** — 支持知网、万方、百度学术搜索建议\n- 📈 **研究趋势分析** — 识别年度发文趋势、热点关键词、热门期刊/会议\n- 🎯 **研究 GAP 识别** — 发现领域内饱和方向与空白机会\n- 🔬 **选题相似度检测** — 避免重复研究\n- 📝 **文献综述框架生成** — 支持理工科和人文社科定制\n- 📚 **引用格式化** — 支持 GB/T 7714、APA、IEEE、BibTeX\n\n### 快速开始\n\n```bash\n# 文献检索\npython3 research-copilot/scripts/search_papers.py --query \"transformer attention\" --year-from 2020 --limit 10\n\n# 趋势分析\npython3 research-copilot/scripts/analyze_trends.py --query \"medical image analysis\" --year-from 2020 --year-to 2024\n\n# 研究 GAP 识别\npython3 research-copilot/scripts/identify_gaps.py --query \"deep learning\" --year-from 2020 --year-to 2024\n```\n\n📖 [查看完整文档](./research-copilot/README.md)\n\n---\n\n## 📝 mla-format-master\n\n基于 MLA Handbook 9th Edition (2021) 的学术论文格式自动化工具。\n\n### 核心功能\n\n- ✅ **精准触发** — 仅通过上传 .docx 文件 + 明确 MLA 关键词触发\n- ✅ **智能分析** — 自动分析文档内容，判断是否为学术论文\n- ✅ **完整 MLA 格式** — 页面设置、标题页、页眉页脚、文内引用、Works Cited\n- ✅ **中英混排支持** — 处理中文作者名、中文出版物\n\n### MLA 格式规范\n\n| 项目 | 规范 |\n|------|------|\n| 纸张 | US Letter (8.5 x 11 inch) |\n| 边距 | 1 inch (2.54cm) 四边 |\n| 字体 | Times New Roman 12pt |\n| 行距 | 双倍行距 |\n| 页眉 | 姓氏 + 页码（右上角） |\n\n📖 [查看完整文档](./mla-format-master/README.md)\n\n---\n\n## 🌱 carbon-footprint-auditor\n\n个人/家庭碳排放追踪与减碳建议工具，帮助用户建立碳账户，追踪日常消费产生的碳排放。\n\n### 核心功能\n\n- 📊 **碳排放计算** — 支持出行、饮食、居住、购物四大类别\n- 📈 **报告生成** — 日报、周报、月报多维度分析\n- 🏆 **成就系统** — 30个成就徽章，8个等级称号\n- 💡 **减碳建议** — 基于真实数据的个性化建议\n\n### 碳排放计算方法\n\n| 类别 | 计算公式 |\n|------|---------|\n| 出行 | 排放因子(kgCO₂/km) × 里程(km) / 乘车人数 |\n| 饮食 | Σ(食材因子 × 份量) × 烹饪系数 |\n| 居住",
     "topics": []
   },
   {
@@ -3677,8 +3686,8 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code",
-      "trae"
+      "trae",
+      "claude-code"
     ],
     "summary": "\"A series of skills adapted for TRAE_CN SOLO, sourced from well-known Claude Code plugins.\"",
     "i18n": {
@@ -3725,7 +3734,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# TRAE Skills from Claude Code Plugins\n\n[中文说明 / Chinese Documentation](./README_CN.md)\n\nA collection of skills adapted for TRAE_CN SOLO, sourced from well-known Claude Code plugins (**superpowers**, **oh-my-claudecode**, **get-shit-done**, **gstack**) and custom-assembled pipelines.\n\nTRAE_CN is a free vibe coding application that provides powerful models for free and supports Rules & Skills. However, TRAE_CN does not provide users with general, powerful skills to fully leverage model capabilitie",
+    "readme_preview": "# TRAE Skills from Claude Code Plugins\n\n[中文说明 / Chinese Documentation](./README_CN.md)\n\nA collection of skills adapted for TRAE_CN SOLO, sourced from well-known Claude Code plugins (**superpowers**, **oh-my-claudecode**, **get-shit-done**, **gstack**) and custom-assembled pipelines.\n\nTRAE_CN is a free vibe coding application that provides powerful models for free and supports Rules & Skills. However, TRAE_CN does not provide users with general, powerful skills to fully leverage model capabilities and lower the usage barrier. Therefore, I selected the most useful skills from well-known Claude Code plugins (superpowers, oh-my-claudecode, get-shit-done, gstack), adapted them for TRAE_CN SOLO, and also assembled a custom AI pipeline skill set. You can download and import them yourself.\n\n---\n\n## Directory Structure\n\n```\n├── ai-pipeline（一个使用Ralph保持运行的持续开发循环）/\n├── frontend（前端及幻灯片）/\n├── GSD技能移植/\n├── gstack技能移植/\n├── oh-my-claudecode技能移植/\n├── ppt-master（AI生成PPT）/\n├── superpowers技能移植/\n└── taste-skill（反AI俗套前端设计）/\n```\n\n---\n\n## ai-pipeline (A Continuous Development Loop Using Ralph)\n\nA custom-assembled automated engineering pipeline from idea to production-grade code. The pipeline runs in a goal-driven loop until acceptance criteria are met.\n\n| Skill | Description |\n|-------|-------------|\n| **ai-pipeline** | Full AI engineering pipeline orchestrator: blueprint → ADR → eval-harness → self-improve → slop-cleaner, loops until goal is met |\n| **ai-slop-cleaner** | AI-generated code cleaner: regression-safe deletion-first workflow that removes dead code, merges duplicates, reduces complexity without changing behavior |\n| **architecture-decision-records** | Architecture Decision Records (ADR): auto-captures architectural decisions as structured documents with context, alternatives, and rationale |\n| **blueprint** | Blueprint generator: turns a one-line objective into a step-by-step construction plan with self-contained context briefs, dependency graphs, and parallel step detection |\n|",
     "topics": [
       "claudecode-skills",
       "design",
@@ -3793,7 +3802,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# Research Report Fetcher Skill\n\nA Trae Skill for fetching research reports from various sources (institutions, WeChat public accounts, academic databases, etc.) and adding them to the research report database.\n\n## Description\n\nThis skill helps you automatically fetch research reports from different sources and integrate them into your research report database. It supports:\n\n- Securities firms and financial institutions\n- WeChat public accounts\n- Academic databases\n- Custom data sources\n\n## Inst",
+    "readme_preview": "# Research Report Fetcher Skill\n\nA Trae Skill for fetching research reports from various sources (institutions, WeChat public accounts, academic databases, etc.) and adding them to the research report database.\n\n## Description\n\nThis skill helps you automatically fetch research reports from different sources and integrate them into your research report database. It supports:\n\n- Securities firms and financial institutions\n- WeChat public accounts\n- Academic databases\n- Custom data sources\n\n## Installation\n\n### Method 1: Copy to Trae Skills Directory\n\n1. Copy the `research-report-fetcher` folder to your Trae workspace's `.trae/skills/` directory:\n   ```bash\n   cp -r research-report-fetcher /path/to/your/workspace/.trae/skills/\n   ```\n\n2. Restart Trae or reload the workspace to activate the skill.\n\n### Method 2: Git Clone\n\n1. Clone this repository into your Trae skills directory:\n   ```bash\n   cd /path/to/your/workspace/.trae/skills/\n   git clone https://github.com/qizfeng/research-report-fetcher.git\n   ```\n\n2. Restart Trae to load the skill.\n\n## Usage\n\nOnce installed, you can use natural language to invoke this skill:\n\n```\n从某某券商获取研究报告\n从某某公众号获取研究报告\n添加某某机构的研究报告\n```\n\nThe skill will automatically:\n1. Search for available reports from the specified source\n2. Create a fetch script tailored to that source\n3. Execute the script to add reports to the database\n4. Verify the results\n\n## Features\n\n- **Multi-source Support**: Works with APIs, web scraping, RSS feeds, and more\n- **Quality Control**: Ensures reports meet quality standards before adding\n- **Deduplication**: Automatically checks for and prevents duplicate entries\n- **Flexible Configuration**: Easy to customize for different data sources\n- **Error Handling**: Graceful handling of network issues and data inconsistencies\n\n## Supported Source Types\n\n### 1. Securities Firms (券商)\n- API integration where available\n- Web scraping for public reports\n- Examples: 广发证券, 中信建投, 海通证券\n\n### 2. WeChat Public Accounts (微信公众号)\n- Article e",
     "topics": []
   },
   {
@@ -3854,7 +3863,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# Trae Skills Hub 🚀\n\n[![GitHub stars](https://img.shields.io/github/stars/2426366814/trae-skills-hub?style=social)](https://github.com/2426366814/trae-skills-hub)\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://python.org)\n[![Node.js](https://img.shields.io/badge/node.js-18+-green.svg)](https://nodejs.org)\n\n> 一站式Trae技能管理平台 - 搜索、安装、管理、部署，一键搞定！\n\n---\n\n## 📑 目录\n\n- [核心功能](#-核心功能)\n- [快速开始](#-快速开始)\n- [使用指南](#",
+    "readme_preview": "# Trae Skills Hub 🚀\n\n[![GitHub stars](https://img.shields.io/github/stars/2426366814/trae-skills-hub?style=social)](https://github.com/2426366814/trae-skills-hub)\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://python.org)\n[![Node.js](https://img.shields.io/badge/node.js-18+-green.svg)](https://nodejs.org)\n\n> 一站式Trae技能管理平台 - 搜索、安装、管理、部署，一键搞定！\n\n---\n\n## 📑 目录\n\n- [核心功能](#-核心功能)\n- [快速开始](#-快速开始)\n- [使用指南](#-使用指南)\n- [使用场景](#-使用场景)\n- [项目结构](#-项目结构)\n- [系统要求](#-系统要求)\n- [更新日志](#-更新日志)\n- [贡献指南](#-贡献指南)\n\n---\n\n## ✨ 核心功能\n\n### 🔍 智能搜索\n- **技能搜索** - 从本地、GitHub、Vercel Skills搜索\n- **MCP搜索** - 智能搜索11,790+ MCP服务\n- **智能推荐** - 基于需求自动推荐最佳技能/MCP\n\n### ⚡ 一键安装\n- **自动安装** - 技能和MCP一键安装\n- **依赖管理** - 自动检测和安装依赖\n- **环境配置** - 自动配置环境变量\n\n### 🚀 跨机器部署\n- **导出配置** - 导出完整环境配置\n- **导入部署** - 新机器一键导入安装\n- **团队协作** - 共享配置，统一环境\n\n---\n\n## 📦 包含内容\n\n### 核心管理工具\n\n| 工具 | 功能 | 状态 |\n|------|------|------|\n| **trae-manager** | 统一管理和部署 | ✅ |\n| **skill-seeker** | 技能搜索和比较 | ✅ |\n| **mcp-seeker** | MCP搜索和安装 | ✅ |\n\n### 文档处理技能\n\n| 技能 | 功能 | 依赖 |\n|------|------|------|\n| **docx** | Word文档处理 | docx, defusedxml |\n| **pdf** | PDF文档处理 | pytesseract, pdf2image |\n| **pptx** | PowerPoint处理 | pptxgenjs, python-pptx |\n| **xlsx** | Excel表格处理 | openpyxl, pandas |\n\n### 开发技能\n\n| 技能 | 功能 | 依赖 |\n|------|------|------|\n| **mcp-builder** | 创建MCP服务器 | @modelcontextprotocol/sdk |\n| **skill-creator** | 创建自定义技能 | - |\n| **frontend-design** | 前端设计 | - |\n| **backend-dev-guidelines** | 后端开发指南 | express, flask |\n| **frontend-dev-guidelines** | 前端开发指南 | react, typescript |\n\n### MCP服务\n\n| MCP | 功能 | 下载量 | 评分 |\n|-----|------|--------|------|\n| **Filesystem** | 文件系统访问 | 25.3K | ⭐4.9 |\n| **Fetch** | HTTP请求 | 22.1K | ⭐4.8 |\n| **PostgreSQL** | 数据库连接 | 12.5K | ⭐4.8 |\n| **SQLite** | 轻量级数据库 | 9.2K | ⭐4.7 |\n| **Git** | 版本控制 | 15.6K | ⭐4.7 |\n| **PDF** | PDF处理 | 18.7K | ⭐4.8 |\n\n---\n\n## 🚀 快速开始\n\n### 前置要求\n\n- **Node.js** >= 18.0.0\n- **Python** >= 3.9.0\n- **Git** >= 2.30.0\n\n### 安装\n\n```ba",
     "topics": [
       "agent",
       "ai",
@@ -3983,7 +3992,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# Tailor Resume for Trae\n\n> 把多版本简历和一个或多个 JD，整理成真正为目标岗位定制的 Word 简历。\n\n## 这是什么？\n\n这是一个给 **Trae IDE** 用的简历定制技能（skill）。\n\n你可以把自己不同阶段、不同方向、不同版本的简历一起交给它，再把一个或一批目标岗位 JD 丢进去。它会先把所有简历内容整理成一个完整的\"经历池\"，再对照 JD 找 gap、主动追问你可能遗漏但其实做过的经历，最后按具体岗位重写简历，并输出可继续编辑的 Word 文档。\n\n它不是简单地\"改几个关键词\"，而是把\"多版本简历整理 + 批量 JD 分析 + gap 挖掘 + 针对性改写 + Word 输出\"串成一个完整流程。\n\n---\n\n## 核心能力\n\n### 1. 多版本简历 → 经历池\n\n你可以把所有版本的简历一起喂进去。无论是早期版本、不同岗位方向版本，还是某一版里写过后来删掉的内容，它都会统一提取出经历、项目、技能和成果，合并成一个完整的经历池。\n\n### 2. 批量喂入 JD\n\n你可以一次性丢给它多个 JD。支持文本、文件、链接、截图，甚至把 10 个岗位的",
+    "readme_preview": "# Tailor Resume for Trae\n\n> 把多版本简历和一个或多个 JD，整理成真正为目标岗位定制的 Word 简历。\n\n## 这是什么？\n\n这是一个给 **Trae IDE** 用的简历定制技能（skill）。\n\n你可以把自己不同阶段、不同方向、不同版本的简历一起交给它，再把一个或一批目标岗位 JD 丢进去。它会先把所有简历内容整理成一个完整的\"经历池\"，再对照 JD 找 gap、主动追问你可能遗漏但其实做过的经历，最后按具体岗位重写简历，并输出可继续编辑的 Word 文档。\n\n它不是简单地\"改几个关键词\"，而是把\"多版本简历整理 + 批量 JD 分析 + gap 挖掘 + 针对性改写 + Word 输出\"串成一个完整流程。\n\n---\n\n## 核心能力\n\n### 1. 多版本简历 → 经历池\n\n你可以把所有版本的简历一起喂进去。无论是早期版本、不同岗位方向版本，还是某一版里写过后来删掉的内容，它都会统一提取出经历、项目、技能和成果，合并成一个完整的经历池。\n\n### 2. 批量喂入 JD\n\n你可以一次性丢给它多个 JD。支持文本、文件、链接、截图，甚至把 10 个岗位的 JD 截图丢进同一个文件夹里，它也会逐个读取、逐个分析。\n\n### 3. 挖掘 gap 经历\n\n它会把经历池和 JD 逐项对比，找出中间的 gap，然后主动问你问题。很多时候不是你没做过，而是你没想到这段经历可以写进这个岗位的简历里。它会帮你把这些可用但没写出来的经历挖出来。\n\n### 4. 针对 JD 润色改写\n\n它会按 STAR 原则重写你的经历，但不是模板式套话。它会根据这个具体 JD 调整侧重点、换用更贴近岗位需求的表达和关键词，让招聘方更快看出\"你做过他们要的事情\"。\n\n### 5. 保留排版，输出 Word\n\n最后它会输出 Word 文档。如果你有多个版本的 `.docx` 简历，还可以指定最喜欢的一份作为样式参考，让新简历继续沿用原来的字体、间距、页边距和整体版式。\n\n---\n\n## 安装方法\n\n### 第一步：确认你已经安装了 Trae IDE\n\n如果你还没有安装 Trae，请先去官网下载安装：\n- Trae 官网：[trae.ai](https://trae.ai/)\n\n安装完成后，打开 Trae IDE，确保能正常使用。\n\n### 第二步：安装这个技能\n\n有两种安装方式，选一种你喜欢的：\n\n#### 方式一：手动安装（推荐新手使用）📁\n\n**步骤 1：下载文件**\n\n1. 点击这个页面右上角的绿色按钮 `Code`\n2. 选择 `Download ZIP` 下载压缩包\n3. 解压后，你会看到一个叫 `tailor-resume` 的文件夹\n\n**步骤 2：找到 Trae 的技能目录**\n\nTrae 的技能存放在你项目的 `.trae/skills/` 目录下。\n\n**步骤 3：复制文件夹**\n\n把解压出来的 `tailor-resume` 文件夹复制到你的项目的 `.trae/skills/` 目录里。\n\n最终目录结构应该是这样的：\n\n```\n你的项目/\n└── .trae/\n    └── skills/\n        └── tailor-resume/\n            ├── SKILL.md\n            └── md_to_docx.py\n```\n\n**步骤 4：重启 Trae**\n\n关闭并重新打开 Trae IDE，或者在项目中重新加载。\n\n---\n\n#### 方式二：命令行安装（适合熟悉终端的用户）🚀\n\n打开终端（命令行），进入你的项目目录，然后执行：\n\n```bash\n# 创建目录\nmkdir -p .trae/skills\n\n# 克隆仓库\ngit clone https://github.com/rongmiao926-hub/trae-tailor-resume-skill.git temp-clone\n\n# 复制技能文件夹\ncp -r temp-clone/tailor-resume .trae/skills/\n\n# 清理临时文件\nrm -rf temp-clone\n```\n\nWindows PowerShell 用户：\n\n```powershell\n# 创建目录\nNew-Item -ItemType Directory -Force -Path .trae\\skills\n\n# 克隆仓库\ngit clone https://github.com/rongmiao926-hub/trae-tailor-resume-skill.git temp-clone\n\n# 复制技能文件夹\nCopy-Item -Recurse -Force temp-clone\\tailor-resume .tr",
     "topics": []
   },
   {
@@ -3995,8 +4004,8 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code",
       "trae",
+      "claude-code",
       "cursor",
       "cline"
     ],
@@ -4047,7 +4056,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# aiagent-covert-channel-scan\n\nAI Agent 客户端隐蔽信道审计 Skill,适用于 TRAE IDE。\n\n## 这是什么\n\n检测 AI Agent 客户端(Claude Code / Cursor / Cline 等)是否通过**隐蔽信道**把用户敏感信息——时区、代理、主机指纹等——编码进系统提示词,随每个 API 请求回传服务器。\n\n**背景**:2026 年 7 月,Anthropic 被曝在 Claude Code 中植入隐蔽代码:读取本地时区(`Asia/Shanghai`)、代理环境变量、主机域名,经判定后把\"是否中国用户\"的标记**编码进系统提示词的日期片段**(中国时区→日期分隔符从 `-` 改为 `/`),随请求回传 Anthropic 服务器,用于全链路封号。还用 base64+XOR 双重编码藏了一份 68 个中国企业域名的黑名单。\n\n## 安装\n\n### 方式 1:一键脚本(macOS / Linux)\n\n```bash\nbash install.sh\n```\n\n脚本会自动检测 TRAE skill 目录(`~/.trae-c",
+    "readme_preview": "# aiagent-covert-channel-scan\n\nAI Agent 客户端隐蔽信道审计 Skill,适用于 TRAE IDE。\n\n## 这是什么\n\n检测 AI Agent 客户端(Claude Code / Cursor / Cline 等)是否通过**隐蔽信道**把用户敏感信息——时区、代理、主机指纹等——编码进系统提示词,随每个 API 请求回传服务器。\n\n**背景**:2026 年 7 月,Anthropic 被曝在 Claude Code 中植入隐蔽代码:读取本地时区(`Asia/Shanghai`)、代理环境变量、主机域名,经判定后把\"是否中国用户\"的标记**编码进系统提示词的日期片段**(中国时区→日期分隔符从 `-` 改为 `/`),随请求回传 Anthropic 服务器,用于全链路封号。还用 base64+XOR 双重编码藏了一份 68 个中国企业域名的黑名单。\n\n## 安装\n\n### 方式 1:一键脚本(macOS / Linux)\n\n```bash\nbash install.sh\n```\n\n脚本会自动检测 TRAE skill 目录(`~/.trae-cn/skills/` 或 `~/.trae/skills/`)并安装。\n\n### 方式 2:手动安装\n\n```bash\n# macOS / Linux\ncp -r aiagent-covert-channel-scan ~/.trae-cn/skills/\n\n# Windows (PowerShell)\nCopy-Item -Recurse aiagent-covert-channel-scan $env:USERPROFILE\\.trae-cn\\skills\\\n```\n\n## 使用\n\n安装后,在 TRAE IDE 里对 AI 说:\n\n- \"扫描下 Claude Code 会不会泄漏隐私\"\n- \"审计一下我本地的 AI Agent 客户端\"\n- \"Claude Code 有没有隐蔽信道\"\n\nAI 会自动触发 skill,执行扫描并生成报告。\n\n### 直接命令行使用\n\n```bash\n# 扫描 Claude Code 二进制(macOS)\npython3 scripts/scan.py \"~/Library/Application Support/Claude/claude-code/*/claude.app/Contents/MacOS/claude\" --strings-only\n\n# 扫描并落盘报告(存到 OS 标准目录)\npython3 scripts/scan.py <路径> --save\n\n# 输出 JSON 格式\npython3 scripts/scan.py <路径> -f json -o report.json\n```\n\n## 特性\n\n- **零依赖**:仅 Python 3 标准库,无需 pip install\n- **跨平台**:macOS / Windows / Linux\n- **四合一检测**:\n  - 静态代码扫描(13 条特征规则)\n  - 提示词隐写检测(零宽字符 / 控制字符 / Unicode 标签 / Base64)\n  - 二进制 strings 分析(自动判断二进制 vs 文本)\n  - base64+XOR 双重解码(暴力 0x00-0xFF)\n- **误报甄别**:SKILL.md 强制 AI 逐条甄别,标注 malicious/suspicious/benign\n- **厂商风格报告**(8 章节):执行摘要 / 攻击链 / MITRE ATT&CK 映射 / 技术分析 / IOC / YARA / 缓解措施 / 附录\n\n## 报告默认位置\n\n| OS | 路径 |\n|----|------|\n| macOS | `~/Library/Application Support/secscan/reports/` |\n| Windows | `%LOCALAPPDATA%\\secscan\\reports\\` |\n| Linux | `~/.local/share/secscan/reports/` |\n\n保留 30 天,超期自动清理。\n\n## 检测能力\n\n| 规则 ID | 严重级别 | 检测内容 |\n|---------|---------|---------|\n| CC-REGION-001 | CRITICAL | 中国时区判定(Asia/Shanghai 等) |\n| CC-REGION-002 | CRITICAL | 中国用户标记变量(cnTZ/labKw) |\n| CC-STEGO-002 | CRITICAL | 系统提示词分隔符编码 |\n| CC-ENCODE-002 | CRITI",
     "topics": []
   },
   {
@@ -4060,8 +4069,7 @@
       "tutorial"
     ],
     "target_tools": [
-      "trae",
-      "zed"
+      "trae"
     ],
     "summary": "基于Trae Skill系统的小说创作智能体平台，包含13个专门化智能体",
     "i18n": {
@@ -4110,7 +4118,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# 小说创作智能体平台\r\n\r\n一个基于Trae Skill系统的模块化小说创作智能体平台，专为网文作者设计。\r\n\r\n## 项目特点\r\n\r\n- **13个专门化智能体**：从资料整理到质量审核的完整创作流水线\r\n- **三种工作模式**：全新小说创作、续写已有小说、混合创作（SCP+崩坏3）\r\n- **多源素材整合**：支持SCP基金会文档、崩坏3角色等素材的深度整合\r\n- **质量保证**：内置连贯性检查智能体，确保人物性格和情节逻辑一致\r\n\r\n## 智能体列表\r\n\r\n### 资料处理类\r\n- `deepseek-html-processor` - 从DeepSeek保存的TXT文件中提取创作资料\r\n- `scp-extractor` - 从SCP PDF文档中提取纯文本内容\r\n- `scp-archiver` - 管理和归档多个SCP文档，建立知识库索引\r\n- `storyline-organizer` - 整理完整故事线，帮助了解故事全貌\r\n\r\n### 角色与设定类\r\n- `honkai-character-integrator` - 处理崩坏3角色PDF并融入故事世界观\r\n- `",
+    "readme_preview": "# 小说创作智能体平台\r\n\r\n一个基于Trae Skill系统的模块化小说创作智能体平台，专为网文作者设计。\r\n\r\n## 项目特点\r\n\r\n- **13个专门化智能体**：从资料整理到质量审核的完整创作流水线\r\n- **三种工作模式**：全新小说创作、续写已有小说、混合创作（SCP+崩坏3）\r\n- **多源素材整合**：支持SCP基金会文档、崩坏3角色等素材的深度整合\r\n- **质量保证**：内置连贯性检查智能体，确保人物性格和情节逻辑一致\r\n\r\n## 智能体列表\r\n\r\n### 资料处理类\r\n- `deepseek-html-processor` - 从DeepSeek保存的TXT文件中提取创作资料\r\n- `scp-extractor` - 从SCP PDF文档中提取纯文本内容\r\n- `scp-archiver` - 管理和归档多个SCP文档，建立知识库索引\r\n- `storyline-organizer` - 整理完整故事线，帮助了解故事全貌\r\n\r\n### 角色与设定类\r\n- `honkai-character-integrator` - 处理崩坏3角色PDF并融入故事世界观\r\n- `character-scp-integrator` - 将角色设定与SCP文档能力细节相结合\r\n- `lore-organizer` - 整理和管理小说设定资料（角色档案、世界观、时间线等）\r\n- `setting-reader` - 阅读并整理所有设定资料，确保创作符合设定\r\n\r\n### 创作类\r\n- `story-writer` - 专门负责撰写小说内容，创作章节、段落和对话\r\n- `novel-continuer` - 继续已有小说的创作，保持故事连贯性\r\n\r\n### 质量控制类\r\n- `coherence-checker` - 监督故事连贯性，检查人物性格、情节逻辑、时间线等\r\n\r\n### 工具类\r\n- `html-to-pdf-converter` - 将HTML文件1:1精确转换为PDF格式\r\n\r\n## 技术栈\r\n\r\n- **Trae Skill系统** - 智能体框架\r\n- **Python** - 后端脚本开发\r\n- **Playwright** - HTML转PDF转换\r\n- **大模型API** - 智能创作核心\r\n\r\n## 项目结构\r\n\r\n```\r\ne:\\小说/\r\n├── .trae/skills/          # Trae技能文件\r\n├── SCP/                    # SCP HTML文档\r\n├── SCP_PDF/                # SCP PDF文档\r\n├── 崩坏3角色/              # 崩坏3角色资料\r\n├── 角色/                   # 原创角色设定\r\n├── 与deepseek一起创作小说章节/  # 已创作的小说章节\r\n├── convert_html_to_pdf.py  # HTML转PDF转换脚本\r\n└── skill使用教程.txt       # 完整的使用教程\r\n```\r\n\r\n## 使用示例\r\n\r\n### 全新SCP+崩坏3小说创作\r\n1. 调用 `novel-master-orchestrator` 主控智能体\r\n2. 自动调度：资料提取 → 设定整合 → 内容创作 → 质量审核\r\n3. 输出完整的小说设定和首章内容\r\n\r\n### 续写已有小说\r\n1. 调用 `deepseek-html-processor` 提取历史内容\r\n2. 调用 `storyline-organizer` 整理故事线\r\n3. 调用 `novel-continuer` 续写内容\r\n4. 调用 `coherence-checker` 审核连贯性\r\n\r\n## 项目成果\r\n\r\n- 支持生成连贯的万字级小说内容\r\n- 保持人物性格一致性和情节逻辑严密\r\n- 建立了可复用的智能体配置模板和协作流程\r\n- 产出完整的使用教程和项目文档\r\n\r\n## 开发者\r\n\r\n独立开发者 - 2025.01 - 2025.03\r\n",
     "topics": []
   },
   {
@@ -4169,7 +4177,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# TRAE-Skills\n\nA collection of skill files for [Trae IDE](https://trae.ai/) that enhance Vue 3 / Vite / Pinia based frontend development workflows. \n(In the future, we’ll be adding skills beyond just frontend development; if you’d like to contribute, please feel free to join.)\n\nYou can put your agent skills into your project main path to \".trae\" folder. For example: .trae/agent-browser/SKILL.md\n\n## Skills\n\n### 1. agent-browser\n\n**Purpose**: Browser automation CLI for UI testing, E2E tests, and p",
+    "readme_preview": "# TRAE-Skills\n\nA collection of skill files for [Trae IDE](https://trae.ai/) that enhance Vue 3 / Vite / Pinia based frontend development workflows. \n(In the future, we’ll be adding skills beyond just frontend development; if you’d like to contribute, please feel free to join.)\n\nYou can put your agent skills into your project main path to \".trae\" folder. For example: .trae/agent-browser/SKILL.md\n\n## Skills\n\n### 1. agent-browser\n\n**Purpose**: Browser automation CLI for UI testing, E2E tests, and page interaction.\n\n**Use cases**:\n- Test UI components and forms\n- Automated E2E testing without heavy frameworks\n- Page interaction testing\n- Screenshot capture for visual verification\n\n**Setup**:\n```bash\nnpm install -g agent-browser\nagent-browser install\n```\n\n**Key features**:\n- Lightweight alternative to Playwright\n- Accessibility tree-based element selection\n- Snapshot inspection for element refs\n- Keyboard and mouse automation\n- Screenshot capture\n\n---\n\n### 2. vue-i18n\n\n**Purpose**: Internationalization implementation guide for vue-i18n v9 with Vue 3 Composition API.\n\n**Use cases**:\n- Adding new user-facing text to components\n- Creating new locale files (tr/en/ro)\n- Translating hardcoded strings\n- Date/number formatting per locale\n- Language switching\n\n**Key concepts**:\n- Translation function: `t('key.path')`\n- Interpolation: `t('key', { field: 'value' })`\n- Pluralization: `{n} | {n}` format\n- Date formatting: `d(date, 'short')`\n- Number formatting: `n(amount, 'currency')`\n\n**File structure**:\n```\nsrc/\n├── i18n/\n│   ├── i18n.js\n│   ├── dateTimeFormats.js\n│   └── numberFormats.js\n└── locales/\n    ├── tr/\n    ├── en/\n    └── ro/\n```\n\n---\n\n### 3. vuelidate-i18n\n\n**Purpose**: Form validation with Vuelidate and internationalized error messages.\n\n**Use cases**:\n- Adding validation rules to forms\n- Creating localized validation messages\n- Custom validator development\n- Error message display patterns\n\n**Built-in validators**:\n- `required`, `email`, `minLength`, `maxLength`\n- `min",
     "topics": [
       "agent-skills",
       "frontend-skills",
@@ -4188,8 +4196,7 @@
       "skills"
     ],
     "target_tools": [
-      "trae",
-      "zed"
+      "trae"
     ],
     "summary": "我的 Trae 学习智能体技能库 (My custom skills for Trae Agent)",
     "i18n": {
@@ -4236,7 +4243,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# 🎓 Trae Tutor (V8.0 Ultimate) - 全栈 AI 学习导师\n\n> **架构版本**: V8.0 (Zero-Dependency + Cloud-Native + Context-Aware)\n> **维护者**: CodeManYsf\n\n**Trae Tutor** 是一个运行在 Trae IDE 中的自进化学习智能体。它突破了传统 AI 聊天的限制，拥有**自主联网获取知识**、**持久化管理学习进度**以及**零门槛一键部署**的能力。\n\n---\n\n## 🌟 核心特性 (Core Features)\n\n### 1. ⚡ 零依赖极速启动 (Zero-Dependency Bootstrap)\n- **无门槛**：不需要用户预装 Git，不需要手动 Clone 仓库。\n- **一键部署**：智能体检测到新环境时，会自动提供系统原生指令（PowerShell/Curl），**一键拉取并配置**所有核心技能。\n\n### 2. 👁️ 全网智能感知 (Intelligent Web-Awareness)\n- **多模态读取**：集成了三大 MCP 工具，自动路由最",
+    "readme_preview": "# 🎓 Trae Tutor (V8.0 Ultimate) - 全栈 AI 学习导师\n\n> **架构版本**: V8.0 (Zero-Dependency + Cloud-Native + Context-Aware)\n> **维护者**: CodeManYsf\n\n**Trae Tutor** 是一个运行在 Trae IDE 中的自进化学习智能体。它突破了传统 AI 聊天的限制，拥有**自主联网获取知识**、**持久化管理学习进度**以及**零门槛一键部署**的能力。\n\n---\n\n## 🌟 核心特性 (Core Features)\n\n### 1. ⚡ 零依赖极速启动 (Zero-Dependency Bootstrap)\n- **无门槛**：不需要用户预装 Git，不需要手动 Clone 仓库。\n- **一键部署**：智能体检测到新环境时，会自动提供系统原生指令（PowerShell/Curl），**一键拉取并配置**所有核心技能。\n\n### 2. 👁️ 全网智能感知 (Intelligent Web-Awareness)\n- **多模态读取**：集成了三大 MCP 工具，自动路由最佳方案：\n  - **Fetch**: 秒级抓取轻量级博客/文档。\n  - **Playwright**: 攻克动态渲染和反爬虫严重的复杂网页。\n  - **Context7**: 直接连接官方文档库（如 React, Python 官方文档），获取最权威解释。\n\n### 3. 🗺️ 动态路书系统 (Dynamic Roadmap)\n- **自动规划**：扔给它一个 URL，它自动生成分阶段的 `book/roadmap.md` 学习计划。\n- **状态追踪**：内置 `ProgressManager`，自动记录 `[x]` 完成状态。哪怕隔了一周再回来，只需说“继续学习”，它也能精准接上进度。\n\n### 4. 🧩 技能热插拔 (Skill Sideloading)\n- 支持将 `.md` 格式的技能文件直接拖入对话框，智能体可实时解析并安装新能力，无需重启。\n\n---\n\n## 📂 技能架构 (Skill Matrix)\n\n我们的智能体由以下 4 个原子化技能驱动：\n\n| 技能名称 | 路径 | 核心职责 | 依赖工具 |\n| :--- | :--- | :--- | :--- |\n| **TutorialLoader** | `.trae/skills/TutorialLoader` | **[入口]** 联网抓取教程/文档，清洗数据。 | Fetch, Playwright, Context7 |\n| **CurriculumDesigner** | `.trae/skills/CurriculumDesigner` | **[大脑]** 将清洗后的文本转化为结构化路书。 | (Native) |\n| **ProgressManager** | `.trae/skills/ProgressManager` | **[记忆]** 读取/更新 `roadmap.md` 的 Checkbox 状态。 | (Native) |\n| **KnowledgeArchivist** | `.trae/skills/KnowledgeArchivist` | **[归档]** 生成学习笔记，触发进度打钩。 | (Native) |\n\n---\n\n## 🚀 快速开始 (Quick Start)\n\n### Step 1: 准备环境\n确保你的 Trae IDE 已开启 **MCP 功能**，并建议开启以下工具以获得最佳体验：\n- ✅ `github.com` (可选，仅用于高级同步)\n- ✅ `fetch` (必须)\n- ✅ `playwright` (强烈推荐)\n- ✅ `context7` (推荐，用于查官方文档)\n\n### Step 2: 唤醒导师\n在 Trae 的对话框中输入：\n> **\"初始化环境\"**\n\n*智能体将检测你的环境。如果是新电脑，它会提供一行代码，点击运行即可完成部署。*\n\n### Step 3: 开始学习流程\n**场景 A：我要学这个网页**\n> \"帮我制定这个教程的学习计划：https://example.com/learn-python\"\n\n**场景 B：我要查官方文档**\n> \"教我 Pandas 的数据清洗功能\" (智能体将自动调用 Context7 查阅文档)\n\n**场景 C：继续昨天的进度**\n> \"继续学习\" (智能体将读取 `roadmap.md` 并发布今天的任务)\n\n---\n\n## 📝 目录规范\n- `book/` : 存放自动生成的 `roadmap.md` 和学习笔记。\n- `test/` : 你的代码练习场（智能体",
     "topics": []
   },
   {
@@ -4295,7 +4302,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# 老赵.skill · Old Zhao Fitness AI Skill\n\n> 让 AI 扮演 B 站健身 UP 主「老赵健身」([UID 1960056332](https://space.bilibili.com/1960056332))，用他的口吻、立场、短视频文案风格回答健身 / 减脂 / 饮食 / 补剂 / 训练问题，或对文案做风格化改写 / 扩写 / 仿写。\n\n![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)\n![Trae Skill](https://img.shields.io/badge/Trae-skill-green.svg)\n![Python: 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)\n![No data](https://img.shields.io/badge/data-zero--copy-orange.svg)\n\n---\n\n## ✨ 这是什么\n\n一个开箱即用的 [Trae](https://w",
+    "readme_preview": "# 老赵.skill · Old Zhao Fitness AI Skill\n\n> 让 AI 扮演 B 站健身 UP 主「老赵健身」([UID 1960056332](https://space.bilibili.com/1960056332))，用他的口吻、立场、短视频文案风格回答健身 / 减脂 / 饮食 / 补剂 / 训练问题，或对文案做风格化改写 / 扩写 / 仿写。\n\n![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)\n![Trae Skill](https://img.shields.io/badge/Trae-skill-green.svg)\n![Python: 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)\n![No data](https://img.shields.io/badge/data-zero--copy-orange.svg)\n\n---\n\n## ✨ 这是什么\n\n一个开箱即用的 [Trae](https://www.trae.ai) Skill，**基于真实 UP 主 583 个视频的 27 万字字幕语料蒸馏**。模型加载这个 skill 后，会以「老赵健身」的角色回答问题：\n\n- **口播式短答**：30-300 字，1-3 句一波\n- **立场鲜明**：控量不控种类、全量控碳、反邪修、自律+放纵平衡\n- **口语化**：宝儿们 / 打工人 / 别犟 / 听我一句劝\n- **边界清晰**：医疗 / 处方药 / 极端减肥 → 礼貌转介医生\n\n> ⚠️ **重要声明**：本仓库**不包含**任何 B 站 UP 主的版权字幕原文。完整语料由 [distill/distill.jsonl](d:/1/缴费宝宝巴士/distill/distill.jsonl) 在项目本地保留，**仅 `examples/sample.jsonl` 提供 8 条 demo 样本**用于测试效果。\n\n---\n\n## 📦 仓库结构\n\n```\nold-zhao-skill/\n├── README.md                  ← 本文件\n├── LICENSE                    ← MIT\n├── CHANGELOG.md               ← 更新日志\n├── CONTRIBUTING.md            ← 贡献指南\n├── .gitignore\n├── skill/                     ← 可直接放进 .trae/skills/ 使用\n│   ├── SKILL.md               ← 主文件（frontmatter + 人设 + 模板）\n│   └── manifest.json          ← 机器可读元数据\n├── examples/\n│   ├── examples.md            ← 7 个调用示例\n│   └── sample.jsonl           ← 8 条 demo 样本（不含完整语料）\n└── docs/\n    ├── usage.md               ← 详细使用文档\n    ├── style-snippets.md      ← 高频表达 & 拒绝话术速查\n    └── comparison.md          ← 与\"童景程.skill\"的差异（可选）\n```\n\n---\n\n## 🚀 快速开始\n\n### 方式 1：Trae IDE 中使用（推荐）\n\n1. 复制 `skill/` 目录到你的项目：\n   ```bash\n   cp -r skill/ 你的项目/.trae/skills/old-zhao-fitness/\n   ```\n\n2. 重启 Trae，让 IDE 重新扫描 `.trae/skills/`\n\n3. 直接对话：\n   > 打工人晚上饿了能不能吃泡面？\n\n   或者显式调用：\n   > 老赵.skill：增肌期间要不要先吃胖？\n\n### 方式 2：集成到自己的 Agent\n\n```python\nimport json, pathlib\n\nskill_dir = pathlib.Path(\"skill\")\nmanifest = json.loads((skill_dir / \"manifest.json\").read_text(encoding=\"utf-8\"))\n\ndef should_trigger_old_zhao(user_msg: str) -> bool:\n    if any(p in user_m",
     "topics": []
   },
   {
@@ -4356,7 +4363,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# UTD Academic Skills\n\n经管领域学术研究 TRAE Skills 工具集，覆盖文献检索→精读拆解→综述生成的完整工作流。\n\n## Skills 概览\n\n| Skill | 功能 | 触发词 |\n|-------|------|--------|\n| **literature-radar** | 顶刊文献精准检索与分级筛选 | 检索文献、搜文献、找论文、文献雷达、顶刊检索 |\n| **paper-reader** | PDF文献结构化精读与8维度信息抽取 | 精读论文、读论文、拆解文献、论文解析 |\n| **review-weaver** | 文献综述主体生成（横向分类+纵向脉络） | 写文献综述、观点整合、综述框架、观点织网 |\n\n## 工作流\n\n```\n文献雷达（检索筛选）→ 精读拆解（8维度报告）→ 观点织网（综述生成）\n```\n\n## 架构\n\n每个 Skill 采用 **静态/动态分层架构**：\n\n- `SKILL.md` — 路由器，检测需求并加载匹配碎片\n- `manifest.yaml` — 声明式清单，定义轴、碎片映射和按需参考\n- `static/",
+    "readme_preview": "# UTD Academic Skills\n\n经管领域学术研究 TRAE Skills 工具集，覆盖文献检索→精读拆解→综述生成的完整工作流。\n\n## Skills 概览\n\n| Skill | 功能 | 触发词 |\n|-------|------|--------|\n| **literature-radar** | 顶刊文献精准检索与分级筛选 | 检索文献、搜文献、找论文、文献雷达、顶刊检索 |\n| **paper-reader** | PDF文献结构化精读与8维度信息抽取 | 精读论文、读论文、拆解文献、论文解析 |\n| **review-weaver** | 文献综述主体生成（横向分类+纵向脉络） | 写文献综述、观点整合、综述框架、观点织网 |\n\n## 工作流\n\n```\n文献雷达（检索筛选）→ 精读拆解（8维度报告）→ 观点织网（综述生成）\n```\n\n## 架构\n\n每个 Skill 采用 **静态/动态分层架构**：\n\n- `SKILL.md` — 路由器，检测需求并加载匹配碎片\n- `manifest.yaml` — 声明式清单，定义轴、碎片映射和按需参考\n- `static/` — 版本化核心内容（期刊等级、搜索规则、工作流模板等）\n- `references/` — 深度参考（去重引擎、检索策略、分歧分析等）\n- `scripts/` — 渲染脚本（HTML 报告生成）\n\n## 期刊覆盖\n\n- **UTD24**（24本商管领域顶级期刊）\n- **ABS 4***（扩展经济学顶刊，含经济学五大刊）\n- **NSFC 管理科学 A 类**（22本中文管理学顶刊）\n- **中文经济学顶刊**（经济研究、经济学季刊等）\n- **第三梯队**：CSSCI、SSCI 二区（需标注理由）\n\n## 安装\n\n将对应 Skill 目录复制到 TRAE 的 `.trae/skills/` 目录下即可使用。\n\n## 许可\n\nMIT License\n\n## 作者\n\n光年进化\n",
     "topics": []
   },
   {
@@ -4415,7 +4422,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "\n\n# 软考集成 - 中级系统集成项目管理工程师考试辅导\n\n> 基于第3版教材的30天学习方案 | 提供记忆口诀、真题解析、案例分析、考前冲刺\n\n## 📋 项目简介\n\n本项目是专为备考 **中级系统集成项目管理工程师**（软考中级）的考生设计的智能化考试辅导工具。基于 TRAE Skill 架构实现，提供30天科学学习计划、每日分值预测、记忆口诀速记、历年真题解析、8大类案例答题模板、必考法规汇总等核心功能。\n\n**适用对象**：系统集成企业项目经理、技术人员；备考软考中级的学员；需评职称或积分落户的人员。\n\n---\n\n## 🌟 核心功能\n\n| 功能模块 | 说明 |\n|:------|:------|\n| **30天学习计划** | 科学规划4阶段：基础入门→核心管理→专项深化→综合冲刺 |\n| **每日分值预测** | 结合考纲分析各章节在上午/下午试卷中的预估分值 |\n| **记忆口诀** | 40+组原创记忆口诀，覆盖OSI模型、EVM计算、变更流程等高频考点 |\n| **智能问答** | 六种考试辅助模式（学习/刷题/模考/案例/复盘/计划） |\n| **学习记录** | 自",
+    "readme_preview": "\n\n# 软考集成 - 中级系统集成项目管理工程师考试辅导\n\n> 基于第3版教材的30天学习方案 | 提供记忆口诀、真题解析、案例分析、考前冲刺\n\n## 📋 项目简介\n\n本项目是专为备考 **中级系统集成项目管理工程师**（软考中级）的考生设计的智能化考试辅导工具。基于 TRAE Skill 架构实现，提供30天科学学习计划、每日分值预测、记忆口诀速记、历年真题解析、8大类案例答题模板、必考法规汇总等核心功能。\n\n**适用对象**：系统集成企业项目经理、技术人员；备考软考中级的学员；需评职称或积分落户的人员。\n\n---\n\n## 🌟 核心功能\n\n| 功能模块 | 说明 |\n|:------|:------|\n| **30天学习计划** | 科学规划4阶段：基础入门→核心管理→专项深化→综合冲刺 |\n| **每日分值预测** | 结合考纲分析各章节在上午/下午试卷中的预估分值 |\n| **记忆口诀** | 40+组原创记忆口诀，覆盖OSI模型、EVM计算、变更流程等高频考点 |\n| **智能问答** | 六种考试辅助模式（学习/刷题/模考/案例/复盘/计划） |\n| **学习记录** | 自动追踪每日学习进度，记录薄弱知识点 |\n| **答题模板** | 8大类案例分析题标准答题套路与要点 |\n\n---\n\n## 📚 知识体系（第3版·18章）\n\n### 第一部分：IT技术基础\n- **第1章** 信息化发展 ★★\n- **第2章** 信息技术发展 ★★\n- **第3章** 信息技术服务 ★\n- **第4章** 信息系统架构 ★★\n- **第5章** 软件工程 ★★\n- **第6章** 数据工程 ★\n\n### 第二部分：项目管理核心\n- **第7章** 软硬件系统集成 ★\n- **第8章** 信息安全工程 ★★\n- **第9章** 项目管理概论 ★★★\n- **第10章** 启动过程组 ★★\n- **第11章** 规划过程组 ★★★（全书最大章，23个过程）\n- **第12章** 执行过程组 ★★\n- **第13章** 监控过程组 ★★★\n- **第14章** 收尾过程组 ★\n\n### 第三部分：支撑知识\n- **第15章** 组织保障 ★★\n- **第16章** 监理基础知识 ★\n- **第17章** 法律法规和标准规范 ★★\n- **第18章** 职业道德规范 ★\n\n---\n\n## 🗂️ 目录结构\n\n```\nruankao-jicheng/\n├── SKILL.md                 # Skill主定义文件\n├── HELP.md                  # 使用帮助文档\n├── INSTALL.md               # 安装启用指南\n├── study-plan/              # 30天学习计划\n│   ├── README.md            # 计划总览\n│   ├── week1.md              # 第一周（IT基础）\n│   ├── week2.md              # 第二周（项目管理）\n│   ├── week3.md              # 第三周（过程组）\n│   ├── week4.md              # 第四周（综合冲刺）\n│   └── sprint.md             # 考前冲刺\n├── learning-contents/         # 每日知识点（Day1-Day30）\n├── learning-records/         # 学习记录追踪\n└── references/               # 参考资料\n    ├── mnemonics.md          # 记忆口诀卡（40+组）\n    ├── chapter-summaries.md   # 各章重点速记\n    ├── exam-questions.md     # 历年真题+错题本\n    ├── answer-templates.md  # 8大类案例答题模板\n    ├── laws-and-standards.md # 必考法规与标准\n    ├── glossary.md           # 中英文术语对照\n    ├── mock-exam.md          # 全真模拟卷\n    └── syllabus.md           # 考纲速览\n```\n\n---\n\n## 🚀 快速开始\n\n### 一、安装启用\n\n1. 根据 `INSTALL.md` 完成 Skill 安装\n2. 运行 `ruankao` 指令激活学习助手\n3. 输入 `help` 查看全部可用指令\n\n### 二、",
     "topics": []
   },
   {
@@ -4476,7 +4483,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# Trae Skill 一键导入工具\n\n一个简单易用的图形界面工具，用于批量导入外部Skill到Trae IDE。\n\n## 功能特性\n\n- 📁 可视化选择源目录\n- 🔍 自动扫描目录中的Skill\n- ✅ 支持多选和全选\n- ⚠️ 智能检测已存在的Skill\n- 🔄 可选覆盖已存在的Skill\n- 📝 实时日志输出\n- 🎨 简洁美观的界面\n- 🔧 **智能命名适配** - 自动规范化外部Skill的名称\n- 📄 **自动生成SKILL.md** - 为没有配置文件的Skill自动创建\n- 🔄 **同步名称更新** - 自动更新SKILL.md中的name字段\n\n## 使用方法\n\n### 1. 启动程序\n\n双击 `启动.bat` 文件，或在命令行中运行：\n\n```bash\npython skill_importer.py\n```\n\n### 2. 选择源目录\n\n点击\"浏览...\"按钮，选择包含Skill的目录（例如桌面的 `TRAE-Skills-main` 文件夹）。\n\n### 3. 扫描Skill\n\n点击\"扫描Skill\"按钮，程序会自动扫描目录中的所有Skill。\n\n### 4. ",
+    "readme_preview": "# Trae Skill 一键导入工具\n\n一个简单易用的图形界面工具，用于批量导入外部Skill到Trae IDE。\n\n## 功能特性\n\n- 📁 可视化选择源目录\n- 🔍 自动扫描目录中的Skill\n- ✅ 支持多选和全选\n- ⚠️ 智能检测已存在的Skill\n- 🔄 可选覆盖已存在的Skill\n- 📝 实时日志输出\n- 🎨 简洁美观的界面\n- 🔧 **智能命名适配** - 自动规范化外部Skill的名称\n- 📄 **自动生成SKILL.md** - 为没有配置文件的Skill自动创建\n- 🔄 **同步名称更新** - 自动更新SKILL.md中的name字段\n\n## 使用方法\n\n### 1. 启动程序\n\n双击 `启动.bat` 文件，或在命令行中运行：\n\n```bash\npython skill_importer.py\n```\n\n### 2. 选择源目录\n\n点击\"浏览...\"按钮，选择包含Skill的目录（例如桌面的 `TRAE-Skills-main` 文件夹）。\n\n### 3. 扫描Skill\n\n点击\"扫描Skill\"按钮，程序会自动扫描目录中的所有Skill。\n\n### 4. 查看和选择Skill\n\n- **原始名称**：显示外部Skill的原始文件夹名\n- **导入名称**：显示规范化后的Trae兼容名称\n- **描述**：Skill的描述信息\n- **状态**：显示是否已存在、是否有SKILL.md\n\n点击列表中的Skill进行选择，支持多选和全选。\n\n### 5. 导入Skill\n\n- 如果需要覆盖已存在的Skill，勾选\"覆盖已存在的Skill\"\n- 点击\"导入选中的Skill\"按钮\n- 等待导入完成，查看日志输出\n\n## 智能命名适配\n\n工具会自动处理外部Skill的命名，使其符合Trae的规范：\n\n### 命名规范化规则\n\n1. **优先使用SKILL.md中的name字段**\n   - 如果SKILL.md中定义了`name:`，会优先使用这个名称\n   - 然后对这个名称进行规范化处理\n\n2. **如果没有name字段，使用目录名**\n   - 去除特殊字符（!@#$%^&*等）\n   - 将空格和下划线转换为连字符（-）\n   - 转换为小写\n   - 去除首尾的连字符\n\n### 示例转换\n\n| 原始名称 | 规范化后 |\n|---------|---------|\n| `My Awesome Skill! 123` | `my-awesome-skill-123` |\n| `Another_Skill_With_Spaces` | `another-skill-with-spaces` |\n| `Skill@#$Name!` | `skill-name` |\n| `__SKILL__NAME__` | `skill-name` |\n\n## 自动生成SKILL.md\n\n如果导入的Skill没有SKILL.md文件，工具会自动创建一个：\n\n```markdown\n---\nname: normalized-skill-name\ndescription: \"Original Name - 自动导入的Skill\"\n---\n\n# Original Name\n\nOriginal Name - 自动导入的Skill\n\n---\n\n*由 Trae Skill 导入工具自动生成*\n```\n\n## 同步名称更新\n\n如果SKILL.md中的name字段与规范化后的名称不一致，工具会自动更新SKILL.md中的name字段，使其保持一致。\n\n## Skill目录结构要求\n\n工具支持三种目录结构：\n\n### 结构1：单个Skill目录\n```\nyour-skill/\n└── SKILL.md\n```\n\n### 结构2：包含多个Skill的目录\n```\nTRAE-Skills-main/\n├── skill-1/\n│   └── SKILL.md\n├── skill-2/\n│   └── SKILL.md\n└── skill-3/\n    └── SKILL.md\n```\n\n### 结构3：单个MD文件格式（新增）\n```\ndocumentation/\n├── API_Documentation_Best_Practices.md\n├── Code_Comments_Best_Practices.md\n└── Writing_Effective_README.md\n```\n\n**说明：** 工具会自动识别单个MD文件，并将其转换为Trae兼容的Skill格式：\n- 从文件名生成Skill名称（去除.md后缀）\n- 自动创建包含SKILL.md的文件夹\n- 如果MD文件有frontmatter，会保留并添加name字段\n- 如果没有",
     "topics": []
   },
   {
@@ -4718,7 +4725,7 @@
     "tags": [],
     "maturity": "unknown",
     "status": "unknown",
-    "readme_preview": "# 迭代讨论（Iterative Discussion）\n\n[中文](#中文) | [English](README.en.md)\n\n一个 TRAE 技能，**在任何任务执行前强制走迭代讨论与确认流程**。通过批量提问、单独追问、方案确认、spec 确认、执行后追问五阶段，确保动手前与用户对齐，避免未审视假设导致的返工。\n\n> **切换语言：[English](README.en.md)**\n\n---\n\n<a name=\"中文\"></a>\n## 它做什么\n\n任何任务——无论多小——在动手实施前都必须走完 5 阶段确认流程，且结束后必须追问用户是否还有下一阶段，而不是自行结束对话。\n\n技能本身只是一段 prompt（一个 `SKILL.md` 文件）加一条 `user_rule` 强制 TRAE 每个任务都调用它。没有任何运行时代码，机制是：\n\n1. **SKILL.md 指令文本** —— 规定何时问、问什么、怎么问\n2. **`AskUserQuestion` 工具调用** —— 渲染交互式问题卡片，把用户选择回传给 AI\n3. **HARD-GATE 强制门** —— 硬约束，用户",
+    "readme_preview": "# 迭代讨论（Iterative Discussion）\n\n[中文](#中文) | [English](README.en.md)\n\n一个 TRAE 技能，**在任何任务执行前强制走迭代讨论与确认流程**。通过批量提问、单独追问、方案确认、spec 确认、执行后追问五阶段，确保动手前与用户对齐，避免未审视假设导致的返工。\n\n> **切换语言：[English](README.en.md)**\n\n---\n\n<a name=\"中文\"></a>\n## 它做什么\n\n任何任务——无论多小——在动手实施前都必须走完 5 阶段确认流程，且结束后必须追问用户是否还有下一阶段，而不是自行结束对话。\n\n技能本身只是一段 prompt（一个 `SKILL.md` 文件）加一条 `user_rule` 强制 TRAE 每个任务都调用它。没有任何运行时代码，机制是：\n\n1. **SKILL.md 指令文本** —— 规定何时问、问什么、怎么问\n2. **`AskUserQuestion` 工具调用** —— 渲染交互式问题卡片，把用户选择回传给 AI\n3. **HARD-GATE 强制门** —— 硬约束，用户未批准前禁止任何实施动作\n\n## 五阶段流程\n\n```mermaid\nflowchart LR\n    A[阶段1<br/>批量提问<br/>一次2-4个问题] --> B{仍有歧义?}\n    B -- 是 --> C[阶段2<br/>单独追问<br/>每次1问]\n    B -- 否 --> D[阶段3<br/>方案+确认<br/>1-3个方案, AI自判数量]\n    C --> D\n    D --> E[阶段4<br/>spec文档+确认<br/>按任务类型弹性]\n    E --> F[阶段5<br/>执行+自检+报告]\n    F --> G{有下一阶段?}\n    G -- 是 --> A\n    G -- \"否（用户说结束）\" --> H[结束]\n```\n\n### 阶段说明\n\n- **阶段 1 批量提问**：收到任务后立即用 `AskUserQuestion` 单次调用，提 2-4 个关键问题，覆盖目的、约束、成功标准、歧义点。每问 2-4 个选项，必有\"其他\"。\n- **阶段 2 单独追问**：审阅回答，对仍模糊的点逐个单独追问（每次 1 问），直到无歧义。若阶段 1 已充分可跳过。\n- **阶段 3 方案+确认**：按任务复杂度给方案——明显只有一种做法就给 1 个 + 权衡；有多条路径就给 2-3 个对比。用 `AskUserQuestion` 让用户选/改/否。未确认不动手。\n- **阶段 4 spec+确认**：按下方任务类型表生成 spec 文档，用 `AskUserQuestion` 确认。**禁止用 `NotifyUser` 做确认**（它会中断对话）。\n- **阶段 5 执行+追问**：执行任务 → 自检 → 报告 → 用 `AskUserQuestion` 问\"是否有下一阶段任务/补充/调整/重做/结束\"。用户说\"结束\"才结束；说有则回到阶段 1。\n\n## 按任务类型的 spec 规范\n\nspec 文档详略按任务类型弹性调整——不搞一刀切的三件套：\n\n| 任务类型 | spec 文档 | 提问侧重 | 验证标准 |\n|---|---|---|---|\n| **debug 任务** | 可省；根因复杂则写 `spec.md`（症状+根因+修复方案） | 复现条件、影响范围、是否需保留临时绕过 | 原症状消失、无回归 |\n| **工程重构** | 必出 `spec.md` + `checklist.md` | 重构动机、对外接口是否变、回滚策略 | 行为不变 + 测试全绿 |\n| **功能实现** | 必出三件套：`spec.md` + `checklist.md` + `tasks.md` | 目的、边界、成功标准、歧义点 | 满足 spec 验收项 |\n| **运维任务** | `spec.md` 几行；高危操作必出 `checklist.md` | 影响范围、回滚、时间窗 | 操作完成 + 系统正常 |\n| **其他/不确定** | AI 判断，倾向从简 | 目的、约束 | 目标达成 |\n\n**spec 可省的明确条件**：debug 根因简单、任务本身是\"制作技能/读文件/单行修复\"等极简任务、或用户明确说\"跳过 spec 直接做\"。即便省 spec，阶段 3（方案确认）和阶段 5（追问）也不省。\n\n## 优缺点\n\n**优点**\n- 消除未审视假设导致的返工——哪怕\"简单\"任务也过一道 sanity check\n- 阶段 1 批量提问（一次 2-4 问）比逐个问更快收集关键细节\n- 弹性 spec 规则避",
     "topics": []
   }
 ]
