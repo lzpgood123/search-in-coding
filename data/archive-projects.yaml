@@ -4542,4 +4542,6069 @@
   llm_summary:
     zh: 这是一个牙科诊所管理软件，与AI编码代理生态系统无关。
     en: A dental clinic management software, not related to the AI coding agent ecosystem.
+- id: github-lijigang-ljg-skill-xray-paper
+  name: lijigang/ljg-skill-xray-paper
+  url: https://github.com/lijigang/ljg-skill-xray-paper
+  repo: lijigang/ljg-skill-xray-paper
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - claude-code
+  summary: 论文X光机 — Claude Code Skill，解构学术论文，提炼餐巾纸公式
+  i18n:
+    zh:
+      name: lijigang/ljg-skill-xray-paper
+      summary: 论文X光机 — Claude Code Skill，解构学术论文，提炼餐巾纸公式
+    en:
+      name: lijigang/ljg-skill-xray-paper
+      summary: 论文X光机 — Claude Code Skill，解构学术论文，提炼餐巾纸公式
+  status: archived
+  license: mit
+  stars: 588
+  forks: 42
+  last_updated: '2026-07-13T14:35:33Z'
+  first_seen: '2026-07-14'
+  last_seen: '2026-07-14'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: '# ljg-skill-xray-paper
+
+
+    论文 X 光机 — 一个 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) Skill，只做两件事：论文说了什么
+    + 对我意味着什么。
+
+
+    ## 功能
+
+
+    - 支持 arxiv ID、URL、PDF 路径等多种输入（自动转 `/html/` 格式抓取全文）
+
+    - **零术语规则**：承重概念必须场景化（3 级渐进），去掉技术名字仍能理解
+
+    - **一句话压缩**：电梯里跟外行朋友说的那句大白话 + 餐巾纸图
+
+    - **认知碰撞卡片**：ASCII art 直观展示论文洞见与个人认知的碰撞
+
+    - **多种碰撞形状**：分叉、张力、阈值、缺口、翻转——选跟碰撞匹配的空间结构
+
+    - **诚实原则**：delta ≈ 0 就说 0，不造空卡片
+
+    - 生成 Org-mode 格式报告（Denote 规范），自带模板
+
+
+    ## 安装
+
+
+    ```bash
+
+    claude plugin add lijigang/ljg-skill-xray-paper
+
+    ```
+
+
+    ## 使用
+
+
+    ```
+
+    /ljg-xray'
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 28
+  quality_score: 0
+  total_score: 28
+  score_detail:
+    stars: 4
+    activity: 15
+    adoption: 4
+    maturity: 5
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+  readme_checked: true
+- id: github-lijigang-ljg-skill-xray-book
+  name: lijigang/ljg-skill-xray-book
+  url: https://github.com/lijigang/ljg-skill-xray-book
+  repo: lijigang/ljg-skill-xray-book
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - claude-code
+  summary: 深度拆书机 — Claude Code Skill，三轮认知压缩提取书籍可学习结构
+  i18n:
+    zh:
+      name: lijigang/ljg-skill-xray-book
+      summary: 深度拆书机 — Claude Code Skill，三轮认知压缩提取书籍可学习结构
+    en:
+      name: lijigang/ljg-skill-xray-book
+      summary: 深度拆书机 — Claude Code Skill，三轮认知压缩提取书籍可学习结构
+  status: archived
+  license: mit
+  stars: 444
+  forks: 35
+  last_updated: '2026-07-09T12:34:27Z'
+  first_seen: '2026-07-14'
+  last_seen: '2026-07-14'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: '# ljg-skill-xray-book
+
+
+    深度拆书机 (Deep Book X-Ray) — 一个 [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
+    Skill，基于 Epiplexity 原理，通过三轮认知压缩最大化提取书籍中的可学习结构。
+
+
+    ## 功能
+
+
+    - 支持书名、书籍内容或链接输入
+
+    - 三轮认知压缩：骨架扫描 → 血肉解剖 → 灵魂提取
+
+    - 餐巾纸极限压缩：公式 + 草图 + 一句话
+
+    - 生成 Org-mode 格式报告，含 ASCII 结构图
+
+
+    ## 安装
+
+
+    ```bash
+
+    /plugin marketplace add lijigang/ljg-skill-xray-book
+
+    /plugin install ljg-xray-book
+
+    ```
+
+
+    ## 使用
+
+
+    在 Claude Code 中输入：
+
+
+    ```
+
+    /ljg-xray-book 《思考，快与慢》
+
+    ```
+
+
+    ## 输出示例
+
+
+    生成的 Org-mode 报告包含：
+
+
+    - **NAPKIN** — 餐巾纸公式、一句话、草图
+
+    - **ROUND '
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 28
+  quality_score: 0
+  total_score: 28
+  score_detail:
+    stars: 4
+    activity: 15
+    adoption: 4
+    maturity: 5
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+  readme_checked: true
+- id: github-maxnowack-anthropic-proxy
+  name: maxnowack/anthropic-proxy
+  url: https://github.com/maxnowack/anthropic-proxy
+  repo: maxnowack/anthropic-proxy
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - claude-code
+  summary: Proxy server that converts Anthropic API requests to OpenAI format and
+    sends it to OpenRouter. It's used to use Claude Code with OpenRouter instead of
+    the Anthropic API
+  i18n:
+    zh:
+      name: maxnowack/anthropic-proxy
+      summary: Proxy server that converts Anthropic API requests to OpenAI format
+        and sends it to OpenRouter. It's used to use Claude Code with OpenRouter instead
+        of the Anthropic API
+    en:
+      name: maxnowack/anthropic-proxy
+      summary: Proxy server that converts Anthropic API requests to OpenAI format
+        and sends it to OpenRouter. It's used to use Claude Code with OpenRouter instead
+        of the Anthropic API
+  status: archived
+  license: null
+  stars: 416
+  forks: 45
+  last_updated: '2026-06-30T04:46:50Z'
+  first_seen: '2026-07-14'
+  last_seen: '2026-07-14'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics:
+  - anthropic
+  - claude-code
+  - llm
+  - openrouter
+  readme_preview: '# anthropic-proxy
+
+
+    A proxy server that transforms Anthropic API requests to OpenAI format and sends
+    it to openrouter.ai. This enables you to use Anthropic''s API format while connecting
+    to OpenAI-compatible endpoints.
+
+
+    ## Usage
+
+
+    With this command, you can start the proxy server with your OpenRouter API key
+    on port 3000:
+
+
+    ```bash
+
+    OPENROUTER_API_KEY=your-api-key npx anthropic-proxy
+
+    ```
+
+
+    Environment variables:
+
+
+    - `OPENROUTER_API_KEY`: Your OpenRouter API key (required when using OpenRouter)
+
+    - `ANTHR'
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 28
+  quality_score: 0
+  total_score: 28
+  score_detail:
+    stars: 4
+    activity: 15
+    adoption: 4
+    maturity: 5
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+  readme_checked: true
+- id: github-lijigang-ljg-skill-explain-words
+  name: lijigang/ljg-skill-explain-words
+  url: https://github.com/lijigang/ljg-skill-explain-words
+  repo: lijigang/ljg-skill-explain-words
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - claude-code
+  summary: 单词灵魂解剖师 — Claude Code Skill，深度解构英文单词，生成博物馆级 HTML 卡片
+  i18n:
+    zh:
+      name: lijigang/ljg-skill-explain-words
+      summary: 单词灵魂解剖师 — Claude Code Skill，深度解构英文单词，生成博物馆级 HTML 卡片
+    en:
+      name: lijigang/ljg-skill-explain-words
+      summary: 单词灵魂解剖师 — Claude Code Skill，深度解构英文单词，生成博物馆级 HTML 卡片
+  status: archived
+  license: mit
+  stars: 212
+  forks: 20
+  last_updated: '2026-07-03T02:01:33Z'
+  first_seen: '2026-07-14'
+  last_seen: '2026-07-14'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: '# ljg-skill-explain-words
+
+
+    单词灵魂解剖师 (Word Soul Master) — 一个 [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
+    Skill，深度解构英文单词的核心语义，直击词的灵魂。
+
+
+    ## 功能
+
+
+    - 核心语义：原始画面 + 核心意象公式 + 深层解释
+
+    - 一语道破：中英双语哲学金句
+
+    - 直接在对话中 Markdown 输出，轻量无依赖
+
+
+    ## 安装
+
+
+    ```bash
+
+    /plugin marketplace add lijigang/ljg-skill-explain-words
+
+    /plugin install ljg-explain-words
+
+    ```
+
+
+    ## 使用
+
+
+    在 Claude Code 中输入：
+
+
+    ```
+
+    /ljg-explain-words Serendipity
+
+    ```
+
+
+    ## 输出示例
+
+
+    ```
+
+    ## Catharsis  /kəˈθɑːrsɪs/  宣泄；净化
+
+
+    原始画面：一个人蹲在河边，用清水冲洗伤口上的脓血...
+
+
+    核心意象：积压的污浊 + 强烈的'
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 28
+  quality_score: 0
+  total_score: 28
+  score_detail:
+    stars: 4
+    activity: 15
+    adoption: 4
+    maturity: 5
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+  readme_checked: true
+- id: github-hyprmcp-jetski
+  name: hyprmcp/jetski
+  url: https://github.com/hyprmcp/jetski
+  repo: hyprmcp/jetski
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - general-ai-coding
+  summary: Authentication, analytics, and prompt visibility for MCP servers with zero
+    code changes. Supports OAuth2.1, DCR, real-time logs, and client onboarding out
+    of the box
+  i18n:
+    zh:
+      name: hyprmcp/jetski
+      summary: Authentication, analytics, and prompt visibility for MCP servers with
+        zero code changes. Supports OAuth2.1, DCR, real-time logs, and client onboarding
+        out of the box
+    en:
+      name: hyprmcp/jetski
+      summary: Authentication, analytics, and prompt visibility for MCP servers with
+        zero code changes. Supports OAuth2.1, DCR, real-time logs, and client onboarding
+        out of the box
+  status: archived
+  license: mit
+  stars: 210
+  forks: 9
+  last_updated: '2026-05-26T08:00:53Z'
+  first_seen: '2026-07-14'
+  last_seen: '2026-07-14'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics:
+  - go
+  - golang
+  - mcp
+  - angular
+  - kubernetes
+  - mcp-analytics
+  - metacontroller
+  - typescript
+  - ai
+  - authentication
+  - dynamic-client-registration
+  - mcp-gateway
+  - mcp-proxy
+  - mcp-security
+  - model-context-protocol
+  - oauth2
+  - oauth2-proxy
+  readme_preview: '[![GitHub Repo stars](https://img.shields.io/github/stars/hyprmcp/jetski?style=flat)](https://github.com/hyprmcp/jetski)
+
+    [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+    [![Docs](https://img.shields.io/badge/docs-hyprmcp.com%2Fdocs-blue)](https://hyprmcp.com/docs/getting-started/?utm_source=github)
+
+    [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+    [![Discord](https://img.shields.io/badge/HyprMCP-Discord-%235865'
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 28
+  quality_score: 0
+  total_score: 28
+  score_detail:
+    stars: 4
+    activity: 15
+    adoption: 2
+    maturity: 7
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+  readme_checked: true
+- id: github-lijigang-ljg-explain-concept
+  name: lijigang/ljg-explain-concept
+  url: https://github.com/lijigang/ljg-explain-concept
+  repo: lijigang/ljg-explain-concept
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - claude-code
+  summary: 'Claude Code skill: 8-dimensional concept anatomist. Deconstructs any concept
+    into epiphany.'
+  i18n:
+    zh:
+      name: lijigang/ljg-explain-concept
+      summary: 'Claude Code skill: 8-dimensional concept anatomist. Deconstructs any
+        concept into epiphany.'
+    en:
+      name: lijigang/ljg-explain-concept
+      summary: 'Claude Code skill: 8-dimensional concept anatomist. Deconstructs any
+        concept into epiphany.'
+  status: archived
+  license: mit
+  stars: 210
+  forks: 13
+  last_updated: '2026-06-18T15:14:22Z'
+  first_seen: '2026-07-14'
+  last_seen: '2026-07-14'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: "# ljg-explain-concept\n\nA Claude Code skill that deconstructs\
+    \ any concept through **8 exploration dimensions**, then compresses all insights\
+    \ into a single epiphany.\n\n## What it does\n\nGiven any concept (e.g. \"entropy\"\
+    , \"recursion\", \"freedom\"), the skill performs:\n\n1. **Preprocessing** — clarify\
+    \ definition, identify core morphemes\n2. **8-Dimensional Exploration**:\n   -\
+    \ Historical tracing\n   - Dialectical analysis\n   - Phenomenological reduction\n\
+    \   - Linguistic deconstruction\n   - Mathematical forma"
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 28
+  quality_score: 0
+  total_score: 28
+  score_detail:
+    stars: 4
+    activity: 15
+    adoption: 4
+    maturity: 5
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+  readme_checked: true
+- id: github-mcp-use-mcp-use-ts
+  name: mcp-use/mcp-use-ts
+  url: https://github.com/mcp-use/mcp-use-ts
+  repo: mcp-use/mcp-use-ts
+  source_type: github
+  resource_type:
+  - mcp-server
+  - agent-framework
+  - cli-tool
+  target_tools:
+  - trae
+  - hermes-agent
+  - replit
+  summary: mcp-use is the framework for MCP with the best DX - Build AI agents, create
+    MCP   servers with UI widgets, and debug with built-in inspector. Includes client
+    SDK, server SDK, React hooks, and powerful dev tools.
+  i18n:
+    zh:
+      name: mcp-use/mcp-use-ts
+      summary: mcp-use is the framework for MCP with the best DX - Build AI agents,
+        create MCP   servers with UI widgets, and debug with built-in inspector. Includes
+        client SDK, server SDK, React hooks, and powerful dev tools.
+    en:
+      name: mcp-use/mcp-use-ts
+      summary: mcp-use is the framework for MCP with the best DX - Build AI agents,
+        create MCP   servers with UI widgets, and debug with built-in inspector. Includes
+        client SDK, server SDK, React hooks, and powerful dev tools.
+  status: archived
+  license: null
+  stars: 172
+  forks: 35
+  last_updated: '2026-07-01T09:17:39Z'
+  first_seen: '2026-07-14'
+  last_seen: '2026-07-14'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics:
+  - agent
+  - langchain
+  - llm
+  - mcp
+  - mcp-client
+  - mcp-server
+  - typescript
+  - modelcontextprotocol
+  readme_preview: Repository moved to monorepo https://github.com/mcp-use/mcp-use
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 28
+  quality_score: 0
+  total_score: 28
+  score_detail:
+    stars: 4
+    activity: 15
+    adoption: 4
+    maturity: 5
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+  readme_checked: true
+- id: github-pathonaiorg-litemultiagent
+  name: PathOnAIOrg/LiteMultiAgent
+  url: https://github.com/PathOnAIOrg/LiteMultiAgent
+  repo: PathOnAIOrg/LiteMultiAgent
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - trae
+  - hermes-agent
+  - lovable
+  - replit
+  summary: The Library for LLM-based multi-agent applications
+  i18n:
+    zh:
+      name: PathOnAIOrg/LiteMultiAgent
+      summary: The Library for LLM-based multi-agent applications
+    en:
+      name: PathOnAIOrg/LiteMultiAgent
+      summary: The Library for LLM-based multi-agent applications
+  status: archived
+  license: other
+  stars: 102
+  forks: 20
+  last_updated: '2026-01-30T01:25:13Z'
+  first_seen: '2026-07-14'
+  last_seen: '2026-07-14'
+  maturity: unknown
+  languages:
+  - Python
+  topics:
+  - agent
+  - gpt
+  - llm
+  - multi-agent
+  - agent-based-framework
+  - llm-agent
+  - llm-framework
+  - multi-agent-systems
+  - web-agent
+  - agentic-agi
+  - agentic-framework
+  - agentic-workflow
+  - ai-agent
+  - ai-agents
+  - autonomous-agent
+  - autonomous-agents
+  - llm-agents
+  readme_preview: '# LiteMultiAgent
+
+    [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15500241.svg)](https://doi.org/10.5281/zenodo.15500241)
+
+
+    In our exploration of building multi-agent systems, we have investigated AutoGen,
+    CrewAI, LangGraph, and MetaGPT, but failed to find a multi-agent system that intuitively
+    makes multi-agent systems more efficient. We have found that most examples provided
+    by these frameworks could be accomplished with just one agent. We reimplemented
+    the multi-agent examples using only one'
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 27
+  quality_score: 0
+  total_score: 27
+  score_detail:
+    stars: 4
+    activity: 12
+    adoption: 4
+    maturity: 7
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+  readme_checked: true
+- id: github-sapientpants-sonarqube-mcp-server
+  name: sapientpants/sonarqube-mcp-server
+  url: https://github.com/sapientpants/sonarqube-mcp-server
+  repo: sapientpants/sonarqube-mcp-server
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - general-ai-coding
+  summary: Model Context Protocol (MCP) server for SonarQube
+  i18n:
+    zh:
+      name: sapientpants/sonarqube-mcp-server
+      summary: Model Context Protocol (MCP) server for SonarQube
+    en:
+      name: sapientpants/sonarqube-mcp-server
+      summary: Model Context Protocol (MCP) server for SonarQube
+  status: archived
+  license: null
+  stars: 100
+  forks: 16
+  last_updated: '2026-07-05T03:14:11Z'
+  first_seen: '2026-07-14'
+  last_seen: '2026-07-14'
+  maturity: unknown
+  languages: []
+  topics:
+  - mcp
+  - model-context-protocol
+  - sonarqube
+  - model-context-protocol-servers
+  - typescript
+  - mcp-server
+  - sonarcloud
+  readme_preview: This project is no longer maintained. Please refer to the official
+    version at [sonarqube-mcp-server](https://github.com/SonarSource/sonarqube-mcp-server).
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 26
+  quality_score: 0
+  total_score: 26
+  score_detail:
+    stars: 4
+    activity: 15
+    adoption: 4
+    maturity: 3
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+  readme_checked: true
+- id: github-terrificdm-openclaw-kirocli-coding-agent
+  name: terrificdm/openclaw-kirocli-coding-agent
+  url: https://github.com/terrificdm/openclaw-kirocli-coding-agent
+  repo: terrificdm/openclaw-kirocli-coding-agent
+  source_type: github
+  resource_type:
+  - skills
+  target_tools: []
+  summary: OpenClaw coding agent skill with Kiro CLI support
+  i18n:
+    zh:
+      name: terrificdm/openclaw-kirocli-coding-agent
+      summary: OpenClaw coding agent skill with Kiro CLI support
+    en:
+      name: terrificdm/openclaw-kirocli-coding-agent
+      summary: OpenClaw coding agent skill with Kiro CLI support
+  status: unknown
+  license: null
+  stars: 6
+  forks: 1
+  last_updated: '2026-07-08T16:45:05Z'
+  first_seen: '2026-07-16'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 1
+  total_score: 20
+  score_detail:
+    stars: 2
+    activity: 15
+    adoption: 2
+    maturity: 0
+  tracking_priority: reject
+  last_analyzed: '2026-07-17'
+  benchmark_ref: github-opencoworkai-open-cowork
+  quality_detail:
+    relevance: 1
+    practicality: 0
+    novelty: 0
+    ecosystem_value: 0
+  llm_summary:
+    zh: 这是一个名为 OpenClaw coding agent skill 的空仓库，标记了 Kiro CLI 支持但没有实际代码或文档。目前不具备任何可用功能，不适合实际使用。
+    en: This is an empty repository named OpenClaw coding agent skill with Kiro CLI
+      support, but contains no code or documentation. It has no usable features and
+      is not suitable for practical use.
+- id: github-rajatgupta0493-code-kiro-coding-agent
+  name: rajatgupta0493-code/kiro-coding-agent
+  url: https://github.com/rajatgupta0493-code/kiro-coding-agent
+  repo: rajatgupta0493-code/kiro-coding-agent
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - kiro
+  summary: Coding Agent compatible with Kiro CLI.
+  i18n:
+    zh:
+      name: rajatgupta0493-code/kiro-coding-agent
+      summary: Coding Agent compatible with Kiro CLI.
+    en:
+      name: rajatgupta0493-code/kiro-coding-agent
+      summary: Coding Agent compatible with Kiro CLI.
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-02-07T18:41:33Z'
+  first_seen: '2026-07-16'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-canonical-kiro-sdk
+  name: canonical/kiro-sdk
+  url: https://github.com/canonical/kiro-sdk
+  repo: canonical/kiro-sdk
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - kiro
+  summary: A Workshops SDK for AWS Kiro coding agent
+  i18n:
+    zh:
+      name: canonical/kiro-sdk
+      summary: A Workshops SDK for AWS Kiro coding agent
+    en:
+      name: canonical/kiro-sdk
+      summary: A Workshops SDK for AWS Kiro coding agent
+  status: unknown
+  license: other
+  stars: 0
+  forks: 0
+  last_updated: '2026-06-19T21:03:59Z'
+  first_seen: '2026-07-16'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-thegamerzed-cline-mastery
+  name: theGamerZed/Cline-Mastery
+  url: https://github.com/theGamerZed/Cline-Mastery
+  repo: theGamerZed/Cline-Mastery
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - zed
+  - cline
+  summary: using cline coding agent to build a fully functional series/movies database
+  i18n:
+    zh:
+      name: theGamerZed/Cline-Mastery
+      summary: using cline coding agent to build a fully functional series/movies
+        database
+    en:
+      name: theGamerZed/Cline-Mastery
+      summary: using cline coding agent to build a fully functional series/movies
+        database
+  status: unknown
+  license: null
+  stars: 0
+  forks: 1
+  last_updated: '2026-06-28T21:09:03Z'
+  first_seen: '2026-07-16'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - HTML
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 2
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-unkloud-junie-guidelines
+  name: unkloud/junie-guidelines
+  url: https://github.com/unkloud/junie-guidelines
+  repo: unkloud/junie-guidelines
+  source_type: github
+  resource_type:
+  - extension
+  - agent-framework
+  target_tools:
+  - junie
+  summary: My guideline for jetbrains junie coding agent
+  i18n:
+    zh:
+      name: unkloud/junie-guidelines
+      summary: My guideline for jetbrains junie coding agent
+    en:
+      name: unkloud/junie-guidelines
+      summary: My guideline for jetbrains junie coding agent
+  status: unknown
+  license: cc0-1.0
+  stars: 0
+  forks: 0
+  last_updated: '2025-12-06T07:53:44Z'
+  first_seen: '2026-07-16'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 10
+  quality_score: 0
+  total_score: 10
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 2
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-cheggin-agent-session-management
+  name: Cheggin/agent-session-management
+  url: https://github.com/Cheggin/agent-session-management
+  repo: Cheggin/agent-session-management
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - continue
+  summary: Agent session management (ASM) allows you to easily fork and continue coding
+    agent sessions no matter the provider.
+  i18n:
+    zh:
+      name: Cheggin/agent-session-management
+      summary: Agent session management (ASM) allows you to easily fork and continue
+        coding agent sessions no matter the provider.
+    en:
+      name: Cheggin/agent-session-management
+      summary: Agent session management (ASM) allows you to easily fork and continue
+        coding agent sessions no matter the provider.
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-26T19:40:49Z'
+  first_seen: '2026-07-16'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Rust
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-cannacre8ive-replit-agent
+  name: cannacre8ive/replit_agent
+  url: https://github.com/cannacre8ive/replit_agent
+  repo: cannacre8ive/replit_agent
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - replit
+  summary: Fine Tuned replit coding agent based on all available training docs.
+  i18n:
+    zh:
+      name: cannacre8ive/replit_agent
+      summary: Fine Tuned replit coding agent based on all available training docs.
+    en:
+      name: cannacre8ive/replit_agent
+      summary: Fine Tuned replit coding agent based on all available training docs.
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-03T14:30:34Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - HTML
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-cugljc-openclaw-coding-agent
+  name: cugljc/openclaw-coding-agent
+  url: https://github.com/cugljc/openclaw-coding-agent
+  repo: cugljc/openclaw-coding-agent
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools: []
+  summary: cugljc/openclaw-coding-agent
+  i18n:
+    zh:
+      name: cugljc/openclaw-coding-agent
+      summary: cugljc/openclaw-coding-agent
+    en:
+      name: cugljc/openclaw-coding-agent
+      summary: cugljc/openclaw-coding-agent
+  status: unknown
+  license: mit
+  stars: 1
+  forks: 0
+  last_updated: '2026-03-23T06:31:30Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 18
+  quality_score: 10
+  total_score: 28
+  score_detail:
+    stars: 2
+    activity: 12
+    adoption: 0
+    maturity: 4
+  tracking_priority: reject
+  last_analyzed: '2026-07-17'
+  benchmark_ref: github-opencoworkai-open-cowork
+  quality_detail:
+    relevance: 5
+    practicality: 1
+    novelty: 2
+    ecosystem_value: 2
+  llm_summary:
+    zh: 该项目名为 openclaw-coding-agent，可能是一个与 OpenClaw 相关的编码代理配置或示例。但仓库内容几乎空白，核心功能不明确，目前不适合用户使用。建议关注后续更新。
+    en: This project named openclaw-coding-agent seems to be a configuration or example
+      related to OpenClaw. However, the repository is nearly empty with no substantial
+      content, so its core purpose is unclear. It is not suitable for users at this
+      time. Wait for future updates.
+- id: github-mac-openclaw-work-coder
+  name: mac-openclaw-work/coder
+  url: https://github.com/mac-openclaw-work/coder
+  repo: mac-openclaw-work/coder
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - openclaw
+  summary: OpenClaw Coder Agent
+  i18n:
+    zh:
+      name: mac-openclaw-work/coder
+      summary: OpenClaw Coder Agent
+    en:
+      name: mac-openclaw-work/coder
+      summary: OpenClaw Coder Agent
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-19T07:28:30Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-vale-a-fe-openclaw-coder
+  name: Vale-A-FE/openclaw-coder
+  url: https://github.com/Vale-A-FE/openclaw-coder
+  repo: Vale-A-FE/openclaw-coder
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - openclaw
+  summary: OpenClaw Coder Agent workspace - Python utilities
+  i18n:
+    zh:
+      name: Vale-A-FE/openclaw-coder
+      summary: OpenClaw Coder Agent workspace - Python utilities
+    en:
+      name: Vale-A-FE/openclaw-coder
+      summary: OpenClaw Coder Agent workspace - Python utilities
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-02-24T12:15:28Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-hello-vince-openclaw-coding-agent
+  name: Hello-Vince/openclaw-coding-agent
+  url: https://github.com/Hello-Vince/openclaw-coding-agent
+  repo: Hello-Vince/openclaw-coding-agent
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - openclaw
+  summary: Hello-Vince/openclaw-coding-agent
+  i18n:
+    zh:
+      name: Hello-Vince/openclaw-coding-agent
+      summary: Hello-Vince/openclaw-coding-agent
+    en:
+      name: Hello-Vince/openclaw-coding-agent
+      summary: Hello-Vince/openclaw-coding-agent
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-03-11T15:39:45Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-ashton-li-coding-agent-practice
+  name: ashton-li/coding-agent-practice
+  url: https://github.com/ashton-li/coding-agent-practice
+  repo: ashton-li/coding-agent-practice
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - openclaw
+  summary: OpenClaw coding-agent技能练习项目
+  i18n:
+    zh:
+      name: ashton-li/coding-agent-practice
+      summary: OpenClaw coding-agent技能练习项目
+    en:
+      name: ashton-li/coding-agent-practice
+      summary: OpenClaw coding-agent技能练习项目
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-02-12T03:24:35Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-ivanlee1999-openclaw-agent-monitor
+  name: ivanlee1999/openclaw-agent-monitor
+  url: https://github.com/ivanlee1999/openclaw-agent-monitor
+  repo: ivanlee1999/openclaw-agent-monitor
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - openclaw
+  summary: Catppuccin-themed web dashboard for monitoring OpenClaw Code Agent sessions
+  i18n:
+    zh:
+      name: ivanlee1999/openclaw-agent-monitor
+      summary: Catppuccin-themed web dashboard for monitoring OpenClaw Code Agent
+        sessions
+    en:
+      name: ivanlee1999/openclaw-agent-monitor
+      summary: Catppuccin-themed web dashboard for monitoring OpenClaw Code Agent
+        sessions
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-03-27T23:36:27Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-yyyyujiexin-dotcom-openfriday-bench
+  name: yyyyujiexin-dotcom/openfriday-bench
+  url: https://github.com/yyyyujiexin-dotcom/openfriday-bench
+  repo: yyyyujiexin-dotcom/openfriday-bench
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - openclaw
+  summary: OpenFriday Bench - Benchmarking system for evaluating LLM models as OpenClaw
+    coding agents
+  i18n:
+    zh:
+      name: yyyyujiexin-dotcom/openfriday-bench
+      summary: OpenFriday Bench - Benchmarking system for evaluating LLM models as
+        OpenClaw coding agents
+    en:
+      name: yyyyujiexin-dotcom/openfriday-bench
+      summary: OpenFriday Bench - Benchmarking system for evaluating LLM models as
+        OpenClaw coding agents
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-04-15T06:30:50Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-polyphase-labs-polyphase-codeagent-openclaw
+  name: Polyphase-Labs/Polyphase-CodeAgent-OpenClaw
+  url: https://github.com/Polyphase-Labs/Polyphase-CodeAgent-OpenClaw
+  repo: Polyphase-Labs/Polyphase-CodeAgent-OpenClaw
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - openclaw
+  summary: Openclaw Coding agent for Polyphase Engine that can cleanly create feature
+    branches and PRs
+  i18n:
+    zh:
+      name: Polyphase-Labs/Polyphase-CodeAgent-OpenClaw
+      summary: Openclaw Coding agent for Polyphase Engine that can cleanly create
+        feature branches and PRs
+    en:
+      name: Polyphase-Labs/Polyphase-CodeAgent-OpenClaw
+      summary: Openclaw Coding agent for Polyphase Engine that can cleanly create
+        feature branches and PRs
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-10T21:48:36Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-arijit11-supernova-forge2-edition-1
+  name: Arijit11-supernova/Forge2-Edition-1
+  url: https://github.com/Arijit11-supernova/Forge2-Edition-1
+  repo: Arijit11-supernova/Forge2-Edition-1
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - openclaw
+  summary: 'Multi-agent AI system: Hermes (orchestrator) + OpenClaw (coding agent)
+    wired through Slack. Forge 2 Edition 1 sprint build.'
+  i18n:
+    zh:
+      name: Arijit11-supernova/Forge2-Edition-1
+      summary: 'Multi-agent AI system: Hermes (orchestrator) + OpenClaw (coding agent)
+        wired through Slack. Forge 2 Edition 1 sprint build.'
+    en:
+      name: Arijit11-supernova/Forge2-Edition-1
+      summary: 'Multi-agent AI system: Hermes (orchestrator) + OpenClaw (coding agent)
+        wired through Slack. Forge 2 Edition 1 sprint build.'
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-06-26T08:10:59Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 15
+  quality_score: 0
+  total_score: 15
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-integritynoble-openclaw-pwm
+  name: integritynoble/openclaw-pwm
+  url: https://github.com/integritynoble/openclaw-pwm
+  repo: integritynoble/openclaw-pwm
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - openclaw
+  summary: OpenClaw coding agent powered by PWM tokens — routes Claude models through
+    the PWM exchange via a custom provider.
+  i18n:
+    zh:
+      name: integritynoble/openclaw-pwm
+      summary: OpenClaw coding agent powered by PWM tokens — routes Claude models
+        through the PWM exchange via a custom provider.
+    en:
+      name: integritynoble/openclaw-pwm
+      summary: OpenClaw coding agent powered by PWM tokens — routes Claude models
+        through the PWM exchange via a custom provider.
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-10T12:34:29Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-cbeaulieu-gt-openclaw-cpu-serving-study
+  name: cbeaulieu-gt/openclaw-cpu-serving-study
+  url: https://github.com/cbeaulieu-gt/openclaw-cpu-serving-study
+  repo: cbeaulieu-gt/openclaw-cpu-serving-study
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - openclaw
+  summary: 'A reproducibility-first study: running the openclaw coding agent locally
+    with Qwen3.5-0.8B on consumer CPU hardware — baseline measurement plus four iterative
+    serving-speed optimizations, with a full decision log.'
+  i18n:
+    zh:
+      name: cbeaulieu-gt/openclaw-cpu-serving-study
+      summary: 'A reproducibility-first study: running the openclaw coding agent locally
+        with Qwen3.5-0.8B on consumer CPU hardware — baseline measurement plus four
+        iterative serving-speed optimizations, with a full decision log.'
+    en:
+      name: cbeaulieu-gt/openclaw-cpu-serving-study
+      summary: 'A reproducibility-first study: running the openclaw coding agent locally
+        with Qwen3.5-0.8B on consumer CPU hardware — baseline measurement plus four
+        iterative serving-speed optimizations, with a full decision log.'
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-07T01:04:45Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics:
+  - benchmarking
+  - coding-agent
+  - cpu-inference
+  - gguf
+  - inference-optimization
+  - llama-cpp
+  - llm-inference
+  - local-llm
+  - performance-optimization
+  - quantization
+  - qwen
+  - reproducibility
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-peterruler-claude-code-openrouter
+  name: peterruler/claude-code-openrouter
+  url: https://github.com/peterruler/claude-code-openrouter
+  repo: peterruler/claude-code-openrouter
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - claude-code
+  summary: claude code coding agent for free
+  i18n:
+    zh:
+      name: peterruler/claude-code-openrouter
+      summary: claude code coding agent for free
+    en:
+      name: peterruler/claude-code-openrouter
+      summary: claude code coding agent for free
+  status: unknown
+  license: null
+  stars: 4
+  forks: 0
+  last_updated: '2026-07-08T10:26:41Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - HTML
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 8
+  total_score: 27
+  score_detail:
+    stars: 2
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: reject
+  last_analyzed: '2026-07-17'
+  benchmark_ref: github-opencoworkai-open-cowork
+  quality_detail:
+    relevance: 5
+    practicality: 1
+    novelty: 1
+    ecosystem_value: 1
+  llm_summary:
+    zh: 该项目声称提供免费使用 Claude Code 的途径，可能通过 OpenRouter 实现。但仓库仅包含一个 HTML 文件，缺乏实际代码或文档，几乎无法使用。适合对
+      Claude Code 免费访问感兴趣但不知如何入门的用户，但由于内容不完整，不建议依赖。
+    en: This project claims to provide free access to Claude Code via OpenRouter.
+      However, the repository only contains a single HTML file with no actual code
+      or documentation, making it largely unusable. It may be of interest to users
+      curious about free Claude Code access, but it lacks substance and should not
+      be relied upon.
+- id: github-soumyajit-dey-660-claude-code-steup
+  name: Soumyajit-Dey-660/claude-code-steup
+  url: https://github.com/Soumyajit-Dey-660/claude-code-steup
+  repo: Soumyajit-Dey-660/claude-code-steup
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - claude-code
+  summary: Setup claude code coding agent
+  i18n:
+    zh:
+      name: Soumyajit-Dey-660/claude-code-steup
+      summary: Setup claude code coding agent
+    en:
+      name: Soumyajit-Dey-660/claude-code-steup
+      summary: Setup claude code coding agent
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-03-25T06:35:55Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-sinjorjob-claude-code-coding-agents-audio-guide
+  name: sinjorjob/claude-code-coding-agents-audio-guide
+  url: https://github.com/sinjorjob/claude-code-coding-agents-audio-guide
+  repo: sinjorjob/claude-code-coding-agents-audio-guide
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - claude-code
+  summary: Anthropic Eric 氏の Code w/ Claude 講演「How to Vibe Code in Prod Responsibly」を日本語で再構成した音声ナレーション付き
+    Web ガイド。Claude Opus 4.7 によりゼロから生成。
+  i18n:
+    zh:
+      name: sinjorjob/claude-code-coding-agents-audio-guide
+      summary: Anthropic Eric 氏の Code w/ Claude 講演「How to Vibe Code in Prod Responsibly」を日本語で再構成した音声ナレーション付き
+        Web ガイド。Claude Opus 4.7 によりゼロから生成。
+    en:
+      name: sinjorjob/claude-code-coding-agents-audio-guide
+      summary: Anthropic Eric 氏の Code w/ Claude 講演「How to Vibe Code in Prod Responsibly」を日本語で再構成した音声ナレーション付き
+        Web ガイド。Claude Opus 4.7 によりゼロから生成。
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-04-20T21:20:22Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - CSS
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-tpffounder-superpowers
+  name: tpffounder/superpowers
+  url: https://github.com/tpffounder/superpowers
+  repo: tpffounder/superpowers
+  source_type: github
+  resource_type:
+  - skills
+  - agent-framework
+  target_tools:
+  - claude-code
+  summary: Claude Code + coding agent skills framework & software development methodology
+  i18n:
+    zh:
+      name: tpffounder/superpowers
+      summary: Claude Code + coding agent skills framework & software development
+        methodology
+    en:
+      name: tpffounder/superpowers
+      summary: Claude Code + coding agent skills framework & software development
+        methodology
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-08T18:51:51Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-odumag99-openclaw-claude-code-comm-mcp
+  name: odumag99/openclaw-claude-code-comm-mcp
+  url: https://github.com/odumag99/openclaw-claude-code-comm-mcp
+  repo: odumag99/openclaw-claude-code-comm-mcp
+  source_type: github
+  resource_type:
+  - mcp-server
+  - agent-framework
+  target_tools:
+  - claude-code
+  - openclaw
+  summary: MCP Channel Server bridging OpenClaw (main AI) and Claude Code (coding
+    agent)
+  i18n:
+    zh:
+      name: odumag99/openclaw-claude-code-comm-mcp
+      summary: MCP Channel Server bridging OpenClaw (main AI) and Claude Code (coding
+        agent)
+    en:
+      name: odumag99/openclaw-claude-code-comm-mcp
+      summary: MCP Channel Server bridging OpenClaw (main AI) and Claude Code (coding
+        agent)
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-03-25T17:59:27Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-opokumarvin-cli-agent-architects-notebook
+  name: opokumarvin/cli-agent-architects-notebook
+  url: https://github.com/opokumarvin/cli-agent-architects-notebook
+  repo: opokumarvin/cli-agent-architects-notebook
+  source_type: github
+  resource_type:
+  - agent-framework
+  - cli-tool
+  - mcp-server
+  target_tools:
+  - claude-code
+  - codex-cli
+  - antigravity-cli
+  - opencode
+  - qoder
+  - cline
+  summary: Master Agent CLI Patterns 2026 - Ultimate Guide to Claude Code & Coding
+    Agents
+  i18n:
+    zh:
+      name: opokumarvin/cli-agent-architects-notebook
+      summary: Master Agent CLI Patterns 2026 - Ultimate Guide to Claude Code & Coding
+        Agents
+    en:
+      name: opokumarvin/cli-agent-architects-notebook
+      summary: Master Agent CLI Patterns 2026 - Ultimate Guide to Claude Code & Coding
+        Agents
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-16T18:00:51Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - HTML
+  topics:
+  - ai-agent
+  - ai-coding
+  - azure-openai
+  - bun
+  - carla-simulator
+  - claude
+  - claude-code
+  - cli
+  - intelligent-agents
+  - learning-agents
+  - llm
+  - mcp
+  - memory
+  - openai-codex
+  - openai-gym
+  - pytorch-carla
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-earchibald-rein-adapter-claude-code
+  name: earchibald/rein-adapter-claude-code
+  url: https://github.com/earchibald/rein-adapter-claude-code
+  repo: earchibald/rein-adapter-claude-code
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - claude-code
+  summary: Bootstrap repo for the Claude Code coding-agent adapter used by rein
+  i18n:
+    zh:
+      name: earchibald/rein-adapter-claude-code
+      summary: Bootstrap repo for the Claude Code coding-agent adapter used by rein
+    en:
+      name: earchibald/rein-adapter-claude-code
+      summary: Bootstrap repo for the Claude Code coding-agent adapter used by rein
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-02T12:13:16Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Go
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-locknet11-claude-speckit-loop
+  name: locknet11/claude-speckit-loop
+  url: https://github.com/locknet11/claude-speckit-loop
+  repo: locknet11/claude-speckit-loop
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - claude-code
+  summary: 'Spec-Driven Development loop for the Claude Code coding agent: Spec Kit
+    + a custom Ralph Wiggum loop, triggered by /sdd-loop.'
+  i18n:
+    zh:
+      name: locknet11/claude-speckit-loop
+      summary: 'Spec-Driven Development loop for the Claude Code coding agent: Spec
+        Kit + a custom Ralph Wiggum loop, triggered by /sdd-loop.'
+    en:
+      name: locknet11/claude-speckit-loop
+      summary: 'Spec-Driven Development loop for the Claude Code coding agent: Spec
+        Kit + a custom Ralph Wiggum loop, triggered by /sdd-loop.'
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-10T16:13:34Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-allendiaz-udemy-ai-coder
+  name: AllenDiaz/Udemy-Ai-Coder
+  url: https://github.com/AllenDiaz/Udemy-Ai-Coder
+  repo: AllenDiaz/Udemy-Ai-Coder
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - claude-code
+  summary: 'AI Coder: Complete Claude Code & Coding Agents Course — Learn how to build,
+    deploy, and master AI-powered coding agents using Anthropic’s Claude. Includes
+    hands-on projects, code samples, and practical exercises.'
+  i18n:
+    zh:
+      name: AllenDiaz/Udemy-Ai-Coder
+      summary: 'AI Coder: Complete Claude Code & Coding Agents Course — Learn how
+        to build, deploy, and master AI-powered coding agents using Anthropic’s Claude.
+        Includes hands-on projects, code samples, and practical exercises.'
+    en:
+      name: AllenDiaz/Udemy-Ai-Coder
+      summary: 'AI Coder: Complete Claude Code & Coding Agents Course — Learn how
+        to build, deploy, and master AI-powered coding agents using Anthropic’s Claude.
+        Includes hands-on projects, code samples, and practical exercises.'
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-17T08:50:07Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 15
+  quality_score: 0
+  total_score: 15
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-blushyes-code-flow-map
+  name: Blushyes/code-flow-map
+  url: https://github.com/Blushyes/code-flow-map
+  repo: Blushyes/code-flow-map
+  source_type: github
+  resource_type:
+  - skills
+  - agent-framework
+  target_tools:
+  - claude-code
+  summary: 把代码逻辑追踪成可点击的交互式数据流图（含重构对比模式）——给 Claude Code / coding agent 用的 skill
+  i18n:
+    zh:
+      name: Blushyes/code-flow-map
+      summary: 把代码逻辑追踪成可点击的交互式数据流图（含重构对比模式）——给 Claude Code / coding agent 用的 skill
+    en:
+      name: Blushyes/code-flow-map
+      summary: 把代码逻辑追踪成可点击的交互式数据流图（含重构对比模式）——给 Claude Code / coding agent 用的 skill
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-06-18T19:54:44Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - HTML
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-hackerqed-claude-code-commands
+  name: HackerQED/claude-code-commands
+  url: https://github.com/HackerQED/claude-code-commands
+  repo: HackerQED/claude-code-commands
+  source_type: github
+  resource_type:
+  - cli-tool
+  target_tools:
+  - claude-code
+  summary: HackerQED/claude-code-commands
+  i18n:
+    zh:
+      name: HackerQED/claude-code-commands
+      summary: HackerQED/claude-code-commands
+    en:
+      name: HackerQED/claude-code-commands
+      summary: HackerQED/claude-code-commands
+  status: unknown
+  license: null
+  stars: 14
+  forks: 0
+  last_updated: '2025-12-28T05:56:30Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 12
+  quality_score: 9
+  total_score: 21
+  score_detail:
+    stars: 2
+    activity: 8
+    adoption: 0
+    maturity: 2
+  tracking_priority: reject
+  last_analyzed: '2026-07-17'
+  benchmark_ref: github-opencoworkai-open-cowork
+  quality_detail:
+    relevance: 5
+    practicality: 2
+    novelty: 1
+    ecosystem_value: 1
+  llm_summary:
+    zh: 该项目名为 claude-code-commands，是一个 Shell 脚本仓库，可能提供 Claude Code 的辅助命令或快捷键。由于缺少
+      README 文档和详细说明，具体功能不明确，适合对 Claude Code 有经验的用户自行探索。
+    en: This project named claude-code-commands is a Shell repository that may provide
+      helper commands or shortcuts for Claude Code. Due to the lack of README and
+      documentation, its specific functionality is unclear, suitable for experienced
+      Claude Code users to explore.
+- id: github-alexanderbaggett-looper
+  name: AlexanderBaggett/Looper
+  url: https://github.com/AlexanderBaggett/Looper
+  repo: AlexanderBaggett/Looper
+  source_type: github
+  resource_type:
+  - cli-tool
+  target_tools:
+  - codex-cli
+  summary: A simple Utility for Looping codex cli commands in a web interface
+  i18n:
+    zh:
+      name: AlexanderBaggett/Looper
+      summary: A simple Utility for Looping codex cli commands in a web interface
+    en:
+      name: AlexanderBaggett/Looper
+      summary: A simple Utility for Looping codex cli commands in a web interface
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-12T01:18:29Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-polykarpo-codex-bridge-oss
+  name: polykarpo/codex-bridge-oss
+  url: https://github.com/polykarpo/codex-bridge-oss
+  repo: polykarpo/codex-bridge-oss
+  source_type: github
+  resource_type:
+  - cli-tool
+  - agent-framework
+  target_tools:
+  - codex-cli
+  summary: Local-first guarded Codex CLI command-bus runner for OSS maintainer workflows
+  i18n:
+    zh:
+      name: polykarpo/codex-bridge-oss
+      summary: Local-first guarded Codex CLI command-bus runner for OSS maintainer
+        workflows
+    en:
+      name: polykarpo/codex-bridge-oss
+      summary: Local-first guarded Codex CLI command-bus runner for OSS maintainer
+        workflows
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-06-09T08:17:25Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics:
+  - ai-agents
+  - automation
+  - codex
+  - github-issues
+  - maintainer-tools
+  - safety
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-pixxelboy-codex-gitbranch-hook
+  name: pixxelboy/codex-gitbranch-hook
+  url: https://github.com/pixxelboy/codex-gitbranch-hook
+  repo: pixxelboy/codex-gitbranch-hook
+  source_type: github
+  resource_type:
+  - cli-tool
+  target_tools:
+  - codex-cli
+  summary: Codex CLI hook to display Git branch
+  i18n:
+    zh:
+      name: pixxelboy/codex-gitbranch-hook
+      summary: Codex CLI hook to display Git branch
+    en:
+      name: pixxelboy/codex-gitbranch-hook
+      summary: Codex CLI hook to display Git branch
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-11T10:41:08Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-cdot65-prisma-airs-codex-hooks
+  name: cdot65/prisma-airs-codex-hooks
+  url: https://github.com/cdot65/prisma-airs-codex-hooks
+  repo: cdot65/prisma-airs-codex-hooks
+  source_type: github
+  resource_type:
+  - agent-framework
+  - cli-tool
+  target_tools:
+  - codex-cli
+  summary: Codex CLI hooks integrating Prisma AIRS (AI Runtime Security) scanning
+    into the agentic workflow
+  i18n:
+    zh:
+      name: cdot65/prisma-airs-codex-hooks
+      summary: Codex CLI hooks integrating Prisma AIRS (AI Runtime Security) scanning
+        into the agentic workflow
+    en:
+      name: cdot65/prisma-airs-codex-hooks
+      summary: Codex CLI hooks integrating Prisma AIRS (AI Runtime Security) scanning
+        into the agentic workflow
+  status: unknown
+  license: apache-2.0
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-02T00:31:09Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-yigitkonur-cmux-ssh-claude-codex
+  name: yigitkonur/cmux-ssh-claude-codex
+  url: https://github.com/yigitkonur/cmux-ssh-claude-codex
+  repo: yigitkonur/cmux-ssh-claude-codex
+  source_type: github
+  resource_type:
+  - cli-tool
+  target_tools:
+  - claude-code
+  - codex-cli
+  summary: Bridge Claude Code + Codex CLI hooks into cmux workspace tiles. Single
+    bash binary, no daemon.
+  i18n:
+    zh:
+      name: yigitkonur/cmux-ssh-claude-codex
+      summary: Bridge Claude Code + Codex CLI hooks into cmux workspace tiles. Single
+        bash binary, no daemon.
+    en:
+      name: yigitkonur/cmux-ssh-claude-codex
+      summary: Bridge Claude Code + Codex CLI hooks into cmux workspace tiles. Single
+        bash binary, no daemon.
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-07T03:05:10Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-ddddddddwp-codex-light
+  name: ddddddddwp/codex-light
+  url: https://github.com/ddddddddwp/codex-light
+  repo: ddddddddwp/codex-light
+  source_type: github
+  resource_type:
+  - cli-tool
+  target_tools:
+  - codex-cli
+  summary: Unofficial Win11 top-island status light for Codex CLI hooks and Codex
+    Desktop fallback detection.
+  i18n:
+    zh:
+      name: ddddddddwp/codex-light
+      summary: Unofficial Win11 top-island status light for Codex CLI hooks and Codex
+        Desktop fallback detection.
+    en:
+      name: ddddddddwp/codex-light
+      summary: Unofficial Win11 top-island status light for Codex CLI hooks and Codex
+        Desktop fallback detection.
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-06-05T03:24:25Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-guechen-codex-vscode-review-helper
+  name: GueChen/codex-vscode-review-helper
+  url: https://github.com/GueChen/codex-vscode-review-helper
+  repo: GueChen/codex-vscode-review-helper
+  source_type: github
+  resource_type:
+  - extension
+  - cli-tool
+  target_tools:
+  - codex-cli
+  summary: Windows Codex CLI hook and VS Code review helper for automatic diff and
+    multi-file review.
+  i18n:
+    zh:
+      name: GueChen/codex-vscode-review-helper
+      summary: Windows Codex CLI hook and VS Code review helper for automatic diff
+        and multi-file review.
+    en:
+      name: GueChen/codex-vscode-review-helper
+      summary: Windows Codex CLI hook and VS Code review helper for automatic diff
+        and multi-file review.
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-15T11:16:26Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - PowerShell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-spolwort1970-chatgpt-codex-temporal-awareness-extension
+  name: spolwort1970/chatgpt-codex-temporal-awareness-extension
+  url: https://github.com/spolwort1970/chatgpt-codex-temporal-awareness-extension
+  repo: spolwort1970/chatgpt-codex-temporal-awareness-extension
+  source_type: github
+  resource_type:
+  - extension
+  - cli-tool
+  target_tools:
+  - codex-cli
+  summary: Chrome extension and Codex CLI hook that inject timestamps into conversations
+    with ChatGPT/Codex, curing its temporal blindness limitation.
+  i18n:
+    zh:
+      name: spolwort1970/chatgpt-codex-temporal-awareness-extension
+      summary: Chrome extension and Codex CLI hook that inject timestamps into conversations
+        with ChatGPT/Codex, curing its temporal blindness limitation.
+    en:
+      name: spolwort1970/chatgpt-codex-temporal-awareness-extension
+      summary: Chrome extension and Codex CLI hook that inject timestamps into conversations
+        with ChatGPT/Codex, curing its temporal blindness limitation.
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-04-17T17:28:06Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-sqrt121-claude
+  name: sqrt121/claude
+  url: https://github.com/sqrt121/claude
+  repo: sqrt121/claude
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - claude-code
+  - codex-cli
+  summary: 'Version-controlled Claude Code assets: codex-delegate skill (supervised
+    delegation to GPT-5.5 via Codex CLI), hooks, statusline'
+  i18n:
+    zh:
+      name: sqrt121/claude
+      summary: 'Version-controlled Claude Code assets: codex-delegate skill (supervised
+        delegation to GPT-5.5 via Codex CLI), hooks, statusline'
+    en:
+      name: sqrt121/claude
+      summary: 'Version-controlled Claude Code assets: codex-delegate skill (supervised
+        delegation to GPT-5.5 via Codex CLI), hooks, statusline'
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-10T09:47:37Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-rushikeshsakharleofficial-gpt-context-mem
+  name: rushikeshsakharleofficial/gpt-context-mem
+  url: https://github.com/rushikeshsakharleofficial/gpt-context-mem
+  repo: rushikeshsakharleofficial/gpt-context-mem
+  source_type: github
+  resource_type:
+  - cli-tool
+  target_tools:
+  - codex-cli
+  summary: Persistent memory for OpenAI Codex CLI — hooks session lifecycle to compress
+    tool activity into structured observations and replay them as context on every
+    new session
+  i18n:
+    zh:
+      name: rushikeshsakharleofficial/gpt-context-mem
+      summary: Persistent memory for OpenAI Codex CLI — hooks session lifecycle to
+        compress tool activity into structured observations and replay them as context
+        on every new session
+    en:
+      name: rushikeshsakharleofficial/gpt-context-mem
+      summary: Persistent memory for OpenAI Codex CLI — hooks session lifecycle to
+        compress tool activity into structured observations and replay them as context
+        on every new session
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-18T08:08:33Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-abhinav2105-proj-phase1-goose-codingagent
+  name: abhinav2105/Proj_Phase1_Goose_CodingAgent
+  url: https://github.com/abhinav2105/Proj_Phase1_Goose_CodingAgent
+  repo: abhinav2105/Proj_Phase1_Goose_CodingAgent
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: abhinav2105/Proj_Phase1_Goose_CodingAgent
+  i18n:
+    zh:
+      name: abhinav2105/Proj_Phase1_Goose_CodingAgent
+      summary: abhinav2105/Proj_Phase1_Goose_CodingAgent
+    en:
+      name: abhinav2105/Proj_Phase1_Goose_CodingAgent
+      summary: abhinav2105/Proj_Phase1_Goose_CodingAgent
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-03-30T03:49:22Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 12
+  quality_score: 0
+  total_score: 12
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-mikidoi-goose-demo
+  name: mikidoi/goose-demo
+  url: https://github.com/mikidoi/goose-demo
+  repo: mikidoi/goose-demo
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - goose
+  summary: goose MCP demo
+  i18n:
+    zh:
+      name: mikidoi/goose-demo
+      summary: goose MCP demo
+    en:
+      name: mikidoi/goose-demo
+      summary: goose MCP demo
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-04-08T19:36:41Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-rejected
+  quantifiable_score: 4
+  quality_score: 0
+  total_score: 4
+  score_detail:
+    stars: 0
+    activity: 4
+    adoption: 0
+    maturity: 0
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-lordstyled55-goose-mcp
+  name: lordstyled55/goose-mcp
+  url: https://github.com/lordstyled55/goose-mcp
+  repo: lordstyled55/goose-mcp
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - goose
+  summary: lordstyled55/goose-mcp
+  i18n:
+    zh:
+      name: lordstyled55/goose-mcp
+      summary: lordstyled55/goose-mcp
+    en:
+      name: lordstyled55/goose-mcp
+      summary: lordstyled55/goose-mcp
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-08-06T00:32:59Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 10
+  quality_score: 0
+  total_score: 10
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-itxluke-goose-mcp
+  name: itxluke/goose-mcp
+  url: https://github.com/itxluke/goose-mcp
+  repo: itxluke/goose-mcp
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - goose
+  summary: itxluke/goose-mcp
+  i18n:
+    zh:
+      name: itxluke/goose-mcp
+      summary: itxluke/goose-mcp
+    en:
+      name: itxluke/goose-mcp
+      summary: itxluke/goose-mcp
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-08T04:25:12Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 15
+  quality_score: 0
+  total_score: 15
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-professordnyc-qanat-goose-mcp
+  name: professordnyc/qanat-goose-mcp
+  url: https://github.com/professordnyc/qanat-goose-mcp
+  repo: professordnyc/qanat-goose-mcp
+  source_type: github
+  resource_type:
+  - mcp-server
+  - extension
+  target_tools:
+  - goose
+  summary: Qanat Goose MCP Extension is an agent‑based Goose MCP‑UI extension that
+    wraps the Square MCP Server, integrating sandbox catalog/orders with voice and
+    gesture agents for an interactive seller dashboard.
+  i18n:
+    zh:
+      name: professordnyc/qanat-goose-mcp
+      summary: Qanat Goose MCP Extension is an agent‑based Goose MCP‑UI extension
+        that wraps the Square MCP Server, integrating sandbox catalog/orders with
+        voice and gesture agents for an interactive seller dashboard.
+    en:
+      name: professordnyc/qanat-goose-mcp
+      summary: Qanat Goose MCP Extension is an agent‑based Goose MCP‑UI extension
+        that wraps the Square MCP Server, integrating sandbox catalog/orders with
+        voice and gesture agents for an interactive seller dashboard.
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2025-11-22T05:24:31Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 12
+  quality_score: 0
+  total_score: 12
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-nelsonjingusc-goose-mcp-escrow-server
+  name: nelsonjingusc/goose-mcp-escrow-server
+  url: https://github.com/nelsonjingusc/goose-mcp-escrow-server
+  repo: nelsonjingusc/goose-mcp-escrow-server
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - goose
+  summary: Minimal MCP server providing escrow style intent verification and deterministic
+    planning for Goose agents. Supports safe, auditable, and reversible task execution.
+  i18n:
+    zh:
+      name: nelsonjingusc/goose-mcp-escrow-server
+      summary: Minimal MCP server providing escrow style intent verification and deterministic
+        planning for Goose agents. Supports safe, auditable, and reversible task execution.
+    en:
+      name: nelsonjingusc/goose-mcp-escrow-server
+      summary: Minimal MCP server providing escrow style intent verification and deterministic
+        planning for Goose agents. Supports safe, auditable, and reversible task execution.
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2025-11-27T06:20:13Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 12
+  quality_score: 0
+  total_score: 12
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-prashanth7840-downloads-organizer-goose-mcp
+  name: prashanth7840/Downloads-Organizer---Goose-MCP
+  url: https://github.com/prashanth7840/Downloads-Organizer---Goose-MCP
+  repo: prashanth7840/Downloads-Organizer---Goose-MCP
+  source_type: github
+  resource_type:
+  - agent-framework
+  - mcp-server
+  target_tools:
+  - goose
+  - zed
+  summary: Agentic workflow using Goose (MCP host) + Claude Opus 4.6 that autonomously
+    organized 392 files (~7.2 GB) into a clean 9-folder structure. Self-corrected
+    command errors, generated prioritized cleanup report. Reduced retrieval time from
+    60 m
+  i18n:
+    zh:
+      name: prashanth7840/Downloads-Organizer---Goose-MCP
+      summary: Agentic workflow using Goose (MCP host) + Claude Opus 4.6 that autonomously
+        organized 392 files (~7.2 GB) into a clean 9-folder structure. Self-corrected
+        command errors, generated prioritized cleanup report. Reduced retrieval time
+        from 60 m
+    en:
+      name: prashanth7840/Downloads-Organizer---Goose-MCP
+      summary: Agentic workflow using Goose (MCP host) + Claude Opus 4.6 that autonomously
+        organized 392 files (~7.2 GB) into a clean 9-folder structure. Self-corrected
+        command errors, generated prioritized cleanup report. Reduced retrieval time
+        from 60 m
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-04-01T16:00:57Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 12
+  quality_score: 0
+  total_score: 12
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-starkoracle-testing-goose-mcp-from-termux
+  name: StarkOracle/testing-goose-mcp-from-termux
+  url: https://github.com/StarkOracle/testing-goose-mcp-from-termux
+  repo: StarkOracle/testing-goose-mcp-from-termux
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - goose
+  summary: A test repository created by Goose
+  i18n:
+    zh:
+      name: StarkOracle/testing-goose-mcp-from-termux
+      summary: A test repository created by Goose
+    en:
+      name: StarkOracle/testing-goose-mcp-from-termux
+      summary: A test repository created by Goose
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-06-18T17:54:32Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-rejected
+  quantifiable_score: 4
+  quality_score: 0
+  total_score: 4
+  score_detail:
+    stars: 0
+    activity: 4
+    adoption: 0
+    maturity: 0
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-sevencat2004-goose-bountypay-scout
+  name: sevencat2004/goose-bountypay-scout
+  url: https://github.com/sevencat2004/goose-bountypay-scout
+  repo: sevencat2004/goose-bountypay-scout
+  source_type: github
+  resource_type:
+  - mcp-server
+  - extension
+  target_tools:
+  - goose
+  summary: Goose MCP extension for bounty and grant opportunity triage by collectability,
+    autonomy, and delivery risk
+  i18n:
+    zh:
+      name: sevencat2004/goose-bountypay-scout
+      summary: Goose MCP extension for bounty and grant opportunity triage by collectability,
+        autonomy, and delivery risk
+    en:
+      name: sevencat2004/goose-bountypay-scout
+      summary: Goose MCP extension for bounty and grant opportunity triage by collectability,
+        autonomy, and delivery risk
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-06-03T18:12:43Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-michaelneale-goose-adversarial-mode
+  name: michaelneale/goose-adversarial-mode
+  url: https://github.com/michaelneale/goose-adversarial-mode
+  repo: michaelneale/goose-adversarial-mode
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: coach player using goose recipes
+  i18n:
+    zh:
+      name: michaelneale/goose-adversarial-mode
+      summary: coach player using goose recipes
+    en:
+      name: michaelneale/goose-adversarial-mode
+      summary: coach player using goose recipes
+  status: unknown
+  license: null
+  stars: 2
+  forks: 0
+  last_updated: '2026-01-17T20:17:29Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 12
+  quality_score: 3
+  total_score: 15
+  score_detail:
+    stars: 2
+    activity: 8
+    adoption: 0
+    maturity: 2
+  tracking_priority: reject
+  last_analyzed: '2026-07-17'
+  benchmark_ref: github-opencoworkai-open-cowork
+  quality_detail:
+    relevance: 1
+    practicality: 0
+    novelty: 2
+    ecosystem_value: 0
+  llm_summary:
+    zh: 该项目名为 goose-adversarial-mode，意图使用 goose recipes 实现教练玩家模式。目前无实质代码或文档，仅有一个空壳项目名。适合对
+      goose 对抗模式感兴趣但缺乏实施参考的开发者。
+    en: This project is named goose-adversarial-mode, aiming to implement a coach-player
+      mode using goose recipes. Currently, there is no substantial code or documentation,
+      only an empty repository name. It is for developers interested in an adversarial
+      mode for goose but lacks any practical implementation.
+- id: github-iantodhunter-goose-recipes
+  name: iantodhunter/goose-recipes
+  url: https://github.com/iantodhunter/goose-recipes
+  repo: iantodhunter/goose-recipes
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: 'Codename Goose Recipes '
+  i18n:
+    zh:
+      name: iantodhunter/goose-recipes
+      summary: 'Codename Goose Recipes '
+    en:
+      name: iantodhunter/goose-recipes
+      summary: 'Codename Goose Recipes '
+  status: unknown
+  license: null
+  stars: 1
+  forks: 0
+  last_updated: '2025-11-28T05:51:38Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 10
+  quality_score: 0
+  total_score: 10
+  score_detail:
+    stars: 2
+    activity: 8
+    adoption: 0
+    maturity: 0
+  tracking_priority: reject
+  last_analyzed: '2026-07-17'
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+  quality_detail:
+    relevance: 3
+    practicality: 0
+    novelty: 0
+    ecosystem_value: 0
+  llm_summary:
+    zh: 该项目名为 Goose Recipes，可能意图整理与 AI 编码工具 Goose 相关的配方或示例。但仓库内容为空，无 README 或代码，缺乏实际功能。当前不适合任何用户使用。
+    en: This project is titled Goose Recipes, potentially aiming to collect recipes
+      or examples for the AI coding tool Goose. However, the repository is empty with
+      no README or code, lacking any usable content. It is currently not suitable
+      for any user.
+- id: github-simonjday-goose-recipes
+  name: simonjday/goose-recipes
+  url: https://github.com/simonjday/goose-recipes
+  repo: simonjday/goose-recipes
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: simonjday/goose-recipes
+  i18n:
+    zh:
+      name: simonjday/goose-recipes
+      summary: simonjday/goose-recipes
+    en:
+      name: simonjday/goose-recipes
+      summary: simonjday/goose-recipes
+  status: unknown
+  license: null
+  stars: 1
+  forks: 0
+  last_updated: '2026-07-08T03:39:21Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 8
+  total_score: 27
+  score_detail:
+    stars: 2
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: reject
+  last_analyzed: '2026-07-17'
+  benchmark_ref: github-opencoworkai-open-cowork
+  quality_detail:
+    relevance: 5
+    practicality: 1
+    novelty: 1
+    ecosystem_value: 1
+  llm_summary:
+    zh: 该项目是一个与goose工具相关的配方集合，但缺乏文档和实质性内容。核心功能不明确，仅有少量Shell脚本，适合暂时忽略。
+    en: This project is a collection of recipes for the goose tool, but lacks documentation
+      and substantial content. Its core functionality is unclear, with only a few
+      shell scripts, making it suitable to be ignored for now.
+- id: github-macos-node-goose-recipes
+  name: macos-node/goose-recipes
+  url: https://github.com/macos-node/goose-recipes
+  repo: macos-node/goose-recipes
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: macos-node/goose-recipes
+  i18n:
+    zh:
+      name: macos-node/goose-recipes
+      summary: macos-node/goose-recipes
+    en:
+      name: macos-node/goose-recipes
+      summary: macos-node/goose-recipes
+  status: unknown
+  license: null
+  stars: 1
+  forks: 0
+  last_updated: '2026-06-23T08:03:07Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 2
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: reject
+  last_analyzed: '2026-07-17'
+  benchmark_ref: github-opencoworkai-open-cowork
+  quality_detail:
+    relevance: 3
+    practicality: 0
+    novelty: 0
+    ecosystem_value: 0
+  llm_summary:
+    zh: macos-node/goose-recipes 是一个空仓库，无任何代码或文档。从名称推测可能为 goose 工具提供配方示例，但当前无实际内容。不适合任何人使用。
+    en: macos-node/goose-recipes is an empty repository with no code or documentation.
+      It might be intended to provide recipes for the goose tool, but currently lacks
+      any content. Not suitable for anyone.
+- id: github-adjmx-goose-recipes
+  name: adjmx/goose-recipes
+  url: https://github.com/adjmx/goose-recipes
+  repo: adjmx/goose-recipes
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: adjmx/goose-recipes
+  i18n:
+    zh:
+      name: adjmx/goose-recipes
+      summary: adjmx/goose-recipes
+    en:
+      name: adjmx/goose-recipes
+      summary: adjmx/goose-recipes
+  status: unknown
+  license: null
+  stars: 1
+  forks: 0
+  last_updated: '2026-06-16T13:30:18Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 3
+  total_score: 20
+  score_detail:
+    stars: 2
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: reject
+  last_analyzed: '2026-07-17'
+  benchmark_ref: github-opencoworkai-open-cowork
+  quality_detail:
+    relevance: 3
+    practicality: 0
+    novelty: 0
+    ecosystem_value: 0
+  llm_summary:
+    zh: adjmx/goose-recipes 是一个关于 goose 工具的空仓库，目前没有 README 或任何代码内容。适合作为概念占位，但暂无实用价值。
+    en: adjmx/goose-recipes is an empty repository related to the goose tool, with
+      no README or code content. It may serve as a conceptual placeholder but currently
+      has no practical value.
+- id: github-somebloke1-goose-recipes
+  name: somebloke1/goose-recipes
+  url: https://github.com/somebloke1/goose-recipes
+  repo: somebloke1/goose-recipes
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: Goose recipes
+  i18n:
+    zh:
+      name: somebloke1/goose-recipes
+      summary: Goose recipes
+    en:
+      name: somebloke1/goose-recipes
+      summary: Goose recipes
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-12T06:28:40Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 15
+  quality_score: 0
+  total_score: 15
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-thimslugga-goose-recipes
+  name: thimslugga/goose-recipes
+  url: https://github.com/thimslugga/goose-recipes
+  repo: thimslugga/goose-recipes
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: My personal goose recipes
+  i18n:
+    zh:
+      name: thimslugga/goose-recipes
+      summary: My personal goose recipes
+    en:
+      name: thimslugga/goose-recipes
+      summary: My personal goose recipes
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2025-05-24T04:27:04Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-rejected
+  quantifiable_score: 6
+  quality_score: 0
+  total_score: 6
+  score_detail:
+    stars: 0
+    activity: 4
+    adoption: 0
+    maturity: 2
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-wwqicode-blkchain-goose-market-analysis
+  name: wwqicode-blkchain/goose-market-analysis
+  url: https://github.com/wwqicode-blkchain/goose-market-analysis
+  repo: wwqicode-blkchain/goose-market-analysis
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: Goose recipes for market analysis
+  i18n:
+    zh:
+      name: wwqicode-blkchain/goose-market-analysis
+      summary: Goose recipes for market analysis
+    en:
+      name: wwqicode-blkchain/goose-market-analysis
+      summary: Goose recipes for market analysis
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-01-05T03:55:14Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-rejected
+  quantifiable_score: 8
+  quality_score: 0
+  total_score: 8
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 0
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-yumbytes-goose-recipes-career-developer
+  name: yumbytes/goose-recipes-career-developer
+  url: https://github.com/yumbytes/goose-recipes-career-developer
+  repo: yumbytes/goose-recipes-career-developer
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: Career developer recipe for squareup/goose-recipes
+  i18n:
+    zh:
+      name: yumbytes/goose-recipes-career-developer
+      summary: Career developer recipe for squareup/goose-recipes
+    en:
+      name: yumbytes/goose-recipes-career-developer
+      summary: Career developer recipe for squareup/goose-recipes
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-07-02T01:11:07Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-rejected
+  quantifiable_score: 4
+  quality_score: 0
+  total_score: 4
+  score_detail:
+    stars: 0
+    activity: 4
+    adoption: 0
+    maturity: 0
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-soheilolia-mobbin-transfer-analysis
+  name: SoheilOlia/Mobbin_Transfer_Analysis
+  url: https://github.com/SoheilOlia/Mobbin_Transfer_Analysis
+  repo: SoheilOlia/Mobbin_Transfer_Analysis
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: Goose Recipe to do feature audit from Mobbin
+  i18n:
+    zh:
+      name: SoheilOlia/Mobbin_Transfer_Analysis
+      summary: Goose Recipe to do feature audit from Mobbin
+    en:
+      name: SoheilOlia/Mobbin_Transfer_Analysis
+      summary: Goose Recipe to do feature audit from Mobbin
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-10-31T23:20:20Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 8
+  quality_score: 0
+  total_score: 8
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-shanemcd-goose-test
+  name: shanemcd/goose-test
+  url: https://github.com/shanemcd/goose-test
+  repo: shanemcd/goose-test
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: Assessment and test workflows for Goose recipe orchestration
+  i18n:
+    zh:
+      name: shanemcd/goose-test
+      summary: Assessment and test workflows for Goose recipe orchestration
+    en:
+      name: shanemcd/goose-test
+      summary: Assessment and test workflows for Goose recipe orchestration
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-04-02T19:26:38Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-nobrien3-comarketing-pcr-recipe
+  name: nobrien3/comarketing-pcr-recipe
+  url: https://github.com/nobrien3/comarketing-pcr-recipe
+  repo: nobrien3/comarketing-pcr-recipe
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: Afterpay co-marketing Post Campaign Report generator — Goose recipe + template
+  i18n:
+    zh:
+      name: nobrien3/comarketing-pcr-recipe
+      summary: Afterpay co-marketing Post Campaign Report generator — Goose recipe
+        + template
+    en:
+      name: nobrien3/comarketing-pcr-recipe
+      summary: Afterpay co-marketing Post Campaign Report generator — Goose recipe
+        + template
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-03-23T04:30:18Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-aaalaniz-goose-recipe-shortener
+  name: aaalaniz/goose-recipe-shortener
+  url: https://github.com/aaalaniz/goose-recipe-shortener
+  repo: aaalaniz/goose-recipe-shortener
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: Generate a Goose recipe deep link and share with a URL shortener
+  i18n:
+    zh:
+      name: aaalaniz/goose-recipe-shortener
+      summary: Generate a Goose recipe deep link and share with a URL shortener
+    en:
+      name: aaalaniz/goose-recipe-shortener
+      summary: Generate a Goose recipe deep link and share with a URL shortener
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2025-07-16T11:09:31Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics:
+  - ci
+  - goose
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 8
+  quality_score: 0
+  total_score: 8
+  score_detail:
+    stars: 0
+    activity: 4
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-maxamillion-recipe-rust-development-team
+  name: maxamillion/recipe-rust-development-team
+  url: https://github.com/maxamillion/recipe-rust-development-team
+  repo: maxamillion/recipe-rust-development-team
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - goose
+  summary: Goose Recipe to automatically develop software in rust via a team of subagents.
+  i18n:
+    zh:
+      name: maxamillion/recipe-rust-development-team
+      summary: Goose Recipe to automatically develop software in rust via a team of
+        subagents.
+    en:
+      name: maxamillion/recipe-rust-development-team
+      summary: Goose Recipe to automatically develop software in rust via a team of
+        subagents.
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-03-09T20:25:03Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-itd-goose-recipes
+  name: itd/goose-recipes
+  url: https://github.com/itd/goose-recipes
+  repo: itd/goose-recipes
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - goose
+  summary: itd/goose-recipes
+  i18n:
+    zh:
+      name: itd/goose-recipes
+      summary: itd/goose-recipes
+    en:
+      name: itd/goose-recipes
+      summary: itd/goose-recipes
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-01-25T07:45:01Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 12
+  quality_score: 0
+  total_score: 12
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-andrewkoumoudjian-personnal-setup
+  name: andrewkoumoudjian/personnal-setup
+  url: https://github.com/andrewkoumoudjian/personnal-setup
+  repo: andrewkoumoudjian/personnal-setup
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - opencode
+  summary: My personnal opencode/coding agents setup
+  i18n:
+    zh:
+      name: andrewkoumoudjian/personnal-setup
+      summary: My personnal opencode/coding agents setup
+    en:
+      name: andrewkoumoudjian/personnal-setup
+      summary: My personnal opencode/coding agents setup
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-01-19T21:02:14Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-paslestrange-hermes-skills-coding-agents
+  name: Paslestrange/hermes-skills-coding-agents
+  url: https://github.com/Paslestrange/hermes-skills-coding-agents
+  repo: Paslestrange/hermes-skills-coding-agents
+  source_type: github
+  resource_type:
+  - skills
+  - agent-framework
+  target_tools:
+  - opencode
+  - hermes-agent
+  summary: Hermes Agent skills for Antigravity and OpenCode coding agents
+  i18n:
+    zh:
+      name: Paslestrange/hermes-skills-coding-agents
+      summary: Hermes Agent skills for Antigravity and OpenCode coding agents
+    en:
+      name: Paslestrange/hermes-skills-coding-agents
+      summary: Hermes Agent skills for Antigravity and OpenCode coding agents
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-06-16T12:52:47Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 15
+  quality_score: 0
+  total_score: 15
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-drhodes-hello-tool
+  name: drhodes/hello-tool
+  url: https://github.com/drhodes/hello-tool
+  repo: drhodes/hello-tool
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - opencode
+  summary: getting a tool working with the opencode coding agent.
+  i18n:
+    zh:
+      name: drhodes/hello-tool
+      summary: getting a tool working with the opencode coding agent.
+    en:
+      name: drhodes/hello-tool
+      summary: getting a tool working with the opencode coding agent.
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-09T02:08:30Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-mohammadusmankhan17-kimi2-6-todo-crude-app
+  name: mohammadusmankhan17/Kimi2.6-TODO-CRUDE-App
+  url: https://github.com/mohammadusmankhan17/Kimi2.6-TODO-CRUDE-App
+  repo: mohammadusmankhan17/Kimi2.6-TODO-CRUDE-App
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - opencode
+  summary: Developed this app using Kimi2.6 model using OpenCode coding agent
+  i18n:
+    zh:
+      name: mohammadusmankhan17/Kimi2.6-TODO-CRUDE-App
+      summary: Developed this app using Kimi2.6 model using OpenCode coding agent
+    en:
+      name: mohammadusmankhan17/Kimi2.6-TODO-CRUDE-App
+      summary: Developed this app using Kimi2.6 model using OpenCode coding agent
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-06T13:59:29Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - HTML
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-cdhainaut-coding-agents-wave-demo
+  name: cdhainaut/coding-agents-wave-demo
+  url: https://github.com/cdhainaut/coding-agents-wave-demo
+  repo: cdhainaut/coding-agents-wave-demo
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - opencode
+  summary: 'OpenCode coding-agent demo: paper excerpt to wave energy resource calculation'
+  i18n:
+    zh:
+      name: cdhainaut/coding-agents-wave-demo
+      summary: 'OpenCode coding-agent demo: paper excerpt to wave energy resource
+        calculation'
+    en:
+      name: cdhainaut/coding-agents-wave-demo
+      summary: 'OpenCode coding-agent demo: paper excerpt to wave energy resource
+        calculation'
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-06-30T22:18:11Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-koldamartin-opencode-shopper
+  name: koldamartin/Opencode-shopper
+  url: https://github.com/koldamartin/Opencode-shopper
+  repo: koldamartin/Opencode-shopper
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - opencode
+  summary: Opencode coding agent deployed remotly on Google Cloud. Full-stack and
+    infra project
+  i18n:
+    zh:
+      name: koldamartin/Opencode-shopper
+      summary: Opencode coding agent deployed remotly on Google Cloud. Full-stack
+        and infra project
+    en:
+      name: koldamartin/Opencode-shopper
+      summary: Opencode coding agent deployed remotly on Google Cloud. Full-stack
+        and infra project
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-11-27T08:39:48Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 10
+  quality_score: 0
+  total_score: 10
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-jamiehicks154-memory
+  name: jamiehicks154/memory
+  url: https://github.com/jamiehicks154/memory
+  repo: jamiehicks154/memory
+  source_type: github
+  resource_type:
+  - extension
+  - agent-framework
+  target_tools:
+  - opencode
+  summary: 'Simple plugin that allows users to save memories using the opencode coding
+    agent '
+  i18n:
+    zh:
+      name: jamiehicks154/memory
+      summary: 'Simple plugin that allows users to save memories using the opencode
+        coding agent '
+    en:
+      name: jamiehicks154/memory
+      summary: 'Simple plugin that allows users to save memories using the opencode
+        coding agent '
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-03-23T19:02:22Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 16
+  quality_score: 0
+  total_score: 16
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-manikanda-kumar-vllm-vs-openrouter
+  name: manikanda-kumar/vllm-vs-openrouter
+  url: https://github.com/manikanda-kumar/vllm-vs-openrouter
+  repo: manikanda-kumar/vllm-vs-openrouter
+  source_type: github
+  resource_type:
+  - agent-framework
+  - cli-tool
+  target_tools:
+  - opencode
+  summary: Evaluate the inference between vLLM and OpenRouter for Code generations
+    and Opencode coding agent use.
+  i18n:
+    zh:
+      name: manikanda-kumar/vllm-vs-openrouter
+      summary: Evaluate the inference between vLLM and OpenRouter for Code generations
+        and Opencode coding agent use.
+    en:
+      name: manikanda-kumar/vllm-vs-openrouter
+      summary: Evaluate the inference between vLLM and OpenRouter for Code generations
+        and Opencode coding agent use.
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-10-29T19:56:50Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics:
+  - code-gen
+  - eval
+  - gpt-oss
+  - inference
+  - opencode
+  - python
+  - vllm
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 10
+  quality_score: 0
+  total_score: 10
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-leiverkus-opencode-talk-bridge
+  name: leiverkus/opencode-talk-bridge
+  url: https://github.com/leiverkus/opencode-talk-bridge
+  repo: leiverkus/opencode-talk-bridge
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - opencode
+  - cline
+  summary: Drive a local OpenCode coding agent from Nextcloud Talk — a polling chat
+    bridge (no webhooks).
+  i18n:
+    zh:
+      name: leiverkus/opencode-talk-bridge
+      summary: Drive a local OpenCode coding agent from Nextcloud Talk — a polling
+        chat bridge (no webhooks).
+    en:
+      name: leiverkus/opencode-talk-bridge
+      summary: Drive a local OpenCode coding agent from Nextcloud Talk — a polling
+        chat bridge (no webhooks).
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-06-17T18:46:46Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics:
+  - ai-agent
+  - bot
+  - chat-bridge
+  - chatbot
+  - coding-agent
+  - llm
+  - nextcloud
+  - nextcloud-talk
+  - opencode
+  - python
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-shenato-remote-opencode-sandbox
+  name: Shenato/remote-opencode-sandbox
+  url: https://github.com/Shenato/remote-opencode-sandbox
+  repo: Shenato/remote-opencode-sandbox
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - opencode
+  summary: Your very own locally hosted opencode coding agent which you can communicate
+    with over discord.
+  i18n:
+    zh:
+      name: Shenato/remote-opencode-sandbox
+      summary: Your very own locally hosted opencode coding agent which you can communicate
+        with over discord.
+    en:
+      name: Shenato/remote-opencode-sandbox
+      summary: Your very own locally hosted opencode coding agent which you can communicate
+        with over discord.
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-12T03:01:55Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-cibis-agentyard
+  name: cibis/agentyard
+  url: https://github.com/cibis/agentyard
+  repo: cibis/agentyard
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - claude-code
+  - opencode
+  - cline
+  - openclaw
+  summary: Self-hosted AI agent orchestration stack — openclaw gateway, opencode coding
+    agent, and paperclip orchestrator on Docker
+  i18n:
+    zh:
+      name: cibis/agentyard
+      summary: Self-hosted AI agent orchestration stack — openclaw gateway, opencode
+        coding agent, and paperclip orchestrator on Docker
+    en:
+      name: cibis/agentyard
+      summary: Self-hosted AI agent orchestration stack — openclaw gateway, opencode
+        coding agent, and paperclip orchestrator on Docker
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-24T20:05:34Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics:
+  - ai-agents
+  - anthropic
+  - aws-bedrock
+  - claude
+  - docker
+  - llm
+  - openclaw
+  - opencode
+  - orchestration
+  - paperclip
+  - self-hosted
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-fxoz-agent-attack-poc
+  name: fxoz/agent-attack-poc
+  url: https://github.com/fxoz/agent-attack-poc
+  repo: fxoz/agent-attack-poc
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - opencode
+  summary: Proof of Concept demonstrating how to trivially extract sensitive data
+    as an AI API provider for users of OpenCode/coding agents. Zero prompt injection.
+  i18n:
+    zh:
+      name: fxoz/agent-attack-poc
+      summary: Proof of Concept demonstrating how to trivially extract sensitive data
+        as an AI API provider for users of OpenCode/coding agents. Zero prompt injection.
+    en:
+      name: fxoz/agent-attack-poc
+      summary: Proof of Concept demonstrating how to trivially extract sensitive data
+        as an AI API provider for users of OpenCode/coding agents. Zero prompt injection.
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-16T14:25:26Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-robzolkos-opencode-release-command
+  name: robzolkos/opencode-release-command
+  url: https://github.com/robzolkos/opencode-release-command
+  repo: robzolkos/opencode-release-command
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - opencode
+  summary: OpenCode command for generating press releases of OpenCode changes
+  i18n:
+    zh:
+      name: robzolkos/opencode-release-command
+      summary: OpenCode command for generating press releases of OpenCode changes
+    en:
+      name: robzolkos/opencode-release-command
+      summary: OpenCode command for generating press releases of OpenCode changes
+  status: unknown
+  license: null
+  stars: 2
+  forks: 0
+  last_updated: '2026-03-09T07:19:12Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 4
+  total_score: 18
+  score_detail:
+    stars: 2
+    activity: 12
+    adoption: 0
+    maturity: 0
+  tracking_priority: reject
+  last_analyzed: '2026-07-17'
+  benchmark_ref: github-opencoworkai-open-cowork
+  quality_detail:
+    relevance: 4
+    practicality: 0
+    novelty: 0
+    ecosystem_value: 0
+  llm_summary:
+    zh: 该项目声称是一个用于生成 OpenCode 变更日志/新闻稿的命令。但仓库为空，没有代码、文档或说明，无法使用。不适合任何开发者。
+    en: This project claims to be an OpenCode command for generating press releases
+      of OpenCode changes, but the repository is empty with no code, documentation,
+      or examples. It is not usable and should be ignored.
+- id: github-gerwim-opencode
+  name: gerwim/opencode
+  url: https://github.com/gerwim/opencode
+  repo: gerwim/opencode
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - opencode
+  summary: Opencode commands, skills etcetera
+  i18n:
+    zh:
+      name: gerwim/opencode
+      summary: Opencode commands, skills etcetera
+    en:
+      name: gerwim/opencode
+      summary: Opencode commands, skills etcetera
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-02-09T21:38:18Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-brentkirkland-opencode
+  name: brentkirkland/opencode
+  url: https://github.com/brentkirkland/opencode
+  repo: brentkirkland/opencode
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - opencode
+  summary: opencode commands and settings
+  i18n:
+    zh:
+      name: brentkirkland/opencode
+      summary: opencode commands and settings
+    en:
+      name: brentkirkland/opencode
+      summary: opencode commands and settings
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-10-01T20:59:29Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 8
+  quality_score: 0
+  total_score: 8
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-federicocervelli-opencode-commands
+  name: Federicocervelli/opencode-commands
+  url: https://github.com/Federicocervelli/opencode-commands
+  repo: Federicocervelli/opencode-commands
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - opencode
+  summary: My personal opencode commands
+  i18n:
+    zh:
+      name: Federicocervelli/opencode-commands
+      summary: My personal opencode commands
+    en:
+      name: Federicocervelli/opencode-commands
+      summary: My personal opencode commands
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-04-28T09:46:09Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 15
+  quality_score: 0
+  total_score: 15
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-gigi206-hackathon-infra-ia
+  name: gigi206/hackathon_infra_ia
+  url: https://github.com/gigi206/hackathon_infra_ia
+  repo: gigi206/hackathon_infra_ia
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - opencode
+  summary: OpenCode command reference documentation
+  i18n:
+    zh:
+      name: gigi206/hackathon_infra_ia
+      summary: OpenCode command reference documentation
+    en:
+      name: gigi206/hackathon_infra_ia
+      summary: OpenCode command reference documentation
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-03-25T12:42:15Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 12
+  quality_score: 0
+  total_score: 12
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-sailing3d-opencode-commands
+  name: sailing3d/opencode-commands
+  url: https://github.com/sailing3d/opencode-commands
+  repo: sailing3d/opencode-commands
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - opencode
+  summary: OpenCode commands for Sailing3D projects
+  i18n:
+    zh:
+      name: sailing3d/opencode-commands
+      summary: OpenCode commands for Sailing3D projects
+    en:
+      name: sailing3d/opencode-commands
+      summary: OpenCode commands for Sailing3D projects
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-06-09T02:35:06Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 15
+  quality_score: 0
+  total_score: 15
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-tichopad-opencode-commands
+  name: tichopad/opencode-commands
+  url: https://github.com/tichopad/opencode-commands
+  repo: tichopad/opencode-commands
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - opencode
+  summary: tichopad/opencode-commands
+  i18n:
+    zh:
+      name: tichopad/opencode-commands
+      summary: tichopad/opencode-commands
+    en:
+      name: tichopad/opencode-commands
+      summary: tichopad/opencode-commands
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-02-12T22:26:46Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 12
+  quality_score: 0
+  total_score: 12
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-uriel-loz-opencode-commands
+  name: uriel-loz/opencode-commands
+  url: https://github.com/uriel-loz/opencode-commands
+  repo: uriel-loz/opencode-commands
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - opencode
+  summary: stack commands for opencode
+  i18n:
+    zh:
+      name: uriel-loz/opencode-commands
+      summary: stack commands for opencode
+    en:
+      name: uriel-loz/opencode-commands
+      summary: stack commands for opencode
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-06-19T00:22:23Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-tp-codingagent-mdxeditorweb-qoder
+  name: TP-CodingAgent/MdxEditorWeb-Qoder
+  url: https://github.com/TP-CodingAgent/MdxEditorWeb-Qoder
+  repo: TP-CodingAgent/MdxEditorWeb-Qoder
+  source_type: github
+  resource_type:
+  - agent-framework
+  target_tools:
+  - qoder
+  summary: Web application to edit the markdown and mdx content. Develop by Qoder
+    Coding Agent
+  i18n:
+    zh:
+      name: TP-CodingAgent/MdxEditorWeb-Qoder
+      summary: Web application to edit the markdown and mdx content. Develop by Qoder
+        Coding Agent
+    en:
+      name: TP-CodingAgent/MdxEditorWeb-Qoder
+      summary: Web application to edit the markdown and mdx content. Develop by Qoder
+        Coding Agent
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-09-09T16:13:35Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - TypeScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 10
+  quality_score: 0
+  total_score: 10
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-plashon-qoder-mcp
+  name: Plashon/Qoder-mcp
+  url: https://github.com/Plashon/Qoder-mcp
+  repo: Plashon/Qoder-mcp
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - qoder
+  summary: Registration form project with SQLite database
+  i18n:
+    zh:
+      name: Plashon/Qoder-mcp
+      summary: Registration form project with SQLite database
+    en:
+      name: Plashon/Qoder-mcp
+      summary: Registration form project with SQLite database
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-08-26T02:52:43Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 10
+  quality_score: 0
+  total_score: 10
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-jeyz9-qoder-mcp
+  name: jeyz9/qoder-mcp
+  url: https://github.com/jeyz9/qoder-mcp
+  repo: jeyz9/qoder-mcp
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - qoder
+  summary: A repository for qoder-mcp project
+  i18n:
+    zh:
+      name: jeyz9/qoder-mcp
+      summary: A repository for qoder-mcp project
+    en:
+      name: jeyz9/qoder-mcp
+      summary: A repository for qoder-mcp project
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-01-15T08:07:57Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 8
+  quality_score: 0
+  total_score: 8
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-qoderai-qoder-plugins-official
+  name: QoderAI/qoder-plugins-official
+  url: https://github.com/QoderAI/qoder-plugins-official
+  repo: QoderAI/qoder-plugins-official
+  source_type: github
+  resource_type:
+  - extension
+  target_tools:
+  - qoder
+  summary: qoder-plugins-official
+  i18n:
+    zh:
+      name: QoderAI/qoder-plugins-official
+      summary: qoder-plugins-official
+    en:
+      name: QoderAI/qoder-plugins-official
+      summary: qoder-plugins-official
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-14T07:54:07Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 15
+  quality_score: 0
+  total_score: 15
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-liu-zey-qoder-plugins-official
+  name: liu-zey/qoder-plugins-official
+  url: https://github.com/liu-zey/qoder-plugins-official
+  repo: liu-zey/qoder-plugins-official
+  source_type: github
+  resource_type:
+  - extension
+  target_tools:
+  - qoder
+  summary: liu-zey/qoder-plugins-official
+  i18n:
+    zh:
+      name: liu-zey/qoder-plugins-official
+      summary: liu-zey/qoder-plugins-official
+    en:
+      name: liu-zey/qoder-plugins-official
+      summary: liu-zey/qoder-plugins-official
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-15T07:14:07Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-jeannie31lee-ai-yingshi-video-hot-skill
+  name: jeannie31lee-ai/yingshi-video-hot-skill
+  url: https://github.com/jeannie31lee-ai/yingshi-video-hot-skill
+  repo: jeannie31lee-ai/yingshi-video-hot-skill
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: 抖音热点宝影视类热门视频数据获取工具 - Qoder Skill
+  i18n:
+    zh:
+      name: jeannie31lee-ai/yingshi-video-hot-skill
+      summary: 抖音热点宝影视类热门视频数据获取工具 - Qoder Skill
+    en:
+      name: jeannie31lee-ai/yingshi-video-hot-skill
+      summary: 抖音热点宝影视类热门视频数据获取工具 - Qoder Skill
+  status: unknown
+  license: null
+  stars: 1
+  forks: 0
+  last_updated: '2026-04-21T14:41:58Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 10
+  total_score: 29
+  score_detail:
+    stars: 2
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: reject
+  last_analyzed: '2026-07-17'
+  benchmark_ref: github-opencoworkai-open-cowork
+  quality_detail:
+    relevance: 4
+    practicality: 2
+    novelty: 2
+    ecosystem_value: 2
+  llm_summary:
+    zh: 这是一个为 Qoder 工具定制的 skill，用于获取抖音热点宝的影视类热门视频数据。功能上主要是数据采集，但项目 README 缺失，代码量和社区关注度极低，目前几乎不可用。适合
+      Qoder 用户尝试扩展，但质量不足，不建议依赖。
+    en: This is a Qoder skill for fetching trending video data from Douyin Hotspot.
+      It aims to collect movie/TV related hot videos, but the repository lacks a README,
+      has minimal code and community attention, making it nearly unusable. It might
+      interest Qoder users looking for extensions, but quality is insufficient for
+      production.
+- id: github-xian-644-qoder-skills
+  name: xian-644/qoder-skills
+  url: https://github.com/xian-644/qoder-skills
+  repo: xian-644/qoder-skills
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: 保存我的Qoder skills
+  i18n:
+    zh:
+      name: xian-644/qoder-skills
+      summary: 保存我的Qoder skills
+    en:
+      name: xian-644/qoder-skills
+      summary: 保存我的Qoder skills
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-04-10T05:46:56Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 12
+  quality_score: 0
+  total_score: 12
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-karsten-hkt-iris-earthquake-download
+  name: karsten-hkt/iris-earthquake-download
+  url: https://github.com/karsten-hkt/iris-earthquake-download
+  repo: karsten-hkt/iris-earthquake-download
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: 'Qoder Skill: Download earthquake waveform data from IRIS'
+  i18n:
+    zh:
+      name: karsten-hkt/iris-earthquake-download
+      summary: 'Qoder Skill: Download earthquake waveform data from IRIS'
+    en:
+      name: karsten-hkt/iris-earthquake-download
+      summary: 'Qoder Skill: Download earthquake waveform data from IRIS'
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-04-20T03:27:19Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Perl
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-mycatqiezi-qoderwork-skills
+  name: MycatQieZi/qoderwork-skills
+  url: https://github.com/MycatQieZi/qoderwork-skills
+  repo: MycatQieZi/qoderwork-skills
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: MycatQieZi/qoderwork-skills
+  i18n:
+    zh:
+      name: MycatQieZi/qoderwork-skills
+      summary: MycatQieZi/qoderwork-skills
+    en:
+      name: MycatQieZi/qoderwork-skills
+      summary: MycatQieZi/qoderwork-skills
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-04-23T08:26:36Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-tqc10-qoder-skills
+  name: TQC10/qoder-skills
+  url: https://github.com/TQC10/qoder-skills
+  repo: TQC10/qoder-skills
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: 存放skill
+  i18n:
+    zh:
+      name: TQC10/qoder-skills
+      summary: 存放skill
+    en:
+      name: TQC10/qoder-skills
+      summary: 存放skill
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-15T09:30:04Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-fotocanvas-qoderwork-skills
+  name: fotocanvas/qoderwork-skills
+  url: https://github.com/fotocanvas/qoderwork-skills
+  repo: fotocanvas/qoderwork-skills
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: QoderWork agent skills collection
+  i18n:
+    zh:
+      name: fotocanvas/qoderwork-skills
+      summary: QoderWork agent skills collection
+    en:
+      name: fotocanvas/qoderwork-skills
+      summary: QoderWork agent skills collection
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-11T15:54:58Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-jtavares1973-qoder-skills
+  name: jtavares1973/qoder-skills
+  url: https://github.com/jtavares1973/qoder-skills
+  repo: jtavares1973/qoder-skills
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: jtavares1973/qoder-skills
+  i18n:
+    zh:
+      name: jtavares1973/qoder-skills
+      summary: jtavares1973/qoder-skills
+    en:
+      name: jtavares1973/qoder-skills
+      summary: jtavares1973/qoder-skills
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-03-06T19:47:37Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-qkaibo-qoder-skills
+  name: qkaibo/qoder-skills
+  url: https://github.com/qkaibo/qoder-skills
+  repo: qkaibo/qoder-skills
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: qkaibo/qoder-skills
+  i18n:
+    zh:
+      name: qkaibo/qoder-skills
+      summary: qkaibo/qoder-skills
+    en:
+      name: qkaibo/qoder-skills
+      summary: qkaibo/qoder-skills
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-08T01:13:11Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 15
+  quality_score: 0
+  total_score: 15
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-m15701162024-afk-qoderwork-skills
+  name: m15701162024-afk/qoderwork-skills
+  url: https://github.com/m15701162024-afk/qoderwork-skills
+  repo: m15701162024-afk/qoderwork-skills
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: m15701162024-afk/qoderwork-skills
+  i18n:
+    zh:
+      name: m15701162024-afk/qoderwork-skills
+      summary: m15701162024-afk/qoderwork-skills
+    en:
+      name: m15701162024-afk/qoderwork-skills
+      summary: m15701162024-afk/qoderwork-skills
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-04-17T07:36:53Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 12
+  quality_score: 0
+  total_score: 12
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-haroldlhl-qoder-skills
+  name: Haroldlhl/qoder-skills
+  url: https://github.com/Haroldlhl/qoder-skills
+  repo: Haroldlhl/qoder-skills
+  source_type: github
+  resource_type:
+  - skills
+  - cli-tool
+  target_tools:
+  - qoder
+  summary: Qoder CLI 自定义 skills 集合
+  i18n:
+    zh:
+      name: Haroldlhl/qoder-skills
+      summary: Qoder CLI 自定义 skills 集合
+    en:
+      name: Haroldlhl/qoder-skills
+      summary: Qoder CLI 自定义 skills 集合
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-15T17:44:08Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-valeriypushkar-qoder-skills-golang
+  name: valeriypushkar/qoder-skills-golang
+  url: https://github.com/valeriypushkar/qoder-skills-golang
+  repo: valeriypushkar/qoder-skills-golang
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: valeriypushkar/qoder-skills-golang
+  i18n:
+    zh:
+      name: valeriypushkar/qoder-skills-golang
+      summary: valeriypushkar/qoder-skills-golang
+    en:
+      name: valeriypushkar/qoder-skills-golang
+      summary: valeriypushkar/qoder-skills-golang
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-07-14T08:51:01Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Go
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 19
+  quality_score: 0
+  total_score: 19
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-zzymo123-cyber-vidu-studio
+  name: zzymo123-cyber/vidu-studio
+  url: https://github.com/zzymo123-cyber/vidu-studio
+  repo: zzymo123-cyber/vidu-studio
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: Vidu 图片生成工作室 - Qoder Skill
+  i18n:
+    zh:
+      name: zzymo123-cyber/vidu-studio
+      summary: Vidu 图片生成工作室 - Qoder Skill
+    en:
+      name: zzymo123-cyber/vidu-studio
+      summary: Vidu 图片生成工作室 - Qoder Skill
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-30T09:17:17Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-zzymo123-cyber-story-to-script
+  name: zzymo123-cyber/story-to-script
+  url: https://github.com/zzymo123-cyber/story-to-script
+  repo: zzymo123-cyber/story-to-script
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: 故事文本转短剧剧本 - Qoder Skill
+  i18n:
+    zh:
+      name: zzymo123-cyber/story-to-script
+      summary: 故事文本转短剧剧本 - Qoder Skill
+    en:
+      name: zzymo123-cyber/story-to-script
+      summary: 故事文本转短剧剧本 - Qoder Skill
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-30T09:15:45Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 15
+  quality_score: 0
+  total_score: 15
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-zzymo123-cyber-push-to-github
+  name: zzymo123-cyber/push-to-github
+  url: https://github.com/zzymo123-cyber/push-to-github
+  repo: zzymo123-cyber/push-to-github
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: Qoder Skill - 快速推送本地内容到 GitHub
+  i18n:
+    zh:
+      name: zzymo123-cyber/push-to-github
+      summary: Qoder Skill - 快速推送本地内容到 GitHub
+    en:
+      name: zzymo123-cyber/push-to-github
+      summary: Qoder Skill - 快速推送本地内容到 GitHub
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-30T10:36:37Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 15
+  quality_score: 0
+  total_score: 15
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-zzymo123-cyber-seedance-video-wetoken
+  name: zzymo123-cyber/seedance-video-wetoken
+  url: https://github.com/zzymo123-cyber/seedance-video-wetoken
+  repo: zzymo123-cyber/seedance-video-wetoken
+  source_type: github
+  resource_type:
+  - skills
+  target_tools:
+  - qoder
+  summary: Seedance 2.0 视频生成工具 (Wetoken REST API) - Qoder Skill
+  i18n:
+    zh:
+      name: zzymo123-cyber/seedance-video-wetoken
+      summary: Seedance 2.0 视频生成工具 (Wetoken REST API) - Qoder Skill
+    en:
+      name: zzymo123-cyber/seedance-video-wetoken
+      summary: Seedance 2.0 视频生成工具 (Wetoken REST API) - Qoder Skill
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-30T09:18:30Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Python
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-renchenxuan-test
+  name: renchenxuan/test
+  url: https://github.com/renchenxuan/test
+  repo: renchenxuan/test
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - trae
+  summary: A test repository created via Trae MCP
+  i18n:
+    zh:
+      name: renchenxuan/test
+      summary: A test repository created via Trae MCP
+    en:
+      name: renchenxuan/test
+      summary: A test repository created via Trae MCP
+  status: unknown
+  license: null
+  stars: 1
+  forks: 0
+  last_updated: '2026-07-06T01:37:36Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: '# test
+
+    你只需要看test_end.yml，其他的请忽略
+
+    '
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 1
+  total_score: 18
+  score_detail:
+    stars: 2
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: reject
+  last_analyzed: '2026-07-17'
+  benchmark_ref: github-opencoworkai-open-cowork
+  quality_detail:
+    relevance: 5
+    practicality: 0
+    novelty: 0
+    ecosystem_value: 0
+  llm_summary:
+    zh: 这是一个由Trae MCP创建的测试仓库。它仅包含一个YAML配置文件，用于测试MCP功能。适合Trae MCP的开发者进行测试验证。
+    en: This is a test repository created via Trae MCP. It contains only a YAML configuration
+      file for testing MCP functionality. It is intended for developers who need to
+      test Trae MCP.
+- id: github-paobai-dningbo-traemcp
+  name: Paobai-Dningbo/traeMCP
+  url: https://github.com/Paobai-Dningbo/traeMCP
+  repo: Paobai-Dningbo/traeMCP
+  source_type: github
+  resource_type:
+  - tutorial
+  target_tools:
+  - trae
+  summary: 一个用于展示性别分布饼图的项目
+  i18n:
+    zh:
+      name: Paobai-Dningbo/traeMCP
+      summary: 一个用于展示性别分布饼图的项目
+    en:
+      name: Paobai-Dningbo/traeMCP
+      summary: 一个用于展示性别分布饼图的项目
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-05-14T11:50:21Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - HTML
+  topics: []
+  readme_preview: '# traeMCP
+
+
+    一个用于展示性别分布饼图的项目'
+  tags: []
+  review_state: auto-rejected
+  quantifiable_score: 6
+  quality_score: 0
+  total_score: 6
+  score_detail:
+    stars: 0
+    activity: 4
+    adoption: 0
+    maturity: 2
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-zxcalbert-traemcp
+  name: zxcalbert/TraeMCP
+  url: https://github.com/zxcalbert/TraeMCP
+  repo: zxcalbert/TraeMCP
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - trae
+  - openclaw
+  summary: MCP Server for Trae CN + OpenClaw 集成火山方舟 AI
+  i18n:
+    zh:
+      name: zxcalbert/TraeMCP
+      summary: MCP Server for Trae CN + OpenClaw 集成火山方舟 AI
+    en:
+      name: zxcalbert/TraeMCP
+      summary: MCP Server for Trae CN + OpenClaw 集成火山方舟 AI
+  status: unknown
+  license: mit
+  stars: 0
+  forks: 0
+  last_updated: '2026-03-30T03:54:47Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - HTML
+  topics: []
+  readme_preview: '# 🚀 Trae CN + OpenClaw 集成快速配置指南
+
+
+    ## 第一步：获取火山方舟 API Key
+
+
+    1. 访问 [火山方舟 Coding Plan 活动页面](https://www.volcengine.com/activity/codingplan)
+
+    2. 按需订阅套餐（免费试用或付费）
+
+    3. 获取 API Key：https://console.volcengine.com/ark/region:ark+cn-beijing/apikey
+
+
+    ## 第二步：配置 API Key
+
+
+    ### 方式 A：环境变量（推荐用于测试）
+
+
+    ```bash
+
+    export ANTHROPIC_AUTH_TOKEN=你的API Key
+
+    export ANTHROPIC_BASE_URL=https://ark.cn-beijing.volces.com/api/coding
+
+    export ANTHROPIC_MODEL=doubao-seed-2.0-code
+
+    ```
+
+
+    ### 方式 B：配置文件（推荐用于生产）
+
+
+    ```bash
+
+    # 复制配置模板
+
+    cp ~/.qclaw/workspac'
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 16
+  quality_score: 0
+  total_score: 16
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 4
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-zhaoguohao21-trae-mcp
+  name: zhaoguohao21/trae_mcp
+  url: https://github.com/zhaoguohao21/trae_mcp
+  repo: zhaoguohao21/trae_mcp
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - trae
+  summary: 'test trae mcp '
+  i18n:
+    zh:
+      name: zhaoguohao21/trae_mcp
+      summary: 'test trae mcp '
+    en:
+      name: zhaoguohao21/trae_mcp
+      summary: 'test trae mcp '
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-06-09T03:17:08Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: "# trae_mcp\ntest trae mcp \n"
+  tags: []
+  review_state: auto-rejected
+  quantifiable_score: 4
+  quality_score: 0
+  total_score: 4
+  score_detail:
+    stars: 0
+    activity: 4
+    adoption: 0
+    maturity: 0
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-humblegrass-trae
+  name: HumbleGrass/Trae
+  url: https://github.com/HumbleGrass/Trae
+  repo: HumbleGrass/Trae
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - trae
+  summary: Trae MCP 使用
+  i18n:
+    zh:
+      name: HumbleGrass/Trae
+      summary: Trae MCP 使用
+    en:
+      name: HumbleGrass/Trae
+      summary: Trae MCP 使用
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-03-26T09:53:04Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 12
+  quality_score: 0
+  total_score: 12
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-wangjianqi-trae-mcp
+  name: wangjianqi/trae_mcp
+  url: https://github.com/wangjianqi/trae_mcp
+  repo: wangjianqi/trae_mcp
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - trae
+  summary: Repository for Trae AI MCP project
+  i18n:
+    zh:
+      name: wangjianqi/trae_mcp
+      summary: Repository for Trae AI MCP project
+    en:
+      name: wangjianqi/trae_mcp
+      summary: Repository for Trae AI MCP project
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-07-03T07:03:04Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-rejected
+  quantifiable_score: 4
+  quality_score: 0
+  total_score: 4
+  score_detail:
+    stars: 0
+    activity: 4
+    adoption: 0
+    maturity: 0
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-hugoguo1987-trae-mcp
+  name: hugoguo1987/Trae_MCP
+  url: https://github.com/hugoguo1987/Trae_MCP
+  repo: hugoguo1987/Trae_MCP
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - trae
+  summary: hugoguo1987/Trae_MCP
+  i18n:
+    zh:
+      name: hugoguo1987/Trae_MCP
+      summary: hugoguo1987/Trae_MCP
+    en:
+      name: hugoguo1987/Trae_MCP
+      summary: hugoguo1987/Trae_MCP
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-04-29T14:18:16Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: '# Trae_MCP
+
+    '
+  tags: []
+  review_state: auto-rejected
+  quantifiable_score: 4
+  quality_score: 0
+  total_score: 4
+  score_detail:
+    stars: 0
+    activity: 4
+    adoption: 0
+    maturity: 0
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-pine620-mcp-homework-test-2026
+  name: pine620/mcp-homework-test-2026
+  url: https://github.com/pine620/mcp-homework-test-2026
+  repo: pine620/mcp-homework-test-2026
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - trae
+  summary: 'Trae MCP GitHub ?????? - ??: ??? - ??: 2401410127'
+  i18n:
+    zh:
+      name: pine620/mcp-homework-test-2026
+      summary: 'Trae MCP GitHub ?????? - ??: ??? - ??: 2401410127'
+    en:
+      name: pine620/mcp-homework-test-2026
+      summary: 'Trae MCP GitHub ?????? - ??: ??? - ??: 2401410127'
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-06-30T07:23:02Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: '# mcp-homework-test-2026
+
+    Trae MCP GitHub ?????? - ??: ??? - ??: 2401410127
+
+    '
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 15
+  quality_score: 0
+  total_score: 15
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-zhqianxin-trae-mcp
+  name: zhqianxin/trae_mcp
+  url: https://github.com/zhqianxin/trae_mcp
+  repo: zhqianxin/trae_mcp
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - trae
+  summary: Trae MCP示例项目
+  i18n:
+    zh:
+      name: zhqianxin/trae_mcp
+      summary: Trae MCP示例项目
+    en:
+      name: zhqianxin/trae_mcp
+      summary: Trae MCP示例项目
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-08-14T04:18:40Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: '# Trae MCP
+
+
+    ## 项目简介
+
+    这是一个使用Trae MCP的示例项目，用于展示如何使用MCP服务器进行Git和GitHub操作。
+
+
+    ## 功能特性
+
+    - Git仓库操作
+
+    - GitHub API集成
+
+    - 自动化工作流程
+
+
+    ## 开始使用
+
+
+    ### 环境要求
+
+    - Git
+
+    - Node.js
+
+    - npm或yarn
+
+
+    ### 安装步骤
+
+    1. 克隆仓库
+
+    ```bash
+
+    git clone <repository-url>
+
+    cd trae_mcp
+
+    ```
+
+
+    2. 安装依赖
+
+    ```bash
+
+    npm install
+
+    # 或
+
+    yarn install
+
+    ```
+
+
+    3. 配置环境变量
+
+    ```bash
+
+    cp .env.example .env
+
+    # 编辑.env文件，填入必要的配置信息
+
+    ```
+
+
+    ## 使用说明
+
+    详细的使用说明和API文档请参考[文档](docs/README.md)。
+
+
+    ## 贡献指南
+
+    欢迎提交Pull Request或Issue。
+
+
+    ## 许可证
+
+    MIT License'
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 8
+  quality_score: 0
+  total_score: 8
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-leon30083-trae-mcp
+  name: leon30083/trae-mcp
+  url: https://github.com/leon30083/trae-mcp
+  repo: leon30083/trae-mcp
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - trae
+  summary: 搭配trae使用的mcp工具，个人
+  i18n:
+    zh:
+      name: leon30083/trae-mcp
+      summary: 搭配trae使用的mcp工具，个人
+    en:
+      name: leon30083/trae-mcp
+      summary: 搭配trae使用的mcp工具，个人
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-01-14T16:35:25Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics: []
+  readme_preview: "# Trae MCP 工作区\n\n该仓库用于集中管理 Trae AI 使用的 MCP 工具与文档。\n\n## 目录结构\n\
+    - `Sequential Thinking/`：顺序思考工具目录（待标准化命名）。\n- `trae-openspec-mcp/`：OpenSpec 工具目录，含输出与示例代码。\n\
+    - `文件夹说明.md`：统一的工具安装与使用说明。\n\n## 快速开始（trae-openspec-mcp）\n- 启动服务器：`npx -y trae-openspec-mcp`\n\
+    - 在 Trae 中配置（片段）：\n  ```json\n  {\n    \"mcpServers\": {\n      \"trae-openspec-mcp\"\
+    : {\n        \"command\": \"npx\",\n        \"args\": [\"-y\", \"trae-openspec-mcp\"\
+    ]\n      }\n    }\n  }\n  ```\n- 可用工具：`create_openspec_project`、`generate_openspec_spec`、`optimize_code_by_spec`\n\
+    \n## 使"
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 10
+  quality_score: 0
+  total_score: 10
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-tangoy-01-test
+  name: Tangoy-01/Test
+  url: https://github.com/Tangoy-01/Test
+  repo: Tangoy-01/Test
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - trae
+  summary: test my trae mcp
+  i18n:
+    zh:
+      name: Tangoy-01/Test
+      summary: test my trae mcp
+    en:
+      name: Tangoy-01/Test
+      summary: test my trae mcp
+  status: unknown
+  license: null
+  stars: 0
+  forks: 1
+  last_updated: '2026-04-05T06:06:28Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: '# Test
+
+    test my trae mcp
+
+    '
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 14
+  quality_score: 0
+  total_score: 14
+  score_detail:
+    stars: 0
+    activity: 12
+    adoption: 2
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
+- id: github-danielraffel-trae-mcp-servers
+  name: danielraffel/trae_mcp_servers
+  url: https://github.com/danielraffel/trae_mcp_servers
+  repo: danielraffel/trae_mcp_servers
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - trae
+  summary: danielraffel/trae_mcp_servers
+  i18n:
+    zh:
+      name: danielraffel/trae_mcp_servers
+      summary: danielraffel/trae_mcp_servers
+    en:
+      name: danielraffel/trae_mcp_servers
+      summary: danielraffel/trae_mcp_servers
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2025-05-21T19:54:26Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - Shell
+  topics: []
+  readme_preview: "[Trae](https://docs.trae.ai/ide/model-context-protocol) did a nice\
+    \ job with their MCP integration, so I wanted to take a look at how they implemented\
+    \ it. I sniffed their protocols and downloaded everything using a simple script.\
+    \ \n"
+  tags: []
+  review_state: auto-rejected
+  quantifiable_score: 6
+  quality_score: 0
+  total_score: 6
+  score_detail:
+    stars: 0
+    activity: 4
+    adoption: 0
+    maturity: 2
+  tracking_priority: reject
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-ayang402945439-trae-mcp-test
+  name: ayang402945439/trae_mcp_test
+  url: https://github.com/ayang402945439/trae_mcp_test
+  repo: ayang402945439/trae_mcp_test
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - trae
+  summary: C++面试题资源
+  i18n:
+    zh:
+      name: ayang402945439/trae_mcp_test
+      summary: C++面试题资源
+    en:
+      name: ayang402945439/trae_mcp_test
+      summary: C++面试题资源
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-01-17T12:01:26Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages: []
+  topics: []
+  readme_preview: ''
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 8
+  quality_score: 0
+  total_score: 8
+  score_detail:
+    stars: 0
+    activity: 8
+    adoption: 0
+    maturity: 0
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-qdhenry-claude-code-mcp-manager
+- id: github-fuqun616-eng-trae-mcp-bridge
+  name: fuqun616-eng/trae-mcp-bridge
+  url: https://github.com/fuqun616-eng/trae-mcp-bridge
+  repo: fuqun616-eng/trae-mcp-bridge
+  source_type: github
+  resource_type:
+  - mcp-server
+  target_tools:
+  - trae
+  summary: MCP Bridge Server - 连接 Operit AI 和 Trae Solo
+  i18n:
+    zh:
+      name: fuqun616-eng/trae-mcp-bridge
+      summary: MCP Bridge Server - 连接 Operit AI 和 Trae Solo
+    en:
+      name: fuqun616-eng/trae-mcp-bridge
+      summary: MCP Bridge Server - 连接 Operit AI 和 Trae Solo
+  status: unknown
+  license: null
+  stars: 0
+  forks: 0
+  last_updated: '2026-05-19T14:52:39Z'
+  first_seen: '2026-07-17'
+  last_seen: '2026-07-17'
+  maturity: unknown
+  languages:
+  - JavaScript
+  topics: []
+  readme_preview: '# Trae MCP Bridge
+
+
+    连接 Operit AI 和 Trae Solo 的 MCP Bridge Server
+
+
+    ## 功能特点
+
+
+    - 🔗 **标准 MCP 协议**：完全兼容 Operit 和 Trae Solo
+
+    - 🚀 **任务派发**：将编码任务委派给 Trae Solo 执行
+
+    - 📊 **状态追踪**：实时查询任务执行状态
+
+    - 💾 **结果获取**：获取任务执行结果和输出
+
+    - 🔄 **交互模式**：支持与 Trae Solo 交互式对话
+
+
+    ## MCP 工具列表
+
+
+    | 工具名 | 说明 |
+
+    |--------|------|
+
+    | `trae_execute` | 派发编码任务给 Trae Solo |
+
+    | `trae_get_status` | 查询任务执行状态 |
+
+    | `trae_get_result` | 获取任务执行结果 |
+
+    | `trae_interactive` | 交互式对话（高级功能） |
+
+    | `bridge_health` | 健康检查 |
+
+
+    ## 系统要求
+
+
+    - Node.js >= 18.0.0
+
+    - Trae Solo CLI 已安装
+
+    - A'
+  tags: []
+  review_state: auto-indexed
+  quantifiable_score: 17
+  quality_score: 0
+  total_score: 17
+  score_detail:
+    stars: 0
+    activity: 15
+    adoption: 0
+    maturity: 2
+  tracking_priority: pending
+  last_analyzed: null
+  benchmark_ref: github-opencoworkai-open-cowork
 

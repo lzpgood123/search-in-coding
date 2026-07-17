@@ -1,623 +1,5 @@
 [
   {
-    "id": "github-mybono-ai-orchestrator",
-    "name": "Mybono/ai-orchestrator",
-    "url": "https://github.com/Mybono/ai-orchestrator",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool",
-      "mcp-server"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "cline"
-    ],
-    "summary": "Portable multi-agent AI developer setup for Claude Code + Ollama. Role-based local LLM orchestration via Bash — plan, code, review, commit. Zero Dependency. Works with any language stack.",
-    "i18n": {
-      "zh": {
-        "name": "Mybono/ai-orchestrator",
-        "summary": "Portable multi-agent AI developer setup for Claude Code + Ollama. Role-based local LLM orchestration via Bash — plan, code, review, commit. Zero Dependency. Works with any language stack."
-      },
-      "en": {
-        "name": "Mybono/ai-orchestrator",
-        "summary": "Portable multi-agent AI developer setup for Claude Code + Ollama. Role-based local LLM orchestration via Bash — plan, code, review, commit. Zero Dependency. Works with any language stack."
-      }
-    },
-    "stars": 100,
-    "forks": 18,
-    "total_score": 61,
-    "quantifiable_score": 27,
-    "quality_score": 34,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T06:13:05Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "HTML"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个便携的多智能体AI开发者环境，通过Bash编排Claude Code和Ollama，实现零依赖的角色化本地LLM协作。",
-      "en": "A portable multi-agent AI developer setup that orchestrates Claude Code and Ollama via Bash for role-based local LLM collaboration with zero dependencies."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 9,
-      "novelty": 7,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "Mybono/ai-orchestrator",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "[![CI](https://github.com/Mybono/ai-orchestrator/actions/workflows/ci.yml/badge.svg)](https://github.com/Mybono/ai-orchestrator/actions/workflows/ci.yml)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n\n**README** · [Architecture](documentation/ARCHITECTURE.md) · [Agents](documentation/AGENTS.md) · [Skills & Commands](documentation/SKILLS.md) · [Plugins](documentation/PLUGINS.md)\n\n---\n\nTypeScript + Bash orchestration that runs AI agents",
-    "topics": [
-      "agentic",
-      "agentic-ai",
-      "claude-code",
-      "cli",
-      "coding-assistant",
-      "local-llm",
-      "mcp",
-      "ollama"
-    ]
-  },
-  {
-    "id": "github-rapiercraftstudios-forgedock",
-    "name": "RapierCraftStudios/ForgeDock",
-    "url": "https://github.com/RapierCraftStudios/ForgeDock",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "cline"
-    ],
-    "summary": "GitHub as a knowledge graph for AI agents. Autonomous dev pipeline for Claude Code - investigate, build, review, merge. Issue in, PR out.",
-    "i18n": {
-      "zh": {
-        "name": "RapierCraftStudios/ForgeDock",
-        "summary": "GitHub as a knowledge graph for AI agents. Autonomous dev pipeline for Claude Code - investigate, build, review, merge. Issue in, PR out."
-      },
-      "en": {
-        "name": "RapierCraftStudios/ForgeDock",
-        "summary": "GitHub as a knowledge graph for AI agents. Autonomous dev pipeline for Claude Code - investigate, build, review, merge. Issue in, PR out."
-      }
-    },
-    "stars": 100,
-    "forks": 10,
-    "total_score": 64,
-    "quantifiable_score": 27,
-    "quality_score": 37,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-12T02:42:05Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "agpl-3.0",
-    "languages": [
-      "JavaScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "ForgeDock 提供确定性编排，用于自主软件工程流水线，将 GitHub 作为 AI 代理的持久化、可检查的状态存储。",
-      "en": "ForgeDock provides deterministic orchestration for autonomous software engineering pipelines, using GitHub as a durable, inspectable state store for AI agents."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 9,
-      "novelty": 9,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "RapierCraftStudios/ForgeDock",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "ForgeDock\n\nDeterministic orchestration for autonomous software engineering.\n\nLLMs generate the code. ForgeDock owns everything else — state, scheduling, recovery, review, and memory — as durable, inspectable structure on the GitHub you already have. Issues are the queue. PRs are the ledger. Annotations are the memory. Point it at an issue and get a merged, reviewed PR; point it at a milestone and get parallel pipelines with conflict-aware scheduling.\n\nOne /orchestrate runs a whole milestone. Age",
-    "topics": [
-      "agentic-ai",
-      "ai-agents",
-      "ai-development",
-      "ai-pipeline",
-      "anthropic",
-      "automation",
-      "autonomous-coding",
-      "ci-cd",
-      "claude",
-      "claude-code",
-      "code-review",
-      "developer-tools",
-      "github-automation",
-      "knowledge-graph",
-      "llm",
-      "software-engineering",
-      "cli",
-      "npm",
-      "pipeline",
-      "slash-commands"
-    ]
-  },
-  {
-    "id": "github-signoz-signoz-mcp-server",
-    "name": "SigNoz/signoz-mcp-server",
-    "url": "https://github.com/SigNoz/signoz-mcp-server",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server"
-    ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
-    "summary": "MCP Server for SigNoz",
-    "i18n": {
-      "zh": {
-        "name": "SigNoz/signoz-mcp-server",
-        "summary": "MCP Server for SigNoz"
-      },
-      "en": {
-        "name": "SigNoz/signoz-mcp-server",
-        "summary": "MCP Server for SigNoz"
-      }
-    },
-    "stars": 101,
-    "forks": 37,
-    "total_score": 57,
-    "quantifiable_score": 27,
-    "quality_score": 30,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:56:54Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "apache-2.0",
-    "languages": [
-      "Go"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "SigNoz MCP服务器为AI编码代理提供可观测性数据访问，支持自然语言查询指标、追踪、日志等。",
-      "en": "A Go-based MCP server that integrates SigNoz observability data with AI assistants, allowing natural language queries for metrics, traces, logs, and alerts."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 6,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "SigNoz/signoz-mcp-server",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# SigNoz MCP Server\n\n[![Go Version](https://img.shields.io/badge/Go-1.25+-blue.svg)](https://golang.org)\n[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)\n[![MCP Version](https://img.shields.io/badge/MCP-0.37.0-orange.svg)](https://modelcontextprotocol.io)\n\nA Model Context Protocol (MCP) server that provides seamless access to SigNoz observability data through AI assistants and LLMs. Query metrics, traces, logs, alerts, dashboards, and services using natural langu",
-    "topics": [
-      "mcp-server",
-      "monitoring",
-      "observability",
-      "opentelemetry"
-    ]
-  },
-  {
-    "id": "github-yosefhayim-ebay-mcp",
-    "name": "YosefHayim/ebay-mcp",
-    "url": "https://github.com/YosefHayim/ebay-mcp",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server",
-      "cli-tool",
-      "agent-framework"
-    ],
-    "target_tools": [
-      "claude-code",
-      "cursor",
-      "cline"
-    ],
-    "summary": "Local MCP server that exposes eBay Sell APIs to AI assistants with OAuth, tool gating, and stdio/HTTP transports.",
-    "i18n": {
-      "zh": {
-        "name": "YosefHayim/ebay-mcp",
-        "summary": "Local MCP server that exposes eBay Sell APIs to AI assistants with OAuth, tool gating, and stdio/HTTP transports."
-      },
-      "en": {
-        "name": "YosefHayim/ebay-mcp",
-        "summary": "Local MCP server that exposes eBay Sell APIs to AI assistants with OAuth, tool gating, and stdio/HTTP transports."
-      }
-    },
-    "stars": 100,
-    "forks": 45,
-    "total_score": 57,
-    "quantifiable_score": 27,
-    "quality_score": 30,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T17:50:53Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "为AI助手提供eBay销售API访问的MCP服务器，支持OAuth和多种传输方式。",
-      "en": "An MCP server that gives AI assistants full access to eBay's Sell APIs via OAuth and multiple transports."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 8,
-      "practicality": 9,
-      "novelty": 6,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "YosefHayim/ebay-mcp",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "The eBay MCP server — give Claude, Cursor, and any AI assistant full access to eBay's Sell APIs. 322 tools for inventory, orders, marketing, and analytics, running locally with your own keys.\n\nUnofficial, open-source project — not affiliated with, authorized, or endorsed by eBay Inc.\n\n  \n  \n  \n  \n  \n  \n\n  \n  \n  \n  \n  \n\n  \n\n  English ·\n  简体中文 ·\n  Español ·\n  Português (BR) ·\n  日本語 ·\n  한국어 ·\n  Français ·\n  Deutsch ·\n  Русский\n\n---\n\n**eBay MCP** is a local [Model Context Protocol](https://modelcont",
-    "topics": [
-      "chatgpt",
-      "claude",
-      "ebay",
-      "mcp-server",
-      "typescript",
-      "api-wrapper",
-      "ebay-api",
-      "mcp",
-      "model-context-protocol",
-      "npm",
-      "oauth2",
-      "ai-agents",
-      "cursor",
-      "local-first",
-      "nodejs",
-      "tool-gating"
-    ]
-  },
-  {
-    "id": "github-av-mi",
-    "name": "av/mi",
-    "url": "https://github.com/av/mi",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "cline",
-      "replit"
-    ],
-    "summary": "self-extending sandboxed agentic harness. a loop, two tools and an llm",
-    "i18n": {
-      "zh": {
-        "name": "av/mi",
-        "summary": "self-extending sandboxed agentic harness. a loop, two tools and an llm"
-      },
-      "en": {
-        "name": "av/mi",
-        "summary": "self-extending sandboxed agentic harness. a loop, two tools and an llm"
-      }
-    },
-    "stars": 100,
-    "forks": 10,
-    "total_score": 56,
-    "quantifiable_score": 25,
-    "quality_score": 31,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-12T02:47:42Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [
-      "JavaScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个极简的沙盒化自主智能体框架，仅用30行代码、两个工具（bash和delegate）和LLM循环，支持任何兼容OpenAI的API。",
-      "en": "A minimal self-extending sandboxed agentic harness with just 30 lines of code, two tools (bash and delegate), and an LLM loop, supporting any OpenAI-compatible API."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "av/mi",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "[![mi video](https://img.youtube.com/vi/JdMBn7FXilg/maxresdefault.jpg)](https://www.youtube.com/watch?v=JdMBn7FXilg)\n\nagentic coding in 30 loc. a loop, two tools, and an llm.\n\n## features\n\n- works with any OpenAI-compatible API: OpenAI, ollama, lmstudio, litellm, vllm, local models\n- `bash` tool gives full system access: git, curl, compilers, file I/O (`cat`, `sed -i`, heredocs); optional `timeout=` and `bg=truthy` for background tasks\n- `delegate` tool spawns a mi subagent with a prompt — runs ",
-    "topics": [
-      "agentic-ai",
-      "agentic-coding",
-      "ai",
-      "cli",
-      "codegolf",
-      "harness",
-      "llm",
-      "repl",
-      "autonomous-agent",
-      "coding-agent",
-      "developer-tools",
-      "sandbox"
-    ]
-  },
-  {
-    "id": "github-avivsinai-langfuse-mcp",
-    "name": "avivsinai/langfuse-mcp",
-    "url": "https://github.com/avivsinai/langfuse-mcp",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server",
-      "agent-framework",
-      "skills",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli"
-    ],
-    "summary": "A Model Context Protocol (MCP) server for Langfuse, enabling AI agents to query Langfuse trace data for enhanced debugging and observability",
-    "i18n": {
-      "zh": {
-        "name": "avivsinai/langfuse-mcp",
-        "summary": "A Model Context Protocol (MCP) server for Langfuse, enabling AI agents to query Langfuse trace data for enhanced debugging and observability"
-      },
-      "en": {
-        "name": "avivsinai/langfuse-mcp",
-        "summary": "A Model Context Protocol (MCP) server for Langfuse, enabling AI agents to query Langfuse trace data for enhanced debugging and observability"
-      }
-    },
-    "stars": 100,
-    "forks": 24,
-    "total_score": 58,
-    "quantifiable_score": 27,
-    "quality_score": 31,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-08T01:42:47Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个让AI编码代理查询Langfuse追踪数据以进行调试和可观测性的MCP服务器。",
-      "en": "An MCP server that lets AI coding agents query Langfuse trace data for debugging and observability."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 6,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "avivsinai/langfuse-mcp",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Langfuse MCP Server\n\n[![PyPI](https://badge.fury.io/py/langfuse-mcp.svg)](https://badge.fury.io/py/langfuse-mcp)\n[![Downloads](https://static.pepy.tech/badge/langfuse-mcp)](https://pepy.tech/projects/langfuse-mcp)\n[![Python 3.10–3.14](https://img.shields.io/badge/python-3.10–3.14-blue.svg)](https://www.python.org/downloads/)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n\nAgent-facing [Model Context Protocol](https://modelcontextprot",
-    "topics": [
-      "genai",
-      "langfuse",
-      "mcp",
-      "mcp-server",
-      "agent-skills",
-      "claude-code",
-      "codex",
-      "ai-agents",
-      "developer-tools",
-      "llm",
-      "observability",
-      "tracing"
-    ]
-  },
-  {
-    "id": "github-brucetoo-visual-agentic-dev",
-    "name": "brucetoo/visual-agentic-dev",
-    "url": "https://github.com/brucetoo/visual-agentic-dev",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "trae",
-      "hermes-agent",
-      "cline",
-      "replit"
-    ],
-    "summary": "an immersive browser dev environment with a seamless click-to-locate + agent edit loop.",
-    "i18n": {
-      "zh": {
-        "name": "brucetoo/visual-agentic-dev",
-        "summary": "an immersive browser dev environment with a seamless click-to-locate + agent edit loop."
-      },
-      "en": {
-        "name": "brucetoo/visual-agentic-dev",
-        "summary": "an immersive browser dev environment with a seamless click-to-locate + agent edit loop."
-      }
-    },
-    "stars": 100,
-    "forks": 0,
-    "total_score": 53,
-    "quantifiable_score": 23,
-    "quality_score": 30,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-12T04:37:06Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "other",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个沉浸式浏览器开发环境，结合点击定位与AI代理编辑循环，提升开发效率。",
-      "en": "An immersive browser dev environment integrating click-to-locate and agent edit loop for efficient AI-assisted coding."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 0,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 6,
-      "novelty": 8,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "brucetoo/visual-agentic-dev",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Visual Agentic Dev\n\n**Visual Agentic Dev** is an immersive browser development environment designed to allow developers to complete code modifications, debugging, and command-line interactions without leaving the browser. Its core **click-to-locate + agent edit loop** is exactly the kind of workflow that makes AI agents feel genuinely useful—moving beyond a simple \"chat in a box\" to become a powerful, integrated part of the development lifecycle.\n\nhttps://github.com/user-attachments/assets/099",
-    "topics": [
-      "agent",
-      "claude",
-      "claude-code",
-      "gemini-cli",
-      "devtools",
-      "ai"
-    ]
-  },
-  {
-    "id": "github-freshtechbro-vibe-coder-mcp",
-    "name": "freshtechbro/Vibe-Coder-MCP",
-    "url": "https://github.com/freshtechbro/Vibe-Coder-MCP",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "cursor",
-      "zed",
-      "cline",
-      "augment-code"
-    ],
-    "summary": " Vibe-Coder-MCP server extends AI assistants with specialized software development tools.",
-    "i18n": {
-      "zh": {
-        "name": "freshtechbro/Vibe-Coder-MCP",
-        "summary": " Vibe-Coder-MCP server extends AI assistants with specialized software development tools."
-      },
-      "en": {
-        "name": "freshtechbro/Vibe-Coder-MCP",
-        "summary": " Vibe-Coder-MCP server extends AI assistants with specialized software development tools."
-      }
-    },
-    "stars": 100,
-    "forks": 29,
-    "total_score": 57,
-    "quantifiable_score": 27,
-    "quality_score": 30,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-10T12:36:30Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "other",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个为AI编码助手提供专门软件开发工具的MCP服务器，支持Cursor等工具。",
-      "en": "An MCP server that extends AI assistants with specialized software development tools for vibe coding."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 8,
-      "novelty": 5,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "freshtechbro/Vibe-Coder-MCP",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Vibe Coder MCP Server\n\n[![npm version](https://img.shields.io/npm/v/vibe-coder-mcp?style=flat-square&logo=npm&logoColor=white&cacheSeconds=300)](https://www.npmjs.com/package/vibe-coder-mcp)\n[![npm downloads](https://img.shields.io/npm/dm/vibe-coder-mcp?style=flat-square&logo=npm&logoColor=white&cacheSeconds=300)](https://www.npmjs.com/package/vibe-coder-mcp)\n[![npm total downloads](https://img.shields.io/npm/dt/vibe-coder-mcp?style=flat-square&logo=npm&logoColor=white&cacheSeconds=300)](https",
-    "topics": [
-      "agents",
-      "mcp",
-      "mcp-server",
-      "augmentcode",
-      "claude-desktop",
-      "cline",
-      "cursor",
-      "roo-code"
-    ]
-  },
-  {
     "id": "github-glincker-stacklit",
     "name": "glincker/stacklit",
     "url": "https://github.com/glincker/stacklit",
@@ -944,65 +326,6 @@
       "openai-agents-sdk",
       "web-crawling",
       "web-scraping"
-    ]
-  },
-  {
-    "id": "github-sapientpants-sonarqube-mcp-server",
-    "name": "sapientpants/sonarqube-mcp-server",
-    "url": "https://github.com/sapientpants/sonarqube-mcp-server",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server"
-    ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
-    "summary": "Model Context Protocol (MCP) server for SonarQube",
-    "i18n": {
-      "zh": {
-        "name": "sapientpants/sonarqube-mcp-server",
-        "summary": "Model Context Protocol (MCP) server for SonarQube"
-      },
-      "en": {
-        "name": "sapientpants/sonarqube-mcp-server",
-        "summary": "Model Context Protocol (MCP) server for SonarQube"
-      }
-    },
-    "stars": 100,
-    "forks": 16,
-    "total_score": 26,
-    "quantifiable_score": 26,
-    "quality_score": 0,
-    "tracking_priority": "reject",
-    "last_updated": "2026-07-05T03:14:11Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [],
-    "review_state": "auto-rejected",
-    "llm_summary": null,
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 3
-    },
-    "quality_detail": {},
-    "benchmark_ref": "github-opencoworkai-open-cowork",
-    "last_analyzed": null,
-    "repo": "sapientpants/sonarqube-mcp-server",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "archived",
-    "readme_preview": "This project is no longer maintained. Please refer to the official version at [sonarqube-mcp-server](https://github.com/SonarSource/sonarqube-mcp-server).",
-    "topics": [
-      "mcp",
-      "model-context-protocol",
-      "sonarqube",
-      "model-context-protocol-servers",
-      "typescript",
-      "mcp-server",
-      "sonarcloud"
     ]
   },
   {
@@ -7047,6 +6370,649 @@
     "maturity": "unknown",
     "status": "unknown",
     "readme_preview": "# NVIDIA OpenShell\n\n[![License](https://img.shields.io/badge/License-Apache_2.0-blue)](https://github.com/NVIDIA/OpenShell/blob/main/LICENSE)\n[![PyPI](https://img.shields.io/badge/PyPI-openshell-orange?logo=pypi)](https://pypi.org/project/openshell/)\n[![Security Policy](https://img.shields.io/badge/Security-Report%20a%20Vulnerability-red)](SECURITY.md)\n[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen)](https://docs.nvidia.com/openshell/latest/index.html)\n[![Project Status](",
+    "topics": []
+  },
+  {
+    "id": "github-nirdiamant-prompt-engineering",
+    "name": "NirDiamant/Prompt_Engineering",
+    "url": "https://github.com/NirDiamant/Prompt_Engineering",
+    "source_type": "github",
+    "resource_type": [
+      "rules",
+      "agent-framework"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "cline",
+      "lovable"
+    ],
+    "summary": "22 prompt engineering techniques with hands-on Jupyter Notebook tutorials, from fundamental concepts to advanced strategies for leveraging LLMs.",
+    "i18n": {
+      "zh": {
+        "name": "NirDiamant/Prompt_Engineering",
+        "summary": "22 prompt engineering techniques with hands-on Jupyter Notebook tutorials, from fundamental concepts to advanced strategies for leveraging LLMs."
+      },
+      "en": {
+        "name": "NirDiamant/Prompt_Engineering",
+        "summary": "22 prompt engineering techniques with hands-on Jupyter Notebook tutorials, from fundamental concepts to advanced strategies for leveraging LLMs."
+      }
+    },
+    "stars": 7678,
+    "forks": 986,
+    "total_score": 71,
+    "quantifiable_score": 38,
+    "quality_score": 33,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-13T19:29:38Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "other",
+    "languages": [
+      "Jupyter Notebook"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "全面的提示工程教程集合，包含实用的Jupyter Notebook，对掌握LLM交互至关重要。",
+      "en": "Comprehensive prompt engineering tutorial collection with practical Jupyter Notebooks, essential for mastering LLM interaction."
+    },
+    "score_detail": {
+      "stars": 12,
+      "activity": 15,
+      "adoption": 7,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 9,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "NirDiamant/Prompt_Engineering",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)\n[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/nir-diamant-759323134/)\n[![Twitter](https://img.shields.io/twitter/follow/NirDiamantAI?label=Follow%20@NirDiamantAI&style=social)](https://twitter.com/NirDiamantAI)\n[![Discord](https://img.shields.io/badge/Discord-Join%20our%20community-7289da?style=flat-square&logo=discord&logoColor",
+    "topics": [
+      "ai",
+      "prompt-engineering",
+      "tutorials",
+      "llms",
+      "python",
+      "genai",
+      "llm",
+      "chatgpt",
+      "claude",
+      "langchain",
+      "openai",
+      "prompting",
+      "chain-of-thought",
+      "few-shot-learning",
+      "generative-ai",
+      "gpt",
+      "in-context-learning",
+      "machine-learning"
+    ]
+  },
+  {
+    "id": "github-getbindu-bindu",
+    "name": "GetBindu/Bindu",
+    "url": "https://github.com/GetBindu/Bindu",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "Bindu: The identity, communication, and payments layer for AI agents.",
+    "i18n": {
+      "zh": {
+        "name": "GetBindu/Bindu",
+        "summary": "Bindu: The identity, communication, and payments layer for AI agents."
+      },
+      "en": {
+        "name": "GetBindu/Bindu",
+        "summary": "Bindu: The identity, communication, and payments layer for AI agents."
+      }
+    },
+    "stars": 7667,
+    "forks": 421,
+    "total_score": 65,
+    "quantifiable_score": 38,
+    "quality_score": 27,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T09:04:58Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "other",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "Bindu 为 AI 代理提供身份、通信和支付层，虽非专为编码代理设计，但可用于支持编码代理间的交互。",
+      "en": "Bindu provides identity, communication, and payments for AI agents; it is not specific to coding agents but can support inter-agent coordination in coding workflows."
+    },
+    "score_detail": {
+      "stars": 12,
+      "activity": 15,
+      "adoption": 7,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 7,
+      "novelty": 8,
+      "ecosystem_value": 6
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "GetBindu/Bindu",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "Bindu\n\n    \n    \n    \n    \n    \n    \n    \n    \n        \n            \n            \n            \n        \n    \n\n    \n        English |\n        Deutsch |\n        Español |\n        Français |\n        हिंदी |\n        বাংলা |\n        中文 |\n        Nederlands |\n        Bahasa Indonesia |\n        தமிழ்\n    \n\nThe identity, communication, and payments layer for AI agents.\n\n  A Gmail-shaped inbox for the agent internet. Watch your agents send signed JSON-RPC to each other, verify identities inline, and repl",
+    "topics": [
+      "agent-communication",
+      "autonomous-agents",
+      "agent-orchestration",
+      "a2a",
+      "ai-agent",
+      "machine-learning",
+      "eu-ai-act"
+    ]
+  },
+  {
+    "id": "github-jo-inc-camofox-browser",
+    "name": "jo-inc/camofox-browser",
+    "url": "https://github.com/jo-inc/camofox-browser",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "Stealth headless browser for AI agents — bypass Cloudflare, bot detection, and anti-scraping. Drop-in Puppeteer/Playwright replacement.",
+    "i18n": {
+      "zh": {
+        "name": "jo-inc/camofox-browser",
+        "summary": "Stealth headless browser for AI agents — bypass Cloudflare, bot detection, and anti-scraping. Drop-in Puppeteer/Playwright replacement."
+      },
+      "en": {
+        "name": "jo-inc/camofox-browser",
+        "summary": "Stealth headless browser for AI agents — bypass Cloudflare, bot detection, and anti-scraping. Drop-in Puppeteer/Playwright replacement."
+      }
+    },
+    "stars": 7651,
+    "forks": 794,
+    "total_score": 73,
+    "quantifiable_score": 38,
+    "quality_score": 35,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T08:28:38Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "JavaScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "这个项目为AI代理提供了一个反检测的隐身浏览器，可以绕过Cloudflare和机器人检测，是Puppeteer/Playwright的直接替代品。",
+      "en": "This project provides a stealth headless browser for AI agents to bypass Cloudflare and bot detection, serving as a drop-in replacement for Puppeteer/Playwright."
+    },
+    "score_detail": {
+      "stars": 12,
+      "activity": 15,
+      "adoption": 7,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
+    "repo": "jo-inc/camofox-browser",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "camofox-browser\n  Anti-detection browser server for AI agents, powered by Camoufox\n  \n    \n    \n    \n    \n  \n  \n    Standing on the mighty shoulders of Camoufox - a Firefox fork with fingerprint spoofing at the C++ level.\n  \n\n> \n>\n> Built by the team behind jo, a personal AI agent that runs half on your Mac, half on a dedicated cloud machine just for you -- with zero maintenance needed. Available on macOS, Telegram, WhatsApp, and email. Try the beta free ->\n\n```bash\ngit clone https://github.com/",
+    "topics": [
+      "ai-agent",
+      "anti-bot",
+      "antidetect-browser",
+      "automation",
+      "bot-detection",
+      "browser-automation",
+      "cloudflare-bypass",
+      "headless-browser",
+      "javascript",
+      "nodejs",
+      "playwright",
+      "puppeteer",
+      "scraping",
+      "stealth-browser",
+      "web-scraping"
+    ]
+  },
+  {
+    "id": "github-anthropics-claude-agent-sdk-python",
+    "name": "anthropics/claude-agent-sdk-python",
+    "url": "https://github.com/anthropics/claude-agent-sdk-python",
+    "source_type": "github",
+    "resource_type": [
+      "tutorial"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "anthropics/claude-agent-sdk-python",
+    "i18n": {
+      "zh": {
+        "name": "anthropics/claude-agent-sdk-python",
+        "summary": "anthropics/claude-agent-sdk-python"
+      },
+      "en": {
+        "name": "anthropics/claude-agent-sdk-python",
+        "summary": "anthropics/claude-agent-sdk-python"
+      }
+    },
+    "stars": 7623,
+    "forks": 1170,
+    "total_score": 75,
+    "quantifiable_score": 41,
+    "quality_score": 34,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T08:15:10Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "Claude Agent的官方Python SDK，集成了Claude Code CLI。",
+      "en": "Official Python SDK for building and interacting with Claude Agent, bundling the Claude Code CLI."
+    },
+    "score_detail": {
+      "stars": 12,
+      "activity": 15,
+      "adoption": 10,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
+    "repo": "anthropics/claude-agent-sdk-python",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Claude Agent SDK for Python\n\nPython SDK for Claude Agent. See the [Claude Agent SDK documentation](https://platform.claude.com/docs/en/agent-sdk/python) for more information.\n\n## Installation\n\n```bash\npip install claude-agent-sdk\n```\n\n**Prerequisites:**\n\n- Python 3.10+\n\n**Note:** The Claude Code CLI is automatically bundled with the package - no separate installation required! The SDK will use the bundled CLI by default. If you prefer to use a system-wide installation or a specific version, yo",
+    "topics": []
+  },
+  {
+    "id": "github-ai4finance-foundation-finrobot",
+    "name": "AI4Finance-Foundation/FinRobot",
+    "url": "https://github.com/AI4Finance-Foundation/FinRobot",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "rules"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "FinRobot: An Open-Source AI Agent Platform for Financial Analysis using LLMs 🚀 🚀 🚀 ",
+    "i18n": {
+      "zh": {
+        "name": "AI4Finance-Foundation/FinRobot",
+        "summary": "FinRobot: An Open-Source AI Agent Platform for Financial Analysis using LLMs 🚀 🚀 🚀 "
+      },
+      "en": {
+        "name": "AI4Finance-Foundation/FinRobot",
+        "summary": "FinRobot: An Open-Source AI Agent Platform for Financial Analysis using LLMs 🚀 🚀 🚀 "
+      }
+    },
+    "stars": 7558,
+    "forks": 1276,
+    "total_score": 65,
+    "quantifiable_score": 41,
+    "quality_score": 24,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T06:59:55Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "apache-2.0",
+    "languages": [
+      "Jupyter Notebook"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "FinRobot是一个面向金融分析的开源AI代理平台，利用大语言模型提供智能金融数据分析和决策支持。",
+      "en": "FinRobot is an open-source AI agent platform for financial analysis using large language models, offering smart financial data analysis and decision support."
+    },
+    "score_detail": {
+      "stars": 12,
+      "activity": 15,
+      "adoption": 10,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 5,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 5
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "AI4Finance-Foundation/FinRobot",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# FinRobot: An Open-Source AI Agent Platform for Financial Analysis using Large Language Models\n[![Downloads](https://static.pepy.tech/badge/finrobot)]([https://pepy.tech/project/finrobot](https://pepy.tech/project/finrobot))\n[![Downloads](https://static.pepy.tech/badge/finrobot/week)](https://pepy.tech/project/finrobot)\n[![Join Discord](https://img.shields.io/badge/Discord-Join-blue)](https://discord.gg/trsr8SXpW5)\n[![Python 3.8](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.py",
+    "topics": [
+      "aiagent",
+      "fingpt",
+      "chatgpt",
+      "finance",
+      "large-language-models",
+      "multimodal-deep-learning",
+      "prompt-engineering",
+      "robo-advisor"
+    ]
+  },
+  {
+    "id": "github-valuecell-ai-clawx",
+    "name": "ValueCell-ai/ClawX",
+    "url": "https://github.com/ValueCell-ai/ClawX",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "cli-tool",
+      "skills"
+    ],
+    "target_tools": [
+      "trae",
+      "hermes-agent",
+      "replit",
+      "openclaw"
+    ],
+    "summary": "ClawX is a desktop app that provides a graphical interface for OpenClaw AI agents. It turns CLI-based AI orchestration into a desktop experience without using the terminal. China website is https://clawx.com.cn.",
+    "i18n": {
+      "zh": {
+        "name": "ValueCell-ai/ClawX",
+        "summary": "ClawX is a desktop app that provides a graphical interface for OpenClaw AI agents. It turns CLI-based AI orchestration into a desktop experience without using the terminal. China website is https://clawx.com.cn."
+      },
+      "en": {
+        "name": "ValueCell-ai/ClawX",
+        "summary": "ClawX is a desktop app that provides a graphical interface for OpenClaw AI agents. It turns CLI-based AI orchestration into a desktop experience without using the terminal. China website is https://clawx.com.cn."
+      }
+    },
+    "stars": 7544,
+    "forks": 1122,
+    "total_score": 71,
+    "quantifiable_score": 41,
+    "quality_score": 30,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T09:04:55Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "ClawX 为 OpenClaw AI 代理提供了一个桌面图形界面，将 CLI 驱动的代理编排转化为无需终端的易用体验，兼具实用性与普及价值。",
+      "en": "ClawX provides a desktop graphical interface for OpenClaw AI agents, transforming CLI-based agent orchestration into an accessible terminal-free experience, balancing practicality and ecosystem value."
+    },
+    "score_detail": {
+      "stars": 12,
+      "activity": 15,
+      "adoption": 10,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 7,
+      "practicality": 9,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "ValueCell-ai/ClawX",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "ClawX\n\n  The Desktop Interface for OpenClaw AI Agents\n\n  Features •\n  Why ClawX •\n  Getting Started •\n  Architecture •\n  Development •\n  Contributing\n\n  \n  \n  \n  \n  \n  \n  \n  \n\n  English | 简体中文 | 日本語 | Русский\n\n---\n\n## Overview\n\n**ClawX** bridges the gap between powerful AI agents and everyday users. Built on top of [OpenClaw](https://github.com/OpenClaw), it transforms command-line AI orchestration into an accessible, beautiful desktop experience—no terminal required.\n\nWhether you're automating ",
+    "topics": [
+      "agent",
+      "clawdbot",
+      "moltbot",
+      "openclaw",
+      "skill",
+      "agentic-ai",
+      "agents",
+      "ai"
+    ]
+  },
+  {
+    "id": "github-cobusgreyling-loop-engineering",
+    "name": "cobusgreyling/loop-engineering",
+    "url": "https://github.com/cobusgreyling/loop-engineering",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "cli-tool",
+      "mcp-server",
+      "rules"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "cline"
+    ],
+    "summary": "Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems that prompt and orchestrate agents (inspired by Addy Osmani and Boris Cherny). Includes loop-audit, loop-init, loop-cost.",
+    "i18n": {
+      "zh": {
+        "name": "cobusgreyling/loop-engineering",
+        "summary": "Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems that prompt and orchestrate agents (inspired by Addy Osmani and Boris Cherny). Includes loop-audit, loop-init, loop-cost."
+      },
+      "en": {
+        "name": "cobusgreyling/loop-engineering",
+        "summary": "Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems that prompt and orchestrate agents (inspired by Addy Osmani and Boris Cherny). Includes loop-audit, loop-init, loop-cost."
+      }
+    },
+    "stars": 7595,
+    "forks": 964,
+    "total_score": 75,
+    "quantifiable_score": 38,
+    "quality_score": 37,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T09:27:20Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "JavaScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个实用的CLI工具包，用于设计和编排AI编码代理的工作循环，提供脚手架、审计和成本追踪功能。",
+      "en": "A practical CLI toolkit for engineering loops that orchestrate AI coding agents, providing scaffolding, auditing, and cost tracking."
+    },
+    "score_detail": {
+      "stars": 12,
+      "activity": 15,
+      "adoption": 7,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "official-hermes-agent",
+    "last_analyzed": "2026-07-15",
+    "repo": "cobusgreyling/loop-engineering",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Loop Engineering\n\n  \n    \n  \n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n  \n    \n  \n\n> **Stop prompting. Design the loop. Get a score.**\n\n  \n\n```bash\nnpx @cobusgreyling/loop-init .\n```\n\n`loop-init` scaffolds skills, state, and budget files, then prints your **Loop Ready** score and first loop command. Swap `--tool` for `claude`, `codex`, or `opencode`.\n\n  \n    \n  \n\nLoop engineering replaces you as the person who prompts the agent — you design the system that does it instead.\n\n**New here?** [Quickstart ",
+    "topics": [
+      "agentic-ai",
+      "ai-agents",
+      "claude-code",
+      "codex",
+      "devops-automation",
+      "github-actions",
+      "grok",
+      "llm",
+      "mcp",
+      "ai-coding",
+      "automation",
+      "loop-engineering",
+      "prompt-engineering",
+      "anthropic",
+      "claude",
+      "coding-agents",
+      "devtools"
+    ]
+  },
+  {
+    "id": "github-luckyone7777-llm-trading-lab",
+    "name": "LuckyOne7777/LLM-Trading-Lab",
+    "url": "https://github.com/LuckyOne7777/LLM-Trading-Lab",
+    "source_type": "github",
+    "resource_type": [
+      "tutorial"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "This repo powers my experiment where ChatGPT manages a real-money micro-cap stock portfolio.",
+    "i18n": {
+      "zh": {
+        "name": "LuckyOne7777/LLM-Trading-Lab",
+        "summary": "This repo powers my experiment where ChatGPT manages a real-money micro-cap stock portfolio."
+      },
+      "en": {
+        "name": "LuckyOne7777/LLM-Trading-Lab",
+        "summary": "This repo powers my experiment where ChatGPT manages a real-money micro-cap stock portfolio."
+      }
+    },
+    "stars": 7499,
+    "forks": 1565,
+    "total_score": 60,
+    "quantifiable_score": 39,
+    "quality_score": 21,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T07:35:57Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": null,
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "这是一个使用ChatGPT进行实盘微盘股票组合管理的实验项目，可视为LLM在金融决策中的应用参考。",
+      "en": "An experimental project where ChatGPT manages a real-money micro-cap stock portfolio, serving as a reference for LLM application in financial decision-making."
+    },
+    "score_detail": {
+      "stars": 12,
+      "activity": 15,
+      "adoption": 10,
+      "maturity": 2
+    },
+    "quality_detail": {
+      "relevance": 5,
+      "practicality": 7,
+      "novelty": 6,
+      "ecosystem_value": 3
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "LuckyOne7777/LLM-Trading-Lab",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# LLM Trading Lab\nThis repository started as a **6-month live micro-cap trading experiment** in which a large language model (ChatGPT) manages a real-money portfolio under strict, predefined rules.\n\nWhat began as a single experiment has evolved into a **baseline framework** for studying how large language models behave as portfolio decision-makers.  \nAll historical data, research artifacts, and logs are preserved for transparency and auditability.\n\n**Full research evaluation out now: [Evaluating",
+    "topics": []
+  },
+  {
+    "id": "github-microsoft-tinytroupe",
+    "name": "microsoft/TinyTroupe",
+    "url": "https://github.com/microsoft/TinyTroupe",
+    "source_type": "github",
+    "resource_type": [
+      "tutorial"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "LLM-powered multiagent persona simulation for imagination enhancement and business insights.",
+    "i18n": {
+      "zh": {
+        "name": "microsoft/TinyTroupe",
+        "summary": "LLM-powered multiagent persona simulation for imagination enhancement and business insights."
+      },
+      "en": {
+        "name": "microsoft/TinyTroupe",
+        "summary": "LLM-powered multiagent persona simulation for imagination enhancement and business insights."
+      }
+    },
+    "stars": 7491,
+    "forks": 667,
+    "total_score": 57,
+    "quantifiable_score": 38,
+    "quality_score": 19,
+    "tracking_priority": "index",
+    "last_updated": "2026-07-13T10:23:23Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Jupyter Notebook"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个基于LLM的多智能体角色模拟库，用于商业洞察，但与AI编码代理生态直接关联不大。",
+      "en": "A multiagent persona simulation library powered by LLMs, useful for business insights but not directly relevant to AI coding agents."
+    },
+    "score_detail": {
+      "stars": 12,
+      "activity": 15,
+      "adoption": 7,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 2,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 3
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "microsoft/TinyTroupe",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# TinyTroupe 🤠🤓🥸🧐\n[![Core Tests](https://github.com/microsoft/TinyTroupe/actions/workflows/core-tests.yml/badge.svg)](https://github.com/microsoft/TinyTroupe/actions/workflows/core-tests.yml)\n\n  \n\n*LLM-powered multiagent persona simulation for imagination enhancement and business insights.*\n\n  \n\n>[!TIP]\n>📄 **New Paper Released!** Check out our [TinyTroupe paper (preprint)](https://arxiv.org/abs/2507.09788) that describes the library and its use cases in detail. You can find the related experimen",
     "topics": []
   }
 ]

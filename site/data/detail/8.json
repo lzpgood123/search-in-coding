@@ -6234,57 +6234,6 @@
     ]
   },
   {
-    "id": "github-lijigang-ljg-skill-xray-paper",
-    "name": "lijigang/ljg-skill-xray-paper",
-    "url": "https://github.com/lijigang/ljg-skill-xray-paper",
-    "source_type": "github",
-    "resource_type": [
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "论文X光机 — Claude Code Skill，解构学术论文，提炼餐巾纸公式",
-    "i18n": {
-      "zh": {
-        "name": "lijigang/ljg-skill-xray-paper",
-        "summary": "论文X光机 — Claude Code Skill，解构学术论文，提炼餐巾纸公式"
-      },
-      "en": {
-        "name": "lijigang/ljg-skill-xray-paper",
-        "summary": "论文X光机 — Claude Code Skill，解构学术论文，提炼餐巾纸公式"
-      }
-    },
-    "stars": 588,
-    "forks": 42,
-    "total_score": 28,
-    "quantifiable_score": 28,
-    "quality_score": 0,
-    "tracking_priority": "reject",
-    "last_updated": "2026-07-13T14:35:33Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [],
-    "review_state": "auto-rejected",
-    "llm_summary": null,
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 5
-    },
-    "quality_detail": {},
-    "benchmark_ref": "github-opencoworkai-open-cowork",
-    "last_analyzed": null,
-    "repo": "lijigang/ljg-skill-xray-paper",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "archived",
-    "readme_preview": "# ljg-skill-xray-paper\n\n论文 X 光机 — 一个 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) Skill，只做两件事：论文说了什么 + 对我意味着什么。\n\n## 功能\n\n- 支持 arxiv ID、URL、PDF 路径等多种输入（自动转 `/html/` 格式抓取全文）\n- **零术语规则**：承重概念必须场景化（3 级渐进），去掉技术名字仍能理解\n- **一句话压缩**：电梯里跟外行朋友说的那句大白话 + 餐巾纸图\n- **认知碰撞卡片**：ASCII art 直观展示论文洞见与个人认知的碰撞\n- **多种碰撞形状**：分叉、张力、阈值、缺口、翻转——选跟碰撞匹配的空间结构\n- **诚实原则**：delta ≈ 0 就说 0，不造空卡片\n- 生成 Org-mode 格式报告（Denote 规范），自带模板\n\n## 安装\n\n```bash\nclaude plugin add lijigang/ljg-skill-xray-paper\n```\n\n## 使用\n\n```\n/ljg-xray",
-    "topics": []
-  },
-  {
     "id": "github-xiaopu-ai-web-design",
     "name": "xiaopu-ai/web-design",
     "url": "https://github.com/xiaopu-ai/web-design",
@@ -6853,7 +6802,7 @@
       "novelty": 6,
       "ecosystem_value": 7
     },
-    "benchmark_ref": "official-cursor",
+    "benchmark_ref": "github-continuedev-continue",
     "last_analyzed": "2026-07-15",
     "repo": "AlephAITech/WorkBuddyGuide",
     "tags": [],
@@ -7451,6 +7400,81 @@
       "agentic-workflow",
       "multimodal",
       "orchestrator"
+    ]
+  },
+  {
+    "id": "github-decade-qiu-cookhero",
+    "name": "Decade-qiu/CookHero",
+    "url": "https://github.com/Decade-qiu/CookHero",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "mcp-server"
+    ],
+    "target_tools": [
+      "trae",
+      "hermes-agent",
+      "replit"
+    ],
+    "summary": "CookHero是一个基于 LLM + RAG + Agent + 多模态的智能饮食与烹饪管理平台，支持智能菜谱查询、个性化饮食计划、AI 饮食记录、营养分析、Web 搜索增强，以及可扩展的 ReAct Agent / Subagent 工具体系，帮助厨房新手轻松成为“烹饪英雄”。",
+    "i18n": {
+      "zh": {
+        "name": "Decade-qiu/CookHero",
+        "summary": "CookHero是一个基于 LLM + RAG + Agent + 多模态的智能饮食与烹饪管理平台，支持智能菜谱查询、个性化饮食计划、AI 饮食记录、营养分析、Web 搜索增强，以及可扩展的 ReAct Agent / Subagent 工具体系，帮助厨房新手轻松成为“烹饪英雄”。"
+      },
+      "en": {
+        "name": "Decade-qiu/CookHero",
+        "summary": "CookHero是一个基于 LLM + RAG + Agent + 多模态的智能饮食与烹饪管理平台，支持智能菜谱查询、个性化饮食计划、AI 饮食记录、营养分析、Web 搜索增强，以及可扩展的 ReAct Agent / Subagent 工具体系，帮助厨房新手轻松成为“烹饪英雄”。"
+      }
+    },
+    "stars": 578,
+    "forks": 86,
+    "total_score": 50,
+    "quantifiable_score": 27,
+    "quality_score": 23,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-15T09:29:17Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-16",
+    "license": "apache-2.0",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "基于LLM+RAG+Agent的智能饮食烹饪管理平台，可作为AI编码代理的集成技能或参考示例。",
+      "en": "An intelligent diet and cooking management platform based on LLM+RAG+Agent, serving as a potential skill or reference for AI coding agents."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 5,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 4
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "Decade-qiu/CookHero",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "**智能烹饪与饮食管理助手 · 你的个性化饮食英雄**\n\n[![Python](https://img.shields.io/badge/Python-3.12+-blue.svg)](https://www.python.org/)\n[![FastAPI](https://img.shields.io/badge/FastAPI-0.122-009688.svg)](https://fastapi.tiangolo.com/)\n[![LangChain](https://img.shields.io/badge/LangChain-1.1-green.svg)](https://www.langchain.com/)\n[![Milvus](https://img.shields.io/badge/Milvus-2.6-orange.svg)](https://milvus.io/)\n[![NeMo Guardrails](https://img.shields.io/badge/NeMo%20Guardrails-0.12-76B900.svg)](https://github.co",
+    "topics": [
+      "ai-chatbot",
+      "cooking-assistant",
+      "langchain",
+      "milvus",
+      "rag",
+      "web-search",
+      "agent",
+      "mcp",
+      "subagents",
+      "tool"
     ]
   }
 ]

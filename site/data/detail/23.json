@@ -1,499 +1,5 @@
 [
   {
-    "id": "github-femto-minion",
-    "name": "femto/minion",
-    "url": "https://github.com/femto/minion",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework"
-    ],
-    "target_tools": [
-      "trae",
-      "hermes-agent",
-      "replit"
-    ],
-    "summary": "👷‍♂️High performance agent framework that can do everything. Minion is designed to execute any type of queries, offering a variety of features that demonstrate its flexibility and intelligence.",
-    "i18n": {
-      "zh": {
-        "name": "femto/minion",
-        "summary": "👷‍♂️High performance agent framework that can do everything. Minion is designed to execute any type of queries, offering a variety of features that demonstrate its flexibility and intelligence."
-      },
-      "en": {
-        "name": "femto/minion",
-        "summary": "👷‍♂️High performance agent framework that can do everything. Minion is designed to execute any type of queries, offering a variety of features that demonstrate its flexibility and intelligence."
-      }
-    },
-    "stars": 148,
-    "forks": 22,
-    "total_score": 49,
-    "quantifiable_score": 27,
-    "quality_score": 22,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-09T22:01:14Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个高性能通用代理框架，声称能执行任何查询，但缺乏独特创新点。",
-      "en": "A high-performance general-purpose agent framework that claims to execute any query, but lacks unique innovation."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 7,
-      "practicality": 6,
-      "novelty": 4,
-      "ecosystem_value": 5
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "femto/minion",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "[![Documentation Status](https://img.shields.io/badge/documentation-brightgreen)](https://github.com/femto/minion)\n[![Install](https://img.shields.io/badge/get_started-blue)](https://github.com/femto/minion#get-started)\n[![Discord](https://dcbadge.limes.pink/api/server/HUC6xEK9aT?style=flat)](https://discord.gg/HUC6xEK9aT)\n[![Twitter Follow](https://img.shields.io/twitter/follow/femtowin?style=social)](https://x.com/femtowin)\n[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com",
-    "topics": [
-      "agent",
-      "ai",
-      "python"
-    ]
-  },
-  {
-    "id": "github-nekocode-filetree-skill",
-    "name": "nekocode/filetree-skill",
-    "url": "https://github.com/nekocode/filetree-skill",
-    "source_type": "github",
-    "resource_type": [
-      "extension",
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code",
-      "trae",
-      "hermes-agent",
-      "replit"
-    ],
-    "summary": "A Claude Code plugin that maintains `FILETREE.md`.",
-    "i18n": {
-      "zh": {
-        "name": "nekocode/filetree-skill",
-        "summary": "A Claude Code plugin that maintains `FILETREE.md`."
-      },
-      "en": {
-        "name": "nekocode/filetree-skill",
-        "summary": "A Claude Code plugin that maintains `FILETREE.md`."
-      }
-    },
-    "stars": 148,
-    "forks": 8,
-    "total_score": 54,
-    "quantifiable_score": 23,
-    "quality_score": 31,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T12:13:06Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个Claude Code插件，自动生成带内容哈希的文件树摘要，减少会话间令牌浪费。",
-      "en": "A Claude Code plugin that automates file-tree summaries with content hashes to reduce token waste across sessions."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 2,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "nekocode/filetree-skill",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# filetree\n\n[中文版](README.zh.md)\n\nA Claude Code plugin that maintains `FILETREE.md` — a one-line description per file with content hashes for staleness detection. Lets the LLM grasp repo layout in a few hundred tokens before touching code.\n\n## Why\n\nEvery new Claude Code session relearns the codebase: `ls`, `grep`, open file, read, repeat. The discovery is expensive and not reusable across sessions.\n\n| Pain point | filetree's answer |\n|-----|-----|\n| LLM keeps rediscovering layout each session | P",
-    "topics": [
-      "agent",
-      "ai",
-      "skills"
-    ]
-  },
-  {
-    "id": "github-regenrek-peky",
-    "name": "regenrek/peky",
-    "url": "https://github.com/regenrek/peky",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "zed",
-      "cline"
-    ],
-    "summary": "All your AI Agents like Claude Code, Codex CLI in a single TUI to keep things organized.",
-    "i18n": {
-      "zh": {
-        "name": "regenrek/peky",
-        "summary": "All your AI Agents like Claude Code, Codex CLI in a single TUI to keep things organized."
-      },
-      "en": {
-        "name": "regenrek/peky",
-        "summary": "All your AI Agents like Claude Code, Codex CLI in a single TUI to keep things organized."
-      }
-    },
-    "stars": 148,
-    "forks": 6,
-    "total_score": 56,
-    "quantifiable_score": 23,
-    "quality_score": 33,
-    "tracking_priority": "track",
-    "last_updated": "2026-06-29T19:40:02Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [
-      "Go"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "Peky 是一个终端用户界面，用于统一管理多个 AI 编码助手（如 Claude Code、Codex CLI 等），提高组织效率。",
-      "en": "Peky is a TUI that unifies management of multiple AI coding agents (like Claude Code, Codex CLI) to keep things organized."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 2,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "regenrek/peky",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "peky\n\n**All your terminal AI agents, just one app.**\n\nPeky puts all your AI Agents like Claude Code, Codex CLI, pi, opencode e.g. into a single app to keep things organized.\n\n[![homebrew](https://img.shields.io/badge/homebrew-regenrek%2Ftap%2Fpeky-2e933c?logo=homebrew)](https://github.com/regenrek/homebrew-tap)\n[![DeepWiki](https://img.shields.io/badge/DeepWiki-regenrek%2Fpeky-blue.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAyCAYAAAAnWDnqAAAAAXNSR0IArs4c6QAAA05JREFUaEPtmUtyEzEQ",
-    "topics": [
-      "agentic-coding",
-      "ai-coding",
-      "cli",
-      "project-manager",
-      "tui",
-      "multi-agent"
-    ]
-  },
-  {
-    "id": "github-sundial-org-skills",
-    "name": "sundial-org/skills",
-    "url": "https://github.com/sundial-org/skills",
-    "source_type": "github",
-    "resource_type": [
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code"
-    ],
-    "summary": "Claude Code Skills by Sundial",
-    "i18n": {
-      "zh": {
-        "name": "sundial-org/skills",
-        "summary": "Claude Code Skills by Sundial"
-      },
-      "en": {
-        "name": "sundial-org/skills",
-        "summary": "Claude Code Skills by Sundial"
-      }
-    },
-    "stars": 148,
-    "forks": 7,
-    "total_score": 53,
-    "quantifiable_score": 23,
-    "quality_score": 30,
-    "tracking_priority": "track",
-    "last_updated": "2026-06-26T01:17:23Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "Sundial Skills 是为 Claude Code 提供技能库的项目，支持安装和发布技能，由 Sundial 组织维护。",
-      "en": "Sundial Skills is a library of skills for Claude Code, allowing users to find, improve, and publish skills, curated and aggregated from the web."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 2,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 7,
-      "novelty": 6,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "sundial-org/skills",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Sundial Skills\n\nThe [`skill`](https://github.com/sundial-org/skills/tree/main/skills/skill) skill can help you find, improve, and publish skills — install it with `npx sundial-hub add skill`.\n\nYou'll be able to peruse this library of curated skills, plus 50,000+ more aggregated from the web. Browse the [`skills/`](https://github.com/sundial-org/skills/tree/main/skills) directory or install any skill with:\n\n```sh\nnpx sundial-hub add \n```\n\nCreated by [Sundial](https://sundialhub.com/)",
-    "topics": []
-  },
-  {
-    "id": "github-agents365-ai-excalidraw-skill",
-    "name": "Agents365-ai/excalidraw-skill",
-    "url": "https://github.com/Agents365-ai/excalidraw-skill",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code",
-      "openclaw"
-    ],
-    "summary": "Hand-drawn Excalidraw diagrams from natural language. 5 patterns, 8-color semantic palette, Kroki API or local CLI. PNG/SVG, multi-agent.",
-    "i18n": {
-      "zh": {
-        "name": "Agents365-ai/excalidraw-skill",
-        "summary": "Hand-drawn Excalidraw diagrams from natural language. 5 patterns, 8-color semantic palette, Kroki API or local CLI. PNG/SVG, multi-agent."
-      },
-      "en": {
-        "name": "Agents365-ai/excalidraw-skill",
-        "summary": "Hand-drawn Excalidraw diagrams from natural language. 5 patterns, 8-color semantic palette, Kroki API or local CLI. PNG/SVG, multi-agent."
-      }
-    },
-    "stars": 148,
-    "forks": 13,
-    "total_score": 57,
-    "quantifiable_score": 27,
-    "quality_score": 30,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:50:50Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "为Claude Code设计的技能，可从自然语言生成手绘Excalidraw图表，支持多种导出格式和本地CLI。",
-      "en": "A skill for Claude Code to generate hand-drawn Excalidraw diagrams from natural language, supporting multiple export formats and optional local CLI."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 6,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "Agents365-ai/excalidraw-skill",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# excalidraw-skill — Clean & Hand-Drawn Diagrams from Natural Language\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)\n[![GitHub stars](https://img.shields.io/github/stars/Agents365-ai/excalidraw-skill?style=flat&logo=github&cacheSeconds=86400)](https://github.com/Agents365-ai/excalidraw-skill/stargazers)\n[![GitHub forks](https://img.shields.io/github/forks/Agents365-ai/excalidraw-skill?style=flat&logo=github&cacheSeconds=86400)](https://github.com/Agents365-ai/e",
-    "topics": [
-      "excalidraw",
-      "agent-skills",
-      "claude-code",
-      "claude-code-skill",
-      "claude-skills",
-      "diagram",
-      "openclaw",
-      "openclaw-skills",
-      "skill-md",
-      "skillsmp",
-      "agent-skill",
-      "architecture-diagram",
-      "flowchart",
-      "kroki"
-    ]
-  },
-  {
-    "id": "github-codeguide-dev-codeguide-starter-fullstack",
-    "name": "CodeGuide-dev/codeguide-starter-fullstack",
-    "url": "https://github.com/CodeGuide-dev/codeguide-starter-fullstack",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework"
-    ],
-    "target_tools": [
-      "claude-code",
-      "cursor"
-    ],
-    "summary": "Boilerplate built for AI coding agents, tools, CLI",
-    "i18n": {
-      "zh": {
-        "name": "CodeGuide-dev/codeguide-starter-fullstack",
-        "summary": "Boilerplate built for AI coding agents, tools, CLI"
-      },
-      "en": {
-        "name": "CodeGuide-dev/codeguide-starter-fullstack",
-        "summary": "Boilerplate built for AI coding agents, tools, CLI"
-      }
-    },
-    "stars": 147,
-    "forks": 43,
-    "total_score": 55,
-    "quantifiable_score": 25,
-    "quality_score": 30,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-03T16:28:05Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "为AI编程助手量身定制的全栈启动模板，集成Next.js、身份验证和数据库。",
-      "en": "A fullstack starter template tailored for AI coding agents, integrating Next.js, authentication, and database."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 6,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "CodeGuide-dev/codeguide-starter-fullstack",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Codeguide Starter Fullstack\n\nA modern web application starter template built with Next.js 15, featuring authentication, database integration, and dark mode support.\n\n## Tech Stack\n\n- **Framework:** [Next.js 15](https://nextjs.org/) (App Router with Turbopack)\n- **Language:** TypeScript\n- **Authentication:** [Better Auth](https://better-auth.com/)\n- **Database:** [Drizzle ORM](https://orm.drizzle.team/) with PostgreSQL\n- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)\n- **UI Components",
-    "topics": [
-      "better-auth",
-      "boilerplate",
-      "claude-code",
-      "cursor",
-      "drizzle-orm",
-      "nextjs",
-      "qwen-code",
-      "shadcn-ui",
-      "starter-kit"
-    ]
-  },
-  {
-    "id": "github-baalimago-clai",
-    "name": "baalimago/clai",
-    "url": "https://github.com/baalimago/clai",
-    "source_type": "github",
-    "resource_type": [
-      "cli-tool"
-    ],
-    "target_tools": [
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "cline"
-    ],
-    "summary": "Command line artificial intelligence - Context engineering for terminal powerusers",
-    "i18n": {
-      "zh": {
-        "name": "baalimago/clai",
-        "summary": "Command line artificial intelligence - Context engineering for terminal powerusers"
-      },
-      "en": {
-        "name": "baalimago/clai",
-        "summary": "Command line artificial intelligence - Context engineering for terminal powerusers"
-      }
-    },
-    "stars": 147,
-    "forks": 10,
-    "total_score": 54,
-    "quantifiable_score": 27,
-    "quality_score": 27,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T16:16:15Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Go"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个用于AI任务的命令行上下文馈送器，使终端高级用户能够高效管理和注入上下文到LLM工作流中。",
-      "en": "A command-line context feeder for AI tasks, enabling terminal power users to efficiently manage and inject context into LLM workflows."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 8,
-      "practicality": 8,
-      "novelty": 5,
-      "ecosystem_value": 6
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "baalimago/clai",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Command Line Artificial Intelligence\n\n![Wakatime](https://wakatime.com/badge/user/018cc8d2-3fd9-47ef-81dc-e4ad645d5f34/project/018e07e1-bd22-4077-a213-c16290d3db52.svg)\n\nTest coverage: 72.511% 😌👏\n\n  clai (/klaɪ/, like \"cli\" in \"climate\") is a command line context-feeder for any ai task.\n\n  \n\n## Get started\n\nInstalling:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/baalimago/clai/main/setup.sh | sh\n```\n\nYou can also install via go:\n\n```bash\ngo install github.com/baalimago/clai@latest\n``",
-    "topics": [
-      "ai",
-      "cli",
-      "go",
-      "golang-tools",
-      "llm",
-      "context-feeder"
-    ]
-  },
-  {
     "id": "github-crisnahine-rails-ai-context",
     "name": "crisnahine/rails-ai-context",
     "url": "https://github.com/crisnahine/rails-ai-context",
@@ -530,7 +36,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-13T12:29:33Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Ruby"
@@ -605,15 +111,15 @@
         "summary": "Claude Skill that publish on Wechat articles (微信公众号发布）"
       }
     },
-    "stars": 147,
+    "stars": 148,
     "forks": 20,
     "total_score": 52,
     "quantifiable_score": 27,
     "quality_score": 25,
     "tracking_priority": "track",
-    "last_updated": "2026-07-07T09:17:19Z",
+    "last_updated": "2026-07-16T05:41:17Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -672,15 +178,15 @@
         "summary": "OpenCode plugin for ChatGPT Plus/Pro OAuth with Codex/GPT-5 routing, multi-account rotation, account switching, health checks, diagnostics, and recovery tools"
       }
     },
-    "stars": 147,
-    "forks": 18,
+    "stars": 153,
+    "forks": 19,
     "total_score": 60,
     "quantifiable_score": 27,
     "quality_score": 33,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T12:25:51Z",
+    "last_updated": "2026-07-16T11:22:13Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -762,7 +268,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-03-04T17:05:10Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [
       "JavaScript"
@@ -832,14 +338,14 @@
       }
     },
     "stars": 147,
-    "forks": 14,
+    "forks": 15,
     "total_score": 61,
     "quantifiable_score": 27,
     "quality_score": 34,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T04:06:42Z",
+    "last_updated": "2026-07-16T16:33:43Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "other",
     "languages": [
       "Python"
@@ -902,7 +408,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-07T13:53:21Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "agpl-3.0",
     "languages": [
       "JavaScript"
@@ -964,15 +470,15 @@
         "summary": "60 deterministic Claude AI skills for Frappe Framework & ERPNext v14-v16 development and operations"
       }
     },
-    "stars": 146,
+    "stars": 148,
     "forks": 49,
     "total_score": 59,
     "quantifiable_score": 27,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T04:20:53Z",
+    "last_updated": "2026-07-15T23:03:19Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "other",
     "languages": [
       "Python"
@@ -1048,9 +554,9 @@
     "quantifiable_score": 23,
     "quality_score": 31,
     "tracking_priority": "track",
-    "last_updated": "2026-07-08T02:57:39Z",
+    "last_updated": "2026-07-16T01:30:36Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [
       "Python"
@@ -1120,9 +626,9 @@
     "quantifiable_score": 27,
     "quality_score": 28,
     "tracking_priority": "track",
-    "last_updated": "2026-07-09T14:58:33Z",
+    "last_updated": "2026-07-15T12:41:31Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "agpl-3.0",
     "languages": [
       "TypeScript"
@@ -1194,7 +700,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-04T14:25:38Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -1260,15 +766,15 @@
         "summary": "Markdown-first shared memory vault for Claude Code and Codex with SQLite, Zvec, Git, closeout, and audit"
       }
     },
-    "stars": 146,
-    "forks": 15,
+    "stars": 159,
+    "forks": 18,
     "total_score": 61,
     "quantifiable_score": 27,
     "quality_score": 34,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T06:42:25Z",
+    "last_updated": "2026-07-16T19:04:00Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -1339,7 +845,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-09T19:51:42Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -1408,7 +914,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-06-17T14:17:45Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "other",
     "languages": [
       "Shell"
@@ -1488,15 +994,15 @@
         "summary": "Russian text quality plugin for Claude Code, Cowork, Codex CLI, Gemini CLI, Cursor, OpenClaw, and Notion — typography, info-style, editorial, UX writing"
       }
     },
-    "stars": 146,
+    "stars": 151,
     "forks": 18,
     "total_score": 56,
     "quantifiable_score": 25,
     "quality_score": 31,
     "tracking_priority": "track",
-    "last_updated": "2026-07-10T22:25:42Z",
+    "last_updated": "2026-07-15T20:21:15Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [],
     "review_state": "auto-indexed",
@@ -1570,18 +1076,18 @@
         "summary": "Headless IDA Pro binary analysis via Model Context Protocol"
       }
     },
-    "stars": 147,
-    "forks": 16,
+    "stars": 150,
+    "forks": 17,
     "total_score": 59,
     "quantifiable_score": 27,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:56:05Z",
+    "last_updated": "2026-07-16T03:07:14Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
-      "Go"
+      "Python"
     ],
     "review_state": "auto-indexed",
     "llm_summary": {
@@ -1651,15 +1157,15 @@
         "summary": "Open-source OpenAI Codex alternative | Multi-agent desktop GUI for OpenCode | manage coding sessions, visualize diffs, and stream in real-time."
       }
     },
-    "stars": 145,
+    "stars": 146,
     "forks": 19,
     "total_score": 58,
     "quantifiable_score": 27,
     "quality_score": 31,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T04:42:25Z",
+    "last_updated": "2026-07-16T05:18:22Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -1743,7 +1249,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-04T17:29:44Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "PowerShell"
@@ -1817,7 +1323,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-11T16:26:00Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [
       "HTML"
@@ -1881,15 +1387,15 @@
         "summary": "An open source AI-native agentic SOC platform"
       }
     },
-    "stars": 147,
-    "forks": 8,
+    "stars": 162,
+    "forks": 15,
     "total_score": 46,
     "quantifiable_score": 25,
     "quality_score": 21,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T09:07:12Z",
+    "last_updated": "2026-07-16T15:23:49Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "Python"
@@ -1949,15 +1455,15 @@
         "summary": "Meta Harness Implementation "
       }
     },
-    "stars": 145,
+    "stars": 146,
     "forks": 16,
     "total_score": 59,
     "quantifiable_score": 27,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T23:18:54Z",
+    "last_updated": "2026-07-16T07:21:31Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "other",
     "languages": [
       "Python"
@@ -2019,14 +1525,14 @@
       }
     },
     "stars": 145,
-    "forks": 8,
+    "forks": 7,
     "total_score": 54,
     "quantifiable_score": 23,
     "quality_score": 31,
     "tracking_priority": "track",
     "last_updated": "2026-07-12T11:13:51Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [],
     "review_state": "auto-indexed",
@@ -2106,7 +1612,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-07T13:22:00Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "TypeScript"
@@ -2168,15 +1674,15 @@
         "summary": "Open-source agent skills for AI for Science: topic exploration, literature survey, experiments, paper writing, and integrity audit — driven by any coding agent."
       }
     },
-    "stars": 145,
-    "forks": 10,
+    "stars": 151,
+    "forks": 12,
     "total_score": 57,
     "quantifiable_score": 27,
     "quality_score": 30,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T07:50:21Z",
+    "last_updated": "2026-07-15T16:52:22Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -2245,15 +1751,15 @@
         "summary": "Agent-native TypeScript framework for building MCP servers. Declarative definitions with auth, multi-backend storage, OpenTelemetry, and first-class support for Bun/Node/Cloudflare Workers."
       }
     },
-    "stars": 145,
+    "stars": 146,
     "forks": 29,
     "total_score": 61,
     "quantifiable_score": 27,
     "quality_score": 34,
     "tracking_priority": "track",
-    "last_updated": "2026-07-06T09:27:10Z",
+    "last_updated": "2026-07-16T12:40:56Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "TypeScript"
@@ -2319,15 +1825,15 @@
         "summary": "迅投 QMT 量化 AI 技能集（Agent Skills）：研报因子回测脚本生成等，适用于 Claude Code / Cursor / Codex / Kimi 等 70+ AI 编程工具"
       }
     },
-    "stars": 145,
+    "stars": 146,
     "forks": 37,
     "total_score": 59,
     "quantifiable_score": 27,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-11T09:54:26Z",
+    "last_updated": "2026-07-16T15:32:56Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -2392,14 +1898,14 @@
       }
     },
     "stars": 145,
-    "forks": 8,
+    "forks": 9,
     "total_score": 52,
     "quantifiable_score": 25,
     "quality_score": 27,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T03:14:48Z",
+    "last_updated": "2026-07-15T20:50:55Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -2463,15 +1969,15 @@
         "summary": "System for managing collections of agent skills. Switch between skillsets seamlessly!"
       }
     },
-    "stars": 145,
+    "stars": 147,
     "forks": 10,
     "total_score": 59,
     "quantifiable_score": 27,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-12T06:00:47Z",
+    "last_updated": "2026-07-15T01:26:34Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "TypeScript"
@@ -2529,15 +2035,15 @@
         "summary": "Claude Code skill for experiment execution, monitoring, statistical interpretation, and reproducibility verification"
       }
     },
-    "stars": 143,
+    "stars": 150,
     "forks": 10,
     "total_score": 56,
     "quantifiable_score": 25,
     "quality_score": 31,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:46:31Z",
+    "last_updated": "2026-07-16T08:11:48Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "other",
     "languages": [],
     "review_state": "auto-indexed",
@@ -2596,9 +2102,9 @@
     "quantifiable_score": 27,
     "quality_score": 30,
     "tracking_priority": "track",
-    "last_updated": "2026-07-10T09:58:26Z",
+    "last_updated": "2026-07-15T07:02:23Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -2669,7 +2175,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-13T05:31:33Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -2737,7 +2243,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-13T13:17:16Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "other",
     "languages": [
       "HTML"
@@ -2819,7 +2325,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-14T03:41:07Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [],
     "review_state": "auto-indexed",
@@ -2883,15 +2389,15 @@
         "summary": "Track the carbon footprint of your Claude Code sessions"
       }
     },
-    "stars": 144,
+    "stars": 145,
     "forks": 14,
     "total_score": 61,
     "quantifiable_score": 27,
     "quality_score": 34,
     "tracking_priority": "track",
-    "last_updated": "2026-07-10T13:27:10Z",
+    "last_updated": "2026-07-16T08:40:44Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Shell"
@@ -2959,9 +2465,9 @@
     "quantifiable_score": 27,
     "quality_score": 33,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T06:02:33Z",
+    "last_updated": "2026-07-16T07:21:39Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Go"
@@ -3038,7 +2544,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-11T16:03:27Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -3121,7 +2627,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-11T14:51:00Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "agpl-3.0",
     "languages": [
       "Rust"
@@ -3187,15 +2693,15 @@
         "summary": "Secure the MCP servers you're building. CI-native testing, attack simulation, and security gates — before agents depend on them."
       }
     },
-    "stars": 143,
+    "stars": 236,
     "forks": 27,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T17:38:53Z",
+    "last_updated": "2026-07-16T11:32:52Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -3271,15 +2777,15 @@
         "summary": "Reusable AI agent skills for Codex, including a PowerShell skill for safe Windows command invocation and optional MCP utilities."
       }
     },
-    "stars": 148,
-    "forks": 6,
+    "stars": 161,
+    "forks": 7,
     "total_score": 57,
     "quantifiable_score": 25,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T09:05:17Z",
+    "last_updated": "2026-07-16T08:41:51Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -3340,15 +2846,15 @@
         "summary": "An OpenCode plugin that integrates OpenSpec, adding a dedicated 'openspec-plan' mode for creating and editing spec files."
       }
     },
-    "stars": 143,
+    "stars": 145,
     "forks": 10,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-10T15:12:38Z",
+    "last_updated": "2026-07-16T07:49:56Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -3421,9 +2927,9 @@
     "quantifiable_score": 25,
     "quality_score": 31,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T16:57:50Z",
+    "last_updated": "2026-07-15T03:23:51Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [
       "Go"
@@ -3490,15 +2996,15 @@
         "summary": "Ready-to-use CLAUDE.md and starter skill for product managers using Claude Code."
       }
     },
-    "stars": 143,
+    "stars": 144,
     "forks": 40,
     "total_score": 60,
     "quantifiable_score": 25,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T06:34:03Z",
+    "last_updated": "2026-07-16T09:59:51Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [],
     "review_state": "auto-indexed",
@@ -3560,15 +3066,15 @@
         "summary": "Curated real-world use cases for Hermes Agent — the self-improving AI agent from Nous Research. Backed by primary sources."
       }
     },
-    "stars": 143,
+    "stars": 147,
     "forks": 12,
     "total_score": 53,
     "quantifiable_score": 27,
     "quality_score": 26,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T11:51:15Z",
+    "last_updated": "2026-07-16T18:53:12Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -3647,15 +3153,15 @@
         "summary": "A living AI-agent office on your desktop wallpaper — Claude Code agents that walk, work, delegate, learn & hold meetings. Per-agent swappable models (Claude/GLM/DeepSeek/Qwen/Kimi/OpenAI/Gemini/Groq/Ollama…), workflows, plugins, voice & Tel"
       }
     },
-    "stars": 143,
-    "forks": 52,
+    "stars": 162,
+    "forks": 53,
     "total_score": 59,
     "quantifiable_score": 27,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:55:28Z",
+    "last_updated": "2026-07-15T20:18:08Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "JavaScript"
@@ -3736,14 +3242,14 @@
       }
     },
     "stars": 143,
-    "forks": 29,
+    "forks": 30,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
     "last_updated": "2026-07-09T19:17:02Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "other",
     "languages": [
       "Python"
@@ -3812,9 +3318,9 @@
     "quantifiable_score": 27,
     "quality_score": 29,
     "tracking_priority": "track",
-    "last_updated": "2026-07-10T10:18:22Z",
+    "last_updated": "2026-07-15T01:17:42Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "Python"
@@ -3889,15 +3395,15 @@
         "summary": "A Claude Code hook plugin for IP-based access control · 防 Claude 封号 · Claude IP 检测 · IP 地理位置拦截 · Claude 账号保护"
       }
     },
-    "stars": 143,
+    "stars": 146,
     "forks": 9,
     "total_score": 58,
     "quantifiable_score": 25,
     "quality_score": 33,
     "tracking_priority": "track",
-    "last_updated": "2026-07-10T00:58:35Z",
+    "last_updated": "2026-07-16T12:17:49Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Shell"
@@ -3962,14 +3468,14 @@
       }
     },
     "stars": 143,
-    "forks": 22,
+    "forks": 23,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T02:34:09Z",
+    "last_updated": "2026-07-15T00:36:37Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Shell"
@@ -4043,15 +3549,15 @@
         "summary": "The best react-native Agent Skills. Forget 10x, this is 100x."
       }
     },
-    "stars": 143,
+    "stars": 144,
     "forks": 6,
     "total_score": 50,
     "quantifiable_score": 21,
     "quality_score": 29,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T06:39:19Z",
+    "last_updated": "2026-07-16T15:05:55Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [],
     "review_state": "auto-indexed",
@@ -4111,15 +3617,15 @@
         "summary": "Iterative development methodology plugin for Claude Code — extracts requirements, defines walking skeleton, loops through audited sprints autonomously"
       }
     },
-    "stars": 143,
-    "forks": 10,
+    "stars": 146,
+    "forks": 12,
     "total_score": 57,
     "quantifiable_score": 27,
     "quality_score": 30,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T21:17:17Z",
+    "last_updated": "2026-07-16T14:16:08Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "Python"
@@ -4184,15 +3690,15 @@
         "summary": "Contain your coding agents (literally)"
       }
     },
-    "stars": 143,
+    "stars": 144,
     "forks": 5,
     "total_score": 55,
     "quantifiable_score": 25,
     "quality_score": 30,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T06:13:08Z",
+    "last_updated": "2026-07-16T07:42:32Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Dockerfile"
@@ -4260,9 +3766,9 @@
     "quantifiable_score": 25,
     "quality_score": 30,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T09:05:51Z",
+    "last_updated": "2026-07-16T18:05:49Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [
       "Python"
@@ -4324,15 +3830,15 @@
         "summary": "A Claude skill that keeps your AI coding tools from contradicting  each other. Generates requirements.md, design.md, and tasks.md  before any code is written — then creates matching config files  for Claude Code, Cursor, Copilot, Windsurf, "
       }
     },
-    "stars": 142,
+    "stars": 140,
     "forks": 16,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T19:47:06Z",
+    "last_updated": "2026-07-15T14:24:31Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -4396,15 +3902,15 @@
         "summary": "Serenity (@aleabitoreddit) 供应链卡点逆向投资方法论的 Claude Code Skill — 第三方提炼,非投资建议"
       }
     },
-    "stars": 142,
-    "forks": 18,
+    "stars": 144,
+    "forks": 19,
     "total_score": 55,
     "quantifiable_score": 23,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T07:17:01Z",
+    "last_updated": "2026-07-16T02:28:24Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [],
     "review_state": "auto-indexed",
@@ -4455,15 +3961,15 @@
         "summary": "This web browser has been designed to help your agent debug and develop complex web applications. (MCP Server)"
       }
     },
-    "stars": 142,
+    "stars": 144,
     "forks": 9,
     "total_score": 56,
     "quantifiable_score": 25,
     "quality_score": 31,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T05:03:17Z",
+    "last_updated": "2026-07-15T11:09:18Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "JavaScript"
@@ -4520,15 +4026,15 @@
         "summary": "Mobile agents backed by opencode "
       }
     },
-    "stars": 142,
+    "stars": 143,
     "forks": 15,
     "total_score": 63,
     "quantifiable_score": 27,
     "quality_score": 36,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T12:26:31Z",
+    "last_updated": "2026-07-15T08:51:09Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "Swift"
@@ -4602,7 +4108,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-13T17:52:08Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "C#"
@@ -4679,7 +4185,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-03T07:01:02Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [
       "Python"
@@ -4740,15 +4246,15 @@
         "summary": "The FreeCAD Robust MCP server and MCP Bridge Workbench/Addon"
       }
     },
-    "stars": 142,
+    "stars": 144,
     "forks": 39,
     "total_score": 59,
     "quantifiable_score": 27,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T03:37:47Z",
+    "last_updated": "2026-07-16T11:54:23Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -4880,9 +4386,9 @@
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T04:45:15Z",
+    "last_updated": "2026-07-15T19:54:15Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Rust"
@@ -4946,15 +4452,15 @@
         "summary": "Pi session manager for browsing, searching, and resuming Pi AI coding sessions. Related project: https://github.com/badlogic/pi-mono"
       }
     },
-    "stars": 141,
+    "stars": 143,
     "forks": 8,
     "total_score": 56,
     "quantifiable_score": 23,
     "quality_score": 33,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T05:09:29Z",
+    "last_updated": "2026-07-15T13:40:48Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [
       "TypeScript"
@@ -5028,7 +4534,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-11T16:06:37Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "agpl-3.0",
     "languages": [
       "Shell"
@@ -5101,15 +4607,15 @@
         "summary": "Local Emperor-style AI agent with Vue WebUI, multi-provider LLMs, streaming chat, tools, skills, memory, and token telemetry."
       }
     },
-    "stars": 141,
+    "stars": 144,
     "forks": 31,
     "total_score": 50,
     "quantifiable_score": 27,
     "quality_score": 23,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T03:13:33Z",
+    "last_updated": "2026-07-16T13:34:01Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -5177,15 +4683,15 @@
         "summary": "An MCP Server for Android running on the phone, optmized for token usage, supports also files downloads and cloudflare and ngrok automated tunnelling."
       }
     },
-    "stars": 141,
-    "forks": 27,
+    "stars": 151,
+    "forks": 29,
     "total_score": 59,
     "quantifiable_score": 27,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:22:34Z",
+    "last_updated": "2026-07-16T18:27:51Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Kotlin"
@@ -5251,7 +4757,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-07T05:48:48Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -5317,7 +4823,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-09T07:20:02Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -5457,14 +4963,14 @@
       }
     },
     "stars": 140,
-    "forks": 16,
+    "forks": 15,
     "total_score": 60,
     "quantifiable_score": 27,
     "quality_score": 33,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:39:44Z",
+    "last_updated": "2026-07-16T07:12:37Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Rust"
@@ -5533,15 +5039,15 @@
         "summary": "MCP server for token-efficient large document analysis via the use of REPL state"
       }
     },
-    "stars": 141,
+    "stars": 143,
     "forks": 16,
     "total_score": 62,
     "quantifiable_score": 27,
     "quality_score": 35,
     "tracking_priority": "track",
-    "last_updated": "2026-07-06T03:27:52Z",
+    "last_updated": "2026-07-16T06:22:04Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "TypeScript"
@@ -5608,15 +5114,15 @@
         "summary": "Transform YouTube videos into a compounding knowledge base with transcripts, vision analysis, and agentic search. Works as an MCP server for Claude, Copilot & more."
       }
     },
-    "stars": 140,
+    "stars": 139,
     "forks": 12,
     "total_score": 54,
     "quantifiable_score": 25,
     "quality_score": 29,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T10:48:36Z",
+    "last_updated": "2026-07-15T09:28:15Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [
       "Python"
@@ -5684,14 +5190,14 @@
       }
     },
     "stars": 140,
-    "forks": 7,
+    "forks": 8,
     "total_score": 57,
     "quantifiable_score": 25,
     "quality_score": 32,
     "tracking_priority": "track",
     "last_updated": "2026-07-10T04:19:27Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -5760,15 +5266,15 @@
         "summary": "小红书 / 抖音 / 快手 / 视频号 / B 站 自媒体账号体检工具 —          扫同赛道找对标、拆爆款为什么爆、诊断为什么没人看,顺手给可粘贴的仿写初稿。Claude Code     skill。"
       }
     },
-    "stars": 140,
+    "stars": 145,
     "forks": 24,
     "total_score": 59,
     "quantifiable_score": 27,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T02:03:47Z",
+    "last_updated": "2026-07-16T03:46:27Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -5826,15 +5332,15 @@
         "summary": "Autonomous orchestration framework for Claude Code with MemPalace-inspired memory (4-layer stack, 818-token wake-up), parallel-first Agent Teams (6 teammates), Aristotle First Principles methodology, and 4-stage quality gates. 925+ tests, 2"
       }
     },
-    "stars": 140,
+    "stars": 141,
     "forks": 21,
     "total_score": 61,
     "quantifiable_score": 27,
     "quality_score": 34,
     "tracking_priority": "track",
-    "last_updated": "2026-07-11T10:00:19Z",
+    "last_updated": "2026-07-16T07:11:17Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "other",
     "languages": [
       "Shell"
@@ -5917,7 +5423,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-12T22:43:20Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "TypeScript"
@@ -5987,14 +5493,14 @@
       }
     },
     "stars": 140,
-    "forks": 16,
+    "forks": 17,
     "total_score": 53,
     "quantifiable_score": 23,
     "quality_score": 30,
     "tracking_priority": "track",
     "last_updated": "2026-06-30T06:33:48Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [],
     "review_state": "auto-indexed",
@@ -6062,7 +5568,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-05T03:17:49Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -6123,15 +5629,15 @@
         "summary": "本地自托管的 Grok Build → Claude Code / OpenAI 兼容代理 | Local self-hosted Grok Build compatibility proxy"
       }
     },
-    "stars": 139,
-    "forks": 42,
+    "stars": 147,
+    "forks": 43,
     "total_score": 61,
     "quantifiable_score": 27,
     "quality_score": 34,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T07:26:04Z",
+    "last_updated": "2026-07-16T15:42:53Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Go"
@@ -6211,7 +5717,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-13T20:39:27Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "TypeScript"
@@ -6287,15 +5793,15 @@
         "summary": "全栈式自动数学建模竞赛 Claude Code Skill — AI 担任 Autopilot，人类担任 Copilot。支持国赛/美赛，AP/Manual 双模式，GitOps 流水线，强制代码自证。"
       }
     },
-    "stars": 139,
+    "stars": 140,
     "forks": 13,
     "total_score": 56,
     "quantifiable_score": 27,
     "quality_score": 29,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T01:24:02Z",
+    "last_updated": "2026-07-16T11:58:59Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -6356,7 +5862,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-08T19:11:16Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "TypeScript"
@@ -6426,9 +5932,9 @@
     "quantifiable_score": 27,
     "quality_score": 36,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T20:46:33Z",
+    "last_updated": "2026-07-15T09:52:25Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "other",
     "languages": [
       "Python"
@@ -6516,7 +6022,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-05T07:13:07Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -6586,15 +6092,15 @@
         "summary": "MCP server for TouchDesigner — build, wire, and debug networks with AI. Plus git-diffable externalization."
       }
     },
-    "stars": 139,
+    "stars": 140,
     "forks": 4,
     "total_score": 58,
     "quantifiable_score": 25,
     "quality_score": 33,
     "tracking_priority": "track",
-    "last_updated": "2026-07-13T11:47:48Z",
+    "last_updated": "2026-07-15T12:09:52Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -6658,15 +6164,15 @@
         "summary": "Kapso agent skills for WhatsApp."
       }
     },
-    "stars": 140,
+    "stars": 142,
     "forks": 19,
     "total_score": 49,
     "quantifiable_score": 25,
     "quality_score": 24,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:31:21Z",
+    "last_updated": "2026-07-16T08:41:10Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [
       "JavaScript"
@@ -6733,7 +6239,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-07T15:40:50Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "JavaScript"
@@ -6806,7 +6312,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-06T01:20:08Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": null,
     "languages": [
       "Rust"
@@ -6876,15 +6382,15 @@
         "summary": " A curated list of 180+ useful Claude Skills for Software Engineering and resources for customizing AI for SE workflows."
       }
     },
-    "stars": 138,
+    "stars": 139,
     "forks": 14,
     "total_score": 60,
     "quantifiable_score": 27,
     "quality_score": 33,
     "tracking_priority": "track",
-    "last_updated": "2026-07-11T11:04:15Z",
+    "last_updated": "2026-07-16T04:05:46Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "Python"
@@ -6952,7 +6458,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-11T15:44:41Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "JavaScript"
@@ -7035,7 +6541,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-13T13:49:30Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -7104,15 +6610,15 @@
         "summary": "A Claude Code skill for generating Mermaid diagrams with all diagram types supported."
       }
     },
-    "stars": 139,
+    "stars": 140,
     "forks": 19,
     "total_score": 57,
     "quantifiable_score": 25,
     "quality_score": 32,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T09:10:43Z",
+    "last_updated": "2026-07-16T06:39:41Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [],
     "review_state": "auto-indexed",
@@ -7171,7 +6677,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-11T05:35:43Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "apache-2.0",
     "languages": [
       "Dart"
@@ -7235,7 +6741,7 @@
     "tracking_priority": "track",
     "last_updated": "2026-07-06T22:22:13Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -7348,6 +6854,565 @@
       "agent-video",
       "ai-agent-editor",
       "video-editor-agent"
+    ]
+  },
+  {
+    "id": "github-epistates-turbovault",
+    "name": "Epistates/turbovault",
+    "url": "https://github.com/Epistates/turbovault",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "Markdown and OFM SDK w/ MCP server that transforms your Obsidian vault into an intelligent knowledge system",
+    "i18n": {
+      "zh": {
+        "name": "Epistates/turbovault",
+        "summary": "Markdown and OFM SDK w/ MCP server that transforms your Obsidian vault into an intelligent knowledge system"
+      },
+      "en": {
+        "name": "Epistates/turbovault",
+        "summary": "Markdown and OFM SDK w/ MCP server that transforms your Obsidian vault into an intelligent knowledge system"
+      }
+    },
+    "stars": 138,
+    "forks": 24,
+    "total_score": 57,
+    "quantifiable_score": 27,
+    "quality_score": 30,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-15T12:54:08Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
+    "license": "mit",
+    "languages": [
+      "Rust"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "TurboVault 是一个用 Rust 编写的 MCP 服务器，通过模型上下文协议将您的 Obsidian 知识库转化为智能知识系统。",
+      "en": "TurboVault is an MCP server in Rust that transforms your Obsidian vault into an intelligent knowledge system by exposing Markdown and OFM via the Model Context Protocol."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 7
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "Epistates/turbovault",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# TurboVault\n\n[![Crates.io](https://img.shields.io/crates/v/turbovault.svg)](https://crates.io/crates/turbovault)\n[![Docs.rs](https://docs.rs/turbovault/badge.svg)](https://docs.rs/turbovault)\n[![License](https://img.shields.io/crates/l/turbovault.svg)](https://github.com/epistates/turbovault/blob/main/LICENSE)\n[![Rust 1.90+](https://img.shields.io/badge/rust-1.90%2B-orange.svg)](https://www.rust-lang.org/)\n[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Epistates/turbovau",
+    "topics": [
+      "mcp",
+      "mcp-server",
+      "ai",
+      "markdown",
+      "ofm",
+      "rust"
+    ]
+  },
+  {
+    "id": "github-lekssays-codebadger",
+    "name": "Lekssays/codebadger",
+    "url": "https://github.com/Lekssays/codebadger",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server",
+      "agent-framework",
+      "skills"
+    ],
+    "target_tools": [
+      "zed"
+    ],
+    "summary": "🦡 codebadger is a containerized Model Context Protocol (MCP) server that gives AI agents and LLMs deep, queryable access to a codebase's structure and data flow through Joern Code Property Graphs (CPGs).",
+    "i18n": {
+      "zh": {
+        "name": "Lekssays/codebadger",
+        "summary": "🦡 codebadger is a containerized Model Context Protocol (MCP) server that gives AI agents and LLMs deep, queryable access to a codebase's structure and data flow through Joern Code Property Graphs (CPGs)."
+      },
+      "en": {
+        "name": "Lekssays/codebadger",
+        "summary": "🦡 codebadger is a containerized Model Context Protocol (MCP) server that gives AI agents and LLMs deep, queryable access to a codebase's structure and data flow through Joern Code Property Graphs (CPGs)."
+      }
+    },
+    "stars": 138,
+    "forks": 16,
+    "total_score": 60,
+    "quantifiable_score": 27,
+    "quality_score": 33,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-15T11:48:26Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
+    "license": "gpl-3.0",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个基于Joern的容器化MCP服务器，为AI代理提供深度代码结构和数据流分析能力。",
+      "en": "A containerized MCP server that uses Joern to give AI agents deep code structure and data flow analysis capabilities."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 8,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "Lekssays/codebadger",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# 🦡 codebadger\n\n**codebadger** is a containerized **Model Context Protocol (MCP)** server that\ngives AI agents and LLMs deep, queryable access to a codebase's structure and\ndata flow through [Joern](https://joern.io/) Code Property Graphs (CPGs).\n\nPoint it at a Git repository, a local path, or even a pasted code snippet, and\ncodebadger builds a CPG and exposes it over MCP — so an assistant can run CPGQL\nqueries, trace data flow and taint, slice programs, and hunt for vulnerabilities\nacross Java,",
+    "topics": [
+      "joern",
+      "mcp-server",
+      "program-analysis",
+      "static-analysis",
+      "taint-analysis",
+      "agent-skills",
+      "agentic-workflow",
+      "agents"
+    ]
+  },
+  {
+    "id": "github-pleaseprompto-google-ai-mode-mcp",
+    "name": "PleasePrompto/google-ai-mode-mcp",
+    "url": "https://github.com/PleasePrompto/google-ai-mode-mcp",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server",
+      "agent-framework"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "cursor",
+      "windsurf",
+      "cline"
+    ],
+    "summary": "MCP server for free Google AI Mode search with citations. Query optimization, CAPTCHA handling, multi-agent support. Works with Claude Code, Cursor, Cline, Windsurf.",
+    "i18n": {
+      "zh": {
+        "name": "PleasePrompto/google-ai-mode-mcp",
+        "summary": "MCP server for free Google AI Mode search with citations. Query optimization, CAPTCHA handling, multi-agent support. Works with Claude Code, Cursor, Cline, Windsurf."
+      },
+      "en": {
+        "name": "PleasePrompto/google-ai-mode-mcp",
+        "summary": "MCP server for free Google AI Mode search with citations. Query optimization, CAPTCHA handling, multi-agent support. Works with Claude Code, Cursor, Cline, Windsurf."
+      }
+    },
+    "stars": 139,
+    "forks": 17,
+    "total_score": 56,
+    "quantifiable_score": 27,
+    "quality_score": 29,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-15T11:32:17Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
+    "license": "mit",
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个用于免费Google AI模式搜索的MCP服务器，支持多代理和CAPTCHA处理，兼容Claude Code、Cursor、Cline等工具。",
+      "en": "MCP server providing free Google AI Mode search with citations and multi-agent support, compatible with Claude Code, Cursor, Cline, and other MCP tools."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 7
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "PleasePrompto/google-ai-mode-mcp",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Google AI Mode MCP Server\n\n### **Supercharge Any LLM's Web Research with Google AI Mode**\n\n**For: All MCP-compatible LLMs** (Claude, Cursor, Cline, Windsurf, Zed, etc.)\n\nTransform your LLM's online research capabilities by connecting it directly to Google's AI Mode—getting AI-synthesized answers from 100+ sources instead of scattered search results.\n\n[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)\n[![MCP](https://img.shields.io/badge/MCP-2",
+    "topics": [
+      "browser-automation",
+      "citations",
+      "claude-code",
+      "cline",
+      "codex",
+      "cursor",
+      "google-ai-mode",
+      "mcp",
+      "model-context-protocol",
+      "patchright",
+      "typescript",
+      "web-research"
+    ]
+  },
+  {
+    "id": "github-eljulians-skillfile",
+    "name": "eljulians/skillfile",
+    "url": "https://github.com/eljulians/skillfile",
+    "source_type": "github",
+    "resource_type": [
+      "skills",
+      "agent-framework",
+      "cli-tool",
+      "rules"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder",
+      "cursor",
+      "cline"
+    ],
+    "summary": "One-stop shop for AI skills and agents. Search 110K+ community skills, install and track them declaratively, and deploy across all major AI coding tools (Claude Code, Codex, Cursor, Antigravity and more)",
+    "i18n": {
+      "zh": {
+        "name": "eljulians/skillfile",
+        "summary": "One-stop shop for AI skills and agents. Search 110K+ community skills, install and track them declaratively, and deploy across all major AI coding tools (Claude Code, Codex, Cursor, Antigravity and more)"
+      },
+      "en": {
+        "name": "eljulians/skillfile",
+        "summary": "One-stop shop for AI skills and agents. Search 110K+ community skills, install and track them declaratively, and deploy across all major AI coding tools (Claude Code, Codex, Cursor, Antigravity and more)"
+      }
+    },
+    "stars": 137,
+    "forks": 25,
+    "total_score": 61,
+    "quantifiable_score": 27,
+    "quality_score": 34,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-16T14:11:20Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
+    "license": "apache-2.0",
+    "languages": [
+      "Rust"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个用于在多个AI编码工具之间声明式管理和安装AI技能与代理的CLI工具，集成了110K+社区技能。",
+      "en": "A CLI tool for declaratively managing and installing AI skills and agents across multiple AI coding tools, integrating 110K+ community skills."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "eljulians/skillfile",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# skillfile\n\n[![CI](https://img.shields.io/github/actions/workflow/status/eljulians/skillfile/ci.yml?style=flat-square&label=CI)](https://github.com/eljulians/skillfile/actions/workflows/ci.yml)\n[![Crates.io](https://img.shields.io/crates/v/skillfile?style=flat-square)](https://crates.io/crates/skillfile)\n[![Coverage](https://img.shields.io/codecov/c/github/eljulians/skillfile?style=flat-square)](https://codecov.io/gh/eljulians/skillfile)\n\n**Track AI skills and agents declaratively, like depende",
+    "topics": [
+      "ai-agents",
+      "ai-skills",
+      "ai-tools",
+      "claude",
+      "claude-code",
+      "cli",
+      "codex",
+      "developer-tools",
+      "devtools",
+      "dotfiles",
+      "gemini-cli",
+      "package-manager",
+      "productivity",
+      "prompt-engineering",
+      "rust",
+      "skill-management",
+      "antigravity",
+      "cursor",
+      "skills",
+      "skills-sh"
+    ]
+  },
+  {
+    "id": "github-handsomezr-netizen-mathmodel-skill",
+    "name": "handsomeZR-netizen/mathmodel-skill",
+    "url": "https://github.com/handsomeZR-netizen/mathmodel-skill",
+    "source_type": "github",
+    "resource_type": [
+      "skills"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli"
+    ],
+    "summary": "三竞赛 (CUMCM/MCM/电工杯) 数学建模 skill — harness-agnostic, 同时支持 Claude Code 与 Codex CLI, 全程问答式 (Friendly Mode), 10 阶段 + 4 反馈层 + per-Qi 加权聚合 + 题型 dim 加权 + empirical 实测分位锚定",
+    "i18n": {
+      "zh": {
+        "name": "handsomeZR-netizen/mathmodel-skill",
+        "summary": "三竞赛 (CUMCM/MCM/电工杯) 数学建模 skill — harness-agnostic, 同时支持 Claude Code 与 Codex CLI, 全程问答式 (Friendly Mode), 10 阶段 + 4 反馈层 + per-Qi 加权聚合 + 题型 dim 加权 + empirical 实测分位锚定"
+      },
+      "en": {
+        "name": "handsomeZR-netizen/mathmodel-skill",
+        "summary": "三竞赛 (CUMCM/MCM/电工杯) 数学建模 skill — harness-agnostic, 同时支持 Claude Code 与 Codex CLI, 全程问答式 (Friendly Mode), 10 阶段 + 4 反馈层 + per-Qi 加权聚合 + 题型 dim 加权 + empirical 实测分位锚定"
+      }
+    },
+    "stars": 142,
+    "forks": 2,
+    "total_score": 51,
+    "quantifiable_score": 23,
+    "quality_score": 28,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-16T11:15:12Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
+    "license": null,
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个面向数学建模竞赛的全流程AI技能，支持Claude Code和Codex CLI，实现问答式操作和10阶段流程。",
+      "en": "A comprehensive AI skill for mathematical modeling competitions, supporting Claude Code and Codex CLI, with a question-answer interface and 10-stage workflow."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 2,
+      "maturity": 2
+    },
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 6
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "handsomeZR-netizen/mathmodel-skill",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# mathmodel-skill (v6.0.0)\n\n> 面向 CUMCM (国赛) / MCM·ICM (美赛) / 电工杯 三类数学建模竞赛的 10 阶段工程化流程。**全程问答式**——用户只需回答编号问题, 不必手敲 bash / python / json。同时支持 **Codex** 与 **Claude Code**, 状态文件跨 harness 互通。带 4 层反馈、跨阶段一致性回检、终局多视角评审、题型差异化加权、实测分位锚定打分。\n\n[![Version](https://img.shields.io/badge/version-v6.0.0-blueviolet)](#开发日志)\n[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-FF6B35)](https://docs.claude.com/en/docs/claude-code/overview)\n[![Codex](https://img.shields.io/badge/Codex-AGENTS.md-10A37F)](./",
+    "topics": [
+      "claude-code",
+      "claude-skill",
+      "cumcm",
+      "icm",
+      "latex",
+      "math-competition",
+      "math-modeling",
+      "mathematical-contest-in-modeling",
+      "mathematical-modeling",
+      "mcm",
+      "python",
+      "workflow",
+      "diangong",
+      "agents-md",
+      "codex-cli",
+      "friendly-mode",
+      "harness-agnostic"
+    ]
+  },
+  {
+    "id": "github-iamtouchskyer-memex",
+    "name": "iamtouchskyer/memex",
+    "url": "https://github.com/iamtouchskyer/memex",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server",
+      "extension",
+      "agent-framework",
+      "cli-tool"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "cursor",
+      "github-copilot",
+      "windsurf"
+    ],
+    "summary": "Zettelkasten-based persistent memory for AI coding agents. Works with Claude Code, Cursor, VS Code Copilot, Codex, Windsurf & any MCP client. No vector DB — just markdown + git sync.",
+    "i18n": {
+      "zh": {
+        "name": "iamtouchskyer/memex",
+        "summary": "Zettelkasten-based persistent memory for AI coding agents. Works with Claude Code, Cursor, VS Code Copilot, Codex, Windsurf & any MCP client. No vector DB — just markdown + git sync."
+      },
+      "en": {
+        "name": "iamtouchskyer/memex",
+        "summary": "Zettelkasten-based persistent memory for AI coding agents. Works with Claude Code, Cursor, VS Code Copilot, Codex, Windsurf & any MCP client. No vector DB — just markdown + git sync."
+      }
+    },
+    "stars": 137,
+    "forks": 42,
+    "total_score": 63,
+    "quantifiable_score": 27,
+    "quality_score": 36,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-08T19:29:22Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
+    "license": "mit",
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "基于Zettelkasten的AI编码代理持久记忆系统，支持多种代理和MCP协议，无需向量数据库。",
+      "en": "Zettelkasten-based persistent memory for AI coding agents, supporting multiple agents and MCP protocol, no vector DB required."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 9,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "iamtouchskyer/memex",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/iamtouchskyer-memex-badge.png)](https://mseep.ai/app/iamtouchskyer-memex)\n\n# memex\n\nPersistent memory for AI coding agents. Your agent remembers what it learned across sessions.\n\n[English](#english) | [中文](#中文) | [日本語](#日本語) | [한국어](#한국어) | [Español](#español)\n\n![memex timeline view](screenshot.png)\n\n---\n\n## English\n\nEvery time your AI agent finishes a task, it saves insights as atomic knowledge cards with `[[bidirectional links]]`. Nex",
+    "topics": [
+      "agent-memory",
+      "ai-agent",
+      "ai-coding",
+      "claude-code",
+      "cursor",
+      "knowledge-management",
+      "mcp-server",
+      "memory",
+      "vscode",
+      "zettelkasten"
+    ]
+  },
+  {
+    "id": "github-johunsang-semble-rs",
+    "name": "johunsang/semble_rs",
+    "url": "https://github.com/johunsang/semble_rs",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework",
+      "cli-tool"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode",
+      "qoder",
+      "cursor",
+      "aider",
+      "cline"
+    ],
+    "summary": "Fast, AI-agent-native code search in Rust — hybrid BM25 + semantic, Tree-sitter AST chunking, dependency & impact analysis. Drop-in replacement for grep/cat/read/ls in Claude Code, Codex, Cursor, Aider, OpenHands.",
+    "i18n": {
+      "zh": {
+        "name": "johunsang/semble_rs",
+        "summary": "Fast, AI-agent-native code search in Rust — hybrid BM25 + semantic, Tree-sitter AST chunking, dependency & impact analysis. Drop-in replacement for grep/cat/read/ls in Claude Code, Codex, Cursor, Aider, OpenHands."
+      },
+      "en": {
+        "name": "johunsang/semble_rs",
+        "summary": "Fast, AI-agent-native code search in Rust — hybrid BM25 + semantic, Tree-sitter AST chunking, dependency & impact analysis. Drop-in replacement for grep/cat/read/ls in Claude Code, Codex, Cursor, Aider, OpenHands."
+      }
+    },
+    "stars": 137,
+    "forks": 22,
+    "total_score": 59,
+    "quantifiable_score": 25,
+    "quality_score": 34,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-13T12:20:15Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": null,
+    "languages": [
+      "Rust"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个基于Rust的快速代码搜索工具，专为AI编程代理设计，结合BM25和语义搜索，使用AST分块以减少token使用。",
+      "en": "A Rust-based fast code search tool optimized for AI coding agents, integrating BM25 and semantic search with AST chunking to reduce token usage."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 2
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "johunsang/semble_rs",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "semble_rs Fast and Accurate Code Search for Agents — in Rust Replaces grep / cat / read / ls and compresses build & CI output. Up to -99% tokens. \n\n      \n\n Quickstart • Search • Tree • Digest • Deps / Impact • How it works • Benchmarks \n\n`semble_rs` is a Rust port and superset of [MinishLab/semble](https://github.com/MinishLab/semble) built for AI coding agents. It returns the exact code chunks an agent needs, prints a token-cheap codebase tree instead of `ls -R`, and compresses 3 MB CI logs in",
+    "topics": [
+      "ai-agent",
+      "bm25",
+      "claude-code",
+      "cli",
+      "code-search",
+      "codex",
+      "coding-assistant",
+      "cursor",
+      "dependency-graph",
+      "developer-tools",
+      "embeddings",
+      "hybrid-search",
+      "impact-analysis",
+      "llm",
+      "rag",
+      "rust",
+      "semantic-search",
+      "token-optimization",
+      "tree-sitter",
+      "grep-replacement"
     ]
   }
 ]

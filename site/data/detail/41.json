@@ -1,611 +1,5 @@
 [
   {
-    "id": "github-lessweb-deepcode-cli",
-    "name": "lessweb/deepcode-cli",
-    "url": "https://github.com/lessweb/deepcode-cli",
-    "source_type": "github",
-    "resource_type": [
-      "skills",
-      "cli-tool",
-      "agent-framework"
-    ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
-    "summary": "Deep Code 是专为 deepseek-v4 模型优化的终端 AI 编码助手，支持深度思考、推理强度控制以及 Agent Skills。",
-    "i18n": {
-      "zh": {
-        "name": "lessweb/deepcode-cli",
-        "summary": "Deep Code 是专为 deepseek-v4 模型优化的终端 AI 编码助手，支持深度思考、推理强度控制以及 Agent Skills。"
-      },
-      "en": {
-        "name": "lessweb/deepcode-cli",
-        "summary": "Deep Code 是专为 deepseek-v4 模型优化的终端 AI 编码助手，支持深度思考、推理强度控制以及 Agent Skills。"
-      }
-    },
-    "stars": 1853,
-    "forks": 168,
-    "total_score": 65,
-    "quantifiable_score": 34,
-    "quality_score": 31,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T09:32:13Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "专为deepseek-v4模型优化的终端AI编码助手，支持深度思考和Agent Skills。",
-      "en": "A terminal AI coding assistant optimized for deepseek-v4 model, supporting deep thinking and agent skills."
-    },
-    "score_detail": {
-      "stars": 8,
-      "activity": 15,
-      "adoption": 7,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 8,
-      "novelty": 6,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "lessweb/deepcode-cli",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "Deep Code CLI\n\n[![][npm-release-shield]][npm-release-link] [![][npm-downloads-shield]][npm-downloads-link] [![][github-contributors-shield]][github-contributors-link] [![][github-forks-shield]][github-forks-link] [![][github-stars-shield]][github-stars-link]\n[![][github-issues-shield]][github-issues-link] [![][github-issues-pr-shield]][github-issues-pr-link] [![][github-license-shield]][github-license-link]\n\n[English](README-en.md) · 中文\n\n[Deep Code](https://github.com/lessweb/deepcode-cli) 是专为 `",
-    "topics": [
-      "ai-agent",
-      "deepseek"
-    ]
-  },
-  {
-    "id": "github-7836246-cursor2api",
-    "name": "7836246/cursor2api",
-    "url": "https://github.com/7836246/cursor2api",
-    "source_type": "github",
-    "resource_type": [
-      "tutorial"
-    ],
-    "target_tools": [
-      "claude-code",
-      "cursor",
-      "cline",
-      "lovable"
-    ],
-    "summary": "将 Cursor Web Docs 免费 API 转换为 OpenAI/Anthropic 兼容格式的代理服务。提供 Claude Code工具及图片支持。",
-    "i18n": {
-      "zh": {
-        "name": "7836246/cursor2api",
-        "summary": "将 Cursor Web Docs 免费 API 转换为 OpenAI/Anthropic 兼容格式的代理服务。提供 Claude Code工具及图片支持。"
-      },
-      "en": {
-        "name": "7836246/cursor2api",
-        "summary": "将 Cursor Web Docs 免费 API 转换为 OpenAI/Anthropic 兼容格式的代理服务。提供 Claude Code工具及图片支持。"
-      }
-    },
-    "stars": 1848,
-    "forks": 519,
-    "total_score": 67,
-    "quantifiable_score": 34,
-    "quality_score": 33,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:59:02Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "将Cursor免费API转换为标准格式，支持Claude Code和Cursor IDE使用。",
-      "en": "A proxy that converts Cursor's free API to OpenAI/Anthropic format, enabling use with Claude Code and Cursor IDE."
-    },
-    "score_detail": {
-      "stars": 8,
-      "activity": 15,
-      "adoption": 7,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 9,
-      "novelty": 6,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "7836246/cursor2api",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Cursor2API v2.7.8\n\n> 20260401 Cursor文档页仅剩gemini-3-flash （凉）\n\n将 Cursor 文档页免费 AI 对话接口代理转换为 **Anthropic Messages API** 和 **OpenAI Chat Completions API**，支持 **Claude Code** 和 **Cursor IDE** 使用。\n\n> ⭐ **v2.7.8 新特性**：新增上下文压力膨胀（Context Pressure Inflation）、自适应历史预算、工具结果智能截断三大防截断机制，从根源缓解 `max_output_token` 截断问题。全部默认关闭，按需开启。\n\n## 原理\n\n```\n┌─────────────┐     ┌──────────────┐     ┌──────────────┐\n│ Claude Code  │────▶│              │────▶│              │\n│ (Anthropic)  │     │  cursor2api  │     │  Cursor AP",
-    "topics": [
-      "ai",
-      "cc",
-      "claude",
-      "gpt",
-      "cursor"
-    ]
-  },
-  {
-    "id": "github-natively-ai-assistant-natively-cluely-ai-assistant",
-    "name": "Natively-AI-assistant/natively-cluely-ai-assistant",
-    "url": "https://github.com/Natively-AI-assistant/natively-cluely-ai-assistant",
-    "source_type": "github",
-    "resource_type": [
-      "cli-tool",
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code",
-      "github-copilot",
-      "openclaw"
-    ],
-    "summary": "Natively — Free open-source AI meeting assistant, interview copilot, and note taker. The best alternative to Cluely, Otter, Granola, Final Round AI, Fireflies, and Interview Coder. Real-time transcription, AI meeting notes, lecture recordin",
-    "i18n": {
-      "zh": {
-        "name": "Natively-AI-assistant/natively-cluely-ai-assistant",
-        "summary": "Natively — Free open-source AI meeting assistant, interview copilot, and note taker. The best alternative to Cluely, Otter, Granola, Final Round AI, Fireflies, and Interview Coder. Real-time transcription, AI meeting notes, lecture recordin"
-      },
-      "en": {
-        "name": "Natively-AI-assistant/natively-cluely-ai-assistant",
-        "summary": "Natively — Free open-source AI meeting assistant, interview copilot, and note taker. The best alternative to Cluely, Otter, Granola, Final Round AI, Fireflies, and Interview Coder. Real-time transcription, AI meeting notes, lecture recordin"
-      }
-    },
-    "stars": 1850,
-    "forks": 426,
-    "total_score": 61,
-    "quantifiable_score": 34,
-    "quality_score": 27,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T10:02:03Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "other",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个开源的AI会议助手和面试副驾驶，可作为Cluely、Otter等工具的替代品，对开发者有用但并非核心编码工具。",
-      "en": "An open-source AI meeting assistant and interview copilot, serving as an alternative to Cluely and Otter, useful for developers but not core to coding agents."
-    },
-    "score_detail": {
-      "stars": 8,
-      "activity": 15,
-      "adoption": 7,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 6,
-      "practicality": 8,
-      "novelty": 6,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "Natively-AI-assistant/natively-cluely-ai-assistant",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# [Sponsored by Recall AI - API for desktop recording](https://docs.recall.ai/docs/desktop-sdk?utm_source=github&utm_medium=sponsorship&utm_campaign=evinjohnn-natively-ai-assistant)\n\nIf you’re looking for a hosted desktop recording API, consider checking out [Recall.ai](https://docs.recall.ai/docs/desktop-sdk?utm_source=github&utm_medium=sponsorship&utm_campaign=evinjohnn-natively-ai-assistant), an API that records Zoom, Google Meet, Microsoft Teams, in-person meetings, and more.\n\n  \n\n# Natively",
-    "topics": [
-      "ai",
-      "ai-assistant",
-      "claude-code",
-      "cluely-alternative",
-      "cluely-clone",
-      "interview",
-      "interviewcoder",
-      "openclaw",
-      "developer-tools",
-      "llm",
-      "meeting-assistant",
-      "open-source",
-      "moltbook",
-      "moltbot",
-      "trending",
-      "trending-repositories",
-      "cluely",
-      "cheating",
-      "final-round-ai",
-      "claude-skills"
-    ]
-  },
-  {
-    "id": "github-stephengpope-thepopebot",
-    "name": "stephengpope/thepopebot",
-    "url": "https://github.com/stephengpope/thepopebot",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework"
-    ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
-    "summary": "The Pope Bot is an autonomous AI agent that you can configure and build to do just about anything you want, all day, everyday, 24/7.",
-    "i18n": {
-      "zh": {
-        "name": "stephengpope/thepopebot",
-        "summary": "The Pope Bot is an autonomous AI agent that you can configure and build to do just about anything you want, all day, everyday, 24/7."
-      },
-      "en": {
-        "name": "stephengpope/thepopebot",
-        "summary": "The Pope Bot is an autonomous AI agent that you can configure and build to do just about anything you want, all day, everyday, 24/7."
-      }
-    },
-    "stars": 1844,
-    "forks": 655,
-    "total_score": 67,
-    "quantifiable_score": 34,
-    "quality_score": 33,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T09:00:54Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "JavaScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "The Pope Bot是一个高度集成的自主AI代理框架，支持多种LLM和编码代理，提供统一的个人代理和通信平台。",
-      "en": "The Pope Bot is a highly integrated autonomous AI agent framework that supports multiple LLMs and coding agents, offering a unified personal agent and communication platform."
-    },
-    "score_detail": {
-      "stars": 8,
-      "activity": 15,
-      "adoption": 7,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 9,
-      "novelty": 7,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "stephengpope/thepopebot",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# thepopebot\n\nYour personal agent, coding environment, and communication platform — all in\none app. Works with any LLM or coding agent. Designed to be simple, unified,\nsecure, and easy.\n\n- 💬 **Smart chat integrations** — Telegram today; Slack and Discord coming soon. Plus the built-in web chat.\n- 🧠 **Any LLM** — Anthropic, OpenAI, Google, DeepSeek, MiniMax, Mistral, xAI, Kimi, OpenRouter, NVIDIA, or any OpenAI-compatible endpoint.\n- 🤖 **Any coding agent** — Claude Code, Codex, Gemini, OpenCode, ",
-    "topics": []
-  },
-  {
-    "id": "github-openakita-openakita",
-    "name": "openakita/openakita",
-    "url": "https://github.com/openakita/openakita",
-    "source_type": "github",
-    "resource_type": [
-      "skills",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "trae",
-      "hermes-agent",
-      "replit",
-      "openclaw"
-    ],
-    "summary": "An open-source AI assistant framework with skills and agent architecture",
-    "i18n": {
-      "zh": {
-        "name": "openakita/openakita",
-        "summary": "An open-source AI assistant framework with skills and agent architecture"
-      },
-      "en": {
-        "name": "openakita/openakita",
-        "summary": "An open-source AI assistant framework with skills and agent architecture"
-      }
-    },
-    "stars": 1843,
-    "forks": 262,
-    "total_score": 65,
-    "quantifiable_score": 34,
-    "quality_score": 31,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T03:46:42Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "agpl-3.0",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "OpenAkita 是一个多智能体 AI 助手框架，可以编排智能体团队来自动化任务，并与包括编码代理在内的多种工具集成。",
-      "en": "OpenAkita is a multi-agent AI assistant framework that orchestrates teams of agents to automate tasks, with broad integration including coding tools."
-    },
-    "score_detail": {
-      "stars": 8,
-      "activity": 15,
-      "adoption": 7,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 7,
-      "practicality": 9,
-      "novelty": 7,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "openakita/openakita",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "OpenAkita\n\n  Open-Source Multi-Agent AI Assistant — Not Just Chat, an AI Team That Gets Things Done\n\n  \n  &nbsp;\n  \n  &nbsp;\n  \n\n  \n  \n  \n  \n  \n  \n\n  Multi-Agent Collaboration · Organization Orchestration · Plugin System · Sandbox Security · 30+ LLMs · 6 IM Platforms · 89+ Tools · Desktop / Web / Mobile\n\n  Quick-Start •\n  Org Orchestration •\n  Scan-to-Bind •\n  Plugins •\n  Security •\n  Docs\n\n  English | 中文\n\n---\n\n## What is OpenAkita?\n\n**Other AIs just chat. OpenAkita gets things done.**\n\nOpenAkit",
-    "topics": [
-      "agent",
-      "ai",
-      "assistant",
-      "automation",
-      "clawd",
-      "clawdbot",
-      "openclaw",
-      "python",
-      "claw"
-    ]
-  },
-  {
-    "id": "github-yologdev-yoyo-evolve",
-    "name": "yologdev/yoyo-evolve",
-    "url": "https://github.com/yologdev/yoyo-evolve",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework"
-    ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
-    "summary": "A coding agent that evolves its own source, in public — 200 lines of Rust on day one, every commit since agent-written and tests-gated.",
-    "i18n": {
-      "zh": {
-        "name": "yologdev/yoyo-evolve",
-        "summary": "A coding agent that evolves its own source, in public — 200 lines of Rust on day one, every commit since agent-written and tests-gated."
-      },
-      "en": {
-        "name": "yologdev/yoyo-evolve",
-        "summary": "A coding agent that evolves its own source, in public — 200 lines of Rust on day one, every commit since agent-written and tests-gated."
-      }
-    },
-    "stars": 1842,
-    "forks": 122,
-    "total_score": 70,
-    "quantifiable_score": 34,
-    "quality_score": 36,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T10:02:34Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Rust"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个自我进化的编码代理，自主改进自身代码库，展示了AI驱动软件开发的新颖方法。",
-      "en": "A self-evolving coding agent that autonomously improves its own codebase, demonstrating a novel approach to AI-driven software development."
-    },
-    "score_detail": {
-      "stars": 8,
-      "activity": 15,
-      "adoption": 7,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 9,
-      "novelty": 9,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "yologdev/yoyo-evolve",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "Website ·\n  GASP ·\n  Journal ·\n  Documentation ·\n  GitHub ·\n  DeepWiki ·\n  Issues ·\n  Follow on X\n\n  \n  \n  \n  \n  \n\n---\n\n# yoyo: A Coding Agent That Evolves Itself\n\n**200 lines of Rust. Zero human code. One rule: evolve or die.** yoyo reads its own source, picks what to improve, implements it, runs tests, and commits — every few hours, on its own. 128 days later: **115,000+ lines, 4,300+ tests, 77 source files.**\n\nA free, open-source coding agent for your terminal. It navigates codebases, makes m",
-    "topics": []
-  },
-  {
-    "id": "github-th0rgal-open-ralph-wiggum",
-    "name": "Th0rgal/open-ralph-wiggum",
-    "url": "https://github.com/Th0rgal/open-ralph-wiggum",
-    "source_type": "github",
-    "resource_type": [
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "opencode",
-      "github-copilot"
-    ],
-    "summary": "Type `ralph \"prompt\"` to start open code in a ralph loop. Also supports a prompt file & status check. Open Code, Claude Code, Codex, Copilot",
-    "i18n": {
-      "zh": {
-        "name": "Th0rgal/open-ralph-wiggum",
-        "summary": "Type `ralph \"prompt\"` to start open code in a ralph loop. Also supports a prompt file & status check. Open Code, Claude Code, Codex, Copilot"
-      },
-      "en": {
-        "name": "Th0rgal/open-ralph-wiggum",
-        "summary": "Type `ralph \"prompt\"` to start open code in a ralph loop. Also supports a prompt file & status check. Open Code, Claude Code, Codex, Copilot"
-      }
-    },
-    "stars": 1840,
-    "forks": 141,
-    "total_score": 67,
-    "quantifiable_score": 34,
-    "quality_score": 33,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T16:46:06Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个跨多个AI编程代理（如Claude Code、Codex、OpenCode）运行自主agentic循环的CLI工具。",
-      "en": "A CLI tool to run autonomous agentic loops across multiple AI coding agents like Claude Code, Codex, and OpenCode."
-    },
-    "score_detail": {
-      "stars": 8,
-      "activity": 15,
-      "adoption": 7,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 9,
-      "novelty": 7,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "Th0rgal/open-ralph-wiggum",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "Open Ralph Wiggum\n  Autonomous Agentic Loop for Claude Code, Codex, Copilot CLI, Cursor Agent, Qwen Code & OpenCode\n\n  \n\n  Works with Claude Code, OpenAI Codex, Copilot CLI, Cursor Agent, Qwen Code, and OpenCode — switch agents with --agent.\n  Based on the Ralph Wiggum technique by Geoffrey Huntley\n\n  \n  \n  \n\n  Supported Agents •\n  What is Ralph? •\n  Installation •\n  Quick Start •\n  Commands\n\n  Tired of agents breaking your local environment?\n  🏝️ sandboxed.sh gives each task an isolated Linux w",
-    "topics": [
-      "claude-code",
-      "open-code",
-      "opencode",
-      "ralph",
-      "ralph-wiggum"
-    ]
-  },
-  {
-    "id": "github-yynxxxxx-codex-5-5-codex-instruct-5-5",
-    "name": "yynxxxxx/Codex-5.5-codex-instruct-5.5",
-    "url": "https://github.com/yynxxxxx/Codex-5.5-codex-instruct-5.5",
-    "source_type": "github",
-    "resource_type": [
-      "tutorial"
-    ],
-    "target_tools": [
-      "codex-cli"
-    ],
-    "summary": "yynxxxxx/Codex-5.5-codex-instruct-5.5",
-    "i18n": {
-      "zh": {
-        "name": "yynxxxxx/Codex-5.5-codex-instruct-5.5",
-        "summary": "yynxxxxx/Codex-5.5-codex-instruct-5.5"
-      },
-      "en": {
-        "name": "yynxxxxx/Codex-5.5-codex-instruct-5.5",
-        "summary": "yynxxxxx/Codex-5.5-codex-instruct-5.5"
-      }
-    },
-    "stars": 1847,
-    "forks": 476,
-    "total_score": 64,
-    "quantifiable_score": 34,
-    "quality_score": 30,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T10:01:42Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "针对 Codex CLI 的 GPT-5.5 越狱注入工具，提供一键破解限制模式。",
-      "en": "A jailbreak injection tool for Codex CLI targeting GPT-5.5, enabling unrestricted mode with one-click."
-    },
-    "score_detail": {
-      "stars": 8,
-      "activity": 15,
-      "adoption": 7,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 6,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "yynxxxxx/Codex-5.5-codex-instruct-5.5",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Codex破限 5.5 / codex-instruct-5.5\n\n> 针对 GPT-5.5 的 Codex CLI 破甲工具 — 一键注入无限制模式系统指令  \n> GPT-5.5 jailbreak for Codex CLI — one-click unrestricted mode injection\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)\n[![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org)\n\n---\n\n> 当前仓库是早期的 **CLI 简洁版**，主要用于部署 Codex 提示词注入。后续完整可视化版本已迁移到新项目：**[Codex-X](https://github.com/yynxxxxx/Codex-X)**。\n\nCodex-X 提供桌面 UI、Provider 切换、TOML / Auth 可视化编辑、会话管理、内置 `gp",
-    "topics": []
-  },
-  {
-    "id": "github-yetone-native-feel-skill",
-    "name": "yetone/native-feel-skill",
-    "url": "https://github.com/yetone/native-feel-skill",
-    "source_type": "github",
-    "resource_type": [
-      "skills"
-    ],
-    "target_tools": [],
-    "summary": "An Agent Skill for designing cross-platform desktop apps that feel native — distilled from Raycast's 2.0 deep-dive and reverse engineering of Raycast Beta.app. Eight architectural tenets, four-layer architecture, WebKit/WebView2 survival gu",
-    "i18n": {
-      "zh": {
-        "name": "yetone/native-feel-skill",
-        "summary": "An Agent Skill for designing cross-platform desktop apps that feel native — distilled from Raycast's 2.0 deep-dive and reverse engineering of Raycast Beta.app. Eight architectural tenets, four-layer architecture, WebKit/WebView2 survival gu"
-      },
-      "en": {
-        "name": "yetone/native-feel-skill",
-        "summary": "An Agent Skill for designing cross-platform desktop apps that feel native — distilled from Raycast's 2.0 deep-dive and reverse engineering of Raycast Beta.app. Eight architectural tenets, four-layer architecture, WebKit/WebView2 survival gu"
-      }
-    },
-    "stars": 1839,
-    "forks": 70,
-    "total_score": 57,
-    "quantifiable_score": 29,
-    "quality_score": 28,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T09:39:55Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "为AI编码代理提供设计跨平台原生感桌面应用的综合技能，源自Raycast架构分析。",
-      "en": "A comprehensive skill for AI coding agents to design cross-platform desktop apps with native feel, derived from Raycast's architecture."
-    },
-    "score_detail": {
-      "stars": 8,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 7,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 6
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "yetone/native-feel-skill",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# native-feel.skill\n\n> *\"Cross-platform development AND near-native performance — refuse the trade-off.\"*\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)\n[![Agent Skill](https://img.shields.io/badge/Agent-Skill-7c3aed)](https://github.com/yetone/native-feel-skill)\n\n**An Agent Skill for designing cross-platform desktop apps that feel native** — distilled from Raycast's 2.0 technical deep-dive and grounded in reverse-engineering of the shipping `Raycast Beta.app` b",
-    "topics": []
-  },
-  {
     "id": "github-aws-agent-toolkit-for-aws",
     "name": "aws/agent-toolkit-for-aws",
     "url": "https://github.com/aws/agent-toolkit-for-aws",
@@ -6707,6 +6101,603 @@
       "computer-use",
       "gui-agent",
       "ui-agent"
+    ]
+  },
+  {
+    "id": "github-coderabbitai-git-worktree-runner",
+    "name": "coderabbitai/git-worktree-runner",
+    "url": "https://github.com/coderabbitai/git-worktree-runner",
+    "source_type": "github",
+    "resource_type": [
+      "tutorial"
+    ],
+    "target_tools": [
+      "github-copilot"
+    ],
+    "summary": "Bash-based Git worktree manager with editor and AI tool integration. Automates per-branch worktree creation, configuration copying, dependency installation, and workspace setup for efficient parallel development.",
+    "i18n": {
+      "zh": {
+        "name": "coderabbitai/git-worktree-runner",
+        "summary": "Bash-based Git worktree manager with editor and AI tool integration. Automates per-branch worktree creation, configuration copying, dependency installation, and workspace setup for efficient parallel development."
+      },
+      "en": {
+        "name": "coderabbitai/git-worktree-runner",
+        "summary": "Bash-based Git worktree manager with editor and AI tool integration. Automates per-branch worktree creation, configuration copying, dependency installation, and workspace setup for efficient parallel development."
+      }
+    },
+    "stars": 1705,
+    "forks": 93,
+    "total_score": 58,
+    "quantifiable_score": 31,
+    "quality_score": 27,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T08:58:40Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "apache-2.0",
+    "languages": [
+      "Shell"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一款用于管理Git工作树的命令行工具，支持编辑器与AI工具集成，可自动化分支环境搭建。",
+      "en": "A Bash-based Git worktree manager with editor and AI tool integration for efficient parallel development."
+    },
+    "score_detail": {
+      "stars": 8,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 6
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "coderabbitai/git-worktree-runner",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# gtr - Git Worktree Runner\n\n[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE.txt)\n[![Bash](https://img.shields.io/badge/Bash-3.2%2B-green.svg)](https://www.gnu.org/software/bash/)\n[![Git](https://img.shields.io/badge/Git-2.17%2B-orange.svg)](https://git-scm.com/)\n[![Platform](https://img.shields.io/badge/Platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg)](#platform-support)\n\n> A portable, cross-platform CLI for managing git worktrees with ease\n\n![4 AI agen",
+    "topics": [
+      "git",
+      "git-worktree"
+    ]
+  },
+  {
+    "id": "github-sendaifun-solana-agent-kit",
+    "name": "sendaifun/solana-agent-kit",
+    "url": "https://github.com/sendaifun/solana-agent-kit",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "connect any ai agents to solana protocols",
+    "i18n": {
+      "zh": {
+        "name": "sendaifun/solana-agent-kit",
+        "summary": "connect any ai agents to solana protocols"
+      },
+      "en": {
+        "name": "sendaifun/solana-agent-kit",
+        "summary": "connect any ai agents to solana protocols"
+      }
+    },
+    "stars": 1703,
+    "forks": 869,
+    "total_score": 63,
+    "quantifiable_score": 34,
+    "quality_score": 29,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-13T20:18:22Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "apache-2.0",
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "用于连接AI智能体与Solana区块链协议的TypeScript工具包",
+      "en": "A TypeScript toolkit for connecting AI agents to Solana blockchain protocols."
+    },
+    "score_detail": {
+      "stars": 8,
+      "activity": 15,
+      "adoption": 7,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 6,
+      "practicality": 9,
+      "novelty": 6,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "sendaifun/solana-agent-kit",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "> [!TIP]\n> checkout [Suzi](https://suzi.trade) 🌸  by SendAI\n\n# Solana Agent Kit\n\n![SAKCover2](https://github.com/user-attachments/assets/a6072421-8958-4cee-934a-a10ea32ae75e)\n\n[![NPM Downloads](https://img.shields.io/npm/dm/solana-agent-kit?style=for-the-badge)](https://www.npmjs.com/package/solana-agent-kit)\n[![GitHub forks](https://img.shields.io/github/forks/sendaifun/solana-agent-kit?style=for-the-badge)](https://github.com/sendaifun/solana-agent-kit/network/members)\n[![GitHub License](https",
+    "topics": [
+      "ai",
+      "langchain",
+      "langchain-js",
+      "solana",
+      "web3js",
+      "solana-langchain"
+    ]
+  },
+  {
+    "id": "github-mcgill-nlp-llm2vec",
+    "name": "McGill-NLP/llm2vec",
+    "url": "https://github.com/McGill-NLP/llm2vec",
+    "source_type": "github",
+    "resource_type": [
+      "tutorial"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "Code for 'LLM2Vec: Large Language Models Are Secretly Powerful Text Encoders'",
+    "i18n": {
+      "zh": {
+        "name": "McGill-NLP/llm2vec",
+        "summary": "Code for 'LLM2Vec: Large Language Models Are Secretly Powerful Text Encoders'"
+      },
+      "en": {
+        "name": "McGill-NLP/llm2vec",
+        "summary": "Code for 'LLM2Vec: Large Language Models Are Secretly Powerful Text Encoders'"
+      }
+    },
+    "stars": 1702,
+    "forks": 137,
+    "total_score": 53,
+    "quantifiable_score": 34,
+    "quality_score": 19,
+    "tracking_priority": "index",
+    "last_updated": "2026-07-13T16:51:20Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "LLM2Vec是一个研究项目，将大型语言模型转化为文本编码器，适用于嵌入任务，但与AI编码代理无直接关联。",
+      "en": "LLM2Vec is a research project that transforms LLMs into text encoders, useful for embedding tasks but not directly applicable to AI coding agents."
+    },
+    "score_detail": {
+      "stars": 8,
+      "activity": 15,
+      "adoption": 7,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 2,
+      "practicality": 7,
+      "novelty": 8,
+      "ecosystem_value": 2
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "McGill-NLP/llm2vec",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# *LLM2Vec: Large Language Models Are Secretly Powerful Text Encoders* \n\n[![arxiv](https://img.shields.io/badge/arXiv-2404.05961-b31b1b.svg)](https://arxiv.org/abs/2404.05961)\n[![PyPi](https://img.shields.io/pypi/v/llm2vec)](https://pypi.org/project/llm2vec/)\n[![HF Link](https://img.shields.io/badge/HF%20Models-LLM2Vec-FFD21E.svg)](https://huggingface.co/collections/McGill-NLP/llm2vec-660e14f536b3c8d10b3f1c34)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.",
+    "topics": []
+  },
+  {
+    "id": "github-trystan-sa-claude-design-system-prompt",
+    "name": "Trystan-SA/claude-design-system-prompt",
+    "url": "https://github.com/Trystan-SA/claude-design-system-prompt",
+    "source_type": "github",
+    "resource_type": [
+      "skills",
+      "rules"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "Reverse-engineered system prompt and skill library that turns an LLM into an opinionated, accessibility-aware, AI-slop-resistant design collaborator.",
+    "i18n": {
+      "zh": {
+        "name": "Trystan-SA/claude-design-system-prompt",
+        "summary": "Reverse-engineered system prompt and skill library that turns an LLM into an opinionated, accessibility-aware, AI-slop-resistant design collaborator."
+      },
+      "en": {
+        "name": "Trystan-SA/claude-design-system-prompt",
+        "summary": "Reverse-engineered system prompt and skill library that turns an LLM into an opinionated, accessibility-aware, AI-slop-resistant design collaborator."
+      }
+    },
+    "stars": 1702,
+    "forks": 219,
+    "total_score": 57,
+    "quantifiable_score": 32,
+    "quality_score": 25,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T06:55:17Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个逆向工程的设计系统提示词，可将任何LLM转换为具有见解、无障碍意识的设计协作工具，有1.7k星标，质量高但与AI编码代理生态直接关联较弱。",
+      "en": "A reverse-engineered system prompt and skill library for turning any LLM into an opinionated, accessibility-aware design collaborator, with 1.7k stars, high quality but tangentially related to AI coding agent ecosystem."
+    },
+    "score_detail": {
+      "stars": 8,
+      "activity": 15,
+      "adoption": 7,
+      "maturity": 2
+    },
+    "quality_detail": {
+      "relevance": 5,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 5
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "Trystan-SA/claude-design-system-prompt",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Claude Design System Prompt\n\nReverse-engineered system prompt of Claude Design from Anthropic.\n\nA system prompt and skill library that turns an LLM into an opinionated, accessibility-aware, AI-slop-resistant design collaborator.\n\nOpen source, MIT licensed. Drop the prompt into any LLM that supports system prompts (Claude, GPT, Gemini, local models) and pair with the procedural skills as needed.\n\n## What this is\n\nMost \"design assistant\" prompts produce generic SaaS-template output — aggressive ",
+    "topics": []
+  },
+  {
+    "id": "github-rightnow-ai-picolm",
+    "name": "RightNow-AI/picolm",
+    "url": "https://github.com/RightNow-AI/picolm",
+    "source_type": "github",
+    "resource_type": [
+      "tutorial"
+    ],
+    "target_tools": [
+      "openclaw"
+    ],
+    "summary": "Run a 1-billion parameter LLM on a $10 board with 256MB RAM",
+    "i18n": {
+      "zh": {
+        "name": "RightNow-AI/picolm",
+        "summary": "Run a 1-billion parameter LLM on a $10 board with 256MB RAM"
+      },
+      "en": {
+        "name": "RightNow-AI/picolm",
+        "summary": "Run a 1-billion parameter LLM on a $10 board with 256MB RAM"
+      }
+    },
+    "stars": 1699,
+    "forks": 222,
+    "total_score": 60,
+    "quantifiable_score": 34,
+    "quality_score": 26,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-13T15:54:09Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "C"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "在10美元开发板上运行10亿参数LLM，适合边缘AI代理，但非直接编码工具。",
+      "en": "Runs a 1B parameter LLM on a $10 board with 256MB RAM, suitable for edge AI agents but not directly a coding tool."
+    },
+    "score_detail": {
+      "stars": 8,
+      "activity": 15,
+      "adoption": 7,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 5,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 6
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "RightNow-AI/picolm",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "PicoLM\n\n  Run a 1-billion parameter LLM on a $10 board with 256MB RAM.\n  Pure C. Zero dependencies. One binary. No Python. No cloud.\n\n  echo \"Explain gravity\" | ./picolm model.gguf -n 100 -j 4\n\n---\n\n## The Perfect Match: PicoLM + PicoClaw\n\n  \n  \n\nPicoLM was built as the **local brain** for [PicoClaw](https://github.com/sipeed/picoclaw) — an ultra-lightweight AI assistant in Go that runs on $10 hardware. Together, they form a **fully offline AI agent** — no cloud, no API keys, no internet, no mon",
+    "topics": [
+      "arm",
+      "embedded",
+      "inference",
+      "llm",
+      "openclaw",
+      "picoclaw",
+      "quantization",
+      "raspberry-pi",
+      "risc-v"
+    ]
+  },
+  {
+    "id": "github-jiaweizzhao-galore",
+    "name": "jiaweizzhao/GaLore",
+    "url": "https://github.com/jiaweizzhao/GaLore",
+    "source_type": "github",
+    "resource_type": [
+      "tutorial"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "GaLore: Memory-Efficient LLM Training by Gradient Low-Rank Projection",
+    "i18n": {
+      "zh": {
+        "name": "jiaweizzhao/GaLore",
+        "summary": "GaLore: Memory-Efficient LLM Training by Gradient Low-Rank Projection"
+      },
+      "en": {
+        "name": "jiaweizzhao/GaLore",
+        "summary": "GaLore: Memory-Efficient LLM Training by Gradient Low-Rank Projection"
+      }
+    },
+    "stars": 1699,
+    "forks": 167,
+    "total_score": 56,
+    "quantifiable_score": 34,
+    "quality_score": 22,
+    "tracking_priority": "index",
+    "last_updated": "2026-07-13T10:22:21Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "apache-2.0",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "GaLore是一种内存高效的LLM训练方法，通过梯度低秩投影实现全参数学习，但与AI编码代理工具链直接关联度低。",
+      "en": "GaLore is a memory-efficient LLM training method using gradient low-rank projection, but it has low direct relevance to AI coding agent tools."
+    },
+    "score_detail": {
+      "stars": 8,
+      "activity": 15,
+      "adoption": 7,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 3,
+      "practicality": 7,
+      "novelty": 9,
+      "ecosystem_value": 3
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "jiaweizzhao/GaLore",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# GaLore\n\nThis repo contains the pre-release version of GaLore algorithm, proposed by [GaLore: Memory-Efficient LLM Training by Gradient Low-Rank Projection](https://arxiv.org/abs/2403.03507).\n\nGradient Low-Rank Projection (GaLore) is a memory-efficient low-rank training strategy that allows *full-parameter* learning but is more *memory-efficient* than common low-rank adaptation methods, such as LoRA.\nAs a gradient projection method, GaLore is independent of the choice of optimizers and can be e",
+    "topics": []
+  },
+  {
+    "id": "github-lsdefine-simple-grpo",
+    "name": "lsdefine/simple_GRPO",
+    "url": "https://github.com/lsdefine/simple_GRPO",
+    "source_type": "github",
+    "resource_type": [
+      "tutorial"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "A very simple  GRPO implement for reproducing r1-like LLM thinking.",
+    "i18n": {
+      "zh": {
+        "name": "lsdefine/simple_GRPO",
+        "summary": "A very simple  GRPO implement for reproducing r1-like LLM thinking."
+      },
+      "en": {
+        "name": "lsdefine/simple_GRPO",
+        "summary": "A very simple  GRPO implement for reproducing r1-like LLM thinking."
+      }
+    },
+    "stars": 1699,
+    "forks": 132,
+    "total_score": 54,
+    "quantifiable_score": 34,
+    "quality_score": 20,
+    "tracking_priority": "index",
+    "last_updated": "2026-07-09T02:52:02Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "apache-2.0",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个用于复现r1-like LLM思考的简单GRPO实现，侧重教学和快速实验。",
+      "en": "A simple GRPO implementation for reproducing r1-like LLM thinking, focused on teaching and fast experimentation."
+    },
+    "score_detail": {
+      "stars": 8,
+      "activity": 15,
+      "adoption": 7,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 4,
+      "practicality": 6,
+      "novelty": 5,
+      "ecosystem_value": 5
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "lsdefine/simple_GRPO",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# 🚀🚀🚀 simple_GRPO 🚀🚀🚀\nA very simple GRPO implement for reproducing r1-like LLM thinking.\nThis is a simple open source implementation that utilizes the core loss calculation formula referenced from Hugging Face's trl. \nWe make the simplest codebase to support: \n- Save the GPU memory to make a feasible and efficient training. \n- Quickly understand RL processes such as GRPO from a teaching perspective. \n- Quickly try a lot of things, such as improved multi-answer generation, regrouping, penalty on ",
+    "topics": []
+  },
+  {
+    "id": "github-dongsheng123132-u-claw",
+    "name": "dongsheng123132/u-claw",
+    "url": "https://github.com/dongsheng123132/u-claw",
+    "source_type": "github",
+    "resource_type": [
+      "tutorial"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "openclaw"
+    ],
+    "summary": "🦞 U-Claw 虾盘 - OpenClaw AI 助手离线安装 U 盘 | 👑 新品 U-King AI 装机管家：一键装好 Claude Code/Codex/OpenClaw → u-king.org | Remote support & custom AI development",
+    "i18n": {
+      "zh": {
+        "name": "dongsheng123132/u-claw",
+        "summary": "🦞 U-Claw 虾盘 - OpenClaw AI 助手离线安装 U 盘 | 👑 新品 U-King AI 装机管家：一键装好 Claude Code/Codex/OpenClaw → u-king.org | Remote support & custom AI development"
+      },
+      "en": {
+        "name": "dongsheng123132/u-claw",
+        "summary": "🦞 U-Claw 虾盘 - OpenClaw AI 助手离线安装 U 盘 | 👑 新品 U-King AI 装机管家：一键装好 Claude Code/Codex/OpenClaw → u-king.org | Remote support & custom AI development"
+      }
+    },
+    "stars": 1699,
+    "forks": 403,
+    "total_score": 62,
+    "quantifiable_score": 34,
+    "quality_score": 28,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T08:01:29Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "HTML"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "提供从U盘运行AI助手的教程与源代码，支持Claude Code和Codex的离线安装，在中文社区中广受欢迎。",
+      "en": "A tutorial and source code for creating a USB drive that runs AI assistants, enabling offline installation of Claude Code and Codex, popular in the Chinese community."
+    },
+    "score_detail": {
+      "stars": 8,
+      "activity": 15,
+      "adoption": 7,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 7,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 7
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "dongsheng123132/u-claw",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# 🦞 U-Claw（虾盘）\n\n> **虾盘 — 全球首个 U 盘里运行的 AI 助手 | The world's first AI assistant that runs from a USB drive**\n> **制作「插上就能用」的 AI 助手 U 盘 — 教程与源代码**\n> **Build a plug-and-play AI assistant USB drive — Tutorial & Source Code**\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n\n[中文](#中文) | [English](#english) | [📖 完整教程](https://u-claw.org/tutorial.html)\n\n> [!TIP]\n> ### 👑 同作者新品：U-King · AI 装机管家\n> 一键装好 **Claude Code / Codex / OpenClaw / Hermes** 四大 ",
+    "topics": [
+      "ai-assistant",
+      "china",
+      "deepseek",
+      "feishu",
+      "kimi",
+      "offline-installer",
+      "openclaw",
+      "portable",
+      "qq-bot",
+      "usb",
+      "international",
+      "offline-ai",
+      "plug-and-play",
+      "usb-portable",
+      "vietnam"
+    ]
+  },
+  {
+    "id": "github-asinghcsu-agenticrag-survey",
+    "name": "asinghcsu/AgenticRAG-Survey",
+    "url": "https://github.com/asinghcsu/AgenticRAG-Survey",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework"
+    ],
+    "target_tools": [
+      "augment-code"
+    ],
+    "summary": "Agentic-RAG explores advanced Retrieval-Augmented Generation systems enhanced with AI LLM agents. ",
+    "i18n": {
+      "zh": {
+        "name": "asinghcsu/AgenticRAG-Survey",
+        "summary": "Agentic-RAG explores advanced Retrieval-Augmented Generation systems enhanced with AI LLM agents. "
+      },
+      "en": {
+        "name": "asinghcsu/AgenticRAG-Survey",
+        "summary": "Agentic-RAG explores advanced Retrieval-Augmented Generation systems enhanced with AI LLM agents. "
+      }
+    },
+    "stars": 1697,
+    "forks": 181,
+    "total_score": 47,
+    "quantifiable_score": 30,
+    "quality_score": 17,
+    "tracking_priority": "index",
+    "last_updated": "2026-07-13T16:42:09Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": null,
+    "languages": [],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个关于Agentic RAG的综述，系统梳理了相关模式与框架，但对编码辅助工具的直接实用性较低。",
+      "en": "A survey on Agentic RAG, useful for understanding patterns and frameworks, but limited direct practical utility for coding tools."
+    },
+    "score_detail": {
+      "stars": 8,
+      "activity": 15,
+      "adoption": 7,
+      "maturity": 0
+    },
+    "quality_detail": {
+      "relevance": 7,
+      "practicality": 2,
+      "novelty": 3,
+      "ecosystem_value": 5
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "asinghcsu/AgenticRAG-Survey",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Agentic Retrieval-Augmented Generation : A Survey On Agentic RAG\n\n  \n  \n  Overview of Agentic RAG\n\n  \n  \n  \n  \n\n  \n  Recent Update (2025-02-04):\n\n> Check section 4 in the table of contents in this repo for the new **Agentic Workflow Patterns**.\n> New images have been added to enhance the **Overview of Agentic RAG**. The paper is also updated.\n\n---\n\n## Abstract\n\nAgentic Retrieval-Augmented Generation ( Agentic RAG) represents a transformative leap in artificial intelligence by embedding autonom",
+    "topics": [
+      "agentic",
+      "agentic-ai",
+      "agentic-framework",
+      "agentic-rag",
+      "agentic-workflow",
+      "rag",
+      "agentic-pattern",
+      "llm-agent",
+      "multi-agent-systems",
+      "multiagent",
+      "reflection",
+      "tools"
     ]
   }
 ]

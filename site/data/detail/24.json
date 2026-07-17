@@ -1,564 +1,5 @@
 [
   {
-    "id": "github-epistates-turbovault",
-    "name": "Epistates/turbovault",
-    "url": "https://github.com/Epistates/turbovault",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server"
-    ],
-    "target_tools": [
-      "general-ai-coding"
-    ],
-    "summary": "Markdown and OFM SDK w/ MCP server that transforms your Obsidian vault into an intelligent knowledge system",
-    "i18n": {
-      "zh": {
-        "name": "Epistates/turbovault",
-        "summary": "Markdown and OFM SDK w/ MCP server that transforms your Obsidian vault into an intelligent knowledge system"
-      },
-      "en": {
-        "name": "Epistates/turbovault",
-        "summary": "Markdown and OFM SDK w/ MCP server that transforms your Obsidian vault into an intelligent knowledge system"
-      }
-    },
-    "stars": 137,
-    "forks": 24,
-    "total_score": 57,
-    "quantifiable_score": 27,
-    "quality_score": 30,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T12:08:13Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "Rust"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "TurboVault 是一个用 Rust 编写的 MCP 服务器，通过模型上下文协议将您的 Obsidian 知识库转化为智能知识系统。",
-      "en": "TurboVault is an MCP server in Rust that transforms your Obsidian vault into an intelligent knowledge system by exposing Markdown and OFM via the Model Context Protocol."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 6,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "Epistates/turbovault",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# TurboVault\n\n[![Crates.io](https://img.shields.io/crates/v/turbovault.svg)](https://crates.io/crates/turbovault)\n[![Docs.rs](https://docs.rs/turbovault/badge.svg)](https://docs.rs/turbovault)\n[![License](https://img.shields.io/crates/l/turbovault.svg)](https://github.com/epistates/turbovault/blob/main/LICENSE)\n[![Rust 1.90+](https://img.shields.io/badge/rust-1.90%2B-orange.svg)](https://www.rust-lang.org/)\n[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Epistates/turbovau",
-    "topics": [
-      "mcp",
-      "mcp-server",
-      "ai",
-      "markdown",
-      "ofm",
-      "rust"
-    ]
-  },
-  {
-    "id": "github-lekssays-codebadger",
-    "name": "Lekssays/codebadger",
-    "url": "https://github.com/Lekssays/codebadger",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server",
-      "agent-framework",
-      "skills"
-    ],
-    "target_tools": [
-      "zed"
-    ],
-    "summary": "🦡 codebadger is a containerized Model Context Protocol (MCP) server that gives AI agents and LLMs deep, queryable access to a codebase's structure and data flow through Joern Code Property Graphs (CPGs).",
-    "i18n": {
-      "zh": {
-        "name": "Lekssays/codebadger",
-        "summary": "🦡 codebadger is a containerized Model Context Protocol (MCP) server that gives AI agents and LLMs deep, queryable access to a codebase's structure and data flow through Joern Code Property Graphs (CPGs)."
-      },
-      "en": {
-        "name": "Lekssays/codebadger",
-        "summary": "🦡 codebadger is a containerized Model Context Protocol (MCP) server that gives AI agents and LLMs deep, queryable access to a codebase's structure and data flow through Joern Code Property Graphs (CPGs)."
-      }
-    },
-    "stars": 138,
-    "forks": 16,
-    "total_score": 60,
-    "quantifiable_score": 27,
-    "quality_score": 33,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T08:58:19Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "gpl-3.0",
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个基于Joern的容器化MCP服务器，为AI代理提供深度代码结构和数据流分析能力。",
-      "en": "A containerized MCP server that uses Joern to give AI agents deep code structure and data flow analysis capabilities."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 9,
-      "practicality": 8,
-      "novelty": 8,
-      "ecosystem_value": 8
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "Lekssays/codebadger",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# 🦡 codebadger\n\n**codebadger** is a containerized **Model Context Protocol (MCP)** server that\ngives AI agents and LLMs deep, queryable access to a codebase's structure and\ndata flow through [Joern](https://joern.io/) Code Property Graphs (CPGs).\n\nPoint it at a Git repository, a local path, or even a pasted code snippet, and\ncodebadger builds a CPG and exposes it over MCP — so an assistant can run CPGQL\nqueries, trace data flow and taint, slice programs, and hunt for vulnerabilities\nacross Java,",
-    "topics": [
-      "joern",
-      "mcp-server",
-      "program-analysis",
-      "static-analysis",
-      "taint-analysis",
-      "agent-skills",
-      "agentic-workflow",
-      "agents"
-    ]
-  },
-  {
-    "id": "github-pleaseprompto-google-ai-mode-mcp",
-    "name": "PleasePrompto/google-ai-mode-mcp",
-    "url": "https://github.com/PleasePrompto/google-ai-mode-mcp",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server",
-      "agent-framework"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "cursor",
-      "windsurf",
-      "cline"
-    ],
-    "summary": "MCP server for free Google AI Mode search with citations. Query optimization, CAPTCHA handling, multi-agent support. Works with Claude Code, Cursor, Cline, Windsurf.",
-    "i18n": {
-      "zh": {
-        "name": "PleasePrompto/google-ai-mode-mcp",
-        "summary": "MCP server for free Google AI Mode search with citations. Query optimization, CAPTCHA handling, multi-agent support. Works with Claude Code, Cursor, Cline, Windsurf."
-      },
-      "en": {
-        "name": "PleasePrompto/google-ai-mode-mcp",
-        "summary": "MCP server for free Google AI Mode search with citations. Query optimization, CAPTCHA handling, multi-agent support. Works with Claude Code, Cursor, Cline, Windsurf."
-      }
-    },
-    "stars": 137,
-    "forks": 17,
-    "total_score": 56,
-    "quantifiable_score": 27,
-    "quality_score": 29,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-08T16:52:16Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个用于免费Google AI模式搜索的MCP服务器，支持多代理和CAPTCHA处理，兼容Claude Code、Cursor、Cline等工具。",
-      "en": "MCP server providing free Google AI Mode search with citations and multi-agent support, compatible with Claude Code, Cursor, Cline, and other MCP tools."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 8,
-      "practicality": 8,
-      "novelty": 6,
-      "ecosystem_value": 7
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "PleasePrompto/google-ai-mode-mcp",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# Google AI Mode MCP Server\n\n### **Supercharge Any LLM's Web Research with Google AI Mode**\n\n**For: All MCP-compatible LLMs** (Claude, Cursor, Cline, Windsurf, Zed, etc.)\n\nTransform your LLM's online research capabilities by connecting it directly to Google's AI Mode—getting AI-synthesized answers from 100+ sources instead of scattered search results.\n\n[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)\n[![MCP](https://img.shields.io/badge/MCP-2",
-    "topics": [
-      "browser-automation",
-      "citations",
-      "claude-code",
-      "cline",
-      "codex",
-      "cursor",
-      "google-ai-mode",
-      "mcp",
-      "model-context-protocol",
-      "patchright",
-      "typescript",
-      "web-research"
-    ]
-  },
-  {
-    "id": "github-eljulians-skillfile",
-    "name": "eljulians/skillfile",
-    "url": "https://github.com/eljulians/skillfile",
-    "source_type": "github",
-    "resource_type": [
-      "skills",
-      "agent-framework",
-      "cli-tool",
-      "rules"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "cursor",
-      "cline"
-    ],
-    "summary": "One-stop shop for AI skills and agents. Search 110K+ community skills, install and track them declaratively, and deploy across all major AI coding tools (Claude Code, Codex, Cursor, Antigravity and more)",
-    "i18n": {
-      "zh": {
-        "name": "eljulians/skillfile",
-        "summary": "One-stop shop for AI skills and agents. Search 110K+ community skills, install and track them declaratively, and deploy across all major AI coding tools (Claude Code, Codex, Cursor, Antigravity and more)"
-      },
-      "en": {
-        "name": "eljulians/skillfile",
-        "summary": "One-stop shop for AI skills and agents. Search 110K+ community skills, install and track them declaratively, and deploy across all major AI coding tools (Claude Code, Codex, Cursor, Antigravity and more)"
-      }
-    },
-    "stars": 137,
-    "forks": 25,
-    "total_score": 61,
-    "quantifiable_score": 27,
-    "quality_score": 34,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T13:37:02Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "apache-2.0",
-    "languages": [
-      "Rust"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个用于在多个AI编码工具之间声明式管理和安装AI技能与代理的CLI工具，集成了110K+社区技能。",
-      "en": "A CLI tool for declaratively managing and installing AI skills and agents across multiple AI coding tools, integrating 110K+ community skills."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "eljulians/skillfile",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# skillfile\n\n[![CI](https://img.shields.io/github/actions/workflow/status/eljulians/skillfile/ci.yml?style=flat-square&label=CI)](https://github.com/eljulians/skillfile/actions/workflows/ci.yml)\n[![Crates.io](https://img.shields.io/crates/v/skillfile?style=flat-square)](https://crates.io/crates/skillfile)\n[![Coverage](https://img.shields.io/codecov/c/github/eljulians/skillfile?style=flat-square)](https://codecov.io/gh/eljulians/skillfile)\n\n**Track AI skills and agents declaratively, like depende",
-    "topics": [
-      "ai-agents",
-      "ai-skills",
-      "ai-tools",
-      "claude",
-      "claude-code",
-      "cli",
-      "codex",
-      "developer-tools",
-      "devtools",
-      "dotfiles",
-      "gemini-cli",
-      "package-manager",
-      "productivity",
-      "prompt-engineering",
-      "rust",
-      "skill-management",
-      "antigravity",
-      "cursor",
-      "skills",
-      "skills-sh"
-    ]
-  },
-  {
-    "id": "github-handsomezr-netizen-mathmodel-skill",
-    "name": "handsomeZR-netizen/mathmodel-skill",
-    "url": "https://github.com/handsomeZR-netizen/mathmodel-skill",
-    "source_type": "github",
-    "resource_type": [
-      "skills"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli"
-    ],
-    "summary": "三竞赛 (CUMCM/MCM/电工杯) 数学建模 skill — harness-agnostic, 同时支持 Claude Code 与 Codex CLI, 全程问答式 (Friendly Mode), 10 阶段 + 4 反馈层 + per-Qi 加权聚合 + 题型 dim 加权 + empirical 实测分位锚定",
-    "i18n": {
-      "zh": {
-        "name": "handsomeZR-netizen/mathmodel-skill",
-        "summary": "三竞赛 (CUMCM/MCM/电工杯) 数学建模 skill — harness-agnostic, 同时支持 Claude Code 与 Codex CLI, 全程问答式 (Friendly Mode), 10 阶段 + 4 反馈层 + per-Qi 加权聚合 + 题型 dim 加权 + empirical 实测分位锚定"
-      },
-      "en": {
-        "name": "handsomeZR-netizen/mathmodel-skill",
-        "summary": "三竞赛 (CUMCM/MCM/电工杯) 数学建模 skill — harness-agnostic, 同时支持 Claude Code 与 Codex CLI, 全程问答式 (Friendly Mode), 10 阶段 + 4 反馈层 + per-Qi 加权聚合 + 题型 dim 加权 + empirical 实测分位锚定"
-      }
-    },
-    "stars": 137,
-    "forks": 2,
-    "total_score": 51,
-    "quantifiable_score": 23,
-    "quality_score": 28,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-14T01:31:39Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [
-      "Python"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个面向数学建模竞赛的全流程AI技能，支持Claude Code和Codex CLI，实现问答式操作和10阶段流程。",
-      "en": "A comprehensive AI skill for mathematical modeling competitions, supporting Claude Code and Codex CLI, with a question-answer interface and 10-stage workflow."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 2,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 8,
-      "practicality": 8,
-      "novelty": 6,
-      "ecosystem_value": 6
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "handsomeZR-netizen/mathmodel-skill",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "# mathmodel-skill (v6.0.0)\n\n> 面向 CUMCM (国赛) / MCM·ICM (美赛) / 电工杯 三类数学建模竞赛的 10 阶段工程化流程。**全程问答式**——用户只需回答编号问题, 不必手敲 bash / python / json。同时支持 **Codex** 与 **Claude Code**, 状态文件跨 harness 互通。带 4 层反馈、跨阶段一致性回检、终局多视角评审、题型差异化加权、实测分位锚定打分。\n\n[![Version](https://img.shields.io/badge/version-v6.0.0-blueviolet)](#开发日志)\n[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-FF6B35)](https://docs.claude.com/en/docs/claude-code/overview)\n[![Codex](https://img.shields.io/badge/Codex-AGENTS.md-10A37F)](./",
-    "topics": [
-      "claude-code",
-      "claude-skill",
-      "cumcm",
-      "icm",
-      "latex",
-      "math-competition",
-      "math-modeling",
-      "mathematical-contest-in-modeling",
-      "mathematical-modeling",
-      "mcm",
-      "python",
-      "workflow",
-      "diangong",
-      "agents-md",
-      "codex-cli",
-      "friendly-mode",
-      "harness-agnostic"
-    ]
-  },
-  {
-    "id": "github-iamtouchskyer-memex",
-    "name": "iamtouchskyer/memex",
-    "url": "https://github.com/iamtouchskyer/memex",
-    "source_type": "github",
-    "resource_type": [
-      "mcp-server",
-      "extension",
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "cursor",
-      "github-copilot",
-      "windsurf"
-    ],
-    "summary": "Zettelkasten-based persistent memory for AI coding agents. Works with Claude Code, Cursor, VS Code Copilot, Codex, Windsurf & any MCP client. No vector DB — just markdown + git sync.",
-    "i18n": {
-      "zh": {
-        "name": "iamtouchskyer/memex",
-        "summary": "Zettelkasten-based persistent memory for AI coding agents. Works with Claude Code, Cursor, VS Code Copilot, Codex, Windsurf & any MCP client. No vector DB — just markdown + git sync."
-      },
-      "en": {
-        "name": "iamtouchskyer/memex",
-        "summary": "Zettelkasten-based persistent memory for AI coding agents. Works with Claude Code, Cursor, VS Code Copilot, Codex, Windsurf & any MCP client. No vector DB — just markdown + git sync."
-      }
-    },
-    "stars": 137,
-    "forks": 42,
-    "total_score": 63,
-    "quantifiable_score": 27,
-    "quality_score": 36,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-08T19:29:22Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": "mit",
-    "languages": [
-      "TypeScript"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "基于Zettelkasten的AI编码代理持久记忆系统，支持多种代理和MCP协议，无需向量数据库。",
-      "en": "Zettelkasten-based persistent memory for AI coding agents, supporting multiple agents and MCP protocol, no vector DB required."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 4
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 9,
-      "novelty": 8,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "github-continuedev-continue",
-    "last_analyzed": "2026-07-15",
-    "repo": "iamtouchskyer/memex",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/iamtouchskyer-memex-badge.png)](https://mseep.ai/app/iamtouchskyer-memex)\n\n# memex\n\nPersistent memory for AI coding agents. Your agent remembers what it learned across sessions.\n\n[English](#english) | [中文](#中文) | [日本語](#日本語) | [한국어](#한국어) | [Español](#español)\n\n![memex timeline view](screenshot.png)\n\n---\n\n## English\n\nEvery time your AI agent finishes a task, it saves insights as atomic knowledge cards with `[[bidirectional links]]`. Nex",
-    "topics": [
-      "agent-memory",
-      "ai-agent",
-      "ai-coding",
-      "claude-code",
-      "cursor",
-      "knowledge-management",
-      "mcp-server",
-      "memory",
-      "vscode",
-      "zettelkasten"
-    ]
-  },
-  {
-    "id": "github-johunsang-semble-rs",
-    "name": "johunsang/semble_rs",
-    "url": "https://github.com/johunsang/semble_rs",
-    "source_type": "github",
-    "resource_type": [
-      "agent-framework",
-      "cli-tool"
-    ],
-    "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "cursor",
-      "aider",
-      "cline"
-    ],
-    "summary": "Fast, AI-agent-native code search in Rust — hybrid BM25 + semantic, Tree-sitter AST chunking, dependency & impact analysis. Drop-in replacement for grep/cat/read/ls in Claude Code, Codex, Cursor, Aider, OpenHands.",
-    "i18n": {
-      "zh": {
-        "name": "johunsang/semble_rs",
-        "summary": "Fast, AI-agent-native code search in Rust — hybrid BM25 + semantic, Tree-sitter AST chunking, dependency & impact analysis. Drop-in replacement for grep/cat/read/ls in Claude Code, Codex, Cursor, Aider, OpenHands."
-      },
-      "en": {
-        "name": "johunsang/semble_rs",
-        "summary": "Fast, AI-agent-native code search in Rust — hybrid BM25 + semantic, Tree-sitter AST chunking, dependency & impact analysis. Drop-in replacement for grep/cat/read/ls in Claude Code, Codex, Cursor, Aider, OpenHands."
-      }
-    },
-    "stars": 137,
-    "forks": 22,
-    "total_score": 59,
-    "quantifiable_score": 25,
-    "quality_score": 34,
-    "tracking_priority": "track",
-    "last_updated": "2026-07-13T12:20:15Z",
-    "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
-    "license": null,
-    "languages": [
-      "Rust"
-    ],
-    "review_state": "auto-indexed",
-    "llm_summary": {
-      "zh": "一个基于Rust的快速代码搜索工具，专为AI编程代理设计，结合BM25和语义搜索，使用AST分块以减少token使用。",
-      "en": "A Rust-based fast code search tool optimized for AI coding agents, integrating BM25 and semantic search with AST chunking to reduce token usage."
-    },
-    "score_detail": {
-      "stars": 4,
-      "activity": 15,
-      "adoption": 4,
-      "maturity": 2
-    },
-    "quality_detail": {
-      "relevance": 10,
-      "practicality": 8,
-      "novelty": 7,
-      "ecosystem_value": 9
-    },
-    "benchmark_ref": "official-cursor",
-    "last_analyzed": "2026-07-15",
-    "repo": "johunsang/semble_rs",
-    "tags": [],
-    "maturity": "unknown",
-    "status": "unknown",
-    "readme_preview": "semble_rs Fast and Accurate Code Search for Agents — in Rust Replaces grep / cat / read / ls and compresses build & CI output. Up to -99% tokens. \n\n      \n\n Quickstart • Search • Tree • Digest • Deps / Impact • How it works • Benchmarks \n\n`semble_rs` is a Rust port and superset of [MinishLab/semble](https://github.com/MinishLab/semble) built for AI coding agents. It returns the exact code chunks an agent needs, prints a token-cheap codebase tree instead of `ls -R`, and compresses 3 MB CI logs in",
-    "topics": [
-      "ai-agent",
-      "bm25",
-      "claude-code",
-      "cli",
-      "code-search",
-      "codex",
-      "coding-assistant",
-      "cursor",
-      "dependency-graph",
-      "developer-tools",
-      "embeddings",
-      "hybrid-search",
-      "impact-analysis",
-      "llm",
-      "rag",
-      "rust",
-      "semantic-search",
-      "token-optimization",
-      "tree-sitter",
-      "grep-replacement"
-    ]
-  },
-  {
     "id": "github-maxim-ist-elixir-architect",
     "name": "maxim-ist/elixir-architect",
     "url": "https://github.com/maxim-ist/elixir-architect",
@@ -933,14 +374,14 @@
       }
     },
     "stars": 137,
-    "forks": 0,
-    "total_score": 53,
-    "quantifiable_score": 23,
+    "forks": 1,
+    "total_score": 55,
+    "quantifiable_score": 25,
     "quality_score": 30,
     "tracking_priority": "track",
     "last_updated": "2026-07-13T15:37:53Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "TypeScript"
@@ -953,7 +394,7 @@
     "score_detail": {
       "stars": 4,
       "activity": 15,
-      "adoption": 0,
+      "adoption": 2,
       "maturity": 4
     },
     "quality_detail": {
@@ -4592,15 +4033,15 @@
         "summary": "Turning raw AI terminal logs into cozy 2D pixel office chaos. The definitive visualizer for OpenCode agents."
       }
     },
-    "stars": 132,
-    "forks": 5,
+    "stars": 133,
+    "forks": 6,
     "total_score": 59,
     "quantifiable_score": 25,
     "quality_score": 34,
     "tracking_priority": "track",
-    "last_updated": "2026-07-14T01:53:47Z",
+    "last_updated": "2026-07-15T06:17:15Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "HTML"
@@ -5121,14 +4562,14 @@
       }
     },
     "stars": 131,
-    "forks": 12,
+    "forks": 11,
     "total_score": 59,
     "quantifiable_score": 27,
     "quality_score": 32,
     "tracking_priority": "track",
     "last_updated": "2026-05-16T00:04:17Z",
     "first_seen": "2026-07-14",
-    "last_seen": "2026-07-14",
+    "last_seen": "2026-07-17",
     "license": "mit",
     "languages": [
       "Python"
@@ -7117,6 +6558,492 @@
       "model-context-protocol",
       "rag",
       "web-seach"
+    ]
+  },
+  {
+    "id": "github-paulp-o-ask-user-questions-mcp",
+    "name": "paulp-o/ask-user-questions-mcp",
+    "url": "https://github.com/paulp-o/ask-user-questions-mcp",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server",
+      "skills",
+      "extension",
+      "agent-framework",
+      "cli-tool"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "opencode",
+      "cline"
+    ],
+    "summary": "Better 'AskUserQuestion' - A lightweight MCP server/OpenCode plugin/Agent Skills + CLI interface which allows parallel AI agents ask questions to you. Be the human in the human-in-the-loop!",
+    "i18n": {
+      "zh": {
+        "name": "paulp-o/ask-user-questions-mcp",
+        "summary": "Better 'AskUserQuestion' - A lightweight MCP server/OpenCode plugin/Agent Skills + CLI interface which allows parallel AI agents ask questions to you. Be the human in the human-in-the-loop!"
+      },
+      "en": {
+        "name": "paulp-o/ask-user-questions-mcp",
+        "summary": "Better 'AskUserQuestion' - A lightweight MCP server/OpenCode plugin/Agent Skills + CLI interface which allows parallel AI agents ask questions to you. Be the human in the human-in-the-loop!"
+      }
+    },
+    "stars": 129,
+    "forks": 15,
+    "total_score": 59,
+    "quantifiable_score": 27,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-12T18:48:42Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个轻量级MCP服务器，允许多个并行AI代理向用户提问，为编码代理提供人机交互层。",
+      "en": "A lightweight MCP server enabling parallel AI agents to ask questions to the user, providing a human-in-the-loop interaction layer for coding agents."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "paulp-o/ask-user-questions-mcp",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "![AUQ Demo](media/demo2.png)\n\n# AUQ - Ask User Questions\n\n_`AskUserQuestion` pushed to the max_\n\n[![npm version](https://img.shields.io/npm/v/auq-mcp-server.svg)](https://www.npmjs.com/package/auq-mcp-server)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![Install MCP Server](https://cursor.com/deeplink/mcp-install-light.svg)](https://cursor.com/en-US/install-mcp?name=ask-user-questions&config=eyJlbnYiOnt9LCJjb21tYW5kIjoibnB4IC15IGF1",
+    "topics": [
+      "claude-code",
+      "codex",
+      "mcp",
+      "mcp-server",
+      "opencode",
+      "ask-user-question",
+      "agent-skills",
+      "claude",
+      "claude-ai",
+      "elicitation"
+    ]
+  },
+  {
+    "id": "github-sprawz-gtm-mcp-server",
+    "name": "sprawz/gtm-mcp-server",
+    "url": "https://github.com/sprawz/gtm-mcp-server",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server"
+    ],
+    "target_tools": [
+      "claude-code",
+      "cline"
+    ],
+    "summary": "An MCP server for Google Tag Manager. Connect it to your LLM, authenticate once, and start managing GTM through natural language.",
+    "i18n": {
+      "zh": {
+        "name": "sprawz/gtm-mcp-server",
+        "summary": "An MCP server for Google Tag Manager. Connect it to your LLM, authenticate once, and start managing GTM through natural language."
+      },
+      "en": {
+        "name": "sprawz/gtm-mcp-server",
+        "summary": "An MCP server for Google Tag Manager. Connect it to your LLM, authenticate once, and start managing GTM through natural language."
+      }
+    },
+    "stars": 129,
+    "forks": 23,
+    "total_score": 57,
+    "quantifiable_score": 27,
+    "quality_score": 30,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-11T11:48:16Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "bsd-3-clause",
+    "languages": [
+      "Go"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "为Google Tag Manager提供MCP服务器，允许通过自然语言管理GTM。",
+      "en": "An MCP server for Google Tag Manager enabling natural language management of GTM."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 6,
+      "ecosystem_value": 7
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "sprawz/gtm-mcp-server",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# GTM MCP Server\n\n[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)\n[![Go](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white)](https://go.dev/)\n[![MCP](https://img.shields.io/badge/MCP-Model_Context_Protocol-8A2BE2)](https://modelcontextprotocol.io)\n[![Claude](https://img.shields.io/badge/Claude-Compatible-D97757?logo=anthropic&logoColor=white)](https://claude.ai)\n[![ChatGPT](https://img.shields.io/badge/ChatGPT-C",
+    "topics": [
+      "google-api",
+      "google-tag-manager",
+      "mcp",
+      "mcp-server",
+      "ai",
+      "llm",
+      "chatgpt",
+      "claude",
+      "golang",
+      "gtm",
+      "model-context-protocol",
+      "oauth2"
+    ]
+  },
+  {
+    "id": "github-wso2-fhir-mcp-server",
+    "name": "wso2/fhir-mcp-server",
+    "url": "https://github.com/wso2/fhir-mcp-server",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "FHIR MCP Server – helping you expose any FHIR Server or API as a MCP Server.",
+    "i18n": {
+      "zh": {
+        "name": "wso2/fhir-mcp-server",
+        "summary": "FHIR MCP Server – helping you expose any FHIR Server or API as a MCP Server."
+      },
+      "en": {
+        "name": "wso2/fhir-mcp-server",
+        "summary": "FHIR MCP Server – helping you expose any FHIR Server or API as a MCP Server."
+      }
+    },
+    "stars": 129,
+    "forks": 49,
+    "total_score": 57,
+    "quantifiable_score": 27,
+    "quality_score": 30,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T05:07:36Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "apache-2.0",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "为医疗健康领域提供FHIR数据接入的MCP服务器，帮助AI编码代理访问医疗互操作数据。",
+      "en": "An MCP server for FHIR healthcare data, enabling AI coding agents to access interoperable medical data through the Model Context Protocol."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 7,
+      "practicality": 7,
+      "novelty": 8,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "wso2/fhir-mcp-server",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Model Context Protocol (MCP) Server for Fast Healthcare Interoperability Resources (FHIR) APIs\n\n[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/wso2/fhir-mcp-server/blob/main/LICENSE)\n[![Get Support on Stack Overflow](https://img.shields.io/badge/stackoverflow-wso2-orange)](https://stackoverflow.com/questions/tagged/wso2)\n[![Join the community on Discord](https://img.shields.io/badge/Join%20us%20on-Discord-%23e01563.svg)](https://discord.com/invite/w",
+    "topics": [
+      "fhir",
+      "healthcare",
+      "mcp",
+      "mcp-server",
+      "modelcontextprotocol"
+    ]
+  },
+  {
+    "id": "github-gdksoftware-delphi-mcp-server",
+    "name": "GDKsoftware/Delphi-MCP-Server",
+    "url": "https://github.com/GDKsoftware/Delphi-MCP-Server",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "Native Delphi Server implementation of the Model Context Protocol (MCP)",
+    "i18n": {
+      "zh": {
+        "name": "GDKsoftware/Delphi-MCP-Server",
+        "summary": "Native Delphi Server implementation of the Model Context Protocol (MCP)"
+      },
+      "en": {
+        "name": "GDKsoftware/Delphi-MCP-Server",
+        "summary": "Native Delphi Server implementation of the Model Context Protocol (MCP)"
+      }
+    },
+    "stars": 128,
+    "forks": 32,
+    "total_score": 57,
+    "quantifiable_score": 27,
+    "quality_score": 30,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T09:15:09Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Pascal"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "为Delphi开发者提供原生MCP服务器，可集成Claude Code等AI编码助手。",
+      "en": "A native MCP server implementation in Delphi for integrating AI coding agents with Delphi development."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 8,
+      "novelty": 7,
+      "ecosystem_value": 6
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "GDKsoftware/Delphi-MCP-Server",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Delphi MCP Server\n\n![Delphi](https://img.shields.io/badge/Delphi-12%2B-red)\n![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)\n![License](https://img.shields.io/badge/license-MIT-blue)\n![MCP](https://img.shields.io/badge/MCP-2025--06--18-green)\n\nA Model Context Protocol (MCP) server implementation in Delphi, designed to integrate with Claude Code, Codex, and other MCP-compatible clients for AI-powered Delphi development workflows.\n\n## Table of Contents\n\n- [Featu",
+    "topics": [
+      "delphi",
+      "mcp",
+      "mcp-server",
+      "pascal"
+    ]
+  },
+  {
+    "id": "github-lucashild-mcp-server-bigquery",
+    "name": "LucasHild/mcp-server-bigquery",
+    "url": "https://github.com/LucasHild/mcp-server-bigquery",
+    "source_type": "github",
+    "resource_type": [
+      "mcp-server"
+    ],
+    "target_tools": [
+      "general-ai-coding"
+    ],
+    "summary": "A Model Context Protocol server that provides access to BigQuery",
+    "i18n": {
+      "zh": {
+        "name": "LucasHild/mcp-server-bigquery",
+        "summary": "A Model Context Protocol server that provides access to BigQuery"
+      },
+      "en": {
+        "name": "LucasHild/mcp-server-bigquery",
+        "summary": "A Model Context Protocol server that provides access to BigQuery"
+      }
+    },
+    "stars": 128,
+    "forks": 38,
+    "total_score": 55,
+    "quantifiable_score": 27,
+    "quality_score": 28,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-05T03:03:08Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个用于 BigQuery 的 MCP 服务器，允许 AI 编码代理检查和查询数据库模式。",
+      "en": "An MCP server for BigQuery that enables AI coding agents to inspect schemas and execute queries."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 8,
+      "practicality": 8,
+      "novelty": 5,
+      "ecosystem_value": 7
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "LucasHild/mcp-server-bigquery",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# BigQuery MCP server\n\n[![smithery badge](https://smithery.ai/badge/mcp-server-bigquery)](https://smithery.ai/server/mcp-server-bigquery)\n\nA Model Context Protocol server that provides access to BigQuery. This server enables LLMs to inspect database schemas and execute queries.\n\n## Components\n\n### Tools\n\nThe server implements one tool:\n\n- `execute-query`: Executes a SQL query using BigQuery dialect\n- `list-tables`: Lists all tables in the BigQuery database\n- `describe-table`: Describes the schem",
+    "topics": [
+      "mcp",
+      "mcp-server",
+      "bigquery"
+    ]
+  },
+  {
+    "id": "github-lupynow-math-modeling-skills",
+    "name": "Lupynow/math-modeling-skills",
+    "url": "https://github.com/Lupynow/math-modeling-skills",
+    "source_type": "github",
+    "resource_type": [
+      "skills"
+    ],
+    "target_tools": [
+      "claude-code"
+    ],
+    "summary": "数学建模竞赛完整工具链：从拿到赛题到交出论文，一条龙解决。  覆盖 国赛 CUMCM（A/B/C） 和 美赛 MCM/ICM（A-F） 全部题型。",
+    "i18n": {
+      "zh": {
+        "name": "Lupynow/math-modeling-skills",
+        "summary": "数学建模竞赛完整工具链：从拿到赛题到交出论文，一条龙解决。  覆盖 国赛 CUMCM（A/B/C） 和 美赛 MCM/ICM（A-F） 全部题型。"
+      },
+      "en": {
+        "name": "Lupynow/math-modeling-skills",
+        "summary": "数学建模竞赛完整工具链：从拿到赛题到交出论文，一条龙解决。  覆盖 国赛 CUMCM（A/B/C） 和 美赛 MCM/ICM（A-F） 全部题型。"
+      }
+    },
+    "stars": 128,
+    "forks": 5,
+    "total_score": 60,
+    "quantifiable_score": 23,
+    "quality_score": 37,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-13T03:11:19Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": null,
+    "languages": [
+      "Python"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "数学建模竞赛全流程AI助手技能包，深度集成Claude Code，提供解题和写作两大Skill，大幅降低参赛门槛。",
+      "en": "A complete AI-powered skill pack for mathematical modeling competitions, deeply integrated with Claude Code, offering solving and writing skills to streamline the entire workflow."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 2,
+      "maturity": 2
+    },
+    "quality_detail": {
+      "relevance": 10,
+      "practicality": 10,
+      "novelty": 8,
+      "ecosystem_value": 9
+    },
+    "benchmark_ref": "github-continuedev-continue",
+    "last_analyzed": "2026-07-15",
+    "repo": "Lupynow/math-modeling-skills",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "# Math Modeling Skills\n\n> 数学建模竞赛完整工具链：从拿到赛题到交出论文，一条龙解决。\n\n覆盖 **国赛 CUMCM（A/B/C）** 和 **美赛 MCM/ICM（A-F）** 全部题型。\n\n规则和模板基于 **150+ 篇获奖论文**（国赛一等 + 美赛 O/F 奖，2018-2025）的系统分析提炼。\n\n---\n\n## 两个 Skill\n\n### `math-modeling-solver` — 解题\n\n拿到题目不知道怎么下手？solver 帮你五步走到代码。\n\n| 功能 | 能力 |\n|------|------|\n| 问题拆解 | 自动判定 12 种数学本质类型（预测/优化/机理/网络科学/生态/博弈...），含文献检索关键词生成 |\n| 文献检索 | 阶段1.5：拆题后搜文献（硬上限5次搜索/5-8篇即停），中英文各半，标注期刊含金量，可跳过 |\n| 模型匹配 | 95+ 场景决策矩阵，每个场景给出首选模型 + 备选 + 边界条件 + 文献支撑 |\n| Cookbook | 8 本算法手册（优化/ML/评价/机理/统计/网络/聚类/博弈论） |\n| ",
+    "topics": [
+      "claude-code",
+      "claude-skill",
+      "cumcm",
+      "mathematical-modeling",
+      "mcm-icm",
+      "paper-writing"
+    ]
+  },
+  {
+    "id": "github-sawyerhood-omegacode",
+    "name": "SawyerHood/omegacode",
+    "url": "https://github.com/SawyerHood/omegacode",
+    "source_type": "github",
+    "resource_type": [
+      "agent-framework"
+    ],
+    "target_tools": [
+      "claude-code",
+      "codex-cli"
+    ],
+    "summary": "Code based orchestration for any coding agent.",
+    "i18n": {
+      "zh": {
+        "name": "SawyerHood/omegacode",
+        "summary": "Code based orchestration for any coding agent."
+      },
+      "en": {
+        "name": "SawyerHood/omegacode",
+        "summary": "Code based orchestration for any coding agent."
+      }
+    },
+    "stars": 128,
+    "forks": 12,
+    "total_score": 59,
+    "quantifiable_score": 27,
+    "quality_score": 32,
+    "tracking_priority": "track",
+    "last_updated": "2026-07-14T05:24:19Z",
+    "first_seen": "2026-07-14",
+    "last_seen": "2026-07-14",
+    "license": "mit",
+    "languages": [
+      "TypeScript"
+    ],
+    "review_state": "auto-indexed",
+    "llm_summary": {
+      "zh": "一个与代理无关的编码代理编排框架，提供类似Claude Code的工作流DSL，支持可插拔的工人实现。",
+      "en": "An agent-agnostic orchestration framework for coding agents, providing a workflow DSL similar to Claude Code's with pluggable worker implementations."
+    },
+    "score_detail": {
+      "stars": 4,
+      "activity": 15,
+      "adoption": 4,
+      "maturity": 4
+    },
+    "quality_detail": {
+      "relevance": 9,
+      "practicality": 7,
+      "novelty": 8,
+      "ecosystem_value": 8
+    },
+    "benchmark_ref": "official-cursor",
+    "last_analyzed": "2026-07-15",
+    "repo": "SawyerHood/omegacode",
+    "tags": [],
+    "maturity": "unknown",
+    "status": "unknown",
+    "readme_preview": "![omegacode](omega-logos/header.png)\n\n# omegacode\n\n[![CI](https://github.com/SawyerHood/omegacode/actions/workflows/ci.yml/badge.svg)](https://github.com/SawyerHood/omegacode/actions/workflows/ci.yml)\n\nAn **agent-agnostic implementation of Claude Code's Workflows**. omegacode runs JavaScript workflow\nfiles that orchestrate fleets of coding agents with a small deterministic DSL — `agent()` /\n`parallel()` / `pipeline()` / `phase()` — and the workers are pluggable: the same workflow can\ndrive **Cla",
+    "topics": [
+      "agents",
+      "claude-code",
+      "codex"
     ]
   }
 ]
