@@ -621,6 +621,7 @@
     "target_tools": [
       "claude-code",
       "codex-cli",
+      "antigravity-cli",
       "cline"
     ],
     "summary": "Turn VS Code into your compliant AI playground! With Agent Maestro, spin up Cline or Roo on demand and plug Claude Code or Codex straight in through an OpenAI/Anthropic-compatible API.",
@@ -904,11 +905,7 @@
     ],
     "target_tools": [
       "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "cline"
+      "codex-cli"
     ],
     "summary": "Claude Cortex",
     "i18n": {
@@ -1582,7 +1579,9 @@
     "resource_type": [
       "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "Reliable Multi-Agent Orchestration Framework",
     "i18n": {
       "zh": {
@@ -1642,8 +1641,7 @@
       "agent-framework"
     ],
     "target_tools": [
-      "claude-code",
-      "cline"
+      "claude-code"
     ],
     "summary": "飞书(Lark)AI 项目经理 Agent + 项目管理系统部署套件 · 共享引擎+多实例配置 · Claude Code 驱动 · markdown 为源 + 索引治理(四项校验)+ 多维表格镜像",
     "i18n": {
@@ -1780,18 +1778,7 @@
       "cli-tool"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "trae",
-      "hermes-agent",
-      "kiro",
-      "warp",
-      "aider",
-      "cline",
-      "replit"
+      "codex-cli"
     ],
     "summary": "Agentic Development Environment (ADE) in your terminal",
     "i18n": {
@@ -1989,10 +1976,8 @@
       "cli-tool"
     ],
     "target_tools": [
-      "claude-code",
       "cursor",
-      "github-copilot",
-      "cline"
+      "github-copilot"
     ],
     "summary": "MCP server for AI coding agents. Instead of reading files one by one, your agent gets dependency graphs, git intent, blast radius, and change health in a single call. Works with any language deep analysis for TypeScript,Java, Go, and C#.",
     "i18n": {
@@ -2596,8 +2581,7 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code",
-      "cline"
+      "claude-code"
     ],
     "summary": "My Claude Code slash commands",
     "i18n": {
@@ -2730,8 +2714,7 @@
       "cli-tool"
     ],
     "target_tools": [
-      "claude-code",
-      "cline"
+      "general-ai-coding"
     ],
     "summary": "🐜 AI-native modular coding workspace — 127 modules, 424 MCP tools, 21K+ zero-mock tests, multi-agent orchestration (Claude/Gemini/GPT), PAI integration",
     "i18n": {
@@ -2944,8 +2927,7 @@
       "extension"
     ],
     "target_tools": [
-      "claude-code",
-      "cline"
+      "claude-code"
     ],
     "summary": "Reusable agents, commands, and permission templates for Claude Code",
     "i18n": {
@@ -3073,7 +3055,11 @@
     "resource_type": [
       "skills"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "claude-code",
+      "codex-cli",
+      "cursor"
+    ],
     "summary": "firecrawl/skills",
     "i18n": {
       "zh": {
@@ -3131,7 +3117,9 @@
       "skills",
       "rules"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "zed"
+    ],
     "summary": "Periodically refreshed mirror of agents, skills, prompts and instruction files from public repositories.",
     "i18n": {
       "zh": {
@@ -3337,10 +3325,7 @@
       "agent-framework"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "cline"
+      "general-ai-coding"
     ],
     "summary": "The AI Operating System for Delphi. 100% native framework with RAG 2.0, autonomous agents, MCP protocol, and universal LLM connector. Supports OpenAI, Claude, Gemini, Ollama, and more. Delphi 10.4+ (limited), full support from Delphi 12 Ath",
     "i18n": {
@@ -3625,12 +3610,7 @@
       "cli-tool"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "cline"
+      "claude-code"
     ],
     "summary": "CLI tool that scaffolds Claude Code plugins for enterprise teams with skills, agents, commands, rules, hooks, and MCP server configs.",
     "i18n": {
@@ -3785,12 +3765,7 @@
       "mcp-server"
     ],
     "target_tools": [
-      "claude-code",
       "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "cline",
       "tabnine"
     ],
     "summary": "Configure Codex, Claude, and Tabnine to understand your project, follow its workflow, and respect its safety rules.",
@@ -3864,12 +3839,9 @@
       "agent-framework"
     ],
     "target_tools": [
-      "claude-code",
       "codex-cli",
-      "antigravity-cli",
       "opencode",
-      "aider",
-      "cline"
+      "aider"
     ],
     "summary": "AI agent sandboxing done right.",
     "i18n": {
@@ -4007,8 +3979,6 @@
       "agent-framework"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli",
       "openclaw"
     ],
     "summary": "Webhook orchestrator with AI agents and native MCP tools. Recipes connect any webhook to any MCP server. BYOK, self-hosted.",
@@ -4360,8 +4330,7 @@
     "target_tools": [
       "claude-code",
       "cursor",
-      "github-copilot",
-      "kiro"
+      "github-copilot"
     ],
     "summary": "Domscribe is a pixel-to-code development tool that bridges the gap between running web applications and their source code.",
     "i18n": {
@@ -4444,12 +4413,7 @@
       "cli-tool"
     ],
     "target_tools": [
-      "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "cline"
+      "claude-code"
     ],
     "summary": "AI-first Go development framework. Ship production CLIs that AI agents build correctly.",
     "i18n": {
@@ -4596,12 +4560,8 @@
     "target_tools": [
       "claude-code",
       "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
       "cursor",
-      "github-copilot",
-      "cline"
+      "github-copilot"
     ],
     "summary": "AI-first fixed-layout document workspaces. Your AI agent writes proposals, whitepapers, theses, books — A4, PDF, web reader.",
     "i18n": {
@@ -4681,7 +4641,7 @@
       "agent-framework"
     ],
     "target_tools": [
-      "lovable"
+      "general-ai-coding"
     ],
     "summary": "Agno-Go: A High-Performance Multi-Agent System Framework Based on Golang. Inheriting the Agno design philosophy, it leverages Golang's concurrency model and per",
     "i18n": {
@@ -4817,9 +4777,6 @@
     "target_tools": [
       "claude-code",
       "codex-cli",
-      "trae",
-      "hermes-agent",
-      "replit",
       "openclaw"
     ],
     "summary": "High-value AI skills repository for Codex, Claude Code, OpenClaw, agents, prompts, and automation workflows.  高价值的 AI 技能库，涵盖 Codex、Claude Code、OpenClaw、代理、提示和自动化工作流程。",
@@ -5233,7 +5190,8 @@
       "agent-framework"
     ],
     "target_tools": [
-      "general-ai-coding"
+      "claude-code",
+      "codex-cli"
     ],
     "summary": "Frameworks and tools for building, evaluating, and scaling agentic AI systems.",
     "i18n": {
@@ -5299,8 +5257,7 @@
       "rules"
     ],
     "target_tools": [
-      "claude-code",
-      "cline"
+      "claude-code"
     ],
     "summary": "Claude Code Skills Marketplace: plugins, skills for ADR-driven development, DevOps automation, ClickHouse management, semantic versioning, and productivity workflows",
     "i18n": {
@@ -5382,7 +5339,9 @@
       "extension"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "codex-cli",
+      "cursor"
     ],
     "summary": "mac plugin-in notch for claude-code and everything",
     "i18n": {
@@ -5444,14 +5403,7 @@
       "cli-tool"
     ],
     "target_tools": [
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "trae",
-      "hermes-agent",
-      "cline",
-      "replit"
+      "general-ai-coding"
     ],
     "summary": "An AI-native local developer runtime for tools, skills, agents, and workflows.",
     "i18n": {
@@ -5658,9 +5610,7 @@
       "mcp-server"
     ],
     "target_tools": [
-      "claude-code",
-      "cursor",
-      "cline"
+      "cursor"
     ],
     "summary": "Public Solana MCP registry metadata for Vybe Solana API",
     "i18n": {
@@ -5732,7 +5682,7 @@
       "mcp-server"
     ],
     "target_tools": [
-      "codex-cli"
+      "general-ai-coding"
     ],
     "summary": "A code review tool based on Model Context Protocol (MCP) that leverages OpenAI's capabilities for intelligent code analysis and review. | 基于模型上下文协议(MCP)的代码审查工具，利用OpenAI的能力进行智能代码分析和审查。",
     "i18n": {
@@ -5799,8 +5749,7 @@
       "cli-tool"
     ],
     "target_tools": [
-      "claude-code",
-      "cline"
+      "zed"
     ],
     "summary": "MCP server for intelligent handling of large files — smart chunking, search, navigation, and streaming.",
     "i18n": {
@@ -6019,8 +5968,7 @@
     "target_tools": [
       "claude-code",
       "codex-cli",
-      "zed",
-      "cline"
+      "zed"
     ],
     "summary": "A TypeScript CLI that assembles AI-powered prompts at runtime to guide you from \"I have an idea\" to working software. Scaffold walks you through 54 structured pipeline steps — organized into 15 phases — and Codex, Claude Code, or Gemini han",
     "i18n": {
@@ -6220,7 +6168,9 @@
     "resource_type": [
       "cli-tool"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "antigravity-cli"
+    ],
     "summary": "figma/figma-gemini-cli-extension",
     "i18n": {
       "zh": {
@@ -6339,7 +6289,9 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "github-copilot"
+    ],
     "summary": "ZavaShop supply-chain workshop: 5 LABs on Microsoft Agent Framework + Microsoft Foundry, with shared data fixtures, AG-UI control tower, and a GitHub Copilot coding agent.",
     "i18n": {
       "zh": {
@@ -6398,7 +6350,9 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "github-copilot"
+    ],
     "summary": "一個簡單易用的網頁工具，用於管理 GitHub Copilot Coding Agent 的 MCP (Model Context Protocol) 設定",
     "i18n": {
       "zh": {
@@ -6518,7 +6472,9 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "github-copilot"
+    ],
     "summary": "Feedback hub for GitHub Copilot coding agent (Public Preview). ",
     "i18n": {
       "zh": {
@@ -6579,7 +6535,10 @@
     "resource_type": [
       "agent-framework"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "github-copilot",
+      "zed"
+    ],
     "summary": "Custom multi-agent orchestration for GitHub Copilot coding agent with role-based routing.",
     "i18n": {
       "zh": {
@@ -6640,7 +6599,9 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "github-copilot"
+    ],
     "summary": "GitHub Copilot 코딩 에이전트 개요 및 사용 방법",
     "i18n": {
       "zh": {
@@ -6700,7 +6661,8 @@
       "extension"
     ],
     "target_tools": [
-      "claude-code"
+      "claude-code",
+      "github-copilot"
     ],
     "summary": "Opinionated webhook that replicates GitHub Copilot coding agent behavior using Claude Code GitHub Actions",
     "i18n": {
@@ -6760,7 +6722,9 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "github-copilot"
+    ],
     "summary": "Exercise: Expand your team with GitHub Copilot coding agent",
     "i18n": {
       "zh": {
@@ -6819,7 +6783,9 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "github-copilot"
+    ],
     "summary": "How to use GitHub Copilot coding agent for maintaining data pipelines with frequently changing source schemas",
     "i18n": {
       "zh": {

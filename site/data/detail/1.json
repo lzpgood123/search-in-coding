@@ -191,7 +191,10 @@
       "cli-tool"
     ],
     "target_tools": [
-      "antigravity-cli"
+      "claude-code",
+      "codex-cli",
+      "antigravity-cli",
+      "opencode"
     ],
     "summary": "Conductor is a Gemini CLI extension that allows you to specify, plan, and implement software features.",
     "i18n": {
@@ -445,8 +448,7 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code",
-      "cline"
+      "claude-code"
     ],
     "summary": "针对 电商渠道或者更多平台 进行 深度调研： 这次利用了claude code , mcp, skill，bright data 等技术。 我现在把这2个热门技术结合起来，打造一个： 【开源】利用Bright Data’s MCP 的 Claude Code Skill 实现 深度电商平台调研 deep research ！ 助佬发达！",
     "i18n": {
@@ -1076,8 +1078,7 @@
       "mcp-server"
     ],
     "target_tools": [
-      "claude-code",
-      "cline"
+      "claude-code"
     ],
     "summary": "MCP Server connects with claude code local command.",
     "i18n": {
@@ -1146,8 +1147,7 @@
       "mcp-server"
     ],
     "target_tools": [
-      "claude-code",
-      "cline"
+      "claude-code"
     ],
     "summary": "Trade Robinhood via Claude Code - MCP Server",
     "i18n": {
@@ -2188,9 +2188,7 @@
       "extension"
     ],
     "target_tools": [
-      "claude-code",
-      "cursor",
-      "cline"
+      "cursor"
     ],
     "summary": "An enterprise-grade MCP server that exposes the full functionality of DaVinci Resolve and DaVinci Resolve Studio (through version 20) to either Claude Desktop or Cursor MCP clients. Fully configured and tested as a Claude Desktop Extension ",
     "i18n": {
@@ -2328,12 +2326,8 @@
     "target_tools": [
       "claude-code",
       "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
       "cursor",
-      "windsurf",
-      "cline"
+      "windsurf"
     ],
     "summary": "Local context engine for AI coding agents. Routes tasks to relevant files, tests, rules, and skills, supports prompt caching, and builds compact context packs for Claude Code, Codex, Cursor, MCP, and more.",
     "i18n": {
@@ -2491,11 +2485,7 @@
     ],
     "target_tools": [
       "claude-code",
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "cline"
+      "codex-cli"
     ],
     "summary": "Automated code review powered by OpenAI Codex. CLI + Claude Code MCP integration.",
     "i18n": {
@@ -2697,12 +2687,7 @@
       "cli-tool"
     ],
     "target_tools": [
-      "codex-cli",
-      "antigravity-cli",
-      "opencode",
-      "qoder",
-      "cursor",
-      "cline"
+      "cursor"
     ],
     "summary": "CLI to set up and deploy MCP Servers to Cloudflare Workers in seconds. Just write TypeScript functions to make Cursor MCP tools.",
     "i18n": {
@@ -2831,6 +2816,7 @@
     ],
     "target_tools": [
       "codex-cli",
+      "opencode",
       "qoder"
     ],
     "summary": "飞书/微信 私聊机器人 → 本机 Codex / Claude / Qoder CLI，运行时可切换后端。",
@@ -3105,7 +3091,8 @@
       "skills"
     ],
     "target_tools": [
-      "hermes-agent"
+      "hermes-agent",
+      "zed"
     ],
     "summary": "👼 Hermes Agent skill for unread link bookmarks from chat channels",
     "i18n": {
@@ -3296,18 +3283,8 @@
       "skills"
     ],
     "target_tools": [
-      "claude-code",
       "codex-cli",
-      "opencode",
-      "trae",
-      "workbuddy-codebuddy",
       "cursor",
-      "hermes-agent",
-      "windsurf",
-      "codegeex",
-      "cline",
-      "kilo-code",
-      "augment-code",
       "replit"
     ],
     "summary": "Collection of 50+ marketing skills for agents like Claude, cursor, mcp, Replit, codex, and more",
@@ -3519,6 +3496,8 @@
       "tutorial"
     ],
     "target_tools": [
+      "claude-code",
+      "codex-cli",
       "qoder"
     ],
     "summary": "Auto-generate Qoder repo wiki on every git commit",
@@ -3582,6 +3561,7 @@
       "cli-tool"
     ],
     "target_tools": [
+      "claude-code",
       "codex-cli"
     ],
     "summary": "ThisCodex — Codex CLI skill repo: CC↔Codex 이식·rules-system·multi-agent Discord 패턴 (ThisCode companion)",
@@ -4832,8 +4812,7 @@
     ],
     "target_tools": [
       "claude-code",
-      "cursor",
-      "cline"
+      "cursor"
     ],
     "summary": "DevEnvInfoServer - Cursor MCP Server for Development Environment Information",
     "i18n": {
@@ -5326,7 +5305,9 @@
     "resource_type": [
       "tutorial"
     ],
-    "target_tools": [],
+    "target_tools": [
+      "general-ai-coding"
+    ],
     "summary": "A service that monitors multiple YouTube channels for new videos and sends detailed summaries to a Telegram chat.",
     "i18n": {
       "zh": {
@@ -6272,7 +6253,8 @@
       "extension"
     ],
     "target_tools": [
-      "opencode"
+      "opencode",
+      "cursor"
     ],
     "summary": "Opencode-mcp es una extension para vscode/antigravity que integra un panel de chat conectado a tu servidor local de Opencode, permitiendo usar tus agents, skills, tools y mcp directamente desde el editor.",
     "i18n": {
