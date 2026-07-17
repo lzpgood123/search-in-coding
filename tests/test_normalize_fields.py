@@ -186,17 +186,24 @@ def test_github_record_topics_empty_when_missing():
 
 
 def test_github_record_readme_preview():
-    """readme_preview should be first 500 chars of readme."""
+    """readme_preview should be first 2000 chars of readme; full README on disk."""
     normalize = load_module('normalize')
+    long_readme = '# Test\n\nThis is a test readme.' + 'x' * 2500
     item = {
         'nameWithOwner': 'test/repo',
         'url': 'https://github.com/test/repo',
         'stargazerCount': 100,
         'forkCount': 10,
-        'readme': '# Test\n\nThis is a test readme.' + 'x' * 600,
+        'readme': long_readme,
     }
     rec = normalize.github_record(item, [])
-    assert len(rec['readme_preview']) == 500, f"readme_preview len={len(rec['readme_preview'])}"
+    assert len(rec['readme_preview']) == 2000, f"readme_preview len={len(rec['readme_preview'])}"
+    assert rec.get('has_readme_full') is True
+    readme_path = ROOT / 'data' / 'readmes' / f"{rec['id']}.md"
+    assert readme_path.exists()
+    assert readme_path.read_text(encoding='utf-8') == long_readme
+    # cleanup test artifact
+    readme_path.unlink(missing_ok=True)
 
 
 def test_github_record_readme_preview_empty_when_missing():
@@ -210,6 +217,7 @@ def test_github_record_readme_preview_empty_when_missing():
     }
     rec = normalize.github_record(item, [])
     assert rec['readme_preview'] == '', f"readme_preview={rec['readme_preview']!r}"
+    assert rec.get('has_readme_full') is False
 
 
 # ============================================================
@@ -599,3 +607,65 @@ def test_exact_short_alias_still_matches():
     tools = [{'id': 'ai-short', 'name': 'AI', 'aliases': ['ai']}]
     ids = normalize.target_tools_for('generic', tools, topics=['ai'])
     assert ids == ['ai-short']
+
+
+def test_text_substring_requires_alias_len_ge_5():
+    """Free-text substring match requires len(alias) >= 5 (blocks zed)."""
+    normalize = load_module('normalize')
+    tools = [
+        {'id': 'zed', 'name': 'Zed', 'aliases': ['zed', 'Zed']},
+        {'id': 'claude-code', 'name': 'Claude Code', 'aliases': ['claude-code', 'Claude Code']},
+    ]
+    # 'zed' appears in free text but is only 3 chars → blocked
+    ids = normalize.target_tools_for(
+        'optimized skills for anthropic agents',
+        tools,
+        topics=[],
+    )
+    assert 'zed' not in ids
+    # long alias still free-text matches
+    ids2 = normalize.target_tools_for(
+        'skills for claude-code users',
+        tools,
+        topics=[],
+    )
+    assert 'claude-code' in ids2
+
+
+def test_reclassify_skips_target_tools_when_quality_score_positive():
+    """LLM-analyzed projects (quality_score > 0) keep existing target_tools."""
+    normalize = load_module('normalize')
+    tools = [
+        {'id': 'zed', 'name': 'Zed', 'aliases': ['zed']},
+        {'id': 'claude-code', 'name': 'Claude Code', 'aliases': ['claude-code']},
+    ]
+    project = {
+        'name': 'anthropics/skills',
+        'summary': 'skills for agents',
+        'topics': [],
+        'source_type': 'github',
+        'quality_score': 35,
+        'target_tools': ['claude-code'],
+        'resource_type': ['skills'],
+    }
+    out = normalize.reclassify_project(project, tools)
+    assert out['target_tools'] == ['claude-code']
+
+
+def test_reclassify_updates_target_tools_when_unanalyzed():
+    """quality_score == 0 projects still get rule-based target_tools."""
+    normalize = load_module('normalize')
+    tools = [
+        {'id': 'claude-code', 'name': 'Claude Code', 'aliases': ['claude-code', 'Claude Code']},
+    ]
+    project = {
+        'name': 'acme/claude-code-helper',
+        'summary': 'helpers for Claude Code',
+        'topics': [],
+        'source_type': 'github',
+        'quality_score': 0,
+        'target_tools': [],
+        'resource_type': ['tutorial'],
+    }
+    out = normalize.reclassify_project(project, tools)
+    assert 'claude-code' in out['target_tools']

@@ -37,6 +37,7 @@ from llm_prompts import (
     benchmark_selection_prompt, BENCHMARK_SYSTEM,
 )
 from benchmark_manager import BenchmarkManager, BENCHMARK_RANGES
+from seed_tools_schema import load_seed_tools, iter_active_tools
 
 DEFAULT_BATCH_SIZE = 10
 LLM_CONFIG_PATH = ROOT / 'config' / 'llm-analysis.yaml'
@@ -194,9 +195,11 @@ def run_analysis(projects, max_projects=None, batch_size=None):
         total_batches = (len(to_analyze) - 1) // batch_size + 1
         print(f'\n--- Batch {batch_num}/{total_batches} ({len(batch)} projects) ---')
 
-        # Create prompt function for each project
-        def prompt_fn(p):
-            return project_analysis_prompt(p)
+        # Create prompt function for each project (dynamic 31-tool list)
+        active_tools = list(iter_active_tools(load_seed_tools(normalize=True)))
+
+        def prompt_fn(p, _tools=active_tools):
+            return project_analysis_prompt(p, active_tools=_tools)
 
         results, key_stats = batch_analyze(batch, prompt_fn, ANALYSIS_SYSTEM, max_workers=batch_size)
 

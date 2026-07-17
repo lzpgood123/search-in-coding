@@ -7,6 +7,9 @@ Three prompt types:
 3. Report generation: weekly report, tool comparison, top picks
 """
 import json
+from pathlib import Path
+
+from common import ROOT
 
 # === System Prompts ===
 
@@ -22,11 +25,58 @@ You must respond with valid JSON only."""
 REPORT_SYSTEM = """You are a technical writer creating ecosystem reports in Markdown.
 Write in clear, concise language. Use tables for comparisons."""
 
+# Fallback when active_tools is not provided (legacy 10-tool list)
+_FALLBACK_TOOL_LIST = (
+    'claude-code, codex-cli, antigravity-cli, opencode, goose, qoder, trae, '
+    'workbuddy-codebuddy, cursor, hermes-agent'
+)
+
+MAX_README_CHARS = 50000
+
+
+def load_project_readme(project, max_chars=MAX_README_CHARS):
+    """Load full README from data/readmes/{id}.md with preview fallback."""
+    readme_full = ''
+    pid = project.get('id') or ''
+    if pid:
+        readme_path = ROOT / 'data' / 'readmes' / f'{pid}.md'
+        if readme_path.exists():
+            try:
+                readme_full = readme_path.read_text(encoding='utf-8', errors='replace')
+            except OSError:
+                readme_full = ''
+    if not readme_full:
+        readme_full = project.get('readme_preview') or ''
+    if max_chars and len(readme_full) > max_chars:
+        readme_full = readme_full[:max_chars]
+    return readme_full
+
+
+def format_active_tools(active_tools):
+    """Format active tools for prompts: id (name, aliases: a, b, c)."""
+    if not active_tools:
+        return _FALLBACK_TOOL_LIST
+    parts = []
+    for t in active_tools:
+        tid = t.get('id') or ''
+        name = t.get('name') or tid
+        aliases = [a for a in (t.get('aliases') or []) if a][:3]
+        if aliases:
+            parts.append(f"{tid} ({name}, aliases: {', '.join(aliases)})")
+        else:
+            parts.append(f'{tid} ({name})')
+    return ', '.join(parts)
+
 
 # === Project Analysis Prompt ===
 
-def project_analysis_prompt(project):
-    """Generate the analysis prompt for a single project."""
+def project_analysis_prompt(project, active_tools=None):
+    """Generate the analysis prompt for a single project.
+
+    Args:
+        project: project dict
+        active_tools: optional list of active seed-tool dicts for dynamic tool list
+    """
     name = project.get('name', '')
     summary = project.get('summary', '') or ''
     url = project.get('url', '')
@@ -36,8 +86,9 @@ def project_analysis_prompt(project):
     license_info = project.get('license', 'N/A')
     last_updated = project.get('last_updated', 'N/A')
     existing_tools = project.get('target_tools', [])
-    readme_preview = project.get('readme_preview', '') or ''
     topics = project.get('topics', []) or []
+    tool_list = format_active_tools(active_tools)
+    readme_full = load_project_readme(project)
 
     return f"""Analyze this GitHub project for the AI Coding Agent ecosystem:
 
@@ -51,13 +102,13 @@ License: {license_info}
 Last Updated: {last_updated}
 Currently tagged tools: {', '.join(existing_tools) if existing_tools else 'none'}
 Topics: {', '.join(topics[:10]) if topics else 'N/A'}
-README excerpt (first 500 chars): {readme_preview[:500]}
+README (full): {readme_full}
 
 Respond with JSON in this exact format:
 {{
   "relevance_score": 0.0-1.0,
   "resource_type": ["one or more of: mcp-server, skills, rules, agent-framework, cli-tool, tutorial, extension"],
-  "target_tools": ["zero or more of: claude-code, codex-cli, antigravity-cli, opencode, goose, qoder, trae, workbuddy-codebuddy, cursor, hermes-agent"],
+  "target_tools": ["zero or more of: {tool_list}"],
   "tracking_priority": "one of: track, index, reject",
   "quality_score": 0-40,
   "quality_detail": {{

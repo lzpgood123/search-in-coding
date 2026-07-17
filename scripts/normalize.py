@@ -269,7 +269,8 @@ def target_tools_for(text, tools, topics=None):
                 continue
             al = a.lower()
             # free-text contains full alias phrase (description/name path)
-            if al in low:
+            # length floor blocks short aliases like "zed" / "ai" false hits
+            if len(al) >= 5 and al in low:
                 matched = True
                 break
             # per-topic matching with length guards (no topic_blob: short
@@ -301,7 +302,11 @@ def target_tools_for(text, tools, topics=None):
 
 
 def reclassify_project(project, tools):
-    """Recompute resource_type/target_tools from name+summary+topics only."""
+    """Recompute resource_type/target_tools from name+summary+topics only.
+
+    LLM-analyzed projects (quality_score > 0) keep existing target_tools —
+    rule matching must not overwrite LLM results.
+    """
     if not project:
         return project
     if project.get('source_type') == 'official-seed':
@@ -314,6 +319,14 @@ def reclassify_project(project, tools):
     text = f'{name} {summary}'
     topics = project.get('topics') or []
     project['resource_type'] = resource_types_for(text, topics)
+    # Don't overwrite LLM-analyzed target_tools
+    qs = project.get('quality_score', 0)
+    try:
+        qs_val = float(qs) if qs is not None else 0.0
+    except (TypeError, ValueError):
+        qs_val = 0.0
+    if qs_val > 0:
+        return project
     project['target_tools'] = target_tools_for(text, tools, topics)
     return project
 
@@ -473,10 +486,17 @@ def github_record(it, tools):
         topics = []
 
     readme = it.get('readme') or ''
-    readme_preview = readme[:500] if readme else ''
+    readme_preview = readme[:2000] if readme else ''
+    pid = slug('github-' + name)
+    has_readme_full = False
+    if readme:
+        readme_path = ROOT / 'data' / 'readmes' / f'{pid}.md'
+        readme_path.parent.mkdir(parents=True, exist_ok=True)
+        readme_path.write_text(readme, encoding='utf-8')
+        has_readme_full = True
 
     return {
-        'id': slug('github-' + name),
+        'id': pid,
         'name': name,
         'url': url,
         'repo': fn,
@@ -496,6 +516,7 @@ def github_record(it, tools):
         'languages': languages,
         'topics': topics,
         'readme_preview': readme_preview,
+        'has_readme_full': has_readme_full,
         'tags': [],
         'review_state': 'auto-indexed',
         'quantifiable_score': 0,
