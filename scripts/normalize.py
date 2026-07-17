@@ -251,10 +251,15 @@ def target_tools_for(text, tools, topics=None):
     - alias match → tool ids
     - else if AI/coding topic signals → ['general-ai-coding']
     - else → []
+
+    Topic matching rules (2026-07-17 fix):
+    - exact match al == tn: always ok (no length floor)
+    - alias is substring of topic (al in tn): only if len(al) >= 5 and len(tn) >= 5
+    - NEVER match topic as substring of alias (tn in al) — short topics like
+      "agent" were falsely hitting "Trae Agent" / "Hermes Agent" / "Replit Agent"
     """
     low = (text or '').lower()
     topics_norm = _normalize_topics(topics)
-    topic_blob = ' '.join(topics_norm)
     ids = []
     for t in tools or []:
         aliases = list(t.get('aliases') or []) + [t.get('name', ''), t.get('id', '')]
@@ -263,15 +268,22 @@ def target_tools_for(text, tools, topics=None):
             if not a:
                 continue
             al = a.lower()
-            if al in low or al in topic_blob:
+            # free-text contains full alias phrase (description/name path)
+            if al in low:
                 matched = True
                 break
-            # topic exact id / alias fragment
-            if al in topics_norm or any(al == tn or al in tn or tn in al for tn in topics_norm if len(tn) >= 3):
-                # avoid ultra-short false positives
-                if len(al) >= 3:
+            # per-topic matching with length guards (no topic_blob: short
+            # aliases like "ai" would false-match joined "ai-agents llm")
+            for tn in topics_norm:
+                if al == tn:
                     matched = True
                     break
+                if len(al) >= 5 and len(tn) >= 5 and al in tn:
+                    matched = True
+                    break
+                # intentionally NO: tn in al
+            if matched:
+                break
         if matched and t.get('id') and t['id'] not in ids:
             ids.append(t['id'])
 

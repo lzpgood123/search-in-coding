@@ -534,3 +534,68 @@ def test_reclassify_project_does_not_read_readme_preview():
     out = normalize.reclassify_project(project, tools)
     assert out['resource_type'] == ['tutorial']
     assert 'mcp-server' not in out['resource_type']
+
+
+# ============================================================
+# target_tools topic substring matching guards (2026-07-17)
+# ============================================================
+
+def _agent_alias_tools():
+    """Minimal seed-like tools that previously false-matched topic 'agent'."""
+    return [
+        {'id': 'trae', 'name': 'Trae / Trae Work', 'aliases': ['Trae', 'Trae Agent', 'Trae SOLO', 'Trae Work']},
+        {'id': 'hermes-agent', 'name': 'Hermes Agent', 'aliases': ['Hermes Agent', 'Nous Hermes', 'Hermes coding agent']},
+        {'id': 'replit', 'name': 'Replit', 'aliases': ['Replit', 'Replit Agent', 'Ghostwriter']},
+        {'id': 'claude-code', 'name': 'Claude Code', 'aliases': ['claude-code', 'Claude Code']},
+        {'id': 'cursor', 'name': 'Cursor', 'aliases': ['cursor', 'Cursor']},
+        {'id': 'ai-short', 'name': 'AI', 'aliases': ['ai']},
+    ]
+
+
+def test_topic_agent_does_not_match_trae_hermes_replit():
+    """topic 'agent' must NOT match aliases like 'Trae Agent' (tn in al bug)."""
+    normalize = load_module('normalize')
+    tools = _agent_alias_tools()
+    ids = normalize.target_tools_for(
+        'Page Agent browser automation',
+        tools,
+        topics=['agent', 'browser', 'automation'],
+    )
+    assert 'trae' not in ids
+    assert 'hermes-agent' not in ids
+    assert 'replit' not in ids
+    assert ids == ['general-ai-coding']
+
+
+def test_topic_exact_match_still_works():
+    """Exact topic == alias/id match is always allowed regardless of length."""
+    normalize = load_module('normalize')
+    tools = _agent_alias_tools()
+    ids = normalize.target_tools_for('generic', tools, topics=['claude-code'])
+    assert 'claude-code' in ids
+    assert 'general-ai-coding' not in ids
+
+
+def test_alias_substring_of_topic_requires_len_ge_5():
+    """alias in topic allowed only when both alias and topic are >= 5 chars."""
+    normalize = load_module('normalize')
+    tools = _agent_alias_tools()
+    ids = normalize.target_tools_for('generic', tools, topics=['cursor-extension'])
+    assert 'cursor' in ids
+
+
+def test_short_alias_substring_blocked():
+    """Short alias (<5) must not substring-match longer topics."""
+    normalize = load_module('normalize')
+    tools = _agent_alias_tools()
+    ids = normalize.target_tools_for('unrelated widgets', tools, topics=['ai-agents', 'llm'])
+    assert 'ai-short' not in ids
+    assert ids == ['general-ai-coding']
+
+
+def test_exact_short_alias_still_matches():
+    """Exact match al == tn still works even if alias is short."""
+    normalize = load_module('normalize')
+    tools = [{'id': 'ai-short', 'name': 'AI', 'aliases': ['ai']}]
+    ids = normalize.target_tools_for('generic', tools, topics=['ai'])
+    assert ids == ['ai-short']
