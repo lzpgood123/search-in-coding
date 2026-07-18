@@ -12,6 +12,7 @@ const SIC_filters = {
   curatedOnly: false,
   recentOnly: false,
   favoritesOnly: false,
+  activeTab: 'search', // 'search' | 'tools'
   _pendingProject: null,
   _pendingPage: null,
 
@@ -171,6 +172,10 @@ const SIC_filters = {
       var pageNum = parseInt(qs.get('page'), 10);
       if (Number.isFinite(pageNum) && pageNum > 0) this._pendingPage = pageNum;
     }
+    // Zone tab: only tab=tools is sticky in URL; default search omits tab
+    var tab = qs.get('tab');
+    if (tab === 'tools') this.activeTab = 'tools';
+    else this.activeTab = 'search';
     if (location.hash.startsWith('#favorites=')) {
       const ids = location.hash.slice(12).split(',').filter(Boolean);
       ids.forEach(id => SIC_data.favorites.add(id));
@@ -190,6 +195,7 @@ const SIC_filters = {
     if (this.curatedOnly) qs.set('curated', '1');
     if (this.recentOnly) qs.set('recent', '1');
     if (this.favoritesOnly) qs.set('fav', '1');
+    if (this.activeTab === 'tools') qs.set('tab', 'tools');
     if (SIC_render.currentPage > 0) qs.set('page', String(SIC_render.currentPage + 1));
     const hash = location.hash; // #6: preserve hash
     history.replaceState(null, '', `${location.pathname}${qs.toString() ? '?' + qs : ''}${hash}`);

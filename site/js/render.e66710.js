@@ -8,6 +8,7 @@ const SIC_render = {
   currentPage: 0,
   currentFiltered: [],
   toolOverviewExpanded: false,
+  toolChartExpanded: false,
 
   $: function(id) { return document.getElementById(id); },
 
@@ -159,8 +160,8 @@ const SIC_render = {
         '</div>';
     }).join('');
 
-    // Draw bar chart for tool coverage — hide zero-count tools to reduce clutter
-    var chartData = withCounts
+    // Draw bar chart for tool coverage — default Top 10 + expand
+    var chartDataFull = withCounts
       .filter(function(item) { return item.count > 0; })
       .map(function(item) {
         return {
@@ -168,13 +169,27 @@ const SIC_render = {
           value: item.count,
         };
       });
+    var chartExpanded = !!this.toolChartExpanded;
+    var chartNeedToggle = chartDataFull.length > 10;
+    var chartData = (chartExpanded || !chartNeedToggle)
+      ? chartDataFull
+      : chartDataFull.slice(0, 10);
     var maxVal = Math.max.apply(Math, chartData.map(function(d) { return d.value; }).concat([1]));
     var chartEl = this.$('toolChart');
     if (chartEl) {
-      chartEl.classList.add('chart-scroll-x');
+      chartEl.classList.toggle('chart-scroll-x', chartExpanded && chartData.length > 12);
       chartEl.innerHTML = SIC_charts.barChart(chartData, maxVal, {
         ariaLabel: SIC_i18n.t('toolChartTitle'),
       });
+    }
+    var chartToggle = this.$('toolChartExpand');
+    if (chartToggle) {
+      chartToggle.hidden = !chartNeedToggle;
+      if (chartNeedToggle) {
+        chartToggle.textContent = chartExpanded
+          ? SIC_i18n.t('collapseChart')
+          : (SIC_i18n.t('expandChart') + ' (' + chartDataFull.length + ')');
+      }
     }
   },
 

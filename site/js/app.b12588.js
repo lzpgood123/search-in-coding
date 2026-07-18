@@ -96,14 +96,24 @@ function closeReportModal() {
 }
 
 // Render tag buttons (tool chips support search + collapse for 31 tools)
-var TOOL_TAGS_COLLAPSE_N = 10;
+// Batch2: default Top 8 (was 10)
+var TOOL_TAGS_COLLAPSE_N = 8;
 var toolTagsExpanded = false;
 var toolTagQuery = '';
 
 function getToolList() {
-  return (SIC_data.tools || []).filter(function(t) {
+  // Prefer tools ordered by project count (same ranking as tool overview)
+  var tools = (SIC_data.tools || []).filter(function(t) {
     return t.id !== 'general-ai-coding';
   });
+  return tools.map(function(t) {
+    var count = (SIC_data.projects || []).filter(function(p) {
+      return (p.target_tools || []).includes(t.id) && p.tracking_priority !== 'reject';
+    }).length;
+    return { tool: t, count: count };
+  }).sort(function(a, b) {
+    return b.count - a.count;
+  }).map(function(x) { return x.tool; });
 }
 
 function toolMatchesQuery(tool, q) {
@@ -124,6 +134,30 @@ function updateToolTagsExpandBtn(visibleCount, totalCount) {
   btn.textContent = toolTagsExpanded
     ? SIC_i18n.t('collapseTools')
     : SIC_i18n.t('expandTools') + ' (' + totalCount + ')';
+}
+
+function setZoneTab(tab, opts) {
+  opts = opts || {};
+  SIC_filters.activeTab = (tab === 'tools') ? 'tools' : 'search';
+  var search = SIC_filters.activeTab === 'search';
+  var tabSearch = document.getElementById('tabSearch');
+  var tabTools = document.getElementById('tabTools');
+  var panelSearch = document.getElementById('searchZone');
+  var panelTools = document.getElementById('toolOverviewSection');
+  if (tabSearch) {
+    tabSearch.classList.toggle('active', search);
+    tabSearch.setAttribute('aria-selected', search ? 'true' : 'false');
+  }
+  if (tabTools) {
+    tabTools.classList.toggle('active', !search);
+    tabTools.setAttribute('aria-selected', search ? 'false' : 'true');
+  }
+  if (panelSearch) panelSearch.hidden = !search;
+  if (panelTools) panelTools.hidden = search;
+  if (!opts.skipWrite) SIC_filters.writeState();
+  if (opts.scrollSearch && panelSearch) {
+    panelSearch.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 function renderTagButtons() {
@@ -263,14 +297,20 @@ function handleGlobalClick(e) {
       SIC_render.toolOverviewExpanded = !SIC_render.toolOverviewExpanded;
       SIC_render.renderToolOverview();
       break;
+    case 'toggle-tool-chart':
+      SIC_render.toolChartExpanded = !SIC_render.toolChartExpanded;
+      SIC_render.renderToolOverview();
+      break;
+    case 'zone-tab':
+      e.preventDefault();
+      setZoneTab(btn.dataset.tab);
+      break;
     case 'tool-filter':
-      // Bug 3 fix: sync tag button active state
+      // Bug 3 fix: sync tag button active state + switch to search tab
       SIC_filters.setTool(btn.dataset.tool);
+      setZoneTab('search', { scrollSearch: true });
       SIC_render.renderSearchZone();
-      SIC_filters.writeState();
       renderTagButtons();
-      var sz = $('searchZone');
-      if (sz) sz.scrollIntoView({ behavior: 'smooth' });
       break;
     case 'remove-filter':
       // #7: remove individual filter chip
@@ -469,6 +509,7 @@ async function main() {
   SIC_filters.readState();
   SIC_render.renderAll();
   syncUI();
+  setZoneTab(SIC_filters.activeTab, { skipWrite: true });
   bindEvents();
 
   // #14: footer last updated time
