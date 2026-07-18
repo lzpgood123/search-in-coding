@@ -1089,6 +1089,8 @@ footer a { color: var(--color-link); }
 @media (max-width: 1100px) {
   .charts-row { grid-template-columns: 1fr; }
   .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .zone-tabs { width: 100%; }
+  .zone-tabs [role="tab"] { flex: 1 1 auto; text-align: center; }
 }
 @media (max-width: 760px) {
   main { padding: 14px; }
@@ -1104,7 +1106,31 @@ footer a { color: var(--color-link); }
   .hero-stat { padding: 12px; min-width: 0; }
   .hero-stat b { font-size: 22px; }
   .score-detail-grid { grid-template-columns: 1fr; }
-  .action-row { padding: 10px; }
+  .action-row { padding: 10px; gap: 6px; }
+  .action-row .report-pills { width: 100%; }
+  .search-side { padding: 12px; gap: 12px; }
+  .search-main { padding: 12px; }
+  .zone-tabs { border-radius: var(--radius-sm); }
+  .zone-tabs [role="tab"] { padding: 8px 12px; font-size: 12px; }
+  .chart-card-head-row { flex-wrap: wrap; }
+}
+@media (max-width: 390px) {
+  .hero-stats { grid-template-columns: 1fr; }
+  .action-row a[data-report],
+  .report-pills a[data-report] { flex: 1 1 auto; }
+  .discovery-grid { grid-template-columns: 1fr; }
+  .search-main .table-wrapper { max-height: none; }
+}
+
+/* Narrow-screen desk: already single column at 1100; keep filters above results */
+@media (max-width: 1100px) {
+  .search-desk { grid-template-columns: 1fr; }
+  .search-side {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+  .search-main .table-wrapper { max-height: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
