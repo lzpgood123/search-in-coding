@@ -85,6 +85,62 @@ header {
   max-width: var(--max-width);
   margin: 0 auto;
 }
+
+/* Prominent GitHub star CTA */
+.github-star-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  min-height: 42px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--color-accent-border);
+  background: var(--color-accent);
+  color: #FFFDF8 !important;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none !important;
+  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.22);
+  transition:
+    transform 120ms var(--ease-out),
+    box-shadow 160ms var(--ease-out),
+    background-color 160ms var(--ease-out),
+    border-color 160ms var(--ease-out);
+}
+.github-star-btn:hover {
+  background: #0D9488;
+  border-color: rgba(15, 118, 110, 0.45);
+  box-shadow: 0 12px 28px rgba(15, 118, 110, 0.28);
+  color: #FFFDF8 !important;
+  text-decoration: none !important;
+}
+.github-star-btn:active { transform: scale(0.97); }
+.github-star-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring), 0 10px 24px rgba(15, 118, 110, 0.22);
+}
+.github-star-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+.github-star-label { white-space: nowrap; }
+.github-star-btn-compact {
+  min-height: 32px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: auto;
+  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.16);
+}
+.action-row .github-star-btn-compact {
+  color: #FFFDF8 !important;
+}
 h1 {
   font-size: 25px;
   font-weight: 700;
@@ -1118,6 +1174,14 @@ footer a { color: var(--color-link); }
   .score-detail-grid { grid-template-columns: 1fr; }
   .action-row { padding: 10px; gap: 6px; }
   .action-row .report-pills { width: 100%; }
+  .action-row .github-star-btn-compact {
+    margin-left: 0;
+    width: 100%;
+  }
+  .github-star-btn {
+    width: 100%;
+    justify-content: center;
+  }
   .search-side { padding: 12px; gap: 12px; }
   .search-main { padding: 12px; }
   .zone-tabs { border-radius: var(--radius-sm); }
@@ -1154,6 +1218,7 @@ footer a { color: var(--color-link); }
   .tool-card:hover,
   .action-row a[data-report]:active,
   .report-pills a[data-report]:active,
+  .github-star-btn:active,
   .tag-btn:active,
   .fav-btn:active,
   .discovery-card:active,
